@@ -1,0 +1,34 @@
+{
+  "method": "source checks, independent functional oracles and stated invariants; no performance measurement",
+  "original_sha256": "7f01e1a3d05825aab887952cd5711bea69d6525730aba5c1e25c814334fe77d7",
+  "baseline_checks": "pass",
+  "semantic_grid": {
+    "query_cases": 3560,
+    "logical_update_cases": 4,
+    "display_patterns": [
+      "$00",
+      "$0A",
+      "$40",
+      "$FF"
+    ],
+    "scope": "bounded cell lookup, independent of display; not historical collision semantics"
+  },
+  "carry_field_extraction": {
+    "single_call_cases": 512,
+    "four_field_sequence_cases": 512,
+    "scope": "byte values and both incoming C states; ISA model, not CPU execution"
+  },
+  "descending_page_copy": {
+    "copy_cases": 16,
+    "invalid_contract_cases": 7,
+    "page_counts": [
+      1,
+      2,
+      3,
+      128
+    ],
+    "scope": "RAM model and traversal; no I/O, overlap, CPU or IRQ emulation"
+  },
+  "historical_runtime_validated": false,
+  "irq_or_rom_validated": false
+}

@@ -1,0 +1,41 @@
+{
+  "source": "research/sources/Oric/L'Aigle d'Or/Aigle D'or, Le (1984)(Loriciels).tap",
+  "size": 54630,
+  "sha256": "7f01e1a3d05825aab887952cd5711bea69d6525730aba5c1e25c814334fe77d7",
+  "blocks": [
+    {
+      "name": "AIGLEDOR.1",
+      "header_offset": 0,
+      "payload_offset": 24,
+      "header": "000000c73f37050100",
+      "start": 1281,
+      "end": 16183,
+      "size": 14903,
+      "sha256": "e0c58b933133459eb7d38476cab0fb4f49b5964afd0db8982915b36a42be3340",
+      "payload_file": "aigledor.1.bin",
+      "basic_file": "aigledor.1.basic.txt",
+      "tape_file": "aigledor.1.tap",
+      "tape_size": 14927,
+      "tape_sha256": "6492b15591112025e45cec76d74f13de38f77379286b22d6e9f893b62586b954",
+      "basic_line_count": 78,
+      "basic_sentinel_address": 3957
+    },
+    {
+      "name": "AIGLEDOR.2",
+      "header_offset": 14927,
+      "payload_offset": 14951,
+      "header": "000000c79fff050100",
+      "start": 1281,
+      "end": 40959,
+      "size": 39679,
+      "sha256": "0753ce4ed6c8904118fbd9e40ef459fa46140a770e00902213794ef2c33c28ac",
+      "payload_file": "aigledor.2.bin",
+      "basic_file": "aigledor.2.basic.txt",
+      "tape_file": "aigledor.2.tap",
+      "tape_size": 39703,
+      "tape_sha256": "f081b7916f0ba865a6a93e8e442425119cee45874a106d66508899a44a238b88",
+      "basic_line_count": 464,
+      "basic_sentinel_address": 15358
+    }
+  ]
+}

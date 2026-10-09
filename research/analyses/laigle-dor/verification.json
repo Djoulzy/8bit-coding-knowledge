@@ -1,0 +1,67 @@
+{
+  "method": "static checks and binary arithmetic model; no hardware/emulator run",
+  "original_sha256": "7f01e1a3d05825aab887952cd5711bea69d6525730aba5c1e25c814334fe77d7",
+  "blocks_verified": 2,
+  "standalone_tap_blocks_verified": 2,
+  "linked_basic_records": [
+    78,
+    464
+  ],
+  "multiply_cases": 65536,
+  "hires_address_cases": 8000,
+  "carry_unpack_cases": 512,
+  "restore_buffers": [
+    {
+      "index": 243,
+      "pointer": "$5200",
+      "width": 4,
+      "height": 31,
+      "bytes": 124
+    },
+    {
+      "index": 244,
+      "pointer": "$5300",
+      "width": 4,
+      "height": 26,
+      "bytes": 104
+    },
+    {
+      "index": 245,
+      "pointer": "$5400",
+      "width": 3,
+      "height": 8,
+      "bytes": 24
+    },
+    {
+      "index": 246,
+      "pointer": "$5500",
+      "width": 4,
+      "height": 7,
+      "bytes": 28
+    },
+    {
+      "index": 249,
+      "pointer": "$5800",
+      "width": 3,
+      "height": 15,
+      "bytes": 45
+    },
+    {
+      "index": 250,
+      "pointer": "$5900",
+      "width": 5,
+      "height": 19,
+      "bytes": 95
+    }
+  ],
+  "theoretical_cycles": {
+    "multiply_min": 178,
+    "multiply_max": 210,
+    "multiply_by_40": 186,
+    "address_by_40_no_low_carry": 227,
+    "address_by_40_low_carry": 231,
+    "reset_512_bytes": 8249,
+    "save_256_bytes_before_clear": 3828,
+    "restore_256_bytes_after_rom": 3846
+  }
+}
