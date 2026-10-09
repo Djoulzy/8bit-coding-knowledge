@@ -1,0 +1,672 @@
+{
+  "revision": "c81612082482d1f497638ada14ad4640c5e4f1ec",
+  "files": [
+    {
+      "path": "games/Space 1999/Sources/game source/NOISE/auxiliar.s",
+      "sha1": "8ec78998d3f424bf6c9f2ccbe7c7304c6ae9bd31",
+      "sha256": "59be9a884647d0527645c51649f1704acc034da16fb5028923ddbc22a7e3c786",
+      "bytes": 4838,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/NOISE/auxiliar.s",
+      "lines": 273
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/NOISE/buildnoise.bat",
+      "sha1": "5d0d6169e56e550237c77afa68a25a08e9c4075e",
+      "sha256": "5026a52b6cbcc59e55c1593501014ce2fbaf24784796436d759bdbdac188eb2b",
+      "bytes": 173,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/NOISE/buildnoise.bat",
+      "lines": 4
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/NOISE/clipping.s",
+      "sha1": "fc7bf7bc42e532a71775414698499dc9c924340c",
+      "sha256": "a347137c9d2b9786c55614399bedd68f56259c651f9d5b08c1706ee4ce33f926",
+      "bytes": 11468,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/NOISE/clipping.s",
+      "lines": 687
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/NOISE/collision.s",
+      "sha1": "6f1c4893e8bd73b3730080fcf54b219ee6581fa0",
+      "sha256": "a0f11cc17221f56534c2bed9be089157b6cfcc95d9fdabd77b39e7557e533e89",
+      "bytes": 13136,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/NOISE/collision.s",
+      "lines": 759
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/NOISE/groutines.s",
+      "sha1": "c7380cb244dfabf5ddeb77b64b21de7fab4d2084",
+      "sha256": "ef4056501f868eeee42c39f260ef74ea224a58334013a335628832a194002172",
+      "bytes": 17385,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/NOISE/groutines.s",
+      "lines": 898
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/NOISE/isofuncs.s",
+      "sha1": "fcb1414dcfdbe5bc9419078655491daa4f831b8f",
+      "sha256": "ace2a613b6d1368e05c5bc56581c91b19e1c5fa31802d29103eb17bb2cc8919d",
+      "bytes": 15244,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/NOISE/isofuncs.s",
+      "lines": 899
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/NOISE/noise-start.s",
+      "sha1": "1a77cd984470c2351a04c64bfefe347cfdfc74af",
+      "sha256": "895bd6c485231d42a011d2a0b6871cf0836b90636145886e05a92d00c7e1c409",
+      "bytes": 2311,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/NOISE/noise-start.s",
+      "lines": 131
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/NOISE/noise-tail.s",
+      "sha1": "3ddf08934f3262c5383e7f12ad14dac5e51c38b3",
+      "sha256": "1e6dd6644ea5c57a1e2880afd1f8b4e19d10a6b3ff3f3abec64704932bfb6ef9",
+      "bytes": 4202,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/NOISE/noise-tail.s",
+      "lines": 94
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/NOISE/noise.h",
+      "sha1": "ac48983cb935a87fd15779e932e85fcd971c5b1b",
+      "sha256": "82b48bce7768c2e639599dddd83d541c3a3d4a661dfc6ccc373171ecac899dc0",
+      "bytes": 3259,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/NOISE/noise.h",
+      "lines": 98
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/NOISE/noise_defs.h",
+      "sha1": "61fc7601e1b1b8a5e7dbc0b35eb9bb55e15de83d",
+      "sha256": "9b13c9946bd4d46d576b5cc32e1155ce76c520460d6047df27b17c438a0910ee",
+      "bytes": 1341,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/NOISE/noise_defs.h",
+      "lines": 60
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/NOISE/occlusions.s",
+      "sha1": "b4fa125fe6c632d91643954c7836b85db7edc05b",
+      "sha256": "74f555cdb172f8e7298e4785bb3608346f7e2c984a5a40895976c8516a7ece1f",
+      "bytes": 18319,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/NOISE/occlusions.s",
+      "lines": 1157
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/NOISE/spritemov.s",
+      "sha1": "d4ae2fd33f2b900ceef2442607e20d4c94bcd95b",
+      "sha256": "15cbe128665dad817c738f6cb3897a4c09b5fac5b6e0bf1ca74aca6d97e5e424",
+      "bytes": 5837,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/NOISE/spritemov.s",
+      "lines": 347
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/WHITE/mapload.s",
+      "sha1": "dceee4dc55cc205948f47573f68540f5fe6ebc87",
+      "sha256": "c9dcbbf78606416ebfdb00fd454430e4899715cd292cfe86bf417175b36a9184",
+      "bytes": 8049,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/WHITE/mapload.s",
+      "lines": 567
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/WHITE/white.h",
+      "sha1": "3136991768d80874bbf26221840845a415ee23a1",
+      "sha256": "92aaccacd02e2f31fb7cf617efaf88a341aab158a27763ed73284034a22d8ea8",
+      "bytes": 5816,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/WHITE/white.h",
+      "lines": 123
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/WHITE/white.s",
+      "sha1": "9200d8e1805cc43efa522623c737c67ccd808329",
+      "sha256": "dd94235eab742e7ee64ee4418ee5e87cec6b3b3595be1f6f10cb7d3a0a3afd34",
+      "bytes": 45468,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/WHITE/white.s",
+      "lines": 2853
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/WHITE/white_defs.h",
+      "sha1": "a826c7291231f0bc14c1e96c0da4e63f6f98f555",
+      "sha256": "1756ac7257394423f8864877736cb594337ae0ef3d3374560f826be2c55f01e6",
+      "bytes": 2272,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/WHITE/white_defs.h",
+      "lines": 86
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/disk.s",
+      "sha1": "9dabf9df795cae00e3a637577a4444268beaefaf",
+      "sha256": "7d28db34bf7b3e77f52ebd8e7f21d79fafc412d9f433aca4d85fdddd59b43c7e",
+      "bytes": 3753,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/disk.s",
+      "lines": 247
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/frame.s",
+      "sha1": "7719b665219cd462fdb60b3154dee53005bfa0c6",
+      "sha256": "a5f53bfe6b084e447ec5a3ad1fcb2d524ba2e6b7693fbaea18003a1a845cbf68",
+      "bytes": 38315,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/frame.s",
+      "lines": 536
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/grammar.s",
+      "sha1": "a46d6d31e340db345b6f812a8cfc2c036b3f5aea",
+      "sha256": "086b42b18d13a8f561be4ae092e4838703a4c233735825fd4663f8daac562a99",
+      "bytes": 1987,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/grammar.s",
+      "lines": 139
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/header.s",
+      "sha1": "d9bfda4246396bf1627550d7295dafd128aaa9e2",
+      "sha256": "bf4b5e1d04278689f48906425619a3a548d39b648d7695383a079908c46c86bf",
+      "bytes": 2204,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/header.s",
+      "lines": 203
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/mapload.s",
+      "sha1": "1c6d65958e49269177d547c55f27e67ff95f5328",
+      "sha256": "e1ac6c03a1a9655a811507adbc3a9dc0cc4be06c9f301cabeec67c4294a566b1",
+      "bytes": 8834,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/mapload.s",
+      "lines": 623
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/osdk_build.bat",
+      "sha1": "02b843a92b59c9b7f1dd68e5a7b5d8d181a71009",
+      "sha256": "b659920add14b7e4876c1355d5ab9e56cfee6f3850ee70cca75f1ced46774d5a",
+      "bytes": 654,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/osdk_build.bat",
+      "lines": 46
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/osdk_config.bat",
+      "sha1": "2859b5024e7ba58bdeec348e946ec5ccd4b2ce78",
+      "sha256": "be02db87a65d1e28253ae622d9c3c5360c4593443f5c8c6c3386627b82f315a4",
+      "bytes": 969,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/osdk_config.bat",
+      "lines": 35
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/osdk_execute.bat",
+      "sha1": "61886cfa424dce252064981da9e1cf1e490d8ab3",
+      "sha256": "4d69862a3d308ada19327d759376a64fa9106ede2d60dc8f4a37741d84dfaf37",
+      "bytes": 566,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/osdk_execute.bat",
+      "lines": 35
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/osdk_showmap.bat",
+      "sha1": "bff7deea035ff389bf4224855eed1ea354387964",
+      "sha256": "442ebece359e349422b8802d6468bb528cb3d2d01c44abfb4141fa0bb49aa2e6",
+      "bytes": 614,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/osdk_showmap.bat",
+      "lines": 39
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/sound.h",
+      "sha1": "5749b517818b29fa7647628a858d81f62dd4812f",
+      "sha256": "f1ffe83b1b4075b5d2301aeef52164e70ce91f43703075c5e3b76f293da363d6",
+      "bytes": 2757,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/sound.h",
+      "lines": 103
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/sound.s",
+      "sha1": "99518d0e633012f72fed3255fec49adc6b3c7af8",
+      "sha256": "cb1bd6ca1683d643ca0dbb5faf7b3bc73ba761d1f0679b2b6ae86f283e529351",
+      "bytes": 38679,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/sound.s",
+      "lines": 1739
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/sp1999.s",
+      "sha1": "f9aa45b114983ac490c14af68dbc8512e1271a21",
+      "sha256": "7589495ff67b21de3c08a9d51b9cd2e4c7313ee8fa6d6e95046609f2c83160a6",
+      "bytes": 129219,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/sp1999.s",
+      "lines": 7352
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/sppic.s",
+      "sha1": "44cf370113c7c5bc6c331bac7935092c0e837265",
+      "sha256": "2110f61c72c5ad2a76cb482cb9f976607ffaf9d1b0fb7a7c0c2ed2cdd1e9ba03",
+      "bytes": 32230,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/sppic.s",
+      "lines": 873
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/strings.s",
+      "sha1": "a836cd76eb50a29d33787fed5bd3f4df06f02aec",
+      "sha256": "9d67127e8cc63a03d431bbd9652cfbc1bdb3b46c92fd4571b0a4ff90d98fcd92",
+      "bytes": 36099,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/strings.s",
+      "lines": 1900
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/stringsc.s",
+      "sha1": "c7bd7778033fcee990365354702f4dcc3ec0d734",
+      "sha256": "302021bc3fe43849159ca6827790137970a7f48dcf857eca05b1caf2e7947009",
+      "bytes": 33015,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/stringsc.s",
+      "lines": 2038
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/tail.s",
+      "sha1": "9a86da3d7b52f8be9ce0b437c2634ed5e1c1852b",
+      "sha256": "8373a389745f838a248f3da40afc46b3724329d9e4c84da14a478644784d5176",
+      "bytes": 161,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/tail.s",
+      "lines": 16
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/txtcomp.bat",
+      "sha1": "98599113799c3d7be351674c46b3f48ce919a3f0",
+      "sha256": "02e20b1d392e48b88c29728426bb0be2495e5a03cd88579c30a36c9083e494b2",
+      "bytes": 191,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/txtcomp.bat",
+      "lines": 5
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/world.s",
+      "sha1": "d26d859e9d428a41b763642b8c17e3cbc534f970",
+      "sha256": "f025b2ec3c3f9724cc196361e8fee56396261671703d97945540af1765812f81",
+      "bytes": 150114,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/world.s",
+      "lines": 10590
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/world/bkgpic.s",
+      "sha1": "f200f824823d9f78211d887b99da90d34310a592",
+      "sha256": "1881cd1acfa7a97d485637adb0a9935e6d55020613956200326276daa67b22e5",
+      "bytes": 56093,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/world/bkgpic.s",
+      "lines": 1453
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/world/buildworld.bat",
+      "sha1": "5491a754d6e55fcc159ef839f6086dd46bf9fc04",
+      "sha256": "aa42e84f47e03ab93ba22dfd5f64ec49c891a094ffcc9c081f7379977952360a",
+      "bytes": 148,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/world/buildworld.bat",
+      "lines": 7
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/world/chars pics/out.s",
+      "sha1": "c6a432265513573282d57670ff71d7538314801d",
+      "sha256": "b751100e46a76313983821f47512e69ea12968bb482b39e2d2c91377294b993f",
+      "bytes": 502,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/world/chars%20pics/out.s",
+      "lines": 9
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/world/createtap.bat",
+      "sha1": "6caa7125d4dff1c9c693a00fa5a12e1e328ea7d6",
+      "sha256": "1a76ae27119a7a6eece4aefc58f546bb038fbfd96cf58b6e7a9f2769b202f014",
+      "bytes": 134,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/world/createtap.bat",
+      "lines": 4
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/world/picdef.h",
+      "sha1": "8350c6480129c25296680a6bafb45a76e1e1ae98",
+      "sha256": "fcac4bdb907e783538e206760757258c529f1819c43f9c40b858f0cec97e101a",
+      "bytes": 1737,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/world/picdef.h",
+      "lines": 79
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/world/soundovl.s",
+      "sha1": "761d4e2d8af228cdac3ea6d25387bcf6edf1f6df",
+      "sha256": "9eda4ef9a238b25a4afe4e250fd3ea85208f620b78cc3bafeedfc4912c6da6c7",
+      "bytes": 25184,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/world/soundovl.s",
+      "lines": 958
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/world/space1999.txt",
+      "sha1": "90ea497a47cc87198f79c01f8dab459a6dc22a20",
+      "sha256": "46b3d9ed5c8fc2ac1728eb203aa1bbf33f5282f95947888ebc0d60444fdef9df",
+      "bytes": 109409,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/world/space1999.txt",
+      "lines": 5620
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/world/tileset.txt",
+      "sha1": "83da1696c8dd187d7e877d3659d8cd0c70c168de",
+      "sha256": "765c8d7e22cd8e239c9df97097ae2f37be398786115c486a3dc657282af70b4d",
+      "bytes": 2519,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/world/tileset.txt",
+      "lines": 63
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/world/world.s",
+      "sha1": "95e1644c571376a187916ebc5bbb9b762c657b7b",
+      "sha256": "60f75c93f7e68143de3aa3e46069d27551260d7faaf3a7c96b8e1bcbf1da3f9e",
+      "bytes": 153186,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/world/world.s",
+      "lines": 10761
+    },
+    {
+      "path": "games/Space 1999/Sources/game source/world/worldall.s",
+      "sha1": "3884f7573597deda84015f0d6b968fa5de037531",
+      "sha256": "a2dbad93d7ff0f693c23aa6b3e58ae8030fabac0eea7d3ea8dca6e8583d848b3",
+      "bytes": 522,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/game%20source/world/worldall.s",
+      "lines": 30
+    },
+    {
+      "path": "games/Space 1999/Sources/intro/Main.c",
+      "sha1": "54838e25cf5b477c1e2f415ab8d7c4210d348548",
+      "sha256": "ea4aa409c7bfdf54d3f41f224744ca3c39ba2daad6cbee8ba2f00c8cb5d4a11c",
+      "bytes": 10415,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/intro/Main.c",
+      "lines": 535
+    },
+    {
+      "path": "games/Space 1999/Sources/intro/auxiliar.s",
+      "sha1": "0508a0811ced1fa9d1ce2624b742864e5fdd7001",
+      "sha256": "6bc8e3a97678ff71b3a4754f780804f2ff44dde3794e94b61918260dd9aa827a",
+      "bytes": 1044,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/intro/auxiliar.s",
+      "lines": 71
+    },
+    {
+      "path": "games/Space 1999/Sources/intro/costable.s",
+      "sha1": "3f8ca79e74e5fd8cbc6f2440722b9ca62510b822",
+      "sha256": "2d317af8cfc1b88627c261b7ffb39a680ed43a61cd07456f6c37f1120f41f8cc",
+      "bytes": 8488,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/intro/costable.s",
+      "lines": 781
+    },
+    {
+      "path": "games/Space 1999/Sources/intro/dither.s",
+      "sha1": "0d380bd6f1a548f274d5e8af317e1c26b3599ee2",
+      "sha256": "df1f123c88f19f857c3b70b221f6215a278b73dae1a1a3d59acf67c025f1ccb0",
+      "bytes": 2978,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/intro/dither.s",
+      "lines": 176
+    },
+    {
+      "path": "games/Space 1999/Sources/intro/draw.s",
+      "sha1": "e88327a0de6a1edc0dd9aac6ce9bc4e465b20f85",
+      "sha256": "862de643bf0caa544ee27b1f9e84ab20611889faf8a4ceeb8fa56f52050df672",
+      "bytes": 10401,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/intro/draw.s",
+      "lines": 651
+    },
+    {
+      "path": "games/Space 1999/Sources/intro/osdk_build.bat",
+      "sha1": "71be32832cd6bd7d9352433a99fa04c9119801a2",
+      "sha256": "89628dcc29336a7b10bb3e93f76c8358195f5a0f3c99e4e867231d612e79760f",
+      "bytes": 527,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/intro/osdk_build.bat",
+      "lines": 36
+    },
+    {
+      "path": "games/Space 1999/Sources/intro/osdk_config.bat",
+      "sha1": "7f27437cc66599271ce8e61d5bafb3b934d70fcc",
+      "sha256": "904cef09897484ef4a74d0415196d8143a10a8953ec3662339eec2593429fe1f",
+      "bytes": 382,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/intro/osdk_config.bat",
+      "lines": 19
+    },
+    {
+      "path": "games/Space 1999/Sources/intro/osdk_execute.bat",
+      "sha1": "20a95faeb3627cdc071111940b5fa30fad24bc53",
+      "sha256": "fce424d6190563b98f964aef547a3ca034fa5dfeaa5a46331635bcf24700d93e",
+      "bytes": 570,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/intro/osdk_execute.bat",
+      "lines": 37
+    },
+    {
+      "path": "games/Space 1999/Sources/intro/osdk_makedata.bat",
+      "sha1": "6e87ff1b2de570e2fd770bd83be0daac5f5d3252",
+      "sha256": "0fde12a8627de4628691bc522f8415ba8b043523be23b19fc9d7f122d58b6417",
+      "bytes": 3427,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/intro/osdk_makedata.bat",
+      "lines": 72
+    },
+    {
+      "path": "games/Space 1999/Sources/intro/osdk_sendwave.bat",
+      "sha1": "9f5141ee70cfd9fe9fc9010827c34f91978e635c",
+      "sha256": "fa9a263be2f4d6300d03028112a4e74d104ba7334594f86494e44f2ed45162ab",
+      "bytes": 80,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/intro/osdk_sendwave.bat",
+      "lines": 1
+    },
+    {
+      "path": "games/Space 1999/Sources/intro/osdk_showmap.bat",
+      "sha1": "aadf772e0c272ee61661104aaff02bcec7550411",
+      "sha256": "f9fe4d5042df5e8a8122482d08b910724a7df4f5f93ed5c65cb6c41930b0baa4",
+      "bytes": 538,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/intro/osdk_showmap.bat",
+      "lines": 34
+    },
+    {
+      "path": "games/Space 1999/Sources/intro/pic_bain.s",
+      "sha1": "1436a452bcb304bc55155391971009b2d229ccea",
+      "sha256": "f6ee7d8d0079ee28cd5574ff2563a971dedd181beb85aa296841f63b8d8ffcdb",
+      "bytes": 7581,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/intro/pic_bain.s",
+      "lines": 109
+    },
+    {
+      "path": "games/Space 1999/Sources/intro/pic_episode.s",
+      "sha1": "7706112a960408379b493d42d5065b24c219c709",
+      "sha256": "dcc24439fc26188df942965742fe2f0594fbe96b504ac7d97f4bc4409384bb56",
+      "bytes": 8828,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/intro/pic_episode.s",
+      "lines": 126
+    },
+    {
+      "path": "games/Space 1999/Sources/intro/pic_itc.s",
+      "sha1": "90c9169518824b1c6f8c2563732e183bf2a7d6b5",
+      "sha256": "5609728e2b7e6aadcaded8ff2d1e320667134c205b5fd80ebf4695ef3af0bcdb",
+      "bytes": 7187,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/intro/pic_itc.s",
+      "lines": 103
+    },
+    {
+      "path": "games/Space 1999/Sources/intro/pic_landau.s",
+      "sha1": "33b4c297a5316d7996b1f5446ec89e66aa7e2d96",
+      "sha256": "ee909942911775d5befd437687a82f09bf2b2559d8b07c07588ca455d0d2f8d2",
+      "bytes": 7038,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/intro/pic_landau.s",
+      "lines": 101
+    },
+    {
+      "path": "games/Space 1999/Sources/intro/pic_logo.s",
+      "sha1": "e86382dfeb2490508d7ab3e948270a3d6974248d",
+      "sha256": "18f34b051630dde23c1d9598c2e47fc32fda354c55b54d310fb4857ac901990d",
+      "bytes": 15834,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/intro/pic_logo.s",
+      "lines": 225
+    },
+    {
+      "path": "games/Space 1999/Sources/intro/pic_morse.s",
+      "sha1": "afe19ff941eb88b8281374f639cd9341d02578b9",
+      "sha256": "578e79ebfcfee2f9fc0377b48b85425dcd3381f2588529c9e2cb0d4fff35c240",
+      "bytes": 7762,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/intro/pic_morse.s",
+      "lines": 111
+    },
+    {
+      "path": "games/Space 1999/Sources/intro/pic_producer.s",
+      "sha1": "a979cc7c055b0f8bf239e0a42082866e1cadba4a",
+      "sha256": "9a9ce4a63a0df4238b04294bcdeafa083ad45d1bdc58398f73a9c38be9955353",
+      "bytes": 19163,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/intro/pic_producer.s",
+      "lines": 272
+    },
+    {
+      "path": "games/Space 1999/Sources/intro/pic_sylvia.s",
+      "sha1": "ffe52eb1e7b6320b044a1f50a35662ea2b571f94",
+      "sha256": "ad2a616dae855f0f9ee7b86652b00a658cc8723e6e93f4be5d92b0cf43bcf8e2",
+      "bytes": 7359,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/intro/pic_sylvia.s",
+      "lines": 106
+    },
+    {
+      "path": "games/Space 1999/Sources/intro/pouet.s",
+      "sha1": "67d4432e78cbcc3fa7dc488249e3552c2f7b389f",
+      "sha256": "82323f23bbc5cc16570f323d1c54d7c01806f52f9f0c17e56c36fbe78669576c",
+      "bytes": 50,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/intro/pouet.s",
+      "lines": 6
+    },
+    {
+      "path": "games/Space 1999/Sources/intro/scene1.s",
+      "sha1": "ea151661c9b54ead32f095a3f4c4c8be6a8c04ee",
+      "sha256": "1a54a2cd0230a901112225f89c721193f944e0d93d536932b1e79107ded9e0b9",
+      "bytes": 26031,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/intro/scene1.s",
+      "lines": 348
+    },
+    {
+      "path": "games/Space 1999/Sources/intro/scene2.s",
+      "sha1": "e38f2bf3493b32e77421089c17e6ef4d15582cba",
+      "sha256": "dc21801e0b7749bab6bf432769fd54301a33bed3912eac5d4e498c90b7286e43",
+      "bytes": 23737,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/intro/scene2.s",
+      "lines": 318
+    },
+    {
+      "path": "games/Space 1999/Sources/intro/sound.s",
+      "sha1": "b6bc7fd9c9742c00b583b62ec6b1e4919c5d8755",
+      "sha256": "c38a04b6e468d15efa8c37289d517943b5ffb27acb2a8412ba48f2205c4dfeda",
+      "bytes": 41689,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/intro/sound.s",
+      "lines": 1890
+    },
+    {
+      "path": "games/Space 1999/Sources/intro/tables.s",
+      "sha1": "e40170add66c4e14499bd40721391a2376c7e164",
+      "sha256": "db41b7c33e4b3f59fad1f5876fd5598adf0dc19339d8a1d7317748ba3b258c80",
+      "bytes": 13512,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/intro/tables.s",
+      "lines": 902
+    },
+    {
+      "path": "games/Space 1999/Sources/trailer/Main.c",
+      "sha1": "f0d215d89bef6e7920bc4a0106d7d185daebd8bc",
+      "sha256": "ba49f1e2a13ab229154fd0022ac74a203c27fb584e5df42856d12ff7cb7be337",
+      "bytes": 7251,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/trailer/Main.c",
+      "lines": 406
+    },
+    {
+      "path": "games/Space 1999/Sources/trailer/costable.s",
+      "sha1": "29682782ceaaf03694c8f780a46d334db2ca244d",
+      "sha256": "9ec6c4ec1cd248df6e3798496d10fa6336c5296c1378f7dc445673252eaf4d47",
+      "bytes": 15506,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/trailer/costable.s",
+      "lines": 1293
+    },
+    {
+      "path": "games/Space 1999/Sources/trailer/draw.s",
+      "sha1": "475a95cb713cd797aaa63a176ca51ba96e49e116",
+      "sha256": "e59fd2d7f16e277ed6aa427ab0ee6eae2d92bd6bc67699e91cb9d4f6e02dcc84",
+      "bytes": 11351,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/trailer/draw.s",
+      "lines": 737
+    },
+    {
+      "path": "games/Space 1999/Sources/trailer/draw_df_logo.s",
+      "sha1": "dedfac763c448e3c30325c0aad79c435fc239a7c",
+      "sha256": "e5b039eda1c604546468ce29fd1b18f97db002f44f88b650159597400d815455",
+      "bytes": 7348,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/trailer/draw_df_logo.s",
+      "lines": 500
+    },
+    {
+      "path": "games/Space 1999/Sources/trailer/how_to_build.txt",
+      "sha1": "fda69575d199fcd7128740e8cdcece414d604762",
+      "sha256": "6f188048b72ca2ee22c4439cde98f625ff0ddbb2c80c34742e08ae373cded3be",
+      "bytes": 440,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/trailer/how_to_build.txt",
+      "lines": 8
+    },
+    {
+      "path": "games/Space 1999/Sources/trailer/osdk_build.bat",
+      "sha1": "71be32832cd6bd7d9352433a99fa04c9119801a2",
+      "sha256": "89628dcc29336a7b10bb3e93f76c8358195f5a0f3c99e4e867231d612e79760f",
+      "bytes": 527,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/trailer/osdk_build.bat",
+      "lines": 36
+    },
+    {
+      "path": "games/Space 1999/Sources/trailer/osdk_config.bat",
+      "sha1": "cadf3d324e6c703ec061fd3bf74582995934486e",
+      "sha256": "49a60185551a994a71300dc2345bc076ea353cbc210b594f9267011c65f56e83",
+      "bytes": 524,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/trailer/osdk_config.bat",
+      "lines": 23
+    },
+    {
+      "path": "games/Space 1999/Sources/trailer/osdk_execute.bat",
+      "sha1": "20a95faeb3627cdc071111940b5fa30fad24bc53",
+      "sha256": "fce424d6190563b98f964aef547a3ca034fa5dfeaa5a46331635bcf24700d93e",
+      "bytes": 570,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/trailer/osdk_execute.bat",
+      "lines": 37
+    },
+    {
+      "path": "games/Space 1999/Sources/trailer/osdk_makedata.bat",
+      "sha1": "598e3d720719e89494ca862550a60d22447a6b8c",
+      "sha256": "9237155389939af85e7368ad4258959a10752273ca86869fa36c98343f35fbc3",
+      "bytes": 2978,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/trailer/osdk_makedata.bat",
+      "lines": 59
+    },
+    {
+      "path": "games/Space 1999/Sources/trailer/osdk_showmap.bat",
+      "sha1": "aadf772e0c272ee61661104aaff02bcec7550411",
+      "sha256": "f9fe4d5042df5e8a8122482d08b910724a7df4f5f93ed5c65cb6c41930b0baa4",
+      "bytes": 538,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/trailer/osdk_showmap.bat",
+      "lines": 34
+    },
+    {
+      "path": "games/Space 1999/Sources/trailer/pouet.s",
+      "sha1": "67d4432e78cbcc3fa7dc488249e3552c2f7b389f",
+      "sha256": "82323f23bbc5cc16570f323d1c54d7c01806f52f9f0c17e56c36fbe78669576c",
+      "bytes": 50,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/trailer/pouet.s",
+      "lines": 6
+    },
+    {
+      "path": "games/Space 1999/Sources/trailer/sequences.s",
+      "sha1": "5ae8063c8bc655ce4e1c69dd399080c71c85e726",
+      "sha256": "4732c3ae31b1413337220dd3a7c1228f1f496acfcbc680ce802bdbfbc1d4f1c7",
+      "bytes": 19704,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/trailer/sequences.s",
+      "lines": 1223
+    },
+    {
+      "path": "games/Space 1999/Sources/trailer/sound.s",
+      "sha1": "2885d48bfa6ed4511449e01d9ba4e738b5bf2175",
+      "sha256": "77e9ff38150f62629320f3be8f301bfd36b6f680bb1a5bd44155d7949f634d49",
+      "bytes": 40131,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/trailer/sound.s",
+      "lines": 1890
+    },
+    {
+      "path": "games/Space 1999/Sources/trailer/tables.s",
+      "sha1": "193692aea1a0d1c1cc0ef490941d71f3ce6f416b",
+      "sha256": "4211c15a74dfc4799b4a63e5a6edbada73becf42572031a48869036111705211",
+      "bytes": 14016,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/trailer/tables.s",
+      "lines": 933
+    },
+    {
+      "path": "games/Space 1999/Sources/trailer/text.s",
+      "sha1": "a8678b7cd2f157319a8d2bcf0ba8ef3bd128e9df",
+      "sha256": "e7a2c11636964896d446f23b281c08a8985ed29820561b9f2a066e9f1579855b",
+      "bytes": 17016,
+      "url": "https://raw.githubusercontent.com/Oric-Software-Development-Kit/Oric-Software/c81612082482d1f497638ada14ad4640c5e4f1ec/games/Space%201999/Sources/trailer/text.s",
+      "lines": 928
+    }
+  ],
+  "repository": "https://github.com/Oric-Software-Development-Kit/Oric-Software",
+  "source_license": "No game-specific license identified in inspected text files; no full source mirror redistributed.",
+  "scope": "Supplementary published sources, not originally supplied files; selected text files only. Downloaded read-only, Git blob hashes verified."
+}
