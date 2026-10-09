@@ -1,0 +1,35 @@
+{
+  "method": "Static extraction, byte assertions and mathematical models; no CPU/device execution",
+  "source_sha256": "555e811187069b29bfc6cf657be7f19f8c49aa8d25fbbeeb8ab4718ad2577558",
+  "check_count": 4327,
+  "listing_instructions_checked": 1522,
+  "sector_count": 1428,
+  "crc_mismatches": 0,
+  "recovered_descriptor_count": 22,
+  "complete_descriptor_count": 21,
+  "incomplete_descriptor": "0C: 5 of 133 pages; missing side 0 track 42 sector 1; uninvoked in main",
+  "model_cases": {
+    "pointer_increment": 65536,
+    "nibble_phase": 256,
+    "circular_shift": 256
+  },
+  "theoretical_cycles": {
+    "hires_clear_including_RTS": 42249,
+    "delay_including_RTS": 853540
+  },
+  "all_checks_passed": true,
+  "benchmark": false,
+  "emulator": false,
+  "real_hardware": false,
+  "check_categories": [
+    "source identity",
+    "sector integrity",
+    "payload mappings",
+    "listing byte locations",
+    "load sequence",
+    "static hazards",
+    "loop/address/state models",
+    "frontmatter and local links",
+    "new IDs"
+  ]
+}
