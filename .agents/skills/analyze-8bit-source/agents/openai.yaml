@@ -1,0 +1,3 @@
+interface:
+  display_name: "Analyze 8-bit Source"
+  short_description: "Extract proven 8-bit coding techniques from historical code"
