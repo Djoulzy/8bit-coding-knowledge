@@ -1,0 +1,1056 @@
+{
+  "source": "research/sources/Apple IIe/Lode Runner/Lode Runner (1983)(broderbund)[cr].dsk",
+  "sha256": "cbc048a55c2835f1b3b54696660e8902c84c25dac44a6dc94b13a7e8f81379ec",
+  "image_bytes": 143360,
+  "sector_order": "ProDOS image slots for DOS logical sectors",
+  "dos_sector_to_image_slot": [
+    0,
+    14,
+    13,
+    12,
+    11,
+    10,
+    9,
+    8,
+    7,
+    6,
+    5,
+    4,
+    3,
+    2,
+    1,
+    15
+  ],
+  "catalog_sectors": [
+    [
+      17,
+      15
+    ],
+    [
+      17,
+      14
+    ],
+    [
+      17,
+      13
+    ],
+    [
+      17,
+      12
+    ],
+    [
+      17,
+      11
+    ],
+    [
+      17,
+      10
+    ],
+    [
+      17,
+      9
+    ],
+    [
+      17,
+      8
+    ],
+    [
+      17,
+      7
+    ],
+    [
+      17,
+      6
+    ],
+    [
+      17,
+      5
+    ],
+    [
+      17,
+      4
+    ],
+    [
+      17,
+      3
+    ],
+    [
+      17,
+      2
+    ],
+    [
+      17,
+      1
+    ]
+  ],
+  "deleted_entries": [
+    {
+      "name": "PIC.ULTIMATUM                \u0018",
+      "type": 4,
+      "locked": false,
+      "catalog_offset": 73553,
+      "catalog_sector_count": 34
+    },
+    {
+      "name": "BEEP                         \u001b",
+      "type": 4,
+      "locked": false,
+      "catalog_offset": 73588,
+      "catalog_sector_count": 2
+    },
+    {
+      "name": "INIT DISPLAY",
+      "type": 2,
+      "locked": false,
+      "catalog_offset": 73623,
+      "catalog_sector_count": 19
+    },
+    {
+      "name": "ULTIMA",
+      "type": 2,
+      "locked": false,
+      "catalog_offset": 73658,
+      "catalog_sector_count": 3
+    },
+    {
+      "name": "INFO",
+      "type": 0,
+      "locked": false,
+      "catalog_offset": 73693,
+      "catalog_sector_count": 1
+    }
+  ],
+  "vtoc": {
+    "track": 17,
+    "sector": 0,
+    "dsk_offset": 69632,
+    "version": 3,
+    "volume": 254,
+    "tracks": 35,
+    "sectors": 16,
+    "sector_bytes": 256
+  },
+  "files": [
+    {
+      "name": "LODE RUNNER",
+      "type": 4,
+      "locked": true,
+      "catalog_offset": 73483,
+      "catalog_sector_count": 146,
+      "load_address": 2045,
+      "length": 36611,
+      "header_bytes": 4,
+      "ts_lists": [
+        {
+          "track": 16,
+          "sector": 15,
+          "dsk_offset": 69376,
+          "file_sector_index": 0
+        },
+        {
+          "track": 21,
+          "sector": 4,
+          "dsk_offset": 88832,
+          "file_sector_index": 122
+        }
+      ],
+      "sector_map": [
+        {
+          "track": 16,
+          "sector": 14,
+          "dsk_offset": 65792,
+          "file_sector_index": 0
+        },
+        {
+          "track": 16,
+          "sector": 13,
+          "dsk_offset": 66048,
+          "file_sector_index": 1
+        },
+        {
+          "track": 16,
+          "sector": 12,
+          "dsk_offset": 66304,
+          "file_sector_index": 2
+        },
+        {
+          "track": 16,
+          "sector": 11,
+          "dsk_offset": 66560,
+          "file_sector_index": 3
+        },
+        {
+          "track": 16,
+          "sector": 10,
+          "dsk_offset": 66816,
+          "file_sector_index": 4
+        },
+        {
+          "track": 16,
+          "sector": 9,
+          "dsk_offset": 67072,
+          "file_sector_index": 5
+        },
+        {
+          "track": 16,
+          "sector": 8,
+          "dsk_offset": 67328,
+          "file_sector_index": 6
+        },
+        {
+          "track": 16,
+          "sector": 7,
+          "dsk_offset": 67584,
+          "file_sector_index": 7
+        },
+        {
+          "track": 16,
+          "sector": 6,
+          "dsk_offset": 67840,
+          "file_sector_index": 8
+        },
+        {
+          "track": 16,
+          "sector": 5,
+          "dsk_offset": 68096,
+          "file_sector_index": 9
+        },
+        {
+          "track": 16,
+          "sector": 4,
+          "dsk_offset": 68352,
+          "file_sector_index": 10
+        },
+        {
+          "track": 16,
+          "sector": 3,
+          "dsk_offset": 68608,
+          "file_sector_index": 11
+        },
+        {
+          "track": 16,
+          "sector": 2,
+          "dsk_offset": 68864,
+          "file_sector_index": 12
+        },
+        {
+          "track": 16,
+          "sector": 1,
+          "dsk_offset": 69120,
+          "file_sector_index": 13
+        },
+        {
+          "track": 16,
+          "sector": 0,
+          "dsk_offset": 65536,
+          "file_sector_index": 14
+        },
+        {
+          "track": 15,
+          "sector": 15,
+          "dsk_offset": 65280,
+          "file_sector_index": 15
+        },
+        {
+          "track": 15,
+          "sector": 14,
+          "dsk_offset": 61696,
+          "file_sector_index": 16
+        },
+        {
+          "track": 15,
+          "sector": 13,
+          "dsk_offset": 61952,
+          "file_sector_index": 17
+        },
+        {
+          "track": 15,
+          "sector": 12,
+          "dsk_offset": 62208,
+          "file_sector_index": 18
+        },
+        {
+          "track": 15,
+          "sector": 11,
+          "dsk_offset": 62464,
+          "file_sector_index": 19
+        },
+        {
+          "track": 15,
+          "sector": 10,
+          "dsk_offset": 62720,
+          "file_sector_index": 20
+        },
+        {
+          "track": 15,
+          "sector": 9,
+          "dsk_offset": 62976,
+          "file_sector_index": 21
+        },
+        {
+          "track": 15,
+          "sector": 8,
+          "dsk_offset": 63232,
+          "file_sector_index": 22
+        },
+        {
+          "track": 15,
+          "sector": 7,
+          "dsk_offset": 63488,
+          "file_sector_index": 23
+        },
+        {
+          "track": 15,
+          "sector": 6,
+          "dsk_offset": 63744,
+          "file_sector_index": 24
+        },
+        {
+          "track": 15,
+          "sector": 5,
+          "dsk_offset": 64000,
+          "file_sector_index": 25
+        },
+        {
+          "track": 15,
+          "sector": 4,
+          "dsk_offset": 64256,
+          "file_sector_index": 26
+        },
+        {
+          "track": 15,
+          "sector": 3,
+          "dsk_offset": 64512,
+          "file_sector_index": 27
+        },
+        {
+          "track": 15,
+          "sector": 2,
+          "dsk_offset": 64768,
+          "file_sector_index": 28
+        },
+        {
+          "track": 15,
+          "sector": 1,
+          "dsk_offset": 65024,
+          "file_sector_index": 29
+        },
+        {
+          "track": 15,
+          "sector": 0,
+          "dsk_offset": 61440,
+          "file_sector_index": 30
+        },
+        {
+          "track": 14,
+          "sector": 15,
+          "dsk_offset": 61184,
+          "file_sector_index": 31
+        },
+        {
+          "track": 14,
+          "sector": 14,
+          "dsk_offset": 57600,
+          "file_sector_index": 32
+        },
+        {
+          "track": 14,
+          "sector": 13,
+          "dsk_offset": 57856,
+          "file_sector_index": 33
+        },
+        {
+          "track": 14,
+          "sector": 12,
+          "dsk_offset": 58112,
+          "file_sector_index": 34
+        },
+        {
+          "track": 14,
+          "sector": 11,
+          "dsk_offset": 58368,
+          "file_sector_index": 35
+        },
+        {
+          "track": 14,
+          "sector": 10,
+          "dsk_offset": 58624,
+          "file_sector_index": 36
+        },
+        {
+          "track": 14,
+          "sector": 9,
+          "dsk_offset": 58880,
+          "file_sector_index": 37
+        },
+        {
+          "track": 14,
+          "sector": 8,
+          "dsk_offset": 59136,
+          "file_sector_index": 38
+        },
+        {
+          "track": 14,
+          "sector": 7,
+          "dsk_offset": 59392,
+          "file_sector_index": 39
+        },
+        {
+          "track": 14,
+          "sector": 6,
+          "dsk_offset": 59648,
+          "file_sector_index": 40
+        },
+        {
+          "track": 14,
+          "sector": 5,
+          "dsk_offset": 59904,
+          "file_sector_index": 41
+        },
+        {
+          "track": 14,
+          "sector": 4,
+          "dsk_offset": 60160,
+          "file_sector_index": 42
+        },
+        {
+          "track": 14,
+          "sector": 3,
+          "dsk_offset": 60416,
+          "file_sector_index": 43
+        },
+        {
+          "track": 14,
+          "sector": 2,
+          "dsk_offset": 60672,
+          "file_sector_index": 44
+        },
+        {
+          "track": 14,
+          "sector": 1,
+          "dsk_offset": 60928,
+          "file_sector_index": 45
+        },
+        {
+          "track": 14,
+          "sector": 0,
+          "dsk_offset": 57344,
+          "file_sector_index": 46
+        },
+        {
+          "track": 13,
+          "sector": 15,
+          "dsk_offset": 57088,
+          "file_sector_index": 47
+        },
+        {
+          "track": 13,
+          "sector": 14,
+          "dsk_offset": 53504,
+          "file_sector_index": 48
+        },
+        {
+          "track": 13,
+          "sector": 13,
+          "dsk_offset": 53760,
+          "file_sector_index": 49
+        },
+        {
+          "track": 13,
+          "sector": 12,
+          "dsk_offset": 54016,
+          "file_sector_index": 50
+        },
+        {
+          "track": 13,
+          "sector": 11,
+          "dsk_offset": 54272,
+          "file_sector_index": 51
+        },
+        {
+          "track": 13,
+          "sector": 10,
+          "dsk_offset": 54528,
+          "file_sector_index": 52
+        },
+        {
+          "track": 13,
+          "sector": 9,
+          "dsk_offset": 54784,
+          "file_sector_index": 53
+        },
+        {
+          "track": 13,
+          "sector": 8,
+          "dsk_offset": 55040,
+          "file_sector_index": 54
+        },
+        {
+          "track": 13,
+          "sector": 7,
+          "dsk_offset": 55296,
+          "file_sector_index": 55
+        },
+        {
+          "track": 13,
+          "sector": 6,
+          "dsk_offset": 55552,
+          "file_sector_index": 56
+        },
+        {
+          "track": 13,
+          "sector": 5,
+          "dsk_offset": 55808,
+          "file_sector_index": 57
+        },
+        {
+          "track": 13,
+          "sector": 4,
+          "dsk_offset": 56064,
+          "file_sector_index": 58
+        },
+        {
+          "track": 13,
+          "sector": 3,
+          "dsk_offset": 56320,
+          "file_sector_index": 59
+        },
+        {
+          "track": 13,
+          "sector": 2,
+          "dsk_offset": 56576,
+          "file_sector_index": 60
+        },
+        {
+          "track": 13,
+          "sector": 1,
+          "dsk_offset": 56832,
+          "file_sector_index": 61
+        },
+        {
+          "track": 13,
+          "sector": 0,
+          "dsk_offset": 53248,
+          "file_sector_index": 62
+        },
+        {
+          "track": 18,
+          "sector": 15,
+          "dsk_offset": 77568,
+          "file_sector_index": 63
+        },
+        {
+          "track": 18,
+          "sector": 14,
+          "dsk_offset": 73984,
+          "file_sector_index": 64
+        },
+        {
+          "track": 18,
+          "sector": 13,
+          "dsk_offset": 74240,
+          "file_sector_index": 65
+        },
+        {
+          "track": 18,
+          "sector": 12,
+          "dsk_offset": 74496,
+          "file_sector_index": 66
+        },
+        {
+          "track": 18,
+          "sector": 11,
+          "dsk_offset": 74752,
+          "file_sector_index": 67
+        },
+        {
+          "track": 18,
+          "sector": 10,
+          "dsk_offset": 75008,
+          "file_sector_index": 68
+        },
+        {
+          "track": 18,
+          "sector": 9,
+          "dsk_offset": 75264,
+          "file_sector_index": 69
+        },
+        {
+          "track": 18,
+          "sector": 8,
+          "dsk_offset": 75520,
+          "file_sector_index": 70
+        },
+        {
+          "track": 18,
+          "sector": 7,
+          "dsk_offset": 75776,
+          "file_sector_index": 71
+        },
+        {
+          "track": 18,
+          "sector": 6,
+          "dsk_offset": 76032,
+          "file_sector_index": 72
+        },
+        {
+          "track": 18,
+          "sector": 5,
+          "dsk_offset": 76288,
+          "file_sector_index": 73
+        },
+        {
+          "track": 18,
+          "sector": 4,
+          "dsk_offset": 76544,
+          "file_sector_index": 74
+        },
+        {
+          "track": 18,
+          "sector": 3,
+          "dsk_offset": 76800,
+          "file_sector_index": 75
+        },
+        {
+          "track": 18,
+          "sector": 2,
+          "dsk_offset": 77056,
+          "file_sector_index": 76
+        },
+        {
+          "track": 18,
+          "sector": 1,
+          "dsk_offset": 77312,
+          "file_sector_index": 77
+        },
+        {
+          "track": 18,
+          "sector": 0,
+          "dsk_offset": 73728,
+          "file_sector_index": 78
+        },
+        {
+          "track": 19,
+          "sector": 15,
+          "dsk_offset": 81664,
+          "file_sector_index": 79
+        },
+        {
+          "track": 19,
+          "sector": 14,
+          "dsk_offset": 78080,
+          "file_sector_index": 80
+        },
+        {
+          "track": 19,
+          "sector": 13,
+          "dsk_offset": 78336,
+          "file_sector_index": 81
+        },
+        {
+          "track": 19,
+          "sector": 12,
+          "dsk_offset": 78592,
+          "file_sector_index": 82
+        },
+        {
+          "track": 19,
+          "sector": 11,
+          "dsk_offset": 78848,
+          "file_sector_index": 83
+        },
+        {
+          "track": 19,
+          "sector": 10,
+          "dsk_offset": 79104,
+          "file_sector_index": 84
+        },
+        {
+          "track": 19,
+          "sector": 9,
+          "dsk_offset": 79360,
+          "file_sector_index": 85
+        },
+        {
+          "track": 19,
+          "sector": 8,
+          "dsk_offset": 79616,
+          "file_sector_index": 86
+        },
+        {
+          "track": 19,
+          "sector": 7,
+          "dsk_offset": 79872,
+          "file_sector_index": 87
+        },
+        {
+          "track": 19,
+          "sector": 6,
+          "dsk_offset": 80128,
+          "file_sector_index": 88
+        },
+        {
+          "track": 19,
+          "sector": 5,
+          "dsk_offset": 80384,
+          "file_sector_index": 89
+        },
+        {
+          "track": 19,
+          "sector": 4,
+          "dsk_offset": 80640,
+          "file_sector_index": 90
+        },
+        {
+          "track": 19,
+          "sector": 3,
+          "dsk_offset": 80896,
+          "file_sector_index": 91
+        },
+        {
+          "track": 19,
+          "sector": 2,
+          "dsk_offset": 81152,
+          "file_sector_index": 92
+        },
+        {
+          "track": 19,
+          "sector": 1,
+          "dsk_offset": 81408,
+          "file_sector_index": 93
+        },
+        {
+          "track": 19,
+          "sector": 0,
+          "dsk_offset": 77824,
+          "file_sector_index": 94
+        },
+        {
+          "track": 20,
+          "sector": 15,
+          "dsk_offset": 85760,
+          "file_sector_index": 95
+        },
+        {
+          "track": 20,
+          "sector": 14,
+          "dsk_offset": 82176,
+          "file_sector_index": 96
+        },
+        {
+          "track": 20,
+          "sector": 13,
+          "dsk_offset": 82432,
+          "file_sector_index": 97
+        },
+        {
+          "track": 20,
+          "sector": 12,
+          "dsk_offset": 82688,
+          "file_sector_index": 98
+        },
+        {
+          "track": 20,
+          "sector": 11,
+          "dsk_offset": 82944,
+          "file_sector_index": 99
+        },
+        {
+          "track": 20,
+          "sector": 10,
+          "dsk_offset": 83200,
+          "file_sector_index": 100
+        },
+        {
+          "track": 20,
+          "sector": 9,
+          "dsk_offset": 83456,
+          "file_sector_index": 101
+        },
+        {
+          "track": 20,
+          "sector": 8,
+          "dsk_offset": 83712,
+          "file_sector_index": 102
+        },
+        {
+          "track": 20,
+          "sector": 7,
+          "dsk_offset": 83968,
+          "file_sector_index": 103
+        },
+        {
+          "track": 20,
+          "sector": 6,
+          "dsk_offset": 84224,
+          "file_sector_index": 104
+        },
+        {
+          "track": 20,
+          "sector": 5,
+          "dsk_offset": 84480,
+          "file_sector_index": 105
+        },
+        {
+          "track": 20,
+          "sector": 4,
+          "dsk_offset": 84736,
+          "file_sector_index": 106
+        },
+        {
+          "track": 20,
+          "sector": 3,
+          "dsk_offset": 84992,
+          "file_sector_index": 107
+        },
+        {
+          "track": 20,
+          "sector": 2,
+          "dsk_offset": 85248,
+          "file_sector_index": 108
+        },
+        {
+          "track": 20,
+          "sector": 1,
+          "dsk_offset": 85504,
+          "file_sector_index": 109
+        },
+        {
+          "track": 20,
+          "sector": 0,
+          "dsk_offset": 81920,
+          "file_sector_index": 110
+        },
+        {
+          "track": 21,
+          "sector": 15,
+          "dsk_offset": 89856,
+          "file_sector_index": 111
+        },
+        {
+          "track": 21,
+          "sector": 14,
+          "dsk_offset": 86272,
+          "file_sector_index": 112
+        },
+        {
+          "track": 21,
+          "sector": 13,
+          "dsk_offset": 86528,
+          "file_sector_index": 113
+        },
+        {
+          "track": 21,
+          "sector": 12,
+          "dsk_offset": 86784,
+          "file_sector_index": 114
+        },
+        {
+          "track": 21,
+          "sector": 11,
+          "dsk_offset": 87040,
+          "file_sector_index": 115
+        },
+        {
+          "track": 21,
+          "sector": 10,
+          "dsk_offset": 87296,
+          "file_sector_index": 116
+        },
+        {
+          "track": 21,
+          "sector": 9,
+          "dsk_offset": 87552,
+          "file_sector_index": 117
+        },
+        {
+          "track": 21,
+          "sector": 8,
+          "dsk_offset": 87808,
+          "file_sector_index": 118
+        },
+        {
+          "track": 21,
+          "sector": 7,
+          "dsk_offset": 88064,
+          "file_sector_index": 119
+        },
+        {
+          "track": 21,
+          "sector": 6,
+          "dsk_offset": 88320,
+          "file_sector_index": 120
+        },
+        {
+          "track": 21,
+          "sector": 5,
+          "dsk_offset": 88576,
+          "file_sector_index": 121
+        },
+        {
+          "track": 21,
+          "sector": 3,
+          "dsk_offset": 89088,
+          "file_sector_index": 122
+        },
+        {
+          "track": 21,
+          "sector": 2,
+          "dsk_offset": 89344,
+          "file_sector_index": 123
+        },
+        {
+          "track": 21,
+          "sector": 1,
+          "dsk_offset": 89600,
+          "file_sector_index": 124
+        },
+        {
+          "track": 21,
+          "sector": 0,
+          "dsk_offset": 86016,
+          "file_sector_index": 125
+        },
+        {
+          "track": 22,
+          "sector": 15,
+          "dsk_offset": 93952,
+          "file_sector_index": 126
+        },
+        {
+          "track": 22,
+          "sector": 14,
+          "dsk_offset": 90368,
+          "file_sector_index": 127
+        },
+        {
+          "track": 22,
+          "sector": 13,
+          "dsk_offset": 90624,
+          "file_sector_index": 128
+        },
+        {
+          "track": 22,
+          "sector": 12,
+          "dsk_offset": 90880,
+          "file_sector_index": 129
+        },
+        {
+          "track": 22,
+          "sector": 11,
+          "dsk_offset": 91136,
+          "file_sector_index": 130
+        },
+        {
+          "track": 22,
+          "sector": 10,
+          "dsk_offset": 91392,
+          "file_sector_index": 131
+        },
+        {
+          "track": 22,
+          "sector": 9,
+          "dsk_offset": 91648,
+          "file_sector_index": 132
+        },
+        {
+          "track": 22,
+          "sector": 8,
+          "dsk_offset": 91904,
+          "file_sector_index": 133
+        },
+        {
+          "track": 22,
+          "sector": 7,
+          "dsk_offset": 92160,
+          "file_sector_index": 134
+        },
+        {
+          "track": 22,
+          "sector": 6,
+          "dsk_offset": 92416,
+          "file_sector_index": 135
+        },
+        {
+          "track": 22,
+          "sector": 5,
+          "dsk_offset": 92672,
+          "file_sector_index": 136
+        },
+        {
+          "track": 22,
+          "sector": 4,
+          "dsk_offset": 92928,
+          "file_sector_index": 137
+        },
+        {
+          "track": 22,
+          "sector": 3,
+          "dsk_offset": 93184,
+          "file_sector_index": 138
+        },
+        {
+          "track": 22,
+          "sector": 2,
+          "dsk_offset": 93440,
+          "file_sector_index": 139
+        },
+        {
+          "track": 22,
+          "sector": 1,
+          "dsk_offset": 93696,
+          "file_sector_index": 140
+        },
+        {
+          "track": 22,
+          "sector": 0,
+          "dsk_offset": 90112,
+          "file_sector_index": 141
+        },
+        {
+          "track": 23,
+          "sector": 15,
+          "dsk_offset": 98048,
+          "file_sector_index": 142
+        },
+        {
+          "track": 23,
+          "sector": 14,
+          "dsk_offset": 94464,
+          "file_sector_index": 143
+        }
+      ],
+      "allocated_bytes": 36864,
+      "sha256": "56927844b7f35241c88b9ee57654325fd6111976ccc718c20326c2e5b852af17",
+      "payload_file": "lode-runner.bin"
+    },
+    {
+      "name": "HELLO",
+      "type": 2,
+      "locked": false,
+      "catalog_offset": 73518,
+      "catalog_sector_count": 2,
+      "length": 53,
+      "header_bytes": 2,
+      "ts_lists": [
+        {
+          "track": 23,
+          "sector": 13,
+          "dsk_offset": 94720,
+          "file_sector_index": 0
+        }
+      ],
+      "sector_map": [
+        {
+          "track": 23,
+          "sector": 12,
+          "dsk_offset": 94976,
+          "file_sector_index": 0
+        }
+      ],
+      "allocated_bytes": 256,
+      "sha256": "1d826d77db09a094311ae7e86db4fb38fb6b74e504101810c15f194f57428eec",
+      "payload_file": "hello.bin"
+    }
+  ]
+}

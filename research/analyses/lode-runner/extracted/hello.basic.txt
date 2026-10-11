@@ -1,0 +1,4 @@
+# Analytical Applesoft decoding; original BASIC file is hello.bin.
+# DOS payload starts at DSK=$017302.
+10 TEXT: HOME: HTAB 15: PRINT "LODE RUNNER": PRINT "\x04BRUN LODE RUNNER": NEW
+# The final payload byte $05 after the zero link is preserved in hello.bin.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "8-Bit Guidelines Builder"
+  short_description: "Turn historical findings into actionable machine-specific coding guides"
+  brand_color: "#3E657F"

@@ -1,0 +1,41 @@
+{
+  "source_sha256": "cbc048a55c2835f1b3b54696660e8902c84c25dac44a6dc94b13a7e8f81379ec",
+  "checks": "static byte reconstruction and analytical properties; no imported code execution",
+  "live_files": 2,
+  "game_bytes": 36611,
+  "game_data_sectors": 144,
+  "game_ts_lists": 2,
+  "listing_instructions_checked": 2185,
+  "hgr_rows_checked": 192,
+  "phase_pattern_pairs_checked": 896,
+  "unique_expansion_pairs": 512,
+  "token_slice_entries_checked": 2288,
+  "token_anomalies": [
+    {
+      "slice": 21,
+      "sprite_id": 102,
+      "address": "$B5EE",
+      "value": "$81",
+      "dsk_offset": 77301
+    },
+    {
+      "slice": 21,
+      "sprite_id": 103,
+      "address": "$B5EF",
+      "value": "$A8",
+      "dsk_offset": 77302
+    }
+  ],
+  "level_records_audited": 150,
+  "level_anomalies": [
+    136
+  ],
+  "unknown_loader_source_bytes": [
+    "$9700",
+    "$9701"
+  ],
+  "unresolved_level_disk_entry": "$0023 -> $1700",
+  "emulator_used": false,
+  "hardware_used": false,
+  "benchmarked": false
+}

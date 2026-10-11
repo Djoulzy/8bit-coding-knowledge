@@ -1,0 +1,27 @@
+{
+  "method": "Static byte assertions and translated Python models; no CPU execution",
+  "source_sha256": "4399db1c5469299f6a519abd890456ba1bbba70596d72096f1db4a84e5669370",
+  "extracted_hashes_checked": 5,
+  "core_sectors_checked": 160,
+  "relocation_copies_checked": 2,
+  "state_copy_loops_checked": 4,
+  "row_table_entries_checked": 192,
+  "reversal_table_entries_checked": 128,
+  "right_edge_addresses_checked": 192,
+  "shift_input_cases": 3584,
+  "join_input_cases": 114688,
+  "listed_instruction_records_checked": 2812,
+  "shifter_sha256": "bbe6626f589ed645e26b9b665969071bbfc1ad742652e731439fd8b547ba1430",
+  "copy_loop_cycles_calculated": {
+    "core": 241,
+    "with_rts": 247,
+    "with_jsr": 253
+  },
+  "benchmark": false,
+  "hardware_test": false,
+  "limits": [
+    "Boot ROM/RWTS, IRQ/stack and later disk paths not executed",
+    "Full clipping, compositor, actor AI, audio timing and frame rate untested",
+    "Translated models verify local algebra, not full binary correctness"
+  ]
+}

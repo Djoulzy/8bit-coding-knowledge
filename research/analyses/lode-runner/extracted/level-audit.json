@@ -1,0 +1,2968 @@
+[
+  {
+    "level": 1,
+    "track": 3,
+    "sector": 0,
+    "dsk_offset": 12288,
+    "sha256_sector": "dcda8898e1046f53ee4ae835f8460f820e5d70819dc85e80bc8e3ba472ac317b",
+    "tile_counts": {
+      "0": 276,
+      "1": 111,
+      "3": 27,
+      "4": 20,
+      "6": 4,
+      "7": 6,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 2,
+    "track": 3,
+    "sector": 1,
+    "dsk_offset": 15872,
+    "sha256_sector": "2f81362cf2f3e68b6b5b602f4a9d5fd863396bfeaefadd5b4e1c30b18875d8fb",
+    "tile_counts": {
+      "0": 258,
+      "1": 83,
+      "2": 24,
+      "3": 52,
+      "4": 16,
+      "5": 1,
+      "6": 2,
+      "7": 8,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 3,
+    "track": 3,
+    "sector": 2,
+    "dsk_offset": 15616,
+    "sha256_sector": "620782d8c8f68ac1d4e6d18e00c797c3826c847dd719a070522f671bec134264",
+    "tile_counts": {
+      "0": 235,
+      "1": 132,
+      "2": 7,
+      "3": 40,
+      "4": 20,
+      "6": 3,
+      "7": 7,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 4,
+    "track": 3,
+    "sector": 3,
+    "dsk_offset": 15360,
+    "sha256_sector": "3d02017bfa6dac4b0114daddec4432bb251e4338cee2bbf727d2b512867b7230",
+    "tile_counts": {
+      "0": 258,
+      "1": 63,
+      "3": 96,
+      "4": 11,
+      "6": 2,
+      "7": 14,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 5,
+    "track": 3,
+    "sector": 4,
+    "dsk_offset": 15104,
+    "sha256_sector": "28cc365bc3f55c9b8ad2bf4331af19abfc019eedcd7986e4144df01ce5404c82",
+    "tile_counts": {
+      "0": 281,
+      "1": 113,
+      "3": 34,
+      "6": 8,
+      "7": 7,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 6,
+    "track": 3,
+    "sector": 5,
+    "dsk_offset": 14848,
+    "sha256_sector": "62d7e85e7a51faf1099cddba36944abb2ca6939a906d23366630ad8f5680961f",
+    "tile_counts": {
+      "0": 113,
+      "1": 258,
+      "3": 47,
+      "5": 5,
+      "6": 3,
+      "7": 16,
+      "8": 5,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 7,
+    "track": 3,
+    "sector": 6,
+    "dsk_offset": 14592,
+    "sha256_sector": "fd763e7447fc0b6be342b50b1eaefd4c671153566dc26f10922a5d2453d1d3b2",
+    "tile_counts": {
+      "0": 285,
+      "1": 93,
+      "3": 42,
+      "4": 12,
+      "6": 3,
+      "7": 8,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 8,
+    "track": 3,
+    "sector": 7,
+    "dsk_offset": 14336,
+    "sha256_sector": "15f446596f38f210cf962c3488c449895dd3cbea88d9b689409f56f570c3d965",
+    "tile_counts": {
+      "0": 226,
+      "1": 110,
+      "2": 6,
+      "3": 58,
+      "4": 10,
+      "5": 6,
+      "6": 18,
+      "7": 7,
+      "8": 6,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 9,
+    "track": 3,
+    "sector": 8,
+    "dsk_offset": 14080,
+    "sha256_sector": "b7324d1a1485ed49c813548fd566969a184013c1110510de90699b35fa87bd7f",
+    "tile_counts": {
+      "0": 184,
+      "1": 179,
+      "2": 8,
+      "3": 23,
+      "4": 35,
+      "5": 7,
+      "6": 2,
+      "7": 4,
+      "8": 5,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 10,
+    "track": 3,
+    "sector": 9,
+    "dsk_offset": 13824,
+    "sha256_sector": "afb77805caefa85652a76a1304396b88f9bba67e9fa11a46b3bd4241253b9bb0",
+    "tile_counts": {
+      "0": 246,
+      "1": 151,
+      "2": 2,
+      "3": 26,
+      "4": 3,
+      "6": 7,
+      "7": 10,
+      "8": 2,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 11,
+    "track": 3,
+    "sector": 10,
+    "dsk_offset": 13568,
+    "sha256_sector": "5ed9300a8dd3b5c5de7ffc010e017ce84753b50b67f8af5fdd59d4da6930fcb3",
+    "tile_counts": {
+      "0": 334,
+      "1": 33,
+      "3": 60,
+      "6": 1,
+      "7": 15,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 12,
+    "track": 3,
+    "sector": 11,
+    "dsk_offset": 13312,
+    "sha256_sector": "59b78c17d4760a260553eaccb0ccb9c9fd23ca7f9119cf3ecbf17a2edc4e2a16",
+    "tile_counts": {
+      "0": 236,
+      "1": 123,
+      "2": 3,
+      "3": 45,
+      "4": 23,
+      "7": 14,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 13,
+    "track": 3,
+    "sector": 12,
+    "dsk_offset": 13056,
+    "sha256_sector": "15b0f875febfca592fcdb608acc1859eb55157dcde674247936b0c96e27e9afd",
+    "tile_counts": {
+      "0": 89,
+      "1": 104,
+      "2": 26,
+      "3": 134,
+      "5": 63,
+      "6": 14,
+      "7": 13,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 14,
+    "track": 3,
+    "sector": 13,
+    "dsk_offset": 12800,
+    "sha256_sector": "491061de80f27afad0e13ecfd5bf78294ba71acb662016c94e686452866569f4",
+    "tile_counts": {
+      "0": 264,
+      "3": 67,
+      "4": 101,
+      "7": 12,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 15,
+    "track": 3,
+    "sector": 14,
+    "dsk_offset": 12544,
+    "sha256_sector": "63a54ac93b4f2aeae42e0f9893c82864a0752d363dfdd1050627ea0a7edcf718",
+    "tile_counts": {
+      "0": 250,
+      "1": 117,
+      "2": 14,
+      "3": 28,
+      "6": 11,
+      "7": 23,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 16,
+    "track": 3,
+    "sector": 15,
+    "dsk_offset": 16128,
+    "sha256_sector": "6154894718dc4a376efe1b99e1794caaa2504b25e497996b30a77dde27e73513",
+    "tile_counts": {
+      "0": 282,
+      "1": 103,
+      "3": 32,
+      "5": 2,
+      "6": 15,
+      "7": 11,
+      "8": 2,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 17,
+    "track": 4,
+    "sector": 0,
+    "dsk_offset": 16384,
+    "sha256_sector": "8d5ce4d7e522f3c73d7f01c466d554ddc71da8d9589d3e1b594b2b421e43a4fc",
+    "tile_counts": {
+      "0": 193,
+      "1": 189,
+      "3": 36,
+      "4": 8,
+      "5": 2,
+      "6": 6,
+      "7": 10,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 18,
+    "track": 4,
+    "sector": 1,
+    "dsk_offset": 19968,
+    "sha256_sector": "853191fa699952acc693363e7f15c904ae76b74cb02acd41c8807ba172303749",
+    "tile_counts": {
+      "0": 242,
+      "1": 137,
+      "2": 7,
+      "3": 45,
+      "5": 2,
+      "6": 2,
+      "7": 9,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 19,
+    "track": 4,
+    "sector": 2,
+    "dsk_offset": 19712,
+    "sha256_sector": "36a995862624368b93f59d15cf6bdfd516dda619e1ca6ece660443234540558f",
+    "tile_counts": {
+      "0": 237,
+      "1": 158,
+      "3": 30,
+      "7": 18,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 20,
+    "track": 4,
+    "sector": 3,
+    "dsk_offset": 19456,
+    "sha256_sector": "cdd5aa9344554f354845779f4585576f6f643eac1ab0a0dec785628ecdf0fdcc",
+    "tile_counts": {
+      "0": 262,
+      "1": 116,
+      "3": 33,
+      "4": 15,
+      "5": 2,
+      "7": 15,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 21,
+    "track": 4,
+    "sector": 4,
+    "dsk_offset": 19200,
+    "sha256_sector": "315a9ff2c4b6ada3512bb9519669e146b8ff2f575a7c335e01746540591e10f9",
+    "tile_counts": {
+      "0": 155,
+      "1": 151,
+      "2": 26,
+      "3": 64,
+      "4": 30,
+      "6": 5,
+      "7": 13,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 22,
+    "track": 4,
+    "sector": 5,
+    "dsk_offset": 18944,
+    "sha256_sector": "0a1572db12cd45262aaa25d6657fa2d0f8bd74a832fc1c6af44a1fc100f70b37",
+    "tile_counts": {
+      "0": 289,
+      "1": 84,
+      "3": 37,
+      "4": 14,
+      "7": 20,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 23,
+    "track": 4,
+    "sector": 6,
+    "dsk_offset": 18688,
+    "sha256_sector": "c84c572f27d8b17549dbf90413f1108cc7ae307629eb667fee6ae0e72c66c4ec",
+    "tile_counts": {
+      "0": 169,
+      "1": 122,
+      "2": 47,
+      "3": 52,
+      "4": 34,
+      "6": 4,
+      "7": 16,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 24,
+    "track": 4,
+    "sector": 7,
+    "dsk_offset": 18432,
+    "sha256_sector": "8f0f705a1c5affd8385e77e25292fa43067304302de1e1153846617d07cd1dc3",
+    "tile_counts": {
+      "0": 290,
+      "1": 77,
+      "2": 28,
+      "3": 28,
+      "6": 10,
+      "7": 11,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 25,
+    "track": 4,
+    "sector": 8,
+    "dsk_offset": 18176,
+    "sha256_sector": "63f7f78585587b8cc4ce2acbe2adc2ddbb3496d00cec1e827ae4f23550dd643f",
+    "tile_counts": {
+      "0": 188,
+      "1": 156,
+      "2": 28,
+      "3": 48,
+      "4": 8,
+      "5": 3,
+      "6": 4,
+      "7": 10,
+      "8": 2,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 26,
+    "track": 4,
+    "sector": 9,
+    "dsk_offset": 17920,
+    "sha256_sector": "579e5327236b2b3d148a210ae1f0a17bcd8c005e3d1a4b853f625ee85edb0fd0",
+    "tile_counts": {
+      "0": 241,
+      "1": 110,
+      "2": 33,
+      "3": 39,
+      "4": 7,
+      "6": 3,
+      "7": 11,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 27,
+    "track": 4,
+    "sector": 10,
+    "dsk_offset": 17664,
+    "sha256_sector": "2278ca6f0a676dbebf1548aafe0715e7a94f9e62fbaca7823d59fbce3f6de0fb",
+    "tile_counts": {
+      "0": 219,
+      "1": 95,
+      "2": 42,
+      "3": 41,
+      "4": 10,
+      "6": 16,
+      "7": 20,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 28,
+    "track": 4,
+    "sector": 11,
+    "dsk_offset": 17408,
+    "sha256_sector": "a4ab48187011181c5edaf0f03a94554562ebdc50944a0ae076ce925574056170",
+    "tile_counts": {
+      "0": 211,
+      "1": 125,
+      "2": 41,
+      "3": 33,
+      "4": 19,
+      "6": 3,
+      "7": 12,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 29,
+    "track": 4,
+    "sector": 12,
+    "dsk_offset": 17152,
+    "sha256_sector": "3a8dfc32dff9c024ab1480ccb0d3e942ddafe97b4b3683a65d32b3ad9f184ae6",
+    "tile_counts": {
+      "0": 265,
+      "1": 116,
+      "3": 31,
+      "4": 19,
+      "5": 1,
+      "7": 12,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 30,
+    "track": 4,
+    "sector": 13,
+    "dsk_offset": 16896,
+    "sha256_sector": "def023d37d740fae1b37371ed2477cc65ae5f6e976eee93136891c90142b5ee9",
+    "tile_counts": {
+      "0": 288,
+      "1": 88,
+      "2": 26,
+      "3": 15,
+      "5": 5,
+      "6": 2,
+      "7": 18,
+      "8": 5,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 31,
+    "track": 4,
+    "sector": 14,
+    "dsk_offset": 16640,
+    "sha256_sector": "77c38501130a669c7e475ce73fc9783a63e252234dda6e939af7ac561eec3b46",
+    "tile_counts": {
+      "0": 165,
+      "1": 150,
+      "3": 46,
+      "4": 55,
+      "5": 16,
+      "6": 5,
+      "7": 7,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 32,
+    "track": 4,
+    "sector": 15,
+    "dsk_offset": 20224,
+    "sha256_sector": "d31bc307e610c5bc1fa72c06e3ed7a54a88a346709be461e6fe924fc186b0cf6",
+    "tile_counts": {
+      "0": 221,
+      "1": 132,
+      "2": 5,
+      "3": 41,
+      "4": 28,
+      "6": 2,
+      "7": 16,
+      "8": 2,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 33,
+    "track": 5,
+    "sector": 0,
+    "dsk_offset": 20480,
+    "sha256_sector": "9794f224ad96d8092138736d9d187ddd228e5fbf1f9643382d317b596fd5e1a2",
+    "tile_counts": {
+      "0": 141,
+      "1": 225,
+      "2": 10,
+      "3": 42,
+      "4": 10,
+      "6": 7,
+      "7": 9,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 34,
+    "track": 5,
+    "sector": 1,
+    "dsk_offset": 24064,
+    "sha256_sector": "d987e6965351cc22cb986422ab2e382dd81fc2935b25ac7fd63ba45705c30aec",
+    "tile_counts": {
+      "0": 241,
+      "1": 72,
+      "3": 80,
+      "4": 16,
+      "5": 4,
+      "7": 30,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 35,
+    "track": 5,
+    "sector": 2,
+    "dsk_offset": 23808,
+    "sha256_sector": "1c4c273679a9a616f38b36b3abcc0ec7bb93ca14ef4d2f25e730b37c7f4182c9",
+    "tile_counts": {
+      "0": 189,
+      "1": 100,
+      "2": 100,
+      "3": 24,
+      "6": 6,
+      "7": 24,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 36,
+    "track": 5,
+    "sector": 3,
+    "dsk_offset": 23552,
+    "sha256_sector": "97b95fce54c60d2829bde8e474ede20ecde961bd6347f74bf547c91aa77bbffd",
+    "tile_counts": {
+      "0": 238,
+      "1": 87,
+      "2": 23,
+      "3": 42,
+      "4": 38,
+      "5": 2,
+      "7": 14,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 37,
+    "track": 5,
+    "sector": 4,
+    "dsk_offset": 23296,
+    "sha256_sector": "e5dd0d64516d722bc6404468d29c7b629316ff8f75a4b1f7cbcd64c19bff33fc",
+    "tile_counts": {
+      "0": 233,
+      "1": 118,
+      "2": 35,
+      "3": 42,
+      "4": 3,
+      "6": 3,
+      "7": 10,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 38,
+    "track": 5,
+    "sector": 5,
+    "dsk_offset": 23040,
+    "sha256_sector": "a1b8acb1d48012496ee5b06328499b20b177c45e9df5fe2f256a9fe11a4cfb74",
+    "tile_counts": {
+      "0": 201,
+      "1": 80,
+      "2": 78,
+      "3": 62,
+      "4": 9,
+      "6": 4,
+      "7": 9,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 39,
+    "track": 5,
+    "sector": 6,
+    "dsk_offset": 22784,
+    "sha256_sector": "4cf194f438a5bffafc09f48235b8758ca0a64c0610ced8bd97e695c6ddf095a9",
+    "tile_counts": {
+      "0": 145,
+      "1": 202,
+      "3": 80,
+      "4": 4,
+      "6": 4,
+      "7": 9,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 40,
+    "track": 5,
+    "sector": 7,
+    "dsk_offset": 22528,
+    "sha256_sector": "448f5d277e729377144b22bd53f5fb7dfe804e09449cb380db2af0507213f52c",
+    "tile_counts": {
+      "0": 191,
+      "1": 175,
+      "2": 17,
+      "3": 28,
+      "4": 6,
+      "5": 9,
+      "6": 3,
+      "7": 15,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 41,
+    "track": 5,
+    "sector": 8,
+    "dsk_offset": 22272,
+    "sha256_sector": "d686a72c2e18a0783dba4b9bede385818e4361c734a95d0737cc5b92a2be6487",
+    "tile_counts": {
+      "0": 209,
+      "1": 67,
+      "2": 23,
+      "3": 55,
+      "4": 58,
+      "5": 1,
+      "7": 29,
+      "8": 5,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 42,
+    "track": 5,
+    "sector": 9,
+    "dsk_offset": 22016,
+    "sha256_sector": "236e3b26590cede13e9ac02158bf84a829d7c285be656a2ad7a4105e50066752",
+    "tile_counts": {
+      "0": 189,
+      "1": 108,
+      "2": 59,
+      "3": 46,
+      "4": 15,
+      "5": 1,
+      "7": 26,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 43,
+    "track": 5,
+    "sector": 10,
+    "dsk_offset": 21760,
+    "sha256_sector": "4b6f8ebcd281ab5f8e63e7403abb83b0e5a838435d03bf89f7aa4e010a712a74",
+    "tile_counts": {
+      "0": 143,
+      "1": 139,
+      "2": 37,
+      "3": 111,
+      "6": 2,
+      "7": 11,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 44,
+    "track": 5,
+    "sector": 11,
+    "dsk_offset": 21504,
+    "sha256_sector": "b235b32df869faa003f8331eb659ea2a84db889dee81c10d23dbd249c1bfe309",
+    "tile_counts": {
+      "0": 146,
+      "1": 51,
+      "3": 225,
+      "6": 16,
+      "7": 6,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 45,
+    "track": 5,
+    "sector": 12,
+    "dsk_offset": 21248,
+    "sha256_sector": "35acf12325d132060e306be192eb91239f8e9cc2c172ce2bd4ceca17c79369e7",
+    "tile_counts": {
+      "0": 173,
+      "1": 77,
+      "2": 79,
+      "3": 52,
+      "4": 38,
+      "5": 7,
+      "6": 4,
+      "7": 14,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 46,
+    "track": 5,
+    "sector": 13,
+    "dsk_offset": 20992,
+    "sha256_sector": "81ecc9f6aaafde74908bc8e3811572d93d088d9ac91ccb371ff7819e30a38ffe",
+    "tile_counts": {
+      "0": 243,
+      "1": 128,
+      "2": 14,
+      "3": 35,
+      "4": 7,
+      "6": 3,
+      "7": 14,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 47,
+    "track": 5,
+    "sector": 14,
+    "dsk_offset": 20736,
+    "sha256_sector": "1f57ef3799d8fab7b61773fd1b9b8c614583e3b201ffdfb231407c747fe35a01",
+    "tile_counts": {
+      "0": 162,
+      "1": 125,
+      "2": 83,
+      "3": 40,
+      "4": 6,
+      "6": 15,
+      "7": 14,
+      "8": 2,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 48,
+    "track": 5,
+    "sector": 15,
+    "dsk_offset": 24320,
+    "sha256_sector": "d7ddac64b16dcb8ac5487feb5c36498cb2638dfdbfe60029f75fa100b2be2ba9",
+    "tile_counts": {
+      "0": 222,
+      "1": 79,
+      "2": 60,
+      "3": 61,
+      "4": 7,
+      "6": 1,
+      "7": 14,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 49,
+    "track": 6,
+    "sector": 0,
+    "dsk_offset": 24576,
+    "sha256_sector": "798769590808e5f34df9d5f2d1c7dca8145cccdaafbc68a99d82c53fe34a9dcc",
+    "tile_counts": {
+      "0": 202,
+      "1": 97,
+      "2": 42,
+      "3": 50,
+      "4": 29,
+      "5": 1,
+      "7": 23,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 50,
+    "track": 6,
+    "sector": 1,
+    "dsk_offset": 28160,
+    "sha256_sector": "45acab6051b83bcf20080a39060a5e05a3588ef8d7486cbd4e79a8137893028f",
+    "tile_counts": {
+      "0": 250,
+      "1": 85,
+      "2": 15,
+      "3": 45,
+      "4": 31,
+      "5": 4,
+      "7": 13,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 51,
+    "track": 6,
+    "sector": 2,
+    "dsk_offset": 27904,
+    "sha256_sector": "a399d02a4ecd4d84e3abb750d2251dde01b90e4b538449f53f46e64fd0cad92d",
+    "tile_counts": {
+      "0": 178,
+      "1": 110,
+      "2": 96,
+      "3": 33,
+      "4": 7,
+      "5": 2,
+      "6": 5,
+      "7": 13,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 52,
+    "track": 6,
+    "sector": 3,
+    "dsk_offset": 27648,
+    "sha256_sector": "3610300b89f6fbc13cd81b2217ded0a7b70499e9d72ce3f0d1b4f1de94efae7a",
+    "tile_counts": {
+      "0": 288,
+      "1": 6,
+      "2": 82,
+      "3": 30,
+      "4": 29,
+      "6": 1,
+      "7": 7,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 53,
+    "track": 6,
+    "sector": 4,
+    "dsk_offset": 27392,
+    "sha256_sector": "2d8e4bbe5240cba789fafa22fc6206f7663d1a4176206a99d4e2947aadb07bf8",
+    "tile_counts": {
+      "0": 165,
+      "1": 209,
+      "3": 40,
+      "4": 1,
+      "5": 3,
+      "6": 1,
+      "7": 24,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 54,
+    "track": 6,
+    "sector": 5,
+    "dsk_offset": 27136,
+    "sha256_sector": "1bbcce5de3be3bee772db9ac67e1fddc247267e1e4f3474a7eed0a05f1ecd93e",
+    "tile_counts": {
+      "0": 179,
+      "1": 230,
+      "3": 13,
+      "6": 2,
+      "7": 18,
+      "8": 5,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 55,
+    "track": 6,
+    "sector": 6,
+    "dsk_offset": 26880,
+    "sha256_sector": "f8a99be416354a757250f3c1f54384ba573a936b76fe91b27b97bdce63bdc072",
+    "tile_counts": {
+      "0": 174,
+      "1": 148,
+      "2": 10,
+      "3": 42,
+      "4": 33,
+      "5": 1,
+      "6": 7,
+      "7": 29,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 56,
+    "track": 6,
+    "sector": 7,
+    "dsk_offset": 26624,
+    "sha256_sector": "e6d1d3e6da2d723a001e1c4e947cfa3fa8739169e7921c52c2d32af976a0ab15",
+    "tile_counts": {
+      "0": 143,
+      "1": 240,
+      "3": 14,
+      "4": 21,
+      "7": 27,
+      "8": 2,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 57,
+    "track": 6,
+    "sector": 8,
+    "dsk_offset": 26368,
+    "sha256_sector": "cae8b572602dd756bacc6f3ed585ebc2ae93feca625d4279073f5811e48d114e",
+    "tile_counts": {
+      "0": 83,
+      "1": 108,
+      "2": 112,
+      "3": 39,
+      "4": 61,
+      "6": 14,
+      "7": 27,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 58,
+    "track": 6,
+    "sector": 9,
+    "dsk_offset": 26112,
+    "sha256_sector": "05913326b03908e704dbb70ca06a3a7083e6bc21501da61a028214eb75400795",
+    "tile_counts": {
+      "0": 145,
+      "1": 160,
+      "2": 36,
+      "3": 67,
+      "4": 3,
+      "5": 2,
+      "6": 19,
+      "7": 11,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 59,
+    "track": 6,
+    "sector": 10,
+    "dsk_offset": 25856,
+    "sha256_sector": "79f4ca338a74bc93816f3003a470c62d77b4aebaa4cebae273276ba2225b5f94",
+    "tile_counts": {
+      "0": 293,
+      "1": 76,
+      "3": 37,
+      "4": 13,
+      "7": 24,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 60,
+    "track": 6,
+    "sector": 11,
+    "dsk_offset": 25600,
+    "sha256_sector": "0f6d87776be63106602e18a21f6026d7f427f22cbb29a2af0438fa36181e0176",
+    "tile_counts": {
+      "0": 196,
+      "1": 134,
+      "3": 55,
+      "4": 16,
+      "5": 15,
+      "7": 27,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 61,
+    "track": 6,
+    "sector": 12,
+    "dsk_offset": 25344,
+    "sha256_sector": "7f42331d61bfaed8ddd27bae55eaa884970b69fb5b824e43c2ec93e4b8462294",
+    "tile_counts": {
+      "0": 246,
+      "1": 64,
+      "2": 51,
+      "3": 39,
+      "4": 26,
+      "6": 2,
+      "7": 16,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 62,
+    "track": 6,
+    "sector": 13,
+    "dsk_offset": 25088,
+    "sha256_sector": "eb434e3d8b58d5c3eb20e452088bce3b300b040a1892cfd9a153971d893e6f9b",
+    "tile_counts": {
+      "0": 131,
+      "1": 219,
+      "3": 50,
+      "5": 16,
+      "6": 10,
+      "7": 16,
+      "8": 5,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 63,
+    "track": 6,
+    "sector": 14,
+    "dsk_offset": 24832,
+    "sha256_sector": "b916f85dd05b44deca28076475a54039d2c2fe2cddae0fa89c7b4a6dc83b19b3",
+    "tile_counts": {
+      "0": 145,
+      "1": 213,
+      "3": 72,
+      "4": 4,
+      "6": 2,
+      "7": 7,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 64,
+    "track": 6,
+    "sector": 15,
+    "dsk_offset": 28416,
+    "sha256_sector": "ca3f904925fbadd8ba390ba4d3d2dba9b474fb96e0aa8755f7a46924345fd7d8",
+    "tile_counts": {
+      "0": 218,
+      "1": 28,
+      "2": 123,
+      "3": 19,
+      "6": 15,
+      "7": 41,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 65,
+    "track": 7,
+    "sector": 0,
+    "dsk_offset": 28672,
+    "sha256_sector": "e85eebd392bf2ce419a52e0ea3c922436d082c20f908c54ae2724f32ff833c5f",
+    "tile_counts": {
+      "0": 174,
+      "1": 114,
+      "2": 17,
+      "3": 58,
+      "4": 43,
+      "5": 20,
+      "6": 9,
+      "7": 8,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 66,
+    "track": 7,
+    "sector": 1,
+    "dsk_offset": 32256,
+    "sha256_sector": "3f2acfb08feacfee49fde9019565313d14a08c0d54ac5c11dad2400303c7ecc8",
+    "tile_counts": {
+      "0": 135,
+      "1": 206,
+      "3": 60,
+      "4": 38,
+      "7": 4,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 67,
+    "track": 7,
+    "sector": 2,
+    "dsk_offset": 32000,
+    "sha256_sector": "d25af93eb8385596699e2641e49bc51040578109d5dc2b4238b4ea0898237214",
+    "tile_counts": {
+      "0": 258,
+      "1": 109,
+      "3": 43,
+      "4": 9,
+      "5": 1,
+      "6": 7,
+      "7": 17,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 68,
+    "track": 7,
+    "sector": 3,
+    "dsk_offset": 31744,
+    "sha256_sector": "aed3101d97590bacfdbf789b5166123038891ef6f784e35c77e5d9ee3b00fc7e",
+    "tile_counts": {
+      "0": 194,
+      "1": 70,
+      "2": 93,
+      "3": 38,
+      "4": 20,
+      "5": 3,
+      "6": 14,
+      "7": 11,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 69,
+    "track": 7,
+    "sector": 4,
+    "dsk_offset": 31488,
+    "sha256_sector": "6b11440e9d7599efb8560eda192a101863f4d98755b7fd75fab7e628fbf85331",
+    "tile_counts": {
+      "0": 121,
+      "1": 212,
+      "2": 10,
+      "3": 40,
+      "4": 24,
+      "5": 22,
+      "7": 14,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 70,
+    "track": 7,
+    "sector": 5,
+    "dsk_offset": 31232,
+    "sha256_sector": "33a19cdc1d6ba4d682e9fe5845636e23d74d95e6521d463296ace9a06302d744",
+    "tile_counts": {
+      "0": 307,
+      "1": 57,
+      "3": 35,
+      "4": 11,
+      "5": 5,
+      "6": 3,
+      "7": 27,
+      "8": 2,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 71,
+    "track": 7,
+    "sector": 6,
+    "dsk_offset": 30976,
+    "sha256_sector": "6aa78ed003f04610773b729cfa18b6fdfe2e703fd32cffd8152e838b44cedf28",
+    "tile_counts": {
+      "0": 167,
+      "1": 119,
+      "2": 57,
+      "3": 63,
+      "4": 7,
+      "5": 1,
+      "6": 3,
+      "7": 26,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 72,
+    "track": 7,
+    "sector": 7,
+    "dsk_offset": 30720,
+    "sha256_sector": "1e4f74b65e1f41d88a578a6e8249cc1c2385fe8e62833fbcced8c07814ac38b3",
+    "tile_counts": {
+      "0": 196,
+      "1": 140,
+      "3": 48,
+      "4": 35,
+      "5": 5,
+      "6": 2,
+      "7": 17,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 73,
+    "track": 7,
+    "sector": 8,
+    "dsk_offset": 30464,
+    "sha256_sector": "480706ef5337501b08abbf503cd01116c33c17b79e3e9406beb569a9949344ac",
+    "tile_counts": {
+      "0": 246,
+      "1": 61,
+      "2": 28,
+      "3": 48,
+      "4": 14,
+      "6": 30,
+      "7": 16,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 74,
+    "track": 7,
+    "sector": 9,
+    "dsk_offset": 30208,
+    "sha256_sector": "0fe0af727d42f52853ce0cffb2b63d17407ebff03ea8bdbfb42adf4ccaa9d640",
+    "tile_counts": {
+      "0": 165,
+      "1": 202,
+      "2": 24,
+      "3": 35,
+      "4": 4,
+      "5": 1,
+      "6": 4,
+      "7": 9,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 75,
+    "track": 7,
+    "sector": 10,
+    "dsk_offset": 29952,
+    "sha256_sector": "88b2dc13e201b01ad931302d761c0a1b5d7c2d46d5b1dbe66da3b563a59a01d0",
+    "tile_counts": {
+      "0": 299,
+      "1": 60,
+      "3": 43,
+      "4": 15,
+      "5": 15,
+      "7": 11,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 76,
+    "track": 7,
+    "sector": 11,
+    "dsk_offset": 29696,
+    "sha256_sector": "0e7b5c097fd9ff415e44a973002af099dbc58f50cf13ae3f401a5111d51acc4d",
+    "tile_counts": {
+      "0": 194,
+      "1": 151,
+      "2": 13,
+      "3": 43,
+      "4": 27,
+      "6": 3,
+      "7": 13,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 77,
+    "track": 7,
+    "sector": 12,
+    "dsk_offset": 29440,
+    "sha256_sector": "370b40620945a9a2c335f789961c7f34e55cedbc872406141855b577bbed71cb",
+    "tile_counts": {
+      "0": 156,
+      "1": 204,
+      "2": 14,
+      "3": 32,
+      "4": 8,
+      "7": 31,
+      "8": 2,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 78,
+    "track": 7,
+    "sector": 13,
+    "dsk_offset": 29184,
+    "sha256_sector": "138bbf4767edc3e3fa813f18d8d9a687dd8ec0d232e786223561d029f10b1bf4",
+    "tile_counts": {
+      "0": 171,
+      "1": 166,
+      "2": 15,
+      "3": 52,
+      "4": 11,
+      "5": 3,
+      "6": 15,
+      "7": 11,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 79,
+    "track": 7,
+    "sector": 14,
+    "dsk_offset": 28928,
+    "sha256_sector": "20f20ca675df5aa9195ec96cf7497c6bfc4590bf8b81baa3ded4b06ae6b094c2",
+    "tile_counts": {
+      "0": 165,
+      "1": 172,
+      "2": 16,
+      "3": 52,
+      "4": 13,
+      "5": 6,
+      "6": 8,
+      "7": 12,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 80,
+    "track": 7,
+    "sector": 15,
+    "dsk_offset": 32512,
+    "sha256_sector": "862935eb2a78f4414253bdae20f169b7e7edfb8d9295a7d503713ebe82637893",
+    "tile_counts": {
+      "0": 267,
+      "1": 60,
+      "2": 44,
+      "3": 28,
+      "4": 21,
+      "5": 5,
+      "7": 16,
+      "8": 6,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 81,
+    "track": 8,
+    "sector": 0,
+    "dsk_offset": 32768,
+    "sha256_sector": "75fa7d34e559c764d806af446f0487580a3e36d5af3969e40f9f0e68bfa32584",
+    "tile_counts": {
+      "0": 264,
+      "1": 87,
+      "2": 21,
+      "3": 28,
+      "4": 11,
+      "6": 2,
+      "7": 32,
+      "8": 2,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 82,
+    "track": 8,
+    "sector": 1,
+    "dsk_offset": 36352,
+    "sha256_sector": "461130b67bf7545548754db96bfab129d7a7f0011990b7ae04acf3e7fc328637",
+    "tile_counts": {
+      "0": 121,
+      "1": 87,
+      "2": 46,
+      "3": 54,
+      "4": 97,
+      "5": 10,
+      "6": 9,
+      "7": 19,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 83,
+    "track": 8,
+    "sector": 2,
+    "dsk_offset": 36096,
+    "sha256_sector": "346796af13be95bf781589deb51ed66e1b09e3c8f5010836ff9e3700cb5f610d",
+    "tile_counts": {
+      "0": 203,
+      "1": 141,
+      "3": 45,
+      "4": 5,
+      "5": 16,
+      "6": 15,
+      "7": 19,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 84,
+    "track": 8,
+    "sector": 3,
+    "dsk_offset": 35840,
+    "sha256_sector": "b00580568a4e18cdf48aab8ebe9fab45e647f03c8d60b112a187622af56abd00",
+    "tile_counts": {
+      "0": 165,
+      "1": 217,
+      "3": 41,
+      "6": 3,
+      "7": 17,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 85,
+    "track": 8,
+    "sector": 4,
+    "dsk_offset": 35584,
+    "sha256_sector": "993f89db1308c2bc1059fbfd18a15672134ba83a537e1b19adde6f93ccfa5c6b",
+    "tile_counts": {
+      "0": 248,
+      "1": 137,
+      "2": 14,
+      "3": 21,
+      "4": 1,
+      "5": 6,
+      "7": 17,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 86,
+    "track": 8,
+    "sector": 5,
+    "dsk_offset": 35328,
+    "sha256_sector": "7a0575fed05b58e29645d9823e4c253563733aca551521b5331e09cc49295b20",
+    "tile_counts": {
+      "0": 236,
+      "1": 128,
+      "3": 36,
+      "4": 26,
+      "5": 5,
+      "6": 4,
+      "7": 10,
+      "8": 2,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 87,
+    "track": 8,
+    "sector": 6,
+    "dsk_offset": 35072,
+    "sha256_sector": "90ba67913aeb0236233b135db593318719530f9326d76637b6945e7f5bb2288c",
+    "tile_counts": {
+      "0": 310,
+      "1": 28,
+      "3": 52,
+      "6": 2,
+      "7": 52,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 88,
+    "track": 8,
+    "sector": 7,
+    "dsk_offset": 34816,
+    "sha256_sector": "85711e5ceeef241fcfd7be0a6f871ea86794a0789bf8b660fc7eaf6121cd2db2",
+    "tile_counts": {
+      "0": 128,
+      "1": 128,
+      "2": 58,
+      "3": 69,
+      "4": 8,
+      "5": 35,
+      "6": 1,
+      "7": 17,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 89,
+    "track": 8,
+    "sector": 8,
+    "dsk_offset": 34560,
+    "sha256_sector": "11bc6c7539b78746f187d9b2a1e3b20d6a0da89d45e8a76b62779a6bcf5d0177",
+    "tile_counts": {
+      "0": 93,
+      "1": 102,
+      "2": 94,
+      "3": 53,
+      "4": 20,
+      "6": 48,
+      "7": 33,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 90,
+    "track": 8,
+    "sector": 9,
+    "dsk_offset": 34304,
+    "sha256_sector": "e817d33d95ad29e461f0f850847dfae49d768d1104c417e4981f335b0e4b9f53",
+    "tile_counts": {
+      "0": 239,
+      "1": 64,
+      "2": 33,
+      "3": 54,
+      "4": 18,
+      "5": 12,
+      "6": 4,
+      "7": 19,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 91,
+    "track": 8,
+    "sector": 10,
+    "dsk_offset": 34048,
+    "sha256_sector": "5d02448454d0fb0e665c391129f8ce3d77e35eab459e17d660f0b646660f972f",
+    "tile_counts": {
+      "0": 239,
+      "1": 91,
+      "2": 28,
+      "3": 54,
+      "4": 20,
+      "6": 3,
+      "7": 9,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 92,
+    "track": 8,
+    "sector": 11,
+    "dsk_offset": 33792,
+    "sha256_sector": "d7ac7fc34bb5bdb07389fff23fa47047dfc6a84a0e3015934a80c634b1eebc63",
+    "tile_counts": {
+      "0": 266,
+      "1": 102,
+      "2": 6,
+      "3": 29,
+      "4": 21,
+      "6": 9,
+      "7": 10,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 93,
+    "track": 8,
+    "sector": 12,
+    "dsk_offset": 33536,
+    "sha256_sector": "01936e871a22bf55c6b79a5595125405fee344789cd5fddff52f3b02d7edcce9",
+    "tile_counts": {
+      "0": 230,
+      "1": 54,
+      "2": 4,
+      "3": 125,
+      "4": 8,
+      "5": 8,
+      "6": 4,
+      "7": 10,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 94,
+    "track": 8,
+    "sector": 13,
+    "dsk_offset": 33280,
+    "sha256_sector": "7c015bc343e6658b2364a27440193942a2fb6e574faa752f1dafa32a6f11d318",
+    "tile_counts": {
+      "0": 101,
+      "1": 224,
+      "3": 69,
+      "4": 4,
+      "5": 1,
+      "6": 8,
+      "7": 37,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 95,
+    "track": 8,
+    "sector": 14,
+    "dsk_offset": 33024,
+    "sha256_sector": "3cd1c8d63e4f8701302095bc28b8a777084489454f01ab2538ad85c29712bf4a",
+    "tile_counts": {
+      "0": 200,
+      "1": 139,
+      "3": 51,
+      "4": 24,
+      "5": 15,
+      "6": 3,
+      "7": 12,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 96,
+    "track": 8,
+    "sector": 15,
+    "dsk_offset": 36608,
+    "sha256_sector": "50f73e17ad74a24c43279c978f011ad6ff88ebe789a03095e0ab90db9c4b9d69",
+    "tile_counts": {
+      "0": 143,
+      "1": 172,
+      "2": 14,
+      "3": 49,
+      "4": 36,
+      "5": 4,
+      "6": 3,
+      "7": 22,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 97,
+    "track": 9,
+    "sector": 0,
+    "dsk_offset": 36864,
+    "sha256_sector": "749fe56ff696d2bd6948789c15da3b294cad7295be8b65b64b17bfc263b17c6f",
+    "tile_counts": {
+      "0": 197,
+      "1": 80,
+      "2": 25,
+      "3": 95,
+      "4": 16,
+      "5": 8,
+      "7": 24,
+      "8": 2,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 98,
+    "track": 9,
+    "sector": 1,
+    "dsk_offset": 40448,
+    "sha256_sector": "9a45f4d17e89a6d011038059e4483115159dd4c076059bffcaf5a0e227fc6836",
+    "tile_counts": {
+      "0": 174,
+      "1": 122,
+      "2": 59,
+      "3": 35,
+      "4": 21,
+      "5": 1,
+      "6": 10,
+      "7": 22,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 99,
+    "track": 9,
+    "sector": 2,
+    "dsk_offset": 40192,
+    "sha256_sector": "d055faaa112c8e45c4c5542e14d96a777afc8d1c183060af8ada8bfb09abe999",
+    "tile_counts": {
+      "0": 172,
+      "1": 121,
+      "2": 37,
+      "3": 38,
+      "4": 54,
+      "5": 8,
+      "7": 12,
+      "8": 5,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 100,
+    "track": 9,
+    "sector": 3,
+    "dsk_offset": 39936,
+    "sha256_sector": "6437f7dfc4af9a958b302e60a752f0d1b6a7f6293271e23f5b9d85a011eda23d",
+    "tile_counts": {
+      "0": 211,
+      "1": 159,
+      "2": 12,
+      "3": 37,
+      "4": 1,
+      "7": 22,
+      "8": 5,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 101,
+    "track": 9,
+    "sector": 4,
+    "dsk_offset": 39680,
+    "sha256_sector": "d994cbc37b2314d233be8bbcf1c9f74617caf2d110ad5ee513ede9278fec2a7b",
+    "tile_counts": {
+      "0": 166,
+      "1": 153,
+      "3": 86,
+      "4": 15,
+      "7": 23,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 102,
+    "track": 9,
+    "sector": 5,
+    "dsk_offset": 39424,
+    "sha256_sector": "1964d21a92048ec48b550f2374c383ad044ac6b50e470449b021154589f6cfa8",
+    "tile_counts": {
+      "0": 283,
+      "1": 51,
+      "2": 27,
+      "3": 33,
+      "4": 35,
+      "7": 15,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 103,
+    "track": 9,
+    "sector": 6,
+    "dsk_offset": 39168,
+    "sha256_sector": "ea612ab4713b48c6abdf1fdea421bcdad5a323c0e17cc2eea9d72a3a55aa88bc",
+    "tile_counts": {
+      "0": 209,
+      "1": 164,
+      "3": 12,
+      "4": 23,
+      "5": 12,
+      "6": 4,
+      "7": 18,
+      "8": 5,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 104,
+    "track": 9,
+    "sector": 7,
+    "dsk_offset": 38912,
+    "sha256_sector": "8598b8faa4d48d69560314d9d012533b24f0b2469c404250857734c19a42bacb",
+    "tile_counts": {
+      "0": 248,
+      "1": 109,
+      "3": 64,
+      "6": 16,
+      "7": 7,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 105,
+    "track": 9,
+    "sector": 8,
+    "dsk_offset": 38656,
+    "sha256_sector": "c18079be767d21d54084bd74cd95f65a6158cb0405f583030a68d48529a1e459",
+    "tile_counts": {
+      "0": 94,
+      "1": 171,
+      "2": 4,
+      "3": 122,
+      "4": 8,
+      "5": 7,
+      "6": 15,
+      "7": 22,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 106,
+    "track": 9,
+    "sector": 9,
+    "dsk_offset": 38400,
+    "sha256_sector": "fc0eca6e2ec383ddac3d8070dab888925498ef45c7ac6ed5ffdee36894e238d3",
+    "tile_counts": {
+      "0": 141,
+      "1": 134,
+      "2": 66,
+      "3": 36,
+      "4": 40,
+      "5": 12,
+      "6": 4,
+      "7": 11,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 107,
+    "track": 9,
+    "sector": 10,
+    "dsk_offset": 38144,
+    "sha256_sector": "2046500398529fb5bcf0e4b748adc672ebdccfabecfff02ab18e29f8c404c714",
+    "tile_counts": {
+      "0": 149,
+      "1": 170,
+      "3": 30,
+      "4": 56,
+      "7": 40,
+      "8": 2,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 108,
+    "track": 9,
+    "sector": 11,
+    "dsk_offset": 37888,
+    "sha256_sector": "a438af4f6502fa9ce0c84d257bd2f32a6f81e327e8e580f1a487bdb72c72e26e",
+    "tile_counts": {
+      "0": 97,
+      "1": 141,
+      "2": 24,
+      "3": 59,
+      "4": 54,
+      "5": 5,
+      "6": 15,
+      "7": 49,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 109,
+    "track": 9,
+    "sector": 12,
+    "dsk_offset": 37632,
+    "sha256_sector": "c3f562d92544c01e1b3db9cb2248767dc9e7d335fe9330ed1b744f30eefbed75",
+    "tile_counts": {
+      "0": 77,
+      "1": 79,
+      "2": 68,
+      "3": 203,
+      "5": 1,
+      "7": 15,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 110,
+    "track": 9,
+    "sector": 13,
+    "dsk_offset": 37376,
+    "sha256_sector": "a71c0628354f2b07798c7f2005763199ea199a49d44b0bfd7c2ba7757a26106a",
+    "tile_counts": {
+      "0": 139,
+      "1": 128,
+      "2": 40,
+      "3": 63,
+      "4": 27,
+      "6": 7,
+      "7": 39,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 111,
+    "track": 9,
+    "sector": 14,
+    "dsk_offset": 37120,
+    "sha256_sector": "bd4a3879720a36ab017c3db19fca5801b0c856b9c687399a51e5832c7a8b0350",
+    "tile_counts": {
+      "0": 183,
+      "1": 76,
+      "3": 69,
+      "4": 98,
+      "7": 18,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 112,
+    "track": 9,
+    "sector": 15,
+    "dsk_offset": 40704,
+    "sha256_sector": "2fbb580e5777adb5d7e5da90657dec2cda658c5249d5fefa167002b3e0b24e0d",
+    "tile_counts": {
+      "0": 193,
+      "1": 101,
+      "2": 44,
+      "3": 56,
+      "4": 25,
+      "5": 5,
+      "6": 6,
+      "7": 14,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 113,
+    "track": 10,
+    "sector": 0,
+    "dsk_offset": 40960,
+    "sha256_sector": "3bfd795c7bf95268d36929f0b8ceaa4c2990cc1e56b11d6a88ec9942b630fd96",
+    "tile_counts": {
+      "0": 265,
+      "1": 82,
+      "2": 7,
+      "3": 64,
+      "5": 4,
+      "6": 4,
+      "7": 15,
+      "8": 6,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 114,
+    "track": 10,
+    "sector": 1,
+    "dsk_offset": 44544,
+    "sha256_sector": "3a450dafc019688dbbe7e33ccbae5912ef8717700b98905a8bf54eb57304395d",
+    "tile_counts": {
+      "0": 117,
+      "1": 255,
+      "3": 30,
+      "4": 12,
+      "5": 3,
+      "6": 2,
+      "7": 24,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 115,
+    "track": 10,
+    "sector": 2,
+    "dsk_offset": 44288,
+    "sha256_sector": "4856b732c9d0c20eee84c41a30a6d39b86e74315b135c79e193a9171d9baf286",
+    "tile_counts": {
+      "0": 188,
+      "1": 130,
+      "2": 33,
+      "3": 37,
+      "4": 24,
+      "5": 4,
+      "6": 2,
+      "7": 26,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 116,
+    "track": 10,
+    "sector": 3,
+    "dsk_offset": 44032,
+    "sha256_sector": "0e08eef7eda4ba2eea3cefee769063a117c95cb7a8a7b31b47c21b414ba496c2",
+    "tile_counts": {
+      "0": 126,
+      "1": 128,
+      "2": 60,
+      "3": 50,
+      "4": 36,
+      "5": 4,
+      "6": 9,
+      "7": 30,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 117,
+    "track": 10,
+    "sector": 4,
+    "dsk_offset": 43776,
+    "sha256_sector": "ff427090bdf8c8419de1ffe19c99394fc18dbbe957d729982d7104b9ed7c3097",
+    "tile_counts": {
+      "0": 159,
+      "1": 134,
+      "2": 51,
+      "3": 35,
+      "4": 39,
+      "5": 1,
+      "6": 2,
+      "7": 22,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 118,
+    "track": 10,
+    "sector": 5,
+    "dsk_offset": 43520,
+    "sha256_sector": "7a4a410a2ddb49fa96c92ee4d902cb0519405499cf1ec2ab8f68ca907f811515",
+    "tile_counts": {
+      "0": 267,
+      "1": 55,
+      "3": 68,
+      "4": 24,
+      "7": 30,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 119,
+    "track": 10,
+    "sector": 6,
+    "dsk_offset": 43264,
+    "sha256_sector": "a63fd7417880482483c7f719f91f9dac4ca4bcb7d2aa76b3efca8d282610ebc5",
+    "tile_counts": {
+      "0": 256,
+      "1": 78,
+      "2": 33,
+      "3": 30,
+      "4": 20,
+      "5": 1,
+      "6": 4,
+      "7": 22,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 120,
+    "track": 10,
+    "sector": 7,
+    "dsk_offset": 43008,
+    "sha256_sector": "b528cc7dad4dd05ada62eda13c36118f9cea99300873dc937e117980858b08c1",
+    "tile_counts": {
+      "0": 192,
+      "1": 130,
+      "2": 19,
+      "3": 44,
+      "4": 35,
+      "5": 3,
+      "6": 3,
+      "7": 18,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 121,
+    "track": 10,
+    "sector": 8,
+    "dsk_offset": 42752,
+    "sha256_sector": "d6d5346f848f9dafdedd059604dd4b1f8c0a91b9978f1b4a9e9d83323e20d0ae",
+    "tile_counts": {
+      "0": 173,
+      "1": 90,
+      "3": 132,
+      "5": 8,
+      "6": 8,
+      "7": 34,
+      "8": 2,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 122,
+    "track": 10,
+    "sector": 9,
+    "dsk_offset": 42496,
+    "sha256_sector": "60029e102b2dadc99e367e1a5b48b7acf29cf4386823dc84ad5407c12f9393a8",
+    "tile_counts": {
+      "0": 253,
+      "1": 56,
+      "2": 39,
+      "3": 40,
+      "4": 36,
+      "5": 4,
+      "6": 5,
+      "7": 11,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 123,
+    "track": 10,
+    "sector": 10,
+    "dsk_offset": 42240,
+    "sha256_sector": "8fcf753b8acaa2720e3556a4c857c0dd683952f38cf18f6a2bd1ce2a5522fb93",
+    "tile_counts": {
+      "0": 188,
+      "1": 126,
+      "3": 61,
+      "4": 42,
+      "5": 6,
+      "6": 11,
+      "7": 11,
+      "8": 2,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 124,
+    "track": 10,
+    "sector": 11,
+    "dsk_offset": 41984,
+    "sha256_sector": "b801a041976d38d2302f069c6b03a2d1c2b39c51cc0ffa172b1bdc90194953d0",
+    "tile_counts": {
+      "0": 193,
+      "1": 151,
+      "2": 2,
+      "3": 45,
+      "4": 23,
+      "5": 3,
+      "6": 5,
+      "7": 22,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 125,
+    "track": 10,
+    "sector": 12,
+    "dsk_offset": 41728,
+    "sha256_sector": "5fa3ee1ab78f3617b708ca9ec7242c40e183ebbb202070ea940a035321d08aaf",
+    "tile_counts": {
+      "0": 247,
+      "1": 120,
+      "3": 16,
+      "4": 14,
+      "5": 34,
+      "7": 14,
+      "8": 2,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 126,
+    "track": 10,
+    "sector": 13,
+    "dsk_offset": 41472,
+    "sha256_sector": "b2b707831546a6aaf313b17277e88874e7cd7c890afae39ec635e20f1ac30078",
+    "tile_counts": {
+      "0": 121,
+      "1": 198,
+      "3": 58,
+      "4": 35,
+      "7": 32,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 127,
+    "track": 10,
+    "sector": 14,
+    "dsk_offset": 41216,
+    "sha256_sector": "fabc263a3cb7f6d41565069d2aee733c844238b12795424b0e5a5e9e9fa066da",
+    "tile_counts": {
+      "0": 181,
+      "1": 118,
+      "2": 14,
+      "3": 82,
+      "4": 32,
+      "5": 1,
+      "6": 6,
+      "7": 10,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 128,
+    "track": 10,
+    "sector": 15,
+    "dsk_offset": 44800,
+    "sha256_sector": "e919d595a44d2a3b60cc55d7a494296bef44afc9e4860c72d9797c299423d3a9",
+    "tile_counts": {
+      "0": 219,
+      "1": 169,
+      "3": 28,
+      "4": 2,
+      "5": 7,
+      "7": 17,
+      "8": 5,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 129,
+    "track": 11,
+    "sector": 0,
+    "dsk_offset": 45056,
+    "sha256_sector": "5ed6300ec50300e7ff47605859d28bf97d001dd5aabb959708a85a456aa3de09",
+    "tile_counts": {
+      "0": 236,
+      "1": 121,
+      "3": 54,
+      "4": 5,
+      "5": 3,
+      "7": 24,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 130,
+    "track": 11,
+    "sector": 1,
+    "dsk_offset": 48640,
+    "sha256_sector": "793425e9b5ebe3fc2c271bcab69e473a9d0e4e166c1bfa8a8602f69f00154576",
+    "tile_counts": {
+      "0": 156,
+      "1": 140,
+      "2": 27,
+      "3": 50,
+      "4": 55,
+      "5": 1,
+      "6": 1,
+      "7": 14,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 131,
+    "track": 11,
+    "sector": 2,
+    "dsk_offset": 48384,
+    "sha256_sector": "21bff9de3a17ff6e31ad049e77a4f5010e9579e535f2354a13b58b9335e51ac8",
+    "tile_counts": {
+      "0": 216,
+      "1": 89,
+      "3": 63,
+      "4": 60,
+      "5": 2,
+      "6": 2,
+      "7": 11,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 132,
+    "track": 11,
+    "sector": 3,
+    "dsk_offset": 48128,
+    "sha256_sector": "a1d48da6555d00dabe506079c6d2e770229fc7b59589286f76e7550e52941fcb",
+    "tile_counts": {
+      "0": 211,
+      "1": 124,
+      "3": 27,
+      "4": 25,
+      "5": 18,
+      "6": 6,
+      "7": 33,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 133,
+    "track": 11,
+    "sector": 4,
+    "dsk_offset": 47872,
+    "sha256_sector": "f536e12f517df6c1d178af1459bcffd92c04f52485aa4dc6b5a21c1a42658775",
+    "tile_counts": {
+      "0": 152,
+      "1": 159,
+      "3": 31,
+      "4": 27,
+      "5": 61,
+      "7": 14,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 134,
+    "track": 11,
+    "sector": 5,
+    "dsk_offset": 47616,
+    "sha256_sector": "f1377c948c29e82d849ad838dbbac38092c2d1f386419073c987ba1c61fd2574",
+    "tile_counts": {
+      "0": 72,
+      "1": 332,
+      "3": 30,
+      "7": 10,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 135,
+    "track": 11,
+    "sector": 6,
+    "dsk_offset": 47360,
+    "sha256_sector": "4ea3253a2dc29af6511212317705b0c90225a22ae86a857cc588057833ad9dfa",
+    "tile_counts": {
+      "0": 143,
+      "1": 98,
+      "2": 44,
+      "3": 126,
+      "4": 12,
+      "5": 1,
+      "6": 3,
+      "7": 17,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 136,
+    "track": 11,
+    "sector": 7,
+    "dsk_offset": 47104,
+    "sha256_sector": "facc999100fadab08c4bb5886ea8d851f1173aa287bf436a92a6bbe63beacdba",
+    "tile_counts": {
+      "0": 14,
+      "1": 7,
+      "2": 5,
+      "3": 4,
+      "4": 11,
+      "5": 19,
+      "6": 7,
+      "7": 5,
+      "8": 64,
+      "9": 46,
+      "10": 40,
+      "11": 28,
+      "12": 37,
+      "13": 104,
+      "14": 33,
+      "15": 24
+    },
+    "values_above_9": 266,
+    "player_markers": 46
+  },
+  {
+    "level": 137,
+    "track": 11,
+    "sector": 8,
+    "dsk_offset": 46848,
+    "sha256_sector": "1e464d86ea2b4cdc2f95811f0a7d54472f809f7d339fcc15fb970118a41ee464",
+    "tile_counts": {
+      "0": 275,
+      "1": 109,
+      "3": 28,
+      "6": 3,
+      "7": 28,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 138,
+    "track": 11,
+    "sector": 9,
+    "dsk_offset": 46592,
+    "sha256_sector": "c408d779702a552e290aa14bdd178729dd7347f96a3136106cf98a7e1bdf25c1",
+    "tile_counts": {
+      "0": 272,
+      "1": 101,
+      "2": 9,
+      "3": 24,
+      "4": 14,
+      "5": 2,
+      "6": 3,
+      "7": 19,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 139,
+    "track": 11,
+    "sector": 10,
+    "dsk_offset": 46336,
+    "sha256_sector": "6642e9dff032773205a1fbaef93723d34e2259bc04ec3517084466de18972b95",
+    "tile_counts": {
+      "0": 154,
+      "1": 152,
+      "2": 21,
+      "3": 73,
+      "4": 23,
+      "6": 5,
+      "7": 16,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 140,
+    "track": 11,
+    "sector": 11,
+    "dsk_offset": 46080,
+    "sha256_sector": "ddb4266802eb1a4f72ff30300b9c7ade06a0c617b109d7be9a194a14efb59bc7",
+    "tile_counts": {
+      "0": 265,
+      "1": 111,
+      "3": 48,
+      "5": 1,
+      "6": 8,
+      "7": 9,
+      "8": 5,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 141,
+    "track": 11,
+    "sector": 12,
+    "dsk_offset": 45824,
+    "sha256_sector": "1c85a98722eb9e2ac20d84b92d1daf8307d90f89f20c980bafd24326258084af",
+    "tile_counts": {
+      "0": 243,
+      "1": 80,
+      "2": 16,
+      "3": 32,
+      "4": 20,
+      "5": 48,
+      "7": 6,
+      "8": 2,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 142,
+    "track": 11,
+    "sector": 13,
+    "dsk_offset": 45568,
+    "sha256_sector": "9d73aabc2ac19b36d8652ebdefaad3b00957ce95374911fd20e783ddbf72c001",
+    "tile_counts": {
+      "0": 169,
+      "1": 177,
+      "3": 26,
+      "4": 25,
+      "5": 10,
+      "6": 5,
+      "7": 32,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 143,
+    "track": 11,
+    "sector": 14,
+    "dsk_offset": 45312,
+    "sha256_sector": "22b052c5e02cc049998480d1ffab4855e67d6c4eec8585eeababd7d319967600",
+    "tile_counts": {
+      "0": 168,
+      "1": 101,
+      "2": 75,
+      "3": 60,
+      "4": 22,
+      "6": 2,
+      "7": 16,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 144,
+    "track": 11,
+    "sector": 15,
+    "dsk_offset": 48896,
+    "sha256_sector": "8d16bd55cd779a50e9bcc855347be1500e7aea9215ac830684941cef4bdba17d",
+    "tile_counts": {
+      "0": 208,
+      "1": 55,
+      "2": 63,
+      "3": 63,
+      "4": 18,
+      "5": 9,
+      "6": 1,
+      "7": 25,
+      "8": 5,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 145,
+    "track": 12,
+    "sector": 0,
+    "dsk_offset": 49152,
+    "sha256_sector": "852cc9b191daeb82e6f8c9b47f5e0994a924b610b7323f52237db84e4cc3f5f2",
+    "tile_counts": {
+      "0": 202,
+      "1": 117,
+      "3": 95,
+      "6": 6,
+      "7": 23,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 146,
+    "track": 12,
+    "sector": 1,
+    "dsk_offset": 52736,
+    "sha256_sector": "7e779b58f4c69a6c7ac0a81883b92fcc9e9ada7bd090aa1049d4c8cb4b903190",
+    "tile_counts": {
+      "0": 123,
+      "1": 257,
+      "3": 42,
+      "4": 2,
+      "7": 20,
+      "8": 3,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 147,
+    "track": 12,
+    "sector": 2,
+    "dsk_offset": 52480,
+    "sha256_sector": "6cdce5fa6e363527e9f61f4f86045aea57155ebeee60cb9978a4518bdabd2d41",
+    "tile_counts": {
+      "0": 186,
+      "1": 98,
+      "2": 18,
+      "3": 67,
+      "4": 40,
+      "5": 19,
+      "6": 5,
+      "7": 10,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 148,
+    "track": 12,
+    "sector": 3,
+    "dsk_offset": 52224,
+    "sha256_sector": "f7f0b0eb93d3d86ea227ca91e207e58febb54648ffd46dd64b27a9dd42cb9135",
+    "tile_counts": {
+      "0": 343,
+      "1": 36,
+      "2": 16,
+      "6": 32,
+      "7": 16,
+      "8": 4,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 149,
+    "track": 12,
+    "sector": 4,
+    "dsk_offset": 51968,
+    "sha256_sector": "7d833ad59a7f3ee14ea4b5351fd0653a2d6ecaa1e484d54ceef8671c091cd8f9",
+    "tile_counts": {
+      "0": 237,
+      "1": 110,
+      "3": 66,
+      "4": 4,
+      "7": 25,
+      "8": 5,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  },
+  {
+    "level": 150,
+    "track": 12,
+    "sector": 5,
+    "dsk_offset": 51712,
+    "sha256_sector": "39320c638f7510f1b0b30d3e144b80a252452c778b2a66576aaa9213e804fa25",
+    "tile_counts": {
+      "0": 166,
+      "1": 143,
+      "2": 2,
+      "3": 70,
+      "4": 8,
+      "5": 2,
+      "6": 1,
+      "7": 50,
+      "8": 5,
+      "9": 1
+    },
+    "values_above_9": 0,
+    "player_markers": 1
+  }
+]
