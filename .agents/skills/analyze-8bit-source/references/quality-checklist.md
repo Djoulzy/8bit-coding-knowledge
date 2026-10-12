@@ -11,6 +11,7 @@ Run this checklist before delivering the report.
 - [ ] Results do not overstate coverage when files, includes, linker scripts or binary assets are missing.
 - [ ] Report links and YAML fields are valid for repository conventions.
 - [ ] Existing research and guidelines were consulted for duplicates.
+- [ ] Machine paths use the actual `docs/machines/<brand>/<machine>/` hierarchy; applicable brand rules were read even when machine documentation is absent, and no machine folders were created or renamed.
 - [ ] Findings are not promoted to docs guidelines without explicit separate approval.
 
 ## MOS 6502 checks (when applicable)

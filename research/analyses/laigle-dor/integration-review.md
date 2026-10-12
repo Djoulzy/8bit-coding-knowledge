@@ -25,8 +25,8 @@ behavior, independent functional oracles and an applicability/alternatives revie
 No status was changed merely because a model passed.
 
 The instructions in root AGENTS.md, `docs/cpu/6502/AGENTS.md` and the existing
-`docs/machines/brand/Tangerine/Oric/AGENTS.md` were applied. No machine guideline
-is promoted into the requested `docs/machines/oric/` destination this round;
+[Oric instructions](../../../docs/machines/Tangerine/Oric/AGENTS.md) were applied.
+No machine guideline was promoted during this integration review;
 the hardware/firmware conditions are unresolved. There is no reason to duplicate
 the existing machine instructions or create speculative guidance there.
 
@@ -172,7 +172,7 @@ records above or the new canonical documents.
 | Tail-jump wrappers — MOS 6502 | Normal return-stack behavior understood; live argument/clobber contracts matter | Keep analyzed; no standalone guideline prepared this round |
 | Sign-flag range shortcuts — MOS 6502 | Byte behavior understood; N after CMP is not a universal comparison predicate | Keep analyzed; caller ranges require checking |
 | Charset loop branch crossing — MOS 6502 | 255 taken-page penalties established theoretically; relocation benefit not measured | Keep analyzed; benchmark a separate experimental image |
-| Six-pixel sprites — Oric | Byte units/stride documented; unclipped writes and full display paths need tracing | Keep analyzed; future destination `docs/machines/oric/` |
+| Six-pixel sprites — Oric | Byte units/stride documented; unclipped writes and full display paths need tracing | Keep analyzed; future destination `docs/machines/Tangerine/Oric/` |
 | Attribute column / `$0A` stop — Oric | Stores and stop test established; partial-row/zero-height effects unresolved | Keep analyzed; related ORIC-0001 |
 | Charset preservation / mode overlays — Oric | Exact 256-byte save/restore ranges known; ROM effects and buffer ownership unresolved | Keep analyzed; related ORIC-0001 |
 | VIA latch changes — Oric | Register writes are latch updates; ACR/phase/IRQ frequency and pacing effects untraced | Keep analyzed; no frame-rate recommendation |

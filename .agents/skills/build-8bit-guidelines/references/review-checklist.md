@@ -3,6 +3,7 @@
 Before reporting a successful machine-guidelines update:
 
 - [ ] Qualified `<brand>/<machine>` resolution is unique; brand containers were never treated as machines, including in `all` mode. Bare machine names were accepted only when unique.
+- [ ] Output uses the actual manufacturer/machine names, preserving capitalization and spaces, with no intermediate `brand/` directory; empty leaves are reported separately from registered profiles.
 - [ ] In regular update/all mode, the target folder existed before writing. Only an explicit `add`/`init` may create a missing machine leaf; output stays within that authorized leaf.
 - [ ] Repository `AGENTS.md`, optional brand `AGENTS.md`, machine `AGENTS.md`, and relevant CPU `AGENTS.md` were considered.
 - [ ] Applicable findings from multiple programs/platforms were assessed, not just the latest analysis.

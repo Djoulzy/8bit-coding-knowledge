@@ -26,8 +26,9 @@ code, interpreted data, assets, captured interpreter state and unresolved bytes.
 This does not establish complete runtime reachability or every possible state.
 No game, imported build script, emulator or real machine was run.
 
-The instructions requested at `docs/machines/oric/AGENTS.md` do not exist at that
-path. The actual [Oric instructions](../../../docs/machines/brand/Tangerine/Oric/AGENTS.md)
+At analysis time, the requested one-level Oric instruction path was absent.
+The [Oric instructions](../../../docs/machines/Tangerine/Oric/AGENTS.md), now
+located in the canonical brand/machine hierarchy,
 were applied together with [6502 instructions](../../../docs/cpu/6502/AGENTS.md)
 and the root instructions. This six-document dossier adapts
 [the analysis template](../../../templates/analysis.md); standalone findings use

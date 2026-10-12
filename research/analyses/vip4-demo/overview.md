@@ -52,7 +52,7 @@ historical build script or imported executable was run.
 
 Sources and validated guidelines were left unchanged. Root policy,
 [6502 policy](../../../docs/cpu/6502/AGENTS.md) and the actual
-[Oric policy location](../../../docs/machines/brand/Tangerine/Oric/AGENTS.md)
+[Oric policy location](../../../docs/machines/Tangerine/Oric/AGENTS.md)
 were read. The dossier distributes the sections of
 [analysis.md](../../../templates/analysis.md) across six reports; provisional
 fiches follow [technique.md](../../../templates/technique.md).

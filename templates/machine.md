@@ -16,6 +16,10 @@ Briefly describe the computer, supported variants, and scope of this page.
 Keep CPU-wide concepts in `docs/cpu/`; this page describes hardware-specific
 constraints and programming practices.
 
+Place this profile in the resolved `docs/machines/<brand>/<machine>/` directory,
+preserving existing names, capitalization and spaces. Apply root, brand and
+machine instructions where present.
+
 ## Variants and compatibility
 
 | Model / revision | CPU | RAM | ROM | Notable differences | Evidence |
@@ -98,8 +102,10 @@ Document preconditions, side effects, and ROM-version dependencies.
 
 ## Machine-specific optimization patterns
 
-Link to entries in `docs/machines/<machine>/techniques/` and cross-reference
-CPU techniques in `docs/cpu/<cpu>/techniques/` instead of duplicating them.
+Link to existing entries under `docs/machines/<brand>/<machine>/` (including
+`guidelines/` or an existing `techniques/` directory) and cross-reference CPU
+techniques under `docs/cpu/<cpu>/` instead of duplicating them. Do not create
+an empty `techniques/` directory just to match this template.
 
 | Technique ID | Applicability | Main benefit | Caveat |
 | --- | --- | --- | --- |

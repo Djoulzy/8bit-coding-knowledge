@@ -11,7 +11,11 @@ The primary CPU is the NMOS 6502.
 
 Always apply the general 6502 guidelines from:
 
-docs/cpu/6502/AGENTS.md
+[docs/cpu/6502/AGENTS.md](../../../cpu/6502/AGENTS.md)
+
+Apply the repository [AGENTS.md](../../../../AGENTS.md) and optional
+`docs/machines/Tangerine/AGENTS.md` as well. This machine's canonical
+documentation directory is `docs/machines/Tangerine/Oric/`.
 
 ## Machine Identification
 
@@ -130,7 +134,7 @@ When a technique is purely CPU-related,
 document it under docs/cpu/6502/.
 
 When a technique relies on Oric hardware,
-document it under docs/machines/oric/.
+document it under `docs/machines/Tangerine/Oric/`.
 
 Cross-reference both levels when necessary.
 

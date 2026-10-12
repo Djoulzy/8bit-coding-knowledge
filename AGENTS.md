@@ -26,6 +26,14 @@ for new software development.
 - templates/         : Documentation templates
 - benchmarks/        : Performance tests
 
+Machine documentation uses `docs/machines/<brand>/<machine>/`, for example
+`docs/machines/Tangerine/Oric/` and `docs/machines/Apple/Apple IIe/`.
+`<brand>` and `<machine>` are placeholders for actual directory names;
+manufacturers are direct children of `docs/machines/`, with no intermediate
+`brand/` directory. Preserve existing spelling, capitalization and spaces.
+Brand-level `AGENTS.md` files provide shared instructions; machine profiles
+and development guides belong in the machine leaf.
+
 ## Working Principles
 
 ### Accuracy
@@ -133,8 +141,12 @@ Promotion requires:
 When working on a CPU, read its corresponding
 docs/cpu/<cpu>/AGENTS.md if present.
 
-When working on a machine, read its corresponding
-docs/machines/<machine>/AGENTS.md if present.
+When working on a machine, resolve its existing brand/machine path and read
+`docs/machines/<brand>/AGENTS.md` and
+`docs/machines/<brand>/<machine>/AGENTS.md` if present, as well as the
+applicable CPU instructions. Brand instructions also apply when analyzing
+a machine whose leaf has no documentation yet. Do not create or rename
+directories merely to match an example path.
 
 These instructions complement the repository rules.
 

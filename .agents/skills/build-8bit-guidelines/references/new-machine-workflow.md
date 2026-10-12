@@ -4,7 +4,7 @@ This workflow extends the existing publisher. It does not replace `$analyze-8bit
 
 ## Discover new machines: read-only
 
-1. Enumerate registered `docs/machines/<brand>/<machine>/` leaves.
+1. Enumerate registered `docs/machines/<brand>/<machine>/` leaves using the registration criteria in `SKILL.md`; list empty leaves separately. Preserve existing directory names and do not treat brand-level instructions as a machine profile.
 2. Inspect available structured metadata, `research/analyses/`, `research/findings/`, source program READMEs and other existing docs for explicit make/model and CPU/ROM clues. Existing folder names under `research/` alone are insufficient proof.
 3. Report a table of candidate brand/model, CPU (known/unknown), evidence path, identity confidence, and whether already registered.
 4. Where variant identity cannot be distinguished (e.g., machine family versus specific model), do not choose arbitrarily. Suggest a qualified name only after checking the repository naming conventions.
@@ -13,10 +13,11 @@ This workflow extends the existing publisher. It does not replace `$analyze-8bit
 ## Add a new machine: explicit registration
 
 Command shape: `$build-8bit-guidelines add <brand>/<machine> [plan-only]`.
+Quote targets containing spaces, for example `add "Apple/Apple IIe"`.
 
 1. Require both nonempty path components supplied explicitly by the user; reject paths containing traversal, empty segments, absolute paths or unsafe symlinks. Do not infer a brand name from source analysis.
-2. Check for an existing machine with that full path and nearby variant/model names. If an exact directory exists, reuse existing documentation and follow normal incremental update behavior; never delete or regenerate it. For potentially accidental duplicates, document the alternatives before writing.
-3. Read root `AGENTS.md`, brand-level `AGENTS.md` if present, templates and applicable CPU rules if CPU identification is backed by evidence.
+2. Check for an existing machine with that full path and nearby variant/model names. If an exact directory exists, reuse it; merge existing documentation, or add the requested profile to an empty leaf. Never rename, delete or regenerate it. For potentially accidental duplicates, document the alternatives before writing.
+3. Read root `AGENTS.md`, brand-level and machine-level `AGENTS.md` files if present, templates and applicable CPU rules if CPU identification is backed by evidence.
 4. Seek evidence for machine identification, CPU variant, memory map, video/ULA, ROM, storage, audio, I/O and source programs. Mark missing facts `Unknown — verification needed`. Keep differences among closely related model variants explicit.
 5. In `plan-only`, list the directory to create, profile sections and potential guideline topics; do not write anything.
 6. In normal `add`, create `docs/machines/<brand>/<machine>/` (and brand parent if missing). Populate or merge a concise `README.md` with identity, scope, known sources, status and gaps. Do not overwrite existing user content. Do not generate a generic `AGENTS.md` unless the user explicitly asks for machine-specific agent rules.
@@ -59,5 +60,5 @@ Do not create empty performance claims or pretend that the profile is already a 
 
 - Keep history: never delete or replace older validated rules when new results disagree. Identify the conflict and mark which conditions are unresolved.
 - Preserve user-authored files and relative links; include only necessary changes in git diff.
-- Never auto-create directories in `all`, `discover`, focus-only, or ordinary update mode.
+- Never auto-create brand containers or machine leaves in `all`, focus-only, or ordinary update mode; substantive guideline pages may be added within an existing registered leaf. `discover` creates no files or directories.
 - Source import or routine analysis remains the job of the independent analysis skill.

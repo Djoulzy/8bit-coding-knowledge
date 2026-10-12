@@ -51,7 +51,7 @@ When multiple sources disagree, avoid majority voting: compare preconditions and
 
 ## E. Traceability
 
-Make repository-relative links that open the target in Markdown viewers. Recalculate paths based on the extra brand-level directory; do not reuse link depth from an older one-level machines layout. Link to `research/findings/`, `research/analyses/`, and preferably file+symbol/line in `research/sources/` where discoverable. Use stable links to technique files even if their absolute line numbers may change. If the precise source location is missing, identify the limitation.
+Make repository-relative links that open the target in Markdown viewers. Calculate paths from the actual file location in the two-level brand/machine layout, not from a legacy one-level or intermediate `brand/` layout. From a machine-leaf page, CPU documents are under `../../../cpu/` and research under `../../../../research/`; a page under `guidelines/` needs one more `../`. Link to `research/findings/`, `research/analyses/`, and preferably file+symbol/line in `research/sources/` where discoverable. Use stable links to technique files even if their absolute line numbers may change. If the precise source location is missing, identify the limitation.
 
 Example evidence row (illustrative; never copy as real proof):
 

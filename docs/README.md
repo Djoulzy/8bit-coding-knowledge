@@ -20,4 +20,5 @@ verification. Pending work is documented in the
 The review also covers related research findings and benchmark proposals.
 
 CPU policy is in [6502/AGENTS.md](cpu/6502/AGENTS.md); the existing Oric policy
-is in [Oric/AGENTS.md](machines/brand/Tangerine/Oric/AGENTS.md).
+is in [Oric/AGENTS.md](machines/Tangerine/Oric/AGENTS.md). Apple family policy
+is in [Apple/AGENTS.md](machines/Apple/AGENTS.md).
