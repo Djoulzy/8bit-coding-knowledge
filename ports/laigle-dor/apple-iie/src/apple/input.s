@@ -3,6 +3,9 @@
 keyboard_poll:
     lda #$FF
     sta key_action
+.if FULL_GAME
+    sta raw_key
+.endif
     lda $C000
     bpl @done
     and #$7F
@@ -13,6 +16,12 @@ keyboard_poll:
     bcs :+
     and #$DF
 :
+.if FULL_GAME
+    sta raw_key
+    ldx game_mode
+    cpx #MODE_NAME
+    beq @done
+.endif
     ldx #0
 @find:
     cmp key_codes,x

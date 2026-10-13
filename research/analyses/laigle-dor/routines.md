@@ -181,3 +181,32 @@ before restoring custom characters, but both ROM revisions require verification.
 No game-owned IRQ handler, `RTI` path, stack trampoline, `PHA/PLA` preservation
 scheme or hardware interrupt-vector installation was identified in established
 game code. Apparent instances in tables or padding are not instruction evidence.
+
+## Subsequent constructor translation
+
+The Apple port's `world_decode`, `world_load_scene`, `scene_upper`, `scene_left`,
+`scene_right`, `scene_furnishing`, `scene_floor`, `scene_gate` and `scene_objects`
+translate the existing decoder and B2 100–1110. These are new port symbols, not
+recovered original names. Their data/Apple interfaces and executed evidence are
+documented in [world-construction.md](../../../ports/laigle-dor/apple-iie/docs/world-construction.md).
+
+The subsequent `scene_pit` translates B2 7030–7046/6910; pit recovery and the
+shared rope atlas follow 7100/7200–7410. `title_load`/`title_draw` consume the
+B1 `$1801–$3740` raster and expose/hide lightning according to B1 1140–1160.
+`full_text_draw` adapts exterior/modal presentation to Apple TEXT. These are
+new target routines, with exact adaptation boundaries and execution evidence
+in [presentation-and-pits.md](../../../ports/laigle-dor/apple-iie/docs/presentation-and-pits.md).
+
+`full_collision_probe` / `full_pickup_probe` in the Apple `proximity.s` are later
+target replacements for the broad probes and exact-depth pointer logic, not
+recovered source symbols. `full_draw_torches` / `full_draw_hand_flame` use the
+observed `$40C8–$411F` selection and `$4120–$412F` offsets (including the column
+decrement at `$40B2`). Their two-page restoration, native cadence and explicit
+scenery retouches are documented in
+[movement-and-scenery.md](../../../ports/laigle-dor/apple-iie/docs/movement-and-scenery.md).
+
+The later `full_prepare_page` protocol retains the displayed room and prepares
+each MAIN/AUX pair while hidden. `full_is_dark` / `full_dark_text_draw` replace
+stale TEXT contents with an explicit source-inspired darkness panel. These are
+new target interfaces, described in
+[room-transitions.md](../../../ports/laigle-dor/apple-iie/docs/room-transitions.md).

@@ -18,6 +18,48 @@ rectangle. Oric ink/paper cells are transparent; native silhouette masks preserv
 the surrounding scene. Audio cues are logged in RAM. The right exit produces an event and retains
 room 12; other rooms, items, enemies, menus and actual audio are future work.
 
+There is now a separate **W07 native-world development build**. It reconstructs
+all 64 room records with four generic wall templates, then upper/left/right
+openings and parameterized decorations. It stores a shared atlas and compact
+world data, with **no per-room bitmap or pre-rendered room variants**. The
+approved DHGR room-12 prototype remains independently buildable.
+
+```sh
+make game
+make test-game
+```
+
+Use `build/game/laigle-dor.do` or `.nib` in slot 6, drive 1. Configure DHGR and
+128 KiB with the extended 80-column bank. The supplied enhanced Apple ROM needs
+a compatible enhanced CPU configuration for firmware cold boot. The original
+castle/title page now appears first, with lightning and a delayed title reveal.
+Press Enter or Space, then type a name,
+Return, then `1` to enter or `3` to visit the merchant. This development build
+also contains initial transitions, items, actions, hazards and menus; the full
+W07/W08 acceptance gates remain pending. Read
+[world-construction.md](docs/world-construction.md) for resource ownership,
+source references, executed checks and known rendering differences.
+
+Exterior and modal panels use full-screen TEXT; the merchant header updates
+gold after every purchase. Gameplay returns to mixed DHGR. In an oubliette,
+press **A**, then **Space** to stand; **G** climbs with a rope and an empty hand.
+The room number remains the originating room, but the dedicated pit scene is
+displayed. See [presentation-and-pits.md](docs/presentation-and-pits.md).
+`make run-game` starts the full-build functional preview on port 8768.
+
+The native build now walks in half-sized steps, tests obstacles at the proposed
+feet and requires approaching the visible doorway before changing rooms. Ground
+objects can be approached, then collected with **A**, **P**. Wall and held
+torches use the original two-frame flame assets. Grilles have white separated
+bars and yellow padlocks; secret fireplaces have a small black mark on their
+right pillar. See [movement-and-scenery.md](docs/movement-and-scenery.md) for
+the collision/interaction contract, original evidence and target artwork.
+
+Room changes now keep the previous graphics frame visible while preparing the
+next room in the hidden buffer, then flip only after its actor/effects/HUD are
+complete. They no longer expose an old TEXT menu. Actual darkness has a clean
+**IL FAIT NOIR ICI !** panel. See [room-transitions.md](docs/room-transitions.md).
+
 This is a local development port of the analyzed Loriciels 1984 edition credited
 to Louis-Marie Rocques. Historical inputs remain unchanged. Original reuse and
 redistribution rights are unresolved; generated historical assets, ROMs and
@@ -27,6 +69,56 @@ disk images remain local ignored outputs. No new license is assigned to them.
 
 Run from this directory. Python 3.9+, Make and a C compiler are sufficient.
 No Python package installation or system-wide assembler installation is needed.
+
+An optional **native HGR color experiment** is also available. It retains mixed
+mode, alternating pages, controls and collision rules; color choices are a new
+Apple adaptation. The default remains monochrome. Build/test outputs coexist:
+
+```sh
+make test VIDEO=color
+python3 tools/run.py --video color --serve --port 8766
+```
+
+Open `http://127.0.0.1:8766`. Color disks are
+`build/color/laigle-dor.do` and `build/color/laigle-dor.nib`; select standard
+**HGR composite color / NTSC artifact color** in a full emulator. No RGB
+expansion card or double-HGR is required. To compare the two native binaries:
+
+```sh
+make build
+python3 tools/compare_video.py
+```
+
+See [color experiment and verification](docs/color-experiment.md) for palette,
+two-dot artwork conversion, byte-wide phase limits and preview scope. Running
+`make test`/`make run` without `VIDEO=color` selects the monochrome build.
+
+The **DHGR variant** uses a 16-color palette with **140 independent color columns**,
+retains fine source-dot patterns in its 560-dot serial stream, and uses
+four native **80-column** text rows and double buffering across main/auxiliary
+RAM. It requires a DHGR-capable IIe with a configured 64 KiB extended 80-column
+card (128 KiB total). To build, test and open its executed preview:
+
+```sh
+make test VIDEO=dhgr
+python3 tools/run.py --video dhgr --serve --port 8767
+```
+
+Open `http://127.0.0.1:8767`. Boot disks and reports are in `build/dhgr/`;
+select ordinary DHGR color and 128 KiB in a complete emulator. See
+[DHGR implementation and checks](docs/dhgr.md) and its
+[target profile](resources/dhgr-profile.json). The scaled preview is not a
+claim of 560 independent color pixels. The default build remains monochrome.
+
+The DHGR palette uses white wall edges, gray doors and brown torches; the actor
+has yellow hair, pink skin, a green tunic, blue trousers and brown boots. Hair
+and legs use stable native color cells; face/tunic/hands keep their fine masks,
+with a separately retouched left-facing portrait.
+See [actor refinement](docs/dhgr-actor.md). Static material contours use phase-aligned color cells
+with dark cuts for enclosed source marks. See [palette adaptation](docs/dhgr-palette.md).
+The local monitor selector provides sample-aware color,
+raw-dot monochrome and coarse-palette diagnostics. The last view deliberately
+hides subcell detail. See [detail review and Virtual II evidence](docs/dhgr-detail-review.md).
 
 ```sh
 cd ports/laigle-dor/apple-iie

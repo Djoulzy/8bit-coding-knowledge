@@ -1,0 +1,22 @@
+{
+  "milestone": "W06 single-room DHGR experiment",
+  "target": {
+    "model": "Rev-B-compatible Apple IIe with configured extended 80-column card",
+    "ram": "64 KiB main plus 64 KiB auxiliary; no language-card RAM used",
+    "instruction_set": "documented NMOS MOS 6502",
+    "video": "standard DHGR: 560 serial samples; 140 stable material color cells; fine face/tunic/hand masks except retouched left face; native-cell hair/trousers/boots",
+    "text": "four native 80-column rows; compact 40-character HUD placed at left",
+    "frame_pages": "main+aux $2000-$3FFF and main+aux $4000-$5FFF",
+    "baseline": "immutable terrain at main+aux $A000-$BFFF",
+    "banking": "80STORE and ALTZP off; short RAMRD workers at main ZP $0040-$0051; scoped RAMWRT stores",
+    "preview": "560x384 sample-aware digital color approximation; raw-dot monochrome and coarse-palette diagnostic views",
+    "compatibility": "requires configured DHGR hardware; no automatic motherboard/card detection",
+    "input_audio_timing": "existing keyboard and silent events; fresh IIe RDVBLBAR edge presentation"
+  },
+  "source": {
+    "oric_rom": "still missing; default room-variation table is 64 provisional zero bytes",
+    "palette": "user-directed Apple port palette in dhgr-palette.json; Oric ink/paper ignored; anatomical bands provisional",
+    "conversion": "scene: unchanged phase-aligned material cells and dark cuts; actor hair: solid cells; trousers/boots: cells and dark cuts; left face: pink cells with eye/mouth edits; other face/tunic/hands: unchanged per-dot opacity and colors; same vertical mapping"
+  },
+  "validation": "functional CPU/MMU tests and Virtual II 13.3 color smoke test; physical hardware pending"
+}

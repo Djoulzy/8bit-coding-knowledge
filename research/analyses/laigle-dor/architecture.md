@@ -247,3 +247,12 @@ Complete runtime command reachability, exact font relocation effects, ROM
 register/zero-page side effects, padding provenance, malformed loader-tail intent
 and inactive code remnants need source recovery or tracing. These limitations
 are retained throughout the dossier rather than replaced by invented labels.
+
+## Subsequent Apple port evidence — 2026-10-13
+
+The [native-room port](../../../ports/laigle-dor/apple-iie/docs/world-construction.md)
+translates the shared B2 constructor into documented NMOS 6502 code. Four wall
+programs and common opening/decor routines reconstruct all 64 room records;
+there is no per-room bitmap archive. Source-derived semantic grids and target
+DHGR composition are tested separately. This is target execution evidence,
+not an original Oric runtime trace or validation of Oric ROM rasterization.

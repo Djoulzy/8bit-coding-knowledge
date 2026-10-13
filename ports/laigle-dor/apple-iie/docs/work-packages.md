@@ -1,8 +1,41 @@
-# W00–W06 delivery boundaries
+# Port delivery boundaries
 
 Contract: [portage.md §6.2](../../../../research/analyses/laigle-dor/portage.md#62-ordered-work-packages-and-completion-gates).
 The first interactive milestone is implemented. Full original-game gates remain
 pending where the source configuration or source runtime evidence is absent.
+
+Update, 2026-10-13: the user supplied Oric-1 BASIC 1.0 and Apple IIe enhanced
+system ROM images. Their identities are pinned in
+[rom-profile.json](../resources/rom-profile.json). The separate native-world
+build uses the actual 64-byte Oric `$D000–$D03F` table. Original Oric execution,
+final font capture, PRNG/timer traces and physical hardware certification remain
+pending. Earlier W06 results below retain their original provisional inputs.
+
+W07 now has an executed generic-room constructor and semantic grids for all
+64 records. It uses four shared wall programs, parameterized openings and a
+shared atlas; it contains no per-room bitmap archive. Source-derived rule/action
+code is in development and has selected executed tests. This does **not** close
+the complete M02–M24 gate. W08 presentation and audio, W09 performance and W10
+full replay remain unfinished. See [native construction](world-construction.md).
+
+The [presentation/pit follow-up](presentation-and-pits.md) adds the dedicated
+oubliette scene and recovery/rope regression, full-screen TEXT panels, visible
+merchant funds, and the original B1 title with lightning. Enhanced firmware
+cold boot and title/merchant/room-12 presentation were observed in Virtual II.
+These checks do not certify every action path or complete W08.
+
+The [movement/scenery follow-up](movement-and-scenery.md) halves native walking
+increments and narrows foot/proximity checks while retaining world coordinates.
+It synchronizes pickup reach and door/arrival planes, restores original flame
+frames on both buffers, and provides explicit native grille/lock and secret-cue
+art. Twenty native checks and the unchanged 44-check graphics regression
+passed. These target adaptations are distinct from source runtime equivalence.
+
+The [room-transition follow-up](room-transitions.md) retains the visible room
+during construction, initializes each frame pair only while hidden, and builds
+a clean source-inspired darkness panel. It replaces the temporary TEXT screen
+used to conceal simultaneous frame initialization. Early neighbor prediction
+is not part of this synchronous preparation protocol.
 
 | Package | Delivered | Gate / remaining work |
 | --- | --- | --- |

@@ -1,0 +1,715 @@
+{
+  "actor_review": {
+    "display": "sample-aware digital approximation",
+    "gameplay_sequence": false,
+    "method": "executed NMOS compositor/presentation with explicit frame-ID fixtures",
+    "physical_hardware": "not tested",
+    "terrain_banks_unchanged": true,
+    "unchanged_face_tunic_hand_resource_rows": 142,
+    "variants": {
+      "before": {
+        "frames": [
+          {
+            "file": "before-00.png",
+            "frame": 0,
+            "page": 0
+          },
+          {
+            "file": "before-01.png",
+            "frame": 1,
+            "page": 1
+          },
+          {
+            "file": "before-02.png",
+            "frame": 2,
+            "page": 0
+          },
+          {
+            "file": "before-03.png",
+            "frame": 3,
+            "page": 1
+          },
+          {
+            "file": "before-04.png",
+            "frame": 4,
+            "page": 0
+          },
+          {
+            "file": "before-05.png",
+            "frame": 5,
+            "page": 1
+          },
+          {
+            "file": "before-06.png",
+            "frame": 6,
+            "page": 0
+          },
+          {
+            "file": "before-07.png",
+            "frame": 7,
+            "page": 1
+          },
+          {
+            "file": "before-08.png",
+            "frame": 8,
+            "page": 0
+          },
+          {
+            "file": "before-09.png",
+            "frame": 9,
+            "page": 1
+          },
+          {
+            "file": "before-10.png",
+            "frame": 10,
+            "page": 0
+          },
+          {
+            "file": "before-11.png",
+            "frame": 11,
+            "page": 1
+          },
+          {
+            "file": "before-12.png",
+            "frame": 12,
+            "page": 0
+          },
+          {
+            "file": "before-13.png",
+            "frame": 13,
+            "page": 1
+          },
+          {
+            "file": "before-14.png",
+            "frame": 14,
+            "page": 0
+          },
+          {
+            "file": "before-15.png",
+            "frame": 15,
+            "page": 1
+          }
+        ],
+        "program_sha256": "924d15905bf08aef5709ff30d9c7d68b0ecc6d2b034ae67c863680d260b7ba43",
+        "visible_write_violations": 0
+      },
+      "current": {
+        "frames": [
+          {
+            "file": "current-00.png",
+            "frame": 0,
+            "page": 0
+          },
+          {
+            "file": "current-01.png",
+            "frame": 1,
+            "page": 1
+          },
+          {
+            "file": "current-02.png",
+            "frame": 2,
+            "page": 0
+          },
+          {
+            "file": "current-03.png",
+            "frame": 3,
+            "page": 1
+          },
+          {
+            "file": "current-04.png",
+            "frame": 4,
+            "page": 0
+          },
+          {
+            "file": "current-05.png",
+            "frame": 5,
+            "page": 1
+          },
+          {
+            "file": "current-06.png",
+            "frame": 6,
+            "page": 0
+          },
+          {
+            "file": "current-07.png",
+            "frame": 7,
+            "page": 1
+          },
+          {
+            "file": "current-08.png",
+            "frame": 8,
+            "page": 0
+          },
+          {
+            "file": "current-09.png",
+            "frame": 9,
+            "page": 1
+          },
+          {
+            "file": "current-10.png",
+            "frame": 10,
+            "page": 0
+          },
+          {
+            "file": "current-11.png",
+            "frame": 11,
+            "page": 1
+          },
+          {
+            "file": "current-12.png",
+            "frame": 12,
+            "page": 0
+          },
+          {
+            "file": "current-13.png",
+            "frame": 13,
+            "page": 1
+          },
+          {
+            "file": "current-14.png",
+            "frame": 14,
+            "page": 0
+          },
+          {
+            "file": "current-15.png",
+            "frame": 15,
+            "page": 1
+          }
+        ],
+        "program_sha256": "e4e718ff5f9adff2bdec8fb0fe566539ba3c93d0ca6560016f8a61767ac47578",
+        "visible_write_violations": 0
+      }
+    }
+  },
+  "browser_keyboard_layout": "not automated",
+  "build": {
+    "disk_sha256": "4dce986dd362f60c2660239178f5c4cb2c5b9a699019e2baedfc255b1a64a739",
+    "entry": "$6000",
+    "loaded_end_exclusive": "$9B00",
+    "program_bytes": 15076,
+    "program_sha256": "e4e718ff5f9adff2bdec8fb0fe566539ba3c93d0ca6560016f8a61767ac47578",
+    "tools": {
+      "ca65": "ca65 V2.18 - V2.19",
+      "ld65": "ld65 V2.18 - V2.19"
+    },
+    "video": "mixed DHGR, main+aux, alternating $2000/$4000 frames; baseline $A000",
+    "video_profile": "dhgr"
+  },
+  "comparison": {
+    "color_quality": "not compared with a physical monitor",
+    "frames_compared": 26,
+    "method": "two executed NMOS binaries; functional bus",
+    "success": true,
+    "variants": {
+      "dhgr": {
+        "program_sha256": "e4e718ff5f9adff2bdec8fb0fe566539ba3c93d0ca6560016f8a61767ac47578",
+        "speaker_accesses": 0,
+        "visible_graphics_writes": 0,
+        "visible_text_writes": 0
+      },
+      "mono": {
+        "program_sha256": "699107ea7a2bc798634fef3f8fa60bf4b5bb8950e42eddabf4f1fe23e0b34720",
+        "speaker_accesses": 0,
+        "visible_graphics_writes": 0,
+        "visible_text_writes": 0
+      }
+    }
+  },
+  "cpu": {
+    "boot_instructions": 1048168,
+    "checked_collision_cases": 360,
+    "checked_sprite_phase_edge_cases": 460,
+    "coverage": "subset harness; not real hardware or original Oric gameplay",
+    "hidden_frames_checked": 60,
+    "largest_distinct_frame_graphics_write_set": 775,
+    "method": "executed py65 NMOS CPU, stock Disk II BOOT0, simplified device bus",
+    "minimum_stack_pointer": 245,
+    "page_flip_sync": "fresh blank edge in simplified NTSC RDVBLBAR model",
+    "program_sha256": "e4e718ff5f9adff2bdec8fb0fe566539ba3c93d0ca6560016f8a61767ac47578",
+    "runtime_speaker_accesses": 0,
+    "video_profile": "dhgr"
+  },
+  "date": "2026-10-13",
+  "detail_review": {
+    "colored_full_foreground_pairs": 2296,
+    "display": "digital signal approximation; not Virtual II or a physical CRT capture",
+    "method": "executed flat, detail, material-palette, actor-refinement and monochrome binaries; same input/pose",
+    "mixed_pairs_fine_conversion_preserved": 252,
+    "mixed_pairs_flat_conversion_merged": 1252,
+    "mixed_pairs_native_color_adapted": 1000,
+    "results": {
+      "dhgr-actor": {
+        "page": 0,
+        "program_sha256": "e4e718ff5f9adff2bdec8fb0fe566539ba3c93d0ca6560016f8a61767ac47578",
+        "state": {
+          "actor_x": 19,
+          "actor_y": 180,
+          "blocked": 0,
+          "display_page_hi": 32,
+          "door_status": 4,
+          "draw_page_hi": 32,
+          "event_count": 5,
+          "event_head": 5,
+          "event_overflow": 0,
+          "facing": 0,
+          "frame_id": 0,
+          "last_event": 2,
+          "object_status": 0,
+          "pose": 0,
+          "tick_hi": 0,
+          "tick_lo": 5,
+          "walk_phase": 0,
+          "walking": 0
+        },
+        "visible_write_violations": 0
+      },
+      "dhgr-detail": {
+        "page": 0,
+        "program_sha256": "87f1b65923b05789e380cf95dfc13935831d4205817eb6a1c567195939896fdd",
+        "state": {
+          "actor_x": 19,
+          "actor_y": 180,
+          "blocked": 0,
+          "display_page_hi": 32,
+          "door_status": 4,
+          "draw_page_hi": 32,
+          "event_count": 5,
+          "event_head": 5,
+          "event_overflow": 0,
+          "facing": 0,
+          "frame_id": 0,
+          "last_event": 2,
+          "object_status": 0,
+          "pose": 0,
+          "tick_hi": 0,
+          "tick_lo": 5,
+          "walk_phase": 0,
+          "walking": 0
+        },
+        "visible_write_violations": 0
+      },
+      "dhgr-flat": {
+        "page": 0,
+        "program_sha256": "0ca99bc83658649b37af23d82fb75b906ee5abf876cbf57e8f5c86653a653d6a",
+        "state": {
+          "actor_x": 19,
+          "actor_y": 180,
+          "blocked": 0,
+          "display_page_hi": 32,
+          "door_status": 4,
+          "draw_page_hi": 32,
+          "event_count": 5,
+          "event_head": 5,
+          "event_overflow": 0,
+          "facing": 0,
+          "frame_id": 0,
+          "last_event": 2,
+          "object_status": 0,
+          "pose": 0,
+          "tick_hi": 0,
+          "tick_lo": 5,
+          "walk_phase": 0,
+          "walking": 0
+        },
+        "visible_write_violations": 0
+      },
+      "dhgr-palette": {
+        "page": 0,
+        "program_sha256": "924d15905bf08aef5709ff30d9c7d68b0ecc6d2b034ae67c863680d260b7ba43",
+        "state": {
+          "actor_x": 19,
+          "actor_y": 180,
+          "blocked": 0,
+          "display_page_hi": 32,
+          "door_status": 4,
+          "draw_page_hi": 32,
+          "event_count": 5,
+          "event_head": 5,
+          "event_overflow": 0,
+          "facing": 0,
+          "frame_id": 0,
+          "last_event": 2,
+          "object_status": 0,
+          "pose": 0,
+          "tick_hi": 0,
+          "tick_lo": 5,
+          "walk_phase": 0,
+          "walking": 0
+        },
+        "visible_write_violations": 0
+      },
+      "hgr": {
+        "page": 0,
+        "program_sha256": "699107ea7a2bc798634fef3f8fa60bf4b5bb8950e42eddabf4f1fe23e0b34720",
+        "state": {
+          "actor_x": 19,
+          "actor_y": 180,
+          "blocked": 0,
+          "display_page_hi": 32,
+          "door_status": 4,
+          "draw_page_hi": 32,
+          "event_count": 5,
+          "event_head": 5,
+          "event_overflow": 0,
+          "facing": 0,
+          "frame_id": 0,
+          "last_event": 2,
+          "object_status": 0,
+          "pose": 0,
+          "tick_hi": 0,
+          "tick_lo": 5,
+          "walk_phase": 0,
+          "walking": 0
+        },
+        "visible_write_violations": 0
+      }
+    },
+    "source_sprite_ids": [
+      40,
+      41,
+      42,
+      43,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      64,
+      65,
+      67
+    ]
+  },
+  "http": {
+    "method": "HTTP HTML/three monitor PNG views; J left turn, A crouch and R reset execute native frames",
+    "program_sha256": "e4e718ff5f9adff2bdec8fb0fe566539ba3c93d0ca6560016f8a61767ac47578",
+    "success": true,
+    "trace": [
+      {
+        "PNG_bytes": 6889,
+        "monitor": "color"
+      },
+      {
+        "PNG_bytes": 7825,
+        "monitor": "mono"
+      },
+      {
+        "PNG_bytes": 6818,
+        "monitor": "palette"
+      },
+      {
+        "facing": 2,
+        "key": 74
+      },
+      {
+        "key": 65,
+        "pose": 6
+      },
+      {
+        "key": 82,
+        "pose": 0
+      }
+    ]
+  },
+  "monochrome_regression": {
+    "errors": [],
+    "execution": "py65 functional CPU plus independent resource/rule models",
+    "failures": [],
+    "original_oric_runtime": "not tested",
+    "program_sha256": "699107ea7a2bc798634fef3f8fa60bf4b5bb8950e42eddabf4f1fe23e0b34720",
+    "real_apple_hardware": "not tested",
+    "skipped": [],
+    "success": true,
+    "tests_run": 41,
+    "video_profile": "mono"
+  },
+  "oric_runtime": "not tested",
+  "palette": {
+    "actor_bands": {
+      "40": [
+        [
+          0,
+          "hair"
+        ],
+        [
+          5,
+          "skin"
+        ],
+        [
+          12,
+          "tunic"
+        ]
+      ],
+      "41": [
+        [
+          0,
+          "hair"
+        ],
+        [
+          5,
+          "skin"
+        ],
+        [
+          13,
+          "tunic"
+        ]
+      ],
+      "42": [
+        [
+          0,
+          "hair"
+        ],
+        [
+          5,
+          "skin"
+        ],
+        [
+          13,
+          "tunic"
+        ]
+      ],
+      "43": [
+        [
+          0,
+          "hair"
+        ],
+        [
+          9,
+          "skin"
+        ],
+        [
+          12,
+          "tunic"
+        ]
+      ],
+      "64": [
+        [
+          0,
+          "tunic"
+        ],
+        [
+          10,
+          "skin"
+        ]
+      ],
+      "65": [
+        [
+          0,
+          "tunic"
+        ],
+        [
+          11,
+          "skin"
+        ]
+      ],
+      "67": [
+        [
+          0,
+          "tunic"
+        ],
+        [
+          10,
+          "skin"
+        ]
+      ]
+    },
+    "actor_cell_policies": {
+      "boots": "dark-cuts",
+      "hair": "solid",
+      "trousers": "dark-cuts"
+    },
+    "boot_start_rows": {
+      "46": 16,
+      "47": 16,
+      "48": 16,
+      "49": 16,
+      "50": 16,
+      "51": 16,
+      "52": 16,
+      "53": 16,
+      "54": 16,
+      "55": 16,
+      "56": 16,
+      "57": 16,
+      "58": 11,
+      "59": 11,
+      "60": 11,
+      "61": 11
+    },
+    "cell_overrides": {
+      "42": [
+        {
+          "cell": 5,
+          "purpose": "left-facing eye",
+          "row": 7,
+          "status": 5
+        },
+        {
+          "cell": 4,
+          "purpose": "left-facing mouth notch",
+          "row": 10,
+          "status": 5
+        }
+      ]
+    },
+    "colors": {
+      "boots": 8,
+      "decoration": 13,
+      "door": 5,
+      "hair": 13,
+      "skin": 11,
+      "torch": 8,
+      "trousers": 2,
+      "tunic": 12,
+      "wall": 15
+    },
+    "description": "Apple port art direction, requested 2026-10-13; not recovered Oric colors",
+    "limitations": "Provisional anatomical row bands and target art. Hair/trousers/boots and the retouched left-facing skin use native color cells; contours and dark cuts can move or widen by one source dot. Other faces, tunic and hands keep fine per-dot opacity. Composite edge fringes remain monitor-dependent.",
+    "lower_body_ids": [
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61
+    ],
+    "scene_materials": {
+      "14": "torch",
+      "15": "torch",
+      "21": "decoration",
+      "3": "wall",
+      "4": "wall",
+      "5": "door",
+      "7": "door",
+      "8": "door"
+    },
+    "sprite_material_policies": {
+      "42": {
+        "skin": "solid"
+      }
+    }
+  },
+  "pixel_workers": {
+    "method": "executed NMOS draw_cell plus safe auxiliary-read workers",
+    "mirrored_application_code": false,
+    "palette_boundary_cases": 480,
+    "partial_cell_cases": 120,
+    "program_sha256": "e4e718ff5f9adff2bdec8fb0fe566539ba3c93d0ca6560016f8a61767ac47578",
+    "ramrd_fetch_pcs": [
+      67,
+      69,
+      76,
+      78
+    ],
+    "real_hardware": "not tested"
+  },
+  "profile": {
+    "milestone": "W06 single-room DHGR experiment",
+    "source": {
+      "conversion": "scene: unchanged phase-aligned material cells and dark cuts; actor hair: solid cells; trousers/boots: cells and dark cuts; left face: pink cells with eye/mouth edits; other face/tunic/hands: unchanged per-dot opacity and colors; same vertical mapping",
+      "oric_rom": "still missing; default room-variation table is 64 provisional zero bytes",
+      "palette": "user-directed Apple port palette in dhgr-palette.json; Oric ink/paper ignored; anatomical bands provisional"
+    },
+    "target": {
+      "banking": "80STORE and ALTZP off; short RAMRD workers at main ZP $0040-$0051; scoped RAMWRT stores",
+      "baseline": "immutable terrain at main+aux $A000-$BFFF",
+      "compatibility": "requires configured DHGR hardware; no automatic motherboard/card detection",
+      "frame_pages": "main+aux $2000-$3FFF and main+aux $4000-$5FFF",
+      "input_audio_timing": "existing keyboard and silent events; fresh IIe RDVBLBAR edge presentation",
+      "instruction_set": "documented NMOS MOS 6502",
+      "model": "Rev-B-compatible Apple IIe with configured extended 80-column card",
+      "preview": "560x384 sample-aware digital color approximation; raw-dot monochrome and coarse-palette diagnostic views",
+      "ram": "64 KiB main plus 64 KiB auxiliary; no language-card RAM used",
+      "text": "four native 80-column rows; compact 40-character HUD placed at left",
+      "video": "standard DHGR: 560 serial samples; 140 stable material color cells; fine face/tunic/hand masks except retouched left face; native-cell hair/trousers/boots"
+    },
+    "validation": "functional CPU/MMU tests and Virtual II 13.3 color smoke test; physical hardware pending"
+  },
+  "real_hardware": "not tested",
+  "reproducibility": {
+    "method": "resource regeneration, NMOS assembly, link and disk rebuild",
+    "sha256": {
+      "game.bin": "e4e718ff5f9adff2bdec8fb0fe566539ba3c93d0ca6560016f8a61767ac47578",
+      "laigle-dor.do": "4dce986dd362f60c2660239178f5c4cb2c5b9a699019e2baedfc255b1a64a739",
+      "laigle-dor.nib": "27cf0c88654610b397ce659486fff26daee9019253c32cebfc1f3802d690abfe",
+      "resources/generated.inc": "d31e96a97f76e8657a321ae74ef9f2f7958c1e187645252225eaec26042e44e4",
+      "resources/room12-aux.hgr": "83f58456cb3ca4cc2aea9459178139628bf99faf83fd136c762d1aefa4f5cca3",
+      "resources/room12.hgr": "4b03baa600485d425553de8b2788ff70b233ac24820163ebc9e617c591f73d9b"
+    },
+    "success": true
+  },
+  "revision": "uniform-actor-and-left-profile",
+  "status": "analyzed; functional CPU/MMU tests plus observed Virtual II color output",
+  "tests": {
+    "errors": [],
+    "execution": "py65 functional CPU plus independent resource/rule models",
+    "failures": [],
+    "original_oric_runtime": "not tested",
+    "program_sha256": "e4e718ff5f9adff2bdec8fb0fe566539ba3c93d0ca6560016f8a61767ac47578",
+    "real_apple_hardware": "not tested",
+    "skipped": [],
+    "success": true,
+    "tests_run": 44,
+    "video_profile": "dhgr"
+  },
+  "virtualii": {
+    "boot": "ejected previous media, reinserted regenerated .do in slot 6/drive 1; Boot/cold restart; observed final actor application",
+    "captures": [
+      {
+        "file": "build/dhgr/virtualii-actor-front-y180.png",
+        "monitor": "color",
+        "pose": "standing front",
+        "sha256": "c6cefe5ec5d21f5044f8a32026fa51569b4ed4cb9f9f0025c68e59228bdd9826",
+        "x": 19,
+        "y": 180
+      },
+      {
+        "file": "build/dhgr/virtualii-actor-left-y180.png",
+        "monitor": "color",
+        "pose": "standing left",
+        "sha256": "e0b175b141240821547d2ef150782aa7917faa9960b73cb58054b1fbfd28d860",
+        "x": 19,
+        "y": 180
+      }
+    ],
+    "complete_loaded_payload_hash_in_emulator": "not measured; full payload comparison covered by functional CPU tests",
+    "configuration_evidence": "retained previous test profile; no configuration changes",
+    "cpu": "MOS/Synertec 6502, standard 1 MHz",
+    "disk_sha256": "4dce986dd362f60c2660239178f5c4cb2c5b9a699019e2baedfc255b1a64a739",
+    "emulator": "Virtual II 13.3",
+    "fps": "not measured",
+    "method": "native UI test in retained separate Virtual II session; two PNGs exported by emulator",
+    "model": "Apple //e Rev-B emulation",
+    "observed_controls": [
+      "N: walking/floor stop",
+      "space: stop/stand",
+      "J: turn left",
+      "A: left-facing crouch"
+    ],
+    "observed_palette": "uniform yellow hair, dark-blue trousers and brown boots; retouched pink left profile; unchanged room material bodies; composite fringes remain",
+    "physical_hardware": "not tested",
+    "program_sha256": "e4e718ff5f9adff2bdec8fb0fe566539ba3c93d0ca6560016f8a61767ac47578",
+    "ram": "64 KiB main + 64 KiB RamWorks",
+    "rom_sha256": "1fb812584c6633fa16b77b20915986ed1178d1e6fc07a647f7ee8d4e6ab9d40b"
+  }
+}

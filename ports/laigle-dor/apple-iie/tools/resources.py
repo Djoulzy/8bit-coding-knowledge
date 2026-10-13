@@ -1,9 +1,11 @@
-"""Deterministic, evidence-linked export and monochrome W05 conversion."""
+"""Deterministic, evidence-linked export and selectable HGR conversion."""
 import argparse
 from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from tools.common import Source, ROOT, digest, write_json, B1_SHA, B2_SHA
+from tools.common import Source, ROOT, digest, write_json, B1_SHA, B2_SHA, build_dir, video_mode, select_video
+from tools.hgr_color import SCENE_COLORS, WHITE, target_sprite, write_cell
+from tools import dhgr
 from model.world import Room
 from model.movement import room12_grid
 from tools.video_layout import source_y, HGR_HEIGHT
@@ -97,7 +99,7 @@ def frames(source):
     return result
 
 
-def mono_room12(source, variation):
+def room12_scene(source, variation, mode='mono'):
     """Translate B2 100/300/390/600–699 for the checked room-12 fields."""
     room = Room.decode(source.read(0x5600, 512), 12)
     if (room.geometry, room.light, room.furnishing, room.treasure, room.features,
@@ -112,7 +114,7 @@ def mono_room12(source, variation):
         sx, sy, err = (1 if x0 < x1 else -1), (1 if y0 < y1 else -1), dx + dy
         while True:
             if 0 <= x0 < 240 and 0 <= y0 < 200:
-                image[y0][x0] = 1
+                image[y0][x0] = dhgr.MATERIAL_COLORS['wall'] if mode == 'dhgr' else (WHITE if mode == 'color' else 1)
             if x0 == x1 and y0 == y1:
                 break
             e = 2 * err
@@ -126,13 +128,15 @@ def mono_room12(source, variation):
         # $3EBD uses the ROM cursor byte; $3E52 copies offsets width..1.
         left = (x // 6 + 1) * 6
         operations.append(['sprite', i, left, y, 'or' if additive else 'opaque', evidence])
+        color = dhgr.SCENE_COLORS[i] if mode == 'dhgr' else (SCENE_COLORS[i] if mode == 'color' else 1)
         for j, row in enumerate(s['pixels']):
             for k, value in enumerate(row):
                 if 0 <= y + j < 200 and 0 <= left + k < 240:
                     if additive:
-                        image[y + j][left + k] |= value
+                        if value:
+                            image[y + j][left + k] = color
                     elif s['masks'][j][k]:
-                        image[y + j][left + k] = value
+                        image[y + j][left + k] = color if value else 0
 
     line(12, 199, 60, 119, 'B2 100/390')
     line(60, 119, 191, 119, 'B2 390')
@@ -153,7 +157,7 @@ def mono_room12(source, variation):
     return image, operations, room
 
 
-def hgr_image(image):
+def hgr_image(image, mode='mono'):
     """Crop only room 12's cleared header; resample remaining 165 into 160 rows."""
     page = bytearray(8192)
     for y, row in enumerate(image):
@@ -162,6 +166,11 @@ def hgr_image(image):
             continue
         offset = row_offset(target_y)
         page[offset:offset + 40] = bytes(40)
+        if mode == 'color':
+            for x in range(0, len(row), 2):
+                # Last occupied source dot selects the pair's material.
+                write_cell(page, offset, x + 20, row[x + 1] or row[x])
+            continue
         for x, value in enumerate(row):
             if value:
                 tx = x + 20
@@ -184,7 +193,8 @@ def rle(data):
 
 def export(oric_rom=None):
     source = Source()
-    dest = ROOT / 'build/resources'
+    mode = video_mode()
+    dest = build_dir() / 'resources'
     dest.mkdir(parents=True, exist_ok=True)
     exported = []
 
@@ -227,28 +237,39 @@ def export(oric_rom=None):
     for s in sprites:
         raw = source.read(s['source_start'], s['width_bytes'] * s['height'])
         save('sprite-%03d-oric.bin' % s['id'], raw, s['source_start'], sprite_id=s['id'])
-    image, operations, room = mono_room12(source, variation[12])
-    page = hgr_image(image)
-    save('room12.hgr', page, conversion='native monochrome masks; x+20; cleared header cropped; 165->160 last-row')
+    image, operations, room = room12_scene(source, variation[12], mode)
+    if mode == 'dhgr':
+        page, aux = dhgr.image_pages(image)
+        save('room12-aux.hgr', aux, conversion='DHGR auxiliary half; 140 color columns')
+        save('room12-aux.rle', rle(aux))
+    else:
+        page = hgr_image(image, mode)
+    save('room12.hgr', page, conversion=mode + '; x+20; cleared header cropped; 165->160 last-row')
     save('room12.rle', rle(page))
     save('room12-collision.bin', room12_grid(room), evidence='B2 600/605; no M-dependent features in room 12')
-    save('room12-source.pbm', b'P1\n240 200\n' + '\n'.join(' '.join(map(str, row)) for row in image).encode() + b'\n',
+    save('room12-source.pbm', b'P1\n240 200\n' + '\n'.join(' '.join(str(int(bool(v))) for v in row) for row in image).encode() + b'\n',
          limitation='Translated image, not an Oric runtime capture')
     write_json(dest / 'frames.json', fs)
     write_json(dest / 'room12-operations.json', operations)
     write_json(dest / 'rooms.json', [Room.decode(source.read(0x5600, 512), i).__dict__ for i in range(64)])
-    generate_include(dest, sprites, fs, room)
+    if mode == 'dhgr':
+        native_sprites = [dhgr.target_sprite(s) for s in sprites]
+        dhgr.generate_include(dest, native_sprites, fs)
+    else:
+        native_sprites = [target_sprite(s, mode) for s in sprites]
+        generate_include(dest, native_sprites, fs, room, mode)
     write_json(dest / 'manifest.json', {'source_payloads': {'B1': B1_SHA, 'B2': B2_SHA},
                                        'oric_rom': rom_record, 'room12': room.__dict__,
                                        'exports': exported, 'frames': fs,
-                                       'video': {'mode': 'mixed HGR', 'graphic_rows': HGR_HEIGHT,
-                                                 'text_rows': 4, 'page_strategy': 'alternating frames',
+                                       'video': {'mode': 'mixed DHGR' if mode == 'dhgr' else 'mixed HGR', 'profile': mode, 'graphic_rows': HGR_HEIGHT,
+                                                 'text_rows': 4, 'text_columns': 80 if mode == 'dhgr' else 40,
+                                                 'color_columns': 140 if mode == 'dhgr' else None, 'page_strategy': 'alternating frames',
                                                  'baseline': '$A000', 'attribute_policy': 'discarded; transparent cells'},
-                                       'sprites': [{k: v for k, v in s.items() if k not in ['pixels', 'masks']} for s in sprites]})
+                                       'sprites': [{k: v for k, v in s.items() if k not in ['pixels', 'masks', 'statuses', 'colors']} for s in native_sprites]})
     return dest
 
 
-def generate_include(dest, sprites, fs, room):
+def generate_include(dest, sprites, fs, room, mode='mono'):
     lines = ['; Generated by tools/resources.py; historical input is read-only.']
 
     def emit(label, data):
@@ -276,6 +297,8 @@ def generate_include(dest, sprites, fs, room):
     for index, frame in enumerate(fs):
         emit('frame_%d' % index, [len(frame['layers'])] +
              [v for sid, dx, dy in frame['layers'] for v in [lookup[sid], dx, dy]])
+    if mode == 'color':
+        emit('sprite_color_phase', [s['color_phase'] for s in sprites])
     for s in sprites:
         width = s['width_bytes'] * 6
         cw = (width + 6) // 7
@@ -293,4 +316,4 @@ def generate_include(dest, sprites, fs, room):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--oric-rom', help='Local 16 KiB reference ROM; not redistributed')
-    export(parser.parse_args().oric_rom)
+    export(select_video(parser).oric_rom)

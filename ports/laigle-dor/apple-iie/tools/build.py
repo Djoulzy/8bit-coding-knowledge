@@ -6,14 +6,14 @@ import shutil
 import subprocess
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from tools.common import ROOT, REPO, digest, write_json
+from tools.common import ROOT, REPO, digest, write_json, build_dir, video_mode, select_video
 from tools.resources import export
 from tools.disk import make_disk, nibble_tracks
 
 
 def main(oric_rom=None):
-    build = ROOT / 'build'
-    build.mkdir(exist_ok=True)
+    build = build_dir()
+    build.mkdir(parents=True, exist_ok=True)
     resources = export(oric_rom)
     commands = {}
     versions = {}
@@ -30,10 +30,11 @@ def main(oric_rom=None):
 
     def run(tool, *args):
         subprocess.run([commands[tool], *map(str, args)], cwd=ROOT, check=True)
-    run('ca65', '--cpu', '6502', '-g', '-I', ROOT / 'src', '-I', resources,
+    run('ca65', '--cpu', '6502', '-D', 'HGR_COLOR=%d' % (video_mode() == 'color'),
+        '-D', 'DHGR=%d' % (video_mode() == 'dhgr'), '-g', '-I', ROOT / 'src', '-I', resources,
         '--bin-include-dir', resources, '-l', build / 'game.lst',
         '-o', build / 'game.o', ROOT / 'src/main.s')
-    run('ld65', '-C', ROOT / 'src/game.cfg', '-m', build / 'game.map',
+    run('ld65', '-C', ROOT / ('src/dhgr.cfg' if video_mode() == 'dhgr' else 'src/game.cfg'), '-m', build / 'game.map',
         '-Ln', build / 'game.lbl', '-o', build / 'game.bin', build / 'game.o')
     program = (build / 'game.bin').read_bytes()
     end_page = 0x60 + (len(program) + 255) // 256
@@ -53,16 +54,17 @@ def main(oric_rom=None):
     write_json(build / 'build-manifest.json', {
         'tools': versions, 'program_address': '$6000', 'entry': '$6000',
         'program_bytes': len(program), 'loaded_end_exclusive': '$%04X' % (end_page * 256),
-        'video': 'mixed HGR, alternating $2000/$4000 frames; baseline $A000',
+        'video': 'mixed ' + ('DHGR, main+aux' if video_mode() == 'dhgr' else 'HGR') + ', alternating $2000/$4000 frames; baseline $A000',
+        'video_profile': video_mode(),
         'disk_format': 'DOS-order, 35 tracks x 16 sectors x 256; custom loader; no filesystem',
         'disk_sha256': digest(disk), 'program_sha256': digest(program),
         'source_files': versioned, 'oric_rom': 'missing/provisional' if not oric_rom else 'supplied',
         'verification': 'assembled and packaged; execution recorded separately by tests'})
     print('Built %d application bytes, entry $6000, loaded end $%04X.' % (len(program), end_page * 256))
-    print('build/laigle-dor.do and build/laigle-dor.nib')
+    print('%s/laigle-dor.do and laigle-dor.nib (%s)' % (build.relative_to(ROOT), video_mode()))
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--oric-rom')
-    main(parser.parse_args().oric_rom)
+    main(select_video(parser).oric_rom)

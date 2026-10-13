@@ -4,6 +4,17 @@ This implementation follows the requested Apple display adaptation: ordinary
 monochrome HGR with four text lines below, two displayed/drawn frame pages, and
 no emulation of Oric ink/paper attribute effects.
 
+The monochrome profile remains the default. An optional
+[native HGR color experiment](color-experiment.md) uses the same page/viewport
+contract, but converts artwork into two-dot cells and lets sprite writes select
+HGR bit 7. The monochrome bit-7/mask statements below describe `VIDEO=mono`.
+
+The [DHGR variant](dhgr.md) has its own banked renderer, fine-dot masks and
+16-color material patterns (see [palette adaptation](dhgr-palette.md)). It uses
+two main+aux frame pairs, a main+aux baseline and four
+80-column text rows. Its mapping and memory contract are separate from the
+main-only HGR contract below.
+
 ## Video and RAM contract
 
 With 80STORE, RAMRD, RAMWRT, ALTZP and 80COL off, the program uses main RAM.

@@ -10,6 +10,13 @@ analysis_date: "2026-10-09"
 
 # Source-code analysis: L'Aigle d'Or
 
+Later target follow-up, 2026-10-13: the Apple port now reconstructs the distinct
+oubliette from B2 7030–7046, uses full-screen text panels with live merchant
+funds, and converts the original B1 title/lightning script. Native checks and
+identified Virtual II observations are documented in
+[presentation-and-pits.md](../../../ports/laigle-dor/apple-iie/docs/presentation-and-pits.md).
+These target observations do not establish original Oric runtime equivalence.
+
 ## 1. Objective and scope
 
 Extract reusable programming knowledge from the complete supplied cassette

@@ -1,4 +1,7 @@
 ; Standalone takeover ABI. No OS, BASIC or monitor calls after entry.
+.ifndef FULL_GAME
+FULL_GAME = 0
+.endif
 STATE = $0C00              ; outside both text pages ($0400/$0800)
 actor_x = STATE
 actor_y = STATE+1
@@ -28,7 +31,8 @@ EVENT_LOG = $0D00  ; 64 four-byte records: kind, tick lo, tick hi, argument
 BASELINE_HI = $A0
 VIEW_TOP = 35
 VIEW_HEIGHT = 160
-; Private main-bank zero page $80–$AA. All workers may clobber A/X/Y/P.
+; Private main-bank ZP $80–$AA; DHGR extends it through $B6.
+; All workers may clobber A/X/Y/P.
 src_ptr = $80
 dst_ptr = $82
 frame_ptr = $84
@@ -42,6 +46,7 @@ sprite_w = $8D
 sprite_h = $8E
 out_w = $8F
 last_mask = $90
+color_phase = $90        ; reserved monochrome scratch reused by color build
 first_mask = $91
 spill = $92
 pixel = $93
@@ -67,7 +72,26 @@ bounds_top = $A6
 bounds_bottom = $A7
 hud_row = $A8
 hud_ptr = $A9             ; $A9/$AA
+.if DHGR
+; DHGR-only scratch; game state, stack and all these pointers stay in main RAM.
+dhgr_codes = $AB
+cell_x = $AC
+cells_left = $AD
+code_count = $AE
+row_stride = $AF
+cell_color = $B0
+serial_col = $B1
+render_bank = $B2
+data_cursor = $B3
+origin_cell = $B4
+row_color = $B5
+cell_mask = $B6
+HUD_BUFFER = $0E00        ; 40 bytes: compact HUD to interleaved 80-column text
+.endif
 EVENT_WALK = 1
 EVENT_STOP = 2
 EVENT_EXIT = 3
 EVENT_BLOCKED = 4
+.if FULL_GAME
+.include "game/full-memory.inc"
+.endif

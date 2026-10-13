@@ -5,6 +5,14 @@ The machine-readable snapshot is [verification.json](verification.json).
 The default profile uses the explicitly provisional 64-zero-byte Oric variation
 table. No Oric reference game, full Apple emulator or physical machine was run.
 
+This record describes the original monochrome milestone. The subsequent
+[color experiment](color-experiment.md) records the optional color binary and
+the 27-test regression run for each profile; its generated evidence is separate.
+
+The later [DHGR experiment](dhgr.md) records the banked implementation and
+additional memory/pixel tests separately. Earlier HGR results do not validate
+auxiliary-memory mapping or DHGR output.
+
 ## Executed target checks
 
 `make test` / `python3 tools/check.py`: **23 tests passed**. These include nine

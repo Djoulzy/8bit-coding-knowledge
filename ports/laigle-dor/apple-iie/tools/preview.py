@@ -5,17 +5,25 @@ import zlib
 from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from tools.common import ROOT, Source
+from tools.common import ROOT, Source, build_dir, video_mode
 from tools.resources import sprite, row_offset
+from tools.hgr_color import target_sprite, scanline_rgb
+from tools import dhgr
 from tools.video_layout import source_y, HGR_HEIGHT
 
 
 def reference_page(x, y, frame):
     source = Source()
-    frames = json.loads((ROOT / 'build/resources/frames.json').read_text())
-    page = bytearray((ROOT / 'build/resources/room12.hgr').read_bytes())
+    frames = json.loads((build_dir() / 'resources/frames.json').read_text())
+    page = bytearray((build_dir() / 'resources/room12.hgr').read_bytes())
+    if video_mode() == 'dhgr':
+        aux = bytearray((build_dir() / 'resources/room12-aux.hgr').read_bytes())
+        for sid, dx, dy in frames[frame]['layers']:
+            dhgr.reference_layer(page, aux, dhgr.target_sprite(sprite(source, sid)),
+                                 (x + dx) & 255, (y + dy) & 255)
+        return bytes(page), bytes(aux)
     for sid, dx, dy in frames[frame]['layers']:
-        s = sprite(source, sid)
+        s = target_sprite(sprite(source, sid), video_mode())
         cx, cy = (x + dx) & 255, (y + dy) & 255
         if cx >= 40:
             continue
@@ -34,7 +42,9 @@ def reference_page(x, y, frame):
                     continue
                 address = base + tx // 7
                 mask = 1 << (tx % 7)
-                page[address] = (page[address] | mask) if v else (page[address] & (127 ^ mask))
+                page[address] = (page[address] | mask) if v else (page[address] & (255 ^ mask))
+                if video_mode() == 'color':
+                    page[address] = (page[address] & 127) | s['color_phase']
     return bytes(page)
 
 
@@ -53,10 +63,55 @@ def pixels(page, text_rows=None):
     return bytes(data)
 
 
-def png(page, text_rows=None):
+def png(page, text_rows=None, video=None, monitor='color'):
     def chunk(kind, data):
         return struct.pack('>I', len(data)) + kind + data + struct.pack('>I', zlib.crc32(kind + data))
-    data = pixels(page, text_rows)
-    rows = b''.join(b'\0' + data[y * 280:(y + 1) * 280] for y in range(192))
-    return b'\x89PNG\r\n\x1a\n' + chunk(b'IHDR', struct.pack('>IIBBBBB', 280, 192, 8, 0, 0, 0, 0)) + \
+    mode = video or video_mode()
+    if mode == 'dhgr':
+        main, aux = page
+        height = HGR_HEIGHT if text_rows is not None else 192
+        data = bytearray(b''.join(dhgr.scanline_rgb(main, aux, y, monitor) for y in range(height)))
+        data.extend(bytes((192 - height) * 560 * 3))
+        if text_rows is not None:
+            from tools.text_font import glyph
+            for row, codes in enumerate(text_rows):
+                for column, code in enumerate(codes):
+                    for y, bits in enumerate(glyph(chr(code & 127))):
+                        for x in range(5):
+                            if bits & (16 >> x):
+                                pos = ((160 + row * 8 + y) * 560 + column * 7 + x + 1) * 3
+                                data[pos:pos + 3] = b'\xff\xff\xff'
+        # Double scanlines preserve screen aspect: four sample dots per color,
+        # two preview scanlines per native scanline; native mode remains 140x160.
+        stride = 560 * 3
+        rows = b''.join((b'\0' + data[y * stride:(y + 1) * stride]) * 2 for y in range(192))
+        return b'\x89PNG\r\n\x1a\n' + chunk(b'IHDR', struct.pack('>IIBBBBB', 560, 384, 8, 2, 0, 0, 0)) + \
+            chunk(b'IDAT', zlib.compress(rows)) + chunk(b'IEND', b'')
+    color = mode == 'color'
+    if color:
+        graphics_height = HGR_HEIGHT if text_rows is not None else 192
+        data = b''.join(scanline_rgb(page[row_offset(y):row_offset(y) + 40]) for y in range(graphics_height))
+        if text_rows is not None:
+            mono = pixels(bytes(8192), text_rows)[HGR_HEIGHT * 280:]
+            data += bytes(v for intensity in mono for v in (intensity,) * 3)
+    else:
+        data = pixels(page, text_rows)
+    stride = 280 * (3 if color else 1)
+    rows = b''.join(b'\0' + data[y * stride:(y + 1) * stride] for y in range(192))
+    return b'\x89PNG\r\n\x1a\n' + chunk(b'IHDR', struct.pack('>IIBBBBB', 280, 192, 8, 2 if color else 0, 0, 0, 0)) + \
         chunk(b'IDAT', zlib.compress(rows)) + chunk(b'IEND', b'')
+
+
+def text_png(rows):
+    """Functional text-font preview; the real emulator uses the Apple charset."""
+    from tools.text_font import glyph
+    columns=len(rows[0]);width=columns*7;data=bytearray(width*192)
+    for row,codes in enumerate(rows):
+        for column,code in enumerate(codes):
+            for y,bits in enumerate(glyph(chr(code&127))):
+                for x in range(5):
+                    if bits&(16>>x):data[(row*8+y)*width+column*7+x+1]=255
+    def chunk(kind,data):
+        return struct.pack('>I',len(data))+kind+data+struct.pack('>I',zlib.crc32(kind+data))
+    raster=b''.join(b'\0'+data[y*width:(y+1)*width] for y in range(192))
+    return b'\x89PNG\r\n\x1a\n'+chunk(b'IHDR',struct.pack('>IIBBBBB',width,192,8,0,0,0,0))+chunk(b'IDAT',zlib.compress(raster))+chunk(b'IEND',b'')

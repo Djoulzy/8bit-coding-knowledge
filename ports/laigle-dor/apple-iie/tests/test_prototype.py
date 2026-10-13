@@ -3,11 +3,13 @@ from pathlib import Path
 import sys
 import unittest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from tools.common import ROOT, Source, digest, write_json
+from tools.common import ROOT, Source, digest, write_json, build_dir, video_mode
 from tools.disk import offset, make_disk, nibble_tracks
 from tools.machine import Machine
 from tools.preview import reference_page, png
 from tools.resources import frames, row_offset, sprite
+from tools.hgr_color import target_sprite
+from tools import dhgr
 from tools.video_layout import source_y, text_address, BASELINE, HGR_HEIGHT, STATE, EVENT_LOG
 from model.world import Room
 from model.movement import Actor, probe, room12_grid
@@ -16,14 +18,14 @@ from model.movement import Actor, probe, room12_grid
 class ResourceTests(unittest.TestCase):
     def test_pinned_inputs_and_export_references(self):
         source = Source()
-        manifest = json.loads((ROOT / 'build/resources/manifest.json').read_text())
+        manifest = json.loads((build_dir() / 'resources/manifest.json').read_text())
         for entry in manifest['exports']:
-            data = (ROOT / 'build/resources' / entry['file']).read_bytes()
+            data = (build_dir() / 'resources' / entry['file']).read_bytes()
             self.assertEqual(digest(data), entry['sha256'])
             if 'cpu_start' in entry:
                 self.assertEqual(data, source.read(entry['cpu_start'], entry['length'], entry['source_block']))
-        self.assertEqual(len((ROOT / 'build/resources/world-initial.bin').read_bytes()), 512)
-        self.assertEqual((ROOT / 'build/resources/scroll2.bin').read_bytes()[-1], 92)
+        self.assertEqual(len((build_dir() / 'resources/world-initial.bin').read_bytes()), 512)
+        self.assertEqual((build_dir() / 'resources/scroll2.bin').read_bytes()[-1], 92)
 
     def test_room_fields_and_links(self):
         snapshot = Source().read(0x5600, 512)
@@ -80,13 +82,13 @@ class ResourceTests(unittest.TestCase):
         self.assertTrue(any(not v for row in atlas['masks'] for v in row))
 
     def test_disk_order_and_capacity(self):
-        disk = (ROOT / 'build/laigle-dor.do').read_bytes()
-        data = (ROOT / 'build/game.bin').read_bytes()
+        disk = (build_dir() / 'laigle-dor.do').read_bytes()
+        data = (build_dir() / 'game.bin').read_bytes()
         reconstructed = b''.join(disk[offset(*divmod(i, 16)):offset(*divmod(i, 16)) + 256]
                                  for i in range(1, (len(data) + 255) // 256 + 1))
         self.assertEqual(reconstructed[:len(data)], data)
         self.assertEqual(len(disk), 143360)
-        self.assertEqual(len((ROOT / 'build/laigle-dor.nib').read_bytes()), 35 * 6656)
+        self.assertEqual(len((build_dir() / 'laigle-dor.nib').read_bytes()), 35 * 6656)
         with self.assertRaises(ValueError):
             make_disk(bytes(256), data)
         with self.assertRaises(ValueError):
@@ -98,7 +100,7 @@ class ExecutedCpuTests(unittest.TestCase):
     def setUpClass(cls):
         cls.m = Machine()
         cls.m.until(0x6000)
-        cls.loaded = bytes(cls.m.bus.ram[0x6000:0x6000 + len((ROOT / 'build/game.bin').read_bytes())])
+        cls.loaded = bytes(cls.m.bus.ram[0x6000:0x6000 + len((build_dir() / 'game.bin').read_bytes())])
         cls.boot_instructions = cls.m.instructions
         cls.m.until(cls.m.symbols['main_loop'])
         cls.initial_page = cls.m.displayed_page()
@@ -107,22 +109,27 @@ class ExecutedCpuTests(unittest.TestCase):
         cls.room = Room.decode(cls.snapshot, 12)
         cls.grid = room12_grid(cls.room)
         cls.baseline = bytes(cls.m.bus.ram[BASELINE:BASELINE + 8192])
-        cls.program = (ROOT / 'build/game.bin').read_bytes()
+        cls.program = (build_dir() / 'game.bin').read_bytes()
         cls.completed_collision_cases = 0
         cls.completed_sprite_cases = 0
         cls.boot_ram = bytes(cls.m.bus.ram)
+        cls.boot_aux = bytes(cls.m.bus.aux)
+        cls.aux_baseline = bytes(cls.m.bus.aux[BASELINE:BASELINE + 8192])
         cls.boot_switches = dict(cls.m.bus.switches)
         cls.hidden_frame_count = 0
         cls.largest_frame_graphics_write_set = 0
 
     def setUp(self):
         self.m.bus.ram[:] = self.boot_ram
+        self.m.bus.aux[:] = self.boot_aux
         self.m.bus.switches = dict(self.boot_switches)
         self.m.bus.key, self.m.bus.strobe = 0, False
         self.m.bus.io.clear()
         self.m.bus.page_flips.clear()
         self.m.bus.writes.clear()
         self.m.bus.frame_graphics_writes.clear()
+        self.m.bus.bank_graphics_writes.clear()
+        self.m.bus.bank_writes.clear()
         self.m.bus.visible_write_violations.clear()
         self.m.bus.visible_text_write_violations.clear()
         self.m.cpu.sp = 255
@@ -146,9 +153,13 @@ class ExecutedCpuTests(unittest.TestCase):
         self.assertGreater(self.boot_instructions, 0)
         self.assertFalse(self.m.bus.motor)
         self.assertEqual(self.initial_page, reference_page(19, 140, 0))
-        self.assertEqual(self.baseline, (ROOT / 'build/resources/room12.hgr').read_bytes())
-        for name in ['80STORE', 'RAMRD', 'RAMWRT', 'ALTZP', '80COL', 'TEXT']:
+        self.assertEqual(self.baseline, (build_dir() / 'resources/room12.hgr').read_bytes())
+        for name in ['80STORE', 'RAMRD', 'RAMWRT', 'ALTZP', 'TEXT']:
             self.assertEqual(self.m.bus.switches[name], 0)
+        self.assertEqual(self.m.bus.switches['80COL'], int(video_mode() == 'dhgr'))
+        if video_mode() == 'dhgr':
+            self.assertEqual(self.aux_baseline, (build_dir() / 'resources/room12-aux.hgr').read_bytes())
+            self.assertEqual(self.m.bus.switches['DHIRES'], 1)
         self.assertEqual(self.m.bus.switches['MIXED'], 1)
         self.assertEqual(self.m.bus.switches['PAGE2'], 1)
         self.assertEqual(self.m.bus.switches['HIRES'], 1)
@@ -174,7 +185,7 @@ class ExecutedCpuTests(unittest.TestCase):
         self.assertIn(3, events)  # reaches right-room portal
         self.assertIn(4, events)  # floor/blocked wall
         self.assertEqual(self.m.bus.speaker_accesses, 0)
-        (ROOT / 'build/test-screen.png').write_bytes(png(self.m.displayed_page(), self.m.text_rows()))
+        (build_dir() / 'test-screen.png').write_bytes(png(self.m.displayed_page(), self.m.text_rows()))
 
     def test_collision_cpu_against_bounded_oracle(self):
         count = 0
@@ -200,8 +211,29 @@ class ExecutedCpuTests(unittest.TestCase):
         for sid in used:
             for page_address in [0x2000, 0x4000]:
                 for x, y in [(i, 140) for i in range(7)] + [(39, 199), (0, 34), (0, 0)]:
+                    if video_mode() == 'dhgr':
+                        self.m.bus.switches['TEXT'] = 1
+                        main = bytes((i * 13 + (i >> 6)) & 127 for i in range(8192))
+                        aux = bytes((i * 19 + (i >> 5)) & 127 for i in range(8192))
+                        self.m.bus.ram[page_address:page_address + 8192] = main
+                        self.m.bus.aux[page_address:page_address + 8192] = aux
+                        self.put('draw_page_hi', page_address >> 8)
+                        self.put('render_page_index', int(page_address == 0x4000))
+                        self.put('actor_x', x); self.put('actor_y', y)
+                        self.put('sprite_index', used.index(sid)); self.put('dx', 0); self.put('dy', 0)
+                        expected_main, expected_aux = bytearray(main), bytearray(aux)
+                        dhgr.reference_layer(expected_main, expected_aux,
+                                             dhgr.target_sprite(sprite(Source(), sid)), x, y)
+                        self.call('draw_sprite')
+                        self.assertEqual(bytes(self.m.bus.ram[page_address:page_address + 8192]),
+                                         expected_main, ('main', sid, x, y))
+                        self.assertEqual(bytes(self.m.bus.aux[page_address:page_address + 8192]),
+                                         expected_aux, ('aux', sid, x, y))
+                        checked += 1
+                        continue
                     # Draw just one layer over nonuniform bytes to catch edge-mask bugs.
-                    page = bytes((i * 13 + (i >> 6)) & 127 for i in range(8192))
+                    page = bytes((i * 13 + (i >> 6)) & (255 if video_mode() == 'color' else 127)
+                                 for i in range(8192))
                     self.m.bus.switches['TEXT'] = 1  # isolated worker, no active presentation
                     self.m.bus.ram[page_address:page_address + 8192] = page
                     self.put('draw_page_hi', page_address >> 8)
@@ -209,7 +241,7 @@ class ExecutedCpuTests(unittest.TestCase):
                     self.put('actor_x', x); self.put('actor_y', y)
                     self.m.bus.ram[self.m.symbols['sprite_index']] = used.index(sid)
                     self.m.bus.ram[self.m.symbols['dx']] = self.m.bus.ram[self.m.symbols['dy']] = 0
-                    s = sprite(Source(), sid)
+                    s = target_sprite(sprite(Source(), sid), video_mode())
                     expected = bytearray(page)
                     left = 20 + (x + 1) * 6
                     for j, row in enumerate(s['pixels']):
@@ -224,7 +256,9 @@ class ExecutedCpuTests(unittest.TestCase):
                             if tx >= 280:
                                 continue
                             a, bit = base + tx // 7, 1 << (tx % 7)
-                            expected[a] = expected[a] | bit if v else expected[a] & (127 ^ bit)
+                            expected[a] = expected[a] | bit if v else expected[a] & (255 ^ bit)
+                            if video_mode() == 'color':
+                                expected[a] = (expected[a] & 127) | s['color_phase']
                     self.call('draw_sprite')
                     self.assertEqual(bytes(self.m.bus.ram[page_address:page_address + 8192]),
                                      bytes(expected), (page_address, sid, x, y))
@@ -252,9 +286,16 @@ class ExecutedCpuTests(unittest.TestCase):
         self.assertEqual(self.m.state()['event_overflow'], 6)
         self.assertEqual(bytes(self.m.bus.ram[0x6000:0x6000 + len(self.program)]), self.program)
         self.assertEqual(bytes(self.m.bus.ram[BASELINE:BASELINE + 8192]), self.baseline)
+        if video_mode() == 'dhgr':
+            self.assertEqual(bytes(self.m.bus.aux[BASELINE:BASELINE + 8192]), self.aux_baseline)
+            for bank, a in self.m.bus.bank_writes:
+                if bank:
+                    self.assertTrue(0x2000 <= a < 0x6000 or
+                                    any(text_address(row, p) <= a < text_address(row, p) + 40
+                                        for p in [0, 1] for row in range(20, 24)), ('Aux ownership', a))
         for a in self.m.bus.writes:
-            self.assertTrue(0x80 <= a <= 0xAA or 0x100 <= a < 0x200 or
-                            STATE <= a <= STATE + 28 or EVENT_LOG <= a < EVENT_LOG + 256 or
+            self.assertTrue(0x80 <= a <= (0xB6 if video_mode() == 'dhgr' else 0xAA) or 0x100 <= a < 0x200 or
+                            STATE <= a <= STATE + 28 or (video_mode() == 'dhgr' and 0xE00 <= a < 0xE28) or EVENT_LOG <= a < EVENT_LOG + 256 or
                             0x2000 <= a < 0x6000 or
                             any(text_address(row, p) <= a < text_address(row, p) + 40
                                 for p in [0, 1] for row in range(20, 24)),
@@ -268,24 +309,28 @@ class ExecutedCpuTests(unittest.TestCase):
         for key in keys:
             previous = self.m.bus.switches['PAGE2']
             visible_base = 0x4000 if previous else 0x2000
-            old_graphics = bytes(self.m.bus.ram[visible_base:visible_base + 8192])
+            old_graphics = self.m.displayed_page()
             old_text = self.m.text_rows()
             self.m.bus.frame_graphics_writes.clear()
+            self.m.bus.bank_graphics_writes.clear()
             self.m.bus.writes.clear()
             self.m.bus.press(key) if key is not None else None
             self.m.step()
             self.m.until(self.m.symbols['present_flip'])
-            self.assertEqual(bytes(self.m.bus.ram[visible_base:visible_base + 8192]), old_graphics)
+            self.assertEqual(self.m.displayed_page(), old_graphics)
             self.assertEqual(self.m.text_rows(), old_text)
             hidden_base = 0x2000 if previous else 0x4000
             self.assertTrue(all(hidden_base <= a < hidden_base + 8192
                                 for a in self.m.bus.frame_graphics_writes))
-            self.assertLess(len(self.m.bus.frame_graphics_writes), 1024)
+            write_count = len(self.m.bus.bank_graphics_writes)
+            self.assertLess(write_count, 2048 if video_mode() == 'dhgr' else 1024)
             type(self).largest_frame_graphics_write_set = max(
-                self.largest_frame_graphics_write_set, len(self.m.bus.frame_graphics_writes))
+                self.largest_frame_graphics_write_set, write_count)
             self.m.until(self.m.symbols['main_loop'])
             self.assertEqual(self.m.bus.switches['PAGE2'], previous ^ 1)
             self.assertTrue(self.m.bus.page_flips[-1]['in_vblank'])
+            for name in ('RAMRD', 'RAMWRT', 'ALTZP', '80STORE'):
+                self.assertEqual(self.m.bus.switches[name], 0, name)
             s = self.m.state()
             self.assertEqual(self.m.displayed_page(), reference_page(s['actor_x'], s['actor_y'], s['frame_id']))
             type(self).hidden_frame_count += 1
@@ -296,11 +341,12 @@ class ExecutedCpuTests(unittest.TestCase):
     def test_native_mixed_text_follows_selected_page(self):
         for key in [None, 10, None, 65, 32, 82]:
             s = self.m.frame(key)
+            width = 80 if video_mode() == 'dhgr' else 40
             lines = [bytes(c & 127 for c in row).decode() for row in self.m.text_rows()]
-            self.assertEqual(lines[0], 'FORCES:100% POINTS:00000 OR:00500'.ljust(40))
+            self.assertEqual(lines[0], 'FORCES:100% POINTS:00000 OR:00500'.ljust(width))
             self.assertEqual(lines[1], ('SALLE:12 X:%02d Y:%03d MAIN:VIDE' %
-                                      (s['actor_x'], s['actor_y'])).ljust(40))
-            self.assertEqual(lines[3], 'FLECHES:MARCHE A:ACCROUPI ESPACE:STOP'.ljust(40))
+                                      (s['actor_x'], s['actor_y'])).ljust(width))
+            self.assertEqual(lines[3], 'FLECHES:MARCHE A:ACCROUPI ESPACE:STOP'.ljust(width))
             self.assertTrue(all(code >= 128 for row in self.m.text_rows() for code in row))
             self.assertNotIn(STATE, range(0x400, 0xC00))
             self.assertNotIn(EVENT_LOG, range(0x400, 0xC00))
@@ -315,8 +361,9 @@ class ExecutedCpuTests(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        write_json(ROOT / 'build/cpu-verification.json', {
+        write_json(build_dir() / 'cpu-verification.json', {
             'method': 'executed py65 NMOS CPU, stock Disk II BOOT0, simplified device bus',
+            'video_profile': video_mode(),
             'boot_instructions': cls.boot_instructions,
             'checked_collision_cases': cls.completed_collision_cases,
             'checked_sprite_phase_edge_cases': cls.completed_sprite_cases,

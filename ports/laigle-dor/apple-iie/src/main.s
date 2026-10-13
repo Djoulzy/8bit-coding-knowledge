@@ -26,8 +26,15 @@ frame_complete:
 .include "game/core.s"
 .include "apple/input.s"
 .include "apple/audio.s"
+.if DHGR
+.include "apple/dhgr.s"
+.else
 .include "apple/graphics.s"
+.endif
 .include "apple/hud.s"
+.if DHGR
+.include "apple/dhgr-hud.s"
+.endif
 .export code_end
 code_end:
 .segment "RODATA"

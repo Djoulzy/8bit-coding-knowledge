@@ -29,6 +29,22 @@ application's exclusive loaded end page. Its outputs include binary/listing/
 symbols/link map, per-asset evidence, input-source hashes and tool versions.
 No wall-clock timestamp enters the game or disk bytes.
 
+`make build VIDEO=color` / `tools/build.py --video color` selects the separate
+`build/color/` output directory and defines ca65 `HGR_COLOR=1`; the default
+`mono` defines `HGR_COLOR=0` and retains `build/`. `tools/check.py` and
+`tools/run.py` accept the same flag. `LAIGLE_VIDEO=mono|color` is the Python
+tools' default selector; the Makefile passes its explicit `VIDEO` value.
+Both variants use the same loader and game code. See the
+[color experiment](color-experiment.md) for its executed checks and limitations.
+
+`VIDEO=dhgr` / `--video dhgr` selects `build/dhgr/`, ca65 `DHGR=1` and
+[dhgr.cfg](../src/dhgr.cfg). The linker places the two auxiliary read workers
+at run address `$0040`, with their load bytes in the application image. Startup
+copies them there after the boot firmware has finished. The NMOS entry and
+Disk II boot contract are unchanged. DHGR has a separate
+[128-KiB allocation and display contract](dhgr.md); the main-only allocation
+table below applies to the HGR variants.
+
 `tools/disk.py` writes track/physical-sector payloads using a DOS-order mapping.
 The `.do` file contains 35 tracks × 16 sectors × 256 bytes. The `.nib` file
 encodes identical physical sector payloads with standard address fields,

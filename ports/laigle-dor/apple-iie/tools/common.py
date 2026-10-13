@@ -1,6 +1,7 @@
 import hashlib
 from pathlib import Path
 import json
+import os
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -9,6 +10,30 @@ ANALYSIS = REPO / 'research/analyses/laigle-dor'
 TAP_SHA = '7f01e1a3d05825aab887952cd5711bea69d6525730aba5c1e25c814334fe77d7'
 B1_SHA = 'e0c58b933133459eb7d38476cab0fb4f49b5964afd0db8982915b36a42be3340'
 B2_SHA = '0753ce4ed6c8904118fbd9e40ef459fa46140a770e00902213794ef2c33c28ac'
+
+
+def video_mode():
+    mode = os.environ.get('LAIGLE_VIDEO', 'mono')
+    if mode not in ('mono', 'color', 'dhgr'):
+        raise ValueError('LAIGLE_VIDEO must be mono, color or dhgr')
+    return mode
+
+
+def build_dir(mode=None):
+    mode = mode or video_mode()
+    if mode not in ('mono', 'color', 'dhgr'):
+        raise ValueError('Unknown video profile: ' + mode)
+    if os.environ.get('LAIGLE_STAGE') == 'game':
+        if mode != 'dhgr': raise ValueError('The world port currently requires DHGR')
+        return ROOT / 'build/game'
+    return ROOT / ('build/' + mode if mode != 'mono' else 'build')
+
+
+def select_video(parser):
+    parser.add_argument('--video', choices=['mono', 'color', 'dhgr'], default=video_mode())
+    args = parser.parse_args()
+    os.environ['LAIGLE_VIDEO'] = args.video
+    return args
 
 
 def digest(data):
@@ -50,9 +75,9 @@ def load_py65():
     return MPU
 
 
-def labels():
+def labels(directory=None):
     result = {}
-    for line in (ROOT / 'build/game.lbl').read_text().splitlines():
+    for line in ((directory or build_dir()) / 'game.lbl').read_text().splitlines():
         parts = line.split()
         if len(parts) == 3:
             result[parts[2].lstrip('.')] = int(parts[1], 16)

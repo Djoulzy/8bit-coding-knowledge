@@ -190,6 +190,10 @@ present_flip:
 ; then interleaved pixel/mask bytes. Source ink/paper is not retained.
 draw_sprite:
     ldx sprite_index
+.if HGR_COLOR
+    lda sprite_color_phase,x
+    sta color_phase
+.endif
     lda sprite_lo,x
     sta src_ptr
     lda sprite_hi,x
@@ -303,6 +307,10 @@ draw_sprite:
     cmp #40
     bcs @next_column
     ldy col
+.if HGR_COLOR
+    lda mask
+    beq @next_column      ; transparent bytes cannot change terrain's phase
+.endif
     lda mask
     eor #$7F
     and (dst_ptr),y
@@ -310,6 +318,10 @@ draw_sprite:
     lda pixel
     and mask
     ora tmp
+.if HGR_COLOR
+    and #$7F              ; bit 7 is byte-wide HGR phase, never a pixel mask
+    ora color_phase
+.endif
     sta (dst_ptr),y
 @next_column:
     inc col

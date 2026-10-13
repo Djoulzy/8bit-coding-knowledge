@@ -19,13 +19,23 @@ game_reset:
     sta actor_y
     lda #$FF
     sta key_action
+.if FULL_GAME
+    jmp full_reset
+.else
     rts
+.endif
 
 game_tick:
     inc tick_lo
     bne :+
     inc tick_hi
 :
+.if FULL_GAME
+    jsr full_dispatch
+    bcc :+
+    jmp update_frame
+:
+.endif
     lda key_action
     cmp #4
     bcs @other
@@ -99,8 +109,17 @@ continue_walk:
     bne @move
     lda #EVENT_EXIT
     jsr log_event
+.if FULL_GAME
+    jsr full_transition
+.endif
     jmp stop_actor
 @move:
+.if FULL_GAME
+    lda move_x
+    sta actor_x
+    lda move_y
+    sta actor_y
+.else
     ldx facing
     lda actor_x
     clc
@@ -110,12 +129,19 @@ continue_walk:
     clc
     adc step_y,x
     sta actor_y
+.endif
     lda walk_phase
     eor #1
     sta walk_phase
     lda #EVENT_WALK
     jsr log_event
 update_frame:
+.if FULL_GAME
+    jsr full_action_frame
+    bcc :+
+    rts
+:
+.endif
     lda walking
     beq @static
     lda facing
@@ -134,6 +160,9 @@ update_frame:
 ; Bounded semantic map. A zero virtual cell replaces out-of-grid hardware reads
 ; during y=150/170 transitions; this is an explicit provisional policy.
 collision_probe:
+.if FULL_GAME
+    jmp full_collision_probe
+.else
     lda #0
     sta blocked
     sta object_status
@@ -194,6 +223,9 @@ probe_right:
     cmp #40
     bcs @ordinary
     lda #3                 ; room 12 $0484 = 3
+.if FULL_GAME
+    lda room_fields+2
+.endif
     jmp set_door
 @ordinary:
     lda grid_base
@@ -210,6 +242,9 @@ probe_left:
     cmp #40
     bcs @ordinary
     lda #0                 ; room 12 $0483 = 0
+.if FULL_GAME
+    lda room_fields+1
+.endif
     jmp set_door
 @ordinary:
     lda grid_base
@@ -220,12 +255,20 @@ probe_left:
     jmp scan_cells
 probe_up:
     lda actor_y
+.if FULL_GAME
+    ldx room_geometry
+    cmp geometry_far,x
+.else
     cmp #140               ; geometry 1 far wall
+.endif
     bne @ordinary
     lda actor_x
     cmp #19
     bne block_actor
     lda #1                 ; room 12 $0482 = 1 locked far door
+.if FULL_GAME
+    lda room_fields
+.endif
     jmp set_door
 @ordinary:
     lda grid_base
@@ -237,7 +280,11 @@ probe_up:
 set_door:
     sta door_status
     cmp #3
+.if FULL_GAME
+    jcc block_actor
+.else
     bcc block_actor
+.endif
     rts
 scan_cells:
     sta run_count
@@ -258,5 +305,13 @@ scan_cells:
     dec run_count
     bne @cell
     rts
+.endif
+.if FULL_GAME
+step_x: .byte 0,1,$FF,0
+step_y: .byte 5,0,0,$FB
+; Target foot planes: five source rows below the visible floor/back-wall seam.
+geometry_far: .byte 145,125,125,155
+.else
 step_x: .byte 0,2,$FE,0
 step_y: .byte 10,0,0,$F6
+.endif

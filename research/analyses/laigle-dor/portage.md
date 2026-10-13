@@ -9,7 +9,7 @@ source_revision: "sha256:7f01e1a3d05825aab887952cd5711bea69d6525730aba5c1e25c814
 repository_revision: "85c12f28cc7de85f43c62d1c759d48122ddd046c"
 analysis_date: "2026-10-12"
 source_analyses: ["overview.md", "architecture.md", "routines.md", "integration-review.md"]
-target_implementation: "W06 room-12 prototype implemented in ports/laigle-dor/apple-iie; functional CPU execution tested; original Oric runtime and physical Apple compatibility unverified"
+target_implementation: "Approved W06 graphics prototype plus separate W07 native generic-room development build in ports/laigle-dor/apple-iie; functional CPU execution tested; full-game gates, original Oric runtime and physical Apple compatibility unverified"
 ---
 
 # L'Aigle d'Or: reproducible Oric to Apple IIe porting workbook
@@ -471,9 +471,29 @@ documents the page histories, `$A000` baseline, VBL wait and verification scope.
    context, target policy, generated offsets/dimensions and output checksums.
    Preserve stable logical IDs so rule/animation records remain traceable.
 
-Reproduce vector/attribute effects as target draw operations or verified cached
-room images. CURSET/CURMOV/DRAW/FILL/PATTERN/CHAR semantics and retained cursor
+For the full Apple world, use a **generic runtime room constructor**, not an
+image per room: shared wall geometry, then upper/left/right openings, then
+furnishings and state-dependent objects. The current
+[native construction implementation](../../../ports/laigle-dor/apple-iie/docs/world-construction.md)
+uses four shared geometry programs, 512 bytes of original world records, the
+supplied Oric ROM variation and a shared atlas. The earlier W06 cached room 12
+remains a separate visual reference. CURSET/CURMOV/DRAW/FILL/PATTERN/CHAR semantics and retained cursor
 state must be modeled; the target ROM's routines need not have the same ABI.
+
+Native follow-up, 2026-10-13: the user's finer-movement request is implemented
+as an explicit target collision/proximity contract rather than modifying source
+coordinates or packed records. Original wall/held flame atlases 36/37 and 72/73
+are now animated on both pages; native grilles/locks and the fireplace secret
+cue are retouched in one shared atlas. See
+[movement-and-scenery.md](../../../ports/laigle-dor/apple-iie/docs/movement-and-scenery.md)
+for exact source addresses, target choices, 20 executed native checks and
+remaining timing/replay questions. The approved DHGR prototype is unchanged.
+
+Subsequent room transitions keep the prior graphics frame visible during
+construction and initialize each new frame pair only while hidden. Intentional
+darkness uses a freshly composed TEXT panel. The new Apple staging protocol,
+execution boundaries and future anticipatory-cache requirements are documented
+in [room-transitions.md](../../../ports/laigle-dor/apple-iie/docs/room-transitions.md).
 
 ### 5.4 Copying, composition and saved backgrounds
 

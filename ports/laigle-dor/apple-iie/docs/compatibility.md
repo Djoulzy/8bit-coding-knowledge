@@ -1,5 +1,15 @@
 # Compatibility ledger for W06
 
+These choices describe the original W06 prototype. The separate W07 build now
+uses supplied ROM variation and a native generic constructor for all room
+records, while preserving this graphics reference. Its current differences and
+verification boundaries are in [world-construction.md](world-construction.md).
+
+The subsequent [movement/scenery contract](movement-and-scenery.md) applies only
+to the native build: half-size walking, proposed-foot semantic probes, nearer
+door planes, synchronized pickup/fixture reach and native scenery retouches.
+The exact-depth and 2-byte/10-row choices below remain the W06 reference policy.
+
 Source references below are original B2 BASIC line numbers or loaded addresses
 in [the pinned analysis](../../../../research/analyses/laigle-dor/overview.md).
 All scene reproduction is statically analyzed unless the verification report

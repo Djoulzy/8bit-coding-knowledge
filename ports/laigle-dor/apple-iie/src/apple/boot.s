@@ -4,6 +4,9 @@
 ; Reader increments destination and sector, then returns via JMP $0801.
 ; Assumes exact 16-sector BOOT0 contract pinned in tools/dependencies.json.
 .setcpu "6502"
+.ifndef FULL_GAME
+FULL_GAME = 0
+.endif
 .segment "BOOT"
     .byte 1
 .export boot_entry
@@ -46,6 +49,12 @@ read_track:
     clc
     jmp $C65C
 loaded:
+.if FULL_GAME
+    lda $41
+    sta $0F00
+    lda phase
+    sta $0F02
+.endif
     lda $C0E8               ; stop drive motor; application never needs disk IRQ
     jmp $6000
 step_half:

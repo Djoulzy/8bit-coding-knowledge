@@ -1,0 +1,28 @@
+{
+  "oric": {
+    "file": "research/sources/Oric/ROMS/basic10.rom",
+    "bytes": 16384,
+    "sha256": "83d341dab126092f7a6d56f6a92bca0643ff3aa6529d896085004f958c9be2ff",
+    "sha1": "333116e6884d85aaa4dfc7578a91cceeea66d016",
+    "identity": "Oric-1 BASIC 1.0, matching MAME's basic10 ROM identity",
+    "mapping": "$C000-$FFFF",
+    "variation": "$D000-$D03F",
+    "reference": "https://github.com/mamedev/mame/blob/master/src/mame/tangerine/oric.cpp"
+  },
+  "apple": {
+    "file": "research/sources/Apple IIe/ROMs/CDEF_enh.bin",
+    "bytes": 16384,
+    "sha256": "aab38a03ca8deabbb2f868733148c2efd6f655a59cd9c5d058ef3e0b7aa86a1a",
+    "sha1": "b8ea90abe135a0031065e01697c4a3a20d51198b",
+    "identity": "Apple IIe Platinum/enhanced 342-0349-B combined system ROM",
+    "mapping": "$C000-$FFFF with Apple IIe IO/slot overlays",
+    "cold_start_cpu": "65C02 for the enhanced firmware; project application remains documented NMOS 6502",
+    "reference": "https://github.com/mamedev/mess-svn/blob/master/src/mess/drivers/apple2.c"
+  },
+  "disk2": {
+    "file": "ports/laigle-dor/apple-iie/local/roms/disk2.rom",
+    "bytes": 256,
+    "sha256": "de1e3e035878bab43d0af8fe38f5839c527e9548647036598ee6fe7ec74d2a7d",
+    "identity": "existing pinned 16-sector Disk II slot firmware; separate from system ROM"
+  }
+}

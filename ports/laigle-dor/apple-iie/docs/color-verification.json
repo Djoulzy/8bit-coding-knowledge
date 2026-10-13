@@ -1,0 +1,141 @@
+{
+  "comparison": {
+    "color_quality": "not compared with a physical monitor",
+    "frames_compared": 26,
+    "method": "two executed NMOS binaries; functional bus",
+    "success": true,
+    "variants": {
+      "color": {
+        "program_sha256": "d5bc6af6a0a4e8aaa236c0d92ae06da109fec48e05a3d8e9e65f569bbf870860",
+        "speaker_accesses": 0,
+        "visible_graphics_writes": 0,
+        "visible_text_writes": 0
+      },
+      "mono": {
+        "program_sha256": "699107ea7a2bc798634fef3f8fa60bf4b5bb8950e42eddabf4f1fe23e0b34720",
+        "speaker_accesses": 0,
+        "visible_graphics_writes": 0,
+        "visible_text_writes": 0
+      }
+    }
+  },
+  "date": "2026-10-13",
+  "full_apple_emulator": "not tested",
+  "historical_sources": "checksum verified; unchanged",
+  "http": {
+    "method": "GET HTML, POST keys, GET executed frames; browser not automated",
+    "success": true,
+    "trace": [
+      {
+        "key": 82,
+        "page": 64,
+        "pose": 0
+      },
+      {
+        "key": 65,
+        "page": 32,
+        "pose": 4
+      },
+      {
+        "key": 82,
+        "page": 64,
+        "pose": 0
+      }
+    ]
+  },
+  "original_oric_runtime": "not tested",
+  "preview": "digital artifact approximation; not calibrated composite",
+  "real_hardware": "not tested",
+  "reproducibility": {
+    "method": "regenerated resources, assembled, linked and packaged twice",
+    "sha256": {
+      "game.bin": "d5bc6af6a0a4e8aaa236c0d92ae06da109fec48e05a3d8e9e65f569bbf870860",
+      "laigle-dor.do": "7698cfbf93b4c66a3b0b88214ca867a53573f65140d811ceab6dae116de640d7",
+      "laigle-dor.nib": "205e4207c9bbc67c002fa660085759f71a7881293b433d15b3709e4b764d96ab",
+      "resources/generated.inc": "331c3645214a2f36cef3408b3ebd56c5b40bbac22fb28ae074ee1d1d8c955ca4",
+      "resources/room12.hgr": "167e78021346a815723ba1498b4fed0b9bbaa2c591e60c9338349fdea52446d0"
+    },
+    "success": true
+  },
+  "status": "executed in functional model; experimental color adaptation",
+  "variants": {
+    "color": {
+      "build": {
+        "disk_sha256": "7698cfbf93b4c66a3b0b88214ca867a53573f65140d811ceab6dae116de640d7",
+        "loaded_end_exclusive": "$9A00",
+        "program_bytes": 14601,
+        "program_sha256": "d5bc6af6a0a4e8aaa236c0d92ae06da109fec48e05a3d8e9e65f569bbf870860",
+        "tools": {
+          "ca65": "ca65 V2.18 - V2.19",
+          "ld65": "ld65 V2.18 - V2.19"
+        },
+        "video_profile": "color"
+      },
+      "cpu": {
+        "boot_instructions": 1042557,
+        "checked_collision_cases": 360,
+        "checked_sprite_phase_edge_cases": 460,
+        "coverage": "subset harness; not real hardware or original Oric gameplay",
+        "hidden_frames_checked": 60,
+        "largest_distinct_frame_graphics_write_set": 440,
+        "method": "executed py65 NMOS CPU, stock Disk II BOOT0, simplified device bus",
+        "minimum_stack_pointer": 249,
+        "page_flip_sync": "fresh blank edge in simplified NTSC RDVBLBAR model",
+        "program_sha256": "d5bc6af6a0a4e8aaa236c0d92ae06da109fec48e05a3d8e9e65f569bbf870860",
+        "runtime_speaker_accesses": 0,
+        "video_profile": "color"
+      },
+      "tests": {
+        "errors": [],
+        "execution": "py65 functional CPU plus independent resource/rule models",
+        "failures": [],
+        "original_oric_runtime": "not tested",
+        "program_sha256": "d5bc6af6a0a4e8aaa236c0d92ae06da109fec48e05a3d8e9e65f569bbf870860",
+        "real_apple_hardware": "not tested",
+        "skipped": [],
+        "success": true,
+        "tests_run": 27,
+        "video_profile": "color"
+      }
+    },
+    "mono": {
+      "build": {
+        "disk_sha256": "39f1c42a14a3f4e7ba908985eb9f6aaa2981f2f0eded872eedb71ff6dd00eee3",
+        "loaded_end_exclusive": "$9800",
+        "program_bytes": 14322,
+        "program_sha256": "699107ea7a2bc798634fef3f8fa60bf4b5bb8950e42eddabf4f1fe23e0b34720",
+        "tools": {
+          "ca65": "ca65 V2.18 - V2.19",
+          "ld65": "ld65 V2.18 - V2.19"
+        },
+        "video_profile": "mono"
+      },
+      "cpu": {
+        "boot_instructions": 1031335,
+        "checked_collision_cases": 360,
+        "checked_sprite_phase_edge_cases": 460,
+        "coverage": "subset harness; not real hardware or original Oric gameplay",
+        "hidden_frames_checked": 60,
+        "largest_distinct_frame_graphics_write_set": 495,
+        "method": "executed py65 NMOS CPU, stock Disk II BOOT0, simplified device bus",
+        "minimum_stack_pointer": 249,
+        "page_flip_sync": "fresh blank edge in simplified NTSC RDVBLBAR model",
+        "program_sha256": "699107ea7a2bc798634fef3f8fa60bf4b5bb8950e42eddabf4f1fe23e0b34720",
+        "runtime_speaker_accesses": 0,
+        "video_profile": "mono"
+      },
+      "tests": {
+        "errors": [],
+        "execution": "py65 functional CPU plus independent resource/rule models",
+        "failures": [],
+        "original_oric_runtime": "not tested",
+        "program_sha256": "699107ea7a2bc798634fef3f8fa60bf4b5bb8950e42eddabf4f1fe23e0b34720",
+        "real_apple_hardware": "not tested",
+        "skipped": [],
+        "success": true,
+        "tests_run": 27,
+        "video_profile": "mono"
+      }
+    }
+  }
+}

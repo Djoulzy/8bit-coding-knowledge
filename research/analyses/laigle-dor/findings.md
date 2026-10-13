@@ -152,3 +152,19 @@ hash/offset manifest.
 The original TAP and metadata remain unchanged. The tools and verification
 result make narrow parts of the analysis reproducible. No build script or
 historical executable was run and no validated guideline was promoted.
+
+Subsequent target evidence (2026-10-13): the Apple native constructor uses the
+original packed-room records and a shared atlas rather than per-room bitmaps.
+Its independent semantic-grid checks confirm the separation described by
+GEN-0002 within this implementation. See the
+[port evidence](../../../ports/laigle-dor/apple-iie/docs/world-construction.md).
+No duplicate finding or guideline promotion is introduced, and original Oric
+runtime, target performance and complete gameplay equivalence remain open.
+
+The pit follow-up clarifies an important state/display distinction: B2 7020
+retains NP while changing OU/SP and replacing the whole current scene/grid.
+Re-decoding NP alone therefore draws the originating room instead of the pit.
+The target now tests that override and its recovery/return; see
+[presentation-and-pits.md](../../../ports/laigle-dor/apple-iie/docs/presentation-and-pits.md).
+This extends architecture evidence without introducing a duplicate technique
+or claiming an original ROM raster/timing trace.

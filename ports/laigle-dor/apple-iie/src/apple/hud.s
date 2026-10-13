@@ -1,6 +1,9 @@
 ; Four 40-column rows (20..23), written only on the hidden text page.
 .export hud_init, hud_draw
 hud_init:
+.if DHGR
+    jsr dhgr_hud_init_aux
+.endif
     ; Boot sector has transferred control: both text pages are ours.
     lda #$A0
     ldx #0
@@ -17,6 +20,9 @@ hud_init:
     bne @clear
     rts
 hud_draw:
+.if FULL_GAME
+    jmp full_hud_draw
+.endif
     lda #0
     sta hud_row
 @row:
@@ -96,7 +102,11 @@ hud_draw:
     iny
     cpy #8
     bne @status
+.if DHGR
+    jmp dhgr_hud_finish
+.else
     rts
+.endif
 hud_decimal3:
     ldx #0
 @hundreds:
