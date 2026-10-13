@@ -107,7 +107,9 @@ by `$28`. B1 line 1010 initializes source `$1800`, destination `$9FFF`, width
 | `$5600–$57FF` | Initial room-record backup restored to `$5000–$51FF` on RUN 1 |
 | `$5800–$59FF` | Saved-background slots `$F9/$FA`; `$5900` is also reused for charset preservation in a separate mode |
 | `$5A00–$5C04` | Backslash-terminated message strings; victory positions `$5B00–$5B0B`, score/name data near `$5BBD` intermixed |
-| `$5C05–$6523` | Mostly padding and captured bytes before atlas; no independent executable entry established |
+| `$5C05–$5C30` | Gap/captured bytes after the name area; no independent executable entry established |
+| `$5C31–$5C69` | Second scroll's 56 content bytes plus backslash sentinel; BASIC 10810 uses decimal address 23601 |
+| `$5C6A–$6523` | Mostly padding and captured bytes before atlas; no independent executable entry established |
 | `$6524–$9400` | Sprite/image atlas, referenced by descriptors; gaps/residual bytes included, and the last image byte shares descriptor-table entry 0 |
 | `$9401–$97FF` | Remaining width table, height table, source-low and source-high tables; 256 entries per field |
 | `$9800–$9FFF` | Loaded character-set region; display mode/ROM transfers determine live location and ownership |

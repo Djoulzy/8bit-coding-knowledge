@@ -108,6 +108,10 @@ hexadecimal values. These are different syntax conventions.
 
 ## 4. Program architecture
 
+For the program-specific Apple IIe adaptation inventory, rule/state mapping,
+resource dependencies and reproduction/acceptance checklist, see
+[portage.md](portage.md). It is a porting plan, not an implemented conversion.
+
 The first stage displays an 8,000-byte bitmap using two tiny routines generated
 from hexadecimal BASIC strings, adds attribute effects and ROM-generated sound,
 then presents story and controls before loading the main stage.

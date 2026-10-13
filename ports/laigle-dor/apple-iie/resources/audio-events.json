@@ -1,0 +1,12 @@
+{
+  "format": "64-entry RAM ring at $0D00; four bytes: kind,tick_lo,tick_hi,argument",
+  "events": {
+    "1": {"name": "walk_cue", "source": "B2 5100 -> 97", "SOUND": [1,3000,0], "PLAY": [1,1,1,200]},
+    "2": {"name": "stop_cue", "source": "B2 10000 -> 97", "SOUND": [1,3000,0], "PLAY": [1,1,1,200]},
+    "3": {"name": "exit_request", "type": "target diagnostic; not an Oric sound", "destination": "room 11 / facing 1 for room-12 right exit"},
+    "4": {"name": "blocked", "type": "target diagnostic; not an Oric sound"}
+  },
+  "speaker": "not accessed",
+  "overflow": "oldest overwritten; STATE+11 counts overwrites modulo 256",
+  "fidelity": "W06 logical tick stamps; source RNG/timer/audio timing not reproduced"
+}

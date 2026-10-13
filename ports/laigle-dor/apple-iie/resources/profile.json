@@ -1,0 +1,33 @@
+{
+  "milestone": "W06 single-room prototype",
+  "source": {
+    "program": "L'Aigle d'Or, Loriciels 1984, Louis-Marie Rocques",
+    "tap_sha256": "7f01e1a3d05825aab887952cd5711bea69d6525730aba5c1e25c814334fe77d7",
+    "model": "Oric-1 versus Atmos reference not selected",
+    "rom": "missing; no original gameplay execution",
+    "missing_capture": "$D000-$D03F; initial/final ROM font states; input/timer/RNG trace",
+    "default_variation": "64 zero bytes; clearly provisional; only M[12] consumed by prototype"
+  },
+  "target": {
+    "model": "Apple IIe; physical model/enhancement/ROM/video standard unverified",
+    "instruction_set": "documented NMOS MOS 6502",
+    "ram": "main RAM; no auxiliary or language-card RAM required",
+    "video": "mixed HGR: 280x160 plus four 40-column text rows; bit7=0; monochrome output",
+    "pages": "alternating main-RAM $2000/$4000 frame pages, paired $0400/$0800 text pages",
+    "baseline": "immutable main-RAM terrain $A000-$BFFF; per-page dirty rectangle repair",
+    "sprite_attributes": "discarded ink/paper; native silhouette masks; attribute cells transparent",
+    "viewport": "crop room-12 cleared rows 0-34; remaining 165 source rows mapped to 160",
+    "input": "poll $C000 then clear strobe via read $C010",
+    "storage": "Disk II, 16-sector P5 boot firmware, slot 6, drive 1; custom boot sector, no OS",
+    "audio": "silent four-byte event ring, no speaker accesses",
+    "interrupts": "SEI, no handlers; no supported NMI source; no OS return contract",
+    "pacing": "page presentation polls IIe RDVBLBAR $C019 for a fresh vertical blank; source rate uncalibrated"
+  },
+  "executed_environment": {
+    "cpu": "py65 1.2.0 MPU6502",
+    "bus": "project functional keyboard/video/Disk II subset plus simplified NTSC RDVBLBAR clock; not bus accurate",
+    "apple_rom_sha256": "1fb812584c6633fa16b77b20915986ed1178d1e6fc07a647f7ee8d4e6ab9d40b",
+    "disk_rom_sha256": "de1e3e035878bab43d0af8fe38f5839c527e9548647036598ee6fe7ec74d2a7d",
+    "entry": "$C600; real BOOT0 decoding then project $0801 loader; ROM reset not executed"
+  }
+}

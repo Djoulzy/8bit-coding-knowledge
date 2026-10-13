@@ -1,0 +1,120 @@
+{
+  "build": {
+    "disk_format": "DOS-order, 35 tracks x 16 sectors x 256; custom loader; no filesystem",
+    "disk_sha256": "39f1c42a14a3f4e7ba908985eb9f6aaa2981f2f0eded872eedb71ff6dd00eee3",
+    "entry": "$6000",
+    "loaded_end_exclusive": "$9800",
+    "oric_rom": "missing/provisional",
+    "program_address": "$6000",
+    "program_bytes": 14322,
+    "program_sha256": "699107ea7a2bc798634fef3f8fa60bf4b5bb8950e42eddabf4f1fe23e0b34720",
+    "source_files": {
+      "model/movement.py": "a78f11cae7847e7856bca36b3c5d9b61c2c289fe49709b8f82344031959ca9a2",
+      "model/rules.py": "25f588e2bdf4a4fa577a30c202ec1febaff031bf55e0522099b039f246f54412",
+      "model/world.py": "5d811406fd6fa8ec82a5f52e3ac8307f3f15b96915b00ac48e0cacb589803520",
+      "resources/audio-events.json": "6aed63d8078ce04e5f79ad7153c45c34f7cc6e675f2f9804c2725724450052d5",
+      "resources/profile.json": "28c40c82c20044d2dbe3b6d2f849a0b951c6eff7ce21c205bb53e506a6d1eac3",
+      "src/apple/audio.s": "57c726b5ca9dd8e9026e1e38418ec5bdc3a4a9b1c568a33b46bda0b5af9b275c",
+      "src/apple/boot.s": "b966d0089f336b878c835c76d52ae94fc6cd099040636b82761df182b02c28af",
+      "src/apple/graphics.s": "999a5b7496c5e5082b00a4e30c20eb0c4a3a4aad311db0623aea4978952f7db3",
+      "src/apple/hud.s": "a357bc0139b92561cba4f0ec83f924bda2dde49169a0f1921026202f674c694e",
+      "src/apple/input.s": "c7aed12d40c6daa1dde7ce26a63b862bebb8b8d9afc2ac2d9f906fb2ac074ea4",
+      "src/boot.cfg": "bc35671cecdde20f81016759068abecfb669cb1bcfd3f8245974d08755ae94ac",
+      "src/game.cfg": "56598f96c90ad8368db3863457e00af8a4a94212f3a5dc22be5004a05af08ccf",
+      "src/game/core.s": "7afc6d78dcf024e0a80b7cd9dbc4b40fe7fd6fc202e793f67860d19f0163ac12",
+      "src/main.s": "1e6a7a2e374c253cd0387c9e132aecd821a5b59e6435f615f9e200fdf3ec96c0",
+      "src/memory.inc": "e888e6f23db2507a648f423d95b69d68fb7e9697048dc564df1b7e2854f19c56",
+      "tools/bootstrap.py": "786404672ec8d691b4d02574fd18644a51896d191fccddacbe92a8dde144bd34",
+      "tools/build.py": "ef8c24ce0f82535a5d8e8fe6d128ad2b4430e1e11ee9f6deda27fab6aab350e5",
+      "tools/check.py": "61a52c5fb7625a1218db5cf307016b76a9272818b04eb489efe7d96f297b2a57",
+      "tools/common.py": "d19383acd0fddcf4f6205366ebaac8e1d81942c27b5f5c10602c4199a8267211",
+      "tools/dependencies.json": "e7455753996977ed197fd3c4d8f1590a98d45c457b03640eb44c7d7a24a1619d",
+      "tools/disk.py": "986b55f76e75f8a79faa25656b3403e34c720a1332051a420f206dc19c2ac1e0",
+      "tools/machine.py": "10e5d148ce9a9deb943cecd261de5fe94b14c24fefa395ae7ffe180050c12949",
+      "tools/preview.py": "ebb584615b2a4cd9c830001ccc9d5bff8502657a56c416338241d4b3e742ff4a",
+      "tools/resources.py": "25ed2daf48a99c727096c32dc7588b8e7ee7309ccc2e7242afbd05956a4d1c4a",
+      "tools/run.py": "dc638021104098c5b3620672ee7d418b9132ace130eafeebfb65e7c54652b5f4",
+      "tools/text_font.py": "88048cdce06b465d4757a079a98fa72e67a327036a3ed62a182e96d66a81b6df",
+      "tools/video_layout.py": "f91c76867cc274e019f7ef7f8d598a3d1ac2f13d69a68f9043263bc6973e5697"
+    },
+    "tools": {
+      "ca65": "ca65 V2.18 - V2.19",
+      "ld65": "ld65 V2.18 - V2.19"
+    },
+    "verification": "assembled and packaged; execution recorded separately by tests",
+    "video": "mixed HGR, alternating $2000/$4000 frames; baseline $A000"
+  },
+  "cpu": {
+    "boot_instructions": 1031335,
+    "checked_collision_cases": 360,
+    "checked_sprite_phase_edge_cases": 460,
+    "coverage": "subset harness; not real hardware or original Oric gameplay",
+    "hidden_frames_checked": 60,
+    "largest_distinct_frame_graphics_write_set": 495,
+    "method": "executed py65 NMOS CPU, stock Disk II BOOT0, simplified device bus",
+    "minimum_stack_pointer": 249,
+    "page_flip_sync": "fresh blank edge in simplified NTSC RDVBLBAR model",
+    "program_sha256": "699107ea7a2bc798634fef3f8fa60bf4b5bb8950e42eddabf4f1fe23e0b34720",
+    "runtime_speaker_accesses": 0
+  },
+  "date": "2026-10-13",
+  "historical_checks": {
+    "historical_source_unchanged": true,
+    "verify_analysis.py": "passed, static/model",
+    "verify_integration.py": "passed, static/model"
+  },
+  "host": "Darwin arm64",
+  "http_backend": {
+    "browser_ui": "not exercised; no available browser surface",
+    "operations": [
+      "GET /",
+      "GET /frame",
+      "POST /key A, then pose=4",
+      "POST /key R, then pose=0"
+    ],
+    "tested": true
+  },
+  "missing": [
+    "Oric ROM/model and runtime traces",
+    "full Apple emulator reset/boot",
+    "real hardware",
+    "audio",
+    "full W03 action graph"
+  ],
+  "profile": "W06 mixed HGR, alternating frames, native attribute-free masks, default zero Oric variation",
+  "python": "3.9.6",
+  "reproducibility": {
+    "identical": true,
+    "method": "regenerate mixed-HGR assets and reassemble with pinned local tools",
+    "outputs": {
+      "game.bin": "699107ea7a2bc798634fef3f8fa60bf4b5bb8950e42eddabf4f1fe23e0b34720",
+      "laigle-dor.do": "39f1c42a14a3f4e7ba908985eb9f6aaa2981f2f0eded872eedb71ff6dd00eee3",
+      "laigle-dor.nib": "15b4cfd81cc11b5084828e8136d178e806c80b55abf68310ce833a65df56562d",
+      "resources/generated.inc": "9b9bd2e145f9568065a41eb40e353194835b7ce195e8af623b6d3431494fa6eb",
+      "resources/room12.hgr": "541559a3ead66c5eeecfd4e56c4ea7ea8b0a3a4b3e155b28a811bddfaefd77de"
+    }
+  },
+  "tests": {
+    "errors": [],
+    "execution": "py65 functional CPU plus independent resource/rule models",
+    "failures": [],
+    "original_oric_runtime": "not tested",
+    "program_sha256": "699107ea7a2bc798634fef3f8fa60bf4b5bb8950e42eddabf4f1fe23e0b34720",
+    "real_apple_hardware": "not tested",
+    "skipped": [],
+    "success": true,
+    "tests_run": 23
+  },
+  "video_changes": {
+    "attribute_policy": "ink/paper discarded, transparent attribute cells and native silhouette masks",
+    "baseline": "$A000",
+    "frame_pages": [
+      "$2000",
+      "$4000"
+    ],
+    "graphic_rows": 160,
+    "mixed_text_rows": 4,
+    "native_character_rom": "hardware uses Apple ROM; preview uses project development font",
+    "vblank": "fresh edge under simplified NTSC RDVBLBAR functional model"
+  }
+}

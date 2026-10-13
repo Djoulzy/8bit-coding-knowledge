@@ -1,0 +1,24 @@
+{
+  "cc65": {
+    "url": "https://codeload.github.com/cc65/cc65/tar.gz/refs/tags/V2.19",
+    "sha256": "157b8051aed7f534e5093471e734e7a95e509c577324099c3c81324ed9d0de77",
+    "directory": "cc65-2.19"
+  },
+  "py65": {
+    "url": "https://codeload.github.com/mnaberez/py65/tar.gz/refs/tags/1.2.0",
+    "sha256": "bd84a61f71bcb64c033114657c77bb62a0265244c8f3d2b4b8d37e30ee18bf6d",
+    "directory": "py65-1.2.0"
+  },
+  "disk2": {
+    "url": "https://raw.githubusercontent.com/whscullin/apple2js/ee0aed25f73c69d0245e86a2a5fccb3324c3056c/js/roms/cards/disk2.ts",
+    "sha256": "3367d4ab940433ac8ea6986a1aa007c65e47ac8e1f01c262b0764c58bf2d3e29",
+    "rom_sha256": "de1e3e035878bab43d0af8fe38f5839c527e9548647036598ee6fe7ec74d2a7d",
+    "reference_revision": "ee0aed25f73c69d0245e86a2a5fccb3324c3056c"
+  },
+  "apple2e": {
+    "url": "https://raw.githubusercontent.com/whscullin/apple2js/ee0aed25f73c69d0245e86a2a5fccb3324c3056c/js/roms/system/apple2e.ts",
+    "sha256": "100cea25c95bb9e145bed1dc7b38e268071aaf922c8fb430141a7e92dffc9e5b",
+    "rom_sha256": "1fb812584c6633fa16b77b20915986ed1178d1e6fc07a647f7ee8d4e6ab9d40b",
+    "reference_revision": "ee0aed25f73c69d0245e86a2a5fccb3324c3056c"
+  }
+}
