@@ -1,0 +1,341 @@
+{
+  "generator": "Python port converters dhgr.scanline_rgb / hgr_color.scanline_rgb; 2026-10-14",
+  "checks": [
+    {
+      "key": "laigle/game/dhgr/title",
+      "y": 0,
+      "monitor": "color",
+      "sha256": "75af23ee4e06c2f15ff81ebe14aaa02b45c60c4edbace5130a5ca019713935bd"
+    },
+    {
+      "key": "laigle/game/dhgr/title",
+      "y": 0,
+      "monitor": "mono",
+      "sha256": "118a146320551052cdcdade38b10c6a71327ee714d879f289e3e06d2218af677"
+    },
+    {
+      "key": "laigle/game/dhgr/title",
+      "y": 0,
+      "monitor": "palette",
+      "sha256": "75af23ee4e06c2f15ff81ebe14aaa02b45c60c4edbace5130a5ca019713935bd"
+    },
+    {
+      "key": "laigle/game/dhgr/title",
+      "y": 7,
+      "monitor": "color",
+      "sha256": "75af23ee4e06c2f15ff81ebe14aaa02b45c60c4edbace5130a5ca019713935bd"
+    },
+    {
+      "key": "laigle/game/dhgr/title",
+      "y": 7,
+      "monitor": "mono",
+      "sha256": "118a146320551052cdcdade38b10c6a71327ee714d879f289e3e06d2218af677"
+    },
+    {
+      "key": "laigle/game/dhgr/title",
+      "y": 7,
+      "monitor": "palette",
+      "sha256": "75af23ee4e06c2f15ff81ebe14aaa02b45c60c4edbace5130a5ca019713935bd"
+    },
+    {
+      "key": "laigle/game/dhgr/title",
+      "y": 8,
+      "monitor": "color",
+      "sha256": "e473ad60deb109cad3c102286acc20491aa07c479c34cb3e46e9f69703dd32e5"
+    },
+    {
+      "key": "laigle/game/dhgr/title",
+      "y": 8,
+      "monitor": "mono",
+      "sha256": "6c3feb4e0a69f596373cbbba7828a3843396390ede1af9b76212398235bed7de"
+    },
+    {
+      "key": "laigle/game/dhgr/title",
+      "y": 8,
+      "monitor": "palette",
+      "sha256": "e473ad60deb109cad3c102286acc20491aa07c479c34cb3e46e9f69703dd32e5"
+    },
+    {
+      "key": "laigle/game/dhgr/title",
+      "y": 63,
+      "monitor": "color",
+      "sha256": "d88593d34f0f6fcecb42c53dd6738301bf94b0ac34a2fac62da49df2643bed7c"
+    },
+    {
+      "key": "laigle/game/dhgr/title",
+      "y": 63,
+      "monitor": "mono",
+      "sha256": "cdb0c4a37d6c531b63a0ce8ccaab7a6ab4f63f86a07def681518d23e2e3d6286"
+    },
+    {
+      "key": "laigle/game/dhgr/title",
+      "y": 63,
+      "monitor": "palette",
+      "sha256": "d88593d34f0f6fcecb42c53dd6738301bf94b0ac34a2fac62da49df2643bed7c"
+    },
+    {
+      "key": "laigle/game/dhgr/title",
+      "y": 64,
+      "monitor": "color",
+      "sha256": "2f6bc08cf201be77ec734e9f6b03b8c49c4fcf3cd4696b7346d33fa9a39c5860"
+    },
+    {
+      "key": "laigle/game/dhgr/title",
+      "y": 64,
+      "monitor": "mono",
+      "sha256": "f956dd2b765e7914a28599e525694dd7a5520dc9ba440135dfb5ffa668eb835f"
+    },
+    {
+      "key": "laigle/game/dhgr/title",
+      "y": 64,
+      "monitor": "palette",
+      "sha256": "2f6bc08cf201be77ec734e9f6b03b8c49c4fcf3cd4696b7346d33fa9a39c5860"
+    },
+    {
+      "key": "laigle/game/dhgr/title",
+      "y": 127,
+      "monitor": "color",
+      "sha256": "caa3869f0db90d1956597630068a5bb5dd9e377c01d17411917a53dd0643bf7e"
+    },
+    {
+      "key": "laigle/game/dhgr/title",
+      "y": 127,
+      "monitor": "mono",
+      "sha256": "f954ff765ab3af1cf79c6907b06706d5bef78d4f978135a1783d26c5bdffc276"
+    },
+    {
+      "key": "laigle/game/dhgr/title",
+      "y": 127,
+      "monitor": "palette",
+      "sha256": "caa3869f0db90d1956597630068a5bb5dd9e377c01d17411917a53dd0643bf7e"
+    },
+    {
+      "key": "laigle/game/dhgr/title",
+      "y": 159,
+      "monitor": "color",
+      "sha256": "065cc6b2b996ca729f6aa0208e13ac4b494dd0d74a4c4df6053d08b0c11da865"
+    },
+    {
+      "key": "laigle/game/dhgr/title",
+      "y": 159,
+      "monitor": "mono",
+      "sha256": "065cc6b2b996ca729f6aa0208e13ac4b494dd0d74a4c4df6053d08b0c11da865"
+    },
+    {
+      "key": "laigle/game/dhgr/title",
+      "y": 159,
+      "monitor": "palette",
+      "sha256": "065cc6b2b996ca729f6aa0208e13ac4b494dd0d74a4c4df6053d08b0c11da865"
+    },
+    {
+      "key": "laigle/prototype/dhgr/room12",
+      "y": 0,
+      "monitor": "color",
+      "sha256": "32fc6c8813b0197ddeaa5a4d88b222b752a2575035e7df2d3f05819e263acd9d"
+    },
+    {
+      "key": "laigle/prototype/dhgr/room12",
+      "y": 0,
+      "monitor": "mono",
+      "sha256": "32fc6c8813b0197ddeaa5a4d88b222b752a2575035e7df2d3f05819e263acd9d"
+    },
+    {
+      "key": "laigle/prototype/dhgr/room12",
+      "y": 0,
+      "monitor": "palette",
+      "sha256": "32fc6c8813b0197ddeaa5a4d88b222b752a2575035e7df2d3f05819e263acd9d"
+    },
+    {
+      "key": "laigle/prototype/dhgr/room12",
+      "y": 7,
+      "monitor": "color",
+      "sha256": "19e587f41efeec6b14016f5c2623af589a594484eed03870e24ebe68d865ac06"
+    },
+    {
+      "key": "laigle/prototype/dhgr/room12",
+      "y": 7,
+      "monitor": "mono",
+      "sha256": "19e587f41efeec6b14016f5c2623af589a594484eed03870e24ebe68d865ac06"
+    },
+    {
+      "key": "laigle/prototype/dhgr/room12",
+      "y": 7,
+      "monitor": "palette",
+      "sha256": "19e587f41efeec6b14016f5c2623af589a594484eed03870e24ebe68d865ac06"
+    },
+    {
+      "key": "laigle/prototype/dhgr/room12",
+      "y": 8,
+      "monitor": "color",
+      "sha256": "85c3d956d6342b9bf7450187ec9e6bb45664e2eda6934eeea59f0070c56bc44b"
+    },
+    {
+      "key": "laigle/prototype/dhgr/room12",
+      "y": 8,
+      "monitor": "mono",
+      "sha256": "85c3d956d6342b9bf7450187ec9e6bb45664e2eda6934eeea59f0070c56bc44b"
+    },
+    {
+      "key": "laigle/prototype/dhgr/room12",
+      "y": 8,
+      "monitor": "palette",
+      "sha256": "85c3d956d6342b9bf7450187ec9e6bb45664e2eda6934eeea59f0070c56bc44b"
+    },
+    {
+      "key": "laigle/prototype/dhgr/room12",
+      "y": 63,
+      "monitor": "color",
+      "sha256": "0dde5c59935ebd9529d5ad5cf136927fab9b13168202f58a4b378ed75da44a19"
+    },
+    {
+      "key": "laigle/prototype/dhgr/room12",
+      "y": 63,
+      "monitor": "mono",
+      "sha256": "637b69d7351975048f24968a72e25048c8c7afaf3158466de2e804b455eb23ea"
+    },
+    {
+      "key": "laigle/prototype/dhgr/room12",
+      "y": 63,
+      "monitor": "palette",
+      "sha256": "0dde5c59935ebd9529d5ad5cf136927fab9b13168202f58a4b378ed75da44a19"
+    },
+    {
+      "key": "laigle/prototype/dhgr/room12",
+      "y": 64,
+      "monitor": "color",
+      "sha256": "fcf7771163ce77cda8de114e605c8620d97fb2552fd03cd41e2953be49784f1b"
+    },
+    {
+      "key": "laigle/prototype/dhgr/room12",
+      "y": 64,
+      "monitor": "mono",
+      "sha256": "4f2c3945e6672eed464509c9f57e3a31219b2b2f852f286d95b74b165c496c87"
+    },
+    {
+      "key": "laigle/prototype/dhgr/room12",
+      "y": 64,
+      "monitor": "palette",
+      "sha256": "fcf7771163ce77cda8de114e605c8620d97fb2552fd03cd41e2953be49784f1b"
+    },
+    {
+      "key": "laigle/prototype/dhgr/room12",
+      "y": 127,
+      "monitor": "color",
+      "sha256": "930cc0e11f21ae533e7432711756e5bc96cb9b65cf5339371791a6aa216b3cd6"
+    },
+    {
+      "key": "laigle/prototype/dhgr/room12",
+      "y": 127,
+      "monitor": "mono",
+      "sha256": "d8b199d30f3f5a88a9fdbfe1dedd9394596c65d9965992e4be16014469621ec6"
+    },
+    {
+      "key": "laigle/prototype/dhgr/room12",
+      "y": 127,
+      "monitor": "palette",
+      "sha256": "930cc0e11f21ae533e7432711756e5bc96cb9b65cf5339371791a6aa216b3cd6"
+    },
+    {
+      "key": "laigle/prototype/dhgr/room12",
+      "y": 159,
+      "monitor": "color",
+      "sha256": "1561ce32934ba34050d5fc49dd3509ed9f201e4c84e9e9ca1ad100034280e07c"
+    },
+    {
+      "key": "laigle/prototype/dhgr/room12",
+      "y": 159,
+      "monitor": "mono",
+      "sha256": "1561ce32934ba34050d5fc49dd3509ed9f201e4c84e9e9ca1ad100034280e07c"
+    },
+    {
+      "key": "laigle/prototype/dhgr/room12",
+      "y": 159,
+      "monitor": "palette",
+      "sha256": "1561ce32934ba34050d5fc49dd3509ed9f201e4c84e9e9ca1ad100034280e07c"
+    },
+    {
+      "key": "laigle/prototype/color/room12",
+      "y": 0,
+      "monitor": "color",
+      "sha256": "bf2892066a2d246b49d1efe661a8accb6ae7a4592c36fcf56853817bdaafd01a"
+    },
+    {
+      "key": "laigle/prototype/color/room12",
+      "y": 7,
+      "monitor": "color",
+      "sha256": "06b047f2df91718bfe9ddd3622a7d7411f8f2733924d26f676c4c80fdacbfed7"
+    },
+    {
+      "key": "laigle/prototype/color/room12",
+      "y": 8,
+      "monitor": "color",
+      "sha256": "89a7c3a8ba0540b9fbb2c927deb319443c4457c056c1b0c9033d52fcda476e5f"
+    },
+    {
+      "key": "laigle/prototype/color/room12",
+      "y": 63,
+      "monitor": "color",
+      "sha256": "74ec2ed0aa9ca7bf1c9ba40f4a83e30772304987eefa7c3071f95e5791b7b8a6"
+    },
+    {
+      "key": "laigle/prototype/color/room12",
+      "y": 64,
+      "monitor": "color",
+      "sha256": "6697a0418fd1dec34f7b400531f6b9ae6a5e6cde1aae5c22af204d5747db52d1"
+    },
+    {
+      "key": "laigle/prototype/color/room12",
+      "y": 127,
+      "monitor": "color",
+      "sha256": "7ca4eb66a5d06dfbecfccf5750da2439109c491fb88f3240c8e344e618438c67"
+    },
+    {
+      "key": "laigle/prototype/color/room12",
+      "y": 159,
+      "monitor": "color",
+      "sha256": "e431d1bc2f7bde8b54a93c3d4be9a765c8bda1d3d66b73b63ccee5a3e6c8bde7"
+    },
+    {
+      "key": "laigle/prototype/mono/room12",
+      "y": 0,
+      "monitor": "color",
+      "sha256": "d7ee0ff25793c4fedacee8bf6151ded3170a90388920f8f31dc79aec7babcc26"
+    },
+    {
+      "key": "laigle/prototype/mono/room12",
+      "y": 7,
+      "monitor": "color",
+      "sha256": "2a8dd86527423ad3cc66577e8a02df19a026b7289e51d1b092f09b9dafa12ff0"
+    },
+    {
+      "key": "laigle/prototype/mono/room12",
+      "y": 8,
+      "monitor": "color",
+      "sha256": "2f8eed0f9676894bf92a18dfe8f7666c68c2bef896e9864fe78f4dde098a8de9"
+    },
+    {
+      "key": "laigle/prototype/mono/room12",
+      "y": 63,
+      "monitor": "color",
+      "sha256": "e247ecd1313c01e161801d983045e360549b095415426f39edcb337d22f4952b"
+    },
+    {
+      "key": "laigle/prototype/mono/room12",
+      "y": 64,
+      "monitor": "color",
+      "sha256": "6eb13d5ff949f5a7b29363d08111ea231a1e31c57531749be480893cec54eb9c"
+    },
+    {
+      "key": "laigle/prototype/mono/room12",
+      "y": 127,
+      "monitor": "color",
+      "sha256": "1472cc726cc93c544401bb78d0247a1db5f6ef8167b80517fff08cd9f70a2d44"
+    },
+    {
+      "key": "laigle/prototype/mono/room12",
+      "y": 159,
+      "monitor": "color",
+      "sha256": "f6b54d3b4194c2877fc52e0a108c28422e07f532b318141da6282b6c83161e7f"
+    }
+  ]
+}

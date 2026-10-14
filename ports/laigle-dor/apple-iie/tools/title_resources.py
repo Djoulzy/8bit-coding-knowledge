@@ -5,6 +5,7 @@ accepted. No hand-drawn castle or replacement title artwork is introduced.
 """
 from tools.common import Source,digest,write_json
 from tools import dhgr
+from tools.artwork import override_screen
 
 ORIC_COLORS=[0,1,12,13,2,3,6,15]
 
@@ -66,6 +67,12 @@ def title_pages(flash=False):
 
 def export_title(dest):
     off=title_pages(False);on=title_pages(True)
+    edited=override_screen('laigle/game/dhgr/title', 'dhgr', *off)
+    # Preserve edits in both animation states except at the original lightning
+    # delta. An explicit flash-state edit takes precedence there too.
+    on=tuple(bytes(b if a != b else e for a,b,e in zip(off[bank],on[bank],edited[bank])) for bank in range(2))
+    off=edited
+    on=override_screen('laigle/game/dhgr/title-flash', 'dhgr', *on)
     data=off[0]+off[1];(dest/'title.dhgr').write_bytes(data)
     patch=bytearray()
     for bank in range(2):
