@@ -1,0 +1,14 @@
+{
+  "method": "executed NMOS draw_cell plus safe auxiliary-read workers",
+  "mirrored_application_code": false,
+  "palette_boundary_cases": 480,
+  "partial_cell_cases": 120,
+  "program_sha256": "924d15905bf08aef5709ff30d9c7d68b0ecc6d2b034ae67c863680d260b7ba43",
+  "ramrd_fetch_pcs": [
+    67,
+    69,
+    76,
+    78
+  ],
+  "real_hardware": "not tested"
+}

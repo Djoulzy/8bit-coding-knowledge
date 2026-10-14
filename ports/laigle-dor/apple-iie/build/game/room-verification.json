@@ -1,0 +1,454 @@
+{
+  "execution": "py65 actual NMOS instructions; not original Oric runtime or real Apple hardware",
+  "program_sha256": "1a7d2c6103a970180e56bf1f44a33ada0ee6889678e76553267f80cebbf68c6a",
+  "rooms": [
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 180,
+      "geometry": 1,
+      "native_matches_layer_oracle": true,
+      "room": 0
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 14,
+      "geometry": 2,
+      "native_matches_layer_oracle": true,
+      "room": 1
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 24,
+      "geometry": 3,
+      "native_matches_layer_oracle": true,
+      "room": 2
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 177,
+      "geometry": 3,
+      "native_matches_layer_oracle": true,
+      "room": 3
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 444,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 4
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 342,
+      "geometry": 3,
+      "native_matches_layer_oracle": true,
+      "room": 5
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 610,
+      "geometry": 1,
+      "native_matches_layer_oracle": true,
+      "room": 6
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 172,
+      "geometry": 3,
+      "native_matches_layer_oracle": true,
+      "room": 7
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 14,
+      "geometry": 3,
+      "native_matches_layer_oracle": true,
+      "room": 8
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 185,
+      "geometry": 1,
+      "native_matches_layer_oracle": true,
+      "room": 9
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 11,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 10
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 12,
+      "geometry": 1,
+      "native_matches_layer_oracle": true,
+      "room": 11
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 15,
+      "geometry": 1,
+      "native_matches_layer_oracle": true,
+      "room": 12
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 440,
+      "geometry": 1,
+      "native_matches_layer_oracle": true,
+      "room": 13
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 349,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 14
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 458,
+      "geometry": 1,
+      "native_matches_layer_oracle": true,
+      "room": 15
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 183,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 16
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 19,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 17
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 18,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 18
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 13,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 19
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 178,
+      "geometry": 1,
+      "native_matches_layer_oracle": true,
+      "room": 20
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 184,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 21
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 183,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 22
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 11,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 23
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 13,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 24
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 276,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 25
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 179,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 26
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 27,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 27
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 18,
+      "geometry": 1,
+      "native_matches_layer_oracle": true,
+      "room": 28
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 27,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 29
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 181,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 30
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 13,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 31
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 13,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 32
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 20,
+      "geometry": 2,
+      "native_matches_layer_oracle": true,
+      "room": 33
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 13,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 34
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 9,
+      "geometry": 1,
+      "native_matches_layer_oracle": true,
+      "room": 35
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 18,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 36
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 191,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 37
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 33,
+      "geometry": 1,
+      "native_matches_layer_oracle": true,
+      "room": 38
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 32,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 39
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 20,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 40
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 13,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 41
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 281,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 42
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 276,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 43
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 290,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 44
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 444,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 45
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 19,
+      "geometry": 1,
+      "native_matches_layer_oracle": true,
+      "room": 46
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 13,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 47
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 13,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 48
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 33,
+      "geometry": 1,
+      "native_matches_layer_oracle": true,
+      "room": 49
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 27,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 50
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 26,
+      "geometry": 1,
+      "native_matches_layer_oracle": true,
+      "room": 51
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 186,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 52
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 181,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 53
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 179,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 54
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 13,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 55
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 19,
+      "geometry": 0,
+      "native_matches_layer_oracle": true,
+      "room": 56
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 188,
+      "geometry": 1,
+      "native_matches_layer_oracle": true,
+      "room": 57
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 13,
+      "geometry": 1,
+      "native_matches_layer_oracle": true,
+      "room": 58
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 16,
+      "geometry": 1,
+      "native_matches_layer_oracle": true,
+      "room": 59
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 16,
+      "geometry": 1,
+      "native_matches_layer_oracle": true,
+      "room": 60
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 9,
+      "geometry": 1,
+      "native_matches_layer_oracle": true,
+      "room": 61
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 10,
+      "geometry": 2,
+      "native_matches_layer_oracle": true,
+      "room": 62
+    },
+    {
+      "collision_match": true,
+      "completed_raster_policy_different_cells": 6,
+      "geometry": 2,
+      "native_matches_layer_oracle": true,
+      "room": 63
+    }
+  ]
+}

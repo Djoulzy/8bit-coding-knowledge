@@ -1,0 +1,560 @@
+{
+  "color_display": "digital artifact approximation; not calibrated composite",
+  "disk_sha256": "7698cfbf93b4c66a3b0b88214ca867a53573f65140d811ceab6dae116de640d7",
+  "events": [
+    {
+      "argument": 0,
+      "kind": 1,
+      "tick": 1
+    },
+    {
+      "argument": 0,
+      "kind": 1,
+      "tick": 2
+    },
+    {
+      "argument": 0,
+      "kind": 1,
+      "tick": 3
+    },
+    {
+      "argument": 0,
+      "kind": 1,
+      "tick": 4
+    },
+    {
+      "argument": 0,
+      "kind": 4,
+      "tick": 5
+    },
+    {
+      "argument": 0,
+      "kind": 1,
+      "tick": 8
+    },
+    {
+      "argument": 0,
+      "kind": 1,
+      "tick": 9
+    },
+    {
+      "argument": 0,
+      "kind": 1,
+      "tick": 10
+    },
+    {
+      "argument": 0,
+      "kind": 1,
+      "tick": 11
+    },
+    {
+      "argument": 0,
+      "kind": 1,
+      "tick": 12
+    },
+    {
+      "argument": 0,
+      "kind": 1,
+      "tick": 13
+    },
+    {
+      "argument": 0,
+      "kind": 3,
+      "tick": 14
+    }
+  ],
+  "instructions": 1557268,
+  "method": "executed NMOS CPU from Disk II BOOT0 $C600; functional bus",
+  "page_flips": [
+    {
+      "cycles": 2970874,
+      "in_vblank": false,
+      "page": 0
+    },
+    {
+      "cycles": 3622860,
+      "in_vblank": true,
+      "page": 1
+    },
+    {
+      "cycles": 3690980,
+      "in_vblank": true,
+      "page": 0
+    },
+    {
+      "cycles": 3759097,
+      "in_vblank": true,
+      "page": 1
+    },
+    {
+      "cycles": 3827220,
+      "in_vblank": true,
+      "page": 0
+    },
+    {
+      "cycles": 3895336,
+      "in_vblank": true,
+      "page": 1
+    },
+    {
+      "cycles": 3963457,
+      "in_vblank": true,
+      "page": 0
+    },
+    {
+      "cycles": 4031578,
+      "in_vblank": true,
+      "page": 1
+    },
+    {
+      "cycles": 4099696,
+      "in_vblank": true,
+      "page": 0
+    },
+    {
+      "cycles": 4184848,
+      "in_vblank": true,
+      "page": 1
+    },
+    {
+      "cycles": 4252965,
+      "in_vblank": true,
+      "page": 0
+    },
+    {
+      "cycles": 4321090,
+      "in_vblank": true,
+      "page": 1
+    },
+    {
+      "cycles": 4389206,
+      "in_vblank": true,
+      "page": 0
+    },
+    {
+      "cycles": 4457326,
+      "in_vblank": true,
+      "page": 1
+    },
+    {
+      "cycles": 4525444,
+      "in_vblank": true,
+      "page": 0
+    },
+    {
+      "cycles": 4593567,
+      "in_vblank": true,
+      "page": 1
+    },
+    {
+      "cycles": 4661689,
+      "in_vblank": true,
+      "page": 0
+    },
+    {
+      "cycles": 4729810,
+      "in_vblank": true,
+      "page": 1
+    }
+  ],
+  "real_hardware": "not tested",
+  "rom_cold_start": "not executed",
+  "speaker_accesses": 0,
+  "stack_min_sp": 249,
+  "trace": [
+    {
+      "key": null,
+      "state": {
+        "actor_x": 19,
+        "actor_y": 140,
+        "blocked": 0,
+        "display_page_hi": 64,
+        "door_status": 0,
+        "draw_page_hi": 64,
+        "event_count": 0,
+        "event_head": 0,
+        "event_overflow": 0,
+        "facing": 0,
+        "frame_id": 0,
+        "last_event": 0,
+        "object_status": 0,
+        "pose": 0,
+        "tick_hi": 0,
+        "tick_lo": 0,
+        "walk_phase": 0,
+        "walking": 0
+      }
+    },
+    {
+      "key": 10,
+      "state": {
+        "actor_x": 19,
+        "actor_y": 150,
+        "blocked": 0,
+        "display_page_hi": 32,
+        "door_status": 4,
+        "draw_page_hi": 32,
+        "event_count": 1,
+        "event_head": 1,
+        "event_overflow": 0,
+        "facing": 0,
+        "frame_id": 8,
+        "last_event": 1,
+        "object_status": 0,
+        "pose": 0,
+        "tick_hi": 0,
+        "tick_lo": 1,
+        "walk_phase": 0,
+        "walking": 1
+      }
+    },
+    {
+      "key": null,
+      "state": {
+        "actor_x": 19,
+        "actor_y": 160,
+        "blocked": 0,
+        "display_page_hi": 64,
+        "door_status": 4,
+        "draw_page_hi": 64,
+        "event_count": 2,
+        "event_head": 2,
+        "event_overflow": 0,
+        "facing": 0,
+        "frame_id": 9,
+        "last_event": 1,
+        "object_status": 0,
+        "pose": 0,
+        "tick_hi": 0,
+        "tick_lo": 2,
+        "walk_phase": 1,
+        "walking": 1
+      }
+    },
+    {
+      "key": null,
+      "state": {
+        "actor_x": 19,
+        "actor_y": 170,
+        "blocked": 0,
+        "display_page_hi": 32,
+        "door_status": 4,
+        "draw_page_hi": 32,
+        "event_count": 3,
+        "event_head": 3,
+        "event_overflow": 0,
+        "facing": 0,
+        "frame_id": 8,
+        "last_event": 1,
+        "object_status": 0,
+        "pose": 0,
+        "tick_hi": 0,
+        "tick_lo": 3,
+        "walk_phase": 0,
+        "walking": 1
+      }
+    },
+    {
+      "key": null,
+      "state": {
+        "actor_x": 19,
+        "actor_y": 180,
+        "blocked": 0,
+        "display_page_hi": 64,
+        "door_status": 4,
+        "draw_page_hi": 64,
+        "event_count": 4,
+        "event_head": 4,
+        "event_overflow": 0,
+        "facing": 0,
+        "frame_id": 9,
+        "last_event": 1,
+        "object_status": 0,
+        "pose": 0,
+        "tick_hi": 0,
+        "tick_lo": 4,
+        "walk_phase": 1,
+        "walking": 1
+      }
+    },
+    {
+      "key": null,
+      "state": {
+        "actor_x": 19,
+        "actor_y": 180,
+        "blocked": 1,
+        "display_page_hi": 32,
+        "door_status": 4,
+        "draw_page_hi": 32,
+        "event_count": 5,
+        "event_head": 5,
+        "event_overflow": 0,
+        "facing": 0,
+        "frame_id": 0,
+        "last_event": 4,
+        "object_status": 0,
+        "pose": 0,
+        "tick_hi": 0,
+        "tick_lo": 5,
+        "walk_phase": 0,
+        "walking": 0
+      }
+    },
+    {
+      "key": 32,
+      "state": {
+        "actor_x": 19,
+        "actor_y": 180,
+        "blocked": 1,
+        "display_page_hi": 64,
+        "door_status": 4,
+        "draw_page_hi": 64,
+        "event_count": 5,
+        "event_head": 5,
+        "event_overflow": 0,
+        "facing": 0,
+        "frame_id": 0,
+        "last_event": 4,
+        "object_status": 0,
+        "pose": 0,
+        "tick_hi": 0,
+        "tick_lo": 6,
+        "walk_phase": 0,
+        "walking": 0
+      }
+    },
+    {
+      "key": 21,
+      "state": {
+        "actor_x": 19,
+        "actor_y": 180,
+        "blocked": 1,
+        "display_page_hi": 32,
+        "door_status": 4,
+        "draw_page_hi": 32,
+        "event_count": 5,
+        "event_head": 5,
+        "event_overflow": 0,
+        "facing": 1,
+        "frame_id": 1,
+        "last_event": 4,
+        "object_status": 0,
+        "pose": 1,
+        "tick_hi": 0,
+        "tick_lo": 7,
+        "walk_phase": 0,
+        "walking": 0
+      }
+    },
+    {
+      "key": 21,
+      "state": {
+        "actor_x": 21,
+        "actor_y": 180,
+        "blocked": 0,
+        "display_page_hi": 64,
+        "door_status": 4,
+        "draw_page_hi": 64,
+        "event_count": 6,
+        "event_head": 6,
+        "event_overflow": 0,
+        "facing": 1,
+        "frame_id": 10,
+        "last_event": 1,
+        "object_status": 0,
+        "pose": 1,
+        "tick_hi": 0,
+        "tick_lo": 8,
+        "walk_phase": 0,
+        "walking": 1
+      }
+    },
+    {
+      "key": null,
+      "state": {
+        "actor_x": 23,
+        "actor_y": 180,
+        "blocked": 0,
+        "display_page_hi": 32,
+        "door_status": 4,
+        "draw_page_hi": 32,
+        "event_count": 7,
+        "event_head": 7,
+        "event_overflow": 0,
+        "facing": 1,
+        "frame_id": 11,
+        "last_event": 1,
+        "object_status": 0,
+        "pose": 1,
+        "tick_hi": 0,
+        "tick_lo": 9,
+        "walk_phase": 1,
+        "walking": 1
+      }
+    },
+    {
+      "key": null,
+      "state": {
+        "actor_x": 25,
+        "actor_y": 180,
+        "blocked": 0,
+        "display_page_hi": 64,
+        "door_status": 4,
+        "draw_page_hi": 64,
+        "event_count": 8,
+        "event_head": 8,
+        "event_overflow": 0,
+        "facing": 1,
+        "frame_id": 10,
+        "last_event": 1,
+        "object_status": 0,
+        "pose": 1,
+        "tick_hi": 0,
+        "tick_lo": 10,
+        "walk_phase": 0,
+        "walking": 1
+      }
+    },
+    {
+      "key": null,
+      "state": {
+        "actor_x": 27,
+        "actor_y": 180,
+        "blocked": 0,
+        "display_page_hi": 32,
+        "door_status": 4,
+        "draw_page_hi": 32,
+        "event_count": 9,
+        "event_head": 9,
+        "event_overflow": 0,
+        "facing": 1,
+        "frame_id": 11,
+        "last_event": 1,
+        "object_status": 0,
+        "pose": 1,
+        "tick_hi": 0,
+        "tick_lo": 11,
+        "walk_phase": 1,
+        "walking": 1
+      }
+    },
+    {
+      "key": null,
+      "state": {
+        "actor_x": 29,
+        "actor_y": 180,
+        "blocked": 0,
+        "display_page_hi": 64,
+        "door_status": 4,
+        "draw_page_hi": 64,
+        "event_count": 10,
+        "event_head": 10,
+        "event_overflow": 0,
+        "facing": 1,
+        "frame_id": 10,
+        "last_event": 1,
+        "object_status": 0,
+        "pose": 1,
+        "tick_hi": 0,
+        "tick_lo": 12,
+        "walk_phase": 0,
+        "walking": 1
+      }
+    },
+    {
+      "key": null,
+      "state": {
+        "actor_x": 31,
+        "actor_y": 180,
+        "blocked": 0,
+        "display_page_hi": 32,
+        "door_status": 4,
+        "draw_page_hi": 32,
+        "event_count": 11,
+        "event_head": 11,
+        "event_overflow": 0,
+        "facing": 1,
+        "frame_id": 11,
+        "last_event": 1,
+        "object_status": 0,
+        "pose": 1,
+        "tick_hi": 0,
+        "tick_lo": 13,
+        "walk_phase": 1,
+        "walking": 1
+      }
+    },
+    {
+      "key": null,
+      "state": {
+        "actor_x": 31,
+        "actor_y": 180,
+        "blocked": 0,
+        "display_page_hi": 64,
+        "door_status": 3,
+        "draw_page_hi": 64,
+        "event_count": 12,
+        "event_head": 12,
+        "event_overflow": 0,
+        "facing": 1,
+        "frame_id": 1,
+        "last_event": 3,
+        "object_status": 0,
+        "pose": 1,
+        "tick_hi": 0,
+        "tick_lo": 14,
+        "walk_phase": 0,
+        "walking": 0
+      }
+    },
+    {
+      "key": 65,
+      "state": {
+        "actor_x": 31,
+        "actor_y": 180,
+        "blocked": 0,
+        "display_page_hi": 32,
+        "door_status": 3,
+        "draw_page_hi": 32,
+        "event_count": 12,
+        "event_head": 12,
+        "event_overflow": 0,
+        "facing": 1,
+        "frame_id": 5,
+        "last_event": 3,
+        "object_status": 0,
+        "pose": 5,
+        "tick_hi": 0,
+        "tick_lo": 15,
+        "walk_phase": 0,
+        "walking": 0
+      }
+    },
+    {
+      "key": 32,
+      "state": {
+        "actor_x": 31,
+        "actor_y": 180,
+        "blocked": 0,
+        "display_page_hi": 64,
+        "door_status": 3,
+        "draw_page_hi": 64,
+        "event_count": 12,
+        "event_head": 12,
+        "event_overflow": 0,
+        "facing": 1,
+        "frame_id": 1,
+        "last_event": 3,
+        "object_status": 0,
+        "pose": 1,
+        "tick_hi": 0,
+        "tick_lo": 16,
+        "walk_phase": 0,
+        "walking": 0
+      }
+    }
+  ],
+  "video_clock": "simplified NTSC RDVBLBAR functional model; not hardware timing",
+  "video_profile": "color",
+  "visible_write_violations": []
+}

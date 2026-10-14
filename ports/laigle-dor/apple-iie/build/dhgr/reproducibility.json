@@ -1,0 +1,12 @@
+{
+  "success": true,
+  "method": "resource regeneration, NMOS assembly, link and disk rebuild",
+  "sha256": {
+    "game.bin": "e4e718ff5f9adff2bdec8fb0fe566539ba3c93d0ca6560016f8a61767ac47578",
+    "laigle-dor.do": "4dce986dd362f60c2660239178f5c4cb2c5b9a699019e2baedfc255b1a64a739",
+    "laigle-dor.nib": "27cf0c88654610b397ce659486fff26daee9019253c32cebfc1f3802d690abfe",
+    "resources/generated.inc": "d31e96a97f76e8657a321ae74ef9f2f7958c1e187645252225eaec26042e44e4",
+    "resources/room12.hgr": "4b03baa600485d425553de8b2788ff70b233ac24820163ebc9e617c591f73d9b",
+    "resources/room12-aux.hgr": "83f58456cb3ca4cc2aea9459178139628bf99faf83fd136c762d1aefa4f5cca3"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "errors": [],
+  "execution": "py65 functional CPU plus independent resource/rule models",
+  "failures": [],
+  "original_oric_runtime": "not tested",
+  "program_sha256": "d5bc6af6a0a4e8aaa236c0d92ae06da109fec48e05a3d8e9e65f569bbf870860",
+  "real_apple_hardware": "not tested",
+  "skipped": [],
+  "success": true,
+  "tests_run": 33,
+  "video_profile": "color"
+}

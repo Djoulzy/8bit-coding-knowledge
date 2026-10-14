@@ -1,0 +1,105 @@
+{
+  "initial": {
+    "actor_x": 19,
+    "actor_y": 140,
+    "facing": 0,
+    "pose": 0,
+    "walking": 0,
+    "walk_phase": 0,
+    "tick_lo": 0,
+    "tick_hi": 0,
+    "last_event": 0,
+    "event_head": 0,
+    "event_count": 0,
+    "event_overflow": 0,
+    "frame_id": 0,
+    "blocked": 0,
+    "door_status": 0,
+    "object_status": 0,
+    "display_page_hi": 64,
+    "draw_page_hi": 64
+  },
+  "final": {
+    "actor_x": 31,
+    "actor_y": 180,
+    "facing": 1,
+    "pose": 1,
+    "walking": 0,
+    "walk_phase": 0,
+    "tick_lo": 16,
+    "tick_hi": 0,
+    "last_event": 3,
+    "event_head": 12,
+    "event_count": 12,
+    "event_overflow": 0,
+    "frame_id": 1,
+    "blocked": 0,
+    "door_status": 3,
+    "object_status": 0,
+    "display_page_hi": 64,
+    "draw_page_hi": 64
+  },
+  "events": [
+    {
+      "kind": 1,
+      "tick": 1,
+      "argument": 0
+    },
+    {
+      "kind": 1,
+      "tick": 2,
+      "argument": 0
+    },
+    {
+      "kind": 1,
+      "tick": 3,
+      "argument": 0
+    },
+    {
+      "kind": 1,
+      "tick": 4,
+      "argument": 0
+    },
+    {
+      "kind": 4,
+      "tick": 5,
+      "argument": 0
+    },
+    {
+      "kind": 1,
+      "tick": 8,
+      "argument": 0
+    },
+    {
+      "kind": 1,
+      "tick": 9,
+      "argument": 0
+    },
+    {
+      "kind": 1,
+      "tick": 10,
+      "argument": 0
+    },
+    {
+      "kind": 1,
+      "tick": 11,
+      "argument": 0
+    },
+    {
+      "kind": 1,
+      "tick": 12,
+      "argument": 0
+    },
+    {
+      "kind": 1,
+      "tick": 13,
+      "argument": 0
+    },
+    {
+      "kind": 3,
+      "tick": 14,
+      "argument": 0
+    }
+  ],
+  "report": "build/dhgr/execution.json"
+}

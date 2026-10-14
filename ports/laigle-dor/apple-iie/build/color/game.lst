@@ -1,0 +1,2589 @@
+ca65 V2.18 - V2.19
+Main file   : /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/apple-iie/src/main.s
+Current file: /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/apple-iie/src/main.s
+
+000000r 1               .setcpu "6502"
+000000r 1               .include "memory.inc"
+000000r 2               ; Standalone takeover ABI. No OS, BASIC or monitor calls after entry.
+000000r 2               STATE = $0C00              ; outside both text pages ($0400/$0800)
+000000r 2               actor_x = STATE
+000000r 2               actor_y = STATE+1
+000000r 2               facing = STATE+2
+000000r 2               pose = STATE+3
+000000r 2               walking = STATE+4
+000000r 2               walk_phase = STATE+5
+000000r 2               tick_lo = STATE+6
+000000r 2               tick_hi = STATE+7
+000000r 2               last_event = STATE+8
+000000r 2               event_head = STATE+9
+000000r 2               event_count = STATE+10
+000000r 2               event_overflow = STATE+11
+000000r 2               blocked = STATE+12
+000000r 2               door_status = STATE+13
+000000r 2               object_status = STATE+14
+000000r 2               key_action = STATE+15
+000000r 2               frame_id = STATE+16
+000000r 2               display_page_hi = STATE+17
+000000r 2               draw_page_hi = STATE+18
+000000r 2               dirty_left = STATE+19      ; two per-page rectangles, byte-x / target pixel-y
+000000r 2               dirty_right = STATE+21     ; exclusive right/bottom
+000000r 2               dirty_top = STATE+23
+000000r 2               dirty_bottom = STATE+25
+000000r 2               dirty_valid = STATE+27
+000000r 2               EVENT_LOG = $0D00  ; 64 four-byte records: kind, tick lo, tick hi, argument
+000000r 2               BASELINE_HI = $A0
+000000r 2               VIEW_TOP = 35
+000000r 2               VIEW_HEIGHT = 160
+000000r 2               ; Private main-bank zero page $80–$AA. All workers may clobber A/X/Y/P.
+000000r 2               src_ptr = $80
+000000r 2               dst_ptr = $82
+000000r 2               frame_ptr = $84
+000000r 2               shift_ptr = $86
+000000r 2               tmp = $88
+000000r 2               run_count = $89
+000000r 2               grid_base = $8A
+000000r 2               col = $8B
+000000r 2               row_y = $8C
+000000r 2               sprite_w = $8D
+000000r 2               sprite_h = $8E
+000000r 2               out_w = $8F
+000000r 2               last_mask = $90
+000000r 2               color_phase = $90        ; reserved monochrome scratch reused by color build
+000000r 2               first_mask = $91
+000000r 2               spill = $92
+000000r 2               pixel = $93
+000000r 2               mask = $94
+000000r 2               x_column = $95
+000000r 2               phase = $96
+000000r 2               layer_count = $97
+000000r 2               layer_cursor = $98
+000000r 2               sprite_index = $99
+000000r 2               dx = $9A
+000000r 2               dy = $9B
+000000r 2               delay_count = $9C
+000000r 2               event_kind = $9D
+000000r 2               render_page_index = $9E
+000000r 2               mask_spill = $9F
+000000r 2               raw_mask = $A0
+000000r 2               raw_pixel = $A1
+000000r 2               repair_left = $A2
+000000r 2               repair_right = $A3
+000000r 2               repair_y = $A4
+000000r 2               repair_bottom = $A5
+000000r 2               bounds_top = $A6
+000000r 2               bounds_bottom = $A7
+000000r 2               hud_row = $A8
+000000r 2               hud_ptr = $A9             ; $A9/$AA
+000000r 2               .if DHGR
+000000r 2               ; DHGR-only scratch; game state, stack and all these pointers stay in main RAM.
+000000r 2               dhgr_codes = $AB
+000000r 2               cell_x = $AC
+000000r 2               cells_left = $AD
+000000r 2               code_count = $AE
+000000r 2               row_stride = $AF
+000000r 2               cell_color = $B0
+000000r 2               serial_col = $B1
+000000r 2               render_bank = $B2
+000000r 2               data_cursor = $B3
+000000r 2               origin_cell = $B4
+000000r 2               row_color = $B5
+000000r 2               HUD_BUFFER = $0E00        ; 40 bytes: compact HUD to interleaved 80-column text
+000000r 2               .endif
+000000r 2               EVENT_WALK = 1
+000000r 2               EVENT_STOP = 2
+000000r 2               EVENT_EXIT = 3
+000000r 2               EVENT_BLOCKED = 4
+000000r 2               
+000000r 1               .segment "CODE"
+000000r 1               .export entry, main_loop, frame_complete
+000000r 1               entry:
+000000r 1  78               sei
+000001r 1  D8               cld
+000002r 1  A9 00            lda #0
+000004r 1  8D 00 C0         sta $C000              ; 80STORE off before taking ownership of RAM
+000007r 1  8D 02 C0         sta $C002              ; main reads
+00000Ar 1  8D 04 C0         sta $C004              ; main writes before game_reset touches state
+00000Dr 1  8D 08 C0         sta $C008              ; main zero page/stack before installing our stack
+000010r 1  A2 FF            ldx #$FF
+000012r 1  9A               txs
+000013r 1  20 rr rr         jsr game_reset
+000016r 1  20 rr rr         jsr video_init
+000019r 1  20 rr rr         jsr draw_scene
+00001Cr 1  20 rr rr         jsr present_frame
+00001Fr 1               main_loop:
+00001Fr 1  20 rr rr         jsr keyboard_poll
+000022r 1  20 rr rr         jsr game_tick
+000025r 1  20 rr rr         jsr draw_scene
+000028r 1  20 rr rr         jsr present_frame
+00002Br 1               frame_complete:
+00002Br 1  4C rr rr         jmp main_loop
+00002Er 1               .include "game/core.s"
+00002Er 2               ; Translated B2 10000–10510, 5030; restricted to room 12, empty hand.
+00002Er 2               ; No Apple I/O here. key_action = 0..3 direction,4 stop,5 crouch,$FF no key.
+00002Er 2               ; Host oracle: model/movement.py. W07 consumes EVENT_EXIT; W06 stops at portal.
+00002Er 2               .export game_reset, game_tick, collision_probe
+00002Er 2               .export actor_x, actor_y, facing, pose, walking, walk_phase, tick_lo, tick_hi
+00002Er 2               .export last_event, event_head, event_count, event_overflow, frame_id
+00002Er 2               .export blocked, door_status, object_status, key_action
+00002Er 2               
+00002Er 2               game_reset:
+00002Er 2  A9 00            lda #0
+000030r 2  A2 10            ldx #16
+000032r 2               @clear:
+000032r 2  9D 00 0C         sta STATE,x
+000035r 2  CA               dex
+000036r 2  10 FA            bpl @clear
+000038r 2  A9 13            lda #19
+00003Ar 2  8D 00 0C         sta actor_x
+00003Dr 2  A9 8C            lda #140
+00003Fr 2  8D 01 0C         sta actor_y
+000042r 2  A9 FF            lda #$FF
+000044r 2  8D 0F 0C         sta key_action
+000047r 2  60               rts
+000048r 2               
+000048r 2               game_tick:
+000048r 2  EE 06 0C         inc tick_lo
+00004Br 2  D0 03            bne :+
+00004Dr 2  EE 07 0C         inc tick_hi
+000050r 2               :
+000050r 2  AD 0F 0C         lda key_action
+000053r 2  C9 04            cmp #4
+000055r 2  B0 3F            bcs @other
+000057r 2  AD 04 0C         lda walking
+00005Ar 2  F0 08            beq @direction
+00005Cr 2  A9 02            lda #EVENT_STOP
+00005Er 2  20 rr rr         jsr log_event
+000061r 2  4C rr rr         jmp stop_actor
+000064r 2               @direction:
+000064r 2  AD 03 0C         lda pose
+000067r 2  C9 04            cmp #4
+000069r 2  90 0F            bcc @standing
+00006Br 2  AD 0F 0C         lda key_action
+00006Er 2  8D 02 0C         sta facing
+000071r 2  18               clc
+000072r 2  69 04            adc #4
+000074r 2  8D 03 0C         sta pose
+000077r 2  4C rr rr         jmp update_frame
+00007Ar 2               @standing:
+00007Ar 2  AD 0F 0C         lda key_action
+00007Dr 2  CD 02 0C         cmp facing
+000080r 2  F0 09            beq @walk
+000082r 2  8D 02 0C         sta facing
+000085r 2  8D 03 0C         sta pose
+000088r 2  4C rr rr         jmp update_frame
+00008Br 2               @walk:
+00008Br 2  A9 01            lda #1
+00008Dr 2  8D 04 0C         sta walking
+000090r 2  8D 05 0C         sta walk_phase
+000093r 2  4C rr rr         jmp continue_walk
+000096r 2               @other:
+000096r 2  C9 04            cmp #4
+000098r 2  D0 0D            bne @crouch
+00009Ar 2  AD 04 0C         lda walking
+00009Dr 2  F0 20            beq stop_actor
+00009Fr 2  A9 02            lda #EVENT_STOP
+0000A1r 2  20 rr rr         jsr log_event
+0000A4r 2  4C rr rr         jmp stop_actor
+0000A7r 2               @crouch:
+0000A7r 2  C9 05            cmp #5
+0000A9r 2  D0 25            bne continue_walk
+0000ABr 2  A9 00            lda #0
+0000ADr 2  8D 04 0C         sta walking
+0000B0r 2  8D 05 0C         sta walk_phase
+0000B3r 2  AD 02 0C         lda facing
+0000B6r 2  18               clc
+0000B7r 2  69 04            adc #4
+0000B9r 2  8D 03 0C         sta pose
+0000BCr 2  4C rr rr         jmp update_frame
+0000BFr 2               
+0000BFr 2               stop_actor:
+0000BFr 2  A9 00            lda #0
+0000C1r 2  8D 04 0C         sta walking
+0000C4r 2  8D 05 0C         sta walk_phase
+0000C7r 2  AD 02 0C         lda facing
+0000CAr 2  8D 03 0C         sta pose
+0000CDr 2  4C rr rr         jmp update_frame
+0000D0r 2               
+0000D0r 2               continue_walk:
+0000D0r 2  AD 04 0C         lda walking
+0000D3r 2  F0 43            beq update_frame
+0000D5r 2  20 rr rr         jsr collision_probe
+0000D8r 2  AD 0C 0C         lda blocked
+0000DBr 2  F0 08            beq @allowed
+0000DDr 2  A9 04            lda #EVENT_BLOCKED
+0000DFr 2  20 rr rr         jsr log_event
+0000E2r 2  4C rr rr         jmp stop_actor
+0000E5r 2               @allowed:
+0000E5r 2  AD 0D 0C         lda door_status
+0000E8r 2  C9 03            cmp #3
+0000EAr 2  D0 08            bne @move
+0000ECr 2  A9 03            lda #EVENT_EXIT
+0000EEr 2  20 rr rr         jsr log_event
+0000F1r 2  4C rr rr         jmp stop_actor
+0000F4r 2               @move:
+0000F4r 2  AE 02 0C         ldx facing
+0000F7r 2  AD 00 0C         lda actor_x
+0000FAr 2  18               clc
+0000FBr 2  7D rr rr         adc step_x,x
+0000FEr 2  8D 00 0C         sta actor_x
+000101r 2  AD 01 0C         lda actor_y
+000104r 2  18               clc
+000105r 2  7D rr rr         adc step_y,x
+000108r 2  8D 01 0C         sta actor_y
+00010Br 2  AD 05 0C         lda walk_phase
+00010Er 2  49 01            eor #1
+000110r 2  8D 05 0C         sta walk_phase
+000113r 2  A9 01            lda #EVENT_WALK
+000115r 2  20 rr rr         jsr log_event
+000118r 2               update_frame:
+000118r 2  AD 04 0C         lda walking
+00011Br 2  F0 0F            beq @static
+00011Dr 2  AD 02 0C         lda facing
+000120r 2  0A               asl a
+000121r 2  18               clc
+000122r 2  69 08            adc #8
+000124r 2  18               clc
+000125r 2  6D 05 0C         adc walk_phase
+000128r 2  8D 10 0C         sta frame_id
+00012Br 2  60               rts
+00012Cr 2               @static:
+00012Cr 2  AD 03 0C         lda pose
+00012Fr 2  8D 10 0C         sta frame_id
+000132r 2  60               rts
+000133r 2               
+000133r 2               ; Bounded semantic map. A zero virtual cell replaces out-of-grid hardware reads
+000133r 2               ; during y=150/170 transitions; this is an explicit provisional policy.
+000133r 2               collision_probe:
+000133r 2  A9 00            lda #0
+000135r 2  8D 0C 0C         sta blocked
+000138r 2  8D 0E 0C         sta object_status
+00013Br 2  A9 04            lda #4
+00013Dr 2  8D 0D 0C         sta door_status
+000140r 2  AD 00 0C         lda actor_x
+000143r 2  C9 28            cmp #40
+000145r 2  B0 3C            bcs block_actor
+000147r 2  AD 01 0C         lda actor_y
+00014Ar 2  C9 8C            cmp #140
+00014Cr 2  90 35            bcc block_actor
+00014Er 2  C9 B5            cmp #181
+000150r 2  B0 31            bcs block_actor
+000152r 2  AD 00 0C         lda actor_x
+000155r 2  85 8A            sta grid_base
+000157r 2  AD 01 0C         lda actor_y
+00015Ar 2  C9 8C            cmp #140
+00015Cr 2  D0 07            bne :+
+00015Er 2  A5 8A            lda grid_base
+000160r 2  18               clc
+000161r 2  69 50            adc #80
+000163r 2  85 8A            sta grid_base
+000165r 2               :
+000165r 2  AD 01 0C         lda actor_y
+000168r 2  C9 A0            cmp #160
+00016Ar 2  D0 07            bne :+
+00016Cr 2  A5 8A            lda grid_base
+00016Er 2  18               clc
+00016Fr 2  69 28            adc #40
+000171r 2  85 8A            sta grid_base
+000173r 2               :
+000173r 2  AD 02 0C         lda facing
+000176r 2  F0 11            beq probe_down
+000178r 2  C9 01            cmp #1
+00017Ar 2  F0 1F            beq probe_right
+00017Cr 2  C9 02            cmp #2
+00017Er 2  F0 38            beq probe_left
+000180r 2  4C rr rr         jmp probe_up
+000183r 2               block_actor:
+000183r 2  A9 01            lda #1
+000185r 2  8D 0C 0C         sta blocked
+000188r 2  60               rts
+000189r 2               probe_down:
+000189r 2  AD 01 0C         lda actor_y
+00018Cr 2  C9 B4            cmp #180
+00018Er 2  F0 F3            beq block_actor
+000190r 2  A5 8A            lda grid_base
+000192r 2  38               sec
+000193r 2  E9 28            sbc #40
+000195r 2  AA               tax
+000196r 2  A9 03            lda #3
+000198r 2  4C rr rr         jmp scan_cells
+00019Br 2               probe_right:
+00019Br 2  AD 00 0C         lda actor_x
+00019Er 2  C9 1F            cmp #31
+0001A0r 2  D0 0B            bne @ordinary
+0001A2r 2  A5 8A            lda grid_base
+0001A4r 2  C9 28            cmp #40
+0001A6r 2  B0 05            bcs @ordinary
+0001A8r 2  A9 03            lda #3                 ; room 12 $0484 = 3
+0001AAr 2  4C rr rr         jmp set_door
+0001ADr 2               @ordinary:
+0001ADr 2  A5 8A            lda grid_base
+0001AFr 2  18               clc
+0001B0r 2  69 03            adc #3
+0001B2r 2  AA               tax
+0001B3r 2  A9 05            lda #5
+0001B5r 2  4C rr rr         jmp scan_cells
+0001B8r 2               probe_left:
+0001B8r 2  AD 00 0C         lda actor_x
+0001BBr 2  C9 07            cmp #7
+0001BDr 2  D0 0B            bne @ordinary
+0001BFr 2  A5 8A            lda grid_base
+0001C1r 2  C9 28            cmp #40
+0001C3r 2  B0 05            bcs @ordinary
+0001C5r 2  A9 00            lda #0                 ; room 12 $0483 = 0
+0001C7r 2  4C rr rr         jmp set_door
+0001CAr 2               @ordinary:
+0001CAr 2  A5 8A            lda grid_base
+0001CCr 2  38               sec
+0001CDr 2  E9 04            sbc #4
+0001CFr 2  AA               tax
+0001D0r 2  A9 04            lda #4
+0001D2r 2  4C rr rr         jmp scan_cells
+0001D5r 2               probe_up:
+0001D5r 2  AD 01 0C         lda actor_y
+0001D8r 2  C9 8C            cmp #140               ; geometry 1 far wall
+0001DAr 2  D0 0C            bne @ordinary
+0001DCr 2  AD 00 0C         lda actor_x
+0001DFr 2  C9 13            cmp #19
+0001E1r 2  D0 A0            bne block_actor
+0001E3r 2  A9 01            lda #1                 ; room 12 $0482 = 1 locked far door
+0001E5r 2  4C rr rr         jmp set_door
+0001E8r 2               @ordinary:
+0001E8r 2  A5 8A            lda grid_base
+0001EAr 2  18               clc
+0001EBr 2  69 28            adc #40
+0001EDr 2  AA               tax
+0001EEr 2  A9 04            lda #4
+0001F0r 2  4C rr rr         jmp scan_cells
+0001F3r 2               set_door:
+0001F3r 2  8D 0D 0C         sta door_status
+0001F6r 2  C9 03            cmp #3
+0001F8r 2  90 89            bcc block_actor
+0001FAr 2  60               rts
+0001FBr 2               scan_cells:
+0001FBr 2  85 89            sta run_count
+0001FDr 2               @cell:
+0001FDr 2  E0 78            cpx #120
+0001FFr 2  B0 14            bcs @next              ; virtual empty cell; never read I/O
+000201r 2  BD rr rr         lda room12_grid,x
+000204r 2  10 05            bpl @object
+000206r 2  A9 01            lda #1
+000208r 2  8D 0C 0C         sta blocked
+00020Br 2               @object:
+00020Br 2  BD rr rr         lda room12_grid,x
+00020Er 2  C9 01            cmp #1
+000210r 2  D0 03            bne @next
+000212r 2  8D 0E 0C         sta object_status
+000215r 2               @next:
+000215r 2  E8               inx
+000216r 2  C6 89            dec run_count
+000218r 2  D0 E3            bne @cell
+00021Ar 2  60               rts
+00021Br 2  00 02 FE 00  step_x: .byte 0,2,$FE,0
+00021Fr 2  0A 00 00 F6  step_y: .byte 10,0,0,$F6
+000223r 2               
+000223r 1               .include "apple/input.s"
+000223r 2               ; Apple IIe KBD=$C000, KBDSTRB=$C010. One pending character consumed per tick.
+000223r 2               .export keyboard_poll
+000223r 2               keyboard_poll:
+000223r 2  A9 FF            lda #$FF
+000225r 2  8D 0F 0C         sta key_action
+000228r 2  AD 00 C0         lda $C000
+00022Br 2  10 28            bpl @done
+00022Dr 2  29 7F            and #$7F
+00022Fr 2  2C 10 C0         bit $C010
+000232r 2  C9 61            cmp #$61
+000234r 2  90 06            bcc :+
+000236r 2  C9 7B            cmp #$7B
+000238r 2  B0 02            bcs :+
+00023Ar 2  29 DF            and #$DF
+00023Cr 2               :
+00023Cr 2  A2 00            ldx #0
+00023Er 2               @find:
+00023Er 2  DD rr rr         cmp key_codes,x
+000241r 2  F0 0C            beq @matched
+000243r 2  E8               inx
+000244r 2  E0 0C            cpx #12
+000246r 2  D0 F6            bne @find
+000248r 2  C9 52            cmp #'R'
+00024Ar 2  D0 09            bne @done
+00024Cr 2  4C rr rr         jmp game_reset          ; prototype-only reset
+00024Fr 2               @matched:
+00024Fr 2  BD rr rr         lda key_actions,x
+000252r 2  8D 0F 0C         sta key_action
+000255r 2               @done:
+000255r 2  60               rts
+000256r 2  08 15 0A 0B  key_codes: .byte $08,$15,$0A,$0B,'J','K','N','U',' ', 'A', $0D, $1B
+00025Ar 2  4A 4B 4E 55  
+00025Er 2  20 41 0D 1B  
+000262r 2  02 01 00 03  key_actions: .byte 2,1,0,3,2,1,0,3,4,5,4,4
+000266r 2  02 01 00 03  
+00026Ar 2  04 05 04 04  
+00026Er 2               
+00026Er 1               .include "apple/audio.s"
+00026Er 2               ; Silent event sink. Catalog in resources/audio-events.json; never touches $C030.
+00026Er 2               .export log_event
+00026Er 2               log_event:
+00026Er 2  85 9D            sta event_kind
+000270r 2  8D 08 0C         sta last_event
+000273r 2  AD 09 0C         lda event_head
+000276r 2  0A               asl a
+000277r 2  0A               asl a
+000278r 2  AA               tax
+000279r 2  A5 9D            lda event_kind
+00027Br 2  9D 00 0D         sta EVENT_LOG,x
+00027Er 2  AD 06 0C         lda tick_lo
+000281r 2  9D 01 0D         sta EVENT_LOG+1,x
+000284r 2  AD 07 0C         lda tick_hi
+000287r 2  9D 02 0D         sta EVENT_LOG+2,x
+00028Ar 2  A9 00            lda #0
+00028Cr 2  9D 03 0D         sta EVENT_LOG+3,x
+00028Fr 2  EE 09 0C         inc event_head
+000292r 2  AD 09 0C         lda event_head
+000295r 2  29 3F            and #63
+000297r 2  8D 09 0C         sta event_head
+00029Ar 2  AD 0A 0C         lda event_count
+00029Dr 2  C9 40            cmp #64
+00029Fr 2  F0 04            beq @overflow
+0002A1r 2  EE 0A 0C         inc event_count
+0002A4r 2  60               rts
+0002A5r 2               @overflow:
+0002A5r 2  EE 0B 0C         inc event_overflow       ; modulo-256 count of overwritten records
+0002A8r 2  60               rts
+0002A9r 2               
+0002A9r 1               .if DHGR
+0002A9r 1               .include "apple/dhgr.s"
+0002A9r 1               .else
+0002A9r 1               .include "apple/graphics.s"
+0002A9r 2               ; Mixed HGR: two frame pages, immutable terrain baseline at $A000.
+0002A9r 2               ; Only the hidden page is repaired/drawn. Each page owns its prior dirty bounds.
+0002A9r 2               .export video_init, draw_scene, draw_sprite, present_frame, present_flip
+0002A9r 2               .export display_page_hi, draw_page_hi, dirty_left, dirty_right, dirty_top, dirty_bottom, dirty_valid
+0002A9r 2               .exportzp sprite_index, dx, dy, render_page_index
+0002A9r 2               video_init:
+0002A9r 2  A9 00            lda #0
+0002ABr 2  8D 00 C0         sta $C000              ; 80STORE off: PAGE2 selects main-RAM display pages
+0002AEr 2  8D 02 C0         sta $C002
+0002B1r 2  8D 04 C0         sta $C004
+0002B4r 2  8D 08 C0         sta $C008
+0002B7r 2  8D 0C C0         sta $C00C              ; 40-column text
+0002BAr 2  8D 0E C0         sta $C00E              ; normal charset
+0002BDr 2  2C 51 C0         bit $C051              ; text until first completed frame
+0002C0r 2  2C 54 C0         bit $C054
+0002C3r 2  2C 57 C0         bit $C057
+0002C6r 2  2C 53 C0         bit $C053              ; HGR 160 rows + four text rows
+0002C9r 2  A9 20            lda #$20
+0002CBr 2  8D 11 0C         sta display_page_hi
+0002CEr 2  A9 00            lda #0
+0002D0r 2  8D 1B 0C         sta dirty_valid
+0002D3r 2  8D 1C 0C         sta dirty_valid+1
+0002D6r 2  20 rr rr         jsr hud_init
+0002D9r 2  A9 rr            lda #<room12_rle
+0002DBr 2  85 80            sta src_ptr
+0002DDr 2  A9 rr            lda #>room12_rle
+0002DFr 2  85 81            sta src_ptr+1
+0002E1r 2  A9 00            lda #0
+0002E3r 2  85 82            sta dst_ptr
+0002E5r 2  A9 A0            lda #BASELINE_HI
+0002E7r 2  85 83            sta dst_ptr+1
+0002E9r 2               @packet:
+0002E9r 2  20 rr rr         jsr read_src
+0002ECr 2  C9 00            cmp #0
+0002EEr 2  F0 16            beq @ready
+0002F0r 2  85 89            sta run_count
+0002F2r 2  20 rr rr         jsr read_src
+0002F5r 2  A0 00            ldy #0
+0002F7r 2               @repeat:
+0002F7r 2  91 82            sta (dst_ptr),y
+0002F9r 2  E6 82            inc dst_ptr
+0002FBr 2  D0 02            bne :+
+0002FDr 2  E6 83            inc dst_ptr+1
+0002FFr 2               :
+0002FFr 2  C6 89            dec run_count
+000301r 2  D0 F4            bne @repeat
+000303r 2  4C rr rr         jmp @packet
+000306r 2               @ready:
+000306r 2  A9 20            lda #$20
+000308r 2  20 rr rr         jsr init_page
+00030Br 2  A9 40            lda #$40
+00030Dr 2  4C rr rr         jmp init_page
+000310r 2               read_src:
+000310r 2  A0 00            ldy #0
+000312r 2  B1 80            lda (src_ptr),y
+000314r 2  E6 80            inc src_ptr
+000316r 2  D0 02            bne :+
+000318r 2  E6 81            inc src_ptr+1
+00031Ar 2               :
+00031Ar 2  60               rts
+00031Br 2               init_page:
+00031Br 2  85 83            sta dst_ptr+1
+00031Dr 2  A9 A0            lda #BASELINE_HI
+00031Fr 2  85 81            sta src_ptr+1
+000321r 2  A9 00            lda #0
+000323r 2  85 80            sta src_ptr
+000325r 2  85 82            sta dst_ptr
+000327r 2  A2 20            ldx #32
+000329r 2  A0 00            ldy #0
+00032Br 2               @copy:
+00032Br 2  B1 80            lda (src_ptr),y
+00032Dr 2  91 82            sta (dst_ptr),y
+00032Fr 2  88               dey
+000330r 2  D0 F9            bne @copy
+000332r 2  E6 81            inc src_ptr+1
+000334r 2  E6 83            inc dst_ptr+1
+000336r 2  CA               dex
+000337r 2  D0 F2            bne @copy
+000339r 2  60               rts
+00033Ar 2               
+00033Ar 2               draw_scene:
+00033Ar 2  AD 11 0C         lda display_page_hi
+00033Dr 2  49 60            eor #$60               ; $20 <-> $40
+00033Fr 2  8D 12 0C         sta draw_page_hi
+000342r 2  A2 00            ldx #0
+000344r 2  C9 20            cmp #$20
+000346r 2  F0 01            beq :+
+000348r 2  E8               inx
+000349r 2               :
+000349r 2  86 9E            stx render_page_index
+00034Br 2  20 rr rr         jsr repair_page
+00034Er 2  A6 9E            ldx render_page_index
+000350r 2  A9 28            lda #40
+000352r 2  9D 13 0C         sta dirty_left,x
+000355r 2  A9 00            lda #0
+000357r 2  9D 15 0C         sta dirty_right,x
+00035Ar 2  9D 19 0C         sta dirty_bottom,x
+00035Dr 2  9D 1B 0C         sta dirty_valid,x
+000360r 2  A9 A0            lda #VIEW_HEIGHT
+000362r 2  9D 17 0C         sta dirty_top,x
+000365r 2  AE 10 0C         ldx frame_id
+000368r 2  BD rr rr         lda frame_lo,x
+00036Br 2  85 84            sta frame_ptr
+00036Dr 2  BD rr rr         lda frame_hi,x
+000370r 2  85 85            sta frame_ptr+1
+000372r 2  A0 00            ldy #0
+000374r 2  B1 84            lda (frame_ptr),y
+000376r 2  85 97            sta layer_count
+000378r 2  A9 01            lda #1
+00037Ar 2  85 98            sta layer_cursor
+00037Cr 2               @layer:
+00037Cr 2  A4 98            ldy layer_cursor
+00037Er 2  B1 84            lda (frame_ptr),y
+000380r 2  85 99            sta sprite_index
+000382r 2  C8               iny
+000383r 2  B1 84            lda (frame_ptr),y
+000385r 2  85 9A            sta dx
+000387r 2  C8               iny
+000388r 2  B1 84            lda (frame_ptr),y
+00038Ar 2  85 9B            sta dy
+00038Cr 2  C8               iny
+00038Dr 2  84 98            sty layer_cursor
+00038Fr 2  20 rr rr         jsr draw_sprite
+000392r 2  C6 97            dec layer_count
+000394r 2  D0 E6            bne @layer
+000396r 2  4C rr rr         jmp hud_draw
+000399r 2               
+000399r 2               repair_page:
+000399r 2  A6 9E            ldx render_page_index
+00039Br 2  BD 1B 0C         lda dirty_valid,x
+00039Er 2  D0 01            bne :+
+0003A0r 2  60               rts
+0003A1r 2               :
+0003A1r 2  BD 13 0C         lda dirty_left,x
+0003A4r 2  85 A2            sta repair_left
+0003A6r 2  BD 15 0C         lda dirty_right,x
+0003A9r 2  85 A3            sta repair_right
+0003ABr 2  BD 17 0C         lda dirty_top,x
+0003AEr 2  85 A4            sta repair_y
+0003B0r 2  BD 19 0C         lda dirty_bottom,x
+0003B3r 2  85 A5            sta repair_bottom
+0003B5r 2               @row:
+0003B5r 2  A6 A4            ldx repair_y
+0003B7r 2  BD rr rr         lda row_lo,x
+0003BAr 2  85 80            sta src_ptr
+0003BCr 2  85 82            sta dst_ptr
+0003BEr 2  BD rr rr         lda row_hi,x
+0003C1r 2  29 1F            and #$1F
+0003C3r 2  09 A0            ora #BASELINE_HI
+0003C5r 2  85 81            sta src_ptr+1
+0003C7r 2  BD rr rr         lda row_hi,x
+0003CAr 2  29 1F            and #$1F
+0003CCr 2  0D 12 0C         ora draw_page_hi
+0003CFr 2  85 83            sta dst_ptr+1
+0003D1r 2  A4 A2            ldy repair_left
+0003D3r 2               @byte:
+0003D3r 2  B1 80            lda (src_ptr),y
+0003D5r 2  91 82            sta (dst_ptr),y
+0003D7r 2  C8               iny
+0003D8r 2  C4 A3            cpy repair_right
+0003DAr 2  D0 F7            bne @byte
+0003DCr 2  E6 A4            inc repair_y
+0003DEr 2  A5 A4            lda repair_y
+0003E0r 2  C5 A5            cmp repair_bottom
+0003E2r 2  D0 D1            bne @row
+0003E4r 2  60               rts
+0003E5r 2               
+0003E5r 2               present_frame:
+0003E5r 2                   ; IIe RDVBLBAR: high during active display, low in vertical blank.
+0003E5r 2               @leave_blank:
+0003E5r 2  2C 19 C0         bit $C019
+0003E8r 2  10 FB            bpl @leave_blank
+0003EAr 2               @enter_blank:
+0003EAr 2  2C 19 C0         bit $C019
+0003EDr 2  30 FB            bmi @enter_blank
+0003EFr 2               present_flip:
+0003EFr 2  AD 12 0C         lda draw_page_hi
+0003F2r 2  C9 20            cmp #$20
+0003F4r 2  D0 06            bne @page2
+0003F6r 2  2C 54 C0         bit $C054
+0003F9r 2  4C rr rr         jmp @selected
+0003FCr 2               @page2:
+0003FCr 2  2C 55 C0         bit $C055
+0003FFr 2               @selected:
+0003FFr 2  8D 11 0C         sta display_page_hi
+000402r 2  2C 50 C0         bit $C050
+000405r 2  60               rts
+000406r 2               
+000406r 2               ; Header: byte width, source height, seven output widths, legacy extent masks;
+000406r 2               ; then interleaved pixel/mask bytes. Source ink/paper is not retained.
+000406r 2               draw_sprite:
+000406r 2  A6 99            ldx sprite_index
+000408r 2               .if HGR_COLOR
+000408r 2  BD rr rr         lda sprite_color_phase,x
+00040Br 2  85 90            sta color_phase
+00040Dr 2               .endif
+00040Dr 2  BD rr rr         lda sprite_lo,x
+000410r 2  85 80            sta src_ptr
+000412r 2  BD rr rr         lda sprite_hi,x
+000415r 2  85 81            sta src_ptr+1
+000417r 2  AD 00 0C         lda actor_x
+00041Ar 2  18               clc
+00041Br 2  65 9A            adc dx
+00041Dr 2  AA               tax
+00041Er 2  E0 28            cpx #40
+000420r 2  90 01            bcc :+
+000422r 2  60               rts
+000423r 2               :
+000423r 2  BD rr rr         lda x_byte,x
+000426r 2  85 95            sta x_column
+000428r 2  BD rr rr         lda x_phase,x
+00042Br 2  85 96            sta phase
+00042Dr 2  18               clc
+00042Er 2  69 rr            adc #>shift_table
+000430r 2  85 87            sta shift_ptr+1
+000432r 2  A9 rr            lda #<shift_table
+000434r 2  85 86            sta shift_ptr
+000436r 2  AD 01 0C         lda actor_y
+000439r 2  18               clc
+00043Ar 2  65 9B            adc dy
+00043Cr 2  85 8C            sta row_y
+00043Er 2  C9 C8            cmp #200
+000440r 2  90 01            bcc :+
+000442r 2  60               rts                    ; invalid unsigned source-y must not wrap into viewport
+000443r 2               :
+000443r 2  A0 00            ldy #0
+000445r 2  B1 80            lda (src_ptr),y
+000447r 2  85 8D            sta sprite_w
+000449r 2  C8               iny
+00044Ar 2  B1 80            lda (src_ptr),y
+00044Cr 2  85 8E            sta sprite_h
+00044Er 2  A5 96            lda phase
+000450r 2  18               clc
+000451r 2  69 02            adc #2
+000453r 2  A8               tay
+000454r 2  B1 80            lda (src_ptr),y
+000456r 2  85 8F            sta out_w
+000458r 2  20 rr rr         jsr include_bounds
+00045Br 2  A5 80            lda src_ptr
+00045Dr 2  18               clc
+00045Er 2  69 10            adc #16
+000460r 2  85 80            sta src_ptr
+000462r 2  90 02            bcc @row
+000464r 2  E6 81            inc src_ptr+1
+000466r 2               @row:
+000466r 2  A6 8C            ldx row_y
+000468r 2  E0 C8            cpx #200
+00046Ar 2  90 03            bcc :+
+00046Cr 2  4C rr rr         jmp @advance
+00046Fr 2               :
+00046Fr 2  BD rr rr         lda y_map,x
+000472r 2  C9 FF            cmp #$FF
+000474r 2  D0 03            bne :+
+000476r 2  4C rr rr         jmp @advance
+000479r 2               :
+000479r 2  AA               tax
+00047Ar 2  BD rr rr         lda row_lo,x
+00047Dr 2  18               clc
+00047Er 2  65 95            adc x_column
+000480r 2  85 82            sta dst_ptr
+000482r 2  BD rr rr         lda row_hi,x
+000485r 2  29 1F            and #$1F
+000487r 2  0D 12 0C         ora draw_page_hi
+00048Ar 2  69 00            adc #0
+00048Cr 2  85 83            sta dst_ptr+1
+00048Er 2  A9 00            lda #0
+000490r 2  85 92            sta spill
+000492r 2  85 9F            sta mask_spill
+000494r 2  85 8B            sta col
+000496r 2               @column:
+000496r 2  A5 8B            lda col
+000498r 2  C5 8D            cmp sprite_w
+00049Ar 2  B0 0C            bcs @zero
+00049Cr 2  0A               asl a
+00049Dr 2  A8               tay
+00049Er 2  B1 80            lda (src_ptr),y
+0004A0r 2  85 A1            sta raw_pixel
+0004A2r 2  C8               iny
+0004A3r 2  B1 80            lda (src_ptr),y
+0004A5r 2  4C rr rr         jmp @mask_ready
+0004A8r 2               @zero:
+0004A8r 2  A9 00            lda #0
+0004AAr 2  85 A1            sta raw_pixel
+0004ACr 2               @mask_ready:
+0004ACr 2  85 A0            sta raw_mask
+0004AEr 2  A4 A1            ldy raw_pixel
+0004B0r 2  B1 86            lda (shift_ptr),y
+0004B2r 2  05 92            ora spill
+0004B4r 2  85 93            sta pixel
+0004B6r 2  98               tya
+0004B7r 2  09 80            ora #$80
+0004B9r 2  A8               tay
+0004BAr 2  B1 86            lda (shift_ptr),y
+0004BCr 2  85 92            sta spill
+0004BEr 2  A4 A0            ldy raw_mask
+0004C0r 2  B1 86            lda (shift_ptr),y
+0004C2r 2  05 9F            ora mask_spill
+0004C4r 2  85 94            sta mask
+0004C6r 2  98               tya
+0004C7r 2  09 80            ora #$80
+0004C9r 2  A8               tay
+0004CAr 2  B1 86            lda (shift_ptr),y
+0004CCr 2  85 9F            sta mask_spill
+0004CEr 2  A5 95            lda x_column
+0004D0r 2  18               clc
+0004D1r 2  65 8B            adc col
+0004D3r 2  C9 28            cmp #40
+0004D5r 2  B0 1A            bcs @next_column
+0004D7r 2  A4 8B            ldy col
+0004D9r 2               .if HGR_COLOR
+0004D9r 2  A5 94            lda mask
+0004DBr 2  F0 14            beq @next_column      ; transparent bytes cannot change terrain's phase
+0004DDr 2               .endif
+0004DDr 2  A5 94            lda mask
+0004DFr 2  49 7F            eor #$7F
+0004E1r 2  31 82            and (dst_ptr),y
+0004E3r 2  85 88            sta tmp
+0004E5r 2  A5 93            lda pixel
+0004E7r 2  25 94            and mask
+0004E9r 2  05 88            ora tmp
+0004EBr 2               .if HGR_COLOR
+0004EBr 2  29 7F            and #$7F              ; bit 7 is byte-wide HGR phase, never a pixel mask
+0004EDr 2  05 90            ora color_phase
+0004EFr 2               .endif
+0004EFr 2  91 82            sta (dst_ptr),y
+0004F1r 2               @next_column:
+0004F1r 2  E6 8B            inc col
+0004F3r 2  A5 8B            lda col
+0004F5r 2  C5 8F            cmp out_w
+0004F7r 2  D0 9D            bne @column
+0004F9r 2               @advance:
+0004F9r 2  A5 8D            lda sprite_w
+0004FBr 2  0A               asl a
+0004FCr 2  18               clc
+0004FDr 2  65 80            adc src_ptr
+0004FFr 2  85 80            sta src_ptr
+000501r 2  90 02            bcc :+
+000503r 2  E6 81            inc src_ptr+1
+000505r 2               :
+000505r 2  E6 8C            inc row_y
+000507r 2  C6 8E            dec sprite_h
+000509r 2  F0 03            beq @empty
+00050Br 2  4C rr rr         jmp @row
+00050Er 2               @empty:
+00050Er 2  60               rts
+00050Fr 2               
+00050Fr 2               include_bounds:
+00050Fr 2  A5 8C            lda row_y
+000511r 2  C9 C8            cmp #200
+000513r 2  B0 61            bcs @empty
+000515r 2  C9 23            cmp #VIEW_TOP
+000517r 2  B0 02            bcs @top
+000519r 2  A9 23            lda #VIEW_TOP
+00051Br 2               @top:
+00051Br 2  AA               tax
+00051Cr 2  BD rr rr         lda y_map,x
+00051Fr 2  85 A6            sta bounds_top
+000521r 2  A5 8C            lda row_y
+000523r 2  18               clc
+000524r 2  65 8E            adc sprite_h
+000526r 2  B0 04            bcs @bottom_clip
+000528r 2  C9 C9            cmp #201
+00052Ar 2  90 02            bcc :+
+00052Cr 2               @bottom_clip:
+00052Cr 2  A9 C8            lda #200
+00052Er 2               :
+00052Er 2  38               sec
+00052Fr 2  E9 01            sbc #1
+000531r 2  C9 23            cmp #VIEW_TOP
+000533r 2  90 41            bcc @empty
+000535r 2  AA               tax
+000536r 2  BD rr rr         lda y_map,x
+000539r 2  18               clc
+00053Ar 2  69 01            adc #1
+00053Cr 2  85 A7            sta bounds_bottom
+00053Er 2  A6 9E            ldx render_page_index
+000540r 2  A5 A6            lda bounds_top
+000542r 2  DD 17 0C         cmp dirty_top,x
+000545r 2  B0 03            bcs :+
+000547r 2  9D 17 0C         sta dirty_top,x
+00054Ar 2               :
+00054Ar 2  A5 A7            lda bounds_bottom
+00054Cr 2  DD 19 0C         cmp dirty_bottom,x
+00054Fr 2  90 03            bcc :+
+000551r 2  9D 19 0C         sta dirty_bottom,x
+000554r 2               :
+000554r 2  A5 95            lda x_column
+000556r 2  DD 13 0C         cmp dirty_left,x
+000559r 2  B0 03            bcs :+
+00055Br 2  9D 13 0C         sta dirty_left,x
+00055Er 2               :
+00055Er 2  A5 95            lda x_column
+000560r 2  18               clc
+000561r 2  65 8F            adc out_w
+000563r 2  C9 29            cmp #41
+000565r 2  90 02            bcc :+
+000567r 2  A9 28            lda #40
+000569r 2               :
+000569r 2  DD 15 0C         cmp dirty_right,x
+00056Cr 2  90 03            bcc :+
+00056Er 2  9D 15 0C         sta dirty_right,x
+000571r 2               :
+000571r 2  A9 01            lda #1
+000573r 2  9D 1B 0C         sta dirty_valid,x
+000576r 2               @empty:
+000576r 2  60               rts
+000577r 2               
+000577r 1               .endif
+000577r 1               .include "apple/hud.s"
+000577r 2               ; Four 40-column rows (20..23), written only on the hidden text page.
+000577r 2               .export hud_init, hud_draw
+000577r 2               hud_init:
+000577r 2               .if DHGR
+000577r 2                   jsr dhgr_hud_init_aux
+000577r 2               .endif
+000577r 2                   ; Boot sector has transferred control: both text pages are ours.
+000577r 2  A9 A0            lda #$A0
+000579r 2  A2 00            ldx #0
+00057Br 2               @clear:
+00057Br 2  9D 00 04         sta $0400,x
+00057Er 2  9D 00 05         sta $0500,x
+000581r 2  9D 00 06         sta $0600,x
+000584r 2  9D 00 07         sta $0700,x
+000587r 2  9D 00 08         sta $0800,x
+00058Ar 2  9D 00 09         sta $0900,x
+00058Dr 2  9D 00 0A         sta $0A00,x
+000590r 2  9D 00 0B         sta $0B00,x
+000593r 2  E8               inx
+000594r 2  D0 E5            bne @clear
+000596r 2  60               rts
+000597r 2               hud_draw:
+000597r 2  A9 00            lda #0
+000599r 2  85 A8            sta hud_row
+00059Br 2               @row:
+00059Br 2  A6 A8            ldx hud_row
+00059Dr 2  BD rr rr         lda hud_text_lo,x
+0005A0r 2  85 A9            sta hud_ptr
+0005A2r 2  BD rr rr         lda hud_text_hi,x
+0005A5r 2  85 AA            sta hud_ptr+1
+0005A7r 2  BD rr rr         lda hud_row_lo,x
+0005AAr 2  85 82            sta dst_ptr
+0005ACr 2  BD rr rr         lda hud_row_hi,x
+0005AFr 2  A6 9E            ldx render_page_index
+0005B1r 2  F0 03            beq :+
+0005B3r 2  18               clc
+0005B4r 2  69 04            adc #4
+0005B6r 2               :
+0005B6r 2  85 83            sta dst_ptr+1
+0005B8r 2  A0 00            ldy #0
+0005BAr 2               @character:
+0005BAr 2  B1 A9            lda (hud_ptr),y
+0005BCr 2  09 80            ora #$80
+0005BEr 2  91 82            sta (dst_ptr),y
+0005C0r 2  C8               iny
+0005C1r 2  C0 28            cpy #40
+0005C3r 2  D0 F5            bne @character
+0005C5r 2  E6 A8            inc hud_row
+0005C7r 2  A5 A8            lda hud_row
+0005C9r 2  C9 04            cmp #4
+0005CBr 2  D0 CE            bne @row
+0005CDr 2  A9 D0            lda #$D0
+0005CFr 2  85 82            sta dst_ptr
+0005D1r 2  A9 06            lda #6
+0005D3r 2  A6 9E            ldx render_page_index
+0005D5r 2  F0 03            beq :+
+0005D7r 2  18               clc
+0005D8r 2  69 04            adc #4
+0005DAr 2               :
+0005DAr 2  85 83            sta dst_ptr+1
+0005DCr 2  AD 00 0C         lda actor_x
+0005DFr 2  A0 0B            ldy #11
+0005E1r 2  20 rr rr         jsr hud_decimal2
+0005E4r 2  AD 01 0C         lda actor_y
+0005E7r 2  A0 10            ldy #16
+0005E9r 2  20 rr rr         jsr hud_decimal3
+0005ECr 2  A9 50            lda #$50
+0005EEr 2  85 82            sta dst_ptr
+0005F0r 2  E6 83            inc dst_ptr+1           ; row 22 $0750 or $0B50
+0005F2r 2  A2 00            ldx #0
+0005F4r 2  AD 03 0C         lda pose
+0005F7r 2  C9 04            cmp #4
+0005F9r 2  90 02            bcc :+
+0005FBr 2  A2 02            ldx #2
+0005FDr 2               :
+0005FDr 2  AD 04 0C         lda walking
+000600r 2  F0 02            beq :+
+000602r 2  A2 01            ldx #1
+000604r 2               :
+000604r 2  AD 08 0C         lda last_event
+000607r 2  C9 03            cmp #EVENT_EXIT
+000609r 2  D0 0E            bne :+
+00060Br 2  AD 03 0C         lda pose
+00060Er 2  C9 04            cmp #4
+000610r 2  B0 07            bcs :+
+000612r 2  AD 04 0C         lda walking
+000615r 2  D0 02            bne :+
+000617r 2  A2 03            ldx #3
+000619r 2               :
+000619r 2  BD rr rr         lda hud_status_lo,x
+00061Cr 2  85 A9            sta hud_ptr
+00061Er 2  BD rr rr         lda hud_status_hi,x
+000621r 2  85 AA            sta hud_ptr+1
+000623r 2  A0 00            ldy #0
+000625r 2               @status:
+000625r 2  B1 A9            lda (hud_ptr),y
+000627r 2  09 80            ora #$80
+000629r 2  91 82            sta (dst_ptr),y
+00062Br 2  C8               iny
+00062Cr 2  C0 08            cpy #8
+00062Er 2  D0 F5            bne @status
+000630r 2               .if DHGR
+000630r 2                   jmp dhgr_hud_finish
+000630r 2               .else
+000630r 2  60               rts
+000631r 2               .endif
+000631r 2               hud_decimal3:
+000631r 2  A2 00            ldx #0
+000633r 2               @hundreds:
+000633r 2  C9 64            cmp #100
+000635r 2  90 06            bcc @hundreds_ready
+000637r 2  38               sec
+000638r 2  E9 64            sbc #100
+00063Ar 2  E8               inx
+00063Br 2  D0 F6            bne @hundreds
+00063Dr 2               @hundreds_ready:
+00063Dr 2  85 88            sta tmp
+00063Fr 2  8A               txa
+000640r 2  09 B0            ora #$B0
+000642r 2  91 82            sta (dst_ptr),y
+000644r 2  C8               iny
+000645r 2  A5 88            lda tmp
+000647r 2               hud_decimal2:
+000647r 2  A2 00            ldx #0
+000649r 2               @tens:
+000649r 2  C9 0A            cmp #10
+00064Br 2  90 06            bcc @tens_ready
+00064Dr 2  38               sec
+00064Er 2  E9 0A            sbc #10
+000650r 2  E8               inx
+000651r 2  D0 F6            bne @tens
+000653r 2               @tens_ready:
+000653r 2  85 88            sta tmp
+000655r 2  8A               txa
+000656r 2  09 B0            ora #$B0
+000658r 2  91 82            sta (dst_ptr),y
+00065Ar 2  C8               iny
+00065Br 2  A5 88            lda tmp
+00065Dr 2  09 B0            ora #$B0
+00065Fr 2  91 82            sta (dst_ptr),y
+000661r 2  60               rts
+000662r 2  50 D0 50 D0  hud_row_lo: .byte $50,$D0,$50,$D0
+000666r 2  06 06 07 07  hud_row_hi: .byte $06,$06,$07,$07
+00066Ar 2  rr rr rr rr  hud_text_lo: .byte <hud_line0,<hud_line1,<hud_line2,<hud_line3
+00066Er 2  rr rr rr rr  hud_text_hi: .byte >hud_line0,>hud_line1,>hud_line2,>hud_line3
+000672r 2  46 4F 52 43  hud_line0: .byte "FORCES:100% POINTS:00000 OR:00500       "
+000676r 2  45 53 3A 31  
+00067Ar 2  30 30 25 20  
+00069Ar 2  53 41 4C 4C  hud_line1: .byte "SALLE:12 X:19 Y:140 MAIN:VIDE           "
+00069Er 2  45 3A 31 32  
+0006A2r 2  20 58 3A 31  
+0006C2r 2  49 4D 4D 4F  hud_line2: .byte "IMMOBILE                                "
+0006C6r 2  42 49 4C 45  
+0006CAr 2  20 20 20 20  
+0006EAr 2  46 4C 45 43  hud_line3: .byte "FLECHES:MARCHE A:ACCROUPI ESPACE:STOP   "
+0006EEr 2  48 45 53 3A  
+0006F2r 2  4D 41 52 43  
+000712r 2  rr rr rr rr  hud_status_lo: .byte <hud_idle,<hud_walk,<hud_crouch,<hud_exit
+000716r 2  rr rr rr rr  hud_status_hi: .byte >hud_idle,>hud_walk,>hud_crouch,>hud_exit
+00071Ar 2  49 4D 4D 4F  hud_idle: .byte "IMMOBILE"
+00071Er 2  42 49 4C 45  
+000722r 2  4D 41 52 43  hud_walk: .byte "MARCHE  "
+000726r 2  48 45 20 20  
+00072Ar 2  41 43 43 52  hud_crouch: .byte "ACCROUPI"
+00072Er 2  4F 55 50 49  
+000732r 2  50 41 53 53  hud_exit: .byte "PASSAGE "
+000736r 2  41 47 45 20  
+00073Ar 2               
+00073Ar 1               .if DHGR
+00073Ar 1               .include "apple/dhgr-hud.s"
+00073Ar 1               .endif
+00073Ar 1               .export code_end
+00073Ar 1               code_end:
+00073Ar 1               .segment "RODATA"
+000000r 1               .export room12_grid, sprite_lo, sprite_hi, frame_lo, frame_hi, row_lo, row_hi
+000000r 1               .include "generated.inc"
+000000r 2               ; Generated by tools/resources.py; historical input is read-only.
+000000r 2  0A 00 01 C0  room12_rle: .incbin "room12.rle"
+000004r 2  01 AA 01 91  
+000008r 2  0F 00 01 C0  
+000F43r 2  00 00 00 80  room12_grid: .incbin "room12-collision.bin"
+000F47r 2  00 00 00 00  
+000F4Br 2  00 00 00 00  
+000FBBr 2  47 48 00 00  initial_world: .incbin "world-initial.bin"
+000FBFr 2  83 05 50 00  
+000FC3r 2  C3 1C 0E 01  
+0011BBr 2               y_map:
+0011BBr 2  FF FF FF FF      .byte $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+0011BFr 2  FF FF FF FF  
+0011C3r 2  FF FF FF FF  
+0011CBr 2  FF FF FF FF      .byte $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+0011CFr 2  FF FF FF FF  
+0011D3r 2  FF FF FF FF  
+0011DBr 2  FF FF FF 00      .byte $FF,$FF,$FF,$00,$00,$01,$02,$03,$04,$05,$06,$07,$08,$09,$0A,$0B
+0011DFr 2  00 01 02 03  
+0011E3r 2  04 05 06 07  
+0011EBr 2  0C 0D 0E 0F      .byte $0C,$0D,$0E,$0F,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$1A,$1B
+0011EFr 2  10 11 12 13  
+0011F3r 2  14 15 16 17  
+0011FBr 2  1C 1D 1E 1F      .byte $1C,$1D,$1E,$1F,$20,$20,$21,$22,$23,$24,$25,$26,$27,$28,$29,$2A
+0011FFr 2  20 20 21 22  
+001203r 2  23 24 25 26  
+00120Br 2  2B 2C 2D 2E      .byte $2B,$2C,$2D,$2E,$2F,$30,$31,$32,$33,$34,$35,$36,$37,$38,$39,$3A
+00120Fr 2  2F 30 31 32  
+001213r 2  33 34 35 36  
+00121Br 2  3B 3C 3D 3E      .byte $3B,$3C,$3D,$3E,$3F,$40,$40,$41,$42,$43,$44,$45,$46,$47,$48,$49
+00121Fr 2  3F 40 40 41  
+001223r 2  42 43 44 45  
+00122Br 2  4A 4B 4C 4D      .byte $4A,$4B,$4C,$4D,$4E,$4F,$50,$51,$52,$53,$54,$55,$56,$57,$58,$59
+00122Fr 2  4E 4F 50 51  
+001233r 2  52 53 54 55  
+00123Br 2  5A 5B 5C 5D      .byte $5A,$5B,$5C,$5D,$5E,$5F,$60,$60,$61,$62,$63,$64,$65,$66,$67,$68
+00123Fr 2  5E 5F 60 60  
+001243r 2  61 62 63 64  
+00124Br 2  69 6A 6B 6C      .byte $69,$6A,$6B,$6C,$6D,$6E,$6F,$70,$71,$72,$73,$74,$75,$76,$77,$78
+00124Fr 2  6D 6E 6F 70  
+001253r 2  71 72 73 74  
+00125Br 2  79 7A 7B 7C      .byte $79,$7A,$7B,$7C,$7D,$7E,$7F,$80,$80,$81,$82,$83,$84,$85,$86,$87
+00125Fr 2  7D 7E 7F 80  
+001263r 2  80 81 82 83  
+00126Br 2  88 89 8A 8B      .byte $88,$89,$8A,$8B,$8C,$8D,$8E,$8F,$90,$91,$92,$93,$94,$95,$96,$97
+00126Fr 2  8C 8D 8E 8F  
+001273r 2  90 91 92 93  
+00127Br 2  98 99 9A 9B      .byte $98,$99,$9A,$9B,$9C,$9D,$9E,$9F
+00127Fr 2  9C 9D 9E 9F  
+001283r 2               row_lo:
+001283r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$00,$00,$80,$80,$80,$80,$80,$80,$80,$80
+001287r 2  00 00 00 00  
+00128Br 2  80 80 80 80  
+001293r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$00,$00,$80,$80,$80,$80,$80,$80,$80,$80
+001297r 2  00 00 00 00  
+00129Br 2  80 80 80 80  
+0012A3r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$00,$00,$80,$80,$80,$80,$80,$80,$80,$80
+0012A7r 2  00 00 00 00  
+0012ABr 2  80 80 80 80  
+0012B3r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$00,$00,$80,$80,$80,$80,$80,$80,$80,$80
+0012B7r 2  00 00 00 00  
+0012BBr 2  80 80 80 80  
+0012C3r 2  28 28 28 28      .byte $28,$28,$28,$28,$28,$28,$28,$28,$A8,$A8,$A8,$A8,$A8,$A8,$A8,$A8
+0012C7r 2  28 28 28 28  
+0012CBr 2  A8 A8 A8 A8  
+0012D3r 2  28 28 28 28      .byte $28,$28,$28,$28,$28,$28,$28,$28,$A8,$A8,$A8,$A8,$A8,$A8,$A8,$A8
+0012D7r 2  28 28 28 28  
+0012DBr 2  A8 A8 A8 A8  
+0012E3r 2  28 28 28 28      .byte $28,$28,$28,$28,$28,$28,$28,$28,$A8,$A8,$A8,$A8,$A8,$A8,$A8,$A8
+0012E7r 2  28 28 28 28  
+0012EBr 2  A8 A8 A8 A8  
+0012F3r 2  28 28 28 28      .byte $28,$28,$28,$28,$28,$28,$28,$28,$A8,$A8,$A8,$A8,$A8,$A8,$A8,$A8
+0012F7r 2  28 28 28 28  
+0012FBr 2  A8 A8 A8 A8  
+001303r 2  50 50 50 50      .byte $50,$50,$50,$50,$50,$50,$50,$50,$D0,$D0,$D0,$D0,$D0,$D0,$D0,$D0
+001307r 2  50 50 50 50  
+00130Br 2  D0 D0 D0 D0  
+001313r 2  50 50 50 50      .byte $50,$50,$50,$50,$50,$50,$50,$50,$D0,$D0,$D0,$D0,$D0,$D0,$D0,$D0
+001317r 2  50 50 50 50  
+00131Br 2  D0 D0 D0 D0  
+001323r 2               row_hi:
+001323r 2  20 24 28 2C      .byte $20,$24,$28,$2C,$30,$34,$38,$3C,$20,$24,$28,$2C,$30,$34,$38,$3C
+001327r 2  30 34 38 3C  
+00132Br 2  20 24 28 2C  
+001333r 2  21 25 29 2D      .byte $21,$25,$29,$2D,$31,$35,$39,$3D,$21,$25,$29,$2D,$31,$35,$39,$3D
+001337r 2  31 35 39 3D  
+00133Br 2  21 25 29 2D  
+001343r 2  22 26 2A 2E      .byte $22,$26,$2A,$2E,$32,$36,$3A,$3E,$22,$26,$2A,$2E,$32,$36,$3A,$3E
+001347r 2  32 36 3A 3E  
+00134Br 2  22 26 2A 2E  
+001353r 2  23 27 2B 2F      .byte $23,$27,$2B,$2F,$33,$37,$3B,$3F,$23,$27,$2B,$2F,$33,$37,$3B,$3F
+001357r 2  33 37 3B 3F  
+00135Br 2  23 27 2B 2F  
+001363r 2  20 24 28 2C      .byte $20,$24,$28,$2C,$30,$34,$38,$3C,$20,$24,$28,$2C,$30,$34,$38,$3C
+001367r 2  30 34 38 3C  
+00136Br 2  20 24 28 2C  
+001373r 2  21 25 29 2D      .byte $21,$25,$29,$2D,$31,$35,$39,$3D,$21,$25,$29,$2D,$31,$35,$39,$3D
+001377r 2  31 35 39 3D  
+00137Br 2  21 25 29 2D  
+001383r 2  22 26 2A 2E      .byte $22,$26,$2A,$2E,$32,$36,$3A,$3E,$22,$26,$2A,$2E,$32,$36,$3A,$3E
+001387r 2  32 36 3A 3E  
+00138Br 2  22 26 2A 2E  
+001393r 2  23 27 2B 2F      .byte $23,$27,$2B,$2F,$33,$37,$3B,$3F,$23,$27,$2B,$2F,$33,$37,$3B,$3F
+001397r 2  33 37 3B 3F  
+00139Br 2  23 27 2B 2F  
+0013A3r 2  20 24 28 2C      .byte $20,$24,$28,$2C,$30,$34,$38,$3C,$20,$24,$28,$2C,$30,$34,$38,$3C
+0013A7r 2  30 34 38 3C  
+0013ABr 2  20 24 28 2C  
+0013B3r 2  21 25 29 2D      .byte $21,$25,$29,$2D,$31,$35,$39,$3D,$21,$25,$29,$2D,$31,$35,$39,$3D
+0013B7r 2  31 35 39 3D  
+0013BBr 2  21 25 29 2D  
+0013C3r 2               x_byte:
+0013C3r 2  03 04 05 06      .byte $03,$04,$05,$06,$07,$08,$08,$09,$0A,$0B,$0C,$0D,$0E,$0E,$0F,$10
+0013C7r 2  07 08 08 09  
+0013CBr 2  0A 0B 0C 0D  
+0013D3r 2  11 12 13 14      .byte $11,$12,$13,$14,$14,$15,$16,$17,$18,$19,$1A,$1A,$1B,$1C,$1D,$1E
+0013D7r 2  14 15 16 17  
+0013DBr 2  18 19 1A 1A  
+0013E3r 2  1F 20 20 21      .byte $1F,$20,$20,$21,$22,$23,$24,$25
+0013E7r 2  22 23 24 25  
+0013EBr 2               x_phase:
+0013EBr 2  05 04 03 02      .byte $05,$04,$03,$02,$01,$00,$06,$05,$04,$03,$02,$01,$00,$06,$05,$04
+0013EFr 2  01 00 06 05  
+0013F3r 2  04 03 02 01  
+0013FBr 2  03 02 01 00      .byte $03,$02,$01,$00,$06,$05,$04,$03,$02,$01,$00,$06,$05,$04,$03,$02
+0013FFr 2  06 05 04 03  
+001403r 2  02 01 00 06  
+00140Br 2  01 00 06 05      .byte $01,$00,$06,$05,$04,$03,$02,$01
+00140Fr 2  04 03 02 01  
+001413r 2  xx xx xx xx  .align 256
+001417r 2  xx xx xx xx  
+00141Br 2  xx xx xx xx  
+001500r 2               shift_table:
+001500r 2               shift_0:
+001500r 2  00 01 02 03      .byte $00,$01,$02,$03,$04,$05,$06,$07,$08,$09,$0A,$0B,$0C,$0D,$0E,$0F
+001504r 2  04 05 06 07  
+001508r 2  08 09 0A 0B  
+001510r 2  10 11 12 13      .byte $10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$1A,$1B,$1C,$1D,$1E,$1F
+001514r 2  14 15 16 17  
+001518r 2  18 19 1A 1B  
+001520r 2  20 21 22 23      .byte $20,$21,$22,$23,$24,$25,$26,$27,$28,$29,$2A,$2B,$2C,$2D,$2E,$2F
+001524r 2  24 25 26 27  
+001528r 2  28 29 2A 2B  
+001530r 2  30 31 32 33      .byte $30,$31,$32,$33,$34,$35,$36,$37,$38,$39,$3A,$3B,$3C,$3D,$3E,$3F
+001534r 2  34 35 36 37  
+001538r 2  38 39 3A 3B  
+001540r 2  40 41 42 43      .byte $40,$41,$42,$43,$44,$45,$46,$47,$48,$49,$4A,$4B,$4C,$4D,$4E,$4F
+001544r 2  44 45 46 47  
+001548r 2  48 49 4A 4B  
+001550r 2  50 51 52 53      .byte $50,$51,$52,$53,$54,$55,$56,$57,$58,$59,$5A,$5B,$5C,$5D,$5E,$5F
+001554r 2  54 55 56 57  
+001558r 2  58 59 5A 5B  
+001560r 2  60 61 62 63      .byte $60,$61,$62,$63,$64,$65,$66,$67,$68,$69,$6A,$6B,$6C,$6D,$6E,$6F
+001564r 2  64 65 66 67  
+001568r 2  68 69 6A 6B  
+001570r 2  70 71 72 73      .byte $70,$71,$72,$73,$74,$75,$76,$77,$78,$79,$7A,$7B,$7C,$7D,$7E,$7F
+001574r 2  74 75 76 77  
+001578r 2  78 79 7A 7B  
+001580r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+001584r 2  00 00 00 00  
+001588r 2  00 00 00 00  
+001590r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+001594r 2  00 00 00 00  
+001598r 2  00 00 00 00  
+0015A0r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+0015A4r 2  00 00 00 00  
+0015A8r 2  00 00 00 00  
+0015B0r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+0015B4r 2  00 00 00 00  
+0015B8r 2  00 00 00 00  
+0015C0r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+0015C4r 2  00 00 00 00  
+0015C8r 2  00 00 00 00  
+0015D0r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+0015D4r 2  00 00 00 00  
+0015D8r 2  00 00 00 00  
+0015E0r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+0015E4r 2  00 00 00 00  
+0015E8r 2  00 00 00 00  
+0015F0r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+0015F4r 2  00 00 00 00  
+0015F8r 2  00 00 00 00  
+001600r 2               shift_1:
+001600r 2  00 02 04 06      .byte $00,$02,$04,$06,$08,$0A,$0C,$0E,$10,$12,$14,$16,$18,$1A,$1C,$1E
+001604r 2  08 0A 0C 0E  
+001608r 2  10 12 14 16  
+001610r 2  20 22 24 26      .byte $20,$22,$24,$26,$28,$2A,$2C,$2E,$30,$32,$34,$36,$38,$3A,$3C,$3E
+001614r 2  28 2A 2C 2E  
+001618r 2  30 32 34 36  
+001620r 2  40 42 44 46      .byte $40,$42,$44,$46,$48,$4A,$4C,$4E,$50,$52,$54,$56,$58,$5A,$5C,$5E
+001624r 2  48 4A 4C 4E  
+001628r 2  50 52 54 56  
+001630r 2  60 62 64 66      .byte $60,$62,$64,$66,$68,$6A,$6C,$6E,$70,$72,$74,$76,$78,$7A,$7C,$7E
+001634r 2  68 6A 6C 6E  
+001638r 2  70 72 74 76  
+001640r 2  00 02 04 06      .byte $00,$02,$04,$06,$08,$0A,$0C,$0E,$10,$12,$14,$16,$18,$1A,$1C,$1E
+001644r 2  08 0A 0C 0E  
+001648r 2  10 12 14 16  
+001650r 2  20 22 24 26      .byte $20,$22,$24,$26,$28,$2A,$2C,$2E,$30,$32,$34,$36,$38,$3A,$3C,$3E
+001654r 2  28 2A 2C 2E  
+001658r 2  30 32 34 36  
+001660r 2  40 42 44 46      .byte $40,$42,$44,$46,$48,$4A,$4C,$4E,$50,$52,$54,$56,$58,$5A,$5C,$5E
+001664r 2  48 4A 4C 4E  
+001668r 2  50 52 54 56  
+001670r 2  60 62 64 66      .byte $60,$62,$64,$66,$68,$6A,$6C,$6E,$70,$72,$74,$76,$78,$7A,$7C,$7E
+001674r 2  68 6A 6C 6E  
+001678r 2  70 72 74 76  
+001680r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+001684r 2  00 00 00 00  
+001688r 2  00 00 00 00  
+001690r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+001694r 2  00 00 00 00  
+001698r 2  00 00 00 00  
+0016A0r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+0016A4r 2  00 00 00 00  
+0016A8r 2  00 00 00 00  
+0016B0r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+0016B4r 2  00 00 00 00  
+0016B8r 2  00 00 00 00  
+0016C0r 2  01 01 01 01      .byte $01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01
+0016C4r 2  01 01 01 01  
+0016C8r 2  01 01 01 01  
+0016D0r 2  01 01 01 01      .byte $01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01
+0016D4r 2  01 01 01 01  
+0016D8r 2  01 01 01 01  
+0016E0r 2  01 01 01 01      .byte $01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01
+0016E4r 2  01 01 01 01  
+0016E8r 2  01 01 01 01  
+0016F0r 2  01 01 01 01      .byte $01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01
+0016F4r 2  01 01 01 01  
+0016F8r 2  01 01 01 01  
+001700r 2               shift_2:
+001700r 2  00 04 08 0C      .byte $00,$04,$08,$0C,$10,$14,$18,$1C,$20,$24,$28,$2C,$30,$34,$38,$3C
+001704r 2  10 14 18 1C  
+001708r 2  20 24 28 2C  
+001710r 2  40 44 48 4C      .byte $40,$44,$48,$4C,$50,$54,$58,$5C,$60,$64,$68,$6C,$70,$74,$78,$7C
+001714r 2  50 54 58 5C  
+001718r 2  60 64 68 6C  
+001720r 2  00 04 08 0C      .byte $00,$04,$08,$0C,$10,$14,$18,$1C,$20,$24,$28,$2C,$30,$34,$38,$3C
+001724r 2  10 14 18 1C  
+001728r 2  20 24 28 2C  
+001730r 2  40 44 48 4C      .byte $40,$44,$48,$4C,$50,$54,$58,$5C,$60,$64,$68,$6C,$70,$74,$78,$7C
+001734r 2  50 54 58 5C  
+001738r 2  60 64 68 6C  
+001740r 2  00 04 08 0C      .byte $00,$04,$08,$0C,$10,$14,$18,$1C,$20,$24,$28,$2C,$30,$34,$38,$3C
+001744r 2  10 14 18 1C  
+001748r 2  20 24 28 2C  
+001750r 2  40 44 48 4C      .byte $40,$44,$48,$4C,$50,$54,$58,$5C,$60,$64,$68,$6C,$70,$74,$78,$7C
+001754r 2  50 54 58 5C  
+001758r 2  60 64 68 6C  
+001760r 2  00 04 08 0C      .byte $00,$04,$08,$0C,$10,$14,$18,$1C,$20,$24,$28,$2C,$30,$34,$38,$3C
+001764r 2  10 14 18 1C  
+001768r 2  20 24 28 2C  
+001770r 2  40 44 48 4C      .byte $40,$44,$48,$4C,$50,$54,$58,$5C,$60,$64,$68,$6C,$70,$74,$78,$7C
+001774r 2  50 54 58 5C  
+001778r 2  60 64 68 6C  
+001780r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+001784r 2  00 00 00 00  
+001788r 2  00 00 00 00  
+001790r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+001794r 2  00 00 00 00  
+001798r 2  00 00 00 00  
+0017A0r 2  01 01 01 01      .byte $01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01
+0017A4r 2  01 01 01 01  
+0017A8r 2  01 01 01 01  
+0017B0r 2  01 01 01 01      .byte $01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01
+0017B4r 2  01 01 01 01  
+0017B8r 2  01 01 01 01  
+0017C0r 2  02 02 02 02      .byte $02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02
+0017C4r 2  02 02 02 02  
+0017C8r 2  02 02 02 02  
+0017D0r 2  02 02 02 02      .byte $02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02
+0017D4r 2  02 02 02 02  
+0017D8r 2  02 02 02 02  
+0017E0r 2  03 03 03 03      .byte $03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03
+0017E4r 2  03 03 03 03  
+0017E8r 2  03 03 03 03  
+0017F0r 2  03 03 03 03      .byte $03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03
+0017F4r 2  03 03 03 03  
+0017F8r 2  03 03 03 03  
+001800r 2               shift_3:
+001800r 2  00 08 10 18      .byte $00,$08,$10,$18,$20,$28,$30,$38,$40,$48,$50,$58,$60,$68,$70,$78
+001804r 2  20 28 30 38  
+001808r 2  40 48 50 58  
+001810r 2  00 08 10 18      .byte $00,$08,$10,$18,$20,$28,$30,$38,$40,$48,$50,$58,$60,$68,$70,$78
+001814r 2  20 28 30 38  
+001818r 2  40 48 50 58  
+001820r 2  00 08 10 18      .byte $00,$08,$10,$18,$20,$28,$30,$38,$40,$48,$50,$58,$60,$68,$70,$78
+001824r 2  20 28 30 38  
+001828r 2  40 48 50 58  
+001830r 2  00 08 10 18      .byte $00,$08,$10,$18,$20,$28,$30,$38,$40,$48,$50,$58,$60,$68,$70,$78
+001834r 2  20 28 30 38  
+001838r 2  40 48 50 58  
+001840r 2  00 08 10 18      .byte $00,$08,$10,$18,$20,$28,$30,$38,$40,$48,$50,$58,$60,$68,$70,$78
+001844r 2  20 28 30 38  
+001848r 2  40 48 50 58  
+001850r 2  00 08 10 18      .byte $00,$08,$10,$18,$20,$28,$30,$38,$40,$48,$50,$58,$60,$68,$70,$78
+001854r 2  20 28 30 38  
+001858r 2  40 48 50 58  
+001860r 2  00 08 10 18      .byte $00,$08,$10,$18,$20,$28,$30,$38,$40,$48,$50,$58,$60,$68,$70,$78
+001864r 2  20 28 30 38  
+001868r 2  40 48 50 58  
+001870r 2  00 08 10 18      .byte $00,$08,$10,$18,$20,$28,$30,$38,$40,$48,$50,$58,$60,$68,$70,$78
+001874r 2  20 28 30 38  
+001878r 2  40 48 50 58  
+001880r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+001884r 2  00 00 00 00  
+001888r 2  00 00 00 00  
+001890r 2  01 01 01 01      .byte $01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01
+001894r 2  01 01 01 01  
+001898r 2  01 01 01 01  
+0018A0r 2  02 02 02 02      .byte $02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02
+0018A4r 2  02 02 02 02  
+0018A8r 2  02 02 02 02  
+0018B0r 2  03 03 03 03      .byte $03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03
+0018B4r 2  03 03 03 03  
+0018B8r 2  03 03 03 03  
+0018C0r 2  04 04 04 04      .byte $04,$04,$04,$04,$04,$04,$04,$04,$04,$04,$04,$04,$04,$04,$04,$04
+0018C4r 2  04 04 04 04  
+0018C8r 2  04 04 04 04  
+0018D0r 2  05 05 05 05      .byte $05,$05,$05,$05,$05,$05,$05,$05,$05,$05,$05,$05,$05,$05,$05,$05
+0018D4r 2  05 05 05 05  
+0018D8r 2  05 05 05 05  
+0018E0r 2  06 06 06 06      .byte $06,$06,$06,$06,$06,$06,$06,$06,$06,$06,$06,$06,$06,$06,$06,$06
+0018E4r 2  06 06 06 06  
+0018E8r 2  06 06 06 06  
+0018F0r 2  07 07 07 07      .byte $07,$07,$07,$07,$07,$07,$07,$07,$07,$07,$07,$07,$07,$07,$07,$07
+0018F4r 2  07 07 07 07  
+0018F8r 2  07 07 07 07  
+001900r 2               shift_4:
+001900r 2  00 10 20 30      .byte $00,$10,$20,$30,$40,$50,$60,$70,$00,$10,$20,$30,$40,$50,$60,$70
+001904r 2  40 50 60 70  
+001908r 2  00 10 20 30  
+001910r 2  00 10 20 30      .byte $00,$10,$20,$30,$40,$50,$60,$70,$00,$10,$20,$30,$40,$50,$60,$70
+001914r 2  40 50 60 70  
+001918r 2  00 10 20 30  
+001920r 2  00 10 20 30      .byte $00,$10,$20,$30,$40,$50,$60,$70,$00,$10,$20,$30,$40,$50,$60,$70
+001924r 2  40 50 60 70  
+001928r 2  00 10 20 30  
+001930r 2  00 10 20 30      .byte $00,$10,$20,$30,$40,$50,$60,$70,$00,$10,$20,$30,$40,$50,$60,$70
+001934r 2  40 50 60 70  
+001938r 2  00 10 20 30  
+001940r 2  00 10 20 30      .byte $00,$10,$20,$30,$40,$50,$60,$70,$00,$10,$20,$30,$40,$50,$60,$70
+001944r 2  40 50 60 70  
+001948r 2  00 10 20 30  
+001950r 2  00 10 20 30      .byte $00,$10,$20,$30,$40,$50,$60,$70,$00,$10,$20,$30,$40,$50,$60,$70
+001954r 2  40 50 60 70  
+001958r 2  00 10 20 30  
+001960r 2  00 10 20 30      .byte $00,$10,$20,$30,$40,$50,$60,$70,$00,$10,$20,$30,$40,$50,$60,$70
+001964r 2  40 50 60 70  
+001968r 2  00 10 20 30  
+001970r 2  00 10 20 30      .byte $00,$10,$20,$30,$40,$50,$60,$70,$00,$10,$20,$30,$40,$50,$60,$70
+001974r 2  40 50 60 70  
+001978r 2  00 10 20 30  
+001980r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$00,$00,$01,$01,$01,$01,$01,$01,$01,$01
+001984r 2  00 00 00 00  
+001988r 2  01 01 01 01  
+001990r 2  02 02 02 02      .byte $02,$02,$02,$02,$02,$02,$02,$02,$03,$03,$03,$03,$03,$03,$03,$03
+001994r 2  02 02 02 02  
+001998r 2  03 03 03 03  
+0019A0r 2  04 04 04 04      .byte $04,$04,$04,$04,$04,$04,$04,$04,$05,$05,$05,$05,$05,$05,$05,$05
+0019A4r 2  04 04 04 04  
+0019A8r 2  05 05 05 05  
+0019B0r 2  06 06 06 06      .byte $06,$06,$06,$06,$06,$06,$06,$06,$07,$07,$07,$07,$07,$07,$07,$07
+0019B4r 2  06 06 06 06  
+0019B8r 2  07 07 07 07  
+0019C0r 2  08 08 08 08      .byte $08,$08,$08,$08,$08,$08,$08,$08,$09,$09,$09,$09,$09,$09,$09,$09
+0019C4r 2  08 08 08 08  
+0019C8r 2  09 09 09 09  
+0019D0r 2  0A 0A 0A 0A      .byte $0A,$0A,$0A,$0A,$0A,$0A,$0A,$0A,$0B,$0B,$0B,$0B,$0B,$0B,$0B,$0B
+0019D4r 2  0A 0A 0A 0A  
+0019D8r 2  0B 0B 0B 0B  
+0019E0r 2  0C 0C 0C 0C      .byte $0C,$0C,$0C,$0C,$0C,$0C,$0C,$0C,$0D,$0D,$0D,$0D,$0D,$0D,$0D,$0D
+0019E4r 2  0C 0C 0C 0C  
+0019E8r 2  0D 0D 0D 0D  
+0019F0r 2  0E 0E 0E 0E      .byte $0E,$0E,$0E,$0E,$0E,$0E,$0E,$0E,$0F,$0F,$0F,$0F,$0F,$0F,$0F,$0F
+0019F4r 2  0E 0E 0E 0E  
+0019F8r 2  0F 0F 0F 0F  
+001A00r 2               shift_5:
+001A00r 2  00 20 40 60      .byte $00,$20,$40,$60,$00,$20,$40,$60,$00,$20,$40,$60,$00,$20,$40,$60
+001A04r 2  00 20 40 60  
+001A08r 2  00 20 40 60  
+001A10r 2  00 20 40 60      .byte $00,$20,$40,$60,$00,$20,$40,$60,$00,$20,$40,$60,$00,$20,$40,$60
+001A14r 2  00 20 40 60  
+001A18r 2  00 20 40 60  
+001A20r 2  00 20 40 60      .byte $00,$20,$40,$60,$00,$20,$40,$60,$00,$20,$40,$60,$00,$20,$40,$60
+001A24r 2  00 20 40 60  
+001A28r 2  00 20 40 60  
+001A30r 2  00 20 40 60      .byte $00,$20,$40,$60,$00,$20,$40,$60,$00,$20,$40,$60,$00,$20,$40,$60
+001A34r 2  00 20 40 60  
+001A38r 2  00 20 40 60  
+001A40r 2  00 20 40 60      .byte $00,$20,$40,$60,$00,$20,$40,$60,$00,$20,$40,$60,$00,$20,$40,$60
+001A44r 2  00 20 40 60  
+001A48r 2  00 20 40 60  
+001A50r 2  00 20 40 60      .byte $00,$20,$40,$60,$00,$20,$40,$60,$00,$20,$40,$60,$00,$20,$40,$60
+001A54r 2  00 20 40 60  
+001A58r 2  00 20 40 60  
+001A60r 2  00 20 40 60      .byte $00,$20,$40,$60,$00,$20,$40,$60,$00,$20,$40,$60,$00,$20,$40,$60
+001A64r 2  00 20 40 60  
+001A68r 2  00 20 40 60  
+001A70r 2  00 20 40 60      .byte $00,$20,$40,$60,$00,$20,$40,$60,$00,$20,$40,$60,$00,$20,$40,$60
+001A74r 2  00 20 40 60  
+001A78r 2  00 20 40 60  
+001A80r 2  00 00 00 00      .byte $00,$00,$00,$00,$01,$01,$01,$01,$02,$02,$02,$02,$03,$03,$03,$03
+001A84r 2  01 01 01 01  
+001A88r 2  02 02 02 02  
+001A90r 2  04 04 04 04      .byte $04,$04,$04,$04,$05,$05,$05,$05,$06,$06,$06,$06,$07,$07,$07,$07
+001A94r 2  05 05 05 05  
+001A98r 2  06 06 06 06  
+001AA0r 2  08 08 08 08      .byte $08,$08,$08,$08,$09,$09,$09,$09,$0A,$0A,$0A,$0A,$0B,$0B,$0B,$0B
+001AA4r 2  09 09 09 09  
+001AA8r 2  0A 0A 0A 0A  
+001AB0r 2  0C 0C 0C 0C      .byte $0C,$0C,$0C,$0C,$0D,$0D,$0D,$0D,$0E,$0E,$0E,$0E,$0F,$0F,$0F,$0F
+001AB4r 2  0D 0D 0D 0D  
+001AB8r 2  0E 0E 0E 0E  
+001AC0r 2  10 10 10 10      .byte $10,$10,$10,$10,$11,$11,$11,$11,$12,$12,$12,$12,$13,$13,$13,$13
+001AC4r 2  11 11 11 11  
+001AC8r 2  12 12 12 12  
+001AD0r 2  14 14 14 14      .byte $14,$14,$14,$14,$15,$15,$15,$15,$16,$16,$16,$16,$17,$17,$17,$17
+001AD4r 2  15 15 15 15  
+001AD8r 2  16 16 16 16  
+001AE0r 2  18 18 18 18      .byte $18,$18,$18,$18,$19,$19,$19,$19,$1A,$1A,$1A,$1A,$1B,$1B,$1B,$1B
+001AE4r 2  19 19 19 19  
+001AE8r 2  1A 1A 1A 1A  
+001AF0r 2  1C 1C 1C 1C      .byte $1C,$1C,$1C,$1C,$1D,$1D,$1D,$1D,$1E,$1E,$1E,$1E,$1F,$1F,$1F,$1F
+001AF4r 2  1D 1D 1D 1D  
+001AF8r 2  1E 1E 1E 1E  
+001B00r 2               shift_6:
+001B00r 2  00 40 00 40      .byte $00,$40,$00,$40,$00,$40,$00,$40,$00,$40,$00,$40,$00,$40,$00,$40
+001B04r 2  00 40 00 40  
+001B08r 2  00 40 00 40  
+001B10r 2  00 40 00 40      .byte $00,$40,$00,$40,$00,$40,$00,$40,$00,$40,$00,$40,$00,$40,$00,$40
+001B14r 2  00 40 00 40  
+001B18r 2  00 40 00 40  
+001B20r 2  00 40 00 40      .byte $00,$40,$00,$40,$00,$40,$00,$40,$00,$40,$00,$40,$00,$40,$00,$40
+001B24r 2  00 40 00 40  
+001B28r 2  00 40 00 40  
+001B30r 2  00 40 00 40      .byte $00,$40,$00,$40,$00,$40,$00,$40,$00,$40,$00,$40,$00,$40,$00,$40
+001B34r 2  00 40 00 40  
+001B38r 2  00 40 00 40  
+001B40r 2  00 40 00 40      .byte $00,$40,$00,$40,$00,$40,$00,$40,$00,$40,$00,$40,$00,$40,$00,$40
+001B44r 2  00 40 00 40  
+001B48r 2  00 40 00 40  
+001B50r 2  00 40 00 40      .byte $00,$40,$00,$40,$00,$40,$00,$40,$00,$40,$00,$40,$00,$40,$00,$40
+001B54r 2  00 40 00 40  
+001B58r 2  00 40 00 40  
+001B60r 2  00 40 00 40      .byte $00,$40,$00,$40,$00,$40,$00,$40,$00,$40,$00,$40,$00,$40,$00,$40
+001B64r 2  00 40 00 40  
+001B68r 2  00 40 00 40  
+001B70r 2  00 40 00 40      .byte $00,$40,$00,$40,$00,$40,$00,$40,$00,$40,$00,$40,$00,$40,$00,$40
+001B74r 2  00 40 00 40  
+001B78r 2  00 40 00 40  
+001B80r 2  00 00 01 01      .byte $00,$00,$01,$01,$02,$02,$03,$03,$04,$04,$05,$05,$06,$06,$07,$07
+001B84r 2  02 02 03 03  
+001B88r 2  04 04 05 05  
+001B90r 2  08 08 09 09      .byte $08,$08,$09,$09,$0A,$0A,$0B,$0B,$0C,$0C,$0D,$0D,$0E,$0E,$0F,$0F
+001B94r 2  0A 0A 0B 0B  
+001B98r 2  0C 0C 0D 0D  
+001BA0r 2  10 10 11 11      .byte $10,$10,$11,$11,$12,$12,$13,$13,$14,$14,$15,$15,$16,$16,$17,$17
+001BA4r 2  12 12 13 13  
+001BA8r 2  14 14 15 15  
+001BB0r 2  18 18 19 19      .byte $18,$18,$19,$19,$1A,$1A,$1B,$1B,$1C,$1C,$1D,$1D,$1E,$1E,$1F,$1F
+001BB4r 2  1A 1A 1B 1B  
+001BB8r 2  1C 1C 1D 1D  
+001BC0r 2  20 20 21 21      .byte $20,$20,$21,$21,$22,$22,$23,$23,$24,$24,$25,$25,$26,$26,$27,$27
+001BC4r 2  22 22 23 23  
+001BC8r 2  24 24 25 25  
+001BD0r 2  28 28 29 29      .byte $28,$28,$29,$29,$2A,$2A,$2B,$2B,$2C,$2C,$2D,$2D,$2E,$2E,$2F,$2F
+001BD4r 2  2A 2A 2B 2B  
+001BD8r 2  2C 2C 2D 2D  
+001BE0r 2  30 30 31 31      .byte $30,$30,$31,$31,$32,$32,$33,$33,$34,$34,$35,$35,$36,$36,$37,$37
+001BE4r 2  32 32 33 33  
+001BE8r 2  34 34 35 35  
+001BF0r 2  38 38 39 39      .byte $38,$38,$39,$39,$3A,$3A,$3B,$3B,$3C,$3C,$3D,$3D,$3E,$3E,$3F,$3F
+001BF4r 2  3A 3A 3B 3B  
+001BF8r 2  3C 3C 3D 3D  
+001C00r 2  rr rr rr rr  sprite_lo: .byte <sprite_40,<sprite_41,<sprite_42,<sprite_43,<sprite_46,<sprite_47,<sprite_48,<sprite_49,<sprite_50,<sprite_51,<sprite_52,<sprite_53,<sprite_54,<sprite_55,<sprite_56,<sprite_57,<sprite_58,<sprite_59,<sprite_60,<sprite_61,<sprite_64,<sprite_65,<sprite_67
+001C04r 2  rr rr rr rr  
+001C08r 2  rr rr rr rr  
+001C17r 2  rr rr rr rr  sprite_hi: .byte >sprite_40,>sprite_41,>sprite_42,>sprite_43,>sprite_46,>sprite_47,>sprite_48,>sprite_49,>sprite_50,>sprite_51,>sprite_52,>sprite_53,>sprite_54,>sprite_55,>sprite_56,>sprite_57,>sprite_58,>sprite_59,>sprite_60,>sprite_61,>sprite_64,>sprite_65,>sprite_67
+001C1Br 2  rr rr rr rr  
+001C1Fr 2  rr rr rr rr  
+001C2Er 2  rr rr rr rr  frame_lo: .byte <frame_0,<frame_1,<frame_2,<frame_3,<frame_4,<frame_5,<frame_6,<frame_7,<frame_8,<frame_9,<frame_10,<frame_11,<frame_12,<frame_13,<frame_14,<frame_15
+001C32r 2  rr rr rr rr  
+001C36r 2  rr rr rr rr  
+001C3Er 2  rr rr rr rr  frame_hi: .byte >frame_0,>frame_1,>frame_2,>frame_3,>frame_4,>frame_5,>frame_6,>frame_7,>frame_8,>frame_9,>frame_10,>frame_11,>frame_12,>frame_13,>frame_14,>frame_15
+001C42r 2  rr rr rr rr  
+001C46r 2  rr rr rr rr  
+001C4Er 2               frame_0:
+001C4Er 2  03 00 00 C7      .byte $03,$00,$00,$C7,$04,$00,$E6,$14,$FF,$D5
+001C52r 2  04 00 E6 14  
+001C56r 2  FF D5        
+001C58r 2               frame_1:
+001C58r 2  03 01 00 C7      .byte $03,$01,$00,$C7,$05,$00,$E6,$15,$01,$D6
+001C5Cr 2  05 00 E6 15  
+001C60r 2  01 D6        
+001C62r 2               frame_2:
+001C62r 2  03 02 00 C7      .byte $03,$02,$00,$C7,$06,$00,$E6,$02,$00,$C7
+001C66r 2  06 00 E6 02  
+001C6Ar 2  00 C7        
+001C6Cr 2               frame_3:
+001C6Cr 2  03 03 FF C7      .byte $03,$03,$FF,$C7,$07,$00,$E6,$16,$03,$D5
+001C70r 2  07 00 E6 16  
+001C74r 2  03 D5        
+001C76r 2               frame_4:
+001C76r 2  03 00 00 D1      .byte $03,$00,$00,$D1,$10,$FF,$F0,$14,$FF,$DF
+001C7Ar 2  10 FF F0 14  
+001C7Er 2  FF DF        
+001C80r 2               frame_5:
+001C80r 2  03 01 00 D1      .byte $03,$01,$00,$D1,$11,$FF,$F0,$15,$01,$E0
+001C84r 2  11 FF F0 15  
+001C88r 2  01 E0        
+001C8Ar 2               frame_6:
+001C8Ar 2  03 02 00 D1      .byte $03,$02,$00,$D1,$12,$FF,$F0,$02,$00,$D1
+001C8Er 2  12 FF F0 02  
+001C92r 2  00 D1        
+001C94r 2               frame_7:
+001C94r 2  03 03 FF D1      .byte $03,$03,$FF,$D1,$13,$FF,$F0,$16,$03,$DF
+001C98r 2  13 FF F0 16  
+001C9Cr 2  03 DF        
+001C9Er 2               frame_8:
+001C9Er 2  03 00 00 C7      .byte $03,$00,$00,$C7,$08,$00,$E6,$14,$FF,$D5
+001CA2r 2  08 00 E6 14  
+001CA6r 2  FF D5        
+001CA8r 2               frame_9:
+001CA8r 2  03 00 00 C7      .byte $03,$00,$00,$C7,$0C,$00,$E6,$14,$FF,$D5
+001CACr 2  0C 00 E6 14  
+001CB0r 2  FF D5        
+001CB2r 2               frame_10:
+001CB2r 2  03 01 00 C7      .byte $03,$01,$00,$C7,$09,$FF,$E6,$15,$01,$D6
+001CB6r 2  09 FF E6 15  
+001CBAr 2  01 D6        
+001CBCr 2               frame_11:
+001CBCr 2  03 01 00 C7      .byte $03,$01,$00,$C7,$0D,$FF,$E6,$15,$01,$D6
+001CC0r 2  0D FF E6 15  
+001CC4r 2  01 D6        
+001CC6r 2               frame_12:
+001CC6r 2  03 02 00 C7      .byte $03,$02,$00,$C7,$0A,$00,$E6,$02,$00,$C7
+001CCAr 2  0A 00 E6 02  
+001CCEr 2  00 C7        
+001CD0r 2               frame_13:
+001CD0r 2  03 02 00 C7      .byte $03,$02,$00,$C7,$0E,$00,$E6,$02,$00,$C7
+001CD4r 2  0E 00 E6 02  
+001CD8r 2  00 C7        
+001CDAr 2               frame_14:
+001CDAr 2  03 03 FF C7      .byte $03,$03,$FF,$C7,$0B,$00,$E6,$16,$03,$D5
+001CDEr 2  0B 00 E6 16  
+001CE2r 2  03 D5        
+001CE4r 2               frame_15:
+001CE4r 2  03 03 FF C7      .byte $03,$03,$FF,$C7,$0F,$00,$E6,$16,$03,$D5
+001CE8r 2  0F 00 E6 16  
+001CECr 2  03 D5        
+001CEEr 2               sprite_color_phase:
+001CEEr 2  80 80 80 80      .byte $80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80
+001CF2r 2  80 80 80 80  
+001CF6r 2  80 80 80 80  
+001CFEr 2  80 80 80 80      .byte $80,$80,$80,$80,$80,$80,$80
+001D02r 2  80 80 80     
+001D05r 2               sprite_40:
+001D05r 2  05 1F 05 05      .byte $05,$1F,$05,$05,$05,$05,$05,$05,$06,$03,$07,$0F,$1F,$3F,$7F,$01
+001D09r 2  05 05 05 05  
+001D0Dr 2  06 03 07 0F  
+001D15r 2  00 00 50 78      .byte $00,$00,$50,$78,$00,$00,$00,$00,$00,$00,$00,$00,$54,$7E,$02,$03
+001D19r 2  00 00 00 00  
+001D1Dr 2  00 00 00 00  
+001D25r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$54,$7E,$02,$03,$00,$00,$00,$00,$00,$00
+001D29r 2  00 00 54 7E  
+001D2Dr 2  02 03 00 00  
+001D35r 2  54 7E 02 03      .byte $54,$7E,$02,$03,$00,$00,$00,$00,$00,$00,$54,$7E,$02,$03,$00,$00
+001D39r 2  00 00 00 00  
+001D3Dr 2  00 00 54 7E  
+001D45r 2  00 00 00 00      .byte $00,$00,$00,$00,$54,$7E,$02,$03,$00,$00,$00,$00,$00,$00,$54,$7E
+001D49r 2  54 7E 02 03  
+001D4Dr 2  00 00 00 00  
+001D55r 2  02 03 00 00      .byte $02,$03,$00,$00,$00,$00,$00,$00,$54,$7E,$02,$03,$00,$00,$00,$00
+001D59r 2  00 00 00 00  
+001D5Dr 2  54 7E 02 03  
+001D65r 2  00 00 54 7E      .byte $00,$00,$54,$7E,$02,$03,$00,$00,$00,$00,$00,$00,$54,$7E,$02,$03
+001D69r 2  02 03 00 00  
+001D6Dr 2  00 00 00 00  
+001D75r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$54,$7E,$02,$03,$00,$00,$00,$00,$00,$00
+001D79r 2  00 00 54 7E  
+001D7Dr 2  02 03 00 00  
+001D85r 2  50 78 00 00      .byte $50,$78,$00,$00,$00,$00,$00,$00,$00,$00,$04,$7E,$02,$03,$00,$00
+001D89r 2  00 00 00 00  
+001D8Dr 2  00 00 04 7E  
+001D95r 2  00 00 00 40      .byte $00,$00,$00,$40,$55,$7F,$0A,$0F,$00,$00,$00,$00,$00,$40,$55,$7F
+001D99r 2  55 7F 0A 0F  
+001D9Dr 2  00 00 00 00  
+001DA5r 2  2A 3F 00 00      .byte $2A,$3F,$00,$00,$00,$00,$00,$40,$55,$7F,$2A,$7F,$01,$01,$00,$00
+001DA9r 2  00 00 00 40  
+001DADr 2  55 7F 2A 7F  
+001DB5r 2  00 40 55 7F      .byte $00,$40,$55,$7F,$2A,$7F,$01,$01,$00,$00,$00,$40,$55,$7F,$2A,$7F
+001DB9r 2  2A 7F 01 01  
+001DBDr 2  00 00 00 40  
+001DC5r 2  01 01 00 00      .byte $01,$01,$00,$00,$00,$40,$51,$7F,$28,$7F,$01,$01,$00,$00,$00,$40
+001DC9r 2  00 40 51 7F  
+001DCDr 2  28 7F 01 01  
+001DD5r 2  55 7F 2A 7F      .byte $55,$7F,$2A,$7F,$01,$01,$00,$00,$00,$40,$55,$7F,$2A,$7F,$01,$01
+001DD9r 2  01 01 00 00  
+001DDDr 2  00 40 55 7F  
+001DE5r 2  00 00 00 40      .byte $00,$00,$00,$40,$55,$7F,$2A,$7F,$01,$01,$00,$00,$00,$40,$55,$7F
+001DE9r 2  55 7F 2A 7F  
+001DEDr 2  01 01 00 00  
+001DF5r 2  2A 7F 01 01      .byte $2A,$7F,$01,$01,$00,$00,$00,$40,$55,$7F,$2A,$7F,$01,$01,$00,$00
+001DF9r 2  00 00 00 40  
+001DFDr 2  55 7F 2A 7F  
+001E05r 2  00 40 55 7F      .byte $00,$40,$55,$7F,$2A,$7F,$01,$01,$00,$00,$00,$40,$55,$7F,$2A,$7F
+001E09r 2  2A 7F 01 01  
+001E0Dr 2  00 00 00 40  
+001E15r 2  01 01 00 00      .byte $01,$01,$00,$00,$00,$40,$55,$7F,$2A,$3F,$00,$00,$00,$00,$00,$40
+001E19r 2  00 40 55 7F  
+001E1Dr 2  2A 3F 00 00  
+001E25r 2  55 7F 2A 3F      .byte $55,$7F,$2A,$3F,$00,$00,$00,$00,$00,$40,$51,$7F,$28,$3F,$00,$00
+001E29r 2  00 00 00 00  
+001E2Dr 2  00 40 51 7F  
+001E35r 2  00 00 00 40      .byte $00,$00,$00,$40,$51,$7F,$28,$3F,$00,$00,$00,$00,$00,$40,$51,$7F
+001E39r 2  51 7F 28 3F  
+001E3Dr 2  00 00 00 00  
+001E45r 2  08 0F 00 00      .byte $08,$0F,$00,$00,$00,$00
+001E49r 2  00 00        
+001E4Br 2               sprite_41:
+001E4Br 2  04 1F 04 04      .byte $04,$1F,$04,$04,$04,$04,$04,$05,$05,$07,$0F,$1F,$3F,$7F,$01,$03
+001E4Fr 2  04 04 04 05  
+001E53r 2  05 07 0F 1F  
+001E5Br 2  00 00 54 7E      .byte $00,$00,$54,$7E,$00,$00,$00,$00,$00,$00,$54,$7E,$02,$03,$00,$00
+001E5Fr 2  00 00 00 00  
+001E63r 2  00 00 54 7E  
+001E6Br 2  00 40 55 7F      .byte $00,$40,$55,$7F,$02,$03,$00,$00,$00,$40,$55,$7F,$02,$03,$00,$00
+001E6Fr 2  02 03 00 00  
+001E73r 2  00 40 55 7F  
+001E7Br 2  00 40 55 7F      .byte $00,$40,$55,$7F,$02,$03,$00,$00,$00,$40,$55,$7F,$02,$03,$00,$00
+001E7Fr 2  02 03 00 00  
+001E83r 2  00 40 55 7F  
+001E8Br 2  00 00 54 7E      .byte $00,$00,$54,$7E,$02,$03,$00,$00,$00,$00,$54,$7E,$02,$03,$00,$00
+001E8Fr 2  02 03 00 00  
+001E93r 2  00 00 54 7E  
+001E9Br 2  00 00 54 7E      .byte $00,$00,$54,$7E,$02,$03,$00,$00,$00,$00,$54,$7E,$02,$03,$00,$00
+001E9Fr 2  02 03 00 00  
+001EA3r 2  00 00 54 7E  
+001EABr 2  00 00 54 7E      .byte $00,$00,$54,$7E,$02,$03,$00,$00,$00,$00,$54,$7E,$00,$00,$00,$00
+001EAFr 2  02 03 00 00  
+001EB3r 2  00 00 54 7E  
+001EBBr 2  00 00 14 1E      .byte $00,$00,$14,$1E,$00,$00,$00,$00,$00,$00,$54,$7E,$00,$00,$00,$00
+001EBFr 2  00 00 00 00  
+001EC3r 2  00 00 54 7E  
+001ECBr 2  00 40 55 7F      .byte $00,$40,$55,$7F,$00,$00,$00,$00,$00,$40,$55,$7F,$00,$00,$00,$00
+001ECFr 2  00 00 00 00  
+001ED3r 2  00 40 55 7F  
+001EDBr 2  00 40 55 7F      .byte $00,$40,$55,$7F,$02,$03,$00,$00,$00,$40,$55,$7F,$02,$03,$00,$00
+001EDFr 2  02 03 00 00  
+001EE3r 2  00 40 55 7F  
+001EEBr 2  00 40 55 7F      .byte $00,$40,$55,$7F,$02,$03,$00,$00,$00,$40,$55,$7F,$00,$00,$00,$00
+001EEFr 2  02 03 00 00  
+001EF3r 2  00 40 55 7F  
+001EFBr 2  00 40 55 7F      .byte $00,$40,$55,$7F,$02,$03,$00,$00,$00,$40,$55,$7F,$02,$03,$00,$00
+001EFFr 2  02 03 00 00  
+001F03r 2  00 40 55 7F  
+001F0Br 2  00 40 55 7F      .byte $00,$40,$55,$7F,$02,$03,$00,$00,$00,$40,$55,$7F,$02,$03,$00,$00
+001F0Fr 2  02 03 00 00  
+001F13r 2  00 40 55 7F  
+001F1Br 2  00 40 55 7F      .byte $00,$40,$55,$7F,$02,$03,$00,$00,$00,$40,$55,$7F,$02,$03,$00,$00
+001F1Fr 2  02 03 00 00  
+001F23r 2  00 40 55 7F  
+001F2Br 2  00 40 55 7F      .byte $00,$40,$55,$7F,$02,$03,$00,$00,$00,$40,$55,$7F,$02,$03,$00,$00
+001F2Fr 2  02 03 00 00  
+001F33r 2  00 40 55 7F  
+001F3Br 2  00 40 41 7F      .byte $00,$40,$41,$7F,$02,$03,$00,$00,$00,$40,$41,$7F,$02,$03,$00,$00
+001F3Fr 2  02 03 00 00  
+001F43r 2  00 40 41 7F  
+001F4Br 2  00 40 41 7F      .byte $00,$40,$41,$7F,$02,$03,$00,$00
+001F4Fr 2  02 03 00 00  
+001F53r 2               sprite_42:
+001F53r 2  04 1F 04 04      .byte $04,$1F,$04,$04,$04,$04,$04,$05,$05,$07,$0F,$1F,$3F,$7F,$01,$03
+001F57r 2  04 04 04 05  
+001F5Br 2  05 07 0F 1F  
+001F63r 2  00 00 50 78      .byte $00,$00,$50,$78,$02,$03,$00,$00,$00,$00,$54,$7E,$02,$03,$00,$00
+001F67r 2  02 03 00 00  
+001F6Br 2  00 00 54 7E  
+001F73r 2  00 00 54 7E      .byte $00,$00,$54,$7E,$0A,$0F,$00,$00,$00,$00,$54,$7E,$0A,$0F,$00,$00
+001F77r 2  0A 0F 00 00  
+001F7Br 2  00 00 54 7E  
+001F83r 2  00 00 54 7E      .byte $00,$00,$54,$7E,$0A,$0F,$00,$00,$00,$00,$54,$7E,$0A,$0F,$00,$00
+001F87r 2  0A 0F 00 00  
+001F8Br 2  00 00 54 7E  
+001F93r 2  00 00 54 7E      .byte $00,$00,$54,$7E,$02,$03,$00,$00,$00,$00,$54,$7E,$02,$03,$00,$00
+001F97r 2  02 03 00 00  
+001F9Br 2  00 00 54 7E  
+001FA3r 2  00 00 54 7E      .byte $00,$00,$54,$7E,$02,$03,$00,$00,$00,$00,$54,$7E,$02,$03,$00,$00
+001FA7r 2  02 03 00 00  
+001FABr 2  00 00 54 7E  
+001FB3r 2  00 00 54 7E      .byte $00,$00,$54,$7E,$02,$03,$00,$00,$00,$00,$50,$78,$02,$03,$00,$00
+001FB7r 2  02 03 00 00  
+001FBBr 2  00 00 50 78  
+001FC3r 2  00 00 40 60      .byte $00,$00,$40,$60,$02,$03,$00,$00,$00,$00,$50,$78,$02,$03,$00,$00
+001FC7r 2  02 03 00 00  
+001FCBr 2  00 00 50 78  
+001FD3r 2  00 00 54 7E      .byte $00,$00,$54,$7E,$0A,$0F,$00,$00,$00,$00,$54,$7E,$0A,$0F,$00,$00
+001FD7r 2  0A 0F 00 00  
+001FDBr 2  00 00 54 7E  
+001FE3r 2  00 00 54 7E      .byte $00,$00,$54,$7E,$08,$0F,$00,$00,$00,$00,$54,$7E,$0A,$0F,$00,$00
+001FE7r 2  08 0F 00 00  
+001FEBr 2  00 00 54 7E  
+001FF3r 2  00 00 54 7E      .byte $00,$00,$54,$7E,$0A,$0F,$00,$00,$00,$00,$54,$7E,$0A,$0F,$00,$00
+001FF7r 2  0A 0F 00 00  
+001FFBr 2  00 00 54 7E  
+002003r 2  00 00 54 7E      .byte $00,$00,$54,$7E,$0A,$0F,$00,$00,$00,$00,$54,$7E,$0A,$0F,$00,$00
+002007r 2  0A 0F 00 00  
+00200Br 2  00 00 54 7E  
+002013r 2  00 00 54 7E      .byte $00,$00,$54,$7E,$0A,$0F,$00,$00,$00,$00,$54,$7E,$0A,$0F,$00,$00
+002017r 2  0A 0F 00 00  
+00201Br 2  00 00 54 7E  
+002023r 2  00 00 54 7E      .byte $00,$00,$54,$7E,$0A,$0F,$00,$00,$00,$00,$54,$7E,$02,$03,$00,$00
+002027r 2  0A 0F 00 00  
+00202Br 2  00 00 54 7E  
+002033r 2  00 00 54 7E      .byte $00,$00,$54,$7E,$0A,$0F,$00,$00,$00,$00,$50,$78,$0A,$0F,$00,$00
+002037r 2  0A 0F 00 00  
+00203Br 2  00 00 50 78  
+002043r 2  00 00 14 7E      .byte $00,$00,$14,$7E,$08,$0F,$00,$00,$00,$00,$14,$7E,$08,$0F,$00,$00
+002047r 2  08 0F 00 00  
+00204Br 2  00 00 14 7E  
+002053r 2  00 00 14 7E      .byte $00,$00,$14,$7E,$08,$0F,$00,$00
+002057r 2  08 0F 00 00  
+00205Br 2               sprite_43:
+00205Br 2  05 1F 05 05      .byte $05,$1F,$05,$05,$05,$05,$05,$05,$06,$03,$07,$0F,$1F,$3F,$7F,$01
+00205Fr 2  05 05 05 05  
+002063r 2  06 03 07 0F  
+00206Br 2  00 00 00 00      .byte $00,$00,$00,$00,$28,$3C,$00,$00,$00,$00,$00,$00,$00,$00,$2A,$7F
+00206Fr 2  28 3C 00 00  
+002073r 2  00 00 00 00  
+00207Br 2  01 01 00 00      .byte $01,$01,$00,$00,$00,$00,$00,$00,$2A,$7F,$01,$01,$00,$00,$00,$00
+00207Fr 2  00 00 00 00  
+002083r 2  2A 7F 01 01  
+00208Br 2  00 00 2A 7F      .byte $00,$00,$2A,$7F,$01,$01,$00,$00,$00,$00,$00,$00,$2A,$7F,$01,$01
+00208Fr 2  01 01 00 00  
+002093r 2  00 00 00 00  
+00209Br 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$2A,$7F,$01,$01,$00,$00,$00,$00,$00,$00
+00209Fr 2  00 00 2A 7F  
+0020A3r 2  01 01 00 00  
+0020ABr 2  2A 7F 01 01      .byte $2A,$7F,$01,$01,$00,$00,$00,$00,$00,$00,$2A,$7F,$01,$01,$00,$00
+0020AFr 2  00 00 00 00  
+0020B3r 2  00 00 2A 7F  
+0020BBr 2  00 00 00 00      .byte $00,$00,$00,$00,$2A,$7F,$01,$01,$00,$00,$00,$00,$00,$00,$2A,$7F
+0020BFr 2  2A 7F 01 01  
+0020C3r 2  00 00 00 00  
+0020CBr 2  01 01 00 00      .byte $01,$01,$00,$00,$00,$00,$00,$00,$2A,$7F,$01,$01,$00,$00,$00,$00
+0020CFr 2  00 00 00 00  
+0020D3r 2  2A 7F 01 01  
+0020DBr 2  00 00 2A 7F      .byte $00,$00,$2A,$7F,$01,$01,$00,$00,$00,$00,$40,$60,$2A,$7F,$05,$07
+0020DFr 2  01 01 00 00  
+0020E3r 2  00 00 40 60  
+0020EBr 2  00 00 00 00      .byte $00,$00,$00,$00,$50,$78,$2A,$7F,$05,$07,$00,$00,$00,$00,$50,$78
+0020EFr 2  50 78 2A 7F  
+0020F3r 2  05 07 00 00  
+0020FBr 2  2A 7F 05 07      .byte $2A,$7F,$05,$07,$00,$00,$00,$00,$14,$7E,$2A,$7F,$05,$07,$00,$00
+0020FFr 2  00 00 00 00  
+002103r 2  14 7E 2A 7F  
+00210Br 2  00 00 54 7E      .byte $00,$00,$54,$7E,$00,$7F,$05,$07,$00,$00,$00,$00,$54,$7E,$2A,$7F
+00210Fr 2  00 7F 05 07  
+002113r 2  00 00 00 00  
+00211Br 2  05 07 00 00      .byte $05,$07,$00,$00,$00,$00,$54,$7E,$2A,$7F,$05,$07,$00,$00,$00,$00
+00211Fr 2  00 00 54 7E  
+002123r 2  2A 7F 05 07  
+00212Br 2  54 7E 2A 7F      .byte $54,$7E,$2A,$7F,$05,$07,$00,$00,$00,$00,$54,$7E,$2A,$7F,$05,$07
+00212Fr 2  05 07 00 00  
+002133r 2  00 00 54 7E  
+00213Br 2  00 00 00 00      .byte $00,$00,$00,$00,$54,$7E,$2A,$7F,$05,$07,$00,$00,$00,$00,$54,$7E
+00213Fr 2  54 7E 2A 7F  
+002143r 2  05 07 00 00  
+00214Br 2  2A 7F 05 07      .byte $2A,$7F,$05,$07,$00,$00,$00,$00,$54,$7E,$2A,$7F,$05,$07,$00,$00
+00214Fr 2  00 00 00 00  
+002153r 2  54 7E 2A 7F  
+00215Br 2  00 00 54 7E      .byte $00,$00,$54,$7E,$2A,$7F,$05,$07,$00,$00,$00,$00,$54,$7E,$2A,$7F
+00215Fr 2  2A 7F 05 07  
+002163r 2  00 00 00 00  
+00216Br 2  05 07 00 00      .byte $05,$07,$00,$00,$00,$00,$50,$78,$2A,$7F,$05,$07,$00,$00,$00,$00
+00216Fr 2  00 00 50 78  
+002173r 2  2A 7F 05 07  
+00217Br 2  50 78 2A 7F      .byte $50,$78,$2A,$7F,$05,$07,$00,$00,$00,$00,$50,$78,$00,$7F,$04,$07
+00217Fr 2  05 07 00 00  
+002183r 2  00 00 50 78  
+00218Br 2  00 00 00 00      .byte $00,$00,$00,$00,$50,$78,$00,$7F,$04,$07,$00,$00,$00,$00,$40,$60
+00218Fr 2  50 78 00 7F  
+002193r 2  04 07 00 00  
+00219Br 2  00 7F 04 07      .byte $00,$7F,$04,$07,$00,$00
+00219Fr 2  00 00        
+0021A1r 2               sprite_46:
+0021A1r 2  04 1A 04 04      .byte $04,$1A,$04,$04,$04,$04,$04,$05,$05,$07,$0F,$1F,$3F,$7F,$01,$03
+0021A5r 2  04 04 04 05  
+0021A9r 2  05 07 0F 1F  
+0021B1r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+0021B5r 2  05 0F 00 00  
+0021B9r 2  40 40 2A 7F  
+0021C1r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+0021C5r 2  05 0F 00 00  
+0021C9r 2  40 40 2A 7F  
+0021D1r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+0021D5r 2  05 0F 00 00  
+0021D9r 2  40 40 2A 7F  
+0021E1r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+0021E5r 2  05 0F 00 00  
+0021E9r 2  40 40 2A 7F  
+0021F1r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+0021F5r 2  05 0F 00 00  
+0021F9r 2  40 40 2A 7F  
+002201r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+002205r 2  05 0F 00 00  
+002209r 2  40 40 2A 7F  
+002211r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+002215r 2  05 0F 00 00  
+002219r 2  40 40 2A 7F  
+002221r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$01,$03,$00,$00,$00,$00,$2A,$7E,$01,$03,$00,$00
+002225r 2  01 03 00 00  
+002229r 2  00 00 2A 7E  
+002231r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+002235r 2  05 0F 00 00  
+002239r 2  40 40 2A 7F  
+002241r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$00,$00,$2A,$7E,$01,$03,$00,$00
+002245r 2  05 0F 00 00  
+002249r 2  00 00 2A 7E  
+002251r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$01,$03,$00,$00,$00,$00,$2A,$7E,$01,$03,$00,$00
+002255r 2  01 03 00 00  
+002259r 2  00 00 2A 7E  
+002261r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$01,$03,$00,$00,$40,$40,$2A,$7F,$00,$00,$00,$00
+002265r 2  01 03 00 00  
+002269r 2  40 40 2A 7F  
+002271r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+002275r 2  05 0F 00 00  
+002279r 2  40 40 2A 7F  
+002281r 2               sprite_47:
+002281r 2  04 1A 04 04      .byte $04,$1A,$04,$04,$04,$04,$04,$05,$05,$07,$0F,$1F,$3F,$7F,$01,$03
+002285r 2  04 04 04 05  
+002289r 2  05 07 0F 1F  
+002291r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$01,$03,$00,$00,$40,$40,$2A,$7F,$01,$03,$00,$00
+002295r 2  01 03 00 00  
+002299r 2  40 40 2A 7F  
+0022A1r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$01,$03,$00,$00,$40,$40,$2A,$7F,$01,$03,$00,$00
+0022A5r 2  01 03 00 00  
+0022A9r 2  40 40 2A 7F  
+0022B1r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$01,$03,$00,$00,$40,$40,$2A,$7F,$01,$03,$00,$00
+0022B5r 2  01 03 00 00  
+0022B9r 2  40 40 2A 7F  
+0022C1r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$01,$03,$00,$00,$40,$40,$2A,$7F,$01,$03,$00,$00
+0022C5r 2  01 03 00 00  
+0022C9r 2  40 40 2A 7F  
+0022D1r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$01,$03,$00,$00,$40,$40,$2A,$7F,$01,$03,$00,$00
+0022D5r 2  01 03 00 00  
+0022D9r 2  40 40 2A 7F  
+0022E1r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$01,$03,$00,$00,$40,$40,$2A,$7F,$01,$03,$00,$00
+0022E5r 2  01 03 00 00  
+0022E9r 2  40 40 2A 7F  
+0022F1r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$01,$03,$00,$00,$40,$40,$2A,$7F,$01,$03,$00,$00
+0022F5r 2  01 03 00 00  
+0022F9r 2  40 40 2A 7F  
+002301r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$00,$00,$00,$00,$40,$40,$0A,$1F,$00,$00,$00,$00
+002305r 2  00 00 00 00  
+002309r 2  40 40 0A 1F  
+002311r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$00,$00,$00,$00,$40,$40,$2A,$7F,$00,$00,$00,$00
+002315r 2  00 00 00 00  
+002319r 2  40 40 2A 7F  
+002321r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$00,$00,$00,$00,$40,$40,$28,$7F,$00,$00,$00,$00
+002325r 2  00 00 00 00  
+002329r 2  40 40 28 7F  
+002331r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$00,$00,$00,$00,$40,$40,$2A,$7F,$00,$00,$00,$00
+002335r 2  00 00 00 00  
+002339r 2  40 40 2A 7F  
+002341r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$00,$00,$00,$00,$40,$40,$2A,$7F,$00,$00,$00,$00
+002345r 2  00 00 00 00  
+002349r 2  40 40 2A 7F  
+002351r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$01,$03,$00,$00,$40,$40,$2A,$7F,$01,$03,$00,$00
+002355r 2  01 03 00 00  
+002359r 2  40 40 2A 7F  
+002361r 2               sprite_48:
+002361r 2  04 1A 04 04      .byte $04,$1A,$04,$04,$04,$04,$04,$05,$05,$07,$0F,$1F,$3F,$7F,$01,$03
+002365r 2  04 04 04 05  
+002369r 2  05 07 0F 1F  
+002371r 2  00 00 28 78      .byte $00,$00,$28,$78,$05,$0F,$00,$00,$00,$00,$2A,$7E,$05,$0F,$00,$00
+002375r 2  05 0F 00 00  
+002379r 2  00 00 2A 7E  
+002381r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$05,$0F,$00,$00,$00,$00,$2A,$7E,$05,$0F,$00,$00
+002385r 2  05 0F 00 00  
+002389r 2  00 00 2A 7E  
+002391r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$05,$0F,$00,$00,$00,$00,$2A,$7E,$05,$0F,$00,$00
+002395r 2  05 0F 00 00  
+002399r 2  00 00 2A 7E  
+0023A1r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$05,$0F,$00,$00,$00,$00,$2A,$7E,$05,$0F,$00,$00
+0023A5r 2  05 0F 00 00  
+0023A9r 2  00 00 2A 7E  
+0023B1r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$05,$0F,$00,$00,$00,$00,$2A,$7E,$05,$0F,$00,$00
+0023B5r 2  05 0F 00 00  
+0023B9r 2  00 00 2A 7E  
+0023C1r 2  40 40 28 7F      .byte $40,$40,$28,$7F,$05,$0F,$00,$00,$00,$00,$2A,$7E,$05,$0F,$00,$00
+0023C5r 2  05 0F 00 00  
+0023C9r 2  00 00 2A 7E  
+0023D1r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$05,$0F,$00,$00,$00,$00,$2A,$7E,$05,$0F,$00,$00
+0023D5r 2  05 0F 00 00  
+0023D9r 2  00 00 2A 7E  
+0023E1r 2  00 00 28 78      .byte $00,$00,$28,$78,$05,$0F,$00,$00,$00,$00,$20,$60,$05,$0F,$00,$00
+0023E5r 2  05 0F 00 00  
+0023E9r 2  00 00 20 60  
+0023F1r 2  00 00 28 78      .byte $00,$00,$28,$78,$05,$0F,$00,$00,$00,$00,$28,$78,$05,$0F,$00,$00
+0023F5r 2  05 0F 00 00  
+0023F9r 2  00 00 28 78  
+002401r 2  00 00 28 78      .byte $00,$00,$28,$78,$05,$0F,$00,$00,$00,$00,$28,$78,$04,$0F,$00,$00
+002405r 2  05 0F 00 00  
+002409r 2  00 00 28 78  
+002411r 2  00 00 28 78      .byte $00,$00,$28,$78,$05,$0F,$00,$00,$00,$00,$28,$78,$05,$0F,$00,$00
+002415r 2  05 0F 00 00  
+002419r 2  00 00 28 78  
+002421r 2  00 00 28 78      .byte $00,$00,$28,$78,$05,$0F,$00,$00,$00,$00,$28,$78,$05,$0F,$00,$00
+002425r 2  05 0F 00 00  
+002429r 2  00 00 28 78  
+002431r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$05,$0F,$00,$00,$00,$00,$2A,$7E,$05,$0F,$00,$00
+002435r 2  05 0F 00 00  
+002439r 2  00 00 2A 7E  
+002441r 2               sprite_49:
+002441r 2  04 1A 04 04      .byte $04,$1A,$04,$04,$04,$04,$04,$05,$05,$07,$0F,$1F,$3F,$7F,$01,$03
+002445r 2  04 04 04 05  
+002449r 2  05 07 0F 1F  
+002451r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+002455r 2  05 0F 00 00  
+002459r 2  40 40 2A 7F  
+002461r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+002465r 2  05 0F 00 00  
+002469r 2  40 40 2A 7F  
+002471r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+002475r 2  05 0F 00 00  
+002479r 2  40 40 2A 7F  
+002481r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+002485r 2  05 0F 00 00  
+002489r 2  40 40 2A 7F  
+002491r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+002495r 2  05 0F 00 00  
+002499r 2  40 40 2A 7F  
+0024A1r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+0024A5r 2  05 0F 00 00  
+0024A9r 2  40 40 2A 7F  
+0024B1r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+0024B5r 2  05 0F 00 00  
+0024B9r 2  40 40 2A 7F  
+0024C1r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$01,$03,$00,$00,$00,$00,$2A,$7E,$01,$03,$00,$00
+0024C5r 2  01 03 00 00  
+0024C9r 2  00 00 2A 7E  
+0024D1r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+0024D5r 2  05 0F 00 00  
+0024D9r 2  40 40 2A 7F  
+0024E1r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$00,$00,$2A,$7E,$01,$03,$00,$00
+0024E5r 2  05 0F 00 00  
+0024E9r 2  00 00 2A 7E  
+0024F1r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$01,$03,$00,$00,$00,$00,$2A,$7E,$01,$03,$00,$00
+0024F5r 2  01 03 00 00  
+0024F9r 2  00 00 2A 7E  
+002501r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$01,$03,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+002505r 2  01 03 00 00  
+002509r 2  40 40 2A 7F  
+002511r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$01,$03,$00,$00
+002515r 2  05 0F 00 00  
+002519r 2  40 40 2A 7F  
+002521r 2               sprite_50:
+002521r 2  04 1A 04 04      .byte $04,$1A,$04,$04,$04,$04,$04,$05,$05,$07,$0F,$1F,$3F,$7F,$01,$03
+002525r 2  04 04 04 05  
+002529r 2  05 07 0F 1F  
+002531r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+002535r 2  05 0F 00 00  
+002539r 2  40 40 2A 7F  
+002541r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+002545r 2  05 0F 00 00  
+002549r 2  40 40 2A 7F  
+002551r 2  00 00 0A 7E      .byte $00,$00,$0A,$7E,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+002555r 2  05 0F 00 00  
+002559r 2  40 40 2A 7F  
+002561r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+002565r 2  05 0F 00 00  
+002569r 2  40 40 2A 7F  
+002571r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+002575r 2  05 0F 00 00  
+002579r 2  40 40 2A 7F  
+002581r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+002585r 2  05 0F 00 00  
+002589r 2  40 40 2A 7F  
+002591r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$01,$03,$00,$00,$40,$40,$2A,$7F,$01,$03,$00,$00
+002595r 2  01 03 00 00  
+002599r 2  40 40 2A 7F  
+0025A1r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$01,$03,$00,$00,$40,$40,$2A,$7F,$01,$03,$00,$00
+0025A5r 2  01 03 00 00  
+0025A9r 2  40 40 2A 7F  
+0025B1r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+0025B5r 2  05 0F 00 00  
+0025B9r 2  40 40 2A 7F  
+0025C1r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$00,$00,$2A,$7E,$01,$03,$00,$00
+0025C5r 2  05 0F 00 00  
+0025C9r 2  00 00 2A 7E  
+0025D1r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$01,$03,$00,$00,$00,$00,$08,$78,$01,$03,$00,$00
+0025D5r 2  01 03 00 00  
+0025D9r 2  00 00 08 78  
+0025E1r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+0025E5r 2  05 0F 00 00  
+0025E9r 2  40 40 2A 7F  
+0025F1r 2  00 00 0A 1E      .byte $00,$00,$0A,$1E,$00,$00,$00,$00,$00,$00,$0A,$1E,$00,$00,$00,$00
+0025F5r 2  00 00 00 00  
+0025F9r 2  00 00 0A 1E  
+002601r 2               sprite_51:
+002601r 2  05 1A 05 05      .byte $05,$1A,$05,$05,$05,$05,$05,$05,$06,$03,$07,$0F,$1F,$3F,$7F,$01
+002605r 2  05 05 05 05  
+002609r 2  06 03 07 0F  
+002611r 2  00 00 20 60      .byte $00,$00,$20,$60,$55,$7F,$00,$01,$00,$00,$00,$00,$20,$60,$55,$7F
+002615r 2  55 7F 00 01  
+002619r 2  00 00 00 00  
+002621r 2  00 01 00 00      .byte $00,$01,$00,$00,$00,$00,$20,$60,$55,$7F,$02,$07,$00,$00,$00,$00
+002625r 2  00 00 20 60  
+002629r 2  55 7F 02 07  
+002631r 2  20 60 55 7F      .byte $20,$60,$55,$7F,$02,$07,$00,$00,$00,$00,$20,$60,$45,$7F,$00,$01
+002635r 2  02 07 00 00  
+002639r 2  00 00 20 60  
+002641r 2  00 00 00 00      .byte $00,$00,$00,$00,$20,$60,$55,$7F,$02,$07,$00,$00,$00,$00,$20,$60
+002645r 2  20 60 55 7F  
+002649r 2  02 07 00 00  
+002651r 2  55 7F 02 07      .byte $55,$7F,$02,$07,$00,$00,$00,$00,$20,$60,$55,$7F,$02,$07,$00,$00
+002655r 2  00 00 00 00  
+002659r 2  20 60 55 7F  
+002661r 2  00 00 20 60      .byte $00,$00,$20,$60,$55,$7F,$02,$07,$00,$00,$00,$00,$20,$60,$45,$7F
+002665r 2  55 7F 02 07  
+002669r 2  00 00 00 00  
+002671r 2  02 07 00 00      .byte $02,$07,$00,$00,$00,$00,$20,$60,$45,$7F,$02,$07,$00,$00,$00,$00
+002675r 2  00 00 20 60  
+002679r 2  45 7F 02 07  
+002681r 2  20 60 55 7F      .byte $20,$60,$55,$7F,$02,$07,$00,$00,$00,$00,$20,$60,$55,$7F,$02,$07
+002685r 2  02 07 00 00  
+002689r 2  00 00 20 60  
+002691r 2  00 00 00 00      .byte $00,$00,$00,$00,$20,$60,$55,$7F,$02,$07,$00,$00,$00,$00,$08,$78
+002695r 2  20 60 55 7F  
+002699r 2  02 07 00 00  
+0026A1r 2  51 7F 00 01      .byte $51,$7F,$00,$01,$00,$00,$00,$00,$28,$78,$51,$7F,$00,$01,$00,$00
+0026A5r 2  00 00 00 00  
+0026A9r 2  28 78 51 7F  
+0026B1r 2  00 00 28 78      .byte $00,$00,$28,$78,$55,$7F,$02,$07,$00,$00,$00,$00,$20,$60,$55,$7F
+0026B5r 2  55 7F 02 07  
+0026B9r 2  00 00 00 00  
+0026C1r 2  02 07 00 00      .byte $02,$07,$00,$00,$00,$00,$28,$78,$55,$7F,$02,$07,$00,$00,$00,$00
+0026C5r 2  00 00 28 78  
+0026C9r 2  55 7F 02 07  
+0026D1r 2  28 78 51 7F      .byte $28,$78,$51,$7F,$00,$01,$00,$00,$00,$00,$2A,$7E,$54,$7F,$00,$01
+0026D5r 2  00 01 00 00  
+0026D9r 2  00 00 2A 7E  
+0026E1r 2  00 00 00 00      .byte $00,$00,$00,$00,$0A,$7E,$54,$7F,$00,$01,$00,$00,$00,$00,$2A,$7E
+0026E5r 2  0A 7E 54 7F  
+0026E9r 2  00 01 00 00  
+0026F1r 2  14 3F 00 00      .byte $14,$3F,$00,$00,$00,$00,$00,$00,$28,$78,$54,$7F,$00,$01,$00,$00
+0026F5r 2  00 00 00 00  
+0026F9r 2  28 78 54 7F  
+002701r 2  00 00 28 78      .byte $00,$00,$28,$78,$55,$7F,$02,$07,$00,$00,$00,$00,$28,$78,$55,$7F
+002705r 2  55 7F 02 07  
+002709r 2  00 00 00 00  
+002711r 2  02 07 00 00      .byte $02,$07,$00,$00
+002715r 2               sprite_52:
+002715r 2  05 1A 05 05      .byte $05,$1A,$05,$05,$05,$05,$05,$05,$06,$03,$07,$0F,$1F,$3F,$7F,$01
+002719r 2  05 05 05 05  
+00271Dr 2  06 03 07 0F  
+002725r 2  00 00 28 78      .byte $00,$00,$28,$78,$05,$0F,$00,$00,$00,$00,$00,$00,$2A,$7E,$05,$0F
+002729r 2  05 0F 00 00  
+00272Dr 2  00 00 00 00  
+002735r 2  00 00 00 00      .byte $00,$00,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00,$00,$00,$40,$40
+002739r 2  40 40 2A 7F  
+00273Dr 2  05 0F 00 00  
+002745r 2  2A 7F 05 0F      .byte $2A,$7F,$05,$0F,$00,$00,$00,$00,$00,$00,$2A,$7E,$05,$0F,$00,$00
+002749r 2  00 00 00 00  
+00274Dr 2  00 00 2A 7E  
+002755r 2  00 00 40 40      .byte $00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00,$00,$00,$40,$40,$2A,$7F
+002759r 2  2A 7F 05 0F  
+00275Dr 2  00 00 00 00  
+002765r 2  05 0F 00 00      .byte $05,$0F,$00,$00,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00,$00,$00
+002769r 2  00 00 40 40  
+00276Dr 2  2A 7F 05 0F  
+002775r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$00,$00,$40,$40,$2A,$7F,$05,$0F
+002779r 2  05 0F 00 00  
+00277Dr 2  00 00 40 40  
+002785r 2  00 00 00 00      .byte $00,$00,$00,$00,$40,$40,$2A,$7F,$15,$3F,$00,$00,$00,$00,$40,$40
+002789r 2  40 40 2A 7F  
+00278Dr 2  15 3F 00 00  
+002795r 2  2A 7F 15 3F      .byte $2A,$7F,$15,$3F,$00,$00,$00,$00,$40,$40,$2A,$7F,$15,$3F,$00,$00
+002799r 2  00 00 00 00  
+00279Dr 2  40 40 2A 7F  
+0027A5r 2  00 00 40 40      .byte $00,$00,$40,$40,$2A,$7F,$15,$3F,$00,$00,$00,$00,$00,$00,$0A,$7E
+0027A9r 2  2A 7F 15 3F  
+0027ADr 2  00 00 00 00  
+0027B5r 2  15 3F 00 00      .byte $15,$3F,$00,$00,$00,$00,$40,$40,$2A,$7F,$55,$7F,$00,$01,$00,$00
+0027B9r 2  00 00 40 40  
+0027BDr 2  2A 7F 55 7F  
+0027C5r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$55,$7F,$00,$01,$00,$00,$40,$40,$2A,$7F,$15,$3F
+0027C9r 2  55 7F 00 01  
+0027CDr 2  00 00 40 40  
+0027D5r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$0A,$7E,$55,$7F,$00,$01,$00,$00,$00,$00
+0027D9r 2  00 00 0A 7E  
+0027DDr 2  55 7F 00 01  
+0027E5r 2  2A 7E 54 7F      .byte $2A,$7E,$54,$7F,$00,$01,$00,$00,$00,$00,$2A,$7E,$50,$7F,$00,$01
+0027E9r 2  00 01 00 00  
+0027EDr 2  00 00 2A 7E  
+0027F5r 2  00 00 00 00      .byte $00,$00,$00,$00,$2A,$7E,$50,$7F,$02,$07,$00,$00,$00,$00,$28,$78
+0027F9r 2  2A 7E 50 7F  
+0027FDr 2  02 07 00 00  
+002805r 2  50 7F 02 07      .byte $50,$7F,$02,$07,$00,$00,$00,$00,$2A,$7E,$50,$7F,$00,$01,$00,$00
+002809r 2  00 00 00 00  
+00280Dr 2  2A 7E 50 7F  
+002815r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$54,$7F,$00,$01,$00,$00,$40,$40,$2A,$7F,$14,$3F
+002819r 2  54 7F 00 01  
+00281Dr 2  00 00 40 40  
+002825r 2  00 00 00 00      .byte $00,$00,$00,$00
+002829r 2               sprite_53:
+002829r 2  04 1A 04 04      .byte $04,$1A,$04,$04,$04,$04,$04,$05,$05,$07,$0F,$1F,$3F,$7F,$01,$03
+00282Dr 2  04 04 04 05  
+002831r 2  05 07 0F 1F  
+002839r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+00283Dr 2  05 0F 00 00  
+002841r 2  40 40 2A 7F  
+002849r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+00284Dr 2  05 0F 00 00  
+002851r 2  40 40 2A 7F  
+002859r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+00285Dr 2  05 0F 00 00  
+002861r 2  40 40 2A 7F  
+002869r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+00286Dr 2  05 0F 00 00  
+002871r 2  40 40 2A 7F  
+002879r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+00287Dr 2  05 0F 00 00  
+002881r 2  40 40 2A 7F  
+002889r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$01,$03,$00,$00
+00288Dr 2  05 0F 00 00  
+002891r 2  40 40 2A 7F  
+002899r 2  40 40 0A 7F      .byte $40,$40,$0A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$01,$03,$00,$00
+00289Dr 2  05 0F 00 00  
+0028A1r 2  40 40 2A 7F  
+0028A9r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$05,$0F,$00,$00,$00,$00,$2A,$7E,$01,$03,$00,$00
+0028ADr 2  05 0F 00 00  
+0028B1r 2  00 00 2A 7E  
+0028B9r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+0028BDr 2  05 0F 00 00  
+0028C1r 2  40 40 2A 7F  
+0028C9r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$00,$00,$2A,$7E,$01,$03,$00,$00
+0028CDr 2  05 0F 00 00  
+0028D1r 2  00 00 2A 7E  
+0028D9r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$01,$03,$00,$00,$00,$00,$2A,$7E,$05,$0F,$00,$00
+0028DDr 2  01 03 00 00  
+0028E1r 2  00 00 2A 7E  
+0028E9r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$05,$0F,$00,$00,$40,$40,$2A,$7F,$01,$03,$00,$00
+0028EDr 2  05 0F 00 00  
+0028F1r 2  40 40 2A 7F  
+0028F9r 2  40 40 0A 1F      .byte $40,$40,$0A,$1F,$00,$00,$00,$00,$40,$40,$0A,$1F,$00,$00,$00,$00
+0028FDr 2  00 00 00 00  
+002901r 2  40 40 0A 1F  
+002909r 2               sprite_54:
+002909r 2  04 1A 04 04      .byte $04,$1A,$04,$04,$04,$04,$04,$05,$05,$07,$0F,$1F,$3F,$7F,$01,$03
+00290Dr 2  04 04 04 05  
+002911r 2  05 07 0F 1F  
+002919r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+00291Dr 2  05 0F 00 00  
+002921r 2  40 40 2A 7F  
+002929r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+00292Dr 2  05 0F 00 00  
+002931r 2  40 40 2A 7F  
+002939r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+00293Dr 2  05 0F 00 00  
+002941r 2  40 40 2A 7F  
+002949r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+00294Dr 2  05 0F 00 00  
+002951r 2  40 40 2A 7F  
+002959r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+00295Dr 2  05 0F 00 00  
+002961r 2  40 40 2A 7F  
+002969r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$01,$03,$00,$00
+00296Dr 2  05 0F 00 00  
+002971r 2  40 40 2A 7F  
+002979r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$01,$03,$00,$00
+00297Dr 2  05 0F 00 00  
+002981r 2  40 40 2A 7F  
+002989r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$01,$03,$00,$00
+00298Dr 2  05 0F 00 00  
+002991r 2  40 40 2A 7F  
+002999r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$01,$03,$00,$00,$40,$40,$2A,$7F,$01,$03,$00,$00
+00299Dr 2  01 03 00 00  
+0029A1r 2  40 40 2A 7F  
+0029A9r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$01,$03,$00,$00,$40,$40,$0A,$7F,$01,$03,$00,$00
+0029ADr 2  01 03 00 00  
+0029B1r 2  40 40 0A 7F  
+0029B9r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$01,$03,$00,$00,$40,$40,$28,$7F,$00,$00,$00,$00
+0029BDr 2  01 03 00 00  
+0029C1r 2  40 40 28 7F  
+0029C9r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+0029CDr 2  05 0F 00 00  
+0029D1r 2  40 40 2A 7F  
+0029D9r 2  00 00 20 60      .byte $00,$00,$20,$60,$01,$03,$00,$00,$00,$00,$20,$60,$01,$03,$00,$00
+0029DDr 2  01 03 00 00  
+0029E1r 2  00 00 20 60  
+0029E9r 2               sprite_55:
+0029E9r 2  05 1A 05 05      .byte $05,$1A,$05,$05,$05,$05,$05,$05,$06,$03,$07,$0F,$1F,$3F,$7F,$01
+0029EDr 2  05 05 05 05  
+0029F1r 2  06 03 07 0F  
+0029F9r 2  00 00 20 60      .byte $00,$00,$20,$60,$55,$7F,$00,$01,$00,$00,$00,$00,$20,$60,$55,$7F
+0029FDr 2  55 7F 00 01  
+002A01r 2  00 00 00 00  
+002A09r 2  00 01 00 00      .byte $00,$01,$00,$00,$00,$00,$20,$60,$55,$7F,$02,$07,$00,$00,$00,$00
+002A0Dr 2  00 00 20 60  
+002A11r 2  55 7F 02 07  
+002A19r 2  20 60 55 7F      .byte $20,$60,$55,$7F,$02,$07,$00,$00,$00,$00,$20,$60,$54,$7F,$00,$01
+002A1Dr 2  02 07 00 00  
+002A21r 2  00 00 20 60  
+002A29r 2  00 00 00 00      .byte $00,$00,$00,$00,$20,$60,$55,$7F,$02,$07,$00,$00,$00,$00,$20,$60
+002A2Dr 2  20 60 55 7F  
+002A31r 2  02 07 00 00  
+002A39r 2  55 7F 02 07      .byte $55,$7F,$02,$07,$00,$00,$00,$00,$20,$60,$55,$7F,$02,$07,$00,$00
+002A3Dr 2  00 00 00 00  
+002A41r 2  20 60 55 7F  
+002A49r 2  00 00 20 60      .byte $00,$00,$20,$60,$51,$7F,$02,$07,$00,$00,$00,$00,$20,$60,$55,$7F
+002A4Dr 2  51 7F 02 07  
+002A51r 2  00 00 00 00  
+002A59r 2  02 07 00 00      .byte $02,$07,$00,$00,$00,$00,$20,$60,$55,$7F,$02,$07,$00,$00,$00,$00
+002A5Dr 2  00 00 20 60  
+002A61r 2  55 7F 02 07  
+002A69r 2  20 60 55 7F      .byte $20,$60,$55,$7F,$02,$07,$00,$00,$00,$00,$20,$60,$55,$7F,$02,$07
+002A6Dr 2  02 07 00 00  
+002A71r 2  00 00 20 60  
+002A79r 2  00 00 00 00      .byte $00,$00,$00,$00,$20,$60,$55,$7F,$02,$07,$00,$00,$00,$00,$08,$78
+002A7Dr 2  20 60 55 7F  
+002A81r 2  02 07 00 00  
+002A89r 2  51 7F 00 01      .byte $51,$7F,$00,$01,$00,$00,$00,$00,$28,$78,$51,$7F,$00,$01,$00,$00
+002A8Dr 2  00 00 00 00  
+002A91r 2  28 78 51 7F  
+002A99r 2  00 00 28 78      .byte $00,$00,$28,$78,$55,$7F,$02,$07,$00,$00,$00,$00,$20,$60,$55,$7F
+002A9Dr 2  55 7F 02 07  
+002AA1r 2  00 00 00 00  
+002AA9r 2  02 07 00 00      .byte $02,$07,$00,$00,$00,$00,$28,$78,$55,$7F,$02,$07,$00,$00,$00,$00
+002AADr 2  00 00 28 78  
+002AB1r 2  55 7F 02 07  
+002AB9r 2  28 78 51 7F      .byte $28,$78,$51,$7F,$00,$01,$00,$00,$00,$00,$2A,$7E,$54,$7F,$00,$01
+002ABDr 2  00 01 00 00  
+002AC1r 2  00 00 2A 7E  
+002AC9r 2  00 00 00 00      .byte $00,$00,$00,$00,$0A,$7E,$54,$7F,$00,$01,$00,$00,$00,$00,$2A,$7E
+002ACDr 2  0A 7E 54 7F  
+002AD1r 2  00 01 00 00  
+002AD9r 2  14 3F 00 00      .byte $14,$3F,$00,$00,$00,$00,$00,$00,$28,$78,$54,$7F,$00,$01,$00,$00
+002ADDr 2  00 00 00 00  
+002AE1r 2  28 78 54 7F  
+002AE9r 2  00 00 28 78      .byte $00,$00,$28,$78,$55,$7F,$02,$07,$00,$00,$00,$00,$28,$78,$55,$7F
+002AEDr 2  55 7F 02 07  
+002AF1r 2  00 00 00 00  
+002AF9r 2  02 07 00 00      .byte $02,$07,$00,$00
+002AFDr 2               sprite_56:
+002AFDr 2  05 1A 05 05      .byte $05,$1A,$05,$05,$05,$05,$05,$05,$06,$03,$07,$0F,$1F,$3F,$7F,$01
+002B01r 2  05 05 05 05  
+002B05r 2  06 03 07 0F  
+002B0Dr 2  00 00 28 78      .byte $00,$00,$28,$78,$05,$0F,$00,$00,$00,$00,$00,$00,$2A,$7E,$05,$0F
+002B11r 2  05 0F 00 00  
+002B15r 2  00 00 00 00  
+002B1Dr 2  00 00 00 00      .byte $00,$00,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00,$00,$00,$40,$40
+002B21r 2  40 40 2A 7F  
+002B25r 2  05 0F 00 00  
+002B2Dr 2  2A 7F 05 0F      .byte $2A,$7F,$05,$0F,$00,$00,$00,$00,$00,$00,$2A,$7E,$05,$0F,$00,$00
+002B31r 2  00 00 00 00  
+002B35r 2  00 00 2A 7E  
+002B3Dr 2  00 00 40 40      .byte $00,$00,$40,$40,$2A,$7F,$04,$0F,$00,$00,$00,$00,$40,$40,$2A,$7F
+002B41r 2  2A 7F 04 0F  
+002B45r 2  00 00 00 00  
+002B4Dr 2  04 0F 00 00      .byte $04,$0F,$00,$00,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00,$00,$00
+002B51r 2  00 00 40 40  
+002B55r 2  2A 7F 05 0F  
+002B5Dr 2  40 40 0A 7F      .byte $40,$40,$0A,$7F,$05,$0F,$00,$00,$00,$00,$40,$40,$2A,$7F,$05,$0F
+002B61r 2  05 0F 00 00  
+002B65r 2  00 00 40 40  
+002B6Dr 2  00 00 00 00      .byte $00,$00,$00,$00,$40,$40,$2A,$7F,$15,$3F,$00,$00,$00,$00,$40,$40
+002B71r 2  40 40 2A 7F  
+002B75r 2  15 3F 00 00  
+002B7Dr 2  2A 7F 15 3F      .byte $2A,$7F,$15,$3F,$00,$00,$00,$00,$40,$40,$2A,$7F,$15,$3F,$00,$00
+002B81r 2  00 00 00 00  
+002B85r 2  40 40 2A 7F  
+002B8Dr 2  00 00 40 40      .byte $00,$00,$40,$40,$0A,$7F,$15,$3F,$00,$00,$00,$00,$00,$00,$0A,$7E
+002B91r 2  0A 7F 15 3F  
+002B95r 2  00 00 00 00  
+002B9Dr 2  15 3F 00 00      .byte $15,$3F,$00,$00,$00,$00,$40,$40,$2A,$7F,$55,$7F,$00,$01,$00,$00
+002BA1r 2  00 00 40 40  
+002BA5r 2  2A 7F 55 7F  
+002BADr 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$55,$7F,$00,$01,$00,$00,$40,$40,$2A,$7F,$15,$3F
+002BB1r 2  55 7F 00 01  
+002BB5r 2  00 00 40 40  
+002BBDr 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$0A,$7E,$55,$7F,$00,$01,$00,$00,$00,$00
+002BC1r 2  00 00 0A 7E  
+002BC5r 2  55 7F 00 01  
+002BCDr 2  2A 7E 54 7F      .byte $2A,$7E,$54,$7F,$00,$01,$00,$00,$00,$00,$2A,$7E,$50,$7F,$00,$01
+002BD1r 2  00 01 00 00  
+002BD5r 2  00 00 2A 7E  
+002BDDr 2  00 00 00 00      .byte $00,$00,$00,$00,$2A,$7E,$50,$7F,$02,$07,$00,$00,$00,$00,$28,$78
+002BE1r 2  2A 7E 50 7F  
+002BE5r 2  02 07 00 00  
+002BEDr 2  50 7F 02 07      .byte $50,$7F,$02,$07,$00,$00,$00,$00,$2A,$7E,$50,$7F,$00,$01,$00,$00
+002BF1r 2  00 00 00 00  
+002BF5r 2  2A 7E 50 7F  
+002BFDr 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$54,$7F,$00,$01,$00,$00,$40,$40,$2A,$7F,$14,$3F
+002C01r 2  54 7F 00 01  
+002C05r 2  00 00 40 40  
+002C0Dr 2  00 00 00 00      .byte $00,$00,$00,$00
+002C11r 2               sprite_57:
+002C11r 2  04 1A 04 04      .byte $04,$1A,$04,$04,$04,$04,$04,$05,$05,$07,$0F,$1F,$3F,$7F,$01,$03
+002C15r 2  04 04 04 05  
+002C19r 2  05 07 0F 1F  
+002C21r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+002C25r 2  05 0F 00 00  
+002C29r 2  40 40 2A 7F  
+002C31r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+002C35r 2  05 0F 00 00  
+002C39r 2  40 40 2A 7F  
+002C41r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+002C45r 2  05 0F 00 00  
+002C49r 2  40 40 2A 7F  
+002C51r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+002C55r 2  05 0F 00 00  
+002C59r 2  40 40 2A 7F  
+002C61r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+002C65r 2  05 0F 00 00  
+002C69r 2  40 40 2A 7F  
+002C71r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$01,$03,$00,$00
+002C75r 2  05 0F 00 00  
+002C79r 2  40 40 2A 7F  
+002C81r 2  40 40 22 7F      .byte $40,$40,$22,$7F,$05,$0F,$00,$00,$00,$00,$2A,$7E,$01,$03,$00,$00
+002C85r 2  05 0F 00 00  
+002C89r 2  00 00 2A 7E  
+002C91r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$05,$0F,$00,$00,$00,$00,$2A,$7E,$01,$03,$00,$00
+002C95r 2  05 0F 00 00  
+002C99r 2  00 00 2A 7E  
+002CA1r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$40,$40,$2A,$7F,$05,$0F,$00,$00
+002CA5r 2  05 0F 00 00  
+002CA9r 2  40 40 2A 7F  
+002CB1r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$05,$0F,$00,$00,$00,$00,$22,$7E,$01,$03,$00,$00
+002CB5r 2  05 0F 00 00  
+002CB9r 2  00 00 22 7E  
+002CC1r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$01,$03,$00,$00,$40,$40,$2A,$7F,$01,$03,$00,$00
+002CC5r 2  01 03 00 00  
+002CC9r 2  40 40 2A 7F  
+002CD1r 2  40 40 2A 7F      .byte $40,$40,$2A,$7F,$01,$03,$00,$00,$00,$00,$2A,$7E,$05,$0F,$00,$00
+002CD5r 2  01 03 00 00  
+002CD9r 2  00 00 2A 7E  
+002CE1r 2  00 00 20 60      .byte $00,$00,$20,$60,$05,$0F,$00,$00,$00,$00,$20,$60,$05,$0F,$00,$00
+002CE5r 2  05 0F 00 00  
+002CE9r 2  00 00 20 60  
+002CF1r 2               sprite_58:
+002CF1r 2  06 10 06 06      .byte $06,$10,$06,$06,$06,$06,$06,$06,$06,$01,$03,$07,$0F,$1F,$3F,$7F
+002CF5r 2  06 06 06 06  
+002CF9r 2  06 01 03 07  
+002D01r 2  00 00 20 60      .byte $00,$00,$20,$60,$55,$7F,$02,$07,$00,$00,$00,$00,$00,$00,$20,$60
+002D05r 2  55 7F 02 07  
+002D09r 2  00 00 00 00  
+002D11r 2  55 7F 0A 1F      .byte $55,$7F,$0A,$1F,$00,$00,$00,$00,$00,$00,$28,$78,$55,$7F,$0A,$1F
+002D15r 2  00 00 00 00  
+002D19r 2  00 00 28 78  
+002D21r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$28,$78,$55,$7F,$2A,$7F,$00,$00,$00,$00
+002D25r 2  00 00 28 78  
+002D29r 2  55 7F 2A 7F  
+002D31r 2  00 00 28 78      .byte $00,$00,$28,$78,$55,$7F,$2A,$7F,$00,$00,$00,$00,$00,$00,$28,$78
+002D35r 2  55 7F 2A 7F  
+002D39r 2  00 00 00 00  
+002D41r 2  55 7F 2A 7F      .byte $55,$7F,$2A,$7F,$00,$00,$00,$00,$00,$00,$28,$78,$01,$7F,$2A,$7F
+002D45r 2  00 00 00 00  
+002D49r 2  00 00 28 78  
+002D51r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$28,$78,$01,$7F,$0A,$1F,$00,$00,$00,$00
+002D55r 2  00 00 28 78  
+002D59r 2  01 7F 0A 1F  
+002D61r 2  00 00 20 60      .byte $00,$00,$20,$60,$45,$7F,$02,$07,$00,$00,$00,$00,$00,$00,$20,$60
+002D65r 2  45 7F 02 07  
+002D69r 2  00 00 00 00  
+002D71r 2  55 7F 02 07      .byte $55,$7F,$02,$07,$00,$00,$00,$00,$00,$00,$00,$00,$55,$7F,$02,$07
+002D75r 2  00 00 00 00  
+002D79r 2  00 00 00 00  
+002D81r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$20,$60,$55,$7F,$02,$07,$00,$00,$00,$00
+002D85r 2  00 00 20 60  
+002D89r 2  55 7F 02 07  
+002D91r 2  00 00 20 60      .byte $00,$00,$20,$60,$55,$7F,$0A,$1F,$00,$00,$00,$00,$00,$00,$00,$00
+002D95r 2  55 7F 0A 1F  
+002D99r 2  00 00 00 00  
+002DA1r 2  41 7F 02 07      .byte $41,$7F,$02,$07,$00,$00,$00,$00,$00,$00,$28,$78,$01,$7F,$0A,$1F
+002DA5r 2  00 00 00 00  
+002DA9r 2  00 00 28 78  
+002DB1r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$28,$78,$01,$7F,$0A,$1F,$00,$00,$00,$00
+002DB5r 2  00 00 28 78  
+002DB9r 2  01 7F 0A 1F  
+002DC1r 2               sprite_59:
+002DC1r 2  06 10 06 06      .byte $06,$10,$06,$06,$06,$06,$06,$06,$06,$01,$03,$07,$0F,$1F,$3F,$7F
+002DC5r 2  06 06 06 06  
+002DC9r 2  06 01 03 07  
+002DD1r 2  00 00 20 60      .byte $00,$00,$20,$60,$55,$7F,$00,$01,$00,$00,$00,$00,$00,$00,$20,$60
+002DD5r 2  55 7F 00 01  
+002DD9r 2  00 00 00 00  
+002DE1r 2  55 7F 00 01      .byte $55,$7F,$00,$01,$00,$00,$00,$00,$00,$00,$20,$60,$55,$7F,$00,$01
+002DE5r 2  00 00 00 00  
+002DE9r 2  00 00 20 60  
+002DF1r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$20,$60,$55,$7F,$02,$07,$00,$00,$00,$00
+002DF5r 2  00 00 20 60  
+002DF9r 2  55 7F 02 07  
+002E01r 2  00 00 20 60      .byte $00,$00,$20,$60,$55,$7F,$0A,$1F,$00,$00,$00,$00,$00,$00,$00,$00
+002E05r 2  55 7F 0A 1F  
+002E09r 2  00 00 00 00  
+002E11r 2  55 7F 0A 1F      .byte $55,$7F,$0A,$1F,$00,$00,$00,$00,$00,$00,$00,$00,$40,$40,$0A,$1F
+002E15r 2  00 00 00 00  
+002E19r 2  00 00 00 00  
+002E21r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$00,$00,$50,$70,$0A,$1F,$00,$00,$00,$00
+002E25r 2  00 00 00 00  
+002E29r 2  50 70 0A 1F  
+002E31r 2  00 00 00 00      .byte $00,$00,$00,$00,$54,$7C,$0A,$1F,$00,$00,$00,$00,$00,$00,$00,$00
+002E35r 2  54 7C 0A 1F  
+002E39r 2  00 00 00 00  
+002E41r 2  55 7F 0A 1F      .byte $55,$7F,$0A,$1F,$00,$00,$00,$00,$00,$00,$20,$60,$55,$7F,$02,$07
+002E45r 2  00 00 00 00  
+002E49r 2  00 00 20 60  
+002E51r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$20,$60,$15,$3F,$00,$00,$00,$00,$00,$00
+002E55r 2  00 00 20 60  
+002E59r 2  15 3F 00 00  
+002E61r 2  00 00 20 60      .byte $00,$00,$20,$60,$01,$03,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+002E65r 2  01 03 00 00  
+002E69r 2  00 00 00 00  
+002E71r 2  05 0F 00 00      .byte $05,$0F,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$15,$3F,$00,$00
+002E75r 2  00 00 00 00  
+002E79r 2  00 00 00 00  
+002E81r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$00,$00,$15,$3F,$00,$00,$00,$00,$00,$00
+002E85r 2  00 00 00 00  
+002E89r 2  15 3F 00 00  
+002E91r 2               sprite_60:
+002E91r 2  05 10 05 05      .byte $05,$10,$05,$05,$05,$05,$05,$05,$06,$03,$07,$0F,$1F,$3F,$7F,$01
+002E95r 2  05 05 05 05  
+002E99r 2  06 03 07 0F  
+002EA1r 2  00 00 00 00      .byte $00,$00,$00,$00,$55,$7F,$02,$07,$00,$00,$00,$00,$00,$00,$55,$7F
+002EA5r 2  55 7F 02 07  
+002EA9r 2  00 00 00 00  
+002EB1r 2  02 07 00 00      .byte $02,$07,$00,$00,$00,$00,$20,$60,$55,$7F,$02,$07,$00,$00,$00,$00
+002EB5r 2  00 00 20 60  
+002EB9r 2  55 7F 02 07  
+002EC1r 2  28 78 55 7F      .byte $28,$78,$55,$7F,$02,$07,$00,$00,$00,$00,$28,$78,$55,$7F,$02,$07
+002EC5r 2  02 07 00 00  
+002EC9r 2  00 00 28 78  
+002ED1r 2  00 00 00 00      .byte $00,$00,$00,$00,$28,$78,$55,$7F,$00,$01,$00,$00,$00,$00,$28,$78
+002ED5r 2  28 78 55 7F  
+002ED9r 2  00 01 00 00  
+002EE1r 2  01 03 00 00      .byte $01,$03,$00,$00,$00,$00,$00,$00,$28,$78,$05,$0F,$00,$00,$00,$00
+002EE5r 2  00 00 00 00  
+002EE9r 2  28 78 05 0F  
+002EF1r 2  00 00 28 78      .byte $00,$00,$28,$78,$15,$3F,$00,$00,$00,$00,$00,$00,$20,$60,$54,$7F
+002EF5r 2  15 3F 00 00  
+002EF9r 2  00 00 00 00  
+002F01r 2  00 01 00 00      .byte $00,$01,$00,$00,$00,$00,$20,$60,$55,$7F,$00,$01,$00,$00,$00,$00
+002F05r 2  00 00 20 60  
+002F09r 2  55 7F 00 01  
+002F11r 2  00 00 54 7C      .byte $00,$00,$54,$7C,$02,$07,$00,$00,$00,$00,$00,$00,$50,$70,$02,$07
+002F15r 2  02 07 00 00  
+002F19r 2  00 00 00 00  
+002F21r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$50,$70,$00,$01,$00,$00,$00,$00,$00,$00
+002F25r 2  00 00 50 70  
+002F29r 2  00 01 00 00  
+002F31r 2  55 7F 00 01      .byte $55,$7F,$00,$01,$00,$00,$00,$00,$00,$00,$15,$3F,$00,$00,$00,$00
+002F35r 2  00 00 00 00  
+002F39r 2  00 00 15 3F  
+002F41r 2               sprite_61:
+002F41r 2  06 10 06 06      .byte $06,$10,$06,$06,$06,$06,$06,$06,$06,$01,$03,$07,$0F,$1F,$3F,$7F
+002F45r 2  06 06 06 06  
+002F49r 2  06 01 03 07  
+002F51r 2  00 00 20 60      .byte $00,$00,$20,$60,$55,$7F,$02,$07,$00,$00,$00,$00,$00,$00,$28,$78
+002F55r 2  55 7F 02 07  
+002F59r 2  00 00 00 00  
+002F61r 2  55 7F 0A 1F      .byte $55,$7F,$0A,$1F,$00,$00,$00,$00,$00,$00,$28,$78,$51,$7F,$0A,$1F
+002F65r 2  00 00 00 00  
+002F69r 2  00 00 28 78  
+002F71r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$2A,$7E,$55,$7F,$0A,$1F,$00,$00,$00,$00
+002F75r 2  00 00 2A 7E  
+002F79r 2  55 7F 0A 1F  
+002F81r 2  00 00 2A 7E      .byte $00,$00,$2A,$7E,$55,$7F,$2A,$7F,$00,$00,$00,$00,$00,$00,$28,$78
+002F85r 2  55 7F 2A 7F  
+002F89r 2  00 00 00 00  
+002F91r 2  55 7F 2A 7F      .byte $55,$7F,$2A,$7F,$00,$00,$00,$00,$00,$00,$2A,$7E,$45,$7F,$22,$7F
+002F95r 2  00 00 00 00  
+002F99r 2  00 00 2A 7E  
+002FA1r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$2A,$7E,$41,$7F,$0A,$1F,$00,$00,$00,$00
+002FA5r 2  00 00 2A 7E  
+002FA9r 2  41 7F 0A 1F  
+002FB1r 2  00 00 28 78      .byte $00,$00,$28,$78,$01,$7F,$2A,$7F,$00,$00,$00,$00,$00,$00,$28,$78
+002FB5r 2  01 7F 2A 7F  
+002FB9r 2  00 00 00 00  
+002FC1r 2  41 7F 0A 1F      .byte $41,$7F,$0A,$1F,$00,$00,$00,$00,$00,$00,$20,$60,$44,$7F,$0A,$1F
+002FC5r 2  00 00 00 00  
+002FC9r 2  00 00 20 60  
+002FD1r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$20,$60,$55,$7F,$02,$07,$00,$00,$00,$00
+002FD5r 2  00 00 20 60  
+002FD9r 2  55 7F 02 07  
+002FE1r 2  00 00 20 60      .byte $00,$00,$20,$60,$55,$7F,$02,$07,$00,$00,$00,$00,$00,$00,$08,$78
+002FE5r 2  55 7F 02 07  
+002FE9r 2  00 00 00 00  
+002FF1r 2  00 7F 0A 1F      .byte $00,$7F,$0A,$1F,$00,$00,$00,$00,$00,$00,$28,$78,$41,$7F,$0A,$1F
+002FF5r 2  00 00 00 00  
+002FF9r 2  00 00 28 78  
+003001r 2  00 00 00 00      .byte $00,$00,$00,$00,$00,$00,$28,$78,$41,$7F,$0A,$1F,$00,$00,$00,$00
+003005r 2  00 00 28 78  
+003009r 2  41 7F 0A 1F  
+003011r 2               sprite_64:
+003011r 2  02 11 02 02      .byte $02,$11,$02,$02,$02,$03,$03,$03,$03,$1F,$3F,$7F,$01,$03,$07,$0F
+003015r 2  02 03 03 03  
+003019r 2  03 1F 3F 7F  
+003021r 2  00 00 10 18      .byte $00,$00,$10,$18,$00,$00,$14,$1E,$00,$00,$14,$1E,$00,$00,$14,$1E
+003025r 2  00 00 14 1E  
+003029r 2  00 00 14 1E  
+003031r 2  00 00 14 1E      .byte $00,$00,$14,$1E,$00,$00,$14,$1E,$00,$00,$14,$1E,$00,$00,$14,$1E
+003035r 2  00 00 14 1E  
+003039r 2  00 00 14 1E  
+003041r 2  00 00 14 1E      .byte $00,$00,$14,$1E,$00,$00,$04,$06,$00,$00,$14,$1E,$00,$00,$14,$1E
+003045r 2  00 00 04 06  
+003049r 2  00 00 14 1E  
+003051r 2  00 00 14 1E      .byte $00,$00,$14,$1E,$00,$00,$14,$1E,$00,$00,$14,$1E,$00,$00,$14,$1E
+003055r 2  00 00 14 1E  
+003059r 2  00 00 14 1E  
+003061r 2  00 00 14 1E      .byte $00,$00,$14,$1E
+003065r 2               sprite_65:
+003065r 2  02 10 02 02      .byte $02,$10,$02,$02,$02,$03,$03,$03,$03,$1F,$3F,$7F,$01,$03,$07,$0F
+003069r 2  02 03 03 03  
+00306Dr 2  03 1F 3F 7F  
+003075r 2  2A 7F 01 01      .byte $2A,$7F,$01,$01,$2A,$7F,$05,$07,$2A,$7F,$05,$07,$2A,$7F,$05,$07
+003079r 2  2A 7F 05 07  
+00307Dr 2  2A 7F 05 07  
+003085r 2  2A 7F 05 07      .byte $2A,$7F,$05,$07,$2A,$7F,$05,$07,$2A,$7F,$05,$07,$2A,$7F,$05,$07
+003089r 2  2A 7F 05 07  
+00308Dr 2  2A 7F 05 07  
+003095r 2  2A 7F 05 07      .byte $2A,$7F,$05,$07,$2A,$7F,$05,$07,$2A,$7F,$01,$01,$2A,$7F,$01,$01
+003099r 2  2A 7F 05 07  
+00309Dr 2  2A 7F 01 01  
+0030A5r 2  2A 7F 05 07      .byte $2A,$7F,$05,$07,$02,$7F,$05,$07,$02,$7F,$05,$07,$02,$7F,$05,$07
+0030A9r 2  02 7F 05 07  
+0030ADr 2  02 7F 05 07  
+0030B5r 2               sprite_67:
+0030B5r 2  02 11 02 02      .byte $02,$11,$02,$02,$02,$03,$03,$03,$03,$1F,$3F,$7F,$01,$03,$07,$0F
+0030B9r 2  02 03 03 03  
+0030BDr 2  03 1F 3F 7F  
+0030C5r 2  02 03 00 00      .byte $02,$03,$00,$00,$02,$03,$00,$00,$02,$03,$00,$00,$0A,$0F,$00,$00
+0030C9r 2  02 03 00 00  
+0030CDr 2  02 03 00 00  
+0030D5r 2  0A 0F 00 00      .byte $0A,$0F,$00,$00,$0A,$0F,$00,$00,$0A,$0F,$00,$00,$0A,$0F,$00,$00
+0030D9r 2  0A 0F 00 00  
+0030DDr 2  0A 0F 00 00  
+0030E5r 2  0A 0F 00 00      .byte $0A,$0F,$00,$00,$0A,$0F,$00,$00,$0A,$0F,$00,$00,$02,$03,$00,$00
+0030E9r 2  0A 0F 00 00  
+0030EDr 2  0A 0F 00 00  
+0030F5r 2  0A 0F 00 00      .byte $0A,$0F,$00,$00,$0A,$0F,$00,$00,$02,$03,$00,$00,$02,$03,$00,$00
+0030F9r 2  0A 0F 00 00  
+0030FDr 2  02 03 00 00  
+003105r 2  02 03 00 00      .byte $02,$03,$00,$00
+003109r 2               
+003109r 1               

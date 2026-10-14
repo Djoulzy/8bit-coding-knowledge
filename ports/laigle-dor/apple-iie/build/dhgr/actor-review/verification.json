@@ -1,0 +1,182 @@
+{
+  "display": "sample-aware digital approximation",
+  "gameplay_sequence": false,
+  "method": "executed NMOS compositor/presentation with explicit frame-ID fixtures",
+  "physical_hardware": "not tested",
+  "terrain_banks_unchanged": true,
+  "unchanged_face_tunic_hand_resource_rows": 142,
+  "variants": {
+    "before": {
+      "frames": [
+        {
+          "file": "before-00.png",
+          "frame": 0,
+          "page": 0
+        },
+        {
+          "file": "before-01.png",
+          "frame": 1,
+          "page": 1
+        },
+        {
+          "file": "before-02.png",
+          "frame": 2,
+          "page": 0
+        },
+        {
+          "file": "before-03.png",
+          "frame": 3,
+          "page": 1
+        },
+        {
+          "file": "before-04.png",
+          "frame": 4,
+          "page": 0
+        },
+        {
+          "file": "before-05.png",
+          "frame": 5,
+          "page": 1
+        },
+        {
+          "file": "before-06.png",
+          "frame": 6,
+          "page": 0
+        },
+        {
+          "file": "before-07.png",
+          "frame": 7,
+          "page": 1
+        },
+        {
+          "file": "before-08.png",
+          "frame": 8,
+          "page": 0
+        },
+        {
+          "file": "before-09.png",
+          "frame": 9,
+          "page": 1
+        },
+        {
+          "file": "before-10.png",
+          "frame": 10,
+          "page": 0
+        },
+        {
+          "file": "before-11.png",
+          "frame": 11,
+          "page": 1
+        },
+        {
+          "file": "before-12.png",
+          "frame": 12,
+          "page": 0
+        },
+        {
+          "file": "before-13.png",
+          "frame": 13,
+          "page": 1
+        },
+        {
+          "file": "before-14.png",
+          "frame": 14,
+          "page": 0
+        },
+        {
+          "file": "before-15.png",
+          "frame": 15,
+          "page": 1
+        }
+      ],
+      "program_sha256": "924d15905bf08aef5709ff30d9c7d68b0ecc6d2b034ae67c863680d260b7ba43",
+      "visible_write_violations": 0
+    },
+    "current": {
+      "frames": [
+        {
+          "file": "current-00.png",
+          "frame": 0,
+          "page": 0
+        },
+        {
+          "file": "current-01.png",
+          "frame": 1,
+          "page": 1
+        },
+        {
+          "file": "current-02.png",
+          "frame": 2,
+          "page": 0
+        },
+        {
+          "file": "current-03.png",
+          "frame": 3,
+          "page": 1
+        },
+        {
+          "file": "current-04.png",
+          "frame": 4,
+          "page": 0
+        },
+        {
+          "file": "current-05.png",
+          "frame": 5,
+          "page": 1
+        },
+        {
+          "file": "current-06.png",
+          "frame": 6,
+          "page": 0
+        },
+        {
+          "file": "current-07.png",
+          "frame": 7,
+          "page": 1
+        },
+        {
+          "file": "current-08.png",
+          "frame": 8,
+          "page": 0
+        },
+        {
+          "file": "current-09.png",
+          "frame": 9,
+          "page": 1
+        },
+        {
+          "file": "current-10.png",
+          "frame": 10,
+          "page": 0
+        },
+        {
+          "file": "current-11.png",
+          "frame": 11,
+          "page": 1
+        },
+        {
+          "file": "current-12.png",
+          "frame": 12,
+          "page": 0
+        },
+        {
+          "file": "current-13.png",
+          "frame": 13,
+          "page": 1
+        },
+        {
+          "file": "current-14.png",
+          "frame": 14,
+          "page": 0
+        },
+        {
+          "file": "current-15.png",
+          "frame": 15,
+          "page": 1
+        }
+      ],
+      "program_sha256": "e4e718ff5f9adff2bdec8fb0fe566539ba3c93d0ca6560016f8a61767ac47578",
+      "visible_write_violations": 0
+    }
+  }
+}

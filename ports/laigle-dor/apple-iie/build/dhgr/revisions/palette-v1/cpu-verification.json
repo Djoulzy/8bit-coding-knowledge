@@ -1,0 +1,14 @@
+{
+  "boot_instructions": 1048168,
+  "checked_collision_cases": 360,
+  "checked_sprite_phase_edge_cases": 460,
+  "coverage": "subset harness; not real hardware or original Oric gameplay",
+  "hidden_frames_checked": 60,
+  "largest_distinct_frame_graphics_write_set": 765,
+  "method": "executed py65 NMOS CPU, stock Disk II BOOT0, simplified device bus",
+  "minimum_stack_pointer": 245,
+  "page_flip_sync": "fresh blank edge in simplified NTSC RDVBLBAR model",
+  "program_sha256": "924d15905bf08aef5709ff30d9c7d68b0ecc6d2b034ae67c863680d260b7ba43",
+  "runtime_speaker_accesses": 0,
+  "video_profile": "dhgr"
+}

@@ -1,0 +1,21 @@
+{
+  "success": true,
+  "trace": [
+    {
+      "key": 82,
+      "pose": 0,
+      "page": 64
+    },
+    {
+      "key": 65,
+      "pose": 4,
+      "page": 32
+    },
+    {
+      "key": 82,
+      "pose": 0,
+      "page": 64
+    }
+  ],
+  "method": "GET HTML, POST keys, GET executed frames; browser not automated"
+}

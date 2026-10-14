@@ -1,0 +1,40 @@
+{
+  "boot": "ejected previous media, reinserted regenerated .do in slot 6/drive 1; Boot/cold restart; observed final actor application",
+  "captures": [
+    {
+      "file": "build/dhgr/virtualii-actor-front-y180.png",
+      "monitor": "color",
+      "pose": "standing front",
+      "sha256": "c6cefe5ec5d21f5044f8a32026fa51569b4ed4cb9f9f0025c68e59228bdd9826",
+      "x": 19,
+      "y": 180
+    },
+    {
+      "file": "build/dhgr/virtualii-actor-left-y180.png",
+      "monitor": "color",
+      "pose": "standing left",
+      "sha256": "e0b175b141240821547d2ef150782aa7917faa9960b73cb58054b1fbfd28d860",
+      "x": 19,
+      "y": 180
+    }
+  ],
+  "complete_loaded_payload_hash_in_emulator": "not measured; full payload comparison covered by functional CPU tests",
+  "configuration_evidence": "retained previous test profile; no configuration changes",
+  "cpu": "MOS/Synertec 6502, standard 1 MHz",
+  "disk_sha256": "4dce986dd362f60c2660239178f5c4cb2c5b9a699019e2baedfc255b1a64a739",
+  "emulator": "Virtual II 13.3",
+  "fps": "not measured",
+  "method": "native UI test in retained separate Virtual II session; two PNGs exported by emulator",
+  "model": "Apple //e Rev-B emulation",
+  "observed_controls": [
+    "N: walking/floor stop",
+    "space: stop/stand",
+    "J: turn left",
+    "A: left-facing crouch"
+  ],
+  "observed_palette": "uniform yellow hair, dark-blue trousers and brown boots; retouched pink left profile; unchanged room material bodies; composite fringes remain",
+  "physical_hardware": "not tested",
+  "program_sha256": "e4e718ff5f9adff2bdec8fb0fe566539ba3c93d0ca6560016f8a61767ac47578",
+  "ram": "64 KiB main + 64 KiB RamWorks",
+  "rom_sha256": "1fb812584c6633fa16b77b20915986ed1178d1e6fc07a647f7ee8d4e6ab9d40b"
+}

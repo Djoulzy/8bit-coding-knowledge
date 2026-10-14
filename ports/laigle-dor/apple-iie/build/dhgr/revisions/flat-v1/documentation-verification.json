@@ -1,0 +1,174 @@
+{
+  "browser_keyboard_layout": "not automated",
+  "build": {
+    "disk_sha256": "d5f3999b3110386a9293b991fbc5bacc9b114e37ad20db8185286fda448fa9b2",
+    "entry": "$6000",
+    "loaded_end_exclusive": "$9500",
+    "program_bytes": 13518,
+    "program_sha256": "0ca99bc83658649b37af23d82fb75b906ee5abf876cbf57e8f5c86653a653d6a",
+    "tools": {
+      "ca65": "ca65 V2.18 - V2.19",
+      "ld65": "ld65 V2.18 - V2.19"
+    },
+    "video": "mixed DHGR, main+aux, alternating $2000/$4000 frames; baseline $A000",
+    "video_profile": "dhgr"
+  },
+  "comparison": {
+    "color_quality": "not compared with a physical monitor",
+    "frames_compared": 26,
+    "method": "two executed NMOS binaries; functional bus",
+    "success": true,
+    "variants": {
+      "dhgr": {
+        "program_sha256": "0ca99bc83658649b37af23d82fb75b906ee5abf876cbf57e8f5c86653a653d6a",
+        "speaker_accesses": 0,
+        "visible_graphics_writes": 0,
+        "visible_text_writes": 0
+      },
+      "mono": {
+        "program_sha256": "699107ea7a2bc798634fef3f8fa60bf4b5bb8950e42eddabf4f1fe23e0b34720",
+        "speaker_accesses": 0,
+        "visible_graphics_writes": 0,
+        "visible_text_writes": 0
+      }
+    }
+  },
+  "cpu": {
+    "boot_instructions": 1014502,
+    "checked_collision_cases": 360,
+    "checked_sprite_phase_edge_cases": 460,
+    "coverage": "subset harness; not real hardware or original Oric gameplay",
+    "hidden_frames_checked": 60,
+    "largest_distinct_frame_graphics_write_set": 777,
+    "method": "executed py65 NMOS CPU, stock Disk II BOOT0, simplified device bus",
+    "minimum_stack_pointer": 245,
+    "page_flip_sync": "fresh blank edge in simplified NTSC RDVBLBAR model",
+    "program_sha256": "0ca99bc83658649b37af23d82fb75b906ee5abf876cbf57e8f5c86653a653d6a",
+    "runtime_speaker_accesses": 0,
+    "video_profile": "dhgr"
+  },
+  "date": "2026-10-13",
+  "full_apple_emulator": "not tested",
+  "hgr_regressions": {
+    "color": {
+      "program_sha256": "d5bc6af6a0a4e8aaa236c0d92ae06da109fec48e05a3d8e9e65f569bbf870860",
+      "success": true,
+      "tests_run": 33
+    },
+    "mono": {
+      "program_sha256": "699107ea7a2bc798634fef3f8fa60bf4b5bb8950e42eddabf4f1fe23e0b34720",
+      "success": true,
+      "tests_run": 33
+    }
+  },
+  "http": {
+    "method": "GET HTML, POST keys and GET executed PNG frames; browser not automated",
+    "success": true,
+    "trace": [
+      {
+        "key": 82,
+        "page": 32,
+        "pose": 0,
+        "x": 19
+      },
+      {
+        "key": 65,
+        "page": 64,
+        "pose": 4,
+        "x": 19
+      },
+      {
+        "key": 82,
+        "page": 32,
+        "pose": 0,
+        "x": 19
+      },
+      {
+        "key": 21,
+        "page": 64,
+        "pose": 1,
+        "x": 19
+      },
+      {
+        "key": 21,
+        "page": 32,
+        "pose": 1,
+        "x": 21
+      },
+      {
+        "key": 32,
+        "page": 64,
+        "pose": 1,
+        "x": 21
+      },
+      {
+        "key": 82,
+        "page": 32,
+        "pose": 0,
+        "x": 19
+      }
+    ]
+  },
+  "oric_runtime": "not tested",
+  "pixel_workers": {
+    "method": "executed NMOS draw_cell plus safe auxiliary-read workers",
+    "mirrored_application_code": false,
+    "palette_boundary_cases": 480,
+    "program_sha256": "0ca99bc83658649b37af23d82fb75b906ee5abf876cbf57e8f5c86653a653d6a",
+    "ramrd_fetch_pcs": [
+      67,
+      69,
+      76,
+      78
+    ],
+    "real_hardware": "not tested"
+  },
+  "profile": {
+    "milestone": "W06 single-room DHGR experiment",
+    "source": {
+      "conversion": "pair two source horizontal dots into one color cell; same 35-row crop and 165-to-160 vertical map",
+      "oric_rom": "still missing; default room-variation table is 64 provisional zero bytes",
+      "palette": "new Apple port palette; Oric ink/paper ignored"
+    },
+    "target": {
+      "banking": "80STORE and ALTZP off; short RAMRD workers at main ZP $0040-$0051; scoped RAMWRT stores",
+      "baseline": "immutable terrain at main+aux $A000-$BFFF",
+      "compatibility": "requires configured DHGR hardware; no automatic motherboard/card detection",
+      "frame_pages": "main+aux $2000-$3FFF and main+aux $4000-$5FFF",
+      "input_audio_timing": "existing keyboard and silent events; fresh IIe RDVBLBAR edge presentation",
+      "instruction_set": "documented NMOS MOS 6502",
+      "model": "Rev-B-compatible Apple IIe with configured extended 80-column card",
+      "preview": "560x384 digital palette PNG; not native pixel resolution or analog composite simulation",
+      "ram": "64 KiB main plus 64 KiB auxiliary; no language-card RAM used",
+      "text": "four native 80-column rows; compact 40-character HUD placed at left",
+      "video": "standard DHGR, 140x160 independent color cells, 16-color palette"
+    },
+    "validation": "functional CPU/MMU model; physical hardware and full Apple emulator pending"
+  },
+  "real_hardware": "not tested",
+  "reproducibility": {
+    "method": "resource regeneration, assembly, link and boot media rebuilt",
+    "sha256": {
+      "game.bin": "0ca99bc83658649b37af23d82fb75b906ee5abf876cbf57e8f5c86653a653d6a",
+      "laigle-dor.do": "d5f3999b3110386a9293b991fbc5bacc9b114e37ad20db8185286fda448fa9b2",
+      "laigle-dor.nib": "657fe15cb329aa39443bd875215cccd2f0631f03789db3a0c566635ce4a82b01",
+      "resources/generated.inc": "1729cf4d078d2ffbc6571c2ba9d4566ab45047cddd527698187577cddd8a9627",
+      "resources/room12-aux.hgr": "956c03c6c70fdd2609218b89fcad620013c8016edda3c1c6ae71583dfc3ab78f",
+      "resources/room12.hgr": "abf29203cd9f1d83374a6bb70866a75b0dc78a283c2756e96ef8f8cfedd645b6"
+    },
+    "success": true
+  },
+  "status": "analyzed; executed in functional CPU/MMU model",
+  "tests": {
+    "errors": [],
+    "execution": "py65 functional CPU plus independent resource/rule models",
+    "failures": [],
+    "original_oric_runtime": "not tested",
+    "program_sha256": "0ca99bc83658649b37af23d82fb75b906ee5abf876cbf57e8f5c86653a653d6a",
+    "real_apple_hardware": "not tested",
+    "skipped": [],
+    "success": true,
+    "tests_run": 35,
+    "video_profile": "dhgr"
+  }
+}

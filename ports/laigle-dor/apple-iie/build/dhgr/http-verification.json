@@ -1,0 +1,31 @@
+{
+  "success": true,
+  "method": "HTTP HTML/three monitor PNG views; J left turn, A crouch and R reset execute native frames",
+  "program_sha256": "e4e718ff5f9adff2bdec8fb0fe566539ba3c93d0ca6560016f8a61767ac47578",
+  "trace": [
+    {
+      "monitor": "color",
+      "PNG_bytes": 6889
+    },
+    {
+      "monitor": "mono",
+      "PNG_bytes": 7825
+    },
+    {
+      "monitor": "palette",
+      "PNG_bytes": 6818
+    },
+    {
+      "key": 74,
+      "facing": 2
+    },
+    {
+      "key": 65,
+      "pose": 6
+    },
+    {
+      "key": 82,
+      "pose": 0
+    }
+  ]
+}

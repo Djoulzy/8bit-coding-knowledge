@@ -1,0 +1,11 @@
+{
+  "identical": true,
+  "method": "regenerate mixed-HGR assets and reassemble with pinned local tools",
+  "outputs": {
+    "game.bin": "699107ea7a2bc798634fef3f8fa60bf4b5bb8950e42eddabf4f1fe23e0b34720",
+    "laigle-dor.do": "39f1c42a14a3f4e7ba908985eb9f6aaa2981f2f0eded872eedb71ff6dd00eee3",
+    "laigle-dor.nib": "15b4cfd81cc11b5084828e8136d178e806c80b55abf68310ce833a65df56562d",
+    "resources/generated.inc": "9b9bd2e145f9568065a41eb40e353194835b7ce195e8af623b6d3431494fa6eb",
+    "resources/room12.hgr": "541559a3ead66c5eeecfd4e56c4ea7ea8b0a3a4b3e155b28a811bddfaefd77de"
+  }
+}

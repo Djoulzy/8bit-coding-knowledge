@@ -1,0 +1,295 @@
+{
+  "browser_keyboard_layout": "not automated",
+  "build": {
+    "disk_sha256": "0f5b3bb3fca91795fe0d21d90c75d8b459563ceaf2ef7c6d4233f6d47cd5f782",
+    "entry": "$6000",
+    "loaded_end_exclusive": "$9C00",
+    "program_bytes": 15154,
+    "program_sha256": "87f1b65923b05789e380cf95dfc13935831d4205817eb6a1c567195939896fdd",
+    "tools": {
+      "ca65": "ca65 V2.18 - V2.19",
+      "ld65": "ld65 V2.18 - V2.19"
+    },
+    "video": "mixed DHGR, main+aux, alternating $2000/$4000 frames; baseline $A000",
+    "video_profile": "dhgr"
+  },
+  "comparison": {
+    "color_quality": "not compared with a physical monitor",
+    "frames_compared": 26,
+    "method": "two executed NMOS binaries; functional bus",
+    "success": true,
+    "variants": {
+      "dhgr": {
+        "program_sha256": "87f1b65923b05789e380cf95dfc13935831d4205817eb6a1c567195939896fdd",
+        "speaker_accesses": 0,
+        "visible_graphics_writes": 0,
+        "visible_text_writes": 0
+      },
+      "mono": {
+        "program_sha256": "699107ea7a2bc798634fef3f8fa60bf4b5bb8950e42eddabf4f1fe23e0b34720",
+        "speaker_accesses": 0,
+        "visible_graphics_writes": 0,
+        "visible_text_writes": 0
+      }
+    }
+  },
+  "cpu": {
+    "boot_instructions": 1053779,
+    "checked_collision_cases": 360,
+    "checked_sprite_phase_edge_cases": 460,
+    "coverage": "subset harness; not real hardware or original Oric gameplay",
+    "hidden_frames_checked": 60,
+    "largest_distinct_frame_graphics_write_set": 765,
+    "method": "executed py65 NMOS CPU, stock Disk II BOOT0, simplified device bus",
+    "minimum_stack_pointer": 245,
+    "page_flip_sync": "fresh blank edge in simplified NTSC RDVBLBAR model",
+    "program_sha256": "87f1b65923b05789e380cf95dfc13935831d4205817eb6a1c567195939896fdd",
+    "runtime_speaker_accesses": 0,
+    "video_profile": "dhgr"
+  },
+  "date": "2026-10-13",
+  "detail_review": {
+    "display": "digital signal approximation; not Virtual II or a physical CRT capture",
+    "method": "executed old flat, new detail and monochrome binaries; same input/pose",
+    "mixed_pairs_detail_conversion_preserved": 1252,
+    "mixed_pairs_flat_conversion_merged": 1252,
+    "results": {
+      "dhgr-detail": {
+        "page": 0,
+        "program_sha256": "87f1b65923b05789e380cf95dfc13935831d4205817eb6a1c567195939896fdd",
+        "state": {
+          "actor_x": 19,
+          "actor_y": 180,
+          "blocked": 0,
+          "display_page_hi": 32,
+          "door_status": 4,
+          "draw_page_hi": 32,
+          "event_count": 5,
+          "event_head": 5,
+          "event_overflow": 0,
+          "facing": 0,
+          "frame_id": 0,
+          "last_event": 2,
+          "object_status": 0,
+          "pose": 0,
+          "tick_hi": 0,
+          "tick_lo": 5,
+          "walk_phase": 0,
+          "walking": 0
+        },
+        "visible_write_violations": 0
+      },
+      "dhgr-flat": {
+        "page": 0,
+        "program_sha256": "0ca99bc83658649b37af23d82fb75b906ee5abf876cbf57e8f5c86653a653d6a",
+        "state": {
+          "actor_x": 19,
+          "actor_y": 180,
+          "blocked": 0,
+          "display_page_hi": 32,
+          "door_status": 4,
+          "draw_page_hi": 32,
+          "event_count": 5,
+          "event_head": 5,
+          "event_overflow": 0,
+          "facing": 0,
+          "frame_id": 0,
+          "last_event": 2,
+          "object_status": 0,
+          "pose": 0,
+          "tick_hi": 0,
+          "tick_lo": 5,
+          "walk_phase": 0,
+          "walking": 0
+        },
+        "visible_write_violations": 0
+      },
+      "hgr": {
+        "page": 0,
+        "program_sha256": "699107ea7a2bc798634fef3f8fa60bf4b5bb8950e42eddabf4f1fe23e0b34720",
+        "state": {
+          "actor_x": 19,
+          "actor_y": 180,
+          "blocked": 0,
+          "display_page_hi": 32,
+          "door_status": 4,
+          "draw_page_hi": 32,
+          "event_count": 5,
+          "event_head": 5,
+          "event_overflow": 0,
+          "facing": 0,
+          "frame_id": 0,
+          "last_event": 2,
+          "object_status": 0,
+          "pose": 0,
+          "tick_hi": 0,
+          "tick_lo": 5,
+          "walk_phase": 0,
+          "walking": 0
+        },
+        "visible_write_violations": 0
+      }
+    },
+    "source_sprite_ids": [
+      40,
+      41,
+      42,
+      43,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      64,
+      65,
+      67
+    ],
+    "tinted_solid_pairs": 454
+  },
+  "http": {
+    "method": "HTTP GET HTML/three monitor views and POST A/R, executed native frames",
+    "success": true,
+    "trace": [
+      {
+        "PNG_bytes": 7751,
+        "monitor": "color"
+      },
+      {
+        "PNG_bytes": 8782,
+        "monitor": "mono"
+      },
+      {
+        "PNG_bytes": 7451,
+        "monitor": "palette"
+      },
+      {
+        "key": 65,
+        "pose": 4
+      },
+      {
+        "key": 82,
+        "pose": 0
+      }
+    ]
+  },
+  "monochrome_regression": {
+    "errors": [],
+    "execution": "py65 functional CPU plus independent resource/rule models",
+    "failures": [],
+    "original_oric_runtime": "not tested",
+    "program_sha256": "699107ea7a2bc798634fef3f8fa60bf4b5bb8950e42eddabf4f1fe23e0b34720",
+    "real_apple_hardware": "not tested",
+    "skipped": [],
+    "success": true,
+    "tests_run": 35,
+    "video_profile": "mono"
+  },
+  "oric_runtime": "not tested",
+  "pixel_workers": {
+    "method": "executed NMOS draw_cell plus safe auxiliary-read workers",
+    "mirrored_application_code": false,
+    "palette_boundary_cases": 480,
+    "partial_cell_cases": 120,
+    "program_sha256": "87f1b65923b05789e380cf95dfc13935831d4205817eb6a1c567195939896fdd",
+    "ramrd_fetch_pcs": [
+      67,
+      69,
+      76,
+      78
+    ],
+    "real_hardware": "not tested"
+  },
+  "profile": {
+    "milestone": "W06 single-room DHGR experiment",
+    "source": {
+      "conversion": "double each source dot into two DHGR serial samples; retain per-dot opacity; tint solid interiors only; same vertical mapping",
+      "oric_rom": "still missing; default room-variation table is 64 provisional zero bytes",
+      "palette": "new Apple port palette; Oric ink/paper ignored"
+    },
+    "target": {
+      "banking": "80STORE and ALTZP off; short RAMRD workers at main ZP $0040-$0051; scoped RAMWRT stores",
+      "baseline": "immutable terrain at main+aux $A000-$BFFF",
+      "compatibility": "requires configured DHGR hardware; no automatic motherboard/card detection",
+      "frame_pages": "main+aux $2000-$3FFF and main+aux $4000-$5FFF",
+      "input_audio_timing": "existing keyboard and silent events; fresh IIe RDVBLBAR edge presentation",
+      "instruction_set": "documented NMOS MOS 6502",
+      "model": "Rev-B-compatible Apple IIe with configured extended 80-column card",
+      "preview": "560x384 sample-aware digital color approximation; raw-dot monochrome and coarse-palette diagnostic views",
+      "ram": "64 KiB main plus 64 KiB auxiliary; no language-card RAM used",
+      "text": "four native 80-column rows; compact 40-character HUD placed at left",
+      "video": "standard DHGR: 560 serial dots per row; 140 independent color cells; fine source dots retained with interior tinting"
+    },
+    "validation": "functional CPU/MMU tests and Virtual II 13.3 color smoke test; physical hardware pending"
+  },
+  "real_hardware": "not tested",
+  "reproducibility": {
+    "method": "resource regeneration, NMOS assembly, link and disk rebuild",
+    "sha256": {
+      "game.bin": "87f1b65923b05789e380cf95dfc13935831d4205817eb6a1c567195939896fdd",
+      "laigle-dor.do": "0f5b3bb3fca91795fe0d21d90c75d8b459563ceaf2ef7c6d4233f6d47cd5f782",
+      "laigle-dor.nib": "1af0fba71abf73741e4c0d0658d333e48de4e85baf8310f3f7e75a9d1052f4f2",
+      "resources/generated.inc": "f6d30b529a4c76b4b995bdebfc8149b308a4afeda816fefd0f1669642d4c325f",
+      "resources/room12-aux.hgr": "9a71dddc8bffdd45b1788c05f056a3cc89fcdf2ae6fad08215b5799ef57b8916",
+      "resources/room12.hgr": "6568a6486cc224076a4291321d06a091c95e53c6d3f0b33a1726437114b1ce16"
+    },
+    "success": true
+  },
+  "status": "analyzed; functional CPU/MMU tests plus observed Virtual II color output",
+  "tests": {
+    "errors": [],
+    "execution": "py65 functional CPU plus independent resource/rule models",
+    "failures": [],
+    "original_oric_runtime": "not tested",
+    "program_sha256": "87f1b65923b05789e380cf95dfc13935831d4205817eb6a1c567195939896fdd",
+    "real_apple_hardware": "not tested",
+    "skipped": [],
+    "success": true,
+    "tests_run": 38,
+    "video_profile": "dhgr"
+  },
+  "virtualii": {
+    "boot": "mounted slot-6 drive-1 DOS-order disk; Boot/cold restart; observed native application running",
+    "capture": {
+      "file": "build/dhgr/virtualii-detail-y180.png",
+      "monitor": "color",
+      "pose": "standing front",
+      "sha256": "141f1d52a2ab1fe045e2b9fbabc0c535102b1e09804b529302cd6dc6ba38674a",
+      "x": 19,
+      "y": 180
+    },
+    "complete_loaded_payload_hash_in_emulator": "not measured; complete payload comparison is separately covered by functional CPU tests",
+    "cpu": "MOS/Synertec 6502, standard 1 MHz",
+    "disk_sha256": "0f5b3bb3fca91795fe0d21d90c75d8b459563ceaf2ef7c6d4233f6d47cd5f782",
+    "emulator": "Virtual II 13.3",
+    "fps": "not measured",
+    "method": "native UI test in a separate Virtual II session; screenshot exported by emulator",
+    "model": "Apple //e Rev-B emulation",
+    "observed_controls": [
+      "N: continuous movement to y180 and floor stop",
+      "A: crouch (character typed through UI)",
+      "space: stand (character typed through UI)"
+    ],
+    "physical_hardware": "not tested",
+    "program_sha256": "87f1b65923b05789e380cf95dfc13935831d4205817eb6a1c567195939896fdd",
+    "ram": "64 KiB main + 64 KiB RamWorks",
+    "rom_sha256": "1fb812584c6633fa16b77b20915986ed1178d1e6fc07a647f7ee8d4e6ab9d40b",
+    "video_inspector": {
+      "80_columns": true,
+      "double_resolution": true,
+      "hires": true,
+      "mixed_text": true,
+      "page": 2
+    }
+  }
+}

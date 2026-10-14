@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "method": "regenerated resources, assembled, linked and packaged twice",
+  "sha256": {
+    "game.bin": "d5bc6af6a0a4e8aaa236c0d92ae06da109fec48e05a3d8e9e65f569bbf870860",
+    "laigle-dor.do": "7698cfbf93b4c66a3b0b88214ca867a53573f65140d811ceab6dae116de640d7",
+    "laigle-dor.nib": "205e4207c9bbc67c002fa660085759f71a7881293b433d15b3709e4b764d96ab",
+    "resources/room12.hgr": "167e78021346a815723ba1498b4fed0b9bbaa2c591e60c9338349fdea52446d0",
+    "resources/generated.inc": "331c3645214a2f36cef3408b3ebd56c5b40bbac22fb28ae074ee1d1d8c955ca4"
+  }
+}

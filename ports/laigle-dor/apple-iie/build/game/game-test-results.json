@@ -1,0 +1,10 @@
+{
+  "errors": [],
+  "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+  "failures": [],
+  "original_oric_runtime": "not tested",
+  "program_sha256": "1a7d2c6103a970180e56bf1f44a33ada0ee6889678e76553267f80cebbf68c6a",
+  "real_hardware": "not tested",
+  "success": true,
+  "tests_run": 20
+}

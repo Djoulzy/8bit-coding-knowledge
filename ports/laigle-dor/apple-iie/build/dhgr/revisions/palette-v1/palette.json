@@ -1,0 +1,28 @@
+{
+  "description": "Apple port art direction, requested 2026-10-13; not recovered Oric colors",
+  "colors": {
+    "wall": 15,
+    "door": 5,
+    "torch": 8,
+    "decoration": 13,
+    "hair": 13,
+    "skin": 11,
+    "tunic": 12,
+    "trousers": 2
+  },
+  "scene_materials": {
+    "3": "wall", "4": "wall", "5": "door", "7": "door", "8": "door",
+    "14": "torch", "15": "torch", "21": "decoration"
+  },
+  "actor_bands": {
+    "40": [[0, "hair"], [5, "skin"], [12, "tunic"]],
+    "41": [[0, "hair"], [5, "skin"], [13, "tunic"]],
+    "42": [[0, "hair"], [5, "skin"], [13, "tunic"]],
+    "43": [[0, "hair"], [9, "skin"], [12, "tunic"]],
+    "64": [[0, "tunic"], [10, "skin"]],
+    "65": [[0, "tunic"], [11, "skin"]],
+    "67": [[0, "tunic"], [10, "skin"]]
+  },
+  "lower_body_ids": [46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61],
+  "limitations": "Provisional anatomical row bands from decoded atlas geometry; color fringes depend on the monitor. Black source details and per-dot opacity retained. No independent hue guarantee for two-sample marks."
+}

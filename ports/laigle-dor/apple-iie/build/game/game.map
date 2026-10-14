@@ -1,0 +1,54 @@
+Modules list:
+-------------
+game.o:
+    CODE              Offs=000000  Size=00284A  Align=00001  Fill=0000
+    RODATA            Offs=000000  Size=001496  Align=00001  Fill=0000
+    LOWCODE           Offs=000000  Size=000850  Align=00001  Fill=0000
+    AUXREAD           Offs=000000  Size=000012  Align=00001  Fill=0000
+    ASSETS            Offs=000000  Size=003B1E  Align=00001  Fill=0000
+
+
+Segment list:
+-------------
+Name                   Start     End    Size  Align
+----------------------------------------------------
+AUXREAD               000040  000051  000012  00001
+LOWCODE               001400  001C4F  000850  00001
+ASSETS                006000  009B1D  003B1E  00001
+CODE                  006000  008849  00284A  00001
+RODATA                008900  009D95  001496  00001
+
+
+Exports list by name:
+---------------------
+__ASSETS_SIZE__           003B1E REA    __AUXREAD_LOAD__          009D96 RLA    
+__AUXREAD_RUN__           000040 RLA    __AUXREAD_SIZE__          000012 REA    
+__LOWCODE_LOAD__          009DA8 RLA    __LOWCODE_RUN__           001400 RLA    
+__LOWCODE_SIZE__          000850 REA    
+
+
+Exports list by value:
+----------------------
+__AUXREAD_SIZE__          000012 REA    __AUXREAD_RUN__           000040 RLA    
+__LOWCODE_SIZE__          000850 REA    __LOWCODE_RUN__           001400 RLA    
+__ASSETS_SIZE__           003B1E REA    __AUXREAD_LOAD__          009D96 RLA    
+__LOWCODE_LOAD__          009DA8 RLA    
+
+
+Imports list:
+-------------
+__ASSETS_SIZE__ ([linker generated]):
+    game.o                    /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/apple-iie/src/apple/asset-loader.s(3)
+__AUXREAD_LOAD__ ([linker generated]):
+    game.o                    /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/apple-iie/src/apple/dhgr.s(8)
+__AUXREAD_RUN__ ([linker generated]):
+    game.o                    /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/apple-iie/src/apple/dhgr.s(8)
+__AUXREAD_SIZE__ ([linker generated]):
+    game.o                    /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/apple-iie/src/apple/dhgr.s(8)
+__LOWCODE_LOAD__ ([linker generated]):
+    game.o                    /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/apple-iie/src/full-main.s(4)
+__LOWCODE_RUN__ ([linker generated]):
+    game.o                    /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/apple-iie/src/full-main.s(4)
+__LOWCODE_SIZE__ ([linker generated]):
+    game.o                    /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/apple-iie/src/full-main.s(4)
+

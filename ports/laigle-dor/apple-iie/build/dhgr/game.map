@@ -1,0 +1,38 @@
+Modules list:
+-------------
+game.o:
+    CODE              Offs=000000  Size=000879  Align=00001  Fill=0000
+    RODATA            Offs=000000  Size=0031D2  Align=00001  Fill=0000
+    AUXREAD           Offs=000000  Size=000012  Align=00001  Fill=0000
+
+
+Segment list:
+-------------
+Name                   Start     End    Size  Align
+----------------------------------------------------
+AUXREAD               000040  000051  000012  00001
+CODE                  006000  006878  000879  00001
+RODATA                006900  009AD1  0031D2  00001
+
+
+Exports list by name:
+---------------------
+__AUXREAD_LOAD__          009AD2 RLA    __AUXREAD_RUN__           000040 RLA    
+__AUXREAD_SIZE__          000012 REA    
+
+
+Exports list by value:
+----------------------
+__AUXREAD_SIZE__          000012 REA    __AUXREAD_RUN__           000040 RLA    
+__AUXREAD_LOAD__          009AD2 RLA    
+
+
+Imports list:
+-------------
+__AUXREAD_LOAD__ ([linker generated]):
+    game.o                    /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/apple-iie/src/apple/dhgr.s(8)
+__AUXREAD_RUN__ ([linker generated]):
+    game.o                    /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/apple-iie/src/apple/dhgr.s(8)
+__AUXREAD_SIZE__ ([linker generated]):
+    game.o                    /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/apple-iie/src/apple/dhgr.s(8)
+

@@ -1,0 +1,25 @@
+{
+  "conversion": "source graphic 0..189 -> rows 0..159; native-height credits at 162/174/184; complete palette cells for uniform color; x margin 10 cells",
+  "cpu_range": "$1801-$3740",
+  "palette": "Oric blue -> Apple dark blue; yellow lightning; magenta title; red/green crest",
+  "patch_bytes": 1170,
+  "prompt": "new Apple keyboard instruction, not historical pixels",
+  "raster_bytes": 16384,
+  "raster_sha256": "1ec36d6cd732bdba8ba3182605ee2b766c170d070eac082442ef627f16ce6e3f",
+  "script_lines": [
+    1010,
+    1020,
+    1140,
+    1150,
+    1160,
+    1300,
+    1305,
+    1308,
+    1309,
+    1310
+  ],
+  "source_block": "B1",
+  "source_sha256": "ddecd947a8c037658702d8f17057633dd829781f4d45c9c1cae4fa04df8b1b6c",
+  "text_font": "B2 captured $9800; Oric final ROM CHAR output not runtime verified",
+  "timing": "target vertical-blank frame counter; not original WAIT/audio timing"
+}
