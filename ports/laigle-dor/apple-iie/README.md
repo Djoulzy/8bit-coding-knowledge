@@ -9,6 +9,13 @@ review_date: "2026-10-13"
 
 # L'Aigle d'Or — Apple IIe first playable milestone
 
+The [local graphics editor](../../../tools/apple-iie-editor/README.md) opens the
+native screens and sprite atlas, preserves masks and bank packing, and exports
+artwork projects that can be applied with `LAIGLE_ARTWORK=/absolute/project.json`.
+Run `python3 tools/apple-iie-editor/server.py --adapter laigle-dor` from the repository root.
+Use the editor’s native-resource JSON export for the compiler; keep the full
+workspace JSON for reversible editing. See [adapter instructions](docs/graphics-editor.md).
+
 The W06 prototype boots a custom Disk II image, displays converted room 12,
 animates the original character images, and implements turning, walking,
 stop/stand, crouching and logical collisions. Movement continues without a new

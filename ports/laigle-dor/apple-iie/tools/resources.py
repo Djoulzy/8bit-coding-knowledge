@@ -9,6 +9,7 @@ from tools import dhgr
 from model.world import Room
 from model.movement import room12_grid
 from tools.video_layout import source_y, HGR_HEIGHT
+from tools.artwork import override_screen, override_sprites, audit
 
 
 def row_offset(y):
@@ -238,12 +239,15 @@ def export(oric_rom=None):
         raw = source.read(s['source_start'], s['width_bytes'] * s['height'])
         save('sprite-%03d-oric.bin' % s['id'], raw, s['source_start'], sprite_id=s['id'])
     image, operations, room = room12_scene(source, variation[12], mode)
+    art_prefix = 'laigle/prototype/' + mode + '/'
     if mode == 'dhgr':
         page, aux = dhgr.image_pages(image)
+        page, aux = override_screen(art_prefix + 'room12', mode, page, aux)
         save('room12-aux.hgr', aux, conversion='DHGR auxiliary half; 140 color columns')
         save('room12-aux.rle', rle(aux))
     else:
         page = hgr_image(image, mode)
+        page, _ = override_screen(art_prefix + 'room12', mode, page)
     save('room12.hgr', page, conversion=mode + '; x+20; cleared header cropped; 165->160 last-row')
     save('room12.rle', rle(page))
     save('room12-collision.bin', room12_grid(room), evidence='B2 600/605; no M-dependent features in room 12')
@@ -254,9 +258,11 @@ def export(oric_rom=None):
     write_json(dest / 'rooms.json', [Room.decode(source.read(0x5600, 512), i).__dict__ for i in range(64)])
     if mode == 'dhgr':
         native_sprites = [dhgr.target_sprite(s) for s in sprites]
+        native_sprites = override_sprites(native_sprites, art_prefix + 'sprite/', mode)
         dhgr.generate_include(dest, native_sprites, fs)
     else:
         native_sprites = [target_sprite(s, mode) for s in sprites]
+        native_sprites = override_sprites(native_sprites, art_prefix + 'sprite/', mode)
         generate_include(dest, native_sprites, fs, room, mode)
     write_json(dest / 'manifest.json', {'source_payloads': {'B1': B1_SHA, 'B2': B2_SHA},
                                        'oric_rom': rom_record, 'room12': room.__dict__,
@@ -266,6 +272,7 @@ def export(oric_rom=None):
                                                  'color_columns': 140 if mode == 'dhgr' else None, 'page_strategy': 'alternating frames',
                                                  'baseline': '$A000', 'attribute_policy': 'discarded; transparent cells'},
                                        'sprites': [{k: v for k, v in s.items() if k not in ['pixels', 'masks', 'statuses', 'colors']} for s in native_sprites]})
+    audit(dest, {art_prefix + 'room12'} | {art_prefix + 'sprite/' + str(s['id']) for s in sprites})
     return dest
 
 

@@ -9,15 +9,14 @@ from tools import dhgr
 from model.world import Room
 from tools.title_resources import export_title
 from tools.scenery import tile, marker, SECRET
+from tools.artwork import override_sprites, audit
 
 ARCHIVE_START = 96  # auxiliary atlas begins at physical track 6 / sector 0
 RASTER_BYTES = 70 * 160 + 120
 
 
-def export_game():
-    variation, rom = room_variation()
-    source = Source(); world = source.read(0x5600,512)
-    dest = export(Path(__file__).resolve().parents[4] / rom['file'])
+def native_artwork(source):
+    """Shared native assets for the compiler and interactive editor; no disk writes."""
     fs = frames(source)
     for f in fs: f['layers'] = f['layers'][:2]
     fs.extend(motion(source,12,5)); fs.extend(motion(source,13,5))
@@ -58,6 +57,22 @@ def export_game():
     native.append(marker())
     used.append(SECRET['id'])
     native.sort(key=lambda s:s['id'])
+    font=source.read(0x9800,2048)
+    for code in range(33,42):
+        sid=128+code
+        rows=[[2 if bits & (48 >> (2*x)) else 0 for x in range(3)] for bits in font[8*code:8*code+8]]
+        native.append({'id':sid,'cell_width':3,'height':8,'colors':[13]*8,'tile_rows':rows})
+        used.append(sid)
+    return native, fs, equipment, static_ids
+
+
+def export_game():
+    variation, rom = room_variation()
+    source = Source(); world = source.read(0x5600,512)
+    dest = export(Path(__file__).resolve().parents[4] / rom['file'])
+    native, fs, equipment, static_ids = native_artwork(source)
+    native = override_sprites(native, 'laigle/game/dhgr/atlas/', 'dhgr')
+    used = [s["id"] for s in native]
     # Generate the existing actor ABI, then append compact two-bit static tiles.
     actors=[s for s in native if 'tile_rows' not in s]
     dhgr.generate_include(dest,actors,fs,compact_cells=True,graphics_rows=192)
@@ -65,12 +80,6 @@ def export_game():
     lines[:4]=['room12_rle: .byte 0','room12_aux_rle: .byte 0','room12_grid = GRID']
     first=next(i for i,line in enumerate(lines) if line.startswith('sprite_%d:'%actors[0]['id']))
     lines.insert(first,'.segment "ASSETS"')
-    font=source.read(0x9800,2048)
-    for code in range(33,42):
-        sid=128+code
-        rows=[[2 if bits & (48 >> (2*x)) else 0 for x in range(3)] for bits in font[8*code:8*code+8]]
-        native.append({'id':sid,'cell_width':3,'height':8,'colors':[13]*8,'tile_rows':rows})
-        used.append(sid)
     for s in native:
         if 'tile_rows' not in s: continue
         w=s['cell_width'];stride=1+(w+3)//4
@@ -158,4 +167,6 @@ def export_game():
             'target_scenery_art':'resources/world-art.json; white grilles, yellow locks, right-pillar secret cue, yellow/orange source flames',
             'captured_font':'B2 $9800, provisional until original ROM/font execution is compared'}
     write_json(dest/'game-resources.json',report)
+    audit(dest, {'laigle/game/dhgr/title', 'laigle/game/dhgr/title-flash'} |
+          {'laigle/game/dhgr/atlas/' + str(s['id']) for s in native})
     return dest,report
