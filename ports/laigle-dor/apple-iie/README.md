@@ -40,6 +40,10 @@ torch wear use video refreshes so faster rendering does not accelerate them.
 See the [renderer changes](docs/renderer-optimization.md) and
 [input latency measurements](docs/input-responsiveness.md) for scope,
 remaining limits and reproducible checks.
+For a future project, the
+[porting optimization workbook](../../../research/analyses/laigle-dor/portage-optimizations.md)
+explains the reusable mechanisms, bank/page ownership contracts, trade-offs
+and tests to retain when adapting them.
 
 The [local graphics editor](../../../tools/apple-iie-editor/README.md) opens the
 native screens and sprite atlas, preserves masks and bank packing, and exports
@@ -306,8 +310,18 @@ monochrome target profile. The application does not return to DOS or the monitor
 | `build/test-results.json`, `cpu-verification.json` | Aggregate tests and executed CPU coverage |
 | `build/execution.json`, `room12-boot.png`, `room12-after.png` | Scripted execution trace and decoded HGR captures |
 
-All outputs can be regenerated. Build/check tools are repository-authored;
-historical build scripts are not executed. `make clean` removes only `build/`.
+The table above describes the earlier W06 outputs. The two maintained full-game
+editions live in `build/game/` and `build/game-mono/`; see the
+[build directory guide](docs/build-outputs.md). Their build outputs can be regenerated
+with `make games`. Build/check tools are repository-authored; historical build
+scripts are not executed.
+
+For routine housekeeping, use `make tidy`. It removes legacy prototype binaries,
+exported prototype resources, object/listing files and temporary Virtual II disk
+copies while retaining both full games, their test resources, reports/captures
+and the `latency-baseline/` comparison archive. Preview its selection with
+`python3 tools/tidy_build.py --dry-run`. `make clean` removes the entire `build/`
+directory, including those retained outputs and archives.
 
 ## Fidelity and outstanding inputs
 

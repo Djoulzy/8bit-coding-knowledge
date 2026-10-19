@@ -2,7 +2,7 @@ PYTHON ?= python3
 VIDEO ?= mono
 GAME_VIDEO ?= dhgr
 GAME_PORT ?= $(if $(filter mono,$(GAME_VIDEO)),8769,8768)
-.PHONY: bootstrap build test run clean game test-game run-game game-mono test-game-mono run-game-mono games
+.PHONY: bootstrap build test run clean tidy game test-game run-game game-mono test-game-mono run-game-mono games
 bootstrap:
 	$(PYTHON) tools/bootstrap.py
 build:
@@ -24,5 +24,7 @@ test-game-mono: game-mono
 run-game-mono: game-mono
 	LAIGLE_STAGE=game $(PYTHON) tools/run.py --video mono --serve --port 8769
 games: game game-mono
+tidy:
+	$(PYTHON) tools/tidy_build.py
 clean:
 	$(PYTHON) -c "import shutil; shutil.rmtree('build', ignore_errors=True)"

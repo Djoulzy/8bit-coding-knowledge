@@ -8,21 +8,24 @@ analysis_status: draft
 source_revision: "sha256:7f01e1a3d05825aab887952cd5711bea69d6525730aba5c1e25c814334fe77d7"
 repository_revision: "85c12f28cc7de85f43c62d1c759d48122ddd046c"
 analysis_date: "2026-10-12"
+review_date: "2026-10-19"
 source_analyses: ["overview.md", "architecture.md", "routines.md", "integration-review.md"]
-target_implementation: "Approved W06 graphics prototype plus separate W07 native generic-room development build in ports/laigle-dor/apple-iie; functional CPU execution tested; full-game gates, original Oric runtime and physical Apple compatibility unverified"
+target_implementation: "W06 reference prototype plus HGR mono and DHGR full-game development builds in ports/laigle-dor/apple-iie; renderer optimization benchmarked in the functional CPU model; full source-equivalence gates and physical Apple compatibility remain open"
 ---
 
 # L'Aigle d'Or: reproducible Oric to Apple IIe porting workbook
 
 ## 1. Objective, scope and reading order
 
-Implementation update: the [Apple IIe project](../../../ports/laigle-dor/apple-iie/README.md)
-now supplies native boot images, room 12, original actor images, keyboard,
-collisions and silent events. Its [W00–W06 status](../../../ports/laigle-dor/apple-iie/docs/work-packages.md)
-and [verification](../../../ports/laigle-dor/apple-iie/docs/verification.md)
-distinguish executed target checks from the source-runtime gates still pending.
-The inventories and acceptance matrix below remain the full-port contract,
-not a claim that the entire game is implemented.
+Implementation update, 2026-10-19: the [Apple IIe project](../../../ports/laigle-dor/apple-iie/README.md)
+supplies separate HGR mono and DHGR full-game development disks, a shared
+64-room constructor, rules, presentation and silent audio events. The earlier
+W06 reference prototype remains available. Its [delivery boundaries](../../../ports/laigle-dor/apple-iie/docs/work-packages.md)
+distinguish target implementation from source-runtime equivalence still pending.
+The latest [optimization companion](portage-optimizations.md) records reusable
+renderer/input-latency mechanisms, their conditions, tests and measured scope.
+The inventories and acceptance matrix below remain the full-port contract;
+this update does not close all historical fidelity or hardware gates.
 
 Reproduce this game's rules, world and observable actions on an explicitly
 configured Apple IIe. This document inventories the mechanics found in the
@@ -42,6 +45,7 @@ Read this in order: [evidence](#2-evidence-and-reproducibility-baseline),
 [target decisions](#3-target-profile-and-proposed-design),
 [gameplay inventory](#4-gameplay-mechanics-and-state),
 [implementation mechanisms](#5-implementation-mechanisms-and-adaptations),
+[reusable optimization workflow](portage-optimizations.md),
 [reproduction workflow](#6-reproducible-workflow),
 [acceptance tests](#8-verification-and-acceptance-matrix).
 
@@ -52,6 +56,10 @@ Evidence labels used here:
 - **Documented constraint:** supported by a primary machine/language reference.
 - **Proposed:** an implementation choice for this port, not a validated existing
   engine or a benchmarked optimization.
+- **Target-implemented / analyzed:** a mechanism in the modern port, with its
+  own source and tests; not an attribution to the historical Oric author.
+- **Model-benchmarked:** executed instruction-cycle workloads in the functional
+  Apple bus. This does not imply physical timing or a validated general guideline.
 - **Unresolved:** a value, complete contract, intent or runtime path needs testing.
 
 ## 2. Evidence and reproducibility baseline
@@ -525,6 +533,12 @@ different ownership roles. Do not reuse `$5900`'s original shared charset/sprite
 lifetime implicitly on Apple. See [ORIC-0001](../../findings/ORIC-0001-background-pages-with-position-metadata.md)
 and [Apple candidate comparisons](<../../../docs/machines/Apple/Apple IIe/guidelines/graphics.md>).
 
+Target follow-up: the full-game builds now use a retained terrain baseline,
+per-page dirty repair, contiguous bank spans and conservative actor reuse.
+The conditions and reuse tests are in [§5.9](#59-reusable-target-optimization-mechanisms)
+and the [optimization companion](portage-optimizations.md). This implements one
+target strategy; it does not establish the original save-under layer behavior.
+
 ### 5.5 Animation bytecode and event contracts
 
 Movement pointers are selected from `$4200` by `$0498`; cursor `$04A0` resumes
@@ -619,6 +633,12 @@ source ROM services retain ownership. Replace WAIT, timer sampling and busy
 delay `$415C` with an explicit pacing/variation contract after a source trace,
 without inventing a timer frequency.
 
+Target follow-up: ordinary energy drain and held-torch wear now use 18 observed
+video refreshes per service. Other motion/action/enemy/effect updates still use
+the controller loop. See the [clock mechanism and limits](portage-optimizations.md#6-prevent-faster-rendering-from-accelerating-periodic-game-costs)
+before reusing this partial separation of timing from rendering. It is not a
+recovered Oric cadence or a completed fixed-step simulation.
+
 The font-related JSR at `$4EF8` targets `$F89B`, patched to `$F8D0` by a `$FFF9`
 test. It has no generic Apple equivalent. Likewise replace ROM cursor addresses
 `$10/$11`, `$0219/$021A`, display state `$026A/$02C0`, VARTAB `$009C` and HIMEM
@@ -654,11 +674,43 @@ Useful budget facts, not a demonstrated minimum Apple configuration:
 | Ordinary HGR page / two pages | 8,192 / 16,384 bytes; choose page roles explicitly |
 | Optional 192-row 16-bit table | 384 bytes; illustrative allocation, not an established fastest choice |
 | Original descriptor arrays | 1,024 bytes; many IDs unused or mutable |
-| Engine, converted sprites, fonts, messages, sound/loader | Not yet measured; produce an actual linker/asset report |
+| Engine, converted sprites, fonts, messages, sound/loader | Current full-game sizes and bank allocations are in the [renderer record](../../../ports/laigle-dor/apple-iie/docs/renderer-optimization.md#memory-ownership); original budgets above are not the target link map |
 
 A shared NMOS instruction subset does not make the original allocation or ROM
-ABI portable. No current benchmark establishes which target renderer, descriptor
-layout, shifter or numeric representation is fastest.
+ABI portable. The matched full-game renderer benchmarks below measure one
+combined change, not a ranking of all renderers, layouts, shifters or numeric
+representations.
+
+### 5.9 Reusable target optimization mechanisms
+
+The [optimization workbook](portage-optimizations.md) extends W09 with the
+implemented process, applicability, limitations, source symbols and regression
+checks needed to reuse it. Begin with whole-loop input-to-display profiling,
+then select changes from the expensive work and actual memory budget.
+
+| Mechanism | Reusable principle | Port-specific condition |
+| --- | --- | --- |
+| Native mask/pixel rows and shared scanlines | Move interpretation to the asset build and share immutable repeated data | Seven-bit target packing; native and compact formats coexist to fit AUX |
+| Small phase-specific rotation table | Amortize repeated shifts across sprite bytes | 128 entries, phases 0–6, binary arithmetic; setup cost remains |
+| Batched bank transfers | Pay bank-switch/call overhead per row or span | MAIN zero-page workers, explicit MAIN/AUX state, reinstall after BOOT0 |
+| Contiguous background repair | Copy dirty spans rather than switching banks for each byte | DHGR parity split; independent dirty history for both frame pages |
+| Per-page actor cache | Reuse pixels only while all composition dependencies match | Stationary central actor, no equipment/enemy/hazard/pit; lighting and terrain guards |
+| Refresh-based periodic wear | Separate resource costs from rendering throughput | Energy/torch wear only; other simulation cadence remains loop-based |
+| Bank and lifetime allocation ledger | Budget code, resources, scratch and service clobbers together | Exclude both AUX text pages and preserve loader workspace |
+
+For the sampled warm room-12 loop, executed cycle counts changed from
+289,516 to 85,134 in DHGR and 306,546 to 51,108 in mono. A turn arriving just
+after idle polling reached the affected flip in 595,931 → 340,435 cycles and
+647,024 → 204,201 cycles respectively. These are matched functional-model
+scenarios; the [full evidence](../../../ports/laigle-dor/apple-iie/docs/input-responsiveness.md)
+records conditions, other commands, hashes and limitations. They do not assign
+an isolated speedup to each mechanism or guarantee worst-case response time.
+
+Use the companion's [reproduction procedure](portage-optimizations.md#reproduction)
+and [acceptance matrix](portage-optimizations.md#measured-outcomes-and-acceptance-tests)
+before extracting a worker for another game. No input queue, HUD cache or fully
+independent simulation scheduler is claimed. Historical assets and validated
+knowledge-base guidelines are unchanged by these implementation experiments.
 
 ## 6. Reproducible workflow
 
@@ -729,7 +781,7 @@ identifies its delivered subset, runnable tools and remaining source-runtime gat
 | W06 Deliver first interactive target | One room, one actor, keyboard, movement/crouch/stop, collision grid; silent effects | Bootable Apple prototype and reproducible build/run recipe | Scene/state match W03; no code/buffer corruption; controls include no-key walk continuation |
 | W07 Extend world and action sequences | All room slots, transitions, objects, equipment streams, jumps, GP/SD/PM/FG events | Room-to-room playable port with pits, ropes, lighting and persistence | Every M02–M24 rule has a passing test/trace; special rooms 1/12/35/62/63 and poison rooms 14/38 covered |
 | W08 Complete presentation and audio | B1 script, title/tune, HUD/inventory/clues, ending/death assets and sound events | Complete introduction, menus, reading, victory, memorial and selected audio implementation | M01/M18/M21/M25/M26 reproduced; rendering/audio do not silently alter RNG or logical pace |
-| W09 Measure and select refinements | Functionally equivalent reference/target workloads | Separate code/RAM/cycle reports for rendering, numeric arithmetic, phases and page strategy | Equivalent outputs and allocation/IRQ conditions established before speed comparisons |
+| W09 Measure and select refinements | Functionally equivalent reference/target workloads; [reusable optimization process](portage-optimizations.md) | Renderer/input-cycle comparison and regression evidence delivered for both full editions; retain separate code/RAM reports | **Partial:** modeled output/allocation checks passed; isolated alternatives, numeric arithmetic, full cadence and hardware latency still require evidence |
 | W10 Replay the entire operation | Clean checkout plus pinned inputs/profile/tool versions and documented resource provenance | One reproducible extraction/build/boot/gameplay checklist with expected hashes/results | Repeat from a fresh environment; record remaining differences and real-hardware evidence separately |
 
 The first target milestone is W06, not a claim of the complete game's RAM fit,
@@ -759,13 +811,14 @@ to define target constraints. The
 sets configuration/test boundaries. Existing historical Apple engines are
 comparisons, not interchangeable renderers or proof of this game's port.
 
-This workbook creates no new technique ID, benchmark result or guideline
-promotion. Project acceptance tests and implementation choices remain pending.
+This workbook and its optimization companion create no duplicate technique ID
+or guideline promotion. The companion links existing target benchmark results
+and separates them from the full source-equivalence acceptance gates still open.
 
 ## 8. Verification and acceptance matrix
 
-The table below specifies full-port acceptance; the linked implementation report
-identifies tests already executed for the first prototype. Compare logical
+The table below specifies full-port acceptance; the project reports distinguish
+earlier prototype checks from later full-game regression runs. Compare logical
 state/events, reference decoded images and memory
 ownership; different graphics packing prevents a meaningful cross-machine raw
 screen-byte equality test.
@@ -796,8 +849,9 @@ screen-byte equality test.
 | A22 Memory/banks/loader | All phases; guards, stack high-water, selected main/aux state and missing media | All ranges owned, stable scratch/return frames, predictable load/error/restart behavior |
 | A23 Ending and history | M25/M26; partial exits, full win, suicide, six successive deaths/replays | Correct outcomes, six-character names, five-attempt wrap and documented quit/restart differences |
 | A24 Anomaly policy / reproducibility | Unknown key `>`, absent handlers/remnants, changed target settings; W10 | Explicit diagnostic/compatibility policy, repeatable build/resource hashes, no invented original functionality |
+| A25 Optimization equivalence and response | W09; all phases, both frame histories/banks, cache misses, modal returns, periodic wear and before/after input scenarios | Equivalent chosen target pixels/state, no visible-page/resource corruption, scoped matched cycle reports and explicit remaining timing differences; see [executed matrix](portage-optimizations.md#measured-outcomes-and-acceptance-tests) |
 
-Existing static checks were rerun during this documentation work and passed.
+During the original workbook preparation, existing static checks were rerun and passed.
 Additional byte inspections confirmed the active key bindings, `$5C31–$5C69`
 message and initial chest census. These checks do not complete A02–A24 or claim
 emulator, actual CPU, full-game or real-hardware validation.
@@ -805,7 +859,11 @@ emulator, actual CPU, full-game or real-hardware validation.
 After functional agreement, record complete workload costs: code bytes, tables,
 scratch/heap/buffer RAM, branch/page/bank conditions, interrupts, sound, loading
 and elapsed cycles. Keep emulator measurements separate from real hardware.
-No frame rate, audio frequency or comparative speed is currently measured.
+Comparative steady-room response is now measured in the functional CPU model
+as documented in §5.9; source cadence, audio frequency and physical timing remain
+separate open questions. The [renderer verification record](../../../ports/laigle-dor/apple-iie/docs/renderer-verification.json)
+pins 45 DHGR and 46 mono full-suite passes plus three supplemental tests per
+edition. The present documentation update does not constitute a new test run.
 
 ## 9. Open questions, fragile behavior and compatibility log
 
@@ -837,6 +895,9 @@ No frame rate, audio frequency or comparative speed is currently measured.
   configurations or the complete-game resource fit.
 - [ ] Compare all rooms/actions and complete quest progression on a reference
   run, then test timing/video-sensitive paths on identified hardware.
+- [ ] Extend W09 beyond the current renderer: measure equipped/moving worst
+  cases, decide stable cadence for remaining loop-based systems, and compare
+  alternative phase layouts under equal output and complete memory costs.
 
 Do not resolve these questions by editing the historical TAP. A compatibility
 log should name the source expression/address, observed trace, target decision,
@@ -857,18 +918,24 @@ The eventual port should provide:
    complete-game coverage, followed by measured optimization reports if useful.
 6. A fresh-checkout reproduction checklist and explicit outstanding differences.
 
-**Next operation:** complete W00/W02 for the chosen Oric ROM and room 12, then
-build W03's initialization/movement/collision oracle. That supplies a reviewable
-basis for the first Apple room before selecting a renderer optimization.
+**Current next operation:** use the delivered full-game builds and
+[optimization workflow](portage-optimizations.md#a-repeatable-optimization-workflow)
+as the target baseline. Continue source-runtime comparison for the open W00/W03
+gates and measure remaining cadence/hardware questions separately. For a new
+port, follow W00–W06 before adopting the W09 mechanisms; do not assume this
+game's memory map, scene geometry or refresh policy will transfer unchanged.
 
-This operation created `research/analyses/laigle-dor/portage.md` and links it
-from the overview. The region ledger additionally identifies the newly checked
-second-scroll range. Historical source/extraction bytes and canonical common,
-CPU and machine guidelines are preserved. Both machine documentation directories
-already exist; neither is registered, renamed or updated by this workbook.
+The original operation created this workbook and linked it from the overview.
+The optimization follow-up adds `portage-optimizations.md` and links the existing
+implementation evidence. Historical source/extraction bytes and canonical
+common, CPU and machine guidelines are preserved.
 
 ## References
 
+- [Reusable port optimization workbook](portage-optimizations.md),
+  [renderer implementation](../../../ports/laigle-dor/apple-iie/docs/renderer-optimization.md),
+  [input-response benchmarks](../../../ports/laigle-dor/apple-iie/docs/input-responsiveness.md),
+  [pinned verification record](../../../ports/laigle-dor/apple-iie/docs/renderer-verification.json).
 - [Original overview](overview.md), [architecture/schema](architecture.md),
   [routine inventory](routines.md), [CPU report](cpu-techniques.md),
   [hardware report](hardware-techniques.md), [integration review](integration-review.md).

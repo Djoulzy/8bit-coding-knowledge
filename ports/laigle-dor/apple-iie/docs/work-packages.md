@@ -15,8 +15,9 @@ W07 now has an executed generic-room constructor and semantic grids for all
 64 records. It uses four shared wall programs, parameterized openings and a
 shared atlas; it contains no per-room bitmap archive. Source-derived rule/action
 code is in development and has selected executed tests. This does **not** close
-the complete M02–M24 gate. W08 presentation and audio, W09 performance and W10
-full replay remain unfinished. See [native construction](world-construction.md).
+the complete M02–M24 gate. W08 presentation and audio and W10 full replay remain
+unfinished; W09 now has the scoped renderer results below. See
+[native construction](world-construction.md).
 
 The [presentation/pit follow-up](presentation-and-pits.md) adds the dedicated
 oubliette scene and recovery/rope regression, full-screen TEXT panels, visible
@@ -36,6 +37,16 @@ during construction, initializes each frame pair only while hidden, and builds
 a clean source-inspired darkness panel. It replaces the temporary TEXT screen
 used to conceal simultaneous frame initialization. Early neighbor prediction
 is not part of this synchronous preparation protocol.
+
+The 2026-10-19 [renderer follow-up](renderer-optimization.md) delivers part of
+W09 for both full-game editions: native masked rows, batched AUX transfers,
+span repair, per-page idle-actor reuse and refresh-based energy/torch wear.
+Matched [input profiles](input-responsiveness.md) and
+[regression evidence](renderer-verification.json) establish results in the
+functional CPU model. The [reusable optimization workbook](../../../../research/analyses/laigle-dor/portage-optimizations.md)
+records adoption conditions and comparisons with existing techniques. Complete
+simulation pacing, isolated alternative-renderer comparisons and physical input
+latency remain open; this does not close W09 or the original-game gates.
 
 | Package | Delivered | Gate / remaining work |
 | --- | --- | --- |

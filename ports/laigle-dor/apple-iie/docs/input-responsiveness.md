@@ -32,6 +32,9 @@ than one decrement per rendered frame. Walking, staged actions, enemy/hazard
 logic and flame animation remain controller-loop based and can run faster.
 See the renderer document for memory allocations, cache exclusions, clock
 scope and validation commands.
+The [porting optimization workbook](../../../../research/analyses/laigle-dor/portage-optimizations.md)
+turns this diagnosis and implementation into a reusable profiling, allocation
+and equivalence-testing procedure.
 
 ## Original diagnosis and reproduction
 
@@ -105,8 +108,8 @@ a targeted diagnostic execution, not a rerun of the complete regression suite.
    actor even when stationary, decoding resource data through AUX reads and a
    general masked-cell renderer. Mono uses one source dot per output bit;
    DHGR uses paired source-dot cells. Consequently mono is not automatically
-   faster despite its simpler video writes. Both currently pay the cost of a
-   general sprite decoder rather than a prepacked byte blitter.
+   faster despite its simpler video writes. Both original builds paid the cost
+   of a general sprite decoder rather than a prepacked byte blitter.
 4. [`full_draw_torches`](../src/apple/torches.s) restores and draws the flame
    sprites each loop. The full HUD is also formatted and written each time.
 5. Double buffering hides construction and avoids visible writes. It does not
@@ -126,9 +129,10 @@ There are also **control semantics distinct from rendering latency**:
 
 ## Original optimization plan and remaining work
 
-The original plan was to prioritize the renderer, then input scheduling. The
-first two items are now implemented within the conservative scope described
-above; the fourth is implemented for periodic strength drain and torch wear.
+The original plan was to prioritize the renderer, then input scheduling. Native
+masked rows with a runtime phase table and conservative per-page actor reuse are
+now implemented. Full pre-shifted frames and HUD caching are still alternatives;
+the fourth item is implemented only for periodic strength drain and torch wear.
 Input queuing and fully independent simulation scheduling remain future work:
 
 1. Replace per-cell actor composition with byte-oriented masked blits and
@@ -142,10 +146,10 @@ Input queuing and fully independent simulation scheduling remain future work:
    dispatch at defined game-state boundaries. This can retain commands but does
    not by itself remove the cost of composing the visible response. Define
    repeat, overflow, modal-close and staged-action policies explicitly.
-4. Separate elapsed gameplay time from rendering iterations. Currently energy,
-   wear, walking and effects advance per loop; speeding up the renderer alone
-   also speeds those systems up. Establish a measured target cadence before
-   changing their scheduling.
+4. Separate elapsed gameplay time from rendering iterations. Originally energy,
+   wear, walking and effects advanced per loop; only energy/torch wear now use
+   the refresh clock. Establish a measured target cadence before changing the
+   remaining systems' scheduling.
 
 Any renderer replacement should retain pixel equivalence tests in both banks,
 hidden-page write checks, overlap/room-transition tests, and checkpoint/menu

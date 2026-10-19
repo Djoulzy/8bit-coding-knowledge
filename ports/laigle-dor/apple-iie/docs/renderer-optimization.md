@@ -5,6 +5,12 @@ This implementation reduces the cost identified by the
 approved artwork, collision geometry, two display pages, mixed text and keyboard
 command meanings are retained. The target remains documented NMOS 6502.
 
+For reuse in another port, follow the
+[optimization workbook](../../../../research/analyses/laigle-dor/portage-optimizations.md).
+It separates portable principles from Apple-specific packing/banking, gives
+adoption gates and compares these mechanisms with existing knowledge-base
+records. This document remains the implementation and allocation reference.
+
 ## Byte-oriented sprites
 
 [`native_sprites.py`](../tools/native_sprites.py) compiles opacity and color into
