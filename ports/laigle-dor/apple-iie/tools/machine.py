@@ -250,7 +250,9 @@ class Machine:
 
     def screen_png(self, monitor='color'):
         from tools.preview import png,text_png
+        alternate=bool(self.bus.switches['ALTCHAR'])
         if self.bus.switches['TEXT']:
-            return text_png(self.text_rows(all_rows=True))
+            return text_png(self.text_rows(all_rows=True),alternate)
+        video='mono' if self.video=='dhgr' and not self.bus.dhgr_active() else self.video
         return png(self.displayed_page(),self.text_rows() if self.bus.switches['MIXED'] else None,
-                   self.video,monitor)
+                   video,monitor,alternate)

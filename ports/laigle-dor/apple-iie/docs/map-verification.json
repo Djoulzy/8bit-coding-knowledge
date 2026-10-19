@@ -1,0 +1,159 @@
+{
+  "change": "Native 280x192 one-bit HGR map in both game editions, with a larger map-pin locator",
+  "date": "2026-10-18",
+  "executed_profiles": {
+    "dhgr": {
+      "disk": "build/game/laigle-dor-dhgr-color.do",
+      "disk_sha256": "9a8553d0f52b879b18eefcf3ddd10b27d73e0b28c6619f5be35c386fc3f7ec38",
+      "elapsed_seconds": 53.51,
+      "errors": [],
+      "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+      "failures": [],
+      "map_positions_tested": 64,
+      "map_sha256": "86292fdadd4a77d709d6a04e073db056efbed06d9b44c82a4d6ab47aa8961112",
+      "memory": {
+        "aux_worker_load_end_exclusive": "$9FEC",
+        "extracode_bytes": 196,
+        "lowcode_bytes": 2615,
+        "resident_end_exclusive": "$9FDA",
+        "text_archive_bytes": 1892
+      },
+      "original_oric_runtime": "not tested",
+      "previews": {
+        "ground": {
+          "kind": "executed py65 full-screen MAIN HGR; functional raster preview",
+          "path": "build/game/debug-map-ground.png",
+          "sha256": "9fb630b50f79bf08f7794f5d3def26f77b0505667b46ba06e17d29b2750b9e21"
+        },
+        "legend": {
+          "kind": "executed py65 full-screen MAIN HGR; functional raster preview",
+          "path": "build/game/debug-map-legend.png",
+          "sha256": "0a8ce66d9c50a22c6a020b04f2009e671c468222ef61af971b930a1882d017cc"
+        },
+        "other": {
+          "kind": "executed py65 full-screen MAIN HGR; functional raster preview",
+          "path": "build/game/debug-map-other.png",
+          "sha256": "19f3cd4d5784ec0f72bdd8965d5c819b6b35cc0d3b867f12b3bd308972651505"
+        }
+      },
+      "program_bytes": 19175,
+      "program_sha256": "1b686e7c22f6fa003bd98d1c5bd13dfd4e45bdf6688e67df4b085cd6399132d5",
+      "real_hardware": "not tested",
+      "restored_game_switches": {
+        "80COL": 1,
+        "DHIRES": 1,
+        "MIXED": 1,
+        "TEXT": 0
+      },
+      "selected_tests": [
+        "test_boot_preloads_shared_atlas_and_keeps_program_main",
+        "test_debug_map_all_rooms_initial_content_and_live_position",
+        "test_debug_map_navigation_pauses_and_returns_to_menu_or_game",
+        "test_inventory_spaced_layout_live_values_and_modal_return",
+        "test_help_returns_to_each_modal_page_and_name_input"
+      ],
+      "success": true,
+      "suite": "map",
+      "test_report": "build/game/map-test-results.json",
+      "tests_run": 5,
+      "video_profile": "dhgr",
+      "video_switches_on_map": {
+        "80COL": 0,
+        "DHIRES": 0,
+        "MIXED": 0,
+        "TEXT": 0
+      },
+      "virtual_ii": "not tested"
+    },
+    "mono": {
+      "disk": "build/game-mono/laigle-dor-hgr-mono.do",
+      "disk_sha256": "fb078e0060a5a73406ab697c9293c9910f1eb08592b3b7c756c23a2daa246044",
+      "elapsed_seconds": 48.924,
+      "errors": [],
+      "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+      "failures": [],
+      "map_positions_tested": 64,
+      "map_sha256": "86292fdadd4a77d709d6a04e073db056efbed06d9b44c82a4d6ab47aa8961112",
+      "memory": {
+        "aux_worker_load_end_exclusive": "$9F20",
+        "extracode_bytes": 144,
+        "lowcode_bytes": 2576,
+        "resident_end_exclusive": "$9F0E",
+        "text_archive_bytes": 1892
+      },
+      "original_oric_runtime": "not tested",
+      "previews": {
+        "ground": {
+          "kind": "executed py65 full-screen MAIN HGR; functional raster preview",
+          "path": "build/game-mono/debug-map-ground.png",
+          "sha256": "9fb630b50f79bf08f7794f5d3def26f77b0505667b46ba06e17d29b2750b9e21"
+        },
+        "legend": {
+          "kind": "executed py65 full-screen MAIN HGR; functional raster preview",
+          "path": "build/game-mono/debug-map-legend.png",
+          "sha256": "0a8ce66d9c50a22c6a020b04f2009e671c468222ef61af971b930a1882d017cc"
+        },
+        "other": {
+          "kind": "executed py65 full-screen MAIN HGR; functional raster preview",
+          "path": "build/game-mono/debug-map-other.png",
+          "sha256": "19f3cd4d5784ec0f72bdd8965d5c819b6b35cc0d3b867f12b3bd308972651505"
+        }
+      },
+      "program_bytes": 18880,
+      "program_sha256": "289ec6db81f11fe4419c6405bd595c06f32ede3835507c5e76c5efe0387f30f5",
+      "real_hardware": "not tested",
+      "restored_game_switches": {
+        "80COL": 0,
+        "DHIRES": 0,
+        "MIXED": 1,
+        "TEXT": 0
+      },
+      "selected_tests": [
+        "test_boot_preloads_shared_atlas_and_keeps_program_main",
+        "test_debug_map_all_rooms_initial_content_and_live_position",
+        "test_debug_map_navigation_pauses_and_returns_to_menu_or_game",
+        "test_inventory_spaced_layout_live_values_and_modal_return",
+        "test_help_returns_to_each_modal_page_and_name_input"
+      ],
+      "success": true,
+      "suite": "map",
+      "test_report": "build/game-mono/map-test-results.json",
+      "tests_run": 5,
+      "video_profile": "mono",
+      "video_switches_on_map": {
+        "80COL": 0,
+        "DHIRES": 0,
+        "MIXED": 0,
+        "TEXT": 0
+      },
+      "virtual_ii": "not tested"
+    }
+  },
+  "limitations": [
+    "No Virtual II launch, system-ROM cold-start or physical hardware test in this revision",
+    "A composite color display can interpret fine HGR dots as artifact colors; pure monochrome depends on monitor settings",
+    "Contents remain static initial Oric state; position/status are rendered from current state on map entry",
+    "Earlier full-suite/presentation/interaction evidence retains its own hashes"
+  ],
+  "map_storage": {
+    "bank": "MAIN only",
+    "bytes": 24576,
+    "end_physical_sector_inclusive": 335,
+    "start_physical_sector": 240
+  },
+  "overlay": {
+    "pin": "7x9 masks with a dark center, at room offset (21,2)",
+    "pin_does_not_overlap": "numbers, objects, doorways or badges",
+    "status": "two room digits and pit X/- at scanlines 164-170"
+  },
+  "static_checks": [
+    "identical three-page HGR map archive in both editions",
+    "three 8192-byte pages with all phase bits zero",
+    "map graphics use native pixels, not doubled logical dots",
+    "DO and NIB named images equal their canonical copies",
+    "linker MAIN/LOWCODE/EXTRACODE allocations pass",
+    "historical Source() checksums unchanged"
+  ],
+  "timing_scope": "elapsed_seconds measures host test duration, not target performance",
+  "visual_review": "Inspected native ground, catacomb/upper and legend previews and static rasters; native pin visible in room 12"
+}

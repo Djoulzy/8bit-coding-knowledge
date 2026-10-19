@@ -12,12 +12,24 @@ video_init:
     sta $C002
     sta $C004
     sta $C008              ; main ZP and stack, including safe bank workers
+.if HGR_MONO
+    sta $C00C              ; ordinary HGR, 40-column mixed text
+.else
     sta $C00D              ; 80-column mixed text / DHGR hardware
+.endif
+.if FULL_GAME
+    sta $C00F              ; alternate charset: inverse lowercase, no flashing
+.else
     sta $C00E
+.endif
     bit $C051
     bit $C054
     bit $C057
+.if HGR_MONO
+    bit $C05F              ; AN3 on: disable double HGR
+.else
     bit $C05E              ; AN3 off = DHGR enable on configured Rev-B IIe
+.endif
     bit $C053
     ldx #<(__AUXREAD_SIZE__-1)
 @install:
@@ -65,6 +77,7 @@ video_init:
     rts
 .endif
 
+.if !FULL_GAME
 expand_baseline:
     lda #0
     sta dst_ptr
@@ -96,6 +109,7 @@ read_src:
     inc src_ptr+1
 :
     rts
+.endif
 init_page:
     sta dst_ptr+1
     lda #BASELINE_HI
@@ -133,12 +147,22 @@ draw_scene:
 :
     stx render_page_index
 .if FULL_GAME
+    lda game_mode
+    cmp #MODE_CODE_SAVE
+    jcs full_text_draw
+    cmp #MODE_MAP_GROUND
+    jcs full_map_draw
+    jsr actor_cache
+    bcc :+
+    jsr full_draw_torches
+    jmp hud_draw
+:
     jsr full_prepare_page
 .else
     jsr repair_page
 .endif
     ldx render_page_index
-    lda #80                 ; dirty x bounds are serial seven-bit byte columns
+    lda #RENDER_COLUMNS
     sta dirty_left,x
     lda #0
     sta dirty_right,x
@@ -210,6 +234,9 @@ repair_page:
     lda dirty_bottom,x
     sta repair_bottom
 repair_rectangle:
+.if FULL_GAME
+    jsr clock_sample
+.endif
     ldx repair_y
     lda row_lo,x
     sta src_ptr
@@ -222,9 +249,50 @@ repair_rectangle:
     and #$1F
     ora draw_page_hi
     sta dst_ptr+1
+.if FULL_GAME
+    lda repair_right
+.if !HGR_MONO
+    lsr a
+.endif
+    sta repair_limit
+    lda repair_left
+.if !HGR_MONO
+    lsr a
+.endif
+    tay
+    cpy repair_limit
+    beq @aux_span
+@main_span:
+    lda (src_ptr),y
+    sta (dst_ptr),y
+    iny
+    cpy repair_limit
+    bne @main_span
+@aux_span:
+.if !HGR_MONO
+    lda repair_right
+    lsr a
+    adc #0                 ; ceil(serial right / 2): AUX bytes have even index
+    sta repair_limit
+    lda repair_left
+    lsr a
+    adc #0
+    tay
+    cpy repair_limit
+    beq :+
+    jsr aux_copy_span
+:
+.endif
+.else
     lda repair_left
     sta serial_col
 @byte:
+.if HGR_MONO
+    ldy serial_col
+    lda (src_ptr),y
+    sta (dst_ptr),y
+    jmp @next
+.else
     lda serial_col
     lsr a                   ; carry clear: AUX byte, carry set: MAIN byte
     tay
@@ -237,11 +305,13 @@ repair_rectangle:
 @main:
     lda (src_ptr),y
     sta (dst_ptr),y
+.endif
 @next:
     inc serial_col
     lda serial_col
     cmp repair_right
     bne @byte
+.endif
     inc repair_y
     lda repair_y
     cmp repair_bottom
@@ -250,9 +320,15 @@ repair_rectangle:
 
 present_frame:
 @leave_blank:
+.if FULL_GAME
+    jsr clock_sample
+.endif
     bit $C019
     bpl @leave_blank
 @enter_blank:
+.if FULL_GAME
+    jsr clock_sample
+.endif
     bit $C019
     bmi @enter_blank
 present_flip:
@@ -268,6 +344,7 @@ present_flip:
     bit $C050
 .if FULL_GAME
     jsr full_visibility
+    jmp clock_sample        ; include the blank edge that triggered this flip
 .endif
     rts
 
@@ -342,7 +419,10 @@ draw_sprite_pointer:
     iny
     jsr aux_read_src
     sta tile_accent
-    iny
+    ldy #13
+    jsr aux_read_src
+    sta native_width
+    ldy #12
     jsr aux_read_src
     beq :+
     lda #0
@@ -352,9 +432,11 @@ draw_sprite_pointer:
     cmp #2
     bne :+
     lda scene_x
+.if !HGR_MONO
     lsr a
     clc
     adc #10
+.endif
     sta origin_cell
 :
     lda static_draw
@@ -368,9 +450,18 @@ draw_sprite_pointer:
     clc
     adc #16
     sta src_ptr
-    bcc @row
+    bcc :+
     inc src_ptr+1
+:
+.if FULL_GAME
+    lda tile_format
+    cmp #2
+    jeq draw_native_sprite
+.endif
 @row:
+.if FULL_GAME
+    jsr clock_sample
+.endif
     ldx row_y
     cpx #200
     bcc :+
@@ -488,7 +579,7 @@ draw_sprite_pointer:
 @put_color:
 .endif
     lda cell_x
-    cmp #140
+    cmp #CELL_LIMIT
     bcs @next_cell
     jsr draw_masked_cell
 @next_cell:
@@ -504,6 +595,11 @@ draw_sprite_pointer:
 :
 .endif
     dec code_count
+.if HGR_MONO
+    lda cell_x
+    cmp #239
+    bcs @advance           ; clip before 8-bit source x could wrap to the left
+.endif
     inc cell_x
     dec cells_left
 .if FULL_GAME
@@ -532,6 +628,30 @@ draw_cell:
     lda #15
     sta cell_mask
 draw_masked_cell:
+.if HGR_MONO
+    ; One Oric source dot per HGR bit, at x+20. Bit 7 stays zero.
+    ; AUX is resource storage only, never a graphics framebuffer.
+    ldx cell_x
+    cpx #240
+    bcs @done
+    lda cell_phase,x
+    sta mask
+    lda cell_byte,x
+    tay
+    lda cell_color
+    beq @black
+    lda (dst_ptr),y
+    ora mask
+    sta (dst_ptr),y
+    rts
+@black:
+    lda mask
+    eor #$7F
+    and (dst_ptr),y
+    sta (dst_ptr),y
+@done:
+    rts
+.else
     ldx cell_x
     lda cell_byte,x
     sta serial_col
@@ -588,6 +708,7 @@ write_fragment:
     lda tmp
     sta (dst_ptr),y
     rts
+.endif
 
 include_bounds:
     lda row_y
@@ -637,9 +758,9 @@ include_bounds:
     lda x_column
     clc
     adc out_w
-    cmp #81
+    cmp #(RENDER_COLUMNS+1)
     bcc :+
-    lda #80
+    lda #RENDER_COLUMNS
 :
     cmp dirty_right,x
     bcc :+
@@ -664,4 +785,27 @@ aux_read_dst:
     lda (dst_ptr),y
     sta $C002
     rts
+.if FULL_GAME
+aux_read_row:
+    sta $C003
+@copy:
+    lda (src_ptr),y
+    sta NATIVE_ROW,y
+    dey
+    bpl @copy
+    sta $C002
+    rts
+aux_copy_span:
+    sta $C003
+    sta $C005
+@copy:
+    lda (src_ptr),y
+    sta (dst_ptr),y
+    iny
+    cpy repair_limit
+    bne @copy
+    sta $C004
+    sta $C002
+    rts
+.endif
 .segment "CODE"

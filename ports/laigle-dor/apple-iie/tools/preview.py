@@ -48,22 +48,21 @@ def reference_page(x, y, frame):
     return bytes(page)
 
 
-def pixels(page, text_rows=None):
+def pixels(page, text_rows=None, alternate=False):
     data = bytearray(255 if page[row_offset(y) + x // 7] & (1 << (x % 7)) else 0
                      for y in range(192) for x in range(280))
     if text_rows is not None:
-        from tools.text_font import glyph
+        from tools.text_font import text_cell
         data[HGR_HEIGHT * 280:] = bytes((192 - HGR_HEIGHT) * 280)
         for row, codes in enumerate(text_rows):
             for column, code in enumerate(codes):
-                for y, bits in enumerate(glyph(chr(code & 127))):
-                    for x in range(5):
-                        if bits & (16 >> x):
-                            data[(HGR_HEIGHT + row * 8 + y) * 280 + column * 7 + x + 1] = 255
+                for y, cell in enumerate(text_cell(code, alternate)):
+                    pos=(HGR_HEIGHT+row*8+y)*280+column*7
+                    data[pos:pos+7]=cell
     return bytes(data)
 
 
-def png(page, text_rows=None, video=None, monitor='color'):
+def png(page, text_rows=None, video=None, monitor='color', alternate=False):
     def chunk(kind, data):
         return struct.pack('>I', len(data)) + kind + data + struct.pack('>I', zlib.crc32(kind + data))
     mode = video or video_mode()
@@ -73,14 +72,12 @@ def png(page, text_rows=None, video=None, monitor='color'):
         data = bytearray(b''.join(dhgr.scanline_rgb(main, aux, y, monitor) for y in range(height)))
         data.extend(bytes((192 - height) * 560 * 3))
         if text_rows is not None:
-            from tools.text_font import glyph
+            from tools.text_font import text_cell
             for row, codes in enumerate(text_rows):
                 for column, code in enumerate(codes):
-                    for y, bits in enumerate(glyph(chr(code & 127))):
-                        for x in range(5):
-                            if bits & (16 >> x):
-                                pos = ((160 + row * 8 + y) * 560 + column * 7 + x + 1) * 3
-                                data[pos:pos + 3] = b'\xff\xff\xff'
+                    for y, cell in enumerate(text_cell(code, alternate)):
+                        pos=((160+row*8+y)*560+column*7)*3
+                        data[pos:pos+21]=bytes(v for intensity in cell for v in (intensity,)*3)
         # Double scanlines preserve screen aspect: four sample dots per color,
         # two preview scanlines per native scanline; native mode remains 140x160.
         stride = 560 * 3
@@ -92,25 +89,25 @@ def png(page, text_rows=None, video=None, monitor='color'):
         graphics_height = HGR_HEIGHT if text_rows is not None else 192
         data = b''.join(scanline_rgb(page[row_offset(y):row_offset(y) + 40]) for y in range(graphics_height))
         if text_rows is not None:
-            mono = pixels(bytes(8192), text_rows)[HGR_HEIGHT * 280:]
+            mono = pixels(bytes(8192), text_rows, alternate)[HGR_HEIGHT * 280:]
             data += bytes(v for intensity in mono for v in (intensity,) * 3)
     else:
-        data = pixels(page, text_rows)
+        data = pixels(page, text_rows, alternate)
     stride = 280 * (3 if color else 1)
     rows = b''.join(b'\0' + data[y * stride:(y + 1) * stride] for y in range(192))
     return b'\x89PNG\r\n\x1a\n' + chunk(b'IHDR', struct.pack('>IIBBBBB', 280, 192, 8, 2 if color else 0, 0, 0, 0)) + \
         chunk(b'IDAT', zlib.compress(rows)) + chunk(b'IEND', b'')
 
 
-def text_png(rows):
+def text_png(rows, alternate=False):
     """Functional text-font preview; the real emulator uses the Apple charset."""
-    from tools.text_font import glyph
+    from tools.text_font import text_cell
     columns=len(rows[0]);width=columns*7;data=bytearray(width*192)
     for row,codes in enumerate(rows):
         for column,code in enumerate(codes):
-            for y,bits in enumerate(glyph(chr(code&127))):
-                for x in range(5):
-                    if bits&(16>>x):data[(row*8+y)*width+column*7+x+1]=255
+            for y,cell in enumerate(text_cell(code, alternate)):
+                pos=(row*8+y)*width+column*7
+                data[pos:pos+7]=cell
     def chunk(kind,data):
         return struct.pack('>I',len(data))+kind+data+struct.pack('>I',zlib.crc32(kind+data))
     raster=b''.join(b'\0'+data[y*width:(y+1)*width] for y in range(192))

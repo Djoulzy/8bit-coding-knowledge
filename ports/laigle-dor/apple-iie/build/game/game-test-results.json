@@ -1,10 +1,16 @@
 {
+  "disk_sha256": "7c383403ee2a2d2ec798fdfa7604eb0b7da5dc454378efc3e209d670a11d31d0",
+  "elapsed_seconds": 773.62,
   "errors": [],
   "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
   "failures": [],
   "original_oric_runtime": "not tested",
-  "program_sha256": "1a7d2c6103a970180e56bf1f44a33ada0ee6889678e76553267f80cebbf68c6a",
+  "program_sha256": "b2bae5b449057c26bf056228935e2df0faf5b11c255ec45f741792065df57304",
   "real_hardware": "not tested",
+  "selected_tests": "all",
   "success": true,
-  "tests_run": 20
+  "suite": "full",
+  "tests_run": 45,
+  "video_profile": "dhgr",
+  "virtual_ii": "not tested"
 }

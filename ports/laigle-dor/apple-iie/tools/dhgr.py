@@ -220,7 +220,7 @@ def reference_layer(main, aux, s, x, y):
                             status_pattern(status, pattern(s['colors'][j])), status_mask(status))
 
 
-def generate_include(dest, sprites, fs, compact_cells=False, graphics_rows=160):
+def generate_include(dest, sprites, fs, compact_cells=False, graphics_rows=160, cell_bits=4, emit_sprites=True, skip_sprites=()):
     def emit(label, data):
         lines.append(label + ':')
         for pos in range(0, len(data), 16):
@@ -233,11 +233,18 @@ def generate_include(dest, sprites, fs, compact_cells=False, graphics_rows=160):
     emit('y_map', [source_y(y) if source_y(y) is not None else 255 for y in range(200)])
     emit('row_lo', [row_offset(y) & 255 for y in range(graphics_rows)])
     emit('row_hi', [0x20 + (row_offset(y) >> 8) for y in range(graphics_rows)])
-    emit('actor_cell_x', [10 + (x + 1) * 3 for x in range(40)])
-    emit('x_byte', [(40 + (x + 1) * 12) // 7 for x in range(40)])
-    emit('x_phase', [(40 + (x + 1) * 12) % 7 for x in range(40)])
-    emit('cell_byte', [x * 4 // 7 for x in range(140)])
-    emit('cell_phase', [x * 4 % 7 * 16 for x in range(140)])
+    if cell_bits == 1:
+        emit('actor_cell_x', [(x + 1) * 6 for x in range(40)])
+        emit('x_byte', [(20 + (x + 1) * 6) // 7 for x in range(40)])
+        emit('x_phase', [(20 + (x + 1) * 6) % 7 for x in range(40)])
+        emit('cell_byte', [(20+x)//7 for x in range(240)])
+        emit('cell_phase', [1 << ((20+x)%7) for x in range(240)])
+    else:
+        emit('actor_cell_x', [10 + (x + 1) * 3 for x in range(40)])
+        emit('x_byte', [(40 + (x + 1) * 12) // 7 for x in range(40)])
+        emit('x_phase', [(40 + (x + 1) * 12) % 7 for x in range(40)])
+        emit('cell_byte', [x * 4 // 7 for x in range(140)])
+        emit('cell_phase', [x * 4 % 7 * 16 for x in range(140)])
     emit('cell_mask_lo', [(15 << p) & 127 for p in range(7)])
     emit('cell_mask_hi', [15 >> (7 - p) if p else 0 for p in range(7)])
     emit('cell_color_lo', [((c << p) & 127) for p in range(7) for c in range(16)])
@@ -252,12 +259,14 @@ def generate_include(dest, sprites, fs, compact_cells=False, graphics_rows=160):
     for i, f in enumerate(fs):
         emit('frame_%d' % i, [len(f['layers'])] +
              [v for sid, dx, dy in f['layers'] for v in (lookup[sid], dx, dy)])
-    for s in sprites:
+    for s in sprites if emit_sprites else []:
+        if s['id'] in skip_sprites:
+            continue
         w = s['cell_width']
         packed = compact_cells and {v for row in s['statuses'] for v in row} <= {0,5,10,15}
         group = 4 if packed else 2
         stride = 1 + (w + group - 1) // group
-        data = [w, s['height'], stride] + [(w * 4 + p + 6) // 7 for p in range(7)] + [int(packed)] + [0]*5
+        data = [w, s['height'], stride] + [(w * cell_bits + p + 6) // 7 for p in range(7)] + [int(packed)] + [0]*5
         for row, color in zip(s['statuses'], s['colors']):
             data.append(pattern(color))
             codes = [{0:0,5:1,10:2,15:2}[v] for v in row] if packed else row

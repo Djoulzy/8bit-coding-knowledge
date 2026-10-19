@@ -1,0 +1,31 @@
+{
+  "disk_sha256": "cc1f3f0cfb7e0066a27fdc2989199cc7b1f5edd3daa79e215e1f65c496e62485",
+  "elapsed_seconds": 135.633,
+  "errors": [],
+  "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+  "failures": [],
+  "original_oric_runtime": "not tested",
+  "program_sha256": "cc22eb9cb83e03fedc13393e6c85a5b1dd3e16bd96cb6ab774abb3446cda5097",
+  "real_hardware": "not tested",
+  "selected_tests": [
+    "test_boot_preloads_shared_atlas_and_keeps_program_main",
+    "test_inventory_spaced_layout_live_values_and_modal_return",
+    "test_lowercase_name_text_codes_and_preview_inverse",
+    "test_name_exterior_merchant_and_resume",
+    "test_gameplay_hud_original_room_descriptions",
+    "test_gameplay_hud_stats_and_hand_names",
+    "test_impossible_actions_persist_until_next_command",
+    "test_impossible_feedback_in_special_rooms_and_darkness",
+    "test_help_pauses_walking_and_staged_actions",
+    "test_help_returns_to_each_modal_page_and_name_input",
+    "test_clues_display_original_content_and_advance",
+    "test_title_lightning_reveal_and_text_transition",
+    "test_debug_menu_is_hidden_modal_and_freezes_gameplay",
+    "test_debug_map_navigation_pauses_and_returns_to_menu_or_game"
+  ],
+  "success": true,
+  "suite": "presentation",
+  "tests_run": 14,
+  "video_profile": "mono",
+  "virtual_ii": "not tested"
+}

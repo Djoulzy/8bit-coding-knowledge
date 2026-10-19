@@ -161,10 +161,14 @@ full_draw_entities:
     asl a
     clc
     adc hazard_x
+.if HGR_MONO
+    asl a
+.else
     clc
     adc #10
+.endif
     sta cell_x
-    lda #6
+    lda #(6*(HGR_MONO+1))
     sta scene_count
 @beam:
     lda #8                ; serial pattern for palette red
@@ -178,7 +182,7 @@ full_draw_entities:
     lda #0
     sta dirty_left,x
     sta dirty_top,x
-    lda #80
+    lda #RENDER_COLUMNS
     sta dirty_right,x
     lda #VIEW_HEIGHT
     sta dirty_bottom,x
@@ -235,7 +239,7 @@ full_draw_rope:
     ldx render_page_index
     sta dirty_left,x
     sta dirty_top,x
-    lda #80
+    lda #RENDER_COLUMNS
     sta dirty_right,x
     lda #VIEW_HEIGHT
     sta dirty_bottom,x
@@ -245,8 +249,18 @@ full_draw_rope:
     rts
 
 full_visibility:
+    lda game_mode
+    cmp #MODE_CODE_SAVE
+    bcs @text
+    cmp #MODE_MAP_GROUND
+    bcs @map
     lda #0
+.if HGR_MONO
+    sta $C00C
+.else
     sta $C00D
+    bit $C05E              ; restore DHGR after the full-screen HGR map
+.endif
     bit $C053
     lda game_mode
     beq @play
@@ -258,6 +272,11 @@ full_visibility:
     bit $C051
     rts
 @title:
+    bit $C052
+    rts
+@map:
+    sta $C00C              ; ordinary HGR, full 280x192 MAIN frame
+    bit $C05F
     bit $C052
     rts
 @play:
@@ -292,15 +311,6 @@ full_hud_draw:
     sta menu_ptr
     lda full_menu_hi,x
     sta menu_ptr+1
-    cpx #MODE_PLAY
-    bne :+
-    lda in_pit
-    beq :+
-    lda #<pit_hud
-    sta menu_ptr
-    lda #>pit_hud
-    sta menu_ptr+1
-:
     cpx #MODE_READ
     bne :+
     ldx reading_page
@@ -312,6 +322,7 @@ full_hud_draw:
     lda #0
     sta hud_row
 @row:
+    jsr clock_sample
     jsr full_hud_address
     ldy #0
 @char:
@@ -334,40 +345,29 @@ full_hud_draw:
     bne @row
     lda game_mode
     beq @play
-    cmp #MODE_NAME
-    bne @inventory
-    lda #1
-    sta hud_row
-    jsr full_hud_address
-    ldy #5
-    ldx #0
-@name:
-    lda player_name,x
-    ora #$80
-    sta (dst_ptr),y
-    iny
-    inx
-    cpx #6
-    bne @name
-    jmp dhgr_hud_finish
-@inventory:
-    cmp #MODE_INVENTORY
-    jne @done
-    lda #0
-    sta hud_row
-    jsr full_hud_address
-    ldy #7
-    lda vials
-    jsr hud_decimal2
-    ldy #18
-    lda torches
-    jsr hud_decimal2
-    ldy #28
-    lda ropes
-    jsr hud_decimal2
     jmp @done
 @play:
+    lda message_id
+    cmp #1
+    bne :+
+.if !HGR_MONO
+    jsr full_is_dark
+    bcc :+                  ; graphics uses all 80 columns; append after interleave
+.endif
     lda #0
+    sta hud_row
+    jsr full_hud_address
+    ldy #39
+@denied:
+    lda hud_impossible-30,y ; pre-encoded inverse with ALTCHAR enabled
+    sta (dst_ptr),y
+    dey
+    cpy #29
+    bne @denied
+:
+    jsr full_room_description
+    jsr clock_sample
+    lda #2
     sta hud_row
     jsr full_hud_address
     lda energy
@@ -393,36 +393,41 @@ full_hud_draw:
     inx
     bne @percent
 @percent_ready:
+    jsr clock_sample
     txa
     ldy #7
     jsr hud_decimal3
+    ldy #7
+    ldx #3
+    jsr full_hud_trim
     lda points
     sta word_tmp
     lda points+1
     sta word_tmp+1
-    ldy #19
+    ldy #23
     jsr full_decimal5
+    ldy #23
+    ldx #5
+    jsr full_hud_trim
+    lda #3
+    sta hud_row
+    jsr full_hud_address
     lda gold
     sta word_tmp
     lda gold+1
     sta word_tmp+1
-    ldy #28
+    ldy #13
     jsr full_decimal5
-    lda #1
-    sta hud_row
-    jsr full_hud_address
-    lda current_room
-    ldy #6
-    jsr hud_decimal2
-    lda actor_x
-    ldy #11
-    jsr hud_decimal2
-    lda actor_y
-    ldy #16
-    jsr hud_decimal3
-    lda held_item
-    ldy #25
-    jsr hud_decimal2
+    ldy #13
+    ldx #5
+    jsr full_hud_trim
+    ldx held_item
+    lda hud_hand_lo,x
+    sta menu_ptr
+    lda hud_hand_hi,x
+    sta menu_ptr+1
+    ldy #26
+    jsr full_hud_string
 @done:
     jmp dhgr_hud_finish
 full_hud_address:
@@ -437,7 +442,9 @@ full_hud_address:
 :
     sta dst_ptr+1
     rts
+.segment "CODE"
 full_decimal5:
+    jsr clock_sample
     ldx #0
 @digit:
     lda #$B0
@@ -469,15 +476,14 @@ full_decimal5:
     cpx #5
     bne @digit
     rts
+.segment "RODATA"
+; ALTCHAR: uppercase I uses $09 (avoid MouseText); lowercase uses $60-$7F.
+hud_impossible: .byte $09,"mpossible"
 decimal_lo: .byte <10000,<1000,<100,<10,1
 decimal_hi: .byte >10000,>1000,>100,>10,0
 .segment "CODE"
 .include "full-menus.inc"
-pit_hud:
-    .byte "FORCES:100% POINTS:00000 OR:00500       "
-    .byte "SALLE:12 X:22 Y:180 MAIN:00             "
-    .byte "OUBLIETTE - A POUR SE RELEVER           "
-    .byte "ESPACE:DEBOUT G:REMONTER AVEC CORDE     "
+.include "full-description.inc"
 entity_actor_y = $0F26
 rope_actor_x = $0F2A
 rope_actor_y = $0F2B

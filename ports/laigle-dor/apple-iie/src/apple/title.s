@@ -20,7 +20,11 @@ title_begin:
     sta $C004
     inc render_bank
     lda render_bank
+.if HGR_MONO
+    cmp #1
+.else
     cmp #2
+.endif
     bne @bank
     lda #$20
     sta draw_page_hi
@@ -46,7 +50,7 @@ title_tick_update:
 @done:
     rts
 @start:
-    lda #MODE_NAME
+    lda #MODE_INTRO
     sta game_mode
     rts
 title_draw:
@@ -134,12 +138,14 @@ title_bottom:
     sta (dst_ptr),y
     lda #0
     ldx title_copy
+.if !HGR_MONO
     beq :+
     jsr aux_read_src
 :
     sta $C005
     sta (dst_ptr),y
     sta $C004
+.endif
     dey
     bpl @byte
     inc title_row

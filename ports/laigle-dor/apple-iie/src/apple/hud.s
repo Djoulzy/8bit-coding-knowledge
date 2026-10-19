@@ -22,7 +22,7 @@ hud_init:
 hud_draw:
 .if FULL_GAME
     jmp full_hud_draw
-.endif
+.else
     lda #0
     sta hud_row
 @row:
@@ -107,6 +107,7 @@ hud_draw:
 .else
     rts
 .endif
+.endif                    ; prototype-only HUD formatter
 hud_decimal3:
     ldx #0
 @hundreds:
@@ -144,6 +145,7 @@ hud_decimal2:
     rts
 hud_row_lo: .byte $50,$D0,$50,$D0
 hud_row_hi: .byte $06,$06,$07,$07
+.if !FULL_GAME
 hud_text_lo: .byte <hud_line0,<hud_line1,<hud_line2,<hud_line3
 hud_text_hi: .byte >hud_line0,>hud_line1,>hud_line2,>hud_line3
 hud_line0: .byte "FORCES:100% POINTS:00000 OR:00500       "
@@ -156,3 +158,4 @@ hud_idle: .byte "IMMOBILE"
 hud_walk: .byte "MARCHE  "
 hud_crouch: .byte "ACCROUPI"
 hud_exit: .byte "PASSAGE "
+.endif

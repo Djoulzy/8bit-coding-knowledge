@@ -26,6 +26,12 @@ game_reset:
 .endif
 
 game_tick:
+.if FULL_GAME
+    jsr full_ui_key
+    bcc :+
+    rts
+:
+.endif
     inc tick_lo
     bne :+
     inc tick_hi

@@ -10,7 +10,7 @@ from tools.artwork import override_screen
 ORIC_COLORS=[0,1,12,13,2,3,6,15]
 
 
-def title_image(flash=False):
+def title_image(flash=False, monochrome=False):
     source=Source();raw=bytearray(source.read(0x1801,8000,1))
     def column(x,y,height,value):
         for row in range(y,y+height):raw[row*40+x//6]=value
@@ -26,12 +26,16 @@ def title_image(flash=False):
         ink,paper=7,0
         for bx,value in enumerate(raw[40*y:40*y+40]):
             if value & 0x60:
-                for k in range(6):image[y][bx*6+k]=ORIC_COLORS[ink if value&(32>>k) else paper]
+                if monochrome:
+                    bits=(value&63) ^ (63 if value&128 else 0)
+                    for k in range(6):image[y][bx*6+k]=int(ink!=paper and bool(bits&(32>>k)))
+                else:
+                    for k in range(6):image[y][bx*6+k]=ORIC_COLORS[ink if value&(32>>k) else paper]
             else:
                 if value<8:ink=value
                 elif 16<=value<24:paper=value-16
                 else:raise ValueError('Unsupported title ULA attribute $%02X'%value)
-                image[y][bx*6:bx*6+6]=[ORIC_COLORS[paper]]*6
+                image[y][bx*6:bx*6+6]=[0 if monochrome else ORIC_COLORS[paper]]*6
     # The author and copyright are runtime text, not stored title pixels.
     # Retain the supplied captured 6x8 font and the original credited wording.
     font=source.read(0x9800,2048)
@@ -39,7 +43,7 @@ def title_image(flash=False):
         for i,ch in enumerate(message):
             for j,bits in enumerate(font[ord(ch)*8:ord(ch)*8+8]):
                 for k in range(6):
-                    if bits&(32>>k):image[y+j][x+i*6+k]=color
+                    if bits&(32>>k):image[y+j][x+i*6+k]=1 if monochrome else color
     image[190:200]=[[0]*240 for _ in range(10)]
     text('par ROCQUES Louis-Marie',54,190,3)
     text('Copyright LORICIELS 84',54,208,15)
@@ -65,7 +69,37 @@ def title_pages(flash=False):
     return bytes(main),bytes(aux)
 
 
-def export_title(dest):
+def mono_title_page(flash=False):
+    from tools.resources import row_offset
+    page=bytearray(8192)
+    for sy,row in enumerate(title_image(flash,monochrome=True)):
+        if sy<190:y=sy*160//190
+        elif sy<200:y=162+sy-190
+        elif sy<208:continue
+        elif sy<216:y=174+sy-208
+        else:y=184+sy-216
+        address=row_offset(y);page[address:address+40]=bytes(40)
+        for x,bit in enumerate(row):
+            if bit:page[address+(x+20)//7] |= 1 << ((x+20)%7)
+    return bytes(page)
+
+
+def export_title(dest, mode='dhgr'):
+    if mode=='mono':
+        off,on=mono_title_page(False),mono_title_page(True)
+        (dest/'title.hgr').write_bytes(off)
+        patch=bytearray()
+        for offset,(a,b) in enumerate(zip(off,on)):
+            if a!=b:patch.extend([offset&255,offset>>8,b,a])
+        patch.extend([255,255]);(dest/'title-flash.bin').write_bytes(patch)
+        report={'source_block':'B1','cpu_range':'$1801-$3740',
+                'source_sha256':digest(Source().read(0x1801,8000,1)),
+                'raster_bytes':len(off),'raster_sha256':digest(off),'patch_bytes':len(patch),
+                'conversion':'Oric foreground dots at x+20; 190->160 title rows; original captured-font credits and native-height keyboard prompt',
+                'palette':'monochrome; ink/paper cells transparent; equal ink/paper hides lightning',
+                'timing':'target frame counter; original WAIT/audio timing not reproduced'}
+        write_json(dest/'title-manifest.json',report)
+        return report
     off=title_pages(False);on=title_pages(True)
     edited=override_screen('laigle/game/dhgr/title', 'dhgr', *off)
     # Preserve edits in both animation states except at the original lightning

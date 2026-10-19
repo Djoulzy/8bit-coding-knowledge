@@ -24,8 +24,8 @@ def build_dir(mode=None):
     if mode not in ('mono', 'color', 'dhgr'):
         raise ValueError('Unknown video profile: ' + mode)
     if os.environ.get('LAIGLE_STAGE') == 'game':
-        if mode != 'dhgr': raise ValueError('The world port currently requires DHGR')
-        return ROOT / 'build/game'
+        if mode == 'color': raise ValueError('Full game profiles are mono or dhgr')
+        return ROOT / ('build/game-mono' if mode == 'mono' else 'build/game')
     return ROOT / ('build/' + mode if mode != 'mono' else 'build')
 
 

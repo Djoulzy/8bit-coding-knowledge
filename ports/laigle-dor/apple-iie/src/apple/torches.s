@@ -33,9 +33,17 @@ full_draw_torches:
     pha
     and #1
     beq @right
+.if HGR_MONO
+    lda #6
+.else
     lda #12                ; serial byte-column bounds, cells 22..30
+.endif
     sta repair_left
+.if HGR_MONO
+    lda #10
+.else
     lda #18
+.endif
     sta repair_right
     jsr @restore
     lda #18                ; CURSET anchor -> source left 24
@@ -45,9 +53,17 @@ full_draw_torches:
     pla
     and #2
     beq @done
+.if HGR_MONO
+    lda #32
+.else
     lda #65                ; cells 115..123
+.endif
     sta repair_left
+.if HGR_MONO
+    lda #36
+.else
     lda #71
+.endif
     sta repair_right
     jsr @restore
     lda #204               ; CURSET anchor -> source left 210

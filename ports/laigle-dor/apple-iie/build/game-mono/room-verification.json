@@ -1,0 +1,454 @@
+{
+  "execution": "actual NMOS instructions in py65 functional Apple bus; no original Oric runtime",
+  "program_sha256": "11c61bd4b48c08d25ed9c5c51776e2ad83a13fb74c7601878b3f547e53e250d6",
+  "rooms": [
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 1,
+      "original_dot_layer_oracle_match": true,
+      "room": 0
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 2,
+      "original_dot_layer_oracle_match": true,
+      "room": 1
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 3,
+      "original_dot_layer_oracle_match": true,
+      "room": 2
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 3,
+      "original_dot_layer_oracle_match": true,
+      "room": 3
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 4
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 3,
+      "original_dot_layer_oracle_match": true,
+      "room": 5
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 1,
+      "original_dot_layer_oracle_match": true,
+      "room": 6
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 3,
+      "original_dot_layer_oracle_match": true,
+      "room": 7
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 3,
+      "original_dot_layer_oracle_match": true,
+      "room": 8
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 1,
+      "original_dot_layer_oracle_match": true,
+      "room": 9
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 10
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 1,
+      "original_dot_layer_oracle_match": true,
+      "room": 11
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 1,
+      "original_dot_layer_oracle_match": true,
+      "room": 12
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 1,
+      "original_dot_layer_oracle_match": true,
+      "room": 13
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 14
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 1,
+      "original_dot_layer_oracle_match": true,
+      "room": 15
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 16
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 17
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 18
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 19
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 1,
+      "original_dot_layer_oracle_match": true,
+      "room": 20
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 21
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 22
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 23
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 24
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 25
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 26
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 27
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 1,
+      "original_dot_layer_oracle_match": true,
+      "room": 28
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 29
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 30
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 31
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 32
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 2,
+      "original_dot_layer_oracle_match": true,
+      "room": 33
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 34
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 1,
+      "original_dot_layer_oracle_match": true,
+      "room": 35
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 36
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 37
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 1,
+      "original_dot_layer_oracle_match": true,
+      "room": 38
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 39
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 40
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 41
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 42
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 43
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 44
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 45
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 1,
+      "original_dot_layer_oracle_match": true,
+      "room": 46
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 47
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 48
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 1,
+      "original_dot_layer_oracle_match": true,
+      "room": 49
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 50
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 1,
+      "original_dot_layer_oracle_match": true,
+      "room": 51
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 52
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 53
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 54
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 55
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 0,
+      "original_dot_layer_oracle_match": true,
+      "room": 56
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 1,
+      "original_dot_layer_oracle_match": true,
+      "room": 57
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 1,
+      "original_dot_layer_oracle_match": true,
+      "room": 58
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 1,
+      "original_dot_layer_oracle_match": true,
+      "room": 59
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 1,
+      "original_dot_layer_oracle_match": true,
+      "room": 60
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 1,
+      "original_dot_layer_oracle_match": true,
+      "room": 61
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 2,
+      "original_dot_layer_oracle_match": true,
+      "room": 62
+    },
+    {
+      "both_main_frames_match": true,
+      "collision_match": true,
+      "geometry": 2,
+      "original_dot_layer_oracle_match": true,
+      "room": 63
+    }
+  ]
+}

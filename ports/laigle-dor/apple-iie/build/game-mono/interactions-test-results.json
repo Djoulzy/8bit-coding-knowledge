@@ -1,0 +1,31 @@
+{
+  "disk_sha256": "0ff15d34ec91dca1441d3747483019eb0ad1490bbc66384cba0fce44430c13a9",
+  "elapsed_seconds": 391.425,
+  "errors": [],
+  "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+  "failures": [],
+  "original_oric_runtime": "not tested",
+  "program_sha256": "5acf1970f4a549d6030b7bffb9edf6725024a92b45716932f78a38b5167ae861",
+  "real_hardware": "not tested",
+  "selected_tests": [
+    "test_boot_preloads_shared_atlas_and_keeps_program_main",
+    "test_secret_passages_open_and_traverse_all_source_links",
+    "test_secret_passage_guards_and_original_anchor",
+    "test_impossible_actions_persist_until_next_command",
+    "test_impossible_feedback_in_special_rooms_and_darkness",
+    "test_light_feedback_distinguishes_request_from_automatic_attempt",
+    "test_gameplay_hud_original_room_descriptions",
+    "test_gameplay_hud_stats_and_hand_names",
+    "test_name_exterior_merchant_and_resume",
+    "test_help_pauses_walking_and_staged_actions",
+    "test_room_change_keeps_graphics_until_hidden_pair_is_complete",
+    "test_lighting_does_not_leave_an_unanimated_fixture",
+    "test_all_64_rooms_use_the_same_constructor_and_grid",
+    "test_transition_uses_original_link_and_arrival_bits"
+  ],
+  "success": true,
+  "suite": "interactions",
+  "tests_run": 14,
+  "video_profile": "mono",
+  "virtual_ii": "not tested"
+}

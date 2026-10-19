@@ -1,0 +1,183 @@
+{
+  "allocation": {
+    "EXTRACODE": "MAIN $0E30-$0EFF allocation; relocated at entry before title and baselines",
+    "dhgr_used": "$0E30-$0EF7",
+    "mono_used": "$0E30-$0EBF"
+  },
+  "change": "Right-aligned inverse feedback and usable gold-key fireplace passages",
+  "date": "2026-10-18",
+  "executed_profiles": {
+    "dhgr": {
+      "disk": "build/game/laigle-dor-dhgr-color.do",
+      "disk_sha256": "c3685bdda217461a18979ffc192237a3af8b8e359fbd98403e5e9c1eceacaefc",
+      "elapsed_seconds": 469.95,
+      "errors": [],
+      "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+      "failures": [],
+      "feedback_columns_zero_based": [
+        70,
+        79
+      ],
+      "feedback_style": "inverse capitals; full-screen darkness always uses columns 30-39",
+      "original_oric_runtime": "not tested",
+      "previews": {
+        "action-impossible.png": {
+          "path": "build/game/action-impossible.png",
+          "sha256": "670ed6073da684b91ec86a18bee885617d1fc15c01caa332a74b2c7c7af6c9e9"
+        },
+        "secret-passage-open.png": {
+          "path": "build/game/secret-passage-open.png",
+          "sha256": "9bb30785c22a629227c3b435b692b5b5cb37f786639793e5f3d26bbef03fa3c1"
+        }
+      },
+      "program_bytes": 19199,
+      "program_sha256": "4e902e8ac0a0caa1487341b76a7923564f0fb17c912311925af281070abfe2e5",
+      "real_hardware": "not tested",
+      "room_constructor_cases": 64,
+      "secret_passage_links": [
+        [
+          0,
+          63
+        ],
+        [
+          11,
+          51
+        ],
+        [
+          38,
+          49
+        ],
+        [
+          49,
+          38
+        ],
+        [
+          51,
+          11
+        ],
+        [
+          63,
+          0
+        ]
+      ],
+      "selected_tests": [
+        "test_boot_preloads_shared_atlas_and_keeps_program_main",
+        "test_secret_passages_open_and_traverse_all_source_links",
+        "test_secret_passage_guards_and_original_anchor",
+        "test_impossible_actions_persist_until_next_command",
+        "test_impossible_feedback_in_special_rooms_and_darkness",
+        "test_light_feedback_distinguishes_request_from_automatic_attempt",
+        "test_gameplay_hud_original_room_descriptions",
+        "test_gameplay_hud_stats_and_hand_names",
+        "test_name_exterior_merchant_and_resume",
+        "test_help_pauses_walking_and_staged_actions",
+        "test_room_change_keeps_graphics_until_hidden_pair_is_complete",
+        "test_lighting_does_not_leave_an_unanimated_fixture",
+        "test_all_64_rooms_use_the_same_constructor_and_grid",
+        "test_transition_uses_original_link_and_arrival_bits"
+      ],
+      "source_direction_links_checked": 256,
+      "success": true,
+      "suite": "interactions",
+      "test_report": "build/game/interactions-test-results.json",
+      "tests_run": 14,
+      "video_profile": "dhgr",
+      "virtual_ii": "not tested"
+    },
+    "mono": {
+      "disk": "build/game-mono/laigle-dor-hgr-mono.do",
+      "disk_sha256": "0ff15d34ec91dca1441d3747483019eb0ad1490bbc66384cba0fce44430c13a9",
+      "elapsed_seconds": 391.425,
+      "errors": [],
+      "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+      "failures": [],
+      "feedback_columns_zero_based": [
+        30,
+        39
+      ],
+      "feedback_style": "inverse capitals; full-screen darkness always uses columns 30-39",
+      "original_oric_runtime": "not tested",
+      "previews": {
+        "action-impossible.png": {
+          "path": "build/game-mono/action-impossible.png",
+          "sha256": "fbf53af4a6ff3fe3c0963e9ffdaeee24db854216240cd6a4003babad3b129c38"
+        },
+        "secret-passage-open.png": {
+          "path": "build/game-mono/secret-passage-open.png",
+          "sha256": "67a02bf9c8c2d3446c05301350e51daa1176519e1fbdd1fceee2c2d9ef3e8de7"
+        }
+      },
+      "program_bytes": 18883,
+      "program_sha256": "5acf1970f4a549d6030b7bffb9edf6725024a92b45716932f78a38b5167ae861",
+      "real_hardware": "not tested",
+      "room_constructor_cases": 64,
+      "secret_passage_links": [
+        [
+          0,
+          63
+        ],
+        [
+          11,
+          51
+        ],
+        [
+          38,
+          49
+        ],
+        [
+          49,
+          38
+        ],
+        [
+          51,
+          11
+        ],
+        [
+          63,
+          0
+        ]
+      ],
+      "selected_tests": [
+        "test_boot_preloads_shared_atlas_and_keeps_program_main",
+        "test_secret_passages_open_and_traverse_all_source_links",
+        "test_secret_passage_guards_and_original_anchor",
+        "test_impossible_actions_persist_until_next_command",
+        "test_impossible_feedback_in_special_rooms_and_darkness",
+        "test_light_feedback_distinguishes_request_from_automatic_attempt",
+        "test_gameplay_hud_original_room_descriptions",
+        "test_gameplay_hud_stats_and_hand_names",
+        "test_name_exterior_merchant_and_resume",
+        "test_help_pauses_walking_and_staged_actions",
+        "test_room_change_keeps_graphics_until_hidden_pair_is_complete",
+        "test_lighting_does_not_leave_an_unanimated_fixture",
+        "test_all_64_rooms_use_the_same_constructor_and_grid",
+        "test_transition_uses_original_link_and_arrival_bits"
+      ],
+      "source_direction_links_checked": 256,
+      "success": true,
+      "suite": "interactions",
+      "test_report": "build/game-mono/interactions-test-results.json",
+      "tests_run": 14,
+      "video_profile": "mono",
+      "virtual_ii": "not tested"
+    }
+  },
+  "host_preview_check": "All 7x8 pixels in each IMPOSSIBLE inverse glyph complement its normal glyph",
+  "limitations": [
+    "No new Virtual II or physical-hardware execution",
+    "No Apple system-ROM reset or original Oric runtime execution",
+    "Opening window and fully filled static slit are explicit target adaptations",
+    "Elapsed seconds measure host test duration, not Apple II performance"
+  ],
+  "previous_records": [
+    "action-feedback-verification.json",
+    "world-verification.json",
+    "hgr-mono-verification.json"
+  ],
+  "scope": "Focused interaction/scene regressions; not a rerun of every map, quest, sprite and staged-action scenario",
+  "static_checks": [
+    "Both ca65/ld65 builds and disk packaging succeeded",
+    "Named DO/NIB disks are byte-identical to canonical aliases",
+    "Linker bounds protect HUD scratch, disk state, terrain and bank workers"
+  ]
+}

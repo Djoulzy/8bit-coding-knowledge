@@ -1,0 +1,263 @@
+{
+  "change": "Nine-octet short checkpoint: packed room/inventory fields, CRC-16 and native save/resume TEXT interface",
+  "date": "2026-10-18",
+  "executed_profiles": {
+    "dhgr": {
+      "aux_worker_template_end_exclusive": "$9FF0",
+      "codec_room_vectors": 64,
+      "cold_boot_resume_to": "mono",
+      "crc_valid_semantic_rejections": 11,
+      "disk": "build/game/laigle-dor-dhgr-color.do",
+      "disk_sha256": "67dbb6eb08de412d0097902282df2a5a807baabf87c812605ebd0d4443569af0",
+      "elapsed_seconds": 63.733,
+      "errors": [],
+      "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+      "failures": [],
+      "original_oric_runtime": "not tested",
+      "previews": {
+        "checkpoint-entry-error.png": {
+          "kind": "executed functional 6502 preview; host font, not Virtual II",
+          "path": "build/game/checkpoint-entry-error.png",
+          "sha256": "4c61a9e31a9dfbf1696c7c81438eaf7e2762f8279fefa80aaada9ae49fc25b7c"
+        },
+        "checkpoint-entry-from-mono.png": {
+          "kind": "executed functional 6502 preview; host font, not Virtual II",
+          "path": "build/game/checkpoint-entry-from-mono.png",
+          "sha256": "00cdd6e70b6cf2590ad7c33a1fc67735d8af56408f0cd6622b9bd80469dc16be"
+        },
+        "checkpoint-restored-from-mono.png": {
+          "kind": "executed functional 6502 preview; host font, not Virtual II",
+          "path": "build/game/checkpoint-restored-from-mono.png",
+          "sha256": "2bc2a0a5b6ebeb045313f5e8417961906cbc37a8591d2423dd2b613447e5b4c0"
+        },
+        "checkpoint-save.png": {
+          "kind": "executed functional 6502 preview; host font, not Virtual II",
+          "path": "build/game/checkpoint-save.png",
+          "sha256": "2c231f0bd2684cea88125da3f374c5967ffaae9cb8191a9a918e6a7b2c27ca73"
+        }
+      },
+      "program_bytes": 19746,
+      "program_sha256": "43dd76e67657084061358149f20e571e3b45c96ec5c285cab5122e728b5c4b85",
+      "real_hardware": "not tested",
+      "resident_end_exclusive": "$9FDE",
+      "segments": {
+        "PASSCODE": {
+          "bytes": 201,
+          "end_exclusive": "$0CF9",
+          "run": "$0C30",
+          "startup_relocation_verified": true
+        },
+        "PASSTAIL": {
+          "bytes": 124,
+          "end_exclusive": "$0FFC",
+          "run": "$0F80",
+          "startup_relocation_verified": true
+        },
+        "PASSUI": {
+          "bytes": 233,
+          "end_exclusive": "$1FF9",
+          "run": "$1F10",
+          "startup_relocation_verified": true
+        }
+      },
+      "selected_tests": [
+        "test_boot_preloads_shared_atlas_and_keeps_program_main",
+        "test_checkpoint_codec_native_vectors_and_corruption",
+        "test_checkpoint_save_pauses_help_and_consumes_close_keys",
+        "test_checkpoint_entry_errors_editing_cancel_and_help",
+        "test_checkpoint_cold_cross_profile_resume_preserves_new_name",
+        "test_debug_map_navigation_pauses_and_returns_to_menu_or_game",
+        "test_name_exterior_merchant_and_resume"
+      ],
+      "single_bit_corruptions_rejected": 72,
+      "success": true,
+      "suite": "checkpoint",
+      "test_report": "build/game/checkpoint-test-results.json",
+      "tests_run": 7,
+      "text_archive_bytes": 2434,
+      "video_profile": "dhgr",
+      "virtual_ii": "not tested"
+    },
+    "mono": {
+      "aux_worker_template_end_exclusive": "$9F24",
+      "codec_room_vectors": 64,
+      "cold_boot_resume_to": "dhgr",
+      "crc_valid_semantic_rejections": 11,
+      "disk": "build/game-mono/laigle-dor-hgr-mono.do",
+      "disk_sha256": "c2c840d93f6caca6a427bf48a0f9cc548728b3813ca6dc9e4bc27ef97072cf3b",
+      "elapsed_seconds": 59.827,
+      "errors": [],
+      "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+      "failures": [],
+      "original_oric_runtime": "not tested",
+      "previews": {
+        "checkpoint-entry-error.png": {
+          "kind": "executed functional 6502 preview; host font, not Virtual II",
+          "path": "build/game-mono/checkpoint-entry-error.png",
+          "sha256": "4c61a9e31a9dfbf1696c7c81438eaf7e2762f8279fefa80aaada9ae49fc25b7c"
+        },
+        "checkpoint-entry-from-dhgr.png": {
+          "kind": "executed functional 6502 preview; host font, not Virtual II",
+          "path": "build/game-mono/checkpoint-entry-from-dhgr.png",
+          "sha256": "00cdd6e70b6cf2590ad7c33a1fc67735d8af56408f0cd6622b9bd80469dc16be"
+        },
+        "checkpoint-restored-from-dhgr.png": {
+          "kind": "executed functional 6502 preview; host font, not Virtual II",
+          "path": "build/game-mono/checkpoint-restored-from-dhgr.png",
+          "sha256": "09f3a18c8718b1bbc282926792bb6f076c95ae5c7cf284fc83a572da42e2f455"
+        },
+        "checkpoint-save.png": {
+          "kind": "executed functional 6502 preview; host font, not Virtual II",
+          "path": "build/game-mono/checkpoint-save.png",
+          "sha256": "2c231f0bd2684cea88125da3f374c5967ffaae9cb8191a9a918e6a7b2c27ca73"
+        }
+      },
+      "program_bytes": 19451,
+      "program_sha256": "c27de59fb7ef1b8cef14bd6cbd3d990c9b032c01adf660a8a2fc6c0a7ecf2b06",
+      "real_hardware": "not tested",
+      "resident_end_exclusive": "$9F12",
+      "segments": {
+        "PASSCODE": {
+          "bytes": 201,
+          "end_exclusive": "$0CF9",
+          "run": "$0C30",
+          "startup_relocation_verified": true
+        },
+        "PASSTAIL": {
+          "bytes": 124,
+          "end_exclusive": "$0FFC",
+          "run": "$0F80",
+          "startup_relocation_verified": true
+        },
+        "PASSUI": {
+          "bytes": 233,
+          "end_exclusive": "$1FF9",
+          "run": "$1F10",
+          "startup_relocation_verified": true
+        }
+      },
+      "selected_tests": [
+        "test_boot_preloads_shared_atlas_and_keeps_program_main",
+        "test_checkpoint_codec_native_vectors_and_corruption",
+        "test_checkpoint_save_pauses_help_and_consumes_close_keys",
+        "test_checkpoint_entry_errors_editing_cancel_and_help",
+        "test_checkpoint_cold_cross_profile_resume_preserves_new_name",
+        "test_debug_map_navigation_pauses_and_returns_to_menu_or_game",
+        "test_name_exterior_merchant_and_resume"
+      ],
+      "single_bit_corruptions_rejected": 72,
+      "success": true,
+      "suite": "checkpoint",
+      "test_report": "build/game-mono/checkpoint-test-results.json",
+      "tests_run": 7,
+      "text_archive_bytes": 2434,
+      "video_profile": "mono",
+      "virtual_ii": "not tested"
+    }
+  },
+  "execution_limits": [
+    "py65 functional Apple bus, actual Disk II BOOT0",
+    "no system-ROM cold-start",
+    "no new Virtual II launch",
+    "no physical-hardware verification",
+    "host elapsed time is not a target performance benchmark",
+    "previous full-suite/map/presentation records retain their own binary hashes"
+  ],
+  "format": {
+    "crc": "CRC-16/CCITT-FALSE, polynomial $1021, init $FFFF, unreflected, xorout $0000; big-endian CRC",
+    "crc_octets": 2,
+    "fields": [
+      {
+        "bits": 3,
+        "name": "version"
+      },
+      {
+        "bits": 6,
+        "name": "room"
+      },
+      {
+        "bits": 3,
+        "name": "held_slot"
+      },
+      {
+        "bits": 8,
+        "name": "vials"
+      },
+      {
+        "bits": 8,
+        "name": "torches"
+      },
+      {
+        "bits": 8,
+        "name": "ropes"
+      },
+      {
+        "bits": 8,
+        "name": "crowbars"
+      },
+      {
+        "bits": 4,
+        "name": "possessions"
+      },
+      {
+        "bits": 3,
+        "name": "scrolls"
+      },
+      {
+        "bits": 3,
+        "name": "objectives"
+      },
+      {
+        "bits": 2,
+        "name": "padding"
+      }
+    ],
+    "hex_characters": 18,
+    "known_vector": "260000-000000-1CEDA0",
+    "known_vector_state": {
+      "crowbars": 0,
+      "held_item": 0,
+      "objectives": 7,
+      "possessions": 0,
+      "room": 12,
+      "ropes": 0,
+      "scrolls": 0,
+      "torches": 0,
+      "vials": 0
+    },
+    "packet_octets": 9,
+    "payload_octets": 7,
+    "version": 1
+  },
+  "reset": [
+    "gold to 500",
+    "points to 0",
+    "strength to 10000 hundredths",
+    "packed world and lighting history",
+    "pose/actions/pit/enemies/hazards",
+    "item wear and random sequence"
+  ],
+  "restored": [
+    "room",
+    "vials",
+    "torches",
+    "ropes",
+    "crowbars",
+    "possessions",
+    "scrolls",
+    "objectives",
+    "held item"
+  ],
+  "retained_locally": [
+    "newly typed player name"
+  ],
+  "scope": "short checkpoint selected by user; name is newly typed, excluded state starts fresh",
+  "static_checks": [
+    "NMOS 6502 assembler and linker bounds pass for both editions",
+    "named DO/NIB disks equal canonical copies",
+    "git diff --check for source/tools/tests/docs passes",
+    "historical Source() checksums unchanged",
+    "binary packet is 54 meaningful bits plus 2 zero padding bits and 16 CRC bits"
+  ],
+  "visual_review": "Inspected native generated-code, code-entry and validation-error previews"
+}

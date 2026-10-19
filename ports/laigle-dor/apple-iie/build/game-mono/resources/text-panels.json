@@ -1,0 +1,660 @@
+{
+  "adaptations": "source letter case retained, whitespace/reflow, 24 rows; Apple help keys/T command; spaced two-column inventory and hidden development menu are new target text",
+  "aux_start": "$1400",
+  "bytes": 2768,
+  "disk_sector": 224,
+  "offsets": {
+    "code_load": 2187,
+    "code_save": 1941,
+    "dead": 2434,
+    "debug": 1714,
+    "depart": 2661,
+    "exterior": 483,
+    "help": 1129,
+    "intro": 0,
+    "inventory": 858,
+    "merchant": 624,
+    "name": 1560,
+    "win": 2547
+  },
+  "panels": {
+    "code_load": [
+      [
+        2,
+        9,
+        "Reprendre une aventure"
+      ],
+      [
+        5,
+        2,
+        "Saisissez les 18 caracteres du code."
+      ],
+      [
+        9,
+        10,
+        "______-______-______"
+      ],
+      [
+        12,
+        2,
+        "Le nom saisi au debut sera conserve."
+      ],
+      [
+        15,
+        1,
+        "Or, force et salles : nouvelle partie."
+      ],
+      [
+        18,
+        11,
+        "Entree : reprendre"
+      ],
+      [
+        19,
+        8,
+        "Retour arriere : effacer"
+      ],
+      [
+        22,
+        6,
+        "Echap: annuler   H / ?: aide"
+      ]
+    ],
+    "code_save": [
+      [
+        2,
+        12,
+        "Code de reprise"
+      ],
+      [
+        5,
+        5,
+        "Piece et inventaire uniquement"
+      ],
+      [
+        7,
+        2,
+        "Notez les 18 caracteres ci-dessous :"
+      ],
+      [
+        9,
+        10,
+        "______-______-______"
+      ],
+      [
+        12,
+        1,
+        "Le nom sera saisi au prochain depart."
+      ],
+      [
+        15,
+        0,
+        "Or, force et salles ne sont pas sauves."
+      ],
+      [
+        20,
+        4,
+        "Espace / Entree / Echap : retour"
+      ],
+      [
+        23,
+        14,
+        "H / ? : aide"
+      ]
+    ],
+    "dead": [
+      [
+        4,
+        0,
+        "L'Aigle d'Or             Or:00000"
+      ],
+      [
+        8,
+        0,
+        "Vous avez perdu"
+      ],
+      [
+        9,
+        0,
+        "Votre aventure est terminee"
+      ],
+      [
+        10,
+        0,
+        "O ou Entree: nouvel essai"
+      ]
+    ],
+    "debug": [
+      [
+        1,
+        14,
+        "Menu de test"
+      ],
+      [
+        4,
+        3,
+        "1: Tous les objets (9 consommables)"
+      ],
+      [
+        6,
+        3,
+        "2: Teleportation"
+      ],
+      [
+        7,
+        3,
+        "3: Carte du chateau"
+      ],
+      [
+        9,
+        3,
+        "Salle actuelle: 00"
+      ],
+      [
+        12,
+        3,
+        "Destination: __  (0-63)"
+      ],
+      [
+        14,
+        3,
+        "2 puis numero et Entree"
+      ],
+      [
+        15,
+        3,
+        "Retour arriere: corriger"
+      ],
+      [
+        23,
+        5,
+        "Echap / Ctrl+D: retour au jeu"
+      ]
+    ],
+    "depart": [
+      [
+        4,
+        0,
+        "L'Aigle d'Or             Or:00000"
+      ],
+      [
+        8,
+        0,
+        "Fin du voyage"
+      ],
+      [
+        9,
+        0,
+        "Vous quittez le chateau"
+      ],
+      [
+        10,
+        0,
+        "O ou Entree: nouvel essai"
+      ]
+    ],
+    "exterior": [
+      [
+        1,
+        10,
+        "Exterieur du chateau"
+      ],
+      [
+        7,
+        5,
+        "1. Entrer dans le chateau."
+      ],
+      [
+        10,
+        5,
+        "2. Partir."
+      ],
+      [
+        13,
+        5,
+        "3. Aller chez le marchand"
+      ],
+      [
+        16,
+        5,
+        "4. Reprendre avec un code"
+      ],
+      [
+        23,
+        12,
+        "H / ?: commandes"
+      ]
+    ],
+    "help": [
+      [
+        1,
+        15,
+        "Commandes"
+      ],
+      [
+        3,
+        2,
+        "Fleches: Marcher,tourner"
+      ],
+      [
+        4,
+        2,
+        "Espace: Arret, position neutre"
+      ],
+      [
+        5,
+        2,
+        "A: Accroupir"
+      ],
+      [
+        6,
+        2,
+        "B: Boire"
+      ],
+      [
+        7,
+        2,
+        "S: Sauter (longueur)"
+      ],
+      [
+        8,
+        2,
+        "D: Sauter (hauteur)"
+      ],
+      [
+        9,
+        2,
+        "G: Grimper"
+      ],
+      [
+        10,
+        2,
+        "I: Inventaire"
+      ],
+      [
+        11,
+        2,
+        "L: Lire"
+      ],
+      [
+        12,
+        2,
+        "O: Ouvrir"
+      ],
+      [
+        13,
+        2,
+        "P: Prendre"
+      ],
+      [
+        14,
+        2,
+        "Q: Suicide"
+      ],
+      [
+        15,
+        2,
+        "T: Allumer une torche"
+      ],
+      [
+        16,
+        2,
+        "H / ?: Cette aide"
+      ],
+      [
+        17,
+        2,
+        "C: Code de reprise"
+      ],
+      [
+        18,
+        2,
+        "Objet en main:"
+      ],
+      [
+        19,
+        2,
+        "0: Vide             1: Torche"
+      ],
+      [
+        20,
+        2,
+        "2: Clef en fer      3: Clef en or"
+      ],
+      [
+        21,
+        2,
+        "4: Fiole            5: Pied de biche"
+      ],
+      [
+        23,
+        11,
+        "Une touche: retour"
+      ]
+    ],
+    "intro": [
+      [
+        0,
+        14,
+        "L'Aigle d'Or"
+      ],
+      [
+        2,
+        2,
+        "Apres plusieurs jours de cheval,"
+      ],
+      [
+        3,
+        2,
+        "vous arrivez enfin en vue du Chateau"
+      ],
+      [
+        4,
+        2,
+        "de l'Aigle, situe aux confins de la"
+      ],
+      [
+        5,
+        2,
+        "Wesphalie."
+      ],
+      [
+        7,
+        2,
+        "Une vieille legende du pays pretend"
+      ],
+      [
+        8,
+        2,
+        "que le chateau recelle des tresors"
+      ],
+      [
+        9,
+        2,
+        "et richesses inestimables! Vous"
+      ],
+      [
+        10,
+        2,
+        "voulez aussi tenter votre chance,"
+      ],
+      [
+        11,
+        2,
+        "bien que nombreux furent ceux qui"
+      ],
+      [
+        12,
+        2,
+        "perirent..."
+      ],
+      [
+        14,
+        2,
+        "Pour mener a bien votre quete, il"
+      ],
+      [
+        15,
+        2,
+        "vous faudra acquerir les trois"
+      ],
+      [
+        16,
+        2,
+        "valeurs: Fortune, Sagesse et"
+      ],
+      [
+        17,
+        2,
+        "Puissance"
+      ],
+      [
+        23,
+        4,
+        "Une touche: suite    H / ?: aide"
+      ]
+    ],
+    "inventory": [
+      [
+        1,
+        15,
+        "Inventaire"
+      ],
+      [
+        3,
+        2,
+        "En main : Vide"
+      ],
+      [
+        5,
+        2,
+        "Provisions"
+      ],
+      [
+        5,
+        22,
+        "Equipement"
+      ],
+      [
+        7,
+        2,
+        "Fioles"
+      ],
+      [
+        9,
+        2,
+        "Torches"
+      ],
+      [
+        11,
+        2,
+        "Cordes"
+      ],
+      [
+        13,
+        2,
+        "Pieds de biche"
+      ],
+      [
+        7,
+        22,
+        "Clef en fer"
+      ],
+      [
+        9,
+        22,
+        "Clef en or"
+      ],
+      [
+        11,
+        22,
+        "Bague"
+      ],
+      [
+        13,
+        22,
+        "Aigle (plomb)"
+      ],
+      [
+        15,
+        12,
+        "Objets de quete"
+      ],
+      [
+        17,
+        2,
+        "Livre"
+      ],
+      [
+        17,
+        22,
+        "Diamant"
+      ],
+      [
+        19,
+        2,
+        "Aigle d'or"
+      ],
+      [
+        19,
+        22,
+        "Parchemins"
+      ],
+      [
+        19,
+        36,
+        "0/3"
+      ],
+      [
+        22,
+        4,
+        "Espace / Entree / Echap : retour"
+      ],
+      [
+        23,
+        14,
+        "H / ? : aide"
+      ]
+    ],
+    "merchant": [
+      [
+        2,
+        11,
+        "Le marchand vend :"
+      ],
+      [
+        6,
+        4,
+        "1. Fioles         : 360 p.o."
+      ],
+      [
+        7,
+        7,
+        "(Eau de Jouvence)"
+      ],
+      [
+        9,
+        4,
+        "2. Torches        : 190 p.o."
+      ],
+      [
+        11,
+        4,
+        "3. Cordes         : 110 p.o."
+      ],
+      [
+        13,
+        4,
+        "4. Pieds de biche : 230 p.o."
+      ],
+      [
+        16,
+        4,
+        "0. Partir"
+      ],
+      [
+        18,
+        3,
+        "Pieces d'or: 00000"
+      ],
+      [
+        20,
+        3,
+        "Achat ? (0-4)"
+      ],
+      [
+        23,
+        12,
+        "H / ?: commandes"
+      ]
+    ],
+    "name": [
+      [
+        4,
+        14,
+        "L'Aigle d'Or"
+      ],
+      [
+        7,
+        8,
+        "Comment t'appelles-tu ?"
+      ],
+      [
+        10,
+        7,
+        "Nom: ______"
+      ],
+      [
+        13,
+        7,
+        "Six caracteres au maximum"
+      ],
+      [
+        15,
+        9,
+        "Entree pour continuer"
+      ],
+      [
+        16,
+        6,
+        "Retour arriere pour corriger"
+      ],
+      [
+        23,
+        14,
+        "?: Commandes"
+      ]
+    ],
+    "win": [
+      [
+        4,
+        0,
+        "L'Aigle d'Or             Or:00000"
+      ],
+      [
+        8,
+        0,
+        "Vous avez reuni les trois objectifs"
+      ],
+      [
+        9,
+        0,
+        "Victoire"
+      ],
+      [
+        10,
+        0,
+        "O ou Entree: nouvel essai"
+      ]
+    ]
+  },
+  "sha256": "4c9d2d7ad4eab9adb0894fa27aa8751edc1a3cfbbb5f98557aa07ecc29bbb265",
+  "source_b1_lines": [
+    1515,
+    1520,
+    1530,
+    1540,
+    1550,
+    1560,
+    1570,
+    1620,
+    1630,
+    1650,
+    1660,
+    1670,
+    1680,
+    1685,
+    1687
+  ],
+  "source_b2_lines": [
+    3005,
+    3010,
+    3015,
+    13000,
+    13010,
+    13015,
+    13020,
+    13030,
+    13035
+  ]
+}

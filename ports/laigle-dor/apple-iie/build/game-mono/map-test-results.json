@@ -1,0 +1,22 @@
+{
+  "disk_sha256": "fb078e0060a5a73406ab697c9293c9910f1eb08592b3b7c756c23a2daa246044",
+  "elapsed_seconds": 48.924,
+  "errors": [],
+  "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+  "failures": [],
+  "original_oric_runtime": "not tested",
+  "program_sha256": "289ec6db81f11fe4419c6405bd595c06f32ede3835507c5e76c5efe0387f30f5",
+  "real_hardware": "not tested",
+  "selected_tests": [
+    "test_boot_preloads_shared_atlas_and_keeps_program_main",
+    "test_debug_map_all_rooms_initial_content_and_live_position",
+    "test_debug_map_navigation_pauses_and_returns_to_menu_or_game",
+    "test_inventory_spaced_layout_live_values_and_modal_return",
+    "test_help_returns_to_each_modal_page_and_name_input"
+  ],
+  "success": true,
+  "suite": "map",
+  "tests_run": 5,
+  "video_profile": "mono",
+  "virtual_ii": "not tested"
+}

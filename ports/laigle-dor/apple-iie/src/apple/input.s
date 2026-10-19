@@ -10,6 +10,14 @@ keyboard_poll:
     bpl @done
     and #$7F
     bit $C010
+.if FULL_GAME
+    ldx game_mode
+    cpx #MODE_NAME
+    bne :+
+    sta raw_key            ; preserve typed case in names, normalize commands only
+    rts
+:
+.endif
     cmp #$61
     bcc :+
     cmp #$7B
@@ -19,8 +27,12 @@ keyboard_poll:
 .if FULL_GAME
     sta raw_key
     ldx game_mode
-    cpx #MODE_NAME
+    cpx #MODE_HELP
     beq @done
+    cpx #MODE_INTRO
+    beq @done
+    cpx #MODE_DEBUG
+    bcs @done                ; hidden menu and its two map pages
 .endif
     ldx #0
 @find:

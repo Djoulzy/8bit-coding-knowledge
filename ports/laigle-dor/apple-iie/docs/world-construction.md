@@ -5,7 +5,7 @@ cpu: ["6502"]
 machines: ["apple-iie", "oric-1"]
 analysis_status: draft
 source_revision: "sha256:7f01e1a3d05825aab887952cd5711bea69d6525730aba5c1e25c814334fe77d7"
-analysis_date: "2026-10-13"
+analysis_date: "2026-10-18"
 ---
 
 # Generic room construction on Apple IIe
@@ -30,6 +30,10 @@ come from 600–699 and 700–1110. The packed-world decoder is `$3F14–$3FF1`.
 
 ## Resources and target environment
 
+The allocation table below describes the DHGR edition. The
+[HGR monochrome edition](hgr-mono.md) shares this constructor and game state,
+using a MAIN-only baseline and a larger AUX atlas containing original Oric dots.
+
 | Resource | Allocation / source | Role |
 | --- | --- | --- |
 | Mutable room records | MAIN `$1000–$11FF`; initial B2 `$5600–$57FF` | 64 eight-byte records across two 256-byte pages; geometry, flags, contents and three stored links |
@@ -37,9 +41,12 @@ come from 600–699 and 700–1110. The packed-world decoder is `$3F14–$3FF1`.
 | Variation table | 64 resident bytes; supplied Oric ROM `$D000–$D03F` | Furnishing and trap placement; hash-pinned input rather than the prototype's provisional zeros |
 | Shared walls | Four small main-bank command programs | Source-coordinate vectors and repeated atlas stamps; independent of room number |
 | Shared sprites | AUX `$6000` onward, bounded below `$A000` | Static scenery, actor, equipment and enemy atlas; no room images |
+| Full text scripts | AUX `$1400–$1AD6`, bounded below `$2000` | Introduction, help, exterior, merchant, name and hidden test/map footer; preloaded once |
+| Graphical test map | Disk sectors 240–431 (DHGR) or 240–335 (HGR) | Three cartography pages loaded into hidden frame buffers; room construction and the terrain baseline are retained; see [test menu](test-menu.md#graphical-room-map) |
 | Terrain baseline | MAIN and AUX `$A000–$BFFF` | One current-room terrain pair, constructed at runtime |
 | Frame buffers | MAIN and AUX `$2000–$3FFF`, `$4000–$5FFF` | Two alternating DHGR frame pairs; four mixed text rows |
-| Bank-read code | MAIN zero page `$0040–$0051` | Safe instruction fetch while briefly enabling auxiliary data reads |
+| Bank-read code | MAIN zero page starting at `$0040`, below `$0080` | Safe instruction fetch while briefly enabling auxiliary data reads |
+| Extra resident code | MAIN `$0E30–$0EFF` allocation | Secret-passage rules/drawing and wide HUD feedback; installed at entry, after HUD scratch `$0E00–$0E27` and before disk state at `$0F00` |
 
 The target needs 128 KiB with an extended 80-column bank and DHGR support. The
 application uses documented NMOS 6502 instructions. The supplied enhanced
@@ -107,14 +114,21 @@ grids and both frame pairs against a source-expression oracle. Rendering is
 compared with an independent **layer-level target oracle**, which consumes
 source-backed operations rather than generated geometry programs.
 
-The [executed record](world-verification.json) pins the tested program, disk,
-atlas and firmware. **Twenty checks passed**, including all 64 original room
+The [earlier full-suite record](world-verification.json) pins its tested program, disk,
+atlas and firmware. The full suite includes all 64 original room
 records, both frame pairs, 256 room/direction transition combinations, 138
 approved-actor render cases, selected inventory/economy/reward paths and the
 four original clue texts, pit recovery, title sequence, finer movement/proximity,
 21 ground-item approach/pickup cases, scenery/flame checks, hidden-only frame
-initialization and darkness recovery. The application is 17,912 bytes and the
-shared atlas 15,134 bytes; the title raster is an
+initialization, darkness recovery, original room-description selection and the
+compact statistics/hand-name HUD on both text pages, original introduction and
+modal help during gameplay, actions, darkness, oubliettes and other menus,
+plus the [hidden inventory/teleport menu](test-menu.md).
+The subsequent [action-feedback revision](presentation-and-pits.md#impossible-action-feedback)
+has a separate focused execution record; the full-suite record above retains its
+original program hash. The current program size is pinned in the
+[interaction record](interaction-verification.json); the shared atlas is 15,134 bytes and the separate
+text archive 1,751 bytes; the title raster is an
 additional 16,384 disk bytes. These are build sizes, not performance measurements.
 
 The target quantizes individual atlas layers before composition. The approved
@@ -133,9 +147,10 @@ approved graphics build remains unchanged.
 ## Remaining work
 
 The rules/actions module is under active development. Complete source-timing
-equivalence, every staged action/enemy path, original introduction/ending
+equivalence, every staged action/enemy path, original ending
 presentation and a full gameplay replay are not certified by room construction
 tests. Audio remains a silent event log. Signed hundredths and a deterministic
 target LFSR are provisional policies; they do not emulate Oric BASIC floats or
-ROM RND. Separate performance measurements are needed before recommending
-this renderer as an optimization.
+ROM RND. The current [renderer optimization](renderer-optimization.md) has
+reproducible functional CPU profiles; these do not establish original Oric
+timing or a general hardware performance recommendation.

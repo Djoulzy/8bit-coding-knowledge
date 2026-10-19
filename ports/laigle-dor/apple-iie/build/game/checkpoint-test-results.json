@@ -1,0 +1,24 @@
+{
+  "disk_sha256": "67dbb6eb08de412d0097902282df2a5a807baabf87c812605ebd0d4443569af0",
+  "elapsed_seconds": 63.733,
+  "errors": [],
+  "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+  "failures": [],
+  "original_oric_runtime": "not tested",
+  "program_sha256": "43dd76e67657084061358149f20e571e3b45c96ec5c285cab5122e728b5c4b85",
+  "real_hardware": "not tested",
+  "selected_tests": [
+    "test_boot_preloads_shared_atlas_and_keeps_program_main",
+    "test_checkpoint_codec_native_vectors_and_corruption",
+    "test_checkpoint_save_pauses_help_and_consumes_close_keys",
+    "test_checkpoint_entry_errors_editing_cancel_and_help",
+    "test_checkpoint_cold_cross_profile_resume_preserves_new_name",
+    "test_debug_map_navigation_pauses_and_returns_to_menu_or_game",
+    "test_name_exterior_merchant_and_resume"
+  ],
+  "success": true,
+  "suite": "checkpoint",
+  "tests_run": 7,
+  "video_profile": "dhgr",
+  "virtual_ii": "not tested"
+}

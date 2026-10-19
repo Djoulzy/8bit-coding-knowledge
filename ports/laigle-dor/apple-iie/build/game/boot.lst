@@ -30,7 +30,7 @@ Current file: /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/
 000019r 1  4C rr rr         jmp read_track
 00001Cr 1               next_track:
 00001Cr 1  A5 27            lda $27
-00001Er 1  C9 A6            cmp #APP_END_PAGE
+00001Er 1  C9 AD            cmp #APP_END_PAGE
 000020r 1  B0 23            bcs loaded
 000022r 1  E6 41            inc $41
 000024r 1  20 rr rr         jsr step_half
@@ -39,7 +39,7 @@ Current file: /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/
 00002Cr 1  85 3D            sta $3D
 00002Er 1               read_track:
 00002Er 1                   ; Number of sectors BOOT0 should read on this track, exclusive upper bound.
-00002Er 1  A9 A6            lda #APP_END_PAGE
+00002Er 1  A9 AD            lda #APP_END_PAGE
 000030r 1  38               sec
 000031r 1  E5 27            sbc $27
 000033r 1  18               clc

@@ -1,0 +1,26 @@
+{
+  "disk_sha256": "080e44d0893620d5dadade8372a9ab54a3cef86df5bc3808cd8436c303d8abc0",
+  "elapsed_seconds": 120.505,
+  "errors": [],
+  "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+  "failures": [],
+  "original_oric_runtime": "not tested",
+  "program_sha256": "12fe387828dd6257fe6ac253d16083dd966e3c2d1be0340a96f9675881d19e17",
+  "real_hardware": "not tested",
+  "selected_tests": [
+    "test_impossible_actions_persist_until_next_command",
+    "test_impossible_feedback_in_special_rooms_and_darkness",
+    "test_light_feedback_distinguishes_request_from_automatic_attempt",
+    "test_gameplay_hud_original_room_descriptions",
+    "test_gameplay_hud_stats_and_hand_names",
+    "test_name_exterior_merchant_and_resume",
+    "test_help_pauses_walking_and_staged_actions",
+    "test_room_change_keeps_graphics_until_hidden_pair_is_complete",
+    "test_lighting_does_not_leave_an_unanimated_fixture"
+  ],
+  "success": true,
+  "suite": "feedback",
+  "tests_run": 9,
+  "video_profile": "dhgr",
+  "virtual_ii": "not tested"
+}

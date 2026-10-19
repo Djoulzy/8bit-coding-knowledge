@@ -113,6 +113,49 @@ black patch is target artwork (atlas ID 200), not an exact reconstruction of the
 ROM's CURSET dot or a newly discovered original sprite. Source rooms
 0, 11, 38, 49, 51 and 63 carry the marker. Ordinary fireplaces 9, 20 and 46 do not.
 
+## Opening and traversing secret fireplaces
+
+The former port set `passage` only at the exact source keyhole pose. It omitted
+both B2 **10980**'s visible opening and **10405**'s crouched-Up transition, so
+even a successful key action did not produce a usable passage.
+
+[game/passage.s](../src/game/passage.s) keeps the gold-key and secret-flag guards
+from B2 **10907** (`held_item=8`, facing 3, decoded field `$0485` equal to 1 or 3).
+The target opening window is **x=14–20, y=125–145**, in source-byte/source-row
+coordinates. It includes the original x=15, y=140 pose and the closer positions
+reachable with the finer walking steps. Ordinary fireplaces, wrong keys,
+incorrect facing and distant requests are refused. Reopening an already open
+passage is also refused, without closing it or consuming the key.
+
+Opening requests a hidden-buffer terrain rebuild. [apple/passage.s](../src/apple/passage.s)
+draws a shared opening at source x=114–130, y=98–120: a white top edge and black
+interior. Its bounds come from B2 **10980**; filling intervening rows and showing
+the final opening immediately are explicit target adaptations of the original
+alternating-line animation. There is no new per-room bitmap. Both page buffers
+receive the updated baseline while hidden, retaining the actor and HUD.
+
+To enter, move to the center (**x=18–20, y=125–145**), crouch with **A**, face
+the fireplace, then press **Up**. The controller honors B2 **10405** before
+ordinary crouched direction handling. Standing, a closed fireplace, or being
+off-center cannot trigger this transition. The source's north link supplies the
+destination; the existing alternate arrival sets x=19, y=140, facing down and
+crouched. The key is retained. The passage flag clears on arrival and does not
+modify persistent packed room records.
+
+| Fireplace links in the pinned Oric data | Behavior |
+| --- | --- |
+| 0 ↔ 63 | Catacombs / dungeon summit |
+| 11 ↔ 51 | Ground-floor secret connection |
+| 38 ↔ 49 | Ground-floor secret connection |
+
+Native tests approach all six fireplaces through keyboard movement, select the
+gold key, open, compare the complete baseline with an independently patched
+raster, pause/resume, reject repeat opening/standing entry, then crouch and
+traverse all six source links. They verify the alternate arrival and normal
+destination terrain, unconsumed key, unchanged world records and no writes to
+visible frame/text pages. Guard tests include the exact original pose and the
+three ordinary fireplaces. See the [executed interaction record](interaction-verification.json).
+
 ## Reproduction and verification
 
 ```sh

@@ -12,8 +12,10 @@
 .export pit_wait,pit_room,pit_x,title_tick,title_stage,title_pages_ready
 .export chest_open
 .export terrain_pending
+.export enemy_phase, reading_page, player_name, name_count
 
 full_reset:
+    jsr clock_reset
     lda #0
     ldx #43
 @state:
@@ -25,7 +27,12 @@ full_reset:
     sta enemy_contact_cue
     sta hazard_x
     sta terrain_pending
+    sta ui_skip_clock
+    sta help_return_mode
     sta name_count
+    sta debug_input
+    sta debug_count
+    sta debug_status
     ldx #63
 @lamps:
     sta lamp_history,x
@@ -253,6 +260,11 @@ full_dispatch:
     sec
     rts
 @play:
+    lda raw_key
+    bmi :+                  ; $FF means no key; all accepted keys are 7-bit
+    lda #0
+    sta message_id           ; retain feedback while idle; next command replaces it
+:
     lda pit_wait
     beq :+
     lda raw_key
@@ -267,6 +279,8 @@ full_dispatch:
     sec
     rts
 @idle:
+    jsr full_secret_enter
+    jcs @handled
     lda raw_key
     cmp #'0'
     bcc @letter
@@ -347,7 +361,7 @@ full_dispatch:
 :
     cmp #'T'
     bne :+
-    jsr full_light
+    jsr full_request_light
     jmp @handled
 :
     cmp #'Q'
@@ -433,6 +447,7 @@ full_menu_key:
     sta game_mode
     sta held_item
     sta action_kind
+    sta message_id
     lda #12
     sta current_room
     lda #19
@@ -447,6 +462,8 @@ full_menu_key:
     bne :+
     lda #MODE_MERCHANT
     sta game_mode
+    lda #0
+    sta message_id
     rts
 :
     cmp #'2'
@@ -707,6 +724,7 @@ full_transition:
     sta pose
 @entered:
     lda #0
+    sta message_id
     sta passage
     sta in_pit
     sta pit_wait
@@ -729,25 +747,13 @@ full_open:
     jeq @door
     cmp #2
     jeq @door
-    lda held_item
-    cmp #8
-    bne @chest
-    lda actor_x
-    cmp #15
-    bne @chest
-    lda actor_y
-    cmp #140
-    bne @chest
-    lda facing
-    cmp #3
-    bne @chest
-    lda room_fields+3
-    and #1
-    beq @chest
+    jsr full_secret_reach
+    bcc @chest
     lda passage
     jne @deny
     lda #1
     sta passage
+    sta room_dirty
     lda #3
     sta message_id
     rts
@@ -1341,8 +1347,20 @@ full_light:
     rts
 
 full_clock:
+    jsr clock_sample
+    lda ui_skip_clock
+    beq :+
+    lda #0
+    sta ui_skip_clock
+    jmp clock_reset
+:
     lda game_mode
     jne @done
+    lda clock_vbls
+    cmp #18
+    bcc @environment
+    sbc #18
+    sta clock_vbls
     lda held_item
     cmp #1
     bne @loss
@@ -1369,6 +1387,7 @@ full_clock:
     sbc drain+1
     sta energy+1
     bmi @dead
+@environment:
     lda gate_side
     beq @pit
     cmp actor_x

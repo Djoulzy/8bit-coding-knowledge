@@ -1,35 +1,95 @@
 {
+  "alternate_hgr_edition": {
+    "disk": "build/game-mono/laigle-dor-hgr-mono.do",
+    "disk_sha256": "94a781f48dbf235c5b0b09dd7d9a82241d65646003d9189fe70963af8e3088d8",
+    "program_sha256": "cec2cb35c5fe5df01d343af18af4b94e2e2de71c2943f79b543c1bdb9b18339e",
+    "tests_passed": 32,
+    "verification": "hgr-mono-verification.json"
+  },
   "atlas_bytes": 15134,
   "atlas_sha256": "4d7c90e4905801fdca20be6588994a58857cffa824551311dee97c6829d90b59",
   "captures": {
+    "debug-map-ground.png": {
+      "map_sha256": "3b1755e9ad36b2b4fe9097a1fe143ec8c75a53894ea15231e616b18bc4a648db",
+      "origin": "executed native functional harness; baked graphic glyphs, host footer font, approximate video palette",
+      "program_sha256": "e270d950aaff9217050d6377b43eb9d8ef32176256c8feca11e90aad4ed1db0b",
+      "sha256": "da64e32368dfe442dba5976253c8be518792e20ea666c6c8218cab2e150543cd"
+    },
+    "debug-map-legend.png": {
+      "map_sha256": "3b1755e9ad36b2b4fe9097a1fe143ec8c75a53894ea15231e616b18bc4a648db",
+      "origin": "executed native functional harness; baked graphic glyphs, host footer font, approximate video palette",
+      "program_sha256": "e270d950aaff9217050d6377b43eb9d8ef32176256c8feca11e90aad4ed1db0b",
+      "sha256": "aef9ac53e5b685885a74f51c93605316f0a41aa579ca458cd08e2d2330254fb1"
+    },
+    "debug-map-other.png": {
+      "map_sha256": "3b1755e9ad36b2b4fe9097a1fe143ec8c75a53894ea15231e616b18bc4a648db",
+      "origin": "executed native functional harness; baked graphic glyphs, host footer font, approximate video palette",
+      "program_sha256": "e270d950aaff9217050d6377b43eb9d8ef32176256c8feca11e90aad4ed1db0b",
+      "sha256": "807fcb0d85c9036f19fb2cf998e14ec6056c09cf75e7eb77787c95118b26f21f"
+    },
+    "debug-menu.png": {
+      "origin": "executed native functional harness; development preview font/palette",
+      "program_sha256": "e270d950aaff9217050d6377b43eb9d8ef32176256c8feca11e90aad4ed1db0b",
+      "sha256": "cf7549778357dd66f8d1a6f20ab79beb489ae5f8e31d46eacdfa2b660bfcc3fb"
+    },
+    "debug-teleport-room23.png": {
+      "origin": "executed native functional harness; development preview font/palette",
+      "program_sha256": "e270d950aaff9217050d6377b43eb9d8ef32176256c8feca11e90aad4ed1db0b",
+      "sha256": "f0de6131daa552d26962c99ad67d0d89bca1d0321fb0031e417ee69da1b43498"
+    },
+    "exterior.png": {
+      "origin": "executed native functional harness, development text font",
+      "program_sha256": "e270d950aaff9217050d6377b43eb9d8ef32176256c8feca11e90aad4ed1db0b",
+      "sha256": "3f5c03e74cc02dae63bf550c8615c37a668a2393cf3bd0455a2d8db04476d777"
+    },
+    "help.png": {
+      "origin": "executed native functional harness, development text font",
+      "program_sha256": "e270d950aaff9217050d6377b43eb9d8ef32176256c8feca11e90aad4ed1db0b",
+      "sha256": "cd21047835a06d7c291d333b2121352324c3e5480a3485cdb2c0c8592a4ac409"
+    },
+    "introduction.png": {
+      "origin": "executed native functional harness, development text font",
+      "program_sha256": "e270d950aaff9217050d6377b43eb9d8ef32176256c8feca11e90aad4ed1db0b",
+      "sha256": "a8f4536a2dadbbe79b75be45d8094581a8e52c2f242ae2290463b939ff6fe9f8"
+    },
+    "merchant.png": {
+      "origin": "executed native functional harness, development text font",
+      "program_sha256": "e270d950aaff9217050d6377b43eb9d8ef32176256c8feca11e90aad4ed1db0b",
+      "sha256": "605434338b64507ce798d0b01d676daf9f7ebe08bc22d7b91ac3c769b2b101f1"
+    },
     "room0-secret-grille.png": {
       "origin": "executed native functional harness, illustrative palette",
-      "program_sha256": "1a7d2c6103a970180e56bf1f44a33ada0ee6889678e76553267f80cebbf68c6a",
-      "sha256": "22f37cde37696e2be4a3e34fa37cb365b40516e1e492605f54725f0b1c8a3bce"
+      "program_sha256": "e270d950aaff9217050d6377b43eb9d8ef32176256c8feca11e90aad4ed1db0b",
+      "sha256": "7859f17ce517b33b53616e37fb9c0efd5bc4604e9828295af2fa843b1aae26c8"
     },
     "room12-flames.png": {
       "origin": "executed native functional harness, illustrative palette",
-      "program_sha256": "1a7d2c6103a970180e56bf1f44a33ada0ee6889678e76553267f80cebbf68c6a",
-      "sha256": "4dfcc4670ef56280d8e35bfdda133e8bbe8e28876a5df0563b33979ed0463a47"
+      "program_sha256": "e270d950aaff9217050d6377b43eb9d8ef32176256c8feca11e90aad4ed1db0b",
+      "sha256": "4a8e5466fca4470dc788cc4cf1cd1b68728b5bb56762583c7621a2b499e317f5"
+    },
+    "room12-hud.png": {
+      "origin": "executed native functional harness, illustrative palette",
+      "program_sha256": "e270d950aaff9217050d6377b43eb9d8ef32176256c8feca11e90aad4ed1db0b",
+      "sha256": "84b7d6cced9e93da25f483eff66931348d3b4aec0dd78fbd55ffb0105389d797"
     },
     "room20-grille.png": {
       "origin": "executed native functional harness, illustrative palette",
-      "program_sha256": "1a7d2c6103a970180e56bf1f44a33ada0ee6889678e76553267f80cebbf68c6a",
-      "sha256": "772b5744afc4cdb4cbcf1321a55e6eb17984c0c258e50eb861bcb5ca03acd95e"
+      "program_sha256": "e270d950aaff9217050d6377b43eb9d8ef32176256c8feca11e90aad4ed1db0b",
+      "sha256": "93fa47a861f78070687384cf7f36c05b54eea25928095946827b620c095397df"
     },
     "room23-pit.png": {
       "origin": "executed native functional harness",
-      "program_sha256": "1a7d2c6103a970180e56bf1f44a33ada0ee6889678e76553267f80cebbf68c6a",
-      "sha256": "cebd0806a5e3a8046f60045b0012f5e71d8576aaa69cd7b015a069c1072b9c34"
+      "program_sha256": "e270d950aaff9217050d6377b43eb9d8ef32176256c8feca11e90aad4ed1db0b",
+      "sha256": "fb4ccb9aab70b998f0bff7b773ecbca7ef84f8e025bd1524fedffec676b26fe3"
     },
     "title-complete.png": {
       "origin": "executed native functional harness",
-      "program_sha256": "1a7d2c6103a970180e56bf1f44a33ada0ee6889678e76553267f80cebbf68c6a",
+      "program_sha256": "e270d950aaff9217050d6377b43eb9d8ef32176256c8feca11e90aad4ed1db0b",
       "sha256": "206ad3e8d7245601bf683efd3679557a14ef11338a90edad463b5e02c9a3917d"
     },
     "title-lightning.png": {
       "origin": "executed native functional harness",
-      "program_sha256": "1a7d2c6103a970180e56bf1f44a33ada0ee6889678e76553267f80cebbf68c6a",
+      "program_sha256": "e270d950aaff9217050d6377b43eb9d8ef32176256c8feca11e90aad4ed1db0b",
       "sha256": "0e627bb18bd60e6b78db543cccd349db84992bc8797292be412c4accd29efca6"
     },
     "virtualii-merchant-200.png": {
@@ -43,13 +103,13 @@
       "sha256": "e809ebe5e680eee3c282d4bd5f76d26e00c5b4ba37932498a81be95c25d9885a"
     }
   },
-  "date": "2026-10-13",
-  "disk_sha256": "d08df10936ace31a486f8587260fbfc22a5bcacaf2f735c864194cff49338db8",
+  "date": "2026-10-18",
+  "disk_sha256": "aa29b0d6e03a7c6619638094b9e421a0dfdd68dfe1397cd684ef2569e09519fd",
   "executed": {
-    "Virtual_II_native_world_build": "13.3: current enhanced-ROM cold boot/title/name, merchant/exterior, room12 DHGR, completed room11 arrival observed. Prior presentation/movement revisions are identified separately.",
+    "Virtual_II_native_world_build": "Earlier 13.3 observations retain their original hashes; current hidden menu/map revision executed in the functional harness, not relaunched in Virtual II.",
     "all_room_grids_match": true,
     "all_room_layer_oracles_match": true,
-    "apple_system_rom_cold_start": "observed in Virtual II, not in py65",
+    "apple_system_rom_cold_start": "Earlier Virtual II observation only; current hidden menu/map revision not cold-booted in Virtual II.",
     "approved_actor_sprite_cases": 138,
     "completed_raster_comparison": "Includes intentional native grille/lock redesign, not just quantization differences; target layer oracle matches all rooms.",
     "completed_raster_policy_different_cells_max_room": 610,
@@ -58,20 +118,59 @@
     "flames": "Source wall 36/37 and held 72/73; both phases on both pages, stable repeated frames, unchanged baseline/PRNG, no visible-page writes; one-lamp and permanent lighting regression.",
     "floor_treasure_approach_pickup_cases": 21,
     "frame_pairs_checked_per_room": 2,
+    "help": "Walking and staged jump freeze/restoration, darkness and pit wait, ten modal return modes, name H/? behavior, consumed closing keys including R; no visible graphics/text writes.",
+    "hidden_test_map": {
+      "caching": "both frame pairs tagged by map page; subsequent idle frames perform no map graphics writes",
+      "content": "curated source objects/secrets/risks and all directed target/lock fields checked; initial quest icons retained after granting inventory",
+      "controls": "Space/Return cycle; 1/2/3 direct select; Escape menu; Ctrl+D game; unrelated keys ignored",
+      "directed_records": 137,
+      "display": "normal edition mixed graphics; each loaded raster plus overlay byte-compared on both hidden buffers",
+      "drawn_door_pairs": 58,
+      "layout": "schematic source-backed ground adjacency; catacomb cycle and separate upper insets; nonlocal links annotated",
+      "native_marker_positions": 64,
+      "pages": 3,
+      "position": "white 3x3 block; page containing current room opens automatically; footer has room number and pit status",
+      "preview": "graphic glyphs are baked native raster data; footer uses host preview font instead of Apple character ROM; composite appearance not calibrated",
+      "room_cells": 64,
+      "state": "controller/services paused; WORLD/grid, baseline, auxiliary atlas and gameplay values retained; both game buffers restored; pit and darkness resume"
+    },
+    "hidden_test_menu": "Ctrl+D in PLAY; 40-column paused menu; all inventory categories/9 consumables each; validated decimal rooms 0-63; input errors/edit/cancel; pit/jump/enemy/hazard cancellation, saved hand restoration, preserved WORLD/economy/PRNG on teleport, safe near-floor spawn and both hidden frame preparations; no visible graphics/text writes.",
+    "hud": "Original B2 descriptions for all 64 rooms plus pit/special priority; both text pages; six hand labels including empty; Force/Points/gold boundaries and no visible text writes. Two description rows then two stats rows.",
     "method": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
     "movement_proximity": "Half walk increments in four directions; intermediate depth bands, geometric confinement, close portal/arrival/opening, nearby chest/quest and pit regression.",
     "original_oric_runtime": "not tested",
     "pit_room23": "native keyboard fall, dedicated map/scene, A/Space recovery, rope denial/consumption/ascent and persistent return; not a Virtual II pit playthrough",
+    "preview_keyboard_handler": "10 cases on the extracted preview JavaScript with mocked window/press; Ctrl+D, plain D/R, Return/Backspace/Escape and preserved Command/Option shortcuts; not a browser UI execution.",
     "real_hardware": "not tested",
     "room12_different_cells": 15,
     "room_preparation": "All 64 constructors preserve active graphics/mode; both MAIN/AUX pairs initialize only while hidden. Room12 -> 11 after merchant: no transient TEXT switch, complete frame before flip, matching second pair, no visible writes.",
     "rooms": 64,
     "scenery_cues": "Black right-pillar secret cue and white grilles with yellow padlocks/black keyholes; all 64 layer oracles match.",
-    "tests_passed": 20,
-    "title_sequence": "native off/on patch comparisons and two-page reveal; final title observed in Virtual II",
+    "tests_passed": 31,
+    "text_pages": "Source narrative/title transition; named exterior; aligned merchant prices and live funds 500 -> 310 -> 200; native 40-column hidden text pages.",
+    "text_preload": "Real Disk II loader fills AUX $1400 with byte-exact 1751-byte text archive; MAIN LOWCODE is installed at $13C0-$1DD8.",
+    "title_sequence": "native off/on patch comparisons and two-page reveal; final title observed in Virtual II on prior pinned revision",
     "transition_combinations": 256
   },
   "full_game_status": "in progress; room construction checks do not close W07/W08/W09/W10 acceptance gates",
+  "graphical_map": {
+    "bytes": 49152,
+    "cells": 64,
+    "lowcode_allocation": "MAIN $13C0-$1DFF; state/name storage ends before this allocation",
+    "metadata": "build/game/resources/maps.json",
+    "pages": 3,
+    "physical_sectors": [
+      240,
+      431
+    ],
+    "profile": "dhgr",
+    "semantics": "static initial contents and directed doors; live white locator and current-room/pit footer",
+    "sha256": "3b1755e9ad36b2b4fe9097a1fe143ec8c75a53894ea15231e616b18bc4a648db",
+    "source": "Oric B2 $5600-$57FF; supplied Amstrad picture used only as a presentation reference"
+  },
+  "named_disk": "build/game/laigle-dor-dhgr-color.do",
+  "nib_sha256": "246b95900365b2b902efb0e359c4ae6eb2eed3739a8ddc3cee6b1c58053efc29",
+  "original_sources_modified": false,
   "prior_revisions": [
     {
       "disk_sha256": "87560685ee039641f294361c69710ca02f30a71f59ceaf42a0f276ca142042a9",
@@ -82,10 +181,54 @@
         "observed": "Enhanced ROM cold boot, complete title, keyboard transition to name/exterior; room12 mixed DHGR.",
         "program_sha256": "762cfd3acf2b10daf89583f3908c648e4c800ff0962e1929054e8c0a924fc64c"
       }
+    },
+    {
+      "date": "2026-10-13",
+      "disk_sha256": "d08df10936ace31a486f8587260fbfc22a5bcacaf2f735c864194cff49338db8",
+      "program_bytes": 17912,
+      "program_sha256": "1a7d2c6103a970180e56bf1f44a33ada0ee6889678e76553267f80cebbf68c6a",
+      "tests_passed": 20,
+      "virtualii": {
+        "disk_sha256": "d08df10936ace31a486f8587260fbfc22a5bcacaf2f735c864194cff49338db8",
+        "observed": "Enhanced ROM cold boot, complete title, name, merchant/exterior, room12 DHGR and room11 x2/y180 graphics arrival. No captured continuous video; no hardware timing certification.",
+        "program_sha256": "1a7d2c6103a970180e56bf1f44a33ada0ee6889678e76553267f80cebbf68c6a"
+      }
+    },
+    {
+      "date": "2026-10-18",
+      "disk_sha256": "f33b89eaa88761d883dcde2fc898e94098be5301837ea4482e41b02ee2255dca",
+      "execution": "functional 6502 harness; Virtual II observations belong to earlier separately pinned revisions",
+      "program_bytes": 18208,
+      "program_sha256": "548162815e429bb1bc39fab71c99dd7a2ff5a10024e85140aec7e7a8d171e055",
+      "tests_passed": 22
+    },
+    {
+      "date": "2026-10-18",
+      "disk_sha256": "7a4200681611eeff028e0b55633d6311542c8ea79f167cca9dd48b6c5d85de4e",
+      "execution": "functional 6502 harness; prior introduction/help/HUD revision",
+      "program_bytes": 17963,
+      "program_sha256": "6500f8405261736baef88bf49bdc02e168c661d21c6e93a2b8d65aa1b9c43c07",
+      "tests_passed": 25
+    },
+    {
+      "date": "2026-10-18",
+      "disk_sha256": "c6c7cff823f5b81aa2cf3d7cd2118072aff7a9aebbefa742e6e3b9126f287bf5",
+      "execution": "functional harness; hidden inventory/teleport menu before the map addition",
+      "program_bytes": 18463,
+      "program_sha256": "40552bfaaa3bef33f597ddae33d8fbf1b715c234cffbebfbcd99e6f652f7bb93",
+      "tests_passed": 29
+    },
+    {
+      "date": "2026-10-18",
+      "disk_sha256": "5c40ab8f721846f723f99c1856f7899a71bf8be3fa38b6f28d3d2bbceb28d36b",
+      "execution": "functional harness; two-page TEXT map before graphical map revision",
+      "program_bytes": 18735,
+      "program_sha256": "eeeee9507b4154097541939550a5cdcf43224316df7f1ba7300ed9ceab0322a9",
+      "tests_passed": 31
     }
   ],
-  "program_bytes": 17912,
-  "program_sha256": "1a7d2c6103a970180e56bf1f44a33ada0ee6889678e76553267f80cebbf68c6a",
+  "program_bytes": 18904,
+  "program_sha256": "e270d950aaff9217050d6377b43eb9d8ef32176256c8feca11e90aad4ed1db0b",
   "prototype_unchanged": {
     "dhgr_regression_tests": 44,
     "dhgr_sha256": "e4e718ff5f9adff2bdec8fb0fe566539ba3c93d0ca6560016f8a61767ac47578",
@@ -120,6 +263,20 @@
     }
   },
   "stage": "W07 native generic-room development build",
+  "text_bytes": 1751,
+  "text_panels": {
+    "allocation_limit": "$2000",
+    "aux_range": "$1400-$1AD6",
+    "development_menu": "New Apple target text; Ctrl+D in PLAY; 3 opens graphical map; text archive includes its footer only.",
+    "help": "H / ?; ? during name entry; any closing key is consumed; controller and services paused",
+    "physical_sectors": [
+      224,
+      230
+    ],
+    "source": "B1 1515-1570/1620-1687; B2 3005-3015/13000-13510",
+    "startup": "title -> textual introduction -> name -> exterior"
+  },
+  "text_sha256": "a1f0fe8fb59bafd5cad18a35acdf99e04b7fa5f7a376c4ee5458b1a50e60b5bc",
   "title": {
     "conversion": "source graphic 0..189 -> rows 0..159; native-height credits at 162/174/184; complete palette cells for uniform color; x margin 10 cells",
     "cpu_range": "$1801-$3740",
@@ -166,6 +323,7 @@
       "program_sha256": "4917983e9532bf40d5d5af5bff551b13cb2133566559392e80755195d4fb8e9d"
     },
     "pit_scene": "tested in functional harness, not observed in Virtual II",
+    "revision_scope": "Earlier builds only; current hidden menu/map revision has functional-harness execution evidence.",
     "rom": "research/sources/Apple IIe/ROMs/CDEF_enh.bin"
   }
 }

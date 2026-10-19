@@ -1,0 +1,15 @@
+{
+  "disk_sha256": "7c383403ee2a2d2ec798fdfa7604eb0b7da5dc454378efc3e209d670a11d31d0",
+  "elapsed_seconds": 42.77,
+  "execution": "py65 documented NMOS 6502 with functional Apple bus and executed Disk II BOOT0",
+  "note": "Supplemental run includes the end-panel case and the additional cached-darkness assertion added after full-suite discovery.",
+  "program_sha256": "b2bae5b449057c26bf056228935e2df0faf5b11c255ec45f741792065df57304",
+  "selected_tests": [
+    "test_end_panels_keep_compact_layout_and_live_gold",
+    "test_actor_cache_matches_forced_composition_on_both_pages",
+    "test_wear_clock_counts_refreshes_and_pauses_in_menus"
+  ],
+  "success": true,
+  "tests_run": 3,
+  "video_profile": "dhgr"
+}

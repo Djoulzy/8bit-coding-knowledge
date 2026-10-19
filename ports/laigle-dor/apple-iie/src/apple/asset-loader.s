@@ -1,6 +1,9 @@
 ; One startup preload of the shared atlas. No disk access on room changes.
 ; Exact private 16-sector slot-6 BOOT0 ABI; same pinned firmware as boot.s.
-.import __ASSETS_SIZE__
+.import __ASSETS_SIZE__, __TEXTASSETS_SIZE__
+.if !HGR_MONO
+.import __ASSETEXTRA_SIZE__
+.endif
 .export asset_load
 asset_load:
     lda game_mode
@@ -18,6 +21,28 @@ asset_load:
     sta disk_wanted_sector
     lda #1
     sta asset_aux
+    jsr asset_load_range
+.if !HGR_MONO
+    ; Additional native scanlines use low AUX RAM, never MAIN disk workspaces.
+    lda #$0C
+    sta asset_page
+    lda #<((__ASSETEXTRA_SIZE__+$FF)/$100)
+    sta asset_pages
+    lda #21                 ; sector 336, after the three HGR maps
+    sta disk_wanted_track
+    lda #0
+    sta disk_wanted_sector
+    jsr asset_load_range
+.endif
+    ; Full TEXT panels live in AUX $1400-$1FFF, separate from MAIN LOWCODE.
+    lda #$14
+    sta asset_page
+    lda #<((__TEXTASSETS_SIZE__+$FF)/$100)
+    sta asset_pages
+    lda #14                  ; physical sector 224, after the title raster
+    sta disk_wanted_track
+    lda #0
+    sta disk_wanted_sector
     jmp asset_load_range
 title_load:
     bit $C051
@@ -25,12 +50,19 @@ title_load:
     sta asset_page
     lda #32
     sta asset_pages
+.if HGR_MONO
+    lda #12                  ; sector 192: mono atlas can occupy sectors 96..191
+.else
     lda #10
+.endif
     sta disk_wanted_track
     lda #0
     sta disk_wanted_sector
     sta asset_aux
     jsr asset_load_range
+.if HGR_MONO
+    rts
+.else
     lda #$A0
     sta asset_page
     lda #32
@@ -38,6 +70,7 @@ title_load:
     lda #1
     sta asset_aux
     jmp asset_load_range
+.endif
 asset_load_range:
     lda $C0EA
     lda $C0E9

@@ -66,6 +66,2497 @@
   "construction": "native generic geometry, upper/left/right openings, then parameterized atlas decorations",
   "equipment_streams": 26,
   "geometry_templates": 4,
+  "graphical_map": {
+    "bytes": 24576,
+    "cells": [
+      {
+        "dark": false,
+        "furnishing": "fireplace",
+        "gate": false,
+        "item": null,
+        "page": 1,
+        "room": 0,
+        "secret": true,
+        "stairs": false,
+        "trap": true,
+        "treasure": 0,
+        "x": 49,
+        "y": 53
+      },
+      {
+        "dark": false,
+        "furnishing": "furniture",
+        "gate": false,
+        "item": "book",
+        "page": 1,
+        "room": 1,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 1,
+        "x": 49,
+        "y": 25
+      },
+      {
+        "dark": false,
+        "furnishing": "furniture",
+        "gate": false,
+        "item": null,
+        "page": 1,
+        "room": 2,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 84,
+        "y": 25
+      },
+      {
+        "dark": false,
+        "furnishing": null,
+        "gate": false,
+        "item": null,
+        "page": 1,
+        "room": 3,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 84,
+        "y": 53
+      },
+      {
+        "dark": false,
+        "furnishing": "chest",
+        "gate": true,
+        "item": "vial",
+        "page": 1,
+        "room": 4,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 5,
+        "x": 84,
+        "y": 81
+      },
+      {
+        "dark": false,
+        "furnishing": null,
+        "gate": false,
+        "item": null,
+        "page": 1,
+        "room": 5,
+        "secret": false,
+        "stairs": false,
+        "trap": true,
+        "treasure": 0,
+        "x": 49,
+        "y": 81
+      },
+      {
+        "dark": false,
+        "furnishing": "stairs",
+        "gate": false,
+        "item": null,
+        "page": 1,
+        "room": 6,
+        "secret": false,
+        "stairs": true,
+        "trap": false,
+        "treasure": 0,
+        "x": 14,
+        "y": 81
+      },
+      {
+        "dark": true,
+        "furnishing": null,
+        "gate": true,
+        "item": null,
+        "page": 1,
+        "room": 7,
+        "secret": false,
+        "stairs": false,
+        "trap": true,
+        "treasure": 0,
+        "x": 14,
+        "y": 53
+      },
+      {
+        "dark": true,
+        "furnishing": null,
+        "gate": true,
+        "item": null,
+        "page": 1,
+        "room": 8,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 14,
+        "y": 25
+      },
+      {
+        "dark": true,
+        "furnishing": "fireplace",
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 9,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 224,
+        "y": 19
+      },
+      {
+        "dark": false,
+        "furnishing": null,
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 10,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 189,
+        "y": 19
+      },
+      {
+        "dark": false,
+        "furnishing": "fireplace",
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 11,
+        "secret": true,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 154,
+        "y": 19
+      },
+      {
+        "dark": false,
+        "furnishing": "furniture",
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 12,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 119,
+        "y": 19
+      },
+      {
+        "dark": false,
+        "furnishing": "chest",
+        "gate": false,
+        "item": "vial",
+        "page": 0,
+        "room": 13,
+        "secret": false,
+        "stairs": true,
+        "trap": false,
+        "treasure": 5,
+        "x": 84,
+        "y": 19
+      },
+      {
+        "dark": true,
+        "furnishing": null,
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 14,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 49,
+        "y": 19
+      },
+      {
+        "dark": false,
+        "furnishing": "furniture",
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 15,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 14,
+        "y": 19
+      },
+      {
+        "dark": false,
+        "furnishing": null,
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 16,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 224,
+        "y": 39
+      },
+      {
+        "dark": false,
+        "furnishing": "furniture",
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 17,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 189,
+        "y": 39
+      },
+      {
+        "dark": false,
+        "furnishing": "furniture",
+        "gate": false,
+        "item": "vial",
+        "page": 0,
+        "room": 18,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 5,
+        "x": 154,
+        "y": 39
+      },
+      {
+        "dark": false,
+        "furnishing": null,
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 19,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 119,
+        "y": 39
+      },
+      {
+        "dark": false,
+        "furnishing": "fireplace",
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 20,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 84,
+        "y": 39
+      },
+      {
+        "dark": false,
+        "furnishing": "furniture",
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 21,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 49,
+        "y": 39
+      },
+      {
+        "dark": false,
+        "furnishing": null,
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 22,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 14,
+        "y": 39
+      },
+      {
+        "dark": false,
+        "furnishing": null,
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 23,
+        "secret": false,
+        "stairs": false,
+        "trap": true,
+        "treasure": 0,
+        "x": 224,
+        "y": 59
+      },
+      {
+        "dark": false,
+        "furnishing": "furniture",
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 24,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 189,
+        "y": 59
+      },
+      {
+        "dark": false,
+        "furnishing": null,
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 25,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 154,
+        "y": 59
+      },
+      {
+        "dark": false,
+        "furnishing": "chest",
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 26,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 119,
+        "y": 59
+      },
+      {
+        "dark": true,
+        "furnishing": null,
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 27,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 84,
+        "y": 59
+      },
+      {
+        "dark": false,
+        "furnishing": "furniture",
+        "gate": false,
+        "item": "ring",
+        "page": 0,
+        "room": 28,
+        "secret": false,
+        "stairs": true,
+        "trap": true,
+        "treasure": 6,
+        "x": 49,
+        "y": 59
+      },
+      {
+        "dark": false,
+        "furnishing": null,
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 29,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 14,
+        "y": 59
+      },
+      {
+        "dark": false,
+        "furnishing": "furniture",
+        "gate": false,
+        "item": "iron_key",
+        "page": 0,
+        "room": 30,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 3,
+        "x": 224,
+        "y": 79
+      },
+      {
+        "dark": false,
+        "furnishing": null,
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 31,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 189,
+        "y": 79
+      },
+      {
+        "dark": false,
+        "furnishing": "furniture",
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 32,
+        "secret": false,
+        "stairs": false,
+        "trap": true,
+        "treasure": 0,
+        "x": 154,
+        "y": 79
+      },
+      {
+        "dark": false,
+        "furnishing": "furniture",
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 33,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 119,
+        "y": 79
+      },
+      {
+        "dark": false,
+        "furnishing": null,
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 34,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 84,
+        "y": 79
+      },
+      {
+        "dark": false,
+        "furnishing": "furniture",
+        "gate": false,
+        "item": "scroll",
+        "page": 0,
+        "room": 35,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 1,
+        "x": 49,
+        "y": 79
+      },
+      {
+        "dark": true,
+        "furnishing": "furniture",
+        "gate": true,
+        "item": null,
+        "page": 0,
+        "room": 36,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 14,
+        "y": 79
+      },
+      {
+        "dark": false,
+        "furnishing": null,
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 37,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 224,
+        "y": 99
+      },
+      {
+        "dark": false,
+        "furnishing": "fireplace",
+        "gate": false,
+        "item": "vial",
+        "page": 0,
+        "room": 38,
+        "secret": true,
+        "stairs": true,
+        "trap": false,
+        "treasure": 5,
+        "x": 189,
+        "y": 99
+      },
+      {
+        "dark": false,
+        "furnishing": null,
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 39,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 154,
+        "y": 99
+      },
+      {
+        "dark": false,
+        "furnishing": null,
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 40,
+        "secret": false,
+        "stairs": false,
+        "trap": true,
+        "treasure": 0,
+        "x": 119,
+        "y": 99
+      },
+      {
+        "dark": false,
+        "furnishing": "furniture",
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 41,
+        "secret": false,
+        "stairs": false,
+        "trap": true,
+        "treasure": 0,
+        "x": 84,
+        "y": 99
+      },
+      {
+        "dark": false,
+        "furnishing": null,
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 42,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 49,
+        "y": 99
+      },
+      {
+        "dark": false,
+        "furnishing": null,
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 43,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 14,
+        "y": 99
+      },
+      {
+        "dark": true,
+        "furnishing": null,
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 44,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 224,
+        "y": 119
+      },
+      {
+        "dark": true,
+        "furnishing": null,
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 45,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 189,
+        "y": 119
+      },
+      {
+        "dark": false,
+        "furnishing": "fireplace",
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 46,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 154,
+        "y": 119
+      },
+      {
+        "dark": false,
+        "furnishing": "furniture",
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 47,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 119,
+        "y": 119
+      },
+      {
+        "dark": false,
+        "furnishing": null,
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 48,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 84,
+        "y": 119
+      },
+      {
+        "dark": false,
+        "furnishing": "fireplace",
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 49,
+        "secret": true,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 49,
+        "y": 119
+      },
+      {
+        "dark": false,
+        "furnishing": "furniture",
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 50,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 14,
+        "y": 119
+      },
+      {
+        "dark": false,
+        "furnishing": "fireplace",
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 51,
+        "secret": true,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 224,
+        "y": 139
+      },
+      {
+        "dark": true,
+        "furnishing": "chest",
+        "gate": false,
+        "item": "gold",
+        "page": 0,
+        "room": 52,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 2,
+        "x": 189,
+        "y": 139
+      },
+      {
+        "dark": false,
+        "furnishing": "furniture",
+        "gate": false,
+        "item": "gold",
+        "page": 0,
+        "room": 53,
+        "secret": false,
+        "stairs": false,
+        "trap": true,
+        "treasure": 2,
+        "x": 154,
+        "y": 139
+      },
+      {
+        "dark": false,
+        "furnishing": null,
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 54,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 119,
+        "y": 139
+      },
+      {
+        "dark": false,
+        "furnishing": "furniture",
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 55,
+        "secret": false,
+        "stairs": false,
+        "trap": true,
+        "treasure": 0,
+        "x": 84,
+        "y": 139
+      },
+      {
+        "dark": false,
+        "furnishing": "furniture",
+        "gate": false,
+        "item": null,
+        "page": 0,
+        "room": 56,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 49,
+        "y": 139
+      },
+      {
+        "dark": false,
+        "furnishing": null,
+        "gate": false,
+        "item": "gold",
+        "page": 0,
+        "room": 57,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 2,
+        "x": 14,
+        "y": 139
+      },
+      {
+        "dark": false,
+        "furnishing": "chest",
+        "gate": false,
+        "item": "gold",
+        "page": 1,
+        "room": 58,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 2,
+        "x": 154,
+        "y": 25
+      },
+      {
+        "dark": true,
+        "furnishing": "furniture",
+        "gate": false,
+        "item": "lead_eagle",
+        "page": 1,
+        "room": 59,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 7,
+        "x": 189,
+        "y": 25
+      },
+      {
+        "dark": false,
+        "furnishing": "chest",
+        "gate": false,
+        "item": "vial",
+        "page": 1,
+        "room": 60,
+        "secret": false,
+        "stairs": false,
+        "trap": false,
+        "treasure": 5,
+        "x": 224,
+        "y": 25
+      },
+      {
+        "dark": false,
+        "furnishing": "furniture",
+        "gate": false,
+        "item": "gold_key",
+        "page": 1,
+        "room": 61,
+        "secret": false,
+        "stairs": false,
+        "trap": true,
+        "treasure": 4,
+        "x": 154,
+        "y": 53
+      },
+      {
+        "dark": false,
+        "furnishing": "furniture",
+        "gate": false,
+        "item": "diamond",
+        "page": 1,
+        "room": 62,
+        "secret": false,
+        "stairs": false,
+        "trap": true,
+        "treasure": 1,
+        "x": 189,
+        "y": 53
+      },
+      {
+        "dark": false,
+        "furnishing": "furniture",
+        "gate": false,
+        "item": "golden_eagle",
+        "page": 1,
+        "room": 63,
+        "secret": true,
+        "stairs": false,
+        "trap": false,
+        "treasure": 0,
+        "x": 224,
+        "y": 53
+      }
+    ],
+    "directed_links": [
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 2,
+        "from": 0,
+        "lock": 0,
+        "to": 13,
+        "type": "grille"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 3,
+        "from": 0,
+        "lock": 0,
+        "to": 63,
+        "type": "secret"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 1,
+        "lock": 1,
+        "to": 2,
+        "type": "door"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 3,
+        "from": 1,
+        "lock": 1,
+        "to": 8,
+        "type": "door"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 2,
+        "lock": 1,
+        "to": 1,
+        "type": "door"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 2,
+        "lock": 0,
+        "to": 3,
+        "type": "arch"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 3,
+        "lock": 0,
+        "to": 2,
+        "type": "arch"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 2,
+        "from": 3,
+        "lock": 1,
+        "to": 4,
+        "type": "grille"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 4,
+        "lock": 0,
+        "to": 5,
+        "type": "grille"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 3,
+        "from": 4,
+        "lock": 1,
+        "to": 3,
+        "type": "grille"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 5,
+        "lock": 0,
+        "to": 4,
+        "type": "grille"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 5,
+        "lock": 1,
+        "to": 6,
+        "type": "grille"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 6,
+        "lock": 1,
+        "to": 5,
+        "type": "grille"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 6,
+        "lock": 0,
+        "to": 57,
+        "type": "grille"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 3,
+        "from": 6,
+        "lock": 3,
+        "to": 7,
+        "type": "grille"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 1,
+        "from": 7,
+        "lock": 2,
+        "to": 6,
+        "type": "grille"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 7,
+        "lock": 0,
+        "to": 8,
+        "type": "arch"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 8,
+        "lock": 0,
+        "to": 7,
+        "type": "arch"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 2,
+        "from": 8,
+        "lock": 1,
+        "to": 1,
+        "type": "door"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 9,
+        "lock": 1,
+        "to": 16,
+        "type": "grille"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 2,
+        "from": 9,
+        "lock": 2,
+        "to": 58,
+        "type": "door"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 10,
+        "lock": 0,
+        "to": 17,
+        "type": "arch"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 3,
+        "from": 10,
+        "lock": 0,
+        "to": 11,
+        "type": "arch"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 1,
+        "from": 11,
+        "lock": 0,
+        "to": 10,
+        "type": "arch"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 11,
+        "lock": 0,
+        "to": 12,
+        "type": "arch"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 3,
+        "from": 11,
+        "lock": 0,
+        "to": 51,
+        "type": "secret"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 12,
+        "lock": 0,
+        "to": 11,
+        "type": "arch"
+      },
+      {
+        "arrival": 3,
+        "exterior": true,
+        "facing": 3,
+        "from": 12,
+        "lock": 0,
+        "to": null,
+        "type": "door"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 13,
+        "lock": 0,
+        "to": 14,
+        "type": "grille"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 3,
+        "from": 13,
+        "lock": 0,
+        "to": 0,
+        "type": "grille"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 14,
+        "lock": 0,
+        "to": 15,
+        "type": "grille"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 14,
+        "lock": 0,
+        "to": 13,
+        "type": "grille"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 15,
+        "lock": 2,
+        "to": 59,
+        "type": "door"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 15,
+        "lock": 3,
+        "to": 14,
+        "type": "grille"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 3,
+        "from": 15,
+        "lock": 0,
+        "to": 22,
+        "type": "grille"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 1,
+        "from": 16,
+        "lock": 0,
+        "to": 23,
+        "type": "arch"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 16,
+        "lock": 1,
+        "to": 9,
+        "type": "grille"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 17,
+        "lock": 0,
+        "to": 10,
+        "type": "arch"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 2,
+        "from": 17,
+        "lock": 0,
+        "to": 24,
+        "type": "arch"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 3,
+        "from": 17,
+        "lock": 0,
+        "to": 18,
+        "type": "door"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 2,
+        "from": 18,
+        "lock": 0,
+        "to": 17,
+        "type": "door"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 3,
+        "from": 18,
+        "lock": 0,
+        "to": 25,
+        "type": "arch"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 19,
+        "lock": 0,
+        "to": 20,
+        "type": "arch"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 3,
+        "from": 19,
+        "lock": 0,
+        "to": 26,
+        "type": "arch"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 20,
+        "lock": 0,
+        "to": 21,
+        "type": "grille"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 20,
+        "lock": 0,
+        "to": 19,
+        "type": "arch"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 1,
+        "from": 21,
+        "lock": 0,
+        "to": 22,
+        "type": "arch"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 21,
+        "lock": 0,
+        "to": 20,
+        "type": "grille"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 22,
+        "lock": 0,
+        "to": 29,
+        "type": "arch"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 2,
+        "from": 22,
+        "lock": 0,
+        "to": 15,
+        "type": "grille"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 3,
+        "from": 22,
+        "lock": 0,
+        "to": 21,
+        "type": "arch"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 2,
+        "from": 23,
+        "lock": 0,
+        "to": 24,
+        "type": "arch"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 3,
+        "from": 23,
+        "lock": 0,
+        "to": 16,
+        "type": "arch"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 1,
+        "from": 24,
+        "lock": 0,
+        "to": 31,
+        "type": "arch"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 2,
+        "from": 24,
+        "lock": 0,
+        "to": 17,
+        "type": "arch"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 3,
+        "from": 24,
+        "lock": 0,
+        "to": 23,
+        "type": "arch"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 1,
+        "from": 25,
+        "lock": 0,
+        "to": 18,
+        "type": "arch"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 2,
+        "from": 25,
+        "lock": 0,
+        "to": 32,
+        "type": "arch"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 3,
+        "from": 25,
+        "lock": 2,
+        "to": 26,
+        "type": "grille"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 1,
+        "from": 26,
+        "lock": 0,
+        "to": 25,
+        "type": "grille"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 3,
+        "from": 26,
+        "lock": 0,
+        "to": 19,
+        "type": "arch"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 27,
+        "lock": 0,
+        "to": 28,
+        "type": "door"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 3,
+        "from": 27,
+        "lock": 0,
+        "to": 34,
+        "type": "arch"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 1,
+        "from": 28,
+        "lock": 0,
+        "to": 29,
+        "type": "arch"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 28,
+        "lock": 0,
+        "to": 27,
+        "type": "door"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 29,
+        "lock": 2,
+        "to": 36,
+        "type": "door"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 29,
+        "lock": 0,
+        "to": 22,
+        "type": "arch"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 3,
+        "from": 29,
+        "lock": 0,
+        "to": 28,
+        "type": "arch"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 30,
+        "lock": 1,
+        "to": 37,
+        "type": "grille"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 3,
+        "from": 30,
+        "lock": 0,
+        "to": 31,
+        "type": "arch"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 1,
+        "from": 31,
+        "lock": 0,
+        "to": 30,
+        "type": "arch"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 2,
+        "from": 31,
+        "lock": 0,
+        "to": 32,
+        "type": "arch"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 3,
+        "from": 31,
+        "lock": 0,
+        "to": 24,
+        "type": "arch"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 32,
+        "lock": 0,
+        "to": 39,
+        "type": "arch"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 2,
+        "from": 32,
+        "lock": 0,
+        "to": 25,
+        "type": "arch"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 3,
+        "from": 32,
+        "lock": 0,
+        "to": 31,
+        "type": "arch"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 33,
+        "lock": 1,
+        "to": 40,
+        "type": "door"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 3,
+        "from": 33,
+        "lock": 2,
+        "to": 62,
+        "type": "door"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 1,
+        "from": 34,
+        "lock": 0,
+        "to": 27,
+        "type": "arch"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 34,
+        "lock": 0,
+        "to": 41,
+        "type": "arch"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 2,
+        "from": 35,
+        "lock": 0,
+        "to": 36,
+        "type": "arch"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 36,
+        "lock": 0,
+        "to": 29,
+        "type": "door"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 3,
+        "from": 36,
+        "lock": 0,
+        "to": 35,
+        "type": "arch"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 37,
+        "lock": 1,
+        "to": 30,
+        "type": "grille"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 37,
+        "lock": 1,
+        "to": 44,
+        "type": "door"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 3,
+        "from": 37,
+        "lock": 1,
+        "to": 38,
+        "type": "door"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 1,
+        "from": 38,
+        "lock": 1,
+        "to": 39,
+        "type": "door"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 2,
+        "from": 38,
+        "lock": 1,
+        "to": 37,
+        "type": "door"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 3,
+        "from": 38,
+        "lock": 0,
+        "to": 49,
+        "type": "secret"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 39,
+        "lock": 2,
+        "to": 46,
+        "type": "door"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 39,
+        "lock": 0,
+        "to": 32,
+        "type": "arch"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 3,
+        "from": 39,
+        "lock": 1,
+        "to": 38,
+        "type": "door"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 40,
+        "lock": 0,
+        "to": 47,
+        "type": "arch"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 40,
+        "lock": 1,
+        "to": 33,
+        "type": "door"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 41,
+        "lock": 0,
+        "to": 34,
+        "type": "arch"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 41,
+        "lock": 0,
+        "to": 48,
+        "type": "arch"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 42,
+        "lock": 0,
+        "to": 49,
+        "type": "door"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 3,
+        "from": 42,
+        "lock": 0,
+        "to": 43,
+        "type": "grille"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 43,
+        "lock": 0,
+        "to": 50,
+        "type": "arch"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 3,
+        "from": 43,
+        "lock": 0,
+        "to": 42,
+        "type": "grille"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 44,
+        "lock": 1,
+        "to": 37,
+        "type": "door"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 3,
+        "from": 44,
+        "lock": 0,
+        "to": 45,
+        "type": "grille"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 2,
+        "from": 45,
+        "lock": 0,
+        "to": 44,
+        "type": "grille"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 3,
+        "from": 45,
+        "lock": 0,
+        "to": 52,
+        "type": "grille"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 1,
+        "from": 46,
+        "lock": 0,
+        "to": 53,
+        "type": "arch"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 46,
+        "lock": 0,
+        "to": 39,
+        "type": "door"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 1,
+        "from": 47,
+        "lock": 0,
+        "to": 54,
+        "type": "arch"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 47,
+        "lock": 0,
+        "to": 40,
+        "type": "arch"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 48,
+        "lock": 0,
+        "to": 41,
+        "type": "arch"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 48,
+        "lock": 0,
+        "to": 55,
+        "type": "arch"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 49,
+        "lock": 0,
+        "to": 42,
+        "type": "door"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 2,
+        "from": 49,
+        "lock": 0,
+        "to": 56,
+        "type": "door"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 3,
+        "from": 49,
+        "lock": 0,
+        "to": 38,
+        "type": "secret"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 50,
+        "lock": 0,
+        "to": 57,
+        "type": "door"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 50,
+        "lock": 0,
+        "to": 43,
+        "type": "arch"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 1,
+        "from": 51,
+        "lock": 1,
+        "to": 52,
+        "type": "door"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 2,
+        "from": 51,
+        "lock": 0,
+        "to": 61,
+        "type": "arch"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 3,
+        "from": 51,
+        "lock": 0,
+        "to": 11,
+        "type": "secret"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 2,
+        "from": 52,
+        "lock": 0,
+        "to": 45,
+        "type": "grille"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 3,
+        "from": 52,
+        "lock": 1,
+        "to": 51,
+        "type": "door"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 53,
+        "lock": 0,
+        "to": 54,
+        "type": "grille"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 3,
+        "from": 53,
+        "lock": 0,
+        "to": 46,
+        "type": "arch"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 54,
+        "lock": 0,
+        "to": 53,
+        "type": "grille"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 3,
+        "from": 54,
+        "lock": 0,
+        "to": 47,
+        "type": "arch"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 55,
+        "lock": 0,
+        "to": 48,
+        "type": "arch"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 3,
+        "from": 55,
+        "lock": 0,
+        "to": 56,
+        "type": "arch"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 1,
+        "from": 56,
+        "lock": 0,
+        "to": 55,
+        "type": "arch"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 3,
+        "from": 56,
+        "lock": 0,
+        "to": 49,
+        "type": "door"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 1,
+        "from": 57,
+        "lock": 0,
+        "to": 6,
+        "type": "grille"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 57,
+        "lock": 0,
+        "to": 50,
+        "type": "door"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 3,
+        "from": 57,
+        "lock": 1,
+        "to": 60,
+        "type": "door"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 3,
+        "from": 58,
+        "lock": 0,
+        "to": 9,
+        "type": "door"
+      },
+      {
+        "arrival": 2,
+        "exterior": false,
+        "facing": 2,
+        "from": 59,
+        "lock": 0,
+        "to": 15,
+        "type": "door"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 2,
+        "from": 60,
+        "lock": 1,
+        "to": 57,
+        "type": "door"
+      },
+      {
+        "arrival": 1,
+        "exterior": false,
+        "facing": 3,
+        "from": 61,
+        "lock": 0,
+        "to": 51,
+        "type": "arch"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 2,
+        "from": 62,
+        "lock": 1,
+        "to": 33,
+        "type": "door"
+      },
+      {
+        "arrival": 0,
+        "exterior": false,
+        "facing": 3,
+        "from": 63,
+        "lock": 0,
+        "to": 0,
+        "type": "secret"
+      }
+    ],
+    "disk_sector": 240,
+    "door_policy": "only source links between adjacent cells; a lock dot means at least one side is locked; types/locks can differ by side",
+    "drawn_door_pairs": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        9,
+        16
+      ],
+      [
+        10,
+        11
+      ],
+      [
+        10,
+        17
+      ],
+      [
+        11,
+        12
+      ],
+      [
+        13,
+        14
+      ],
+      [
+        14,
+        15
+      ],
+      [
+        15,
+        22
+      ],
+      [
+        16,
+        23
+      ],
+      [
+        17,
+        18
+      ],
+      [
+        17,
+        24
+      ],
+      [
+        18,
+        25
+      ],
+      [
+        19,
+        20
+      ],
+      [
+        19,
+        26
+      ],
+      [
+        20,
+        21
+      ],
+      [
+        21,
+        22
+      ],
+      [
+        22,
+        29
+      ],
+      [
+        23,
+        24
+      ],
+      [
+        24,
+        31
+      ],
+      [
+        25,
+        26
+      ],
+      [
+        25,
+        32
+      ],
+      [
+        27,
+        28
+      ],
+      [
+        27,
+        34
+      ],
+      [
+        28,
+        29
+      ],
+      [
+        29,
+        36
+      ],
+      [
+        30,
+        31
+      ],
+      [
+        30,
+        37
+      ],
+      [
+        31,
+        32
+      ],
+      [
+        32,
+        39
+      ],
+      [
+        33,
+        40
+      ],
+      [
+        34,
+        41
+      ],
+      [
+        35,
+        36
+      ],
+      [
+        37,
+        38
+      ],
+      [
+        37,
+        44
+      ],
+      [
+        38,
+        39
+      ],
+      [
+        39,
+        46
+      ],
+      [
+        40,
+        47
+      ],
+      [
+        41,
+        48
+      ],
+      [
+        42,
+        43
+      ],
+      [
+        42,
+        49
+      ],
+      [
+        43,
+        50
+      ],
+      [
+        44,
+        45
+      ],
+      [
+        45,
+        52
+      ],
+      [
+        46,
+        53
+      ],
+      [
+        47,
+        54
+      ],
+      [
+        48,
+        55
+      ],
+      [
+        49,
+        56
+      ],
+      [
+        50,
+        57
+      ],
+      [
+        51,
+        52
+      ],
+      [
+        53,
+        54
+      ],
+      [
+        55,
+        56
+      ]
+    ],
+    "footer": {
+      "pit_byte_column": 35,
+      "pit_codes": "X=yes, -=no",
+      "room_byte_columns": [
+        14,
+        15
+      ],
+      "y": 164
+    },
+    "image_reference": "user supplied Amstrad plan: presentation inspiration only; no image pixels or Amstrad room data imported",
+    "layout": "ground 9..57 reversed columns; catacomb 1..8 perimeter cycle with isolated room 0 inset; upper 58..63 separate cards",
+    "limitations": [
+      "schematic orientation and distances; not a geographic survey",
+      "quest item overrides ordinary treasure in 1/62/63",
+      "cross-floor and secret links are text references; no transient enemy prediction",
+      "icons remain initial state after pickups, opening and lighting",
+      "composite color monitors can show HGR artifact fringes; no IIe software color-kill switch"
+    ],
+    "marker": {
+      "height": 9,
+      "rows_lsb_first": [
+        28,
+        62,
+        99,
+        107,
+        99,
+        62,
+        28,
+        8,
+        8
+      ],
+      "width": 7,
+      "x_offset": 21,
+      "y_offset": 2
+    },
+    "page_sha256": [
+      "6ca2cd7ff8547b4adb18e0a2b5ac6fca9635367587a9db602a5aa4345a301068",
+      "7cbfa5323c22e2c59ade6f5cea640e20235d123e59cf14be0d2a3202f71a579a",
+      "a18449df7a905f3ebb1110f5f8868a410c34581d39ecccabbb76be6c0e6fcae6"
+    ],
+    "pages": 3,
+    "position": "dynamic 7x9 white map pin beside room number; gameplay paused",
+    "sha256": "86292fdadd4a77d709d6a04e073db056efbed06d9b44c82a4d6ab47aa8961112",
+    "source": "Oric B2 $5600-$57FF; Room.decode; transition 4701-4710; door locks 10900-10990",
+    "static": true,
+    "video": "HGR one-bit MAIN, full-screen 280x192 in both game editions; bit 7 clear"
+  },
+  "hud": {
+    "adaptation": "source letter case retained; two description rows then two stats rows",
+    "description_addresses": [
+      "$5A00",
+      "$5A0B",
+      "$5A22",
+      "$5A32",
+      "$5A47",
+      "$5A58",
+      "$5A67",
+      "$5A78",
+      "$5A8D",
+      "$5A9F",
+      "$5AB3"
+    ],
+    "descriptions": [
+      "Vous etes ",
+      "dans la crypte sacree.",
+      "dans le donjon.",
+      "au sommet du donjon.",
+      "dans un couloir ",
+      "dans une salle",
+      "dans un passage ",
+      "dans les catacombes.",
+      "au premier etage.",
+      "au rez-de-chaussee.",
+      "au fond d'une oubliette."
+    ],
+    "hand_names": [
+      "",
+      "Torche",
+      "Clef en fer",
+      "Clef en or",
+      "Une fiole",
+      "Pied de biche"
+    ],
+    "source": "B2 4150-4170, 5700-5710, 11010-11520"
+  },
+  "native_blitter": {
+    "extra_bytes": 2048,
+    "extra_sector": 336,
+    "format": "shared native 7-bit mask/pixel rows; runtime horizontal shift",
+    "row_bytes": 4604,
+    "sprites": [
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      36,
+      37,
+      72,
+      73
+    ],
+    "unique_rows": 265
+  },
   "rom": {
     "bytes": 16384,
     "file": "research/sources/Oric/ROMS/basic10.rom",
@@ -846,6 +3337,666 @@
     113
   ],
   "target_scenery_art": "resources/world-art.json; white grilles, yellow locks, right-pillar secret cue, yellow/orange source flames",
+  "text_panels": {
+    "adaptations": "source letter case retained, whitespace/reflow, 24 rows; Apple help keys/T command; spaced two-column inventory and hidden development menu are new target text",
+    "aux_start": "$1400",
+    "bytes": 2768,
+    "disk_sector": 224,
+    "offsets": {
+      "code_load": 2187,
+      "code_save": 1941,
+      "dead": 2434,
+      "debug": 1714,
+      "depart": 2661,
+      "exterior": 483,
+      "help": 1129,
+      "intro": 0,
+      "inventory": 858,
+      "merchant": 624,
+      "name": 1560,
+      "win": 2547
+    },
+    "panels": {
+      "code_load": [
+        [
+          2,
+          9,
+          "Reprendre une aventure"
+        ],
+        [
+          5,
+          2,
+          "Saisissez les 18 caracteres du code."
+        ],
+        [
+          9,
+          10,
+          "______-______-______"
+        ],
+        [
+          12,
+          2,
+          "Le nom saisi au debut sera conserve."
+        ],
+        [
+          15,
+          1,
+          "Or, force et salles : nouvelle partie."
+        ],
+        [
+          18,
+          11,
+          "Entree : reprendre"
+        ],
+        [
+          19,
+          8,
+          "Retour arriere : effacer"
+        ],
+        [
+          22,
+          6,
+          "Echap: annuler   H / ?: aide"
+        ]
+      ],
+      "code_save": [
+        [
+          2,
+          12,
+          "Code de reprise"
+        ],
+        [
+          5,
+          5,
+          "Piece et inventaire uniquement"
+        ],
+        [
+          7,
+          2,
+          "Notez les 18 caracteres ci-dessous :"
+        ],
+        [
+          9,
+          10,
+          "______-______-______"
+        ],
+        [
+          12,
+          1,
+          "Le nom sera saisi au prochain depart."
+        ],
+        [
+          15,
+          0,
+          "Or, force et salles ne sont pas sauves."
+        ],
+        [
+          20,
+          4,
+          "Espace / Entree / Echap : retour"
+        ],
+        [
+          23,
+          14,
+          "H / ? : aide"
+        ]
+      ],
+      "dead": [
+        [
+          4,
+          0,
+          "L'Aigle d'Or             Or:00000"
+        ],
+        [
+          8,
+          0,
+          "Vous avez perdu"
+        ],
+        [
+          9,
+          0,
+          "Votre aventure est terminee"
+        ],
+        [
+          10,
+          0,
+          "O ou Entree: nouvel essai"
+        ]
+      ],
+      "debug": [
+        [
+          1,
+          14,
+          "Menu de test"
+        ],
+        [
+          4,
+          3,
+          "1: Tous les objets (9 consommables)"
+        ],
+        [
+          6,
+          3,
+          "2: Teleportation"
+        ],
+        [
+          7,
+          3,
+          "3: Carte du chateau"
+        ],
+        [
+          9,
+          3,
+          "Salle actuelle: 00"
+        ],
+        [
+          12,
+          3,
+          "Destination: __  (0-63)"
+        ],
+        [
+          14,
+          3,
+          "2 puis numero et Entree"
+        ],
+        [
+          15,
+          3,
+          "Retour arriere: corriger"
+        ],
+        [
+          23,
+          5,
+          "Echap / Ctrl+D: retour au jeu"
+        ]
+      ],
+      "depart": [
+        [
+          4,
+          0,
+          "L'Aigle d'Or             Or:00000"
+        ],
+        [
+          8,
+          0,
+          "Fin du voyage"
+        ],
+        [
+          9,
+          0,
+          "Vous quittez le chateau"
+        ],
+        [
+          10,
+          0,
+          "O ou Entree: nouvel essai"
+        ]
+      ],
+      "exterior": [
+        [
+          1,
+          10,
+          "Exterieur du chateau"
+        ],
+        [
+          7,
+          5,
+          "1. Entrer dans le chateau."
+        ],
+        [
+          10,
+          5,
+          "2. Partir."
+        ],
+        [
+          13,
+          5,
+          "3. Aller chez le marchand"
+        ],
+        [
+          16,
+          5,
+          "4. Reprendre avec un code"
+        ],
+        [
+          23,
+          12,
+          "H / ?: commandes"
+        ]
+      ],
+      "help": [
+        [
+          1,
+          15,
+          "Commandes"
+        ],
+        [
+          3,
+          2,
+          "Fleches: Marcher,tourner"
+        ],
+        [
+          4,
+          2,
+          "Espace: Arret, position neutre"
+        ],
+        [
+          5,
+          2,
+          "A: Accroupir"
+        ],
+        [
+          6,
+          2,
+          "B: Boire"
+        ],
+        [
+          7,
+          2,
+          "S: Sauter (longueur)"
+        ],
+        [
+          8,
+          2,
+          "D: Sauter (hauteur)"
+        ],
+        [
+          9,
+          2,
+          "G: Grimper"
+        ],
+        [
+          10,
+          2,
+          "I: Inventaire"
+        ],
+        [
+          11,
+          2,
+          "L: Lire"
+        ],
+        [
+          12,
+          2,
+          "O: Ouvrir"
+        ],
+        [
+          13,
+          2,
+          "P: Prendre"
+        ],
+        [
+          14,
+          2,
+          "Q: Suicide"
+        ],
+        [
+          15,
+          2,
+          "T: Allumer une torche"
+        ],
+        [
+          16,
+          2,
+          "H / ?: Cette aide"
+        ],
+        [
+          17,
+          2,
+          "C: Code de reprise"
+        ],
+        [
+          18,
+          2,
+          "Objet en main:"
+        ],
+        [
+          19,
+          2,
+          "0: Vide             1: Torche"
+        ],
+        [
+          20,
+          2,
+          "2: Clef en fer      3: Clef en or"
+        ],
+        [
+          21,
+          2,
+          "4: Fiole            5: Pied de biche"
+        ],
+        [
+          23,
+          11,
+          "Une touche: retour"
+        ]
+      ],
+      "intro": [
+        [
+          0,
+          14,
+          "L'Aigle d'Or"
+        ],
+        [
+          2,
+          2,
+          "Apres plusieurs jours de cheval,"
+        ],
+        [
+          3,
+          2,
+          "vous arrivez enfin en vue du Chateau"
+        ],
+        [
+          4,
+          2,
+          "de l'Aigle, situe aux confins de la"
+        ],
+        [
+          5,
+          2,
+          "Wesphalie."
+        ],
+        [
+          7,
+          2,
+          "Une vieille legende du pays pretend"
+        ],
+        [
+          8,
+          2,
+          "que le chateau recelle des tresors"
+        ],
+        [
+          9,
+          2,
+          "et richesses inestimables! Vous"
+        ],
+        [
+          10,
+          2,
+          "voulez aussi tenter votre chance,"
+        ],
+        [
+          11,
+          2,
+          "bien que nombreux furent ceux qui"
+        ],
+        [
+          12,
+          2,
+          "perirent..."
+        ],
+        [
+          14,
+          2,
+          "Pour mener a bien votre quete, il"
+        ],
+        [
+          15,
+          2,
+          "vous faudra acquerir les trois"
+        ],
+        [
+          16,
+          2,
+          "valeurs: Fortune, Sagesse et"
+        ],
+        [
+          17,
+          2,
+          "Puissance"
+        ],
+        [
+          23,
+          4,
+          "Une touche: suite    H / ?: aide"
+        ]
+      ],
+      "inventory": [
+        [
+          1,
+          15,
+          "Inventaire"
+        ],
+        [
+          3,
+          2,
+          "En main : Vide"
+        ],
+        [
+          5,
+          2,
+          "Provisions"
+        ],
+        [
+          5,
+          22,
+          "Equipement"
+        ],
+        [
+          7,
+          2,
+          "Fioles"
+        ],
+        [
+          9,
+          2,
+          "Torches"
+        ],
+        [
+          11,
+          2,
+          "Cordes"
+        ],
+        [
+          13,
+          2,
+          "Pieds de biche"
+        ],
+        [
+          7,
+          22,
+          "Clef en fer"
+        ],
+        [
+          9,
+          22,
+          "Clef en or"
+        ],
+        [
+          11,
+          22,
+          "Bague"
+        ],
+        [
+          13,
+          22,
+          "Aigle (plomb)"
+        ],
+        [
+          15,
+          12,
+          "Objets de quete"
+        ],
+        [
+          17,
+          2,
+          "Livre"
+        ],
+        [
+          17,
+          22,
+          "Diamant"
+        ],
+        [
+          19,
+          2,
+          "Aigle d'or"
+        ],
+        [
+          19,
+          22,
+          "Parchemins"
+        ],
+        [
+          19,
+          36,
+          "0/3"
+        ],
+        [
+          22,
+          4,
+          "Espace / Entree / Echap : retour"
+        ],
+        [
+          23,
+          14,
+          "H / ? : aide"
+        ]
+      ],
+      "merchant": [
+        [
+          2,
+          11,
+          "Le marchand vend :"
+        ],
+        [
+          6,
+          4,
+          "1. Fioles         : 360 p.o."
+        ],
+        [
+          7,
+          7,
+          "(Eau de Jouvence)"
+        ],
+        [
+          9,
+          4,
+          "2. Torches        : 190 p.o."
+        ],
+        [
+          11,
+          4,
+          "3. Cordes         : 110 p.o."
+        ],
+        [
+          13,
+          4,
+          "4. Pieds de biche : 230 p.o."
+        ],
+        [
+          16,
+          4,
+          "0. Partir"
+        ],
+        [
+          18,
+          3,
+          "Pieces d'or: 00000"
+        ],
+        [
+          20,
+          3,
+          "Achat ? (0-4)"
+        ],
+        [
+          23,
+          12,
+          "H / ?: commandes"
+        ]
+      ],
+      "name": [
+        [
+          4,
+          14,
+          "L'Aigle d'Or"
+        ],
+        [
+          7,
+          8,
+          "Comment t'appelles-tu ?"
+        ],
+        [
+          10,
+          7,
+          "Nom: ______"
+        ],
+        [
+          13,
+          7,
+          "Six caracteres au maximum"
+        ],
+        [
+          15,
+          9,
+          "Entree pour continuer"
+        ],
+        [
+          16,
+          6,
+          "Retour arriere pour corriger"
+        ],
+        [
+          23,
+          14,
+          "?: Commandes"
+        ]
+      ],
+      "win": [
+        [
+          4,
+          0,
+          "L'Aigle d'Or             Or:00000"
+        ],
+        [
+          8,
+          0,
+          "Vous avez reuni les trois objectifs"
+        ],
+        [
+          9,
+          0,
+          "Victoire"
+        ],
+        [
+          10,
+          0,
+          "O ou Entree: nouvel essai"
+        ]
+      ]
+    },
+    "sha256": "4c9d2d7ad4eab9adb0894fa27aa8751edc1a3cfbbb5f98557aa07ecc29bbb265",
+    "source_b1_lines": [
+      1515,
+      1520,
+      1530,
+      1540,
+      1550,
+      1560,
+      1570,
+      1620,
+      1630,
+      1650,
+      1660,
+      1670,
+      1680,
+      1685,
+      1687
+    ],
+    "source_b2_lines": [
+      3005,
+      3010,
+      3015,
+      13000,
+      13010,
+      13015,
+      13020,
+      13030,
+      13035
+    ]
+  },
   "title": {
     "conversion": "source graphic 0..189 -> rows 0..159; native-height credits at 162/174/184; complete palette cells for uniform color; x margin 10 cells",
     "cpu_range": "$1801-$3740",

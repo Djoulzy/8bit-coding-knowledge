@@ -20,9 +20,15 @@ dhgr_hud_init_aux:
 ; hud_draw first builds its compact 40-character line in hidden main text RAM.
 ; Convert via a main-RAM buffer before overwriting that compact line.
 dhgr_hud_finish:
+.if HGR_MONO
+    rts
+.else
     lda #0
     sta hud_row
 @row:
+.if FULL_GAME
+    jsr clock_sample
+.endif
     ldx hud_row
     lda hud_row_lo,x
     sta dst_ptr
@@ -67,4 +73,9 @@ dhgr_hud_finish:
     lda hud_row
     cmp #4
     bne @row
+.if FULL_GAME
+    jmp full_wide_feedback
+.else
     rts
+.endif
+.endif

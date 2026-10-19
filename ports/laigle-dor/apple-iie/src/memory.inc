@@ -2,6 +2,16 @@
 .ifndef FULL_GAME
 FULL_GAME = 0
 .endif
+.ifndef HGR_MONO
+HGR_MONO = 0
+.endif
+.if HGR_MONO
+RENDER_COLUMNS = 40
+CELL_LIMIT = 240
+.else
+RENDER_COLUMNS = 80
+CELL_LIMIT = 140
+.endif
 STATE = $0C00              ; outside both text pages ($0400/$0800)
 actor_x = STATE
 actor_y = STATE+1
@@ -72,7 +82,7 @@ bounds_top = $A6
 bounds_bottom = $A7
 hud_row = $A8
 hud_ptr = $A9             ; $A9/$AA
-.if DHGR
+.if DHGR + FULL_GAME
 ; DHGR-only scratch; game state, stack and all these pointers stay in main RAM.
 dhgr_codes = $AB
 cell_x = $AC

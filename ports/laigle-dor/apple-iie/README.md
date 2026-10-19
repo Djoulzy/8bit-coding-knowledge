@@ -4,10 +4,42 @@ program: "L'Aigle d'Or"
 cpu: ["6502"]
 machines: ["apple-iie"]
 status: prototype
-review_date: "2026-10-13"
+review_date: "2026-10-19"
 ---
 
-# L'Aigle d'Or — Apple IIe first playable milestone
+# L'Aigle d'Or — Apple IIe port
+
+The full-game development port now has **two separate boot disks**:
+
+| Version | Disk image | Presentation |
+| --- | --- | --- |
+| [HGR monochrome](build/game-mono/laigle-dor-hgr-mono.do) | `build/game-mono/laigle-dor-hgr-mono.do` | Original Oric sprite/scenery dots; HGR 280 × 160 with a centered 240-dot scene and four 40-column text rows |
+| [DHGR color](build/game/laigle-dor-dhgr-color.do) | `build/game/laigle-dor-dhgr-color.do` | Approved 16-color adaptation, fine source-dot details and four 80-column text rows |
+
+Both versions share the same game rules, 64-room constructor, controls,
+collisions, double buffering, title/intro, merchant and H/? help. Both currently
+require **128 KiB with auxiliary RAM**. HGR uses auxiliary RAM for resources;
+its displayed graphics and text pages are in MAIN. In Virtual II select a
+**Mono** monitor for HGR, and **Color** for DHGR. Use the same supplied-ROM / Disk
+II slot-6 setup described below. Choose the disk before booting.
+
+```sh
+make games                 # build both full-game disks
+make test-game-mono        # execute the HGR full-game checks
+make run-game-mono         # functional HGR preview, port 8769
+```
+
+`make game`, `make test-game` and `make run-game` select the full DHGR build.
+`make game-mono` builds the full monochrome version. `make build VIDEO=mono`
+continues to build the older W06 room-12 reference prototype.
+See [HGR implementation and verification](docs/hgr-mono.md).
+
+Both full-game editions now use native masked-byte sprites, faster background
+copies and conservative per-page reuse of an idle actor. Strength drain and
+torch wear use video refreshes so faster rendering does not accelerate them.
+See the [renderer changes](docs/renderer-optimization.md) and
+[input latency measurements](docs/input-responsiveness.md) for scope,
+remaining limits and reproducible checks.
 
 The [local graphics editor](../../../tools/apple-iie-editor/README.md) opens the
 native screens and sprite atlas, preserves masks and bank packing, and exports
@@ -40,15 +72,20 @@ Use `build/game/laigle-dor.do` or `.nib` in slot 6, drive 1. Configure DHGR and
 128 KiB with the extended 80-column bank. The supplied enhanced Apple ROM needs
 a compatible enhanced CPU configuration for firmware cold boot. The original
 castle/title page now appears first, with lightning and a delayed title reveal.
-Press Enter or Space, then type a name,
+Press Enter or Space to read the original text introduction, press a key,
+then type a name,
 Return, then `1` to enter or `3` to visit the merchant. This development build
 also contains initial transitions, items, actions, hazards and menus; the full
 W07/W08 acceptance gates remain pending. Read
 [world-construction.md](docs/world-construction.md) for resource ownership,
 source references, executed checks and known rendering differences.
 
-Exterior and modal panels use full-screen TEXT; the merchant header updates
-gold after every purchase. Gameplay returns to mixed DHGR. In an oubliette,
+Exterior and modal panels use full-screen TEXT. The exterior greets the player
+by name; the merchant has a spaced price list, live funds and purchase feedback.
+**H** or **?** opens the command/item help page and pauses the game, even during
+an action or inside another menu. Any key returns to the previous screen without
+executing that key. During name entry use **?**, since H remains a name character.
+Gameplay returns to mixed DHGR. In an oubliette,
 press **A**, then **Space** to stand; **G** climbs with a rope and an empty hand.
 The room number remains the originating room, but the dedicated pit scene is
 displayed. See [presentation-and-pits.md](docs/presentation-and-pits.md).
@@ -65,7 +102,66 @@ the collision/interaction contract, original evidence and target artwork.
 Room changes now keep the previous graphics frame visible while preparing the
 next room in the hidden buffer, then flip only after its actor/effects/HUD are
 complete. They no longer expose an old TEXT menu. Actual darkness has a clean
-**IL FAIT NOIR ICI !** panel. See [room-transitions.md](docs/room-transitions.md).
+**Il fait noir ici !** panel. See [room-transitions.md](docs/room-transitions.md).
+
+The four gameplay text rows now contain the original room description on rows
+1–2, **Force / Points** on row 3 and **Pieces d'or / Main** on row 4. The hand
+shows its item name; an empty hand leaves the field blank. Coordinates, room
+numbers and keyboard reminders are removed from this panel. See the
+[HUD source mapping](docs/presentation-and-pits.md#compact-gameplay-hud).
+
+Press **I** to open a spacious, two-column inventory: provisions with quantities,
+equipment with **oui/non** possession indicators, quest objects and collected
+scroll count. The held item appears above the lists. **Space**, **Return** or
+**Escape** closes it; **H / ?** opens help and returns to the inventory.
+Keys **0–5** select the held item during gameplay.
+
+Press **C** during castle gameplay to display a **checkpoint code** such as
+`260000-000000-1CEDA0`. Note its 18 hexadecimal characters. To resume later,
+boot either edition, type your name normally, then choose **4. Reprendre avec
+un code** outside the castle. Enter the code and press **Return**; Backspace
+corrects it and Escape cancels. Codes work between the color and monochrome
+editions. H/? also works while displaying or entering a code.
+
+This short code retains the room, inventory and selected hand. The newly typed
+name is retained locally. Resuming starts a fresh room/world state with **500
+gold, zero points and full strength**, placing the actor safely on the room's
+near floor; item wear and transient actions also restart. See the
+[nine-byte format, scope and verification](docs/checkpoints.md).
+
+Menus, descriptions, clues, HUD labels, feedback and map captions use mixed
+case for readability. Native Apple TEXT uses the IIe's built-in lowercase;
+names preserve the typed case, while gameplay commands accept either case.
+See [inventory and text presentation](docs/presentation-and-pits.md#inventory-and-lowercase-text)
+for implementation and reproducible focused checks.
+
+A refused action displays **Impossible in inverse video**, right-aligned on the
+first text row (80 columns in DHGR, 40 in HGR/full-screen TEXT). Descriptions and
+statistics remain visible; long special-room descriptions wrap onto the second
+row in the 40-column layout. The message stays until the next gameplay key;
+help pauses it. See [action feedback and focused checks](docs/presentation-and-pits.md#impossible-action-feedback).
+
+To use a secret fireplace, select the **gold key (3)**, face the fireplace and
+press **O** nearby. Once the opening is visible, move to its center, crouch with
+**A**, then press **Up** while facing it. See [secret-passage controls and evidence](docs/movement-and-scenery.md#opening-and-traversing-secret-fireplaces).
+
+For testing in either full-game edition, press **Ctrl+D** during gameplay
+to open the hidden test menu. **1** grants all inventory objects, including
+quest objects, and nine of each consumable. **2**, a decimal room number
+**0–63**, then **Return** teleports directly to that room. Backspace edits the
+number; **Escape** or **Ctrl+D** resumes play. The menu pauses gameplay and
+shows the current room number. Enter the castle normally before opening it.
+**3** opens a graphical map with numbered rooms, source-backed doorways,
+furniture/treasure pictograms and a large white map pin beside the current room
+number. **Space/Return**
+cycles ground floor, catacombs/upper rooms and legend; **1/2/3** selects a page.
+**Escape** returns to the test menu; **Ctrl+D** resumes gameplay. Contents show
+the initial Oric data; cross-floor and secret links have numeric references.
+Both editions show the same **full-screen HGR monochrome map at 280 × 192**,
+with native-pixel lettering, finer pictograms and graphic status/control lines.
+Closing it restores the edition's normal mixed HGR or DHGR gameplay mode.
+The map is a schematic inspired by the supplied plan. See
+[map controls, display limits and focused tests](docs/test-menu.md#graphical-room-map).
 
 This is a local development port of the analyzed Loriciels 1984 edition credited
 to Louis-Marie Rocques. Historical inputs remain unchanged. Original reuse and

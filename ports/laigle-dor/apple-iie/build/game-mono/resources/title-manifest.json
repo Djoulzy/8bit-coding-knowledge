@@ -1,0 +1,11 @@
+{
+  "conversion": "Oric foreground dots at x+20; 190->160 title rows; original captured-font credits and native-height keyboard prompt",
+  "cpu_range": "$1801-$3740",
+  "palette": "monochrome; ink/paper cells transparent; equal ink/paper hides lightning",
+  "patch_bytes": 766,
+  "raster_bytes": 8192,
+  "raster_sha256": "70f470f8ab3a3014932e202108ccf9b6d7ab0d665b2ce72514fc3d63f445c711",
+  "source_block": "B1",
+  "source_sha256": "ddecd947a8c037658702d8f17057633dd829781f4d45c9c1cae4fa04df8b1b6c",
+  "timing": "target frame counter; original WAIT/audio timing not reproduced"
+}

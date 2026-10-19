@@ -1,0 +1,225 @@
+{
+  "build": {
+    "atlas_bytes": 23022,
+    "atlas_sha256": "201e64d3faee73bcd89ef62a7a2d5dba307835b9562951c9692525c22441bbd3",
+    "disk": "build/game-mono/laigle-dor-hgr-mono.do",
+    "disk_sha256": "94a781f48dbf235c5b0b09dd7d9a82241d65646003d9189fe70963af8e3088d8",
+    "nib_sha256": "6526498ba6f30a7dbda86cf2fb0611742bd922d28890a6a6a2eed2a7579693c5",
+    "program_bytes": 18649,
+    "program_sha256": "cec2cb35c5fe5df01d343af18af4b94e2e2de71c2943f79b543c1bdb9b18339e",
+    "text_bytes": 1751,
+    "text_sha256": "a1f0fe8fb59bafd5cad18a35acdf99e04b7fa5f7a376c4ee5458b1a50e60b5bc",
+    "title_bytes": 8192,
+    "title_sector": 192,
+    "title_sha256": "70f470f8ab3a3014932e202108ccf9b6d7ab0d665b2ce72514fc3d63f445c711",
+    "tools": {
+      "ca65": "ca65 V2.18 - V2.19",
+      "ld65": "ld65 V2.18 - V2.19"
+    }
+  },
+  "captures": {
+    "debug-map-ground.png": {
+      "map_sha256": "072fb1b60d51aa11672d096d6615258e70abeedf5330ddbadcd0e0b71b098c5e",
+      "origin": "executed native functional harness; baked graphic glyphs, host footer font, approximate video palette",
+      "program_sha256": "cec2cb35c5fe5df01d343af18af4b94e2e2de71c2943f79b543c1bdb9b18339e",
+      "sha256": "e5c935832cf39ad2b7fa1b4f0771817568f036209e213be2087eeee870bdb5c0"
+    },
+    "debug-map-legend.png": {
+      "map_sha256": "072fb1b60d51aa11672d096d6615258e70abeedf5330ddbadcd0e0b71b098c5e",
+      "origin": "executed native functional harness; baked graphic glyphs, host footer font, approximate video palette",
+      "program_sha256": "cec2cb35c5fe5df01d343af18af4b94e2e2de71c2943f79b543c1bdb9b18339e",
+      "sha256": "e37e7d80deae6e1a2078159ec0acbc5d8c35310961efb8b7dfd5cabba02ed53f"
+    },
+    "debug-map-other.png": {
+      "map_sha256": "072fb1b60d51aa11672d096d6615258e70abeedf5330ddbadcd0e0b71b098c5e",
+      "origin": "executed native functional harness; baked graphic glyphs, host footer font, approximate video palette",
+      "program_sha256": "cec2cb35c5fe5df01d343af18af4b94e2e2de71c2943f79b543c1bdb9b18339e",
+      "sha256": "9400837bd542d5780d007658b205a703af2ce85ad41109d45721db8277770eca"
+    },
+    "debug-menu.png": {
+      "origin": "executed native functional harness; development preview font/palette",
+      "program_sha256": "cec2cb35c5fe5df01d343af18af4b94e2e2de71c2943f79b543c1bdb9b18339e",
+      "sha256": "cf7549778357dd66f8d1a6f20ab79beb489ae5f8e31d46eacdfa2b660bfcc3fb"
+    },
+    "debug-teleport-room23.png": {
+      "origin": "executed native functional harness; development preview font/palette",
+      "program_sha256": "cec2cb35c5fe5df01d343af18af4b94e2e2de71c2943f79b543c1bdb9b18339e",
+      "sha256": "4ce788d9e4bdc85cf769918274e2cb906d2964434bf25b0564a1f6507a1f6c96"
+    },
+    "exterior.png": {
+      "origin": "executed native functional harness; development preview font",
+      "program_sha256": "cec2cb35c5fe5df01d343af18af4b94e2e2de71c2943f79b543c1bdb9b18339e",
+      "sha256": "3f5c03e74cc02dae63bf550c8615c37a668a2393cf3bd0455a2d8db04476d777"
+    },
+    "help.png": {
+      "origin": "executed native functional harness; development preview font",
+      "program_sha256": "cec2cb35c5fe5df01d343af18af4b94e2e2de71c2943f79b543c1bdb9b18339e",
+      "sha256": "cd21047835a06d7c291d333b2121352324c3e5480a3485cdb2c0c8592a4ac409"
+    },
+    "introduction.png": {
+      "origin": "executed native functional harness; development preview font",
+      "program_sha256": "cec2cb35c5fe5df01d343af18af4b94e2e2de71c2943f79b543c1bdb9b18339e",
+      "sha256": "a8f4536a2dadbbe79b75be45d8094581a8e52c2f242ae2290463b939ff6fe9f8"
+    },
+    "merchant.png": {
+      "origin": "executed native functional harness; development preview font",
+      "program_sha256": "cec2cb35c5fe5df01d343af18af4b94e2e2de71c2943f79b543c1bdb9b18339e",
+      "sha256": "605434338b64507ce798d0b01d676daf9f7ebe08bc22d7b91ac3c769b2b101f1"
+    },
+    "room0-original-grille.png": {
+      "origin": "executed native functional harness; development preview font",
+      "program_sha256": "cec2cb35c5fe5df01d343af18af4b94e2e2de71c2943f79b543c1bdb9b18339e",
+      "sha256": "4518d5de1f0e4a03dd8e377e212e1a5d51e419c95c2b3f932122e5a17ad92af9"
+    },
+    "room12-flames.png": {
+      "origin": "executed native functional harness; development preview font",
+      "program_sha256": "cec2cb35c5fe5df01d343af18af4b94e2e2de71c2943f79b543c1bdb9b18339e",
+      "sha256": "58d91cc9e4d8237835638ae12e15a24a1ffc5531788ec781852374c0bc1c436d"
+    },
+    "room12-hud.png": {
+      "origin": "executed native functional harness; development preview font",
+      "program_sha256": "cec2cb35c5fe5df01d343af18af4b94e2e2de71c2943f79b543c1bdb9b18339e",
+      "sha256": "da147775ef03722ade2715c64aad41adb79162625ccd4752c1f4fc79e5c86226"
+    },
+    "room12-mono.png": {
+      "origin": "executed native functional harness; development preview font",
+      "program_sha256": "cec2cb35c5fe5df01d343af18af4b94e2e2de71c2943f79b543c1bdb9b18339e",
+      "sha256": "41e2ed03f2472ba1d12f6a7fe3411a8ee0f7bd1f54c587f999ffceaf815e9f49"
+    },
+    "room20-original-grille.png": {
+      "origin": "executed native functional harness; development preview font",
+      "program_sha256": "cec2cb35c5fe5df01d343af18af4b94e2e2de71c2943f79b543c1bdb9b18339e",
+      "sha256": "5e3d4d2ce9ab63944fa84a7f25c0029156f723294f110a32c38390c9f53a1a73"
+    },
+    "room23-pit.png": {
+      "origin": "executed native functional harness; development preview font",
+      "program_sha256": "cec2cb35c5fe5df01d343af18af4b94e2e2de71c2943f79b543c1bdb9b18339e",
+      "sha256": "93e21c70ed12302159410bcb65926506db44bc971a60f8ad63f8341373c22476"
+    },
+    "title-complete.png": {
+      "origin": "executed native functional harness; development preview font",
+      "program_sha256": "cec2cb35c5fe5df01d343af18af4b94e2e2de71c2943f79b543c1bdb9b18339e",
+      "sha256": "518366c6a0833bfe3e589ef9ec4329d678c299264ef5fad3ade719453ffefe7d"
+    },
+    "title-lightning.png": {
+      "origin": "executed native functional harness; development preview font",
+      "program_sha256": "cec2cb35c5fe5df01d343af18af4b94e2e2de71c2943f79b543c1bdb9b18339e",
+      "sha256": "736b52f52aff73a5418ba7216924a172dea0022e69ec7b6d57ce7e04937dc9d4"
+    }
+  },
+  "date": "2026-10-18",
+  "debug_map_metadata": "build/game-mono/resources/maps.json",
+  "dhgr_edition": {
+    "disk": "build/game/laigle-dor-dhgr-color.do",
+    "disk_sha256": "aa29b0d6e03a7c6619638094b9e421a0dfdd68dfe1397cd684ef2569e09519fd",
+    "program_sha256": "e270d950aaff9217050d6377b43eb9d8ef32176256c8feca11e90aad4ed1db0b",
+    "tests_passed": 31,
+    "verification": "world-verification.json"
+  },
+  "executed": {
+    "Virtual_II": "not relaunched for this HGR edition",
+    "all_original_dot_layer_oracles_match": true,
+    "apple_system_rom_cold_start": "not tested for this HGR edition",
+    "aux_atlas_preserved_on_all_room_constructions": true,
+    "features": "shared rules, finer movement/collisions, items, merchant, clues, pit/rope, title/intro, modal help, 40-column HUD and text panels, hidden inventory/teleport testing menu, static initial room map with live position",
+    "hidden_test_map": {
+      "caching": "both frame pairs tagged by map page; subsequent idle frames perform no map graphics writes",
+      "content": "curated source objects/secrets/risks and all directed target/lock fields checked; initial quest icons retained after granting inventory",
+      "controls": "Space/Return cycle; 1/2/3 direct select; Escape menu; Ctrl+D game; unrelated keys ignored",
+      "directed_records": 137,
+      "display": "normal edition mixed graphics; each loaded raster plus overlay byte-compared on both hidden buffers",
+      "drawn_door_pairs": 58,
+      "layout": "schematic source-backed ground adjacency; catacomb cycle and separate upper insets; nonlocal links annotated",
+      "native_marker_positions": 64,
+      "pages": 3,
+      "position": "white 3x3 block; page containing current room opens automatically; footer has room number and pit status",
+      "preview": "graphic glyphs are baked native raster data; footer uses host preview font instead of Apple character ROM; composite appearance not calibrated",
+      "room_cells": 64,
+      "state": "controller/services paused; WORLD/grid, baseline, auxiliary atlas and gameplay values retained; both game buffers restored; pit and darkness resume"
+    },
+    "hidden_test_menu": "Ctrl+D in PLAY; 40-column paused menu; all inventory categories/9 consumables each; validated decimal rooms 0-63; input errors/edit/cancel; pit/jump/enemy/hazard cancellation, saved hand restoration, preserved WORLD/economy/PRNG on teleport, safe near-floor spawn and both hidden frame preparations; no visible graphics/text writes.",
+    "main_frames_per_room": 2,
+    "method": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+    "no_aux_graphics_writes": true,
+    "no_visible_page_writes": true,
+    "original_oric_runtime": "not tested",
+    "preview_keyboard_handler": "10 cases on the extracted preview JavaScript with mocked window/press; Ctrl+D, plain D/R, Return/Backspace/Escape and preserved Command/Option shortcuts; not a browser UI execution.",
+    "real_hardware": "not tested",
+    "room_direction_transitions": 256,
+    "rooms": 64,
+    "source_actor_placement_cases": 138,
+    "tests_passed": 32,
+    "zero_hgr_phase_bits": true
+  },
+  "full_game_status": "in progress; no complete historical-game replay or physical timing certification",
+  "graphical_map": {
+    "bytes": 24576,
+    "cells": 64,
+    "lowcode_allocation": "MAIN $13C0-$1DFF; state/name storage ends before this allocation",
+    "metadata": "build/game-mono/resources/maps.json",
+    "pages": 3,
+    "physical_sectors": [
+      240,
+      335
+    ],
+    "profile": "mono",
+    "semantics": "static initial contents and directed doors; live white locator and current-room/pit footer",
+    "sha256": "072fb1b60d51aa11672d096d6615258e70abeedf5330ddbadcd0e0b71b098c5e",
+    "source": "Oric B2 $5600-$57FF; supplied Amstrad picture used only as a presentation reference"
+  },
+  "original_sources_modified": false,
+  "prior_revisions": [
+    {
+      "date": "2026-10-18",
+      "dhgr_at_hgr_introduction": {
+        "disk": "build/game/laigle-dor-dhgr-color.do",
+        "disk_sha256": "7a4200681611eeff028e0b55633d6311542c8ea79f167cca9dd48b6c5d85de4e",
+        "evidence": "program and disk are byte-identical to the previously executed DHGR revision; full suite not repeated",
+        "prior_matching_tests_passed": 25,
+        "program_sha256": "6500f8405261736baef88bf49bdc02e168c661d21c6e93a2b8d65aa1b9c43c07"
+      },
+      "disk_sha256": "366a6c6ecdb386db047d9fcb0081ba01376fe45d64073f1cda83cef70877a7d7",
+      "program_bytes": 17472,
+      "program_sha256": "e4bca4f0000f203d5876a84f711c07254765f271a39baae6983514ee68ac9937",
+      "tests_passed": 26
+    },
+    {
+      "date": "2026-10-18",
+      "disk_sha256": "0b0116751dec75d89733d77c6935348e99b7f27d4e7d36311d7a5655440d4749",
+      "execution": "functional harness; hidden inventory/teleport menu before map addition",
+      "program_bytes": 17972,
+      "program_sha256": "e8e431903db9626fbfabece4282c1a9adf1221d3b8c36ae8418d78f53a7d675c",
+      "tests_passed": 30
+    },
+    {
+      "date": "2026-10-18",
+      "disk_sha256": "d674e27d62d2b6c063fa91f9ff62c5bd6a393c372d939f9bf076c5dbe4fb9752",
+      "execution": "functional harness; two-page TEXT map before graphical map revision",
+      "program_bytes": 18500,
+      "program_sha256": "1be4ca470681f0cce9ef3983f7deebf11bbb3d3c69615752068aa2e7836f53e6",
+      "tests_passed": 32
+    }
+  ],
+  "profile": {
+    "application_cpu": "documented NMOS 6502",
+    "atlas": "AUX $6000-$B9ED",
+    "baseline": "MAIN $A000-$BFFF",
+    "firmware_profile": "../resources/rom-profile.json",
+    "frame_pages": [
+      "MAIN $2000-$3FFF",
+      "MAIN $4000-$5FFF"
+    ],
+    "graphics_rows": 160,
+    "machine": "Apple IIe with 128 KiB including auxiliary RAM",
+    "monitor": "Mono",
+    "scanline_dots": 280,
+    "source_scene_dots": 240,
+    "source_x_margin": 20,
+    "text_columns": 40,
+    "text_rows": 4,
+    "video": "ordinary mixed HGR, DHIRES off, 80COL off"
+  },
+  "program": "L'Aigle d'Or",
+  "source_revision": "sha256:7f01e1a3d05825aab887952cd5711bea69d6525730aba5c1e25c814334fe77d7",
+  "stage": "W07 native-world HGR monochrome development edition"
+}

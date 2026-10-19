@@ -8,6 +8,16 @@ Current file: /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/
 000000r 2               .ifndef FULL_GAME
 000000r 2               FULL_GAME = 0
 000000r 2               .endif
+000000r 2               .ifndef HGR_MONO
+000000r 2               HGR_MONO = 0
+000000r 2               .endif
+000000r 2               .if HGR_MONO
+000000r 2               RENDER_COLUMNS = 40
+000000r 2               CELL_LIMIT = 240
+000000r 2               .else
+000000r 2               RENDER_COLUMNS = 80
+000000r 2               CELL_LIMIT = 140
+000000r 2               .endif
 000000r 2               STATE = $0C00              ; outside both text pages ($0400/$0800)
 000000r 2               actor_x = STATE
 000000r 2               actor_y = STATE+1
@@ -78,7 +88,7 @@ Current file: /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/
 000000r 2               bounds_bottom = $A7
 000000r 2               hud_row = $A8
 000000r 2               hud_ptr = $A9             ; $A9/$AA
-000000r 2               .if DHGR
+000000r 2               .if DHGR + FULL_GAME
 000000r 2               ; DHGR-only scratch; game state, stack and all these pointers stay in main RAM.
 000000r 2               dhgr_codes = $AB
 000000r 2               cell_x = $AC
@@ -154,6 +164,12 @@ Current file: /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/
 000048r 2               .endif
 000048r 2               
 000048r 2               game_tick:
+000048r 2               .if FULL_GAME
+000048r 2                   jsr full_ui_key
+000048r 2                   bcc :+
+000048r 2                   rts
+000048r 2               :
+000048r 2               .endif
 000048r 2  EE 06 0C         inc tick_lo
 00004Br 2  D0 03            bne :+
 00004Dr 2  EE 07 0C         inc tick_hi
@@ -468,6 +484,10 @@ Current file: /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/
 00023Cr 2                   ldx game_mode
 00023Cr 2                   cpx #MODE_NAME
 00023Cr 2                   beq @done
+00023Cr 2                   cpx #MODE_HELP
+00023Cr 2                   beq @done
+00023Cr 2                   cpx #MODE_INTRO
+00023Cr 2                   beq @done
 00023Cr 2               .endif
 00023Cr 2  A2 00            ldx #0
 00023Er 2               @find:
@@ -538,12 +558,20 @@ Current file: /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/
 0002AEr 2  8D 02 C0         sta $C002
 0002B1r 2  8D 04 C0         sta $C004
 0002B4r 2  8D 08 C0         sta $C008              ; main ZP and stack, including safe bank workers
+0002B7r 2               .if HGR_MONO
+0002B7r 2                   sta $C00C              ; ordinary HGR, 40-column mixed text
+0002B7r 2               .else
 0002B7r 2  8D 0D C0         sta $C00D              ; 80-column mixed text / DHGR hardware
+0002BAr 2               .endif
 0002BAr 2  8D 0E C0         sta $C00E
 0002BDr 2  2C 51 C0         bit $C051
 0002C0r 2  2C 54 C0         bit $C054
 0002C3r 2  2C 57 C0         bit $C057
+0002C6r 2               .if HGR_MONO
+0002C6r 2                   bit $C05F              ; AN3 on: disable double HGR
+0002C6r 2               .else
 0002C6r 2  2C 5E C0         bit $C05E              ; AN3 off = DHGR enable on configured Rev-B IIe
+0002C9r 2               .endif
 0002C9r 2  2C 53 C0         bit $C053
 0002CCr 2  A2 rr            ldx #<(__AUXREAD_SIZE__-1)
 0002CEr 2               @install:
@@ -664,7 +692,7 @@ Current file: /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/
 00038Fr 2  20 rr rr         jsr repair_page
 000392r 2               .endif
 000392r 2  A6 9E            ldx render_page_index
-000394r 2  A9 50            lda #80                 ; dirty x bounds are serial seven-bit byte columns
+000394r 2  A9 50            lda #RENDER_COLUMNS
 000396r 2  9D 13 0C         sta dirty_left,x
 000399r 2  A9 00            lda #0
 00039Br 2  9D 15 0C         sta dirty_right,x
@@ -751,6 +779,12 @@ Current file: /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/
 000415r 2  A5 A2            lda repair_left
 000417r 2  85 B1            sta serial_col
 000419r 2               @byte:
+000419r 2               .if HGR_MONO
+000419r 2                   ldy serial_col
+000419r 2                   lda (src_ptr),y
+000419r 2                   sta (dst_ptr),y
+000419r 2                   jmp @next
+000419r 2               .else
 000419r 2  A5 B1            lda serial_col
 00041Br 2  4A               lsr a                   ; carry clear: AUX byte, carry set: MAIN byte
 00041Cr 2  A8               tay
@@ -763,6 +797,7 @@ Current file: /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/
 00042Dr 2               @main:
 00042Dr 2  B1 80            lda (src_ptr),y
 00042Fr 2  91 82            sta (dst_ptr),y
+000431r 2               .endif
 000431r 2               @next:
 000431r 2  E6 B1            inc serial_col
 000433r 2  A5 B1            lda serial_col
@@ -878,9 +913,11 @@ Current file: /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/
 0004B1r 2                   cmp #2
 0004B1r 2                   bne :+
 0004B1r 2                   lda scene_x
+0004B1r 2               .if !HGR_MONO
 0004B1r 2                   lsr a
 0004B1r 2                   clc
 0004B1r 2                   adc #10
+0004B1r 2               .endif
 0004B1r 2                   sta origin_cell
 0004B1r 2               :
 0004B1r 2                   lda static_draw
@@ -1014,7 +1051,7 @@ Current file: /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/
 00052Fr 2               @put_color:
 00052Fr 2               .endif
 00052Fr 2  A5 AC            lda cell_x
-000531r 2  C9 8C            cmp #140
+000531r 2  C9 8C            cmp #CELL_LIMIT
 000533r 2  B0 03            bcs @next_cell
 000535r 2  20 rr rr         jsr draw_masked_cell
 000538r 2               @next_cell:
@@ -1030,6 +1067,11 @@ Current file: /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/
 000540r 2               :
 000540r 2               .endif
 000540r 2  C6 AE            dec code_count
+000542r 2               .if HGR_MONO
+000542r 2                   lda cell_x
+000542r 2                   cmp #239
+000542r 2                   bcs @advance           ; clip before 8-bit source x could wrap to the left
+000542r 2               .endif
 000542r 2  E6 AC            inc cell_x
 000544r 2  C6 AD            dec cells_left
 000546r 2               .if FULL_GAME
@@ -1058,6 +1100,30 @@ Current file: /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/
 00055Dr 2  A9 0F            lda #15
 00055Fr 2  85 B6            sta cell_mask
 000561r 2               draw_masked_cell:
+000561r 2               .if HGR_MONO
+000561r 2                   ; One Oric source dot per HGR bit, at x+20. Bit 7 stays zero.
+000561r 2                   ; AUX is resource storage only, never a graphics framebuffer.
+000561r 2                   ldx cell_x
+000561r 2                   cpx #240
+000561r 2                   bcs @done
+000561r 2                   lda cell_phase,x
+000561r 2                   sta mask
+000561r 2                   lda cell_byte,x
+000561r 2                   tay
+000561r 2                   lda cell_color
+000561r 2                   beq @black
+000561r 2                   lda (dst_ptr),y
+000561r 2                   ora mask
+000561r 2                   sta (dst_ptr),y
+000561r 2                   rts
+000561r 2               @black:
+000561r 2                   lda mask
+000561r 2                   eor #$7F
+000561r 2                   and (dst_ptr),y
+000561r 2                   sta (dst_ptr),y
+000561r 2               @done:
+000561r 2                   rts
+000561r 2               .else
 000561r 2  A6 AC            ldx cell_x
 000563r 2  BD rr rr         lda cell_byte,x
 000566r 2  85 B1            sta serial_col
@@ -1114,6 +1180,7 @@ Current file: /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/
 0005C8r 2  A5 88            lda tmp
 0005CAr 2  91 82            sta (dst_ptr),y
 0005CCr 2  60               rts
+0005CDr 2               .endif
 0005CDr 2               
 0005CDr 2               include_bounds:
 0005CDr 2  A5 8C            lda row_y
@@ -1163,9 +1230,9 @@ Current file: /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/
 00061Cr 2  A5 95            lda x_column
 00061Er 2  18               clc
 00061Fr 2  65 8F            adc out_w
-000621r 2  C9 51            cmp #81
+000621r 2  C9 51            cmp #(RENDER_COLUMNS+1)
 000623r 2  90 02            bcc :+
-000625r 2  A9 50            lda #80
+000625r 2  A9 50            lda #RENDER_COLUMNS
 000627r 2               :
 000627r 2  DD 15 0C         cmp dirty_right,x
 00062Ar 2  90 03            bcc :+
@@ -1391,6 +1458,9 @@ Current file: /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/
 000823r 2               ; hud_draw first builds its compact 40-character line in hidden main text RAM.
 000823r 2               ; Convert via a main-RAM buffer before overwriting that compact line.
 000823r 2               dhgr_hud_finish:
+000823r 2               .if HGR_MONO
+000823r 2                   rts
+000823r 2               .else
 000823r 2  A9 00            lda #0
 000825r 2  85 A8            sta hud_row
 000827r 2               @row:
@@ -1439,6 +1509,7 @@ Current file: /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/
 000874r 2  C9 04            cmp #4
 000876r 2  D0 AF            bne @row
 000878r 2  60               rts
+000879r 2               .endif
 000879r 2               
 000879r 1               .endif
 000879r 1               .export code_end

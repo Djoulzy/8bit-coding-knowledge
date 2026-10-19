@@ -20,6 +20,14 @@ full_text_draw:
     inc dst_ptr+1
     dex
     bne @clear
+    ldx game_mode
+    lda text_panel_hi,x
+    beq @compact
+    sta src_ptr+1
+    lda text_panel_lo,x
+    sta src_ptr
+    jmp full_panel_draw
+@compact:
     ; Reuse the dynamic formatter, then deinterleave its four 80-column rows
     ; into centered 40-column MAIN text. The original HUD rows are erased.
     jsr full_hud_draw
@@ -31,6 +39,14 @@ full_text_draw:
     sta src_ptr
     lda dst_ptr+1
     sta src_ptr+1
+.if HGR_MONO
+    ldy #39
+@save:
+    lda (src_ptr),y
+    sta HUD_BUFFER,y
+    dey
+    bpl @save
+.else
     ldx #0
     ldy #0
 @save:
@@ -43,6 +59,7 @@ full_text_draw:
     iny
     cpy #20
     bne @save
+.endif
     lda #$A0
     ldy #39
 @erase:
@@ -122,9 +139,10 @@ full_text_address:
     sta dst_ptr+1
     rts
 .segment "CODE"
-text_heading: .byte "L'AIGLE D'OR             OR:00000       "
-dark_message: .asciiz "           IL FAIT NOIR ICI !"
-dark_instruction: .asciiz "      1:TORCHE   I:INVENTAIRE"
+.include "full-panels.inc"
+text_heading: .byte "L'Aigle d'Or             Or:00000       "
+dark_message: .asciiz "           Il fait noir ici !"
+dark_instruction: .asciiz "      1:Torche   I:Inventaire"
 text_row_lo:
     .byte $00,$80,$00,$80,$00,$80,$00,$80,$28,$A8,$28,$A8
     .byte $28,$A8,$28,$A8,$50,$D0,$50,$D0,$50,$D0,$50,$D0

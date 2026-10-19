@@ -1,0 +1,415 @@
+{
+  "date": "2026-10-19",
+  "execution": "py65 documented NMOS 6502 with functional Apple bus and executed Disk II BOOT0",
+  "historical_inputs": {
+    "b1_sha256": "e0c58b933133459eb7d38476cab0fb4f49b5964afd0db8982915b36a42be3340",
+    "b2_sha256": "0753ce4ed6c8904118fbd9e40ef459fa46140a770e00902213794ef2c33c28ac",
+    "tap_sha256": "7f01e1a3d05825aab887952cd5711bea69d6525730aba5c1e25c814334fe77d7",
+    "verified_unchanged": true
+  },
+  "physical_hardware": "not tested",
+  "profiles": {
+    "dhgr": {
+      "atlas_bytes": 15690,
+      "baseline_program_sha256": "43dd76e67657084061358149f20e571e3b45c96ec5c285cab5122e728b5c4b85",
+      "cycle_comparisons": {
+        "close_inventory": {
+          "input_to_consume_cycles": {
+            "after": 28,
+            "before": 28
+          },
+          "input_to_next_flip_cycles": {
+            "after": 204261,
+            "before": 238340
+          },
+          "total_cycles": {
+            "after": 204381,
+            "before": 238430
+          }
+        },
+        "crouch": {
+          "input_to_consume_cycles": {
+            "after": 28,
+            "before": 28
+          },
+          "input_to_next_flip_cycles": {
+            "after": 221289,
+            "before": 255361
+          },
+          "total_cycles": {
+            "after": 221409,
+            "before": 255451
+          }
+        },
+        "inventory_idle": {
+          "input_to_consume_cycles": {
+            "after": null,
+            "before": null
+          },
+          "input_to_next_flip_cycles": {
+            "after": null,
+            "before": null
+          },
+          "total_cycles": {
+            "after": 51112,
+            "before": 68122
+          }
+        },
+        "open_inventory": {
+          "input_to_consume_cycles": {
+            "after": 28,
+            "before": 28
+          },
+          "input_to_next_flip_cycles": {
+            "after": 50919,
+            "before": 68030
+          },
+          "total_cycles": {
+            "after": 51048,
+            "before": 68110
+          }
+        },
+        "room12_idle_0": {
+          "input_to_consume_cycles": {
+            "after": null,
+            "before": null
+          },
+          "input_to_next_flip_cycles": {
+            "after": null,
+            "before": null
+          },
+          "total_cycles": {
+            "after": 85134,
+            "before": 289516
+          }
+        },
+        "room12_idle_1": {
+          "input_to_consume_cycles": {
+            "after": null,
+            "before": null
+          },
+          "input_to_next_flip_cycles": {
+            "after": null,
+            "before": null
+          },
+          "total_cycles": {
+            "after": 85164,
+            "before": 289502
+          }
+        },
+        "room12_idle_2": {
+          "input_to_consume_cycles": {
+            "after": null,
+            "before": null
+          },
+          "input_to_next_flip_cycles": {
+            "after": null,
+            "before": null
+          },
+          "total_cycles": {
+            "after": 85170,
+            "before": 289518
+          }
+        },
+        "room12_idle_3": {
+          "input_to_consume_cycles": {
+            "after": null,
+            "before": null
+          },
+          "input_to_next_flip_cycles": {
+            "after": null,
+            "before": null
+          },
+          "total_cycles": {
+            "after": 85159,
+            "before": 289504
+          }
+        },
+        "stand": {
+          "input_to_consume_cycles": {
+            "after": 28,
+            "before": 28
+          },
+          "input_to_next_flip_cycles": {
+            "after": 85034,
+            "before": 255358
+          },
+          "total_cycles": {
+            "after": 85151,
+            "before": 255445
+          }
+        },
+        "start_walking_right": {
+          "input_to_consume_cycles": {
+            "after": 28,
+            "before": 28
+          },
+          "input_to_next_flip_cycles": {
+            "after": 238283,
+            "before": 272391
+          },
+          "total_cycles": {
+            "after": 238427,
+            "before": 272478
+          }
+        },
+        "stop_arriving_just_after_poll": {
+          "input_to_consume_cycles": {
+            "after": 238411,
+            "before": 272471
+          },
+          "input_to_next_flip_cycles": {
+            "after": 459640,
+            "before": 544840
+          },
+          "total_cycles": {
+            "after": 459819,
+            "before": 544962
+          }
+        },
+        "turn_left_arriving_just_after_idle_poll": {
+          "input_to_consume_cycles": {
+            "after": 85127,
+            "before": 289509
+          },
+          "input_to_next_flip_cycles": {
+            "after": 340435,
+            "before": 595931
+          },
+          "total_cycles": {
+            "after": 340587,
+            "before": 596053
+          }
+        },
+        "turn_right": {
+          "input_to_consume_cycles": {
+            "after": 28,
+            "before": 28
+          },
+          "input_to_next_flip_cycles": {
+            "after": 221215,
+            "before": 272391
+          },
+          "total_cycles": {
+            "after": 221362,
+            "before": 272481
+          }
+        }
+      },
+      "disk_sha256": "7c383403ee2a2d2ec798fdfa7604eb0b7da5dc454378efc3e209d670a11d31d0",
+      "extra_bytes": 2048,
+      "full_suite_report": "build/game/game-test-results.json",
+      "full_suite_success": true,
+      "full_suite_tests": 45,
+      "native_actor_phase_vectors": 420,
+      "profile_report": "build/game/input-profile.json",
+      "program_bytes": 19644,
+      "program_sha256": "b2bae5b449057c26bf056228935e2df0faf5b11c255ec45f741792065df57304",
+      "room_constructor_cases": 64,
+      "supplemental_report": "build/game/render-focused-test-results.json",
+      "text_bytes": 2768
+    },
+    "mono": {
+      "atlas_bytes": 22828,
+      "baseline_program_sha256": "c27de59fb7ef1b8cef14bd6cbd3d990c9b032c01adf660a8a2fc6c0a7ecf2b06",
+      "cycle_comparisons": {
+        "close_inventory": {
+          "input_to_consume_cycles": {
+            "after": 28,
+            "before": 28
+          },
+          "input_to_next_flip_cycles": {
+            "after": 136076,
+            "before": 272408
+          },
+          "total_cycles": {
+            "after": 136219,
+            "before": 272494
+          }
+        },
+        "crouch": {
+          "input_to_consume_cycles": {
+            "after": 28,
+            "before": 28
+          },
+          "input_to_next_flip_cycles": {
+            "after": 136067,
+            "before": 272402
+          },
+          "total_cycles": {
+            "after": 136210,
+            "before": 272488
+          }
+        },
+        "inventory_idle": {
+          "input_to_consume_cycles": {
+            "after": null,
+            "before": null
+          },
+          "input_to_next_flip_cycles": {
+            "after": null,
+            "before": null
+          },
+          "total_cycles": {
+            "after": 51094,
+            "before": 51089
+          }
+        },
+        "open_inventory": {
+          "input_to_consume_cycles": {
+            "after": 28,
+            "before": 28
+          },
+          "input_to_next_flip_cycles": {
+            "after": 50992,
+            "before": 51004
+          },
+          "total_cycles": {
+            "after": 51103,
+            "before": 51080
+          }
+        },
+        "room12_idle_0": {
+          "input_to_consume_cycles": {
+            "after": null,
+            "before": null
+          },
+          "input_to_next_flip_cycles": {
+            "after": null,
+            "before": null
+          },
+          "total_cycles": {
+            "after": 51108,
+            "before": 306546
+          }
+        },
+        "room12_idle_1": {
+          "input_to_consume_cycles": {
+            "after": null,
+            "before": null
+          },
+          "input_to_next_flip_cycles": {
+            "after": null,
+            "before": null
+          },
+          "total_cycles": {
+            "after": 51090,
+            "before": 306534
+          }
+        },
+        "room12_idle_2": {
+          "input_to_consume_cycles": {
+            "after": null,
+            "before": null
+          },
+          "input_to_next_flip_cycles": {
+            "after": null,
+            "before": null
+          },
+          "total_cycles": {
+            "after": 51117,
+            "before": 306546
+          }
+        },
+        "room12_idle_3": {
+          "input_to_consume_cycles": {
+            "after": null,
+            "before": null
+          },
+          "input_to_next_flip_cycles": {
+            "after": null,
+            "before": null
+          },
+          "total_cycles": {
+            "after": 51048,
+            "before": 306534
+          }
+        },
+        "stand": {
+          "input_to_consume_cycles": {
+            "after": 28,
+            "before": 28
+          },
+          "input_to_next_flip_cycles": {
+            "after": 50951,
+            "before": 289421
+          },
+          "total_cycles": {
+            "after": 51091,
+            "before": 289504
+          }
+        },
+        "start_walking_right": {
+          "input_to_consume_cycles": {
+            "after": 28,
+            "before": 28
+          },
+          "input_to_next_flip_cycles": {
+            "after": 136140,
+            "before": 306457
+          },
+          "total_cycles": {
+            "after": 136253,
+            "before": 306540
+          }
+        },
+        "stop_arriving_just_after_poll": {
+          "input_to_consume_cycles": {
+            "after": 136209,
+            "before": 306537
+          },
+          "input_to_next_flip_cycles": {
+            "after": 272340,
+            "before": 595928
+          },
+          "total_cycles": {
+            "after": 272488,
+            "before": 596046
+          }
+        },
+        "turn_left_arriving_just_after_idle_poll": {
+          "input_to_consume_cycles": {
+            "after": 51106,
+            "before": 306539
+          },
+          "input_to_next_flip_cycles": {
+            "after": 204201,
+            "before": 647024
+          },
+          "total_cycles": {
+            "after": 204376,
+            "before": 647142
+          }
+        },
+        "turn_right": {
+          "input_to_consume_cycles": {
+            "after": 28,
+            "before": 28
+          },
+          "input_to_next_flip_cycles": {
+            "after": 136094,
+            "before": 289424
+          },
+          "total_cycles": {
+            "after": 136237,
+            "before": 289510
+          }
+        }
+      },
+      "disk_sha256": "6561e17b8ccb4fbc4bfe54540cb3dd3b079c889d7d2b27ee2153fc3c2a9e51af",
+      "extra_bytes": 0,
+      "full_suite_report": "build/game-mono/game-test-results.json",
+      "full_suite_success": true,
+      "full_suite_tests": 46,
+      "native_actor_phase_vectors": 420,
+      "profile_report": "build/game-mono/input-profile.json",
+      "program_bytes": 19031,
+      "program_sha256": "11c61bd4b48c08d25ed9c5c51776e2ad83a13fb74c7601878b3f547e53e250d6",
+      "room_constructor_cases": 64,
+      "supplemental_report": "build/game-mono/render-focused-test-results.json",
+      "text_bytes": 2768
+    }
+  },
+  "timing": "CPU instruction cycles; millisecond conversion assumes exactly 1 MHz; simplified NTSC VBL model",
+  "virtual_ii": "not tested in this optimization pass"
+}

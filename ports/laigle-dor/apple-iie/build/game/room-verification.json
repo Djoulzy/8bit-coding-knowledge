@@ -1,6 +1,6 @@
 {
   "execution": "py65 actual NMOS instructions; not original Oric runtime or real Apple hardware",
-  "program_sha256": "1a7d2c6103a970180e56bf1f44a33ada0ee6889678e76553267f80cebbf68c6a",
+  "program_sha256": "b2bae5b449057c26bf056228935e2df0faf5b11c255ec45f741792065df57304",
   "rooms": [
     {
       "collision_match": true,

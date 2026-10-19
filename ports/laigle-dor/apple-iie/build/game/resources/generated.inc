@@ -159,249 +159,6 @@ frame_26:
 frame_27:
     .byte $02,$3A,$FD,$DA,$3B,$FF,$EE
 .segment "ASSETS"
-sprite_40:
-    .byte $0F,$1F,$09,$09,$09,$09,$09,$0A,$0A,$0A,$00,$00,$00,$00,$00,$00
-    .byte $0E,$00,$00,$F0,$0F,$00,$00,$00,$00,$0E,$00,$00,$FF,$FF,$00,$00
-    .byte $00,$00,$0E,$00,$00,$FF,$FF,$00,$00,$00,$00,$0E,$00,$00,$FF,$FF
-    .byte $00,$00,$00,$00,$0E,$00,$00,$FF,$FF,$00,$00,$00,$00,$0D,$00,$00
-    .byte $DA,$DD,$00,$00,$00,$00,$0D,$00,$00,$AA,$AD,$00,$00,$00,$00,$0D
-    .byte $00,$00,$AA,$AD,$00,$00,$00,$00,$0D,$00,$00,$AA,$AA,$00,$00,$00
-    .byte $00,$0D,$00,$00,$7C,$3D,$00,$00,$00,$00,$0D,$00,$00,$AC,$3A,$00
-    .byte $00,$00,$00,$0D,$00,$00,$A0,$0A,$00,$00,$00,$00,$06,$00,$00,$5A
-    .byte $A5,$00,$00,$00,$00,$06,$00,$A0,$7F,$FD,$0A,$00,$00,$00,$06,$00
-    .byte $A0,$AF,$FD,$DA,$00,$00,$00,$06,$00,$C0,$AF,$FD,$A7,$03,$00,$00
-    .byte $06,$00,$C0,$FF,$FA,$A7,$03,$00,$00,$06,$00,$70,$AA,$AD,$FD,$0A
-    .byte $00,$00,$06,$00,$A0,$A5,$5A,$AA,$0A,$00,$00,$06,$00,$A0,$AA,$AD
-    .byte $DA,$0A,$00,$00,$06,$00,$A0,$FF,$FA,$DA,$0A,$00,$00,$06,$00,$C0
-    .byte $AF,$FD,$DA,$0A,$00,$00,$06,$00,$C0,$FF,$FA,$D7,$0A,$00,$00,$06
-    .byte $00,$C0,$AF,$FD,$A7,$0D,$00,$00,$06,$00,$C0,$FF,$FA,$A7,$03,$00
-    .byte $00,$06,$00,$C0,$AF,$FD,$A7,$03,$00,$00,$06,$00,$C0,$FF,$FA,$A7
-    .byte $00,$00,$00,$06,$00,$C0,$AA,$AA,$A7,$00,$00,$00,$06,$00,$C0,$D5
-    .byte $5D,$3A,$00,$00,$00,$06,$00,$C0,$D5,$5A,$3D,$00,$00,$00,$06,$00
-    .byte $C0,$D5,$5D,$0A,$00,$00,$00
-sprite_41:
-    .byte $0C,$1F,$07,$07,$07,$08,$08,$08,$08,$08,$00,$00,$00,$00,$00,$00
-    .byte $0E,$00,$00,$FF,$0F,$00,$00,$0E,$00,$00,$FF,$FF,$00,$00,$0E,$00
-    .byte $F0,$FF,$FF,$00,$00,$0E,$00,$F0,$FF,$FF,$00,$00,$0E,$00,$F0,$FF
-    .byte $FF,$00,$00,$0D,$00,$C0,$A7,$37,$00,$00,$0D,$00,$00,$A7,$AA,$00
-    .byte $00,$0D,$00,$00,$DA,$DA,$00,$00,$0D,$00,$00,$AA,$3A,$00,$00,$0D
-    .byte $00,$00,$A7,$37,$00,$00,$0D,$00,$00,$DA,$3A,$00,$00,$0D,$00,$00
-    .byte $7A,$03,$00,$00,$0D,$00,$00,$AA,$00,$00,$00,$06,$00,$00,$FA,$03
-    .byte $00,$00,$06,$00,$C0,$FA,$0A,$00,$00,$06,$00,$C0,$AD,$0A,$00,$00
-    .byte $06,$00,$A0,$D7,$3A,$00,$00,$06,$00,$A0,$7A,$3D,$00,$00,$06,$00
-    .byte $A0,$AF,$37,$00,$00,$06,$00,$A0,$FF,$0A,$00,$00,$06,$00,$A0,$FF
-    .byte $3F,$00,$00,$06,$00,$A0,$FF,$3F,$00,$00,$06,$00,$A0,$FF,$3F,$00
-    .byte $00,$06,$00,$A0,$FF,$3F,$00,$00,$06,$00,$A0,$FF,$3F,$00,$00,$06
-    .byte $00,$A0,$FF,$3F,$00,$00,$06,$00,$C0,$FF,$3F,$00,$00,$06,$00,$C0
-    .byte $AA,$3A,$00,$00,$06,$00,$C0,$55,$3D,$00,$00,$06,$00,$C0,$55,$3D
-    .byte $00,$00,$06,$00,$C0,$55,$3D,$00,$00
-sprite_42:
-    .byte $0C,$1F,$07,$07,$07,$08,$08,$08,$08,$08,$00,$00,$00,$00,$00,$00
-    .byte $0E,$00,$00,$F0,$FF,$00,$00,$0E,$00,$00,$FF,$FF,$00,$00,$0E,$00
-    .byte $00,$FF,$FF,$0F,$00,$0E,$00,$00,$FF,$FF,$0F,$00,$0E,$00,$00,$FF
-    .byte $FF,$0F,$00,$0D,$00,$00,$FF,$FF,$0F,$00,$0D,$00,$00,$FF,$FF,$00
-    .byte $00,$0D,$00,$00,$5F,$FF,$00,$00,$0D,$00,$00,$FF,$FF,$00,$00,$0D
-    .byte $00,$00,$FF,$FF,$00,$00,$0D,$00,$00,$F5,$FF,$00,$00,$0D,$00,$00
-    .byte $F0,$FF,$00,$00,$0D,$00,$00,$00,$FF,$00,$00,$06,$00,$00,$C0,$AF
-    .byte $00,$00,$06,$00,$00,$AC,$FF,$03,$00,$06,$00,$00,$AC,$AF,$03,$00
-    .byte $06,$00,$00,$DA,$5A,$0A,$00,$06,$00,$00,$AA,$AD,$0A,$00,$06,$00
-    .byte $00,$AA,$AA,$0D,$00,$06,$00,$00,$DA,$FD,$0A,$00,$06,$00,$00,$A7
-    .byte $A7,$03,$00,$06,$00,$00,$FA,$DA,$0A,$00,$06,$00,$00,$FA,$DA,$0A
-    .byte $00,$06,$00,$00,$FC,$A7,$0A,$00,$06,$00,$00,$AC,$FD,$03,$00,$06
-    .byte $00,$00,$7C,$AA,$00,$00,$06,$00,$00,$DC,$7A,$03,$00,$06,$00,$00
-    .byte $A0,$A7,$03,$00,$06,$00,$00,$AC,$55,$03,$00,$06,$00,$00,$A7,$55
-    .byte $03,$00,$06,$00,$00,$7A,$55,$03,$00
-sprite_43:
-    .byte $0F,$1F,$09,$09,$09,$09,$09,$0A,$0A,$0A,$00,$00,$00,$00,$00,$00
-    .byte $0E,$00,$00,$00,$00,$FF,$00,$00,$00,$0E,$00,$00,$00,$F0,$FF,$0F
-    .byte $00,$00,$0E,$00,$00,$00,$F0,$FF,$0F,$00,$00,$0E,$00,$00,$00,$F0
-    .byte $FF,$0F,$00,$00,$0E,$00,$00,$00,$F0,$FF,$0F,$00,$00,$0E,$00,$00
-    .byte $00,$F0,$FF,$0F,$00,$00,$0E,$00,$00,$00,$F0,$FF,$0F,$00,$00,$0E
-    .byte $00,$00,$00,$F0,$FF,$0F,$00,$00,$0E,$00,$00,$00,$F0,$FF,$0F,$00
-    .byte $00,$0D,$00,$00,$00,$C0,$FF,$03,$00,$00,$0D,$00,$00,$00,$C0,$FF
-    .byte $03,$00,$00,$0D,$00,$00,$00,$C0,$FF,$03,$00,$00,$06,$00,$00,$00
-    .byte $AC,$FF,$3A,$00,$00,$06,$00,$00,$C0,$FA,$FF,$AF,$00,$00,$06,$00
-    .byte $00,$70,$FA,$FF,$3A,$00,$00,$06,$00,$00,$AC,$A5,$AA,$D7,$00,$00
-    .byte $06,$00,$00,$FC,$5A,$55,$AD,$00,$00,$06,$00,$00,$AA,$AF,$AA,$AA
-    .byte $00,$00,$06,$00,$00,$7A,$FA,$FF,$AF,$00,$00,$06,$00,$00,$7A,$FA
-    .byte $FF,$3F,$00,$00,$06,$00,$00,$7A,$FA,$FF,$3F,$00,$00,$06,$00,$00
-    .byte $7A,$FD,$FF,$3F,$00,$00,$06,$00,$00,$DA,$FD,$FF,$3F,$00,$00,$06
-    .byte $00,$00,$AA,$FD,$FF,$3F,$00,$00,$06,$00,$00,$AC,$FD,$FF,$3F,$00
-    .byte $00,$06,$00,$00,$AC,$FD,$FF,$3F,$00,$00,$06,$00,$00,$A0,$FD,$FF
-    .byte $3F,$00,$00,$06,$00,$00,$A0,$AD,$AA,$3A,$00,$00,$06,$00,$00,$C0
-    .byte $5D,$55,$35,$00,$00,$06,$00,$00,$C0,$5D,$55,$35,$00,$00,$06,$00
-    .byte $00,$00,$5A,$55,$35,$00,$00
-sprite_44:
-    .byte $15,$18,$07,$0C,$0D,$0D,$0D,$0D,$0D,$0D,$01,$00,$00,$00,$00,$00
-    .byte $0E,$00,$00,$00,$A0,$02,$00,$0E,$00,$00,$00,$A8,$02,$00,$0E,$00
-    .byte $00,$00,$A8,$0A,$00,$0E,$00,$00,$00,$A8,$0A,$00,$0E,$00,$00,$00
-    .byte $A8,$02,$00,$0D,$00,$00,$00,$AA,$02,$00,$0D,$00,$00,$80,$AA,$02
-    .byte $00,$0D,$00,$00,$A0,$AA,$02,$00,$0D,$00,$00,$A8,$AA,$02,$00,$0D
-    .byte $00,$80,$02,$A9,$02,$00,$0D,$00,$A0,$AA,$02,$00,$00,$06,$00,$A0
-    .byte $AA,$02,$00,$00,$06,$00,$A8,$AA,$02,$00,$00,$06,$00,$A8,$AA,$02
-    .byte $00,$00,$06,$00,$A8,$AA,$00,$00,$00,$06,$00,$AA,$AA,$00,$00,$00
-    .byte $06,$00,$AA,$AA,$00,$00,$00,$06,$00,$AA,$2A,$00,$00,$00,$06,$00
-    .byte $AA,$2A,$00,$00,$00,$06,$00,$AA,$0A,$00,$00,$00,$06,$00,$AA,$0A
-    .byte $00,$00,$00,$06,$00,$5A,$02,$00,$00,$00,$06,$00,$56,$02,$00,$00
-    .byte $00,$06,$00,$5A,$02,$00,$00,$00
-sprite_45:
-    .byte $12,$18,$06,$0B,$0B,$0B,$0B,$0B,$0B,$0C,$01,$00,$00,$00,$00,$00
-    .byte $0E,$00,$2A,$00,$00,$00,$0E,$80,$2A,$00,$00,$00,$0E,$80,$AA,$00
-    .byte $00,$00,$0E,$80,$AA,$00,$00,$00,$0E,$80,$AA,$00,$00,$00,$0D,$80
-    .byte $AA,$00,$00,$00,$0D,$80,$AA,$02,$00,$00,$0D,$80,$AA,$0A,$00,$00
-    .byte $0D,$00,$AA,$AA,$00,$00,$0D,$00,$9A,$02,$02,$00,$0D,$00,$80,$AA
-    .byte $0A,$00,$06,$00,$80,$AA,$0A,$00,$06,$00,$80,$AA,$2A,$00,$06,$00
-    .byte $80,$AA,$2A,$00,$06,$00,$80,$AA,$2A,$00,$06,$00,$00,$AA,$2A,$00
-    .byte $06,$00,$00,$AA,$2A,$00,$06,$00,$00,$AA,$2A,$00,$06,$00,$00,$A8
-    .byte $2A,$00,$06,$00,$00,$A8,$2A,$00,$06,$00,$00,$A0,$2A,$00,$06,$00
-    .byte $00,$A0,$29,$00,$06,$00,$00,$A0,$29,$00,$06,$00,$00,$A0,$29,$00
-sprite_46:
-    .byte $0C,$1A,$04,$07,$07,$08,$08,$08,$08,$08,$01,$00,$00,$00,$00,$00
-    .byte $01,$80,$AA,$02,$01,$80,$9A,$02,$01,$80,$AA,$02,$01,$80,$AA,$02
-    .byte $01,$00,$AA,$02,$01,$80,$AA,$02,$01,$80,$A6,$02,$01,$80,$A6,$02
-    .byte $01,$80,$A6,$02,$01,$80,$A6,$02,$01,$80,$A6,$02,$01,$80,$A6,$02
-    .byte $01,$80,$A6,$02,$01,$80,$69,$02,$01,$00,$A6,$00,$01,$00,$A6,$00
-    .byte $04,$80,$AA,$02,$04,$80,$A6,$02,$04,$80,$A6,$02,$04,$00,$AA,$00
-    .byte $04,$00,$A6,$00,$04,$00,$A6,$00,$04,$00,$A6,$00,$04,$80,$2A,$00
-    .byte $04,$80,$AA,$02,$04,$80,$A9,$02
-sprite_47:
-    .byte $0C,$1A,$04,$07,$07,$08,$08,$08,$08,$08,$01,$00,$00,$00,$00,$00
-    .byte $01,$80,$AA,$00,$01,$80,$AA,$00,$01,$80,$AA,$00,$01,$80,$AA,$00
-    .byte $01,$80,$A9,$00,$01,$80,$9A,$00,$01,$80,$9A,$00,$01,$80,$9A,$00
-    .byte $01,$80,$9A,$00,$01,$80,$9A,$00,$01,$80,$9A,$00,$01,$80,$9A,$00
-    .byte $01,$80,$9A,$00,$01,$80,$9A,$00,$01,$80,$2A,$00,$01,$80,$0A,$00
-    .byte $04,$80,$2A,$00,$04,$80,$2A,$00,$04,$80,$2A,$00,$04,$80,$29,$00
-    .byte $04,$80,$26,$00,$04,$80,$26,$00,$04,$80,$26,$00,$04,$80,$2A,$00
-    .byte $04,$80,$AA,$00,$04,$80,$A9,$00
-sprite_48:
-    .byte $0C,$1A,$04,$07,$07,$08,$08,$08,$08,$08,$01,$00,$00,$00,$00,$00
-    .byte $01,$00,$A8,$02,$01,$00,$AA,$02,$01,$00,$AA,$02,$01,$00,$AA,$02
-    .byte $01,$00,$A6,$02,$01,$00,$A6,$02,$01,$00,$A6,$02,$01,$00,$A6,$02
-    .byte $01,$00,$A6,$02,$01,$00,$A6,$02,$01,$80,$A9,$02,$01,$00,$A6,$02
-    .byte $01,$00,$A6,$02,$01,$00,$A6,$02,$01,$00,$A8,$02,$01,$00,$A0,$02
-    .byte $04,$00,$A8,$02,$04,$00,$A8,$02,$04,$00,$A8,$02,$04,$00,$68,$02
-    .byte $04,$00,$98,$02,$04,$00,$98,$02,$04,$00,$98,$02,$04,$00,$A8,$02
-    .byte $04,$00,$AA,$02,$04,$00,$6A,$02
-sprite_49:
-    .byte $0C,$1A,$04,$07,$07,$08,$08,$08,$08,$08,$01,$00,$00,$00,$00,$00
-    .byte $01,$80,$AA,$02,$01,$80,$AA,$02,$01,$80,$AA,$02,$01,$80,$AA,$02
-    .byte $01,$00,$AA,$02,$01,$80,$9A,$02,$01,$80,$9A,$02,$01,$80,$9A,$02
-    .byte $01,$80,$9A,$02,$01,$80,$9A,$02,$01,$80,$9A,$02,$01,$80,$9A,$02
-    .byte $01,$80,$9A,$02,$01,$80,$9A,$02,$01,$00,$9A,$00,$01,$00,$9A,$00
-    .byte $04,$80,$AA,$02,$04,$80,$9A,$02,$04,$80,$9A,$02,$04,$00,$AA,$00
-    .byte $04,$00,$9A,$00,$04,$00,$9A,$00,$04,$00,$9A,$00,$04,$80,$9A,$02
-    .byte $04,$80,$99,$02,$04,$80,$99,$00
-sprite_50:
-    .byte $0C,$1A,$04,$07,$07,$08,$08,$08,$08,$08,$01,$00,$00,$00,$00,$00
-    .byte $01,$80,$AA,$02,$01,$80,$9A,$02,$01,$80,$AA,$02,$01,$80,$AA,$02
-    .byte $01,$00,$9A,$02,$01,$80,$9A,$02,$01,$80,$9A,$02,$01,$80,$9A,$02
-    .byte $01,$80,$9A,$02,$01,$80,$9A,$02,$01,$80,$9A,$02,$01,$80,$9A,$02
-    .byte $01,$00,$9A,$00,$01,$80,$AA,$00,$01,$00,$9A,$00,$01,$80,$AA,$00
-    .byte $04,$80,$9A,$02,$04,$80,$9A,$02,$04,$80,$6A,$02,$04,$00,$AA,$00
-    .byte $04,$00,$9A,$00,$04,$00,$98,$00,$04,$80,$9A,$02,$04,$80,$9A,$02
-    .byte $04,$00,$0A,$00,$04,$00,$0A,$00
-sprite_51:
-    .byte $0F,$1A,$05,$09,$09,$09,$09,$0A,$0A,$0A,$01,$00,$00,$00,$00,$00
-    .byte $01,$00,$A0,$2A,$00,$01,$00,$A0,$2A,$00,$01,$00,$A0,$AA,$00,$01
-    .byte $00,$A0,$9A,$00,$01,$00,$A0,$26,$00,$01,$00,$A0,$A6,$00,$01,$00
-    .byte $A0,$A6,$00,$01,$00,$A0,$A6,$00,$01,$00,$A0,$A6,$00,$01,$00,$A0
-    .byte $A6,$00,$01,$00,$A0,$A6,$00,$01,$00,$A0,$A6,$00,$01,$00,$A0,$AA
-    .byte $00,$01,$00,$A0,$AA,$00,$01,$00,$98,$29,$00,$01,$00,$A8,$29,$00
-    .byte $04,$00,$A8,$A9,$00,$04,$00,$A0,$A9,$00,$04,$00,$98,$A9,$00,$04
-    .byte $00,$98,$29,$00,$04,$00,$6A,$2A,$00,$04,$00,$5A,$2A,$00,$04,$00
-    .byte $6A,$0A,$00,$04,$00,$68,$2A,$00,$04,$00,$A8,$AA,$00,$04,$00,$A8
-    .byte $A6,$00
-sprite_52:
-    .byte $0F,$1A,$05,$09,$09,$09,$09,$0A,$0A,$0A,$01,$00,$00,$00,$00,$00
-    .byte $01,$00,$A8,$02,$00,$01,$00,$AA,$02,$00,$01,$80,$AA,$02,$00,$01
-    .byte $80,$AA,$02,$00,$01,$00,$AA,$02,$00,$01,$80,$A6,$02,$00,$01,$80
-    .byte $A6,$02,$00,$01,$80,$A6,$02,$00,$01,$80,$A6,$02,$00,$01,$80,$A6
-    .byte $02,$00,$01,$80,$AA,$0A,$00,$01,$80,$AA,$0A,$00,$01,$80,$9A,$0A
-    .byte $00,$01,$80,$9A,$0A,$00,$01,$00,$9A,$0A,$00,$01,$80,$9A,$2A,$00
-    .byte $04,$80,$9A,$2A,$00,$04,$80,$AA,$0A,$00,$04,$00,$9A,$26,$00,$04
-    .byte $00,$6A,$2A,$00,$04,$00,$6A,$29,$00,$04,$00,$6A,$A9,$00,$04,$00
-    .byte $68,$A9,$00,$04,$00,$6A,$29,$00,$04,$80,$6A,$2A,$00,$04,$80,$66
-    .byte $0A,$00
-sprite_53:
-    .byte $0C,$1A,$04,$07,$07,$08,$08,$08,$08,$08,$01,$00,$00,$00,$00,$00
-    .byte $01,$80,$AA,$02,$01,$80,$AA,$02,$01,$80,$AA,$02,$01,$80,$AA,$02
-    .byte $01,$00,$AA,$02,$01,$80,$9A,$02,$01,$80,$9A,$02,$01,$80,$9A,$02
-    .byte $01,$80,$9A,$02,$01,$80,$9A,$02,$01,$80,$9A,$02,$01,$80,$9A,$00
-    .byte $01,$80,$9A,$02,$01,$80,$9A,$00,$01,$00,$9A,$02,$01,$00,$9A,$00
-    .byte $04,$80,$AA,$02,$04,$80,$9A,$02,$04,$80,$9A,$02,$04,$00,$AA,$00
-    .byte $04,$00,$9A,$00,$04,$00,$9A,$02,$04,$00,$5A,$02,$04,$80,$9A,$00
-    .byte $04,$80,$09,$00,$04,$80,$09,$00
-sprite_54:
-    .byte $0C,$1A,$04,$07,$07,$08,$08,$08,$08,$08,$01,$00,$00,$00,$00,$00
-    .byte $01,$80,$AA,$02,$01,$80,$9A,$02,$01,$80,$AA,$02,$01,$80,$AA,$02
-    .byte $01,$00,$AA,$02,$01,$80,$A6,$02,$01,$80,$A6,$02,$01,$80,$A6,$02
-    .byte $01,$80,$A6,$02,$01,$80,$A6,$02,$01,$80,$A6,$02,$01,$80,$A9,$00
-    .byte $01,$80,$A6,$02,$01,$80,$A6,$00,$01,$80,$A6,$02,$01,$80,$A6,$00
-    .byte $04,$80,$AA,$00,$04,$80,$A6,$00,$04,$80,$A6,$00,$04,$80,$99,$00
-    .byte $04,$80,$A6,$00,$04,$80,$29,$00,$04,$80,$AA,$02,$04,$80,$A9,$02
-    .byte $04,$00,$A0,$00,$04,$00,$A0,$00
-sprite_55:
-    .byte $0F,$1A,$05,$09,$09,$09,$09,$0A,$0A,$0A,$01,$00,$00,$00,$00,$00
-    .byte $01,$00,$A0,$2A,$00,$01,$00,$A0,$2A,$00,$01,$00,$A0,$AA,$00,$01
-    .byte $00,$A0,$9A,$00,$01,$00,$60,$2A,$00,$01,$00,$60,$AA,$00,$01,$00
-    .byte $A0,$AA,$00,$01,$00,$A0,$A9,$00,$01,$00,$A0,$A9,$00,$01,$00,$A0
-    .byte $AA,$00,$01,$00,$A0,$AA,$00,$01,$00,$A0,$A9,$00,$01,$00,$A0,$A9
-    .byte $00,$01,$00,$A0,$A9,$00,$01,$00,$98,$29,$00,$01,$00,$A8,$29,$00
-    .byte $04,$00,$A8,$A9,$00,$04,$00,$A0,$A9,$00,$04,$00,$98,$A9,$00,$04
-    .byte $00,$98,$29,$00,$04,$00,$6A,$2A,$00,$04,$00,$5A,$2A,$00,$04,$00
-    .byte $6A,$0A,$00,$04,$00,$68,$2A,$00,$04,$00,$A8,$AA,$00,$04,$00,$A8
-    .byte $A6,$00
-sprite_56:
-    .byte $0F,$1A,$05,$09,$09,$09,$09,$0A,$0A,$0A,$01,$00,$00,$00,$00,$00
-    .byte $01,$00,$A8,$02,$00,$01,$00,$AA,$02,$00,$01,$80,$AA,$02,$00,$01
-    .byte $80,$AA,$02,$00,$01,$00,$5A,$02,$00,$01,$80,$6A,$02,$00,$01,$80
-    .byte $6A,$02,$00,$01,$80,$AA,$02,$00,$01,$80,$9A,$02,$00,$01,$80,$AA
-    .byte $02,$00,$01,$80,$AA,$0A,$00,$01,$80,$9A,$0A,$00,$01,$80,$9A,$0A
-    .byte $00,$01,$80,$9A,$0A,$00,$01,$00,$9A,$0A,$00,$01,$80,$9A,$2A,$00
-    .byte $04,$80,$9A,$2A,$00,$04,$80,$AA,$0A,$00,$04,$00,$9A,$26,$00,$04
-    .byte $00,$6A,$2A,$00,$04,$00,$6A,$29,$00,$04,$00,$6A,$A9,$00,$04,$00
-    .byte $68,$A9,$00,$04,$00,$6A,$29,$00,$04,$80,$6A,$2A,$00,$04,$80,$66
-    .byte $0A,$00
-sprite_57:
-    .byte $0C,$1A,$04,$07,$07,$08,$08,$08,$08,$08,$01,$00,$00,$00,$00,$00
-    .byte $01,$80,$AA,$02,$01,$80,$AA,$02,$01,$80,$AA,$02,$01,$80,$AA,$02
-    .byte $01,$00,$AA,$02,$01,$80,$A6,$02,$01,$80,$A6,$02,$01,$80,$A6,$02
-    .byte $01,$80,$A6,$02,$01,$80,$A6,$02,$01,$80,$A6,$02,$01,$80,$A6,$00
-    .byte $01,$80,$A6,$02,$01,$00,$A6,$00,$01,$00,$A6,$02,$01,$00,$A6,$00
-    .byte $04,$80,$A6,$02,$04,$80,$A6,$02,$04,$80,$A6,$02,$04,$00,$A6,$00
-    .byte $04,$00,$A6,$00,$04,$80,$A6,$00,$04,$80,$A9,$00,$04,$00,$A6,$02
-    .byte $04,$00,$60,$02,$04,$00,$60,$02
-sprite_58:
-    .byte $12,$10,$06,$0B,$0B,$0B,$0B,$0B,$0B,$0C,$01,$00,$00,$00,$00,$00
-    .byte $01,$00,$A0,$AA,$00,$00,$01,$00,$A0,$AA,$02,$00,$01,$00,$A8,$AA
-    .byte $02,$00,$01,$00,$A8,$AA,$0A,$00,$01,$00,$A8,$AA,$0A,$00,$01,$00
-    .byte $68,$66,$0A,$00,$01,$00,$A8,$95,$0A,$00,$01,$00,$A8,$95,$02,$00
-    .byte $01,$00,$60,$A6,$00,$00,$01,$00,$A0,$96,$00,$00,$01,$00,$80,$A6
-    .byte $00,$00,$04,$00,$A0,$A6,$00,$00,$04,$00,$A0,$9A,$02,$00,$04,$00
-    .byte $80,$A5,$00,$00,$04,$00,$A8,$95,$02,$00,$04,$00,$A8,$95,$02,$00
-sprite_59:
-    .byte $12,$10,$06,$0B,$0B,$0B,$0B,$0B,$0B,$0C,$01,$00,$00,$00,$00,$00
-    .byte $01,$00,$A0,$2A,$00,$00,$01,$00,$A0,$2A,$00,$00,$01,$00,$A0,$2A
-    .byte $00,$00,$01,$00,$A0,$AA,$00,$00,$01,$00,$A0,$AA,$02,$00,$01,$00
-    .byte $80,$AA,$02,$00,$01,$00,$00,$A0,$02,$00,$01,$00,$00,$A8,$02,$00
-    .byte $01,$00,$00,$9A,$02,$00,$01,$00,$80,$AA,$02,$00,$01,$00,$60,$AA
-    .byte $00,$00,$04,$00,$A0,$09,$00,$00,$04,$00,$A0,$00,$00,$00,$04,$00
-    .byte $80,$02,$00,$00,$04,$00,$80,$0A,$00,$00,$04,$00,$80,$0A,$00,$00
-sprite_60:
-    .byte $0F,$10,$05,$09,$09,$09,$09,$0A,$0A,$0A,$01,$00,$00,$00,$00,$00
-    .byte $01,$00,$80,$AA,$00,$01,$00,$80,$AA,$00,$01,$00,$A0,$AA,$00,$01
-    .byte $00,$A8,$AA,$00,$01,$00,$A8,$AA,$00,$01,$00,$A8,$2A,$00,$01,$00
-    .byte $A8,$00,$00,$01,$00,$A8,$02,$00,$01,$00,$A8,$0A,$00,$01,$00,$60
-    .byte $2A,$00,$01,$00,$A0,$2A,$00,$04,$00,$00,$A6,$00,$04,$00,$00,$A8
-    .byte $00,$04,$00,$00,$28,$00,$04,$00,$80,$2A,$00,$04,$00,$80,$0A,$00
-sprite_61:
-    .byte $12,$10,$06,$0B,$0B,$0B,$0B,$0B,$0B,$0C,$01,$00,$00,$00,$00,$00
-    .byte $01,$00,$A0,$AA,$00,$00,$01,$00,$98,$AA,$02,$00,$01,$00,$A8,$A9
-    .byte $02,$00,$01,$00,$AA,$A9,$02,$00,$01,$00,$AA,$A9,$0A,$00,$01,$00
-    .byte $A8,$A6,$0A,$00,$01,$00,$9A,$A6,$09,$00,$01,$00,$AA,$A5,$02,$00
-    .byte $01,$00,$98,$95,$0A,$00,$01,$00,$A8,$A5,$02,$00,$01,$00,$60,$A6
-    .byte $02,$00,$04,$00,$A0,$A6,$00,$00,$04,$00,$A0,$A6,$00,$00,$04,$00
-    .byte $58,$95,$02,$00,$04,$00,$98,$65,$02,$00,$04,$00,$A8,$A5,$02,$00
 sprite_62:
     .byte $18,$14,$07,$0E,$0E,$0E,$0F,$0F,$0F,$0F,$01,$00,$00,$00,$00,$00
     .byte $01,$00,$00,$A8,$2A,$00,$00,$01,$00,$00,$A8,$2A,$00,$00,$01,$00
@@ -672,6 +429,1451 @@ sprite_111:
     .byte $6A,$2A,$00,$00,$04,$00,$00,$6A,$A5,$00,$00,$04,$00,$80,$66,$A5
     .byte $00,$00,$04,$00,$80,$5A,$A5,$00,$00,$04,$00,$80,$56,$65,$02,$00
     .byte $04,$00,$00,$00,$60,$02,$00,$04,$00,$00,$00,$80,$02,$00
+.segment "ASSETS"
+sprite_40:
+    .byte 15,31,2,9,9,9,9,10,10,10,2,0,0,9,0,0
+    .word native_row_0
+    .word native_row_1
+    .word native_row_1
+    .word native_row_1
+    .word native_row_1
+    .word native_row_2
+    .word native_row_3
+    .word native_row_3
+    .word native_row_4
+    .word native_row_5
+    .word native_row_6
+    .word native_row_7
+    .word native_row_8
+    .word native_row_9
+    .word native_row_10
+    .word native_row_11
+    .word native_row_12
+    .word native_row_13
+    .word native_row_14
+    .word native_row_15
+    .word native_row_16
+    .word native_row_17
+    .word native_row_18
+    .word native_row_19
+    .word native_row_12
+    .word native_row_11
+    .word native_row_20
+    .word native_row_20
+    .word native_row_21
+    .word native_row_22
+    .word native_row_23
+sprite_41:
+    .byte 12,31,2,7,7,8,8,8,8,8,2,0,0,7,0,0
+    .word native_row_24
+    .word native_row_25
+    .word native_row_26
+    .word native_row_26
+    .word native_row_26
+    .word native_row_27
+    .word native_row_28
+    .word native_row_29
+    .word native_row_30
+    .word native_row_31
+    .word native_row_32
+    .word native_row_33
+    .word native_row_34
+    .word native_row_35
+    .word native_row_36
+    .word native_row_37
+    .word native_row_38
+    .word native_row_39
+    .word native_row_40
+    .word native_row_41
+    .word native_row_42
+    .word native_row_42
+    .word native_row_42
+    .word native_row_42
+    .word native_row_42
+    .word native_row_42
+    .word native_row_43
+    .word native_row_43
+    .word native_row_44
+    .word native_row_44
+    .word native_row_44
+sprite_42:
+    .byte 12,31,2,7,7,8,8,8,8,8,2,0,0,7,0,0
+    .word native_row_45
+    .word native_row_25
+    .word native_row_46
+    .word native_row_46
+    .word native_row_46
+    .word native_row_47
+    .word native_row_48
+    .word native_row_49
+    .word native_row_48
+    .word native_row_48
+    .word native_row_50
+    .word native_row_51
+    .word native_row_52
+    .word native_row_53
+    .word native_row_54
+    .word native_row_54
+    .word native_row_55
+    .word native_row_56
+    .word native_row_57
+    .word native_row_58
+    .word native_row_59
+    .word native_row_60
+    .word native_row_60
+    .word native_row_61
+    .word native_row_62
+    .word native_row_63
+    .word native_row_64
+    .word native_row_65
+    .word native_row_66
+    .word native_row_67
+    .word native_row_68
+sprite_43:
+    .byte 15,31,2,9,9,9,9,10,10,10,2,0,0,9,0,0
+    .word native_row_69
+    .word native_row_70
+    .word native_row_70
+    .word native_row_70
+    .word native_row_70
+    .word native_row_70
+    .word native_row_70
+    .word native_row_70
+    .word native_row_70
+    .word native_row_71
+    .word native_row_71
+    .word native_row_71
+    .word native_row_72
+    .word native_row_73
+    .word native_row_74
+    .word native_row_75
+    .word native_row_76
+    .word native_row_77
+    .word native_row_78
+    .word native_row_79
+    .word native_row_79
+    .word native_row_80
+    .word native_row_81
+    .word native_row_82
+    .word native_row_83
+    .word native_row_83
+    .word native_row_84
+    .word native_row_84
+    .word native_row_85
+    .word native_row_85
+    .word native_row_86
+sprite_44:
+    .byte 21,24,2,12,13,13,13,13,13,13,2,0,0,12,0,0
+    .word native_row_87
+    .word native_row_88
+    .word native_row_89
+    .word native_row_89
+    .word native_row_88
+    .word native_row_90
+    .word native_row_91
+    .word native_row_92
+    .word native_row_93
+    .word native_row_94
+    .word native_row_95
+    .word native_row_96
+    .word native_row_97
+    .word native_row_97
+    .word native_row_98
+    .word native_row_99
+    .word native_row_99
+    .word native_row_100
+    .word native_row_100
+    .word native_row_101
+    .word native_row_101
+    .word native_row_102
+    .word native_row_103
+    .word native_row_102
+sprite_45:
+    .byte 18,24,2,11,11,11,11,11,11,12,2,0,0,11,0,0
+    .word native_row_104
+    .word native_row_105
+    .word native_row_106
+    .word native_row_106
+    .word native_row_106
+    .word native_row_107
+    .word native_row_108
+    .word native_row_109
+    .word native_row_110
+    .word native_row_111
+    .word native_row_112
+    .word native_row_113
+    .word native_row_114
+    .word native_row_114
+    .word native_row_114
+    .word native_row_115
+    .word native_row_115
+    .word native_row_115
+    .word native_row_116
+    .word native_row_116
+    .word native_row_117
+    .word native_row_118
+    .word native_row_118
+    .word native_row_118
+sprite_46:
+    .byte 12,26,2,7,7,8,8,8,8,8,2,0,0,7,0,0
+    .word native_row_119
+    .word native_row_120
+    .word native_row_119
+    .word native_row_119
+    .word native_row_121
+    .word native_row_119
+    .word native_row_122
+    .word native_row_122
+    .word native_row_122
+    .word native_row_122
+    .word native_row_122
+    .word native_row_122
+    .word native_row_122
+    .word native_row_123
+    .word native_row_124
+    .word native_row_124
+    .word native_row_125
+    .word native_row_126
+    .word native_row_126
+    .word native_row_127
+    .word native_row_128
+    .word native_row_128
+    .word native_row_128
+    .word native_row_129
+    .word native_row_125
+    .word native_row_130
+sprite_47:
+    .byte 12,26,2,7,7,8,8,8,8,8,2,0,0,7,0,0
+    .word native_row_131
+    .word native_row_131
+    .word native_row_131
+    .word native_row_131
+    .word native_row_132
+    .word native_row_133
+    .word native_row_133
+    .word native_row_133
+    .word native_row_133
+    .word native_row_133
+    .word native_row_133
+    .word native_row_133
+    .word native_row_133
+    .word native_row_133
+    .word native_row_134
+    .word native_row_135
+    .word native_row_129
+    .word native_row_129
+    .word native_row_129
+    .word native_row_136
+    .word native_row_137
+    .word native_row_137
+    .word native_row_137
+    .word native_row_129
+    .word native_row_138
+    .word native_row_139
+sprite_48:
+    .byte 12,26,2,7,7,8,8,8,8,8,2,0,0,7,0,0
+    .word native_row_140
+    .word native_row_121
+    .word native_row_121
+    .word native_row_121
+    .word native_row_141
+    .word native_row_141
+    .word native_row_141
+    .word native_row_141
+    .word native_row_141
+    .word native_row_141
+    .word native_row_142
+    .word native_row_141
+    .word native_row_141
+    .word native_row_141
+    .word native_row_140
+    .word native_row_143
+    .word native_row_144
+    .word native_row_144
+    .word native_row_144
+    .word native_row_145
+    .word native_row_146
+    .word native_row_146
+    .word native_row_146
+    .word native_row_144
+    .word native_row_147
+    .word native_row_148
+sprite_49:
+    .byte 12,26,2,7,7,8,8,8,8,8,2,0,0,7,0,0
+    .word native_row_119
+    .word native_row_119
+    .word native_row_119
+    .word native_row_119
+    .word native_row_121
+    .word native_row_120
+    .word native_row_120
+    .word native_row_120
+    .word native_row_120
+    .word native_row_120
+    .word native_row_120
+    .word native_row_120
+    .word native_row_120
+    .word native_row_120
+    .word native_row_149
+    .word native_row_149
+    .word native_row_125
+    .word native_row_150
+    .word native_row_150
+    .word native_row_127
+    .word native_row_151
+    .word native_row_151
+    .word native_row_151
+    .word native_row_150
+    .word native_row_152
+    .word native_row_153
+sprite_50:
+    .byte 12,26,2,7,7,8,8,8,8,8,2,0,0,7,0,0
+    .word native_row_119
+    .word native_row_120
+    .word native_row_119
+    .word native_row_119
+    .word native_row_154
+    .word native_row_120
+    .word native_row_120
+    .word native_row_120
+    .word native_row_120
+    .word native_row_120
+    .word native_row_120
+    .word native_row_120
+    .word native_row_149
+    .word native_row_131
+    .word native_row_149
+    .word native_row_131
+    .word native_row_150
+    .word native_row_150
+    .word native_row_155
+    .word native_row_127
+    .word native_row_151
+    .word native_row_156
+    .word native_row_150
+    .word native_row_150
+    .word native_row_157
+    .word native_row_157
+sprite_51:
+    .byte 15,26,2,9,9,9,9,10,10,10,2,0,0,9,0,0
+    .word native_row_158
+    .word native_row_158
+    .word native_row_159
+    .word native_row_160
+    .word native_row_161
+    .word native_row_162
+    .word native_row_162
+    .word native_row_162
+    .word native_row_162
+    .word native_row_162
+    .word native_row_162
+    .word native_row_162
+    .word native_row_159
+    .word native_row_159
+    .word native_row_163
+    .word native_row_164
+    .word native_row_165
+    .word native_row_166
+    .word native_row_167
+    .word native_row_168
+    .word native_row_169
+    .word native_row_170
+    .word native_row_171
+    .word native_row_172
+    .word native_row_173
+    .word native_row_174
+sprite_52:
+    .byte 15,26,2,9,9,9,9,10,10,10,2,0,0,9,0,0
+    .word native_row_175
+    .word native_row_176
+    .word native_row_177
+    .word native_row_177
+    .word native_row_176
+    .word native_row_178
+    .word native_row_178
+    .word native_row_178
+    .word native_row_178
+    .word native_row_178
+    .word native_row_179
+    .word native_row_179
+    .word native_row_180
+    .word native_row_180
+    .word native_row_181
+    .word native_row_182
+    .word native_row_183
+    .word native_row_184
+    .word native_row_185
+    .word native_row_169
+    .word native_row_186
+    .word native_row_187
+    .word native_row_188
+    .word native_row_186
+    .word native_row_189
+    .word native_row_190
+sprite_53:
+    .byte 12,26,2,7,7,8,8,8,8,8,2,0,0,7,0,0
+    .word native_row_119
+    .word native_row_119
+    .word native_row_119
+    .word native_row_119
+    .word native_row_121
+    .word native_row_120
+    .word native_row_120
+    .word native_row_120
+    .word native_row_120
+    .word native_row_120
+    .word native_row_120
+    .word native_row_133
+    .word native_row_120
+    .word native_row_133
+    .word native_row_154
+    .word native_row_149
+    .word native_row_125
+    .word native_row_150
+    .word native_row_150
+    .word native_row_127
+    .word native_row_151
+    .word native_row_191
+    .word native_row_192
+    .word native_row_193
+    .word native_row_194
+    .word native_row_194
+sprite_54:
+    .byte 12,26,2,7,7,8,8,8,8,8,2,0,0,7,0,0
+    .word native_row_119
+    .word native_row_120
+    .word native_row_119
+    .word native_row_119
+    .word native_row_121
+    .word native_row_122
+    .word native_row_122
+    .word native_row_122
+    .word native_row_122
+    .word native_row_122
+    .word native_row_122
+    .word native_row_132
+    .word native_row_122
+    .word native_row_195
+    .word native_row_122
+    .word native_row_195
+    .word native_row_138
+    .word native_row_196
+    .word native_row_196
+    .word native_row_153
+    .word native_row_196
+    .word native_row_136
+    .word native_row_125
+    .word native_row_130
+    .word native_row_197
+    .word native_row_197
+sprite_55:
+    .byte 15,26,2,9,9,9,9,10,10,10,2,0,0,9,0,0
+    .word native_row_158
+    .word native_row_158
+    .word native_row_159
+    .word native_row_160
+    .word native_row_198
+    .word native_row_199
+    .word native_row_159
+    .word native_row_200
+    .word native_row_200
+    .word native_row_159
+    .word native_row_159
+    .word native_row_200
+    .word native_row_200
+    .word native_row_200
+    .word native_row_163
+    .word native_row_164
+    .word native_row_165
+    .word native_row_166
+    .word native_row_167
+    .word native_row_168
+    .word native_row_169
+    .word native_row_170
+    .word native_row_171
+    .word native_row_172
+    .word native_row_173
+    .word native_row_174
+sprite_56:
+    .byte 15,26,2,9,9,9,9,10,10,10,2,0,0,9,0,0
+    .word native_row_175
+    .word native_row_176
+    .word native_row_177
+    .word native_row_177
+    .word native_row_201
+    .word native_row_202
+    .word native_row_202
+    .word native_row_177
+    .word native_row_203
+    .word native_row_177
+    .word native_row_179
+    .word native_row_180
+    .word native_row_180
+    .word native_row_180
+    .word native_row_181
+    .word native_row_182
+    .word native_row_183
+    .word native_row_184
+    .word native_row_185
+    .word native_row_169
+    .word native_row_186
+    .word native_row_187
+    .word native_row_188
+    .word native_row_186
+    .word native_row_189
+    .word native_row_190
+sprite_57:
+    .byte 12,26,2,7,7,8,8,8,8,8,2,0,0,7,0,0
+    .word native_row_119
+    .word native_row_119
+    .word native_row_119
+    .word native_row_119
+    .word native_row_121
+    .word native_row_122
+    .word native_row_122
+    .word native_row_122
+    .word native_row_122
+    .word native_row_122
+    .word native_row_122
+    .word native_row_195
+    .word native_row_122
+    .word native_row_124
+    .word native_row_141
+    .word native_row_124
+    .word native_row_126
+    .word native_row_126
+    .word native_row_126
+    .word native_row_128
+    .word native_row_128
+    .word native_row_196
+    .word native_row_139
+    .word native_row_204
+    .word native_row_205
+    .word native_row_205
+sprite_58:
+    .byte 18,16,2,11,11,11,11,11,11,12,2,0,0,11,0,0
+    .word native_row_206
+    .word native_row_207
+    .word native_row_208
+    .word native_row_209
+    .word native_row_209
+    .word native_row_210
+    .word native_row_211
+    .word native_row_212
+    .word native_row_213
+    .word native_row_214
+    .word native_row_215
+    .word native_row_216
+    .word native_row_217
+    .word native_row_218
+    .word native_row_219
+    .word native_row_219
+sprite_59:
+    .byte 18,16,2,11,11,11,11,11,11,12,2,0,0,11,0,0
+    .word native_row_220
+    .word native_row_220
+    .word native_row_220
+    .word native_row_206
+    .word native_row_207
+    .word native_row_221
+    .word native_row_222
+    .word native_row_223
+    .word native_row_224
+    .word native_row_221
+    .word native_row_225
+    .word native_row_226
+    .word native_row_227
+    .word native_row_228
+    .word native_row_229
+    .word native_row_229
+sprite_60:
+    .byte 15,16,2,9,9,9,9,10,10,10,2,0,0,9,0,0
+    .word native_row_230
+    .word native_row_230
+    .word native_row_159
+    .word native_row_231
+    .word native_row_231
+    .word native_row_232
+    .word native_row_233
+    .word native_row_175
+    .word native_row_234
+    .word native_row_198
+    .word native_row_158
+    .word native_row_235
+    .word native_row_236
+    .word native_row_237
+    .word native_row_238
+    .word native_row_239
+sprite_61:
+    .byte 18,16,2,11,11,11,11,11,11,12,2,0,0,11,0,0
+    .word native_row_206
+    .word native_row_240
+    .word native_row_241
+    .word native_row_242
+    .word native_row_243
+    .word native_row_244
+    .word native_row_245
+    .word native_row_246
+    .word native_row_247
+    .word native_row_248
+    .word native_row_249
+    .word native_row_216
+    .word native_row_216
+    .word native_row_250
+    .word native_row_251
+    .word native_row_252
+sprite_36:
+    .byte 9,18,2,6,6,6,6,6,6,6,2,0,0,6,0,0
+    .word native_row_253
+    .word native_row_253
+    .word native_row_253
+    .word native_row_253
+    .word native_row_253
+    .word native_row_254
+    .word native_row_254
+    .word native_row_253
+    .word native_row_253
+    .word native_row_253
+    .word native_row_255
+    .word native_row_255
+    .word native_row_256
+    .word native_row_257
+    .word native_row_256
+    .word native_row_257
+    .word native_row_257
+    .word native_row_256
+sprite_37:
+    .byte 9,18,2,6,6,6,6,6,6,6,2,0,0,6,0,0
+    .word native_row_253
+    .word native_row_258
+    .word native_row_258
+    .word native_row_259
+    .word native_row_259
+    .word native_row_259
+    .word native_row_259
+    .word native_row_255
+    .word native_row_258
+    .word native_row_259
+    .word native_row_259
+    .word native_row_259
+    .word native_row_260
+    .word native_row_256
+    .word native_row_257
+    .word native_row_256
+    .word native_row_257
+    .word native_row_256
+sprite_72:
+    .byte 3,6,2,2,2,2,3,3,3,3,2,0,0,2,0,0
+    .word native_row_261
+    .word native_row_262
+    .word native_row_263
+    .word native_row_262
+    .word native_row_262
+    .word native_row_264
+sprite_73:
+    .byte 3,6,2,2,2,2,3,3,3,3,2,0,0,2,0,0
+    .word native_row_261
+    .word native_row_264
+    .word native_row_262
+    .word native_row_263
+    .word native_row_262
+    .word native_row_264
+.segment "ASSETEXTRA"
+native_row_0:
+    .byte $00,$00,$00,$00,$40,$00,$7F,$77,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_1:
+    .byte $00,$00,$00,$00,$7C,$38,$7F,$77,$0F,$0E,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_2:
+    .byte $00,$00,$00,$00,$7C,$34,$7F,$66,$0F,$0C,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_3:
+    .byte $00,$00,$00,$00,$7C,$74,$7F,$66,$0F,$0D,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_4:
+    .byte $00,$00,$00,$00,$7C,$74,$7F,$6E,$0F,$0D,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_5:
+    .byte $00,$00,$00,$00,$70,$70,$7F,$60,$03,$01,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_6:
+    .byte $00,$00,$00,$00,$70,$70,$7F,$6E,$03,$01,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_7:
+    .byte $00,$00,$00,$00,$40,$40,$7F,$6E,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_8:
+    .byte $00,$00,$00,$00,$7C,$18,$7F,$00,$0F,$06,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_9:
+    .byte $00,$00,$60,$40,$7F,$19,$7F,$21,$7F,$66,$01,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_10:
+    .byte $00,$00,$60,$40,$7F,$19,$7F,$23,$7F,$66,$1F,$08,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_11:
+    .byte $00,$00,$00,$00,$7F,$19,$7F,$23,$7F,$26,$7F,$4C,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_12:
+    .byte $00,$00,$00,$00,$7F,$19,$7F,$33,$7F,$26,$7F,$4C,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_13:
+    .byte $00,$00,$60,$40,$7F,$18,$7F,$23,$7F,$46,$7F,$4C,$03,$01,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_14:
+    .byte $00,$00,$60,$40,$7F,$01,$7F,$33,$7F,$60,$7F,$4C,$03,$01,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_15:
+    .byte $00,$00,$60,$40,$7F,$19,$7F,$23,$7F,$66,$7F,$48,$03,$01,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_16:
+    .byte $00,$00,$60,$40,$7F,$19,$7F,$33,$7F,$66,$7F,$48,$03,$01,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_17:
+    .byte $00,$00,$00,$00,$7F,$19,$7F,$23,$7F,$66,$7F,$48,$03,$01,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_18:
+    .byte $00,$00,$00,$00,$7F,$19,$7F,$33,$7F,$26,$7F,$48,$03,$01,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_19:
+    .byte $00,$00,$00,$00,$7F,$19,$7F,$23,$7F,$26,$7F,$0C,$03,$01,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_20:
+    .byte $00,$00,$00,$00,$7F,$19,$7F,$33,$7F,$26,$1F,$0C,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_21:
+    .byte $00,$00,$00,$00,$7F,$01,$7F,$22,$7F,$60,$07,$04,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_22:
+    .byte $00,$00,$00,$00,$7F,$01,$7F,$32,$7F,$40,$07,$04,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_23:
+    .byte $00,$00,$00,$00,$7F,$01,$7F,$22,$7F,$60,$01,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_24:
+    .byte $00,$00,$00,$00,$7C,$38,$7F,$77,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_25:
+    .byte $00,$00,$00,$00,$7C,$38,$7F,$77,$0F,$0E,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_26:
+    .byte $00,$00,$60,$40,$7F,$3B,$7F,$77,$0F,$0E,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_27:
+    .byte $00,$00,$00,$00,$7F,$47,$7F,$0E,$03,$01,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_28:
+    .byte $00,$00,$00,$00,$7C,$44,$7F,$6E,$0F,$0D,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_29:
+    .byte $00,$00,$00,$00,$7C,$34,$7F,$6E,$0F,$0C,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_30:
+    .byte $00,$00,$00,$00,$7C,$74,$7F,$6E,$03,$01,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_31:
+    .byte $00,$00,$00,$00,$7C,$44,$7F,$0E,$03,$01,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_32:
+    .byte $00,$00,$00,$00,$7C,$34,$7F,$6E,$03,$01,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_33:
+    .byte $00,$00,$00,$00,$7C,$74,$1F,$08,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_34:
+    .byte $00,$00,$00,$00,$7C,$74,$07,$06,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_35:
+    .byte $00,$00,$00,$00,$7C,$18,$1F,$13,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_36:
+    .byte $00,$00,$00,$00,$7F,$19,$7F,$33,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_37:
+    .byte $00,$00,$00,$00,$7F,$11,$7F,$33,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_38:
+    .byte $00,$00,$60,$40,$7F,$09,$7F,$32,$03,$02,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_39:
+    .byte $00,$00,$60,$40,$7F,$19,$7F,$21,$03,$02,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_40:
+    .byte $00,$00,$60,$40,$7F,$19,$7F,$13,$03,$02,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_41:
+    .byte $00,$00,$60,$40,$7F,$19,$7F,$33,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_42:
+    .byte $00,$00,$60,$40,$7F,$19,$7F,$33,$03,$02,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_43:
+    .byte $00,$00,$00,$00,$7F,$19,$7F,$33,$03,$02,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_44:
+    .byte $00,$00,$00,$00,$7F,$01,$7F,$20,$03,$02,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_45:
+    .byte $00,$00,$00,$00,$40,$00,$7F,$77,$0F,$0E,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_46:
+    .byte $00,$00,$00,$00,$7C,$38,$7F,$77,$7F,$6E,$01,$01,$00,$00
+.segment "ASSETEXTRA"
+native_row_47:
+    .byte $00,$00,$00,$00,$7C,$74,$7F,$6E,$7F,$5D,$01,$01,$00,$00
+.segment "ASSETEXTRA"
+native_row_48:
+    .byte $00,$00,$00,$00,$7C,$74,$7F,$6E,$0F,$0D,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_49:
+    .byte $00,$00,$00,$00,$7C,$34,$7F,$68,$0F,$0D,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_50:
+    .byte $00,$00,$00,$00,$7C,$40,$7F,$6E,$0F,$0D,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_51:
+    .byte $00,$00,$00,$00,$40,$40,$7F,$6E,$0F,$0D,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_52:
+    .byte $00,$00,$00,$00,$00,$00,$78,$68,$0F,$0D,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_53:
+    .byte $00,$00,$00,$00,$00,$00,$7E,$32,$0F,$06,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_54:
+    .byte $00,$00,$00,$00,$70,$10,$7F,$33,$3F,$26,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_55:
+    .byte $00,$00,$00,$00,$7C,$18,$7F,$32,$7F,$60,$01,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_56:
+    .byte $00,$00,$00,$00,$7C,$18,$7F,$23,$7F,$66,$01,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_57:
+    .byte $00,$00,$00,$00,$7C,$18,$7F,$33,$7F,$46,$01,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_58:
+    .byte $00,$00,$00,$00,$7C,$18,$7F,$22,$7F,$66,$01,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_59:
+    .byte $00,$00,$00,$00,$7C,$08,$7F,$13,$3F,$26,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_60:
+    .byte $00,$00,$00,$00,$7C,$18,$7F,$33,$7F,$64,$01,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_61:
+    .byte $00,$00,$00,$00,$70,$10,$7F,$13,$7F,$66,$01,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_62:
+    .byte $00,$00,$00,$00,$70,$10,$7F,$23,$3F,$26,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_63:
+    .byte $00,$00,$00,$00,$70,$10,$7F,$31,$0F,$06,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_64:
+    .byte $00,$00,$00,$00,$70,$10,$7F,$32,$3F,$22,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_65:
+    .byte $00,$00,$00,$00,$40,$00,$7F,$13,$3F,$26,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_66:
+    .byte $00,$00,$00,$00,$70,$10,$7F,$03,$3F,$20,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_67:
+    .byte $00,$00,$00,$00,$7C,$08,$7F,$03,$3F,$20,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_68:
+    .byte $00,$00,$00,$00,$7C,$18,$7F,$01,$3F,$20,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_69:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$70,$60,$1F,$1D,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_70:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$7F,$6E,$7F,$5D,$03,$03,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_71:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$7C,$5C,$7F,$3B,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_72:
+    .byte $00,$00,$00,$00,$00,$00,$60,$20,$7F,$66,$7F,$4C,$0F,$09,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_73:
+    .byte $00,$00,$00,$00,$00,$00,$7E,$32,$7F,$66,$7F,$4C,$3F,$19,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_74:
+    .byte $00,$00,$00,$00,$40,$00,$7F,$31,$7F,$66,$7F,$4C,$0F,$09,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_75:
+    .byte $00,$00,$00,$00,$70,$10,$7F,$03,$7F,$66,$7F,$4C,$3F,$10,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_76:
+    .byte $00,$00,$00,$00,$70,$10,$7F,$33,$7F,$00,$7F,$00,$3F,$19,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_77:
+    .byte $00,$00,$00,$00,$7C,$18,$7F,$33,$7F,$66,$7F,$4C,$3F,$19,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_78:
+    .byte $00,$00,$00,$00,$7C,$18,$7F,$31,$7F,$66,$7F,$4C,$3F,$19,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_79:
+    .byte $00,$00,$00,$00,$7C,$18,$7F,$31,$7F,$66,$7F,$4C,$0F,$09,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_80:
+    .byte $00,$00,$00,$00,$7C,$18,$7F,$21,$7F,$66,$7F,$4C,$0F,$09,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_81:
+    .byte $00,$00,$00,$00,$7C,$18,$7F,$22,$7F,$66,$7F,$4C,$0F,$09,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_82:
+    .byte $00,$00,$00,$00,$7C,$18,$7F,$23,$7F,$66,$7F,$4C,$0F,$09,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_83:
+    .byte $00,$00,$00,$00,$70,$10,$7F,$23,$7F,$66,$7F,$4C,$0F,$09,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_84:
+    .byte $00,$00,$00,$00,$40,$00,$7F,$23,$7F,$66,$7F,$4C,$0F,$09,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_85:
+    .byte $00,$00,$00,$00,$00,$00,$7E,$22,$7F,$00,$7F,$00,$0F,$08,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_86:
+    .byte $00,$00,$00,$00,$00,$00,$78,$30,$7F,$00,$7F,$00,$0F,$08,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_87:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$7F,$6E,$1F,$1D,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_88:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$78,$70,$7F,$6E,$1F,$1D,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_89:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$78,$70,$7F,$6E,$7F,$5D,$03,$03,$00,$00
+.segment "ASSETEXTRA"
+native_row_90:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$40,$40,$7F,$6E,$7F,$5D,$1F,$1B,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_91:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$7C,$74,$7F,$6E,$7F,$5D,$1F,$1B,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_92:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$60,$20,$7F,$77,$7F,$6E,$7F,$5D,$1F,$1B,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_93:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$7E,$3A,$7F,$77,$7F,$6E,$7F,$5D,$1F,$1B,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_94:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$7F,$5D,$01,$01,$40,$00,$7F,$68,$7F,$5D,$1F,$1B,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_95:
+    .byte $00,$00,$00,$00,$00,$00,$78,$68,$7F,$5D,$7F,$3B,$7F,$77,$07,$06,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_96:
+    .byte $00,$00,$00,$00,$00,$00,$78,$30,$7F,$66,$7F,$4C,$7F,$19,$07,$03,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_97:
+    .byte $00,$00,$00,$00,$40,$00,$7F,$33,$7F,$66,$7F,$4C,$7F,$19,$07,$03,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_98:
+    .byte $00,$00,$00,$00,$40,$00,$7F,$33,$7F,$66,$7F,$4C,$3F,$19,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_99:
+    .byte $00,$00,$00,$00,$7C,$18,$7F,$33,$7F,$66,$7F,$4C,$3F,$19,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_100:
+    .byte $00,$00,$00,$00,$7C,$18,$7F,$33,$7F,$66,$7F,$4C,$03,$01,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_101:
+    .byte $00,$00,$00,$00,$7C,$18,$7F,$33,$7F,$66,$1F,$0C,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_102:
+    .byte $00,$00,$00,$00,$7C,$18,$7F,$03,$7F,$60,$01,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_103:
+    .byte $00,$00,$00,$00,$7C,$18,$7F,$00,$7F,$60,$01,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_104:
+    .byte $00,$00,$00,$00,$7C,$38,$7F,$77,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_105:
+    .byte $00,$00,$60,$40,$7F,$3B,$7F,$77,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_106:
+    .byte $00,$00,$60,$40,$7F,$3B,$7F,$77,$0F,$0E,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_107:
+    .byte $00,$00,$60,$20,$7F,$77,$7F,$6E,$0F,$0D,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_108:
+    .byte $00,$00,$60,$20,$7F,$77,$7F,$6E,$7F,$5D,$01,$01,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_109:
+    .byte $00,$00,$60,$20,$7F,$77,$7F,$6E,$7F,$5D,$1F,$1B,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_110:
+    .byte $00,$00,$00,$00,$7C,$74,$7F,$6E,$7F,$5D,$7F,$3B,$3F,$37,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_111:
+    .byte $00,$00,$00,$00,$7C,$74,$7F,$06,$7F,$5D,$01,$01,$40,$40,$07,$06,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_112:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$7F,$5D,$7F,$3B,$7F,$77,$7F,$6E,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_113:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$7F,$66,$7F,$4C,$7F,$19,$7F,$33,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_114:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$7F,$66,$7F,$4C,$7F,$19,$7F,$33,$0F,$06,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_115:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$70,$60,$7F,$4C,$7F,$19,$7F,$33,$0F,$06,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_116:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$7E,$4C,$7F,$19,$7F,$33,$0F,$06,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_117:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$60,$40,$7F,$19,$7F,$33,$0F,$06,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_118:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$60,$40,$7F,$19,$7F,$30,$0F,$06,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_119:
+    .byte $00,$00,$60,$20,$7F,$44,$7F,$08,$7F,$11,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_120:
+    .byte $00,$00,$60,$20,$7F,$44,$7F,$00,$7F,$11,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_121:
+    .byte $00,$00,$00,$00,$7C,$44,$7F,$08,$7F,$11,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_122:
+    .byte $00,$00,$60,$20,$7F,$04,$7F,$08,$7F,$11,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_123:
+    .byte $00,$00,$60,$20,$7F,$40,$7F,$08,$7F,$10,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_124:
+    .byte $00,$00,$00,$00,$7C,$04,$7F,$08,$0F,$01,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_125:
+    .byte $00,$00,$60,$00,$7F,$11,$7F,$22,$7F,$44,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_126:
+    .byte $00,$00,$60,$00,$7F,$11,$7F,$20,$7F,$44,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_127:
+    .byte $00,$00,$00,$00,$7C,$10,$7F,$22,$0F,$04,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_128:
+    .byte $00,$00,$00,$00,$7C,$10,$7F,$20,$0F,$04,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_129:
+    .byte $00,$00,$60,$00,$7F,$11,$7F,$22,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_130:
+    .byte $00,$00,$60,$00,$7F,$01,$7F,$22,$7F,$44,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_131:
+    .byte $00,$00,$60,$20,$7F,$44,$7F,$08,$0F,$01,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_132:
+    .byte $00,$00,$60,$20,$7F,$40,$7F,$08,$0F,$01,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_133:
+    .byte $00,$00,$60,$20,$7F,$44,$7F,$00,$0F,$01,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_134:
+    .byte $00,$00,$60,$20,$7F,$44,$7F,$08,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_135:
+    .byte $00,$00,$60,$20,$7F,$44,$07,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_136:
+    .byte $00,$00,$60,$00,$7F,$01,$7F,$22,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_137:
+    .byte $00,$00,$60,$00,$7F,$11,$7F,$20,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_138:
+    .byte $00,$00,$60,$00,$7F,$11,$7F,$22,$0F,$04,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_139:
+    .byte $00,$00,$60,$00,$7F,$01,$7F,$22,$0F,$04,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_140:
+    .byte $00,$00,$00,$00,$40,$40,$7F,$08,$7F,$11,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_141:
+    .byte $00,$00,$00,$00,$7C,$04,$7F,$08,$7F,$11,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_142:
+    .byte $00,$00,$60,$20,$7F,$40,$7F,$08,$7F,$11,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_143:
+    .byte $00,$00,$00,$00,$00,$00,$78,$08,$7F,$11,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_144:
+    .byte $00,$00,$00,$00,$40,$00,$7F,$22,$7F,$44,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_145:
+    .byte $00,$00,$00,$00,$40,$00,$7F,$22,$7F,$40,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_146:
+    .byte $00,$00,$00,$00,$40,$00,$7F,$02,$7F,$44,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_147:
+    .byte $00,$00,$00,$00,$7C,$10,$7F,$22,$7F,$44,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_148:
+    .byte $00,$00,$00,$00,$7C,$10,$7F,$22,$7F,$40,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_149:
+    .byte $00,$00,$00,$00,$7C,$44,$7F,$00,$0F,$01,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_150:
+    .byte $00,$00,$60,$00,$7F,$11,$7F,$02,$7F,$44,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_151:
+    .byte $00,$00,$00,$00,$7C,$10,$7F,$02,$0F,$04,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_152:
+    .byte $00,$00,$60,$00,$7F,$01,$7F,$02,$7F,$44,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_153:
+    .byte $00,$00,$60,$00,$7F,$01,$7F,$02,$0F,$04,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_154:
+    .byte $00,$00,$00,$00,$7C,$44,$7F,$00,$7F,$11,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_155:
+    .byte $00,$00,$60,$00,$7F,$11,$7F,$22,$7F,$40,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_156:
+    .byte $00,$00,$00,$00,$40,$00,$7F,$02,$0F,$04,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_157:
+    .byte $00,$00,$00,$00,$7C,$10,$07,$02,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_158:
+    .byte $00,$00,$00,$00,$00,$00,$78,$08,$7F,$11,$7F,$22,$03,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_159:
+    .byte $00,$00,$00,$00,$00,$00,$78,$08,$7F,$11,$7F,$22,$3F,$04,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_160:
+    .byte $00,$00,$00,$00,$00,$00,$78,$08,$7F,$11,$7F,$02,$3F,$04,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_161:
+    .byte $00,$00,$00,$00,$00,$00,$78,$08,$7F,$11,$7F,$20,$03,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_162:
+    .byte $00,$00,$00,$00,$00,$00,$78,$08,$7F,$11,$7F,$20,$3F,$04,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_163:
+    .byte $00,$00,$00,$00,$40,$40,$7F,$00,$7F,$01,$7F,$22,$03,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_164:
+    .byte $00,$00,$00,$00,$40,$40,$7F,$08,$7F,$01,$7F,$22,$03,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_165:
+    .byte $00,$00,$00,$00,$40,$00,$7F,$22,$7F,$04,$7F,$08,$3F,$11,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_166:
+    .byte $00,$00,$00,$00,$00,$00,$78,$20,$7F,$04,$7F,$08,$3F,$11,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_167:
+    .byte $00,$00,$00,$00,$40,$00,$7F,$02,$7F,$04,$7F,$08,$3F,$11,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_168:
+    .byte $00,$00,$00,$00,$40,$00,$7F,$02,$7F,$04,$7F,$08,$03,$01,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_169:
+    .byte $00,$00,$00,$00,$7C,$10,$7F,$22,$7F,$40,$7F,$08,$03,$01,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_170:
+    .byte $00,$00,$00,$00,$7C,$10,$7F,$02,$7F,$40,$7F,$08,$03,$01,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_171:
+    .byte $00,$00,$00,$00,$7C,$10,$7F,$22,$7F,$40,$1F,$08,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_172:
+    .byte $00,$00,$00,$00,$40,$00,$7F,$22,$7F,$40,$7F,$08,$03,$01,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_173:
+    .byte $00,$00,$00,$00,$40,$00,$7F,$22,$7F,$44,$7F,$08,$3F,$11,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_174:
+    .byte $00,$00,$00,$00,$40,$00,$7F,$22,$7F,$44,$7F,$00,$3F,$11,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_175:
+    .byte $00,$00,$00,$00,$40,$40,$7F,$08,$7F,$11,$01,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_176:
+    .byte $00,$00,$00,$00,$7C,$44,$7F,$08,$7F,$11,$01,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_177:
+    .byte $00,$00,$60,$20,$7F,$44,$7F,$08,$7F,$11,$01,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_178:
+    .byte $00,$00,$60,$20,$7F,$04,$7F,$08,$7F,$11,$01,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_179:
+    .byte $00,$00,$60,$20,$7F,$44,$7F,$08,$7F,$11,$1F,$02,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_180:
+    .byte $00,$00,$60,$20,$7F,$44,$7F,$00,$7F,$11,$1F,$02,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_181:
+    .byte $00,$00,$00,$00,$7C,$44,$7F,$00,$7F,$11,$1F,$02,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_182:
+    .byte $00,$00,$60,$20,$7F,$44,$7F,$00,$7F,$11,$7F,$22,$03,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_183:
+    .byte $00,$00,$60,$00,$7F,$11,$7F,$02,$7F,$44,$7F,$08,$03,$01,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_184:
+    .byte $00,$00,$60,$00,$7F,$11,$7F,$22,$7F,$44,$1F,$08,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_185:
+    .byte $00,$00,$00,$00,$7C,$10,$7F,$02,$7F,$44,$7F,$00,$03,$01,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_186:
+    .byte $00,$00,$00,$00,$7C,$10,$7F,$22,$7F,$00,$7F,$08,$03,$01,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_187:
+    .byte $00,$00,$00,$00,$7C,$10,$7F,$22,$7F,$00,$7F,$08,$3F,$11,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_188:
+    .byte $00,$00,$00,$00,$40,$00,$7F,$22,$7F,$00,$7F,$08,$3F,$11,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_189:
+    .byte $00,$00,$60,$00,$7F,$11,$7F,$22,$7F,$40,$7F,$08,$03,$01,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_190:
+    .byte $00,$00,$60,$00,$7F,$11,$7F,$20,$7F,$40,$1F,$08,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_191:
+    .byte $00,$00,$00,$00,$7C,$10,$7F,$02,$7F,$44,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_192:
+    .byte $00,$00,$00,$00,$7C,$10,$7F,$02,$7F,$40,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_193:
+    .byte $00,$00,$60,$00,$7F,$11,$7F,$02,$0F,$04,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_194:
+    .byte $00,$00,$60,$00,$7F,$01,$07,$02,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_195:
+    .byte $00,$00,$60,$20,$7F,$04,$7F,$08,$0F,$01,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_196:
+    .byte $00,$00,$60,$00,$7F,$11,$7F,$20,$0F,$04,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_197:
+    .byte $00,$00,$00,$00,$00,$00,$78,$20,$0F,$04,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_198:
+    .byte $00,$00,$00,$00,$00,$00,$78,$08,$7F,$10,$7F,$22,$03,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_199:
+    .byte $00,$00,$00,$00,$00,$00,$78,$08,$7F,$10,$7F,$22,$3F,$04,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_200:
+    .byte $00,$00,$00,$00,$00,$00,$78,$08,$7F,$01,$7F,$22,$3F,$04,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_201:
+    .byte $00,$00,$00,$00,$7C,$44,$7F,$00,$7F,$10,$01,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_202:
+    .byte $00,$00,$60,$20,$7F,$44,$7F,$08,$7F,$10,$01,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_203:
+    .byte $00,$00,$60,$20,$7F,$44,$7F,$00,$7F,$11,$01,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_204:
+    .byte $00,$00,$00,$00,$7C,$10,$7F,$20,$7F,$44,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_205:
+    .byte $00,$00,$00,$00,$00,$00,$78,$20,$7F,$40,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_206:
+    .byte $00,$00,$00,$00,$00,$00,$78,$08,$7F,$11,$7F,$22,$3F,$04,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_207:
+    .byte $00,$00,$00,$00,$00,$00,$78,$08,$7F,$11,$7F,$22,$7F,$44,$07,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_208:
+    .byte $00,$00,$00,$00,$40,$40,$7F,$08,$7F,$11,$7F,$22,$7F,$44,$07,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_209:
+    .byte $00,$00,$00,$00,$40,$40,$7F,$08,$7F,$11,$7F,$22,$7F,$44,$7F,$08,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_210:
+    .byte $00,$00,$00,$00,$40,$40,$7F,$08,$7F,$10,$7F,$20,$7F,$40,$7F,$08,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_211:
+    .byte $00,$00,$00,$00,$40,$40,$7F,$08,$7F,$01,$7F,$00,$7F,$44,$7F,$08,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_212:
+    .byte $00,$00,$00,$00,$40,$40,$7F,$08,$7F,$01,$7F,$00,$7F,$44,$07,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_213:
+    .byte $00,$00,$00,$00,$00,$00,$78,$08,$7F,$10,$7F,$20,$3F,$04,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_214:
+    .byte $00,$00,$00,$00,$00,$00,$78,$08,$7F,$11,$7F,$00,$3F,$04,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_215:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$7F,$11,$7F,$20,$3F,$04,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_216:
+    .byte $00,$00,$00,$00,$00,$00,$78,$20,$7F,$44,$7F,$00,$3F,$11,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_217:
+    .byte $00,$00,$00,$00,$00,$00,$78,$20,$7F,$44,$7F,$08,$7F,$10,$07,$02,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_218:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$7F,$04,$7F,$00,$3F,$11,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_219:
+    .byte $00,$00,$00,$00,$40,$00,$7F,$22,$7F,$04,$7F,$00,$7F,$10,$07,$02,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_220:
+    .byte $00,$00,$00,$00,$00,$00,$78,$08,$7F,$11,$7F,$22,$03,$00,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_221:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$7F,$11,$7F,$22,$7F,$44,$07,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_222:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$60,$20,$7F,$44,$07,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_223:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$7E,$22,$7F,$44,$07,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_224:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$70,$10,$7F,$02,$7F,$44,$07,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_225:
+    .byte $00,$00,$00,$00,$00,$00,$78,$08,$7F,$10,$7F,$22,$3F,$04,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_226:
+    .byte $00,$00,$00,$00,$00,$00,$78,$20,$7F,$04,$1F,$08,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_227:
+    .byte $00,$00,$00,$00,$00,$00,$78,$20,$0F,$04,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_228:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$7F,$44,$01,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_229:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$7F,$44,$1F,$08,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_230:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$7F,$11,$7F,$22,$3F,$04,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_231:
+    .byte $00,$00,$00,$00,$40,$40,$7F,$08,$7F,$11,$7F,$22,$3F,$04,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_232:
+    .byte $00,$00,$00,$00,$40,$40,$7F,$08,$7F,$11,$7F,$22,$03,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_233:
+    .byte $00,$00,$00,$00,$40,$40,$7F,$08,$0F,$01,$00,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_234:
+    .byte $00,$00,$00,$00,$40,$40,$7F,$08,$7F,$11,$1F,$02,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_235:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$70,$40,$7F,$00,$3F,$11,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_236:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$7E,$08,$3F,$11,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_237:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$7E,$08,$03,$01,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_238:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$7F,$44,$7F,$08,$03,$01,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_239:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$7F,$44,$1F,$08,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_240:
+    .byte $00,$00,$00,$00,$40,$40,$7F,$00,$7F,$11,$7F,$22,$7F,$44,$07,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_241:
+    .byte $00,$00,$00,$00,$40,$40,$7F,$08,$7F,$01,$7F,$22,$7F,$44,$07,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_242:
+    .byte $00,$00,$00,$00,$7C,$44,$7F,$08,$7F,$01,$7F,$22,$7F,$44,$07,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_243:
+    .byte $00,$00,$00,$00,$7C,$44,$7F,$08,$7F,$01,$7F,$22,$7F,$44,$7F,$08,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_244:
+    .byte $00,$00,$00,$00,$40,$40,$7F,$08,$7F,$11,$7F,$20,$7F,$44,$7F,$08,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_245:
+    .byte $00,$00,$00,$00,$7C,$44,$7F,$00,$7F,$11,$7F,$20,$7F,$04,$7F,$08,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_246:
+    .byte $00,$00,$00,$00,$7C,$44,$7F,$08,$7F,$01,$7F,$20,$7F,$44,$07,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_247:
+    .byte $00,$00,$00,$00,$40,$40,$7F,$00,$7F,$01,$7F,$00,$7F,$44,$7F,$08,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_248:
+    .byte $00,$00,$00,$00,$40,$40,$7F,$08,$7F,$01,$7F,$20,$7F,$44,$07,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_249:
+    .byte $00,$00,$00,$00,$00,$00,$78,$08,$7F,$10,$7F,$20,$7F,$44,$07,$00,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_250:
+    .byte $00,$00,$00,$00,$40,$00,$7F,$02,$7F,$00,$7F,$00,$7F,$10,$07,$02,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_251:
+    .byte $00,$00,$00,$00,$40,$00,$7F,$02,$7F,$04,$7F,$00,$7F,$01,$07,$02,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_252:
+    .byte $00,$00,$00,$00,$40,$00,$7F,$22,$7F,$04,$7F,$00,$7F,$11,$07,$02,$00,$00,$00,$00,$00,$00
+.segment "ASSETEXTRA"
+native_row_253:
+    .byte $00,$00,$00,$00,$3C,$38,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_254:
+    .byte $00,$00,$60,$40,$3F,$3B,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_255:
+    .byte $00,$00,$60,$40,$7F,$03,$07,$07,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_256:
+    .byte $00,$00,$60,$00,$7F,$33,$07,$06,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_257:
+    .byte $00,$00,$60,$00,$7F,$03,$07,$06,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_258:
+    .byte $00,$00,$00,$00,$40,$00,$07,$07,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_259:
+    .byte $00,$00,$00,$00,$7C,$38,$07,$07,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_260:
+    .byte $00,$00,$60,$00,$3F,$33,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_261:
+    .byte $70,$40,$01,$01
+.segment "ASSETS"
+native_row_262:
+    .byte $7F,$0C,$1F,$18
+.segment "ASSETS"
+native_row_263:
+    .byte $7F,$4C,$1F,$19
+.segment "ASSETS"
+native_row_264:
+    .byte $70,$40,$1F,$19
+.segment "ASSETS"
 sprite_1:
     .byte $0C,$12,$04,$07,$07,$08,$08,$08,$08,$08,$01,$00,$00,$00,$00,$00
     .byte $0F,$AA,$AA,$AA,$0F,$56,$55,$95,$0F,$AA,$AA,$9A,$0F,$56,$55,$95
@@ -1143,30 +2345,10 @@ sprite_35:
     .byte $0E,$80,$AA,$00,$0E,$80,$9A,$00,$0E,$80,$AA,$02,$0E,$00,$AA,$02
     .byte $0E,$00,$6A,$02,$0E,$00,$66,$02,$0E,$00,$A8,$02,$0E,$00,$98,$02
     .byte $0E,$00,$A0,$02,$0E,$00,$80,$02
-sprite_36:
-    .byte $09,$12,$04,$06,$06,$06,$06,$06,$06,$06,$01,$0C,$00,$00,$00,$00
-    .byte $0E,$00,$02,$00,$0E,$00,$02,$00,$0E,$00,$02,$00,$0E,$00,$02,$00
-    .byte $0E,$00,$02,$00,$0E,$80,$02,$00,$0E,$80,$02,$00,$0E,$00,$02,$00
-    .byte $0E,$00,$02,$00,$0E,$00,$02,$00,$0E,$80,$09,$00,$0E,$80,$09,$00
-    .byte $0E,$C0,$0F,$00,$0E,$C0,$0D,$00,$0E,$C0,$0F,$00,$0E,$C0,$0D,$00
-    .byte $0E,$C0,$0D,$00,$0E,$C0,$0F,$00
-sprite_37:
-    .byte $09,$12,$04,$06,$06,$06,$06,$06,$06,$06,$01,$0C,$00,$00,$00,$00
-    .byte $0E,$00,$02,$00,$0E,$00,$08,$00,$0E,$00,$08,$00,$0E,$00,$0A,$00
-    .byte $0E,$00,$0A,$00,$0E,$00,$0A,$00,$0E,$00,$0A,$00,$0E,$80,$09,$00
-    .byte $0E,$00,$08,$00,$0E,$00,$0A,$00,$0E,$00,$0A,$00,$0E,$00,$0A,$00
-    .byte $0E,$C0,$03,$00,$0E,$C0,$0F,$00,$0E,$C0,$0D,$00,$0E,$C0,$0F,$00
-    .byte $0E,$C0,$0D,$00,$0E,$C0,$0F,$00
 sprite_38:
     .byte $09,$06,$04,$06,$06,$06,$06,$06,$06,$06,$01,$00,$00,$00,$00,$00
     .byte $0E,$00,$02,$00,$0E,$80,$02,$00,$0E,$80,$02,$00,$0E,$80,$09,$00
     .byte $0E,$80,$09,$00,$0E,$80,$02,$00
-sprite_72:
-    .byte $03,$06,$02,$02,$02,$02,$03,$03,$03,$03,$01,$0C,$00,$00,$00,$00
-    .byte $0E,$0C,$0E,$37,$0E,$3F,$0E,$37,$0E,$37,$0E,$3C
-sprite_73:
-    .byte $03,$06,$02,$02,$02,$02,$03,$03,$03,$03,$01,$0C,$00,$00,$00,$00
-    .byte $0E,$0C,$0E,$3C,$0E,$37,$0E,$3F,$0E,$37,$0E,$3C
 sprite_90:
     .byte $09,$11,$04,$06,$06,$06,$06,$06,$06,$06,$01,$00,$00,$00,$00,$00
     .byte $04,$80,$02,$00,$04,$80,$0A,$00,$04,$80,$0A,$00,$04,$00,$02,$00
@@ -1267,8 +2449,8 @@ sprite_169:
     .byte $0E,$08,$0E,$08,$0E,$20,$0E,$20,$0E,$20,$0E,$08,$0E,$08,$0E,$00
 .segment "RODATA"
 source_variation: .incbin "room-variation.bin"
-atlas_lo: .byte 0,<sprite_1,<sprite_2,<sprite_3,<sprite_4,<sprite_5,<sprite_6,<sprite_7,<sprite_8,<sprite_9,<sprite_10,<sprite_11,<sprite_12,<sprite_13,<sprite_14,<sprite_15,<sprite_16,<sprite_17,<sprite_18,0,<sprite_20,<sprite_21,<sprite_22,<sprite_23,<sprite_24,<sprite_25,<sprite_26,<sprite_27,<sprite_28,<sprite_29,<sprite_30,<sprite_31,<sprite_32,<sprite_33,<sprite_34,<sprite_35,<sprite_36,<sprite_37,<sprite_38,0,<sprite_40,<sprite_41,<sprite_42,<sprite_43,<sprite_44,<sprite_45,<sprite_46,<sprite_47,<sprite_48,<sprite_49,<sprite_50,<sprite_51,<sprite_52,<sprite_53,<sprite_54,<sprite_55,<sprite_56,<sprite_57,<sprite_58,<sprite_59,<sprite_60,<sprite_61,<sprite_62,<sprite_63,<sprite_64,<sprite_65,0,<sprite_67,<sprite_68,<sprite_69,<sprite_70,<sprite_71,<sprite_72,<sprite_73,<sprite_74,<sprite_75,<sprite_76,<sprite_77,<sprite_78,<sprite_79,<sprite_80,<sprite_81,<sprite_82,<sprite_83,<sprite_84,<sprite_85,<sprite_86,<sprite_87,<sprite_88,<sprite_89,<sprite_90,<sprite_91,0,<sprite_93,<sprite_94,<sprite_95,<sprite_96,<sprite_97,<sprite_98,<sprite_99,<sprite_100,<sprite_101,<sprite_102,<sprite_103,0,0,0,0,0,0,<sprite_110,<sprite_111,<sprite_112,<sprite_113,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,<sprite_161,<sprite_162,<sprite_163,<sprite_164,<sprite_165,<sprite_166,<sprite_167,<sprite_168,<sprite_169,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,<sprite_200,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-atlas_hi: .byte 0,>sprite_1,>sprite_2,>sprite_3,>sprite_4,>sprite_5,>sprite_6,>sprite_7,>sprite_8,>sprite_9,>sprite_10,>sprite_11,>sprite_12,>sprite_13,>sprite_14,>sprite_15,>sprite_16,>sprite_17,>sprite_18,0,>sprite_20,>sprite_21,>sprite_22,>sprite_23,>sprite_24,>sprite_25,>sprite_26,>sprite_27,>sprite_28,>sprite_29,>sprite_30,>sprite_31,>sprite_32,>sprite_33,>sprite_34,>sprite_35,>sprite_36,>sprite_37,>sprite_38,0,>sprite_40,>sprite_41,>sprite_42,>sprite_43,>sprite_44,>sprite_45,>sprite_46,>sprite_47,>sprite_48,>sprite_49,>sprite_50,>sprite_51,>sprite_52,>sprite_53,>sprite_54,>sprite_55,>sprite_56,>sprite_57,>sprite_58,>sprite_59,>sprite_60,>sprite_61,>sprite_62,>sprite_63,>sprite_64,>sprite_65,0,>sprite_67,>sprite_68,>sprite_69,>sprite_70,>sprite_71,>sprite_72,>sprite_73,>sprite_74,>sprite_75,>sprite_76,>sprite_77,>sprite_78,>sprite_79,>sprite_80,>sprite_81,>sprite_82,>sprite_83,>sprite_84,>sprite_85,>sprite_86,>sprite_87,>sprite_88,>sprite_89,>sprite_90,>sprite_91,0,>sprite_93,>sprite_94,>sprite_95,>sprite_96,>sprite_97,>sprite_98,>sprite_99,>sprite_100,>sprite_101,>sprite_102,>sprite_103,0,0,0,0,0,0,>sprite_110,>sprite_111,>sprite_112,>sprite_113,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,>sprite_161,>sprite_162,>sprite_163,>sprite_164,>sprite_165,>sprite_166,>sprite_167,>sprite_168,>sprite_169,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,>sprite_200,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+atlas_lo: .byte 0,<sprite_1,<sprite_2,<sprite_3,<sprite_4,<sprite_5,<sprite_6,<sprite_7,<sprite_8,<sprite_9,<sprite_10,<sprite_11,<sprite_12,<sprite_13,<sprite_14,<sprite_15,<sprite_16,<sprite_17,<sprite_18,0,<sprite_20,<sprite_21,<sprite_22,<sprite_23,<sprite_24,<sprite_25,<sprite_26,<sprite_27,<sprite_28,<sprite_29,<sprite_30,<sprite_31,<sprite_32,<sprite_33,<sprite_34,<sprite_35,<sprite_36,<sprite_37,<sprite_38,0,<sprite_40,<sprite_41,<sprite_42,<sprite_43,<sprite_44,<sprite_45,<sprite_46,<sprite_47,<sprite_48,<sprite_49,<sprite_50,<sprite_51,<sprite_52,<sprite_53,<sprite_54,<sprite_55,<sprite_56,<sprite_57,<sprite_58,<sprite_59,<sprite_60,<sprite_61,<sprite_62,<sprite_63,<sprite_64,<sprite_65,0,<sprite_67,<sprite_68,<sprite_69,<sprite_70,<sprite_71,<sprite_72,<sprite_73,<sprite_74,<sprite_75,<sprite_76,<sprite_77,<sprite_78,<sprite_79,<sprite_80,<sprite_81,<sprite_82,<sprite_83,<sprite_84,<sprite_85,<sprite_86,<sprite_87,<sprite_88,<sprite_89,<sprite_90,<sprite_91,0,<sprite_93,<sprite_94,<sprite_95,<sprite_96,<sprite_97,<sprite_98,<sprite_99,<sprite_100,<sprite_101,<sprite_102,<sprite_103,0,0,0,0,0,0,<sprite_110,<sprite_111,<sprite_112,<sprite_113,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,<sprite_161,<sprite_162,<sprite_163,<sprite_164,<sprite_165,<sprite_166,<sprite_167,<sprite_168,<sprite_169,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,<sprite_200
+atlas_hi: .byte 0,>sprite_1,>sprite_2,>sprite_3,>sprite_4,>sprite_5,>sprite_6,>sprite_7,>sprite_8,>sprite_9,>sprite_10,>sprite_11,>sprite_12,>sprite_13,>sprite_14,>sprite_15,>sprite_16,>sprite_17,>sprite_18,0,>sprite_20,>sprite_21,>sprite_22,>sprite_23,>sprite_24,>sprite_25,>sprite_26,>sprite_27,>sprite_28,>sprite_29,>sprite_30,>sprite_31,>sprite_32,>sprite_33,>sprite_34,>sprite_35,>sprite_36,>sprite_37,>sprite_38,0,>sprite_40,>sprite_41,>sprite_42,>sprite_43,>sprite_44,>sprite_45,>sprite_46,>sprite_47,>sprite_48,>sprite_49,>sprite_50,>sprite_51,>sprite_52,>sprite_53,>sprite_54,>sprite_55,>sprite_56,>sprite_57,>sprite_58,>sprite_59,>sprite_60,>sprite_61,>sprite_62,>sprite_63,>sprite_64,>sprite_65,0,>sprite_67,>sprite_68,>sprite_69,>sprite_70,>sprite_71,>sprite_72,>sprite_73,>sprite_74,>sprite_75,>sprite_76,>sprite_77,>sprite_78,>sprite_79,>sprite_80,>sprite_81,>sprite_82,>sprite_83,>sprite_84,>sprite_85,>sprite_86,>sprite_87,>sprite_88,>sprite_89,>sprite_90,>sprite_91,0,>sprite_93,>sprite_94,>sprite_95,>sprite_96,>sprite_97,>sprite_98,>sprite_99,>sprite_100,>sprite_101,>sprite_102,>sprite_103,0,0,0,0,0,0,>sprite_110,>sprite_111,>sprite_112,>sprite_113,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,>sprite_161,>sprite_162,>sprite_163,>sprite_164,>sprite_165,>sprite_166,>sprite_167,>sprite_168,>sprite_169,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,>sprite_200
 equipment_lo: .byte <equipment_0,<equipment_1,<equipment_2,<equipment_3,<equipment_4,<equipment_5,<equipment_6,<equipment_7,<equipment_8,<equipment_9,<equipment_10,<equipment_11,<equipment_12,<equipment_13,<equipment_14,<equipment_15,<equipment_16,<equipment_17,<equipment_18,<equipment_19,<equipment_20,<equipment_21,<equipment_22,<equipment_23,<equipment_24,<equipment_25
 equipment_hi: .byte >equipment_0,>equipment_1,>equipment_2,>equipment_3,>equipment_4,>equipment_5,>equipment_6,>equipment_7,>equipment_8,>equipment_9,>equipment_10,>equipment_11,>equipment_12,>equipment_13,>equipment_14,>equipment_15,>equipment_16,>equipment_17,>equipment_18,>equipment_19,>equipment_20,>equipment_21,>equipment_22,>equipment_23,>equipment_24,>equipment_25
 equipment_0:
@@ -1324,20 +2506,16 @@ equipment_24:
 equipment_25:
     .byte $01,$3B,$FF,$EE
 enemy_sprite_indices: .byte 48,49,50,51,52,53,54,55,56,57
-clue1: .incbin "scroll1.bin"
-clue2: .incbin "scroll2.bin"
-clue3: .incbin "scroll3.bin"
-clue_book: .incbin "book.bin"
 full_clue_lo: .byte <full_clue_0,<full_clue_1,<full_clue_2,<full_clue_3
 full_clue_hi: .byte >full_clue_0,>full_clue_1,>full_clue_2,>full_clue_3
 full_clue_0:
-    .byte $4D,$45,$53,$53,$41,$47,$45,$20,$31,$20,$22,$44,$45,$52,$20,$52,$45,$49,$46,$20,$57,$49,$52,$44,$20,$44,$49,$52,$20,$44,$41,$53,$20,$20,$20,$20,$20,$20,$20,$20,$55,$42,$45,$4C,$56,$45,$52,$44,$45,$43,$4B,$45,$4E,$2E,$22,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$55,$4E,$45,$20,$54,$4F,$55,$43,$48,$45,$3A,$20,$49,$4E,$44,$49,$43,$45,$20,$53,$55,$49,$56,$41,$4E,$54,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20
+    .byte $4D,$65,$73,$73,$61,$67,$65,$20,$31,$20,$22,$44,$65,$72,$20,$52,$65,$69,$66,$20,$77,$69,$72,$64,$20,$64,$69,$72,$20,$64,$61,$73,$20,$20,$20,$20,$20,$20,$20,$20,$55,$62,$65,$6C,$76,$65,$72,$64,$65,$63,$6B,$65,$6E,$2E,$22,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$55,$6E,$65,$20,$74,$6F,$75,$63,$68,$65,$3A,$20,$69,$6E,$64,$69,$63,$65,$20,$73,$75,$69,$76,$61,$6E,$74,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20
 full_clue_1:
-    .byte $4D,$45,$53,$53,$41,$47,$45,$20,$32,$20,$22,$44,$45,$52,$20,$47,$4F,$4C,$44,$45,$4E,$45,$20,$57,$49,$52,$44,$20,$44,$49,$52,$20,$44,$45,$4E,$20,$20,$20,$20,$20,$46,$45,$55,$45,$52,$57,$45,$47,$20,$42,$41,$48,$4E,$45,$4E,$2E,$22,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$55,$4E,$45,$20,$54,$4F,$55,$43,$48,$45,$3A,$20,$49,$4E,$44,$49,$43,$45,$20,$53,$55,$49,$56,$41,$4E,$54,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20
+    .byte $4D,$65,$73,$73,$61,$67,$65,$20,$32,$20,$22,$44,$65,$72,$20,$67,$6F,$6C,$64,$65,$6E,$65,$20,$77,$69,$72,$64,$20,$64,$69,$72,$20,$64,$65,$6E,$20,$20,$20,$20,$20,$46,$65,$75,$65,$72,$77,$65,$67,$20,$62,$61,$68,$6E,$65,$6E,$2E,$22,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$55,$6E,$65,$20,$74,$6F,$75,$63,$68,$65,$3A,$20,$69,$6E,$64,$69,$63,$65,$20,$73,$75,$69,$76,$61,$6E,$74,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20
 full_clue_2:
-    .byte $4D,$45,$53,$53,$41,$47,$45,$20,$33,$20,$22,$44,$45,$52,$20,$41,$44,$4C,$45,$52,$20,$41,$55,$53,$20,$47,$45,$4D,$45,$49,$4E,$45,$4D,$20,$4D,$45,$54,$41,$4C,$4C,$57,$49,$52,$44,$20,$45,$44,$45,$4C,$20,$57,$45,$52,$44,$45,$4E,$20,$2E,$22,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$55,$4E,$45,$20,$54,$4F,$55,$43,$48,$45,$3A,$20,$49,$4E,$44,$49,$43,$45,$20,$53,$55,$49,$56,$41,$4E,$54,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20
+    .byte $4D,$65,$73,$73,$61,$67,$65,$20,$33,$20,$22,$44,$65,$72,$20,$41,$64,$6C,$65,$72,$20,$61,$75,$73,$20,$67,$65,$6D,$65,$69,$6E,$65,$6D,$20,$4D,$65,$74,$61,$6C,$6C,$77,$69,$72,$64,$20,$65,$64,$65,$6C,$20,$77,$65,$72,$64,$65,$6E,$20,$2E,$22,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$55,$6E,$65,$20,$74,$6F,$75,$63,$68,$65,$3A,$20,$69,$6E,$64,$69,$63,$65,$20,$73,$75,$69,$76,$61,$6E,$74,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20
 full_clue_3:
-    .byte $4C,$45,$20,$4C,$49,$56,$52,$45,$20,$44,$45,$20,$4C,$41,$20,$53,$41,$47,$45,$53,$53,$45,$20,$22,$4E,$55,$52,$20,$56,$4F,$4E,$20,$44,$45,$4D,$20,$20,$20,$20,$20,$53,$54,$45,$52,$4E,$20,$57,$49,$52,$53,$54,$20,$44,$55,$20,$44,$49,$43,$48,$20,$45,$52,$48,$45,$42,$45,$4E,$2E,$22,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$55,$4E,$45,$20,$54,$4F,$55,$43,$48,$45,$3A,$20,$49,$4E,$44,$49,$43,$45,$20,$53,$55,$49,$56,$41,$4E,$54,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20
+    .byte $4C,$65,$20,$4C,$69,$76,$72,$65,$20,$64,$65,$20,$6C,$61,$20,$53,$61,$67,$65,$73,$73,$65,$20,$22,$4E,$75,$72,$20,$76,$6F,$6E,$20,$64,$65,$6D,$20,$20,$20,$20,$20,$53,$74,$65,$72,$6E,$20,$77,$69,$72,$73,$74,$20,$64,$75,$20,$64,$69,$63,$68,$20,$65,$72,$68,$65,$62,$65,$6E,$2E,$22,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$55,$6E,$65,$20,$74,$6F,$75,$63,$68,$65,$3A,$20,$69,$6E,$64,$69,$63,$65,$20,$73,$75,$69,$76,$61,$6E,$74,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20
 geometry_0:
     .byte $01,$0C,$C7,$30,$8B,$01,$30,$8B,$CB,$8B,$01,$CB,$8B,$EF,$C7,$02,$04,$24,$7A,$01,$02,$04,$24,$69,$01,$02,$04,$24,$58,$01,$02,$04,$24,$47,$01,$02,$04,$24,$36,$01,$02,$04,$24,$25,$01,$02,$04,$24,$14,$01,$02,$03,$BF,$79,$01,$02,$03,$BF,$67,$01,$02,$03,$BF,$55,$01,$02,$03,$BF,$43,$01,$02,$03,$BF,$31,$01,$02,$03,$BF,$1F,$01,$02,$03,$BF,$0D,$01,$00
 geometry_1:
@@ -1350,4 +2528,59 @@ geometry_3:
     .byte $01,$0C,$C7,$2B,$95,$01,$2B,$95,$D0,$95,$01,$D0,$95,$EF,$C7,$01,$2B,$95,$2B,$27,$01,$2B,$27,$23,$1A,$01,$23,$1A,$1B,$13,$01,$1B,$13,$13,$2B,$01,$13,$2B,$0C,$53,$01,$0C,$53,$0C,$C6,$01,$D0,$95,$D0,$27,$01,$D0,$27,$D8,$1A,$01,$D8,$1A,$E0,$13,$01,$E0,$13,$E8,$2B,$01,$E8,$2B,$EF,$53,$01,$EF,$53,$EF,$C6,$00
 geometry_lo: .byte <geometry_0,<geometry_1,<geometry_2,<geometry_3
 geometry_hi: .byte >geometry_0,>geometry_1,>geometry_2,>geometry_3
+hud_description_0:
+    .byte $56,$6F,$75,$73,$20,$65,$74,$65,$73,$20,$00
+hud_description_1:
+    .byte $64,$61,$6E,$73,$20,$6C,$61,$20,$63,$72,$79,$70,$74,$65,$20,$73,$61,$63,$72,$65,$65,$2E,$00
+hud_description_2:
+    .byte $64,$61,$6E,$73,$20,$6C,$65,$20,$64,$6F,$6E,$6A,$6F,$6E,$2E,$00
+hud_description_3:
+    .byte $61,$75,$20,$73,$6F,$6D,$6D,$65,$74,$20,$64,$75,$20,$64,$6F,$6E,$6A,$6F,$6E,$2E,$00
+hud_description_4:
+    .byte $64,$61,$6E,$73,$20,$75,$6E,$20,$63,$6F,$75,$6C,$6F,$69,$72,$20,$00
+hud_description_5:
+    .byte $64,$61,$6E,$73,$20,$75,$6E,$65,$20,$73,$61,$6C,$6C,$65,$00
+hud_description_6:
+    .byte $64,$61,$6E,$73,$20,$75,$6E,$20,$70,$61,$73,$73,$61,$67,$65,$20,$00
+hud_description_7:
+    .byte $64,$61,$6E,$73,$20,$6C,$65,$73,$20,$63,$61,$74,$61,$63,$6F,$6D,$62,$65,$73,$2E,$00
+hud_description_8:
+    .byte $61,$75,$20,$70,$72,$65,$6D,$69,$65,$72,$20,$65,$74,$61,$67,$65,$2E,$00
+hud_description_9:
+    .byte $61,$75,$20,$72,$65,$7A,$2D,$64,$65,$2D,$63,$68,$61,$75,$73,$73,$65,$65,$2E,$00
+hud_description_10:
+    .byte $61,$75,$20,$66,$6F,$6E,$64,$20,$64,$27,$75,$6E,$65,$20,$6F,$75,$62,$6C,$69,$65,$74,$74,$65,$2E,$00
+hud_hand_0:
+    .byte $00
+hud_hand_1:
+    .byte $54,$6F,$72,$63,$68,$65,$00
+hud_hand_2:
+    .byte $43,$6C,$65,$66,$20,$65,$6E,$20,$66,$65,$72,$00
+hud_hand_3:
+    .byte $43,$6C,$65,$66,$20,$65,$6E,$20,$6F,$72,$00
+hud_hand_4:
+    .byte $55,$6E,$65,$20,$66,$69,$6F,$6C,$65,$00
+hud_hand_5:
+    .byte $50,$69,$65,$64,$20,$64,$65,$20,$62,$69,$63,$68,$65,$00
+hud_description_lo: .byte <hud_description_0,<hud_description_1,<hud_description_2,<hud_description_3,<hud_description_4,<hud_description_5,<hud_description_6,<hud_description_7,<hud_description_8,<hud_description_9,<hud_description_10
+hud_description_hi: .byte >hud_description_0,>hud_description_1,>hud_description_2,>hud_description_3,>hud_description_4,>hud_description_5,>hud_description_6,>hud_description_7,>hud_description_8,>hud_description_9,>hud_description_10
+hud_hand_lo: .byte <hud_hand_0,<hud_hand_1,<hud_hand_0,<hud_hand_0,<hud_hand_0,<hud_hand_0,<hud_hand_5,<hud_hand_0,<hud_hand_3,<hud_hand_2,<hud_hand_4
+hud_hand_hi: .byte >hud_hand_0,>hud_hand_1,>hud_hand_0,>hud_hand_0,>hud_hand_0,>hud_hand_0,>hud_hand_5,>hud_hand_0,>hud_hand_3,>hud_hand_2,>hud_hand_4
+.segment "TEXTASSETS"
+text_assets: .incbin "text-panels.bin"
+.segment "RODATA"
+text_panel_lo: .byte 0,<(text_assets+483),<(text_assets+624),<(text_assets+858),0,<(text_assets+2434),<(text_assets+2547),<(text_assets+2661),<(text_assets+1560),0,<(text_assets+1129),<(text_assets+0),<(text_assets+1714),0,0,0,<(text_assets+1941),<(text_assets+2187)
+text_panel_hi: .byte 0,>(text_assets+483),>(text_assets+624),>(text_assets+858),0,>(text_assets+2434),>(text_assets+2547),>(text_assets+2661),>(text_assets+1560),0,>(text_assets+1129),>(text_assets+0),>(text_assets+1714),0,0,0,>(text_assets+1941),>(text_assets+2187)
+map_room_row: .byte 55,27,27,55,83,83,83,55,27,21,21,21,21,21,21,21,41,41,41,41,41,41,41,61,61,61,61,61,61,61,81,81,81,81,81,81,81,101,101,101,101,101,101,101,121,121,121,121,121,121,121,141,141,141,141,141,141,141,27,27,27,55,55,55
+map_room_column: .byte 10,10,15,15,15,10,5,5,5,35,30,25,20,15,10,5,35,30,25,20,15,10,5,35,30,25,20,15,10,5,35,30,25,20,15,10,5,35,30,25,20,15,10,5,35,30,25,20,15,10,5,35,30,25,20,15,10,5,25,30,35,25,30,35
+.segment "CODE"
+map_pin: .byte $1C,$3E,$63,$6B,$63,$3E,$1C,$08,$08
+map_glyphs:
+    .byte $0E,$11,$19,$15,$13,$11,$0E,$04,$06,$04,$04,$04,$04,$0E
+    .byte $0E,$11,$10,$08,$04,$02,$1F,$0F,$10,$10,$0E,$10,$10,$0F
+    .byte $08,$0C,$0A,$09,$1F,$08,$08,$1F,$01,$01,$0F,$10,$10,$0F
+    .byte $0E,$01,$01,$0F,$11,$11,$0E,$1F,$10,$08,$04,$02,$02,$02
+    .byte $0E,$11,$11,$0E,$11,$11,$0E,$0E,$11,$11,$1E,$10,$10,$0E
+    .byte $00,$00,$00,$1F,$00,$00,$00,$11,$11,$0A,$04,$0A,$11,$11
+.segment "RODATA"
 title_flash_data: .incbin "title-flash.bin"

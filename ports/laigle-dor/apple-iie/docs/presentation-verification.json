@@ -1,0 +1,209 @@
+{
+  "change": "Spaced full-screen inventory and mixed-case interface, including inverse lowercase feedback",
+  "date": "2026-10-18",
+  "executed_profiles": {
+    "dhgr": {
+      "disk": "build/game/laigle-dor-dhgr-color.do",
+      "disk_sha256": "4b66755c64a72daf95f2fd0b2bfe6a8e7f0cc7c4e3500c5d1ad49151f5c62b72",
+      "elapsed_seconds": 159.584,
+      "errors": [],
+      "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+      "failures": [],
+      "memory": {
+        "aux_worker_load_end_exclusive": "$9FF9",
+        "code_end_exclusive": "$8888",
+        "extracode_bytes": 196,
+        "lowcode_bytes": 2582,
+        "resident_data_end_exclusive": "$9FE7",
+        "text_archive_bytes": 2022
+      },
+      "original_oric_runtime": "not tested",
+      "previews": {
+        "action-impossible.png": {
+          "kind": "executed functional 6502 screenshot using the host preview font",
+          "path": "build/game/action-impossible.png",
+          "sha256": "42f98e1ba30ed497d03ed727aa42673e55e97241e38d38a44a911603b2e7aa84"
+        },
+        "exterior.png": {
+          "kind": "executed functional 6502 screenshot using the host preview font",
+          "path": "build/game/exterior.png",
+          "sha256": "f35245e978f3cea4e69a3b92dbd5ee8340c2961065e34bf6ed12810ecec547b6"
+        },
+        "help.png": {
+          "kind": "executed functional 6502 screenshot using the host preview font",
+          "path": "build/game/help.png",
+          "sha256": "d200fd29e0f14790fe56d7420697e7593d9c2bede5e2f75978545cbc421ccc71"
+        },
+        "introduction.png": {
+          "kind": "executed functional 6502 screenshot using the host preview font",
+          "path": "build/game/introduction.png",
+          "sha256": "7ae305d58bb6bb467de20c1c0d8af3dff97a3def3bbc3da0ff6af8a881c6c251"
+        },
+        "inventory-empty.png": {
+          "kind": "executed functional 6502 screenshot using the host preview font",
+          "path": "build/game/inventory-empty.png",
+          "sha256": "7c4b582c5d5a085fd1beb378441a20ee76fb93258be97c9cbe14d72e1a096843"
+        },
+        "inventory-full.png": {
+          "kind": "executed functional 6502 screenshot using the host preview font",
+          "path": "build/game/inventory-full.png",
+          "sha256": "2da917fed9b8e27fa4910e3d0acf698dcedfe442e905824590ab753e8a4516b2"
+        },
+        "map-lowercase-static.png": {
+          "kind": "host render of generated map raster; not a CPU screenshot",
+          "path": "build/game/map-lowercase-static.png",
+          "sha256": "815c6dd6e9ab43c45c4a7da2c8dfd21bc3faeb1720e983845bca798d271a7651"
+        },
+        "merchant.png": {
+          "kind": "executed functional 6502 screenshot using the host preview font",
+          "path": "build/game/merchant.png",
+          "sha256": "701fbf9c02f127d17b396e6d405c287995b6bd29bbca2f58791c6c1550b9a710"
+        },
+        "room12-hud.png": {
+          "kind": "executed functional 6502 screenshot using the host preview font",
+          "path": "build/game/room12-hud.png",
+          "sha256": "ba4d39b8dffea20c2e5e6d8c0b177bf268827979641c2fd2d3101af600b46707"
+        }
+      },
+      "program_bytes": 19155,
+      "program_sha256": "966ed4992dbc4c94c4ae1665ae8bc92c9acdcc7a90cb7ce1afbc00a616742df9",
+      "real_hardware": "not tested",
+      "selected_tests": [
+        "test_boot_preloads_shared_atlas_and_keeps_program_main",
+        "test_inventory_spaced_layout_live_values_and_modal_return",
+        "test_lowercase_name_text_codes_and_preview_inverse",
+        "test_name_exterior_merchant_and_resume",
+        "test_gameplay_hud_original_room_descriptions",
+        "test_gameplay_hud_stats_and_hand_names",
+        "test_impossible_actions_persist_until_next_command",
+        "test_impossible_feedback_in_special_rooms_and_darkness",
+        "test_help_pauses_walking_and_staged_actions",
+        "test_help_returns_to_each_modal_page_and_name_input",
+        "test_clues_display_original_content_and_advance",
+        "test_title_lightning_reveal_and_text_transition",
+        "test_debug_menu_is_hidden_modal_and_freezes_gameplay",
+        "test_debug_map_navigation_pauses_and_returns_to_menu_or_game"
+      ],
+      "success": true,
+      "suite": "presentation",
+      "test_report": "build/game/presentation-test-results.json",
+      "tests_run": 14,
+      "video_profile": "dhgr",
+      "virtual_ii": "not tested"
+    },
+    "mono": {
+      "disk": "build/game-mono/laigle-dor-hgr-mono.do",
+      "disk_sha256": "cc1f3f0cfb7e0066a27fdc2989199cc7b1f5edd3daa79e215e1f65c496e62485",
+      "elapsed_seconds": 135.633,
+      "errors": [],
+      "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+      "failures": [],
+      "memory": {
+        "aux_worker_load_end_exclusive": "$9E2D",
+        "code_end_exclusive": "$87A7",
+        "extracode_bytes": 144,
+        "lowcode_bytes": 2526,
+        "resident_data_end_exclusive": "$9E1B",
+        "text_archive_bytes": 2022
+      },
+      "original_oric_runtime": "not tested",
+      "previews": {
+        "action-impossible.png": {
+          "kind": "executed functional 6502 screenshot using the host preview font",
+          "path": "build/game-mono/action-impossible.png",
+          "sha256": "6cc7d039abc5843067bf52a62c855f6d434fac77422300980fffea35d94cd4bc"
+        },
+        "exterior.png": {
+          "kind": "executed functional 6502 screenshot using the host preview font",
+          "path": "build/game-mono/exterior.png",
+          "sha256": "f35245e978f3cea4e69a3b92dbd5ee8340c2961065e34bf6ed12810ecec547b6"
+        },
+        "help.png": {
+          "kind": "executed functional 6502 screenshot using the host preview font",
+          "path": "build/game-mono/help.png",
+          "sha256": "d200fd29e0f14790fe56d7420697e7593d9c2bede5e2f75978545cbc421ccc71"
+        },
+        "introduction.png": {
+          "kind": "executed functional 6502 screenshot using the host preview font",
+          "path": "build/game-mono/introduction.png",
+          "sha256": "7ae305d58bb6bb467de20c1c0d8af3dff97a3def3bbc3da0ff6af8a881c6c251"
+        },
+        "inventory-empty.png": {
+          "kind": "executed functional 6502 screenshot using the host preview font",
+          "path": "build/game-mono/inventory-empty.png",
+          "sha256": "7c4b582c5d5a085fd1beb378441a20ee76fb93258be97c9cbe14d72e1a096843"
+        },
+        "inventory-full.png": {
+          "kind": "executed functional 6502 screenshot using the host preview font",
+          "path": "build/game-mono/inventory-full.png",
+          "sha256": "2da917fed9b8e27fa4910e3d0acf698dcedfe442e905824590ab753e8a4516b2"
+        },
+        "map-lowercase-static.png": {
+          "kind": "host render of generated map raster; not a CPU screenshot",
+          "path": "build/game-mono/map-lowercase-static.png",
+          "sha256": "2e6b42c26f3fc6dff46ec0089aa3025f6e280cf616ec4c7c16c487a8418aa85d"
+        },
+        "merchant.png": {
+          "kind": "executed functional 6502 screenshot using the host preview font",
+          "path": "build/game-mono/merchant.png",
+          "sha256": "701fbf9c02f127d17b396e6d405c287995b6bd29bbca2f58791c6c1550b9a710"
+        },
+        "room12-hud.png": {
+          "kind": "executed functional 6502 screenshot using the host preview font",
+          "path": "build/game-mono/room12-hud.png",
+          "sha256": "506e80f03efa73672f9edc71dbd743b650d8e41f0115b02c721e5bfbe069fe49"
+        }
+      },
+      "program_bytes": 18587,
+      "program_sha256": "cc22eb9cb83e03fedc13393e6c85a5b1dd3e16bd96cb6ab774abb3446cda5097",
+      "real_hardware": "not tested",
+      "selected_tests": [
+        "test_boot_preloads_shared_atlas_and_keeps_program_main",
+        "test_inventory_spaced_layout_live_values_and_modal_return",
+        "test_lowercase_name_text_codes_and_preview_inverse",
+        "test_name_exterior_merchant_and_resume",
+        "test_gameplay_hud_original_room_descriptions",
+        "test_gameplay_hud_stats_and_hand_names",
+        "test_impossible_actions_persist_until_next_command",
+        "test_impossible_feedback_in_special_rooms_and_darkness",
+        "test_help_pauses_walking_and_staged_actions",
+        "test_help_returns_to_each_modal_page_and_name_input",
+        "test_clues_display_original_content_and_advance",
+        "test_title_lightning_reveal_and_text_transition",
+        "test_debug_menu_is_hidden_modal_and_freezes_gameplay",
+        "test_debug_map_navigation_pauses_and_returns_to_menu_or_game"
+      ],
+      "success": true,
+      "suite": "presentation",
+      "test_report": "build/game-mono/presentation-test-results.json",
+      "tests_run": 14,
+      "video_profile": "mono",
+      "virtual_ii": "not tested"
+    }
+  },
+  "scope_notes": [
+    "No Virtual II launch, system-ROM cold-start or physical-hardware observation in this revision",
+    "The preview font is not the Apple character ROM",
+    "The original graphics title is unchanged",
+    "Previous interaction and full-suite reports retain their previous binary hashes"
+  ],
+  "static_checks": [
+    "both NMOS 6502 builds assemble and link within their allocations",
+    "DO and NIB named copies match their canonical images",
+    "ASCII panel bounds and text archive allocation checked by compiler",
+    "git diff --check for source, tools, tests and documentation",
+    "historical source checksums retained by Source()",
+    "generated clue text has complete host preview glyph coverage"
+  ],
+  "text_hardware": {
+    "ALTCHAR": "write $C00F",
+    "inverse_message_hex": "09 6d 70 6f 73 73 69 62 6c 65",
+    "normal_lowercase": "$E0-$FF",
+    "primary_references": [
+      "https://www.applelogic.org/files/AIIEREF.pdf",
+      "https://mirrors.apple2.org.za/apple.cabi.net/FAQs.and.INFO/A2.TECH.NOTES.ETC/A2.CLASSIC.TNTS/mouse006.html"
+    ]
+  },
+  "timing_scope": "elapsed_seconds is host test duration, not a target performance benchmark",
+  "visual_review": "Inspected functional empty/full inventory, intro, merchant and inverse feedback previews; inspected separately labeled static map legend raster"
+}

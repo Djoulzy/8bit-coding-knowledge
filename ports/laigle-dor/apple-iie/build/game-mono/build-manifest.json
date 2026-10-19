@@ -1,0 +1,4081 @@
+{
+  "atlas_bytes": 22828,
+  "atlas_sha256": "0c149d8fdf0212a454d6fbd13858b589bd98a6031f418bb2972f2e995b8891be",
+  "disks": {
+    "laigle-dor.do": "6561e17b8ccb4fbc4bfe54540cb3dd3b079c889d7d2b27ee2153fc3c2a9e51af"
+  },
+  "entry": "$6000",
+  "extra_bytes": 0,
+  "extra_sector": 336,
+  "extra_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "loaded_end_exclusive": "$AB00",
+  "map_bytes": 24576,
+  "map_sector": 240,
+  "map_sha256": "86292fdadd4a77d709d6a04e073db056efbed06d9b44c82a4d6ab47aa8961112",
+  "program_bytes": 19031,
+  "program_sha256": "11c61bd4b48c08d25ed9c5c51776e2ad83a13fb74c7601878b3f547e53e250d6",
+  "resources": {
+    "actor_frames": 28,
+    "actor_sprite_ids": [
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      67,
+      68,
+      69,
+      70,
+      71,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      91,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      110,
+      111
+    ],
+    "captured_font": "B2 $9800, provisional until original ROM/font execution is compared",
+    "construction": "native generic geometry, upper/left/right openings, then parameterized atlas decorations",
+    "equipment_streams": 26,
+    "geometry_templates": 4,
+    "graphical_map": {
+      "bytes": 24576,
+      "cells": [
+        {
+          "dark": false,
+          "furnishing": "fireplace",
+          "gate": false,
+          "item": null,
+          "page": 1,
+          "room": 0,
+          "secret": true,
+          "stairs": false,
+          "trap": true,
+          "treasure": 0,
+          "x": 49,
+          "y": 53
+        },
+        {
+          "dark": false,
+          "furnishing": "furniture",
+          "gate": false,
+          "item": "book",
+          "page": 1,
+          "room": 1,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 1,
+          "x": 49,
+          "y": 25
+        },
+        {
+          "dark": false,
+          "furnishing": "furniture",
+          "gate": false,
+          "item": null,
+          "page": 1,
+          "room": 2,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 84,
+          "y": 25
+        },
+        {
+          "dark": false,
+          "furnishing": null,
+          "gate": false,
+          "item": null,
+          "page": 1,
+          "room": 3,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 84,
+          "y": 53
+        },
+        {
+          "dark": false,
+          "furnishing": "chest",
+          "gate": true,
+          "item": "vial",
+          "page": 1,
+          "room": 4,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 5,
+          "x": 84,
+          "y": 81
+        },
+        {
+          "dark": false,
+          "furnishing": null,
+          "gate": false,
+          "item": null,
+          "page": 1,
+          "room": 5,
+          "secret": false,
+          "stairs": false,
+          "trap": true,
+          "treasure": 0,
+          "x": 49,
+          "y": 81
+        },
+        {
+          "dark": false,
+          "furnishing": "stairs",
+          "gate": false,
+          "item": null,
+          "page": 1,
+          "room": 6,
+          "secret": false,
+          "stairs": true,
+          "trap": false,
+          "treasure": 0,
+          "x": 14,
+          "y": 81
+        },
+        {
+          "dark": true,
+          "furnishing": null,
+          "gate": true,
+          "item": null,
+          "page": 1,
+          "room": 7,
+          "secret": false,
+          "stairs": false,
+          "trap": true,
+          "treasure": 0,
+          "x": 14,
+          "y": 53
+        },
+        {
+          "dark": true,
+          "furnishing": null,
+          "gate": true,
+          "item": null,
+          "page": 1,
+          "room": 8,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 14,
+          "y": 25
+        },
+        {
+          "dark": true,
+          "furnishing": "fireplace",
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 9,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 224,
+          "y": 19
+        },
+        {
+          "dark": false,
+          "furnishing": null,
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 10,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 189,
+          "y": 19
+        },
+        {
+          "dark": false,
+          "furnishing": "fireplace",
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 11,
+          "secret": true,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 154,
+          "y": 19
+        },
+        {
+          "dark": false,
+          "furnishing": "furniture",
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 12,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 119,
+          "y": 19
+        },
+        {
+          "dark": false,
+          "furnishing": "chest",
+          "gate": false,
+          "item": "vial",
+          "page": 0,
+          "room": 13,
+          "secret": false,
+          "stairs": true,
+          "trap": false,
+          "treasure": 5,
+          "x": 84,
+          "y": 19
+        },
+        {
+          "dark": true,
+          "furnishing": null,
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 14,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 49,
+          "y": 19
+        },
+        {
+          "dark": false,
+          "furnishing": "furniture",
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 15,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 14,
+          "y": 19
+        },
+        {
+          "dark": false,
+          "furnishing": null,
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 16,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 224,
+          "y": 39
+        },
+        {
+          "dark": false,
+          "furnishing": "furniture",
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 17,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 189,
+          "y": 39
+        },
+        {
+          "dark": false,
+          "furnishing": "furniture",
+          "gate": false,
+          "item": "vial",
+          "page": 0,
+          "room": 18,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 5,
+          "x": 154,
+          "y": 39
+        },
+        {
+          "dark": false,
+          "furnishing": null,
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 19,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 119,
+          "y": 39
+        },
+        {
+          "dark": false,
+          "furnishing": "fireplace",
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 20,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 84,
+          "y": 39
+        },
+        {
+          "dark": false,
+          "furnishing": "furniture",
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 21,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 49,
+          "y": 39
+        },
+        {
+          "dark": false,
+          "furnishing": null,
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 22,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 14,
+          "y": 39
+        },
+        {
+          "dark": false,
+          "furnishing": null,
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 23,
+          "secret": false,
+          "stairs": false,
+          "trap": true,
+          "treasure": 0,
+          "x": 224,
+          "y": 59
+        },
+        {
+          "dark": false,
+          "furnishing": "furniture",
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 24,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 189,
+          "y": 59
+        },
+        {
+          "dark": false,
+          "furnishing": null,
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 25,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 154,
+          "y": 59
+        },
+        {
+          "dark": false,
+          "furnishing": "chest",
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 26,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 119,
+          "y": 59
+        },
+        {
+          "dark": true,
+          "furnishing": null,
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 27,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 84,
+          "y": 59
+        },
+        {
+          "dark": false,
+          "furnishing": "furniture",
+          "gate": false,
+          "item": "ring",
+          "page": 0,
+          "room": 28,
+          "secret": false,
+          "stairs": true,
+          "trap": true,
+          "treasure": 6,
+          "x": 49,
+          "y": 59
+        },
+        {
+          "dark": false,
+          "furnishing": null,
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 29,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 14,
+          "y": 59
+        },
+        {
+          "dark": false,
+          "furnishing": "furniture",
+          "gate": false,
+          "item": "iron_key",
+          "page": 0,
+          "room": 30,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 3,
+          "x": 224,
+          "y": 79
+        },
+        {
+          "dark": false,
+          "furnishing": null,
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 31,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 189,
+          "y": 79
+        },
+        {
+          "dark": false,
+          "furnishing": "furniture",
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 32,
+          "secret": false,
+          "stairs": false,
+          "trap": true,
+          "treasure": 0,
+          "x": 154,
+          "y": 79
+        },
+        {
+          "dark": false,
+          "furnishing": "furniture",
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 33,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 119,
+          "y": 79
+        },
+        {
+          "dark": false,
+          "furnishing": null,
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 34,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 84,
+          "y": 79
+        },
+        {
+          "dark": false,
+          "furnishing": "furniture",
+          "gate": false,
+          "item": "scroll",
+          "page": 0,
+          "room": 35,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 1,
+          "x": 49,
+          "y": 79
+        },
+        {
+          "dark": true,
+          "furnishing": "furniture",
+          "gate": true,
+          "item": null,
+          "page": 0,
+          "room": 36,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 14,
+          "y": 79
+        },
+        {
+          "dark": false,
+          "furnishing": null,
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 37,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 224,
+          "y": 99
+        },
+        {
+          "dark": false,
+          "furnishing": "fireplace",
+          "gate": false,
+          "item": "vial",
+          "page": 0,
+          "room": 38,
+          "secret": true,
+          "stairs": true,
+          "trap": false,
+          "treasure": 5,
+          "x": 189,
+          "y": 99
+        },
+        {
+          "dark": false,
+          "furnishing": null,
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 39,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 154,
+          "y": 99
+        },
+        {
+          "dark": false,
+          "furnishing": null,
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 40,
+          "secret": false,
+          "stairs": false,
+          "trap": true,
+          "treasure": 0,
+          "x": 119,
+          "y": 99
+        },
+        {
+          "dark": false,
+          "furnishing": "furniture",
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 41,
+          "secret": false,
+          "stairs": false,
+          "trap": true,
+          "treasure": 0,
+          "x": 84,
+          "y": 99
+        },
+        {
+          "dark": false,
+          "furnishing": null,
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 42,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 49,
+          "y": 99
+        },
+        {
+          "dark": false,
+          "furnishing": null,
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 43,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 14,
+          "y": 99
+        },
+        {
+          "dark": true,
+          "furnishing": null,
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 44,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 224,
+          "y": 119
+        },
+        {
+          "dark": true,
+          "furnishing": null,
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 45,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 189,
+          "y": 119
+        },
+        {
+          "dark": false,
+          "furnishing": "fireplace",
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 46,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 154,
+          "y": 119
+        },
+        {
+          "dark": false,
+          "furnishing": "furniture",
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 47,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 119,
+          "y": 119
+        },
+        {
+          "dark": false,
+          "furnishing": null,
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 48,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 84,
+          "y": 119
+        },
+        {
+          "dark": false,
+          "furnishing": "fireplace",
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 49,
+          "secret": true,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 49,
+          "y": 119
+        },
+        {
+          "dark": false,
+          "furnishing": "furniture",
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 50,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 14,
+          "y": 119
+        },
+        {
+          "dark": false,
+          "furnishing": "fireplace",
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 51,
+          "secret": true,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 224,
+          "y": 139
+        },
+        {
+          "dark": true,
+          "furnishing": "chest",
+          "gate": false,
+          "item": "gold",
+          "page": 0,
+          "room": 52,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 2,
+          "x": 189,
+          "y": 139
+        },
+        {
+          "dark": false,
+          "furnishing": "furniture",
+          "gate": false,
+          "item": "gold",
+          "page": 0,
+          "room": 53,
+          "secret": false,
+          "stairs": false,
+          "trap": true,
+          "treasure": 2,
+          "x": 154,
+          "y": 139
+        },
+        {
+          "dark": false,
+          "furnishing": null,
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 54,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 119,
+          "y": 139
+        },
+        {
+          "dark": false,
+          "furnishing": "furniture",
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 55,
+          "secret": false,
+          "stairs": false,
+          "trap": true,
+          "treasure": 0,
+          "x": 84,
+          "y": 139
+        },
+        {
+          "dark": false,
+          "furnishing": "furniture",
+          "gate": false,
+          "item": null,
+          "page": 0,
+          "room": 56,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 49,
+          "y": 139
+        },
+        {
+          "dark": false,
+          "furnishing": null,
+          "gate": false,
+          "item": "gold",
+          "page": 0,
+          "room": 57,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 2,
+          "x": 14,
+          "y": 139
+        },
+        {
+          "dark": false,
+          "furnishing": "chest",
+          "gate": false,
+          "item": "gold",
+          "page": 1,
+          "room": 58,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 2,
+          "x": 154,
+          "y": 25
+        },
+        {
+          "dark": true,
+          "furnishing": "furniture",
+          "gate": false,
+          "item": "lead_eagle",
+          "page": 1,
+          "room": 59,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 7,
+          "x": 189,
+          "y": 25
+        },
+        {
+          "dark": false,
+          "furnishing": "chest",
+          "gate": false,
+          "item": "vial",
+          "page": 1,
+          "room": 60,
+          "secret": false,
+          "stairs": false,
+          "trap": false,
+          "treasure": 5,
+          "x": 224,
+          "y": 25
+        },
+        {
+          "dark": false,
+          "furnishing": "furniture",
+          "gate": false,
+          "item": "gold_key",
+          "page": 1,
+          "room": 61,
+          "secret": false,
+          "stairs": false,
+          "trap": true,
+          "treasure": 4,
+          "x": 154,
+          "y": 53
+        },
+        {
+          "dark": false,
+          "furnishing": "furniture",
+          "gate": false,
+          "item": "diamond",
+          "page": 1,
+          "room": 62,
+          "secret": false,
+          "stairs": false,
+          "trap": true,
+          "treasure": 1,
+          "x": 189,
+          "y": 53
+        },
+        {
+          "dark": false,
+          "furnishing": "furniture",
+          "gate": false,
+          "item": "golden_eagle",
+          "page": 1,
+          "room": 63,
+          "secret": true,
+          "stairs": false,
+          "trap": false,
+          "treasure": 0,
+          "x": 224,
+          "y": 53
+        }
+      ],
+      "directed_links": [
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 2,
+          "from": 0,
+          "lock": 0,
+          "to": 13,
+          "type": "grille"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 3,
+          "from": 0,
+          "lock": 0,
+          "to": 63,
+          "type": "secret"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 1,
+          "lock": 1,
+          "to": 2,
+          "type": "door"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 3,
+          "from": 1,
+          "lock": 1,
+          "to": 8,
+          "type": "door"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 2,
+          "lock": 1,
+          "to": 1,
+          "type": "door"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 2,
+          "lock": 0,
+          "to": 3,
+          "type": "arch"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 3,
+          "lock": 0,
+          "to": 2,
+          "type": "arch"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 2,
+          "from": 3,
+          "lock": 1,
+          "to": 4,
+          "type": "grille"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 4,
+          "lock": 0,
+          "to": 5,
+          "type": "grille"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 3,
+          "from": 4,
+          "lock": 1,
+          "to": 3,
+          "type": "grille"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 5,
+          "lock": 0,
+          "to": 4,
+          "type": "grille"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 5,
+          "lock": 1,
+          "to": 6,
+          "type": "grille"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 6,
+          "lock": 1,
+          "to": 5,
+          "type": "grille"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 6,
+          "lock": 0,
+          "to": 57,
+          "type": "grille"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 3,
+          "from": 6,
+          "lock": 3,
+          "to": 7,
+          "type": "grille"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 1,
+          "from": 7,
+          "lock": 2,
+          "to": 6,
+          "type": "grille"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 7,
+          "lock": 0,
+          "to": 8,
+          "type": "arch"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 8,
+          "lock": 0,
+          "to": 7,
+          "type": "arch"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 2,
+          "from": 8,
+          "lock": 1,
+          "to": 1,
+          "type": "door"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 9,
+          "lock": 1,
+          "to": 16,
+          "type": "grille"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 2,
+          "from": 9,
+          "lock": 2,
+          "to": 58,
+          "type": "door"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 10,
+          "lock": 0,
+          "to": 17,
+          "type": "arch"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 3,
+          "from": 10,
+          "lock": 0,
+          "to": 11,
+          "type": "arch"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 1,
+          "from": 11,
+          "lock": 0,
+          "to": 10,
+          "type": "arch"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 11,
+          "lock": 0,
+          "to": 12,
+          "type": "arch"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 3,
+          "from": 11,
+          "lock": 0,
+          "to": 51,
+          "type": "secret"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 12,
+          "lock": 0,
+          "to": 11,
+          "type": "arch"
+        },
+        {
+          "arrival": 3,
+          "exterior": true,
+          "facing": 3,
+          "from": 12,
+          "lock": 0,
+          "to": null,
+          "type": "door"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 13,
+          "lock": 0,
+          "to": 14,
+          "type": "grille"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 3,
+          "from": 13,
+          "lock": 0,
+          "to": 0,
+          "type": "grille"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 14,
+          "lock": 0,
+          "to": 15,
+          "type": "grille"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 14,
+          "lock": 0,
+          "to": 13,
+          "type": "grille"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 15,
+          "lock": 2,
+          "to": 59,
+          "type": "door"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 15,
+          "lock": 3,
+          "to": 14,
+          "type": "grille"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 3,
+          "from": 15,
+          "lock": 0,
+          "to": 22,
+          "type": "grille"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 1,
+          "from": 16,
+          "lock": 0,
+          "to": 23,
+          "type": "arch"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 16,
+          "lock": 1,
+          "to": 9,
+          "type": "grille"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 17,
+          "lock": 0,
+          "to": 10,
+          "type": "arch"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 2,
+          "from": 17,
+          "lock": 0,
+          "to": 24,
+          "type": "arch"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 3,
+          "from": 17,
+          "lock": 0,
+          "to": 18,
+          "type": "door"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 2,
+          "from": 18,
+          "lock": 0,
+          "to": 17,
+          "type": "door"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 3,
+          "from": 18,
+          "lock": 0,
+          "to": 25,
+          "type": "arch"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 19,
+          "lock": 0,
+          "to": 20,
+          "type": "arch"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 3,
+          "from": 19,
+          "lock": 0,
+          "to": 26,
+          "type": "arch"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 20,
+          "lock": 0,
+          "to": 21,
+          "type": "grille"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 20,
+          "lock": 0,
+          "to": 19,
+          "type": "arch"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 1,
+          "from": 21,
+          "lock": 0,
+          "to": 22,
+          "type": "arch"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 21,
+          "lock": 0,
+          "to": 20,
+          "type": "grille"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 22,
+          "lock": 0,
+          "to": 29,
+          "type": "arch"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 2,
+          "from": 22,
+          "lock": 0,
+          "to": 15,
+          "type": "grille"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 3,
+          "from": 22,
+          "lock": 0,
+          "to": 21,
+          "type": "arch"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 2,
+          "from": 23,
+          "lock": 0,
+          "to": 24,
+          "type": "arch"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 3,
+          "from": 23,
+          "lock": 0,
+          "to": 16,
+          "type": "arch"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 1,
+          "from": 24,
+          "lock": 0,
+          "to": 31,
+          "type": "arch"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 2,
+          "from": 24,
+          "lock": 0,
+          "to": 17,
+          "type": "arch"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 3,
+          "from": 24,
+          "lock": 0,
+          "to": 23,
+          "type": "arch"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 1,
+          "from": 25,
+          "lock": 0,
+          "to": 18,
+          "type": "arch"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 2,
+          "from": 25,
+          "lock": 0,
+          "to": 32,
+          "type": "arch"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 3,
+          "from": 25,
+          "lock": 2,
+          "to": 26,
+          "type": "grille"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 1,
+          "from": 26,
+          "lock": 0,
+          "to": 25,
+          "type": "grille"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 3,
+          "from": 26,
+          "lock": 0,
+          "to": 19,
+          "type": "arch"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 27,
+          "lock": 0,
+          "to": 28,
+          "type": "door"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 3,
+          "from": 27,
+          "lock": 0,
+          "to": 34,
+          "type": "arch"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 1,
+          "from": 28,
+          "lock": 0,
+          "to": 29,
+          "type": "arch"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 28,
+          "lock": 0,
+          "to": 27,
+          "type": "door"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 29,
+          "lock": 2,
+          "to": 36,
+          "type": "door"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 29,
+          "lock": 0,
+          "to": 22,
+          "type": "arch"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 3,
+          "from": 29,
+          "lock": 0,
+          "to": 28,
+          "type": "arch"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 30,
+          "lock": 1,
+          "to": 37,
+          "type": "grille"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 3,
+          "from": 30,
+          "lock": 0,
+          "to": 31,
+          "type": "arch"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 1,
+          "from": 31,
+          "lock": 0,
+          "to": 30,
+          "type": "arch"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 2,
+          "from": 31,
+          "lock": 0,
+          "to": 32,
+          "type": "arch"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 3,
+          "from": 31,
+          "lock": 0,
+          "to": 24,
+          "type": "arch"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 32,
+          "lock": 0,
+          "to": 39,
+          "type": "arch"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 2,
+          "from": 32,
+          "lock": 0,
+          "to": 25,
+          "type": "arch"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 3,
+          "from": 32,
+          "lock": 0,
+          "to": 31,
+          "type": "arch"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 33,
+          "lock": 1,
+          "to": 40,
+          "type": "door"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 3,
+          "from": 33,
+          "lock": 2,
+          "to": 62,
+          "type": "door"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 1,
+          "from": 34,
+          "lock": 0,
+          "to": 27,
+          "type": "arch"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 34,
+          "lock": 0,
+          "to": 41,
+          "type": "arch"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 2,
+          "from": 35,
+          "lock": 0,
+          "to": 36,
+          "type": "arch"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 36,
+          "lock": 0,
+          "to": 29,
+          "type": "door"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 3,
+          "from": 36,
+          "lock": 0,
+          "to": 35,
+          "type": "arch"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 37,
+          "lock": 1,
+          "to": 30,
+          "type": "grille"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 37,
+          "lock": 1,
+          "to": 44,
+          "type": "door"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 3,
+          "from": 37,
+          "lock": 1,
+          "to": 38,
+          "type": "door"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 1,
+          "from": 38,
+          "lock": 1,
+          "to": 39,
+          "type": "door"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 2,
+          "from": 38,
+          "lock": 1,
+          "to": 37,
+          "type": "door"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 3,
+          "from": 38,
+          "lock": 0,
+          "to": 49,
+          "type": "secret"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 39,
+          "lock": 2,
+          "to": 46,
+          "type": "door"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 39,
+          "lock": 0,
+          "to": 32,
+          "type": "arch"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 3,
+          "from": 39,
+          "lock": 1,
+          "to": 38,
+          "type": "door"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 40,
+          "lock": 0,
+          "to": 47,
+          "type": "arch"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 40,
+          "lock": 1,
+          "to": 33,
+          "type": "door"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 41,
+          "lock": 0,
+          "to": 34,
+          "type": "arch"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 41,
+          "lock": 0,
+          "to": 48,
+          "type": "arch"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 42,
+          "lock": 0,
+          "to": 49,
+          "type": "door"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 3,
+          "from": 42,
+          "lock": 0,
+          "to": 43,
+          "type": "grille"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 43,
+          "lock": 0,
+          "to": 50,
+          "type": "arch"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 3,
+          "from": 43,
+          "lock": 0,
+          "to": 42,
+          "type": "grille"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 44,
+          "lock": 1,
+          "to": 37,
+          "type": "door"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 3,
+          "from": 44,
+          "lock": 0,
+          "to": 45,
+          "type": "grille"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 2,
+          "from": 45,
+          "lock": 0,
+          "to": 44,
+          "type": "grille"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 3,
+          "from": 45,
+          "lock": 0,
+          "to": 52,
+          "type": "grille"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 1,
+          "from": 46,
+          "lock": 0,
+          "to": 53,
+          "type": "arch"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 46,
+          "lock": 0,
+          "to": 39,
+          "type": "door"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 1,
+          "from": 47,
+          "lock": 0,
+          "to": 54,
+          "type": "arch"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 47,
+          "lock": 0,
+          "to": 40,
+          "type": "arch"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 48,
+          "lock": 0,
+          "to": 41,
+          "type": "arch"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 48,
+          "lock": 0,
+          "to": 55,
+          "type": "arch"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 49,
+          "lock": 0,
+          "to": 42,
+          "type": "door"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 2,
+          "from": 49,
+          "lock": 0,
+          "to": 56,
+          "type": "door"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 3,
+          "from": 49,
+          "lock": 0,
+          "to": 38,
+          "type": "secret"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 50,
+          "lock": 0,
+          "to": 57,
+          "type": "door"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 50,
+          "lock": 0,
+          "to": 43,
+          "type": "arch"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 1,
+          "from": 51,
+          "lock": 1,
+          "to": 52,
+          "type": "door"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 2,
+          "from": 51,
+          "lock": 0,
+          "to": 61,
+          "type": "arch"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 3,
+          "from": 51,
+          "lock": 0,
+          "to": 11,
+          "type": "secret"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 2,
+          "from": 52,
+          "lock": 0,
+          "to": 45,
+          "type": "grille"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 3,
+          "from": 52,
+          "lock": 1,
+          "to": 51,
+          "type": "door"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 53,
+          "lock": 0,
+          "to": 54,
+          "type": "grille"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 3,
+          "from": 53,
+          "lock": 0,
+          "to": 46,
+          "type": "arch"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 54,
+          "lock": 0,
+          "to": 53,
+          "type": "grille"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 3,
+          "from": 54,
+          "lock": 0,
+          "to": 47,
+          "type": "arch"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 55,
+          "lock": 0,
+          "to": 48,
+          "type": "arch"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 3,
+          "from": 55,
+          "lock": 0,
+          "to": 56,
+          "type": "arch"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 1,
+          "from": 56,
+          "lock": 0,
+          "to": 55,
+          "type": "arch"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 3,
+          "from": 56,
+          "lock": 0,
+          "to": 49,
+          "type": "door"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 1,
+          "from": 57,
+          "lock": 0,
+          "to": 6,
+          "type": "grille"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 57,
+          "lock": 0,
+          "to": 50,
+          "type": "door"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 3,
+          "from": 57,
+          "lock": 1,
+          "to": 60,
+          "type": "door"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 3,
+          "from": 58,
+          "lock": 0,
+          "to": 9,
+          "type": "door"
+        },
+        {
+          "arrival": 2,
+          "exterior": false,
+          "facing": 2,
+          "from": 59,
+          "lock": 0,
+          "to": 15,
+          "type": "door"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 2,
+          "from": 60,
+          "lock": 1,
+          "to": 57,
+          "type": "door"
+        },
+        {
+          "arrival": 1,
+          "exterior": false,
+          "facing": 3,
+          "from": 61,
+          "lock": 0,
+          "to": 51,
+          "type": "arch"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 2,
+          "from": 62,
+          "lock": 1,
+          "to": 33,
+          "type": "door"
+        },
+        {
+          "arrival": 0,
+          "exterior": false,
+          "facing": 3,
+          "from": 63,
+          "lock": 0,
+          "to": 0,
+          "type": "secret"
+        }
+      ],
+      "disk_sector": 240,
+      "door_policy": "only source links between adjacent cells; a lock dot means at least one side is locked; types/locks can differ by side",
+      "drawn_door_pairs": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          9,
+          16
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          17
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          15,
+          22
+        ],
+        [
+          16,
+          23
+        ],
+        [
+          17,
+          18
+        ],
+        [
+          17,
+          24
+        ],
+        [
+          18,
+          25
+        ],
+        [
+          19,
+          20
+        ],
+        [
+          19,
+          26
+        ],
+        [
+          20,
+          21
+        ],
+        [
+          21,
+          22
+        ],
+        [
+          22,
+          29
+        ],
+        [
+          23,
+          24
+        ],
+        [
+          24,
+          31
+        ],
+        [
+          25,
+          26
+        ],
+        [
+          25,
+          32
+        ],
+        [
+          27,
+          28
+        ],
+        [
+          27,
+          34
+        ],
+        [
+          28,
+          29
+        ],
+        [
+          29,
+          36
+        ],
+        [
+          30,
+          31
+        ],
+        [
+          30,
+          37
+        ],
+        [
+          31,
+          32
+        ],
+        [
+          32,
+          39
+        ],
+        [
+          33,
+          40
+        ],
+        [
+          34,
+          41
+        ],
+        [
+          35,
+          36
+        ],
+        [
+          37,
+          38
+        ],
+        [
+          37,
+          44
+        ],
+        [
+          38,
+          39
+        ],
+        [
+          39,
+          46
+        ],
+        [
+          40,
+          47
+        ],
+        [
+          41,
+          48
+        ],
+        [
+          42,
+          43
+        ],
+        [
+          42,
+          49
+        ],
+        [
+          43,
+          50
+        ],
+        [
+          44,
+          45
+        ],
+        [
+          45,
+          52
+        ],
+        [
+          46,
+          53
+        ],
+        [
+          47,
+          54
+        ],
+        [
+          48,
+          55
+        ],
+        [
+          49,
+          56
+        ],
+        [
+          50,
+          57
+        ],
+        [
+          51,
+          52
+        ],
+        [
+          53,
+          54
+        ],
+        [
+          55,
+          56
+        ]
+      ],
+      "footer": {
+        "pit_byte_column": 35,
+        "pit_codes": "X=yes, -=no",
+        "room_byte_columns": [
+          14,
+          15
+        ],
+        "y": 164
+      },
+      "image_reference": "user supplied Amstrad plan: presentation inspiration only; no image pixels or Amstrad room data imported",
+      "layout": "ground 9..57 reversed columns; catacomb 1..8 perimeter cycle with isolated room 0 inset; upper 58..63 separate cards",
+      "limitations": [
+        "schematic orientation and distances; not a geographic survey",
+        "quest item overrides ordinary treasure in 1/62/63",
+        "cross-floor and secret links are text references; no transient enemy prediction",
+        "icons remain initial state after pickups, opening and lighting",
+        "composite color monitors can show HGR artifact fringes; no IIe software color-kill switch"
+      ],
+      "marker": {
+        "height": 9,
+        "rows_lsb_first": [
+          28,
+          62,
+          99,
+          107,
+          99,
+          62,
+          28,
+          8,
+          8
+        ],
+        "width": 7,
+        "x_offset": 21,
+        "y_offset": 2
+      },
+      "page_sha256": [
+        "6ca2cd7ff8547b4adb18e0a2b5ac6fca9635367587a9db602a5aa4345a301068",
+        "7cbfa5323c22e2c59ade6f5cea640e20235d123e59cf14be0d2a3202f71a579a",
+        "a18449df7a905f3ebb1110f5f8868a410c34581d39ecccabbb76be6c0e6fcae6"
+      ],
+      "pages": 3,
+      "position": "dynamic 7x9 white map pin beside room number; gameplay paused",
+      "sha256": "86292fdadd4a77d709d6a04e073db056efbed06d9b44c82a4d6ab47aa8961112",
+      "source": "Oric B2 $5600-$57FF; Room.decode; transition 4701-4710; door locks 10900-10990",
+      "static": true,
+      "video": "HGR one-bit MAIN, full-screen 280x192 in both game editions; bit 7 clear"
+    },
+    "hud": {
+      "adaptation": "source letter case retained; two description rows then two stats rows",
+      "description_addresses": [
+        "$5A00",
+        "$5A0B",
+        "$5A22",
+        "$5A32",
+        "$5A47",
+        "$5A58",
+        "$5A67",
+        "$5A78",
+        "$5A8D",
+        "$5A9F",
+        "$5AB3"
+      ],
+      "descriptions": [
+        "Vous etes ",
+        "dans la crypte sacree.",
+        "dans le donjon.",
+        "au sommet du donjon.",
+        "dans un couloir ",
+        "dans une salle",
+        "dans un passage ",
+        "dans les catacombes.",
+        "au premier etage.",
+        "au rez-de-chaussee.",
+        "au fond d'une oubliette."
+      ],
+      "hand_names": [
+        "",
+        "Torche",
+        "Clef en fer",
+        "Clef en or",
+        "Une fiole",
+        "Pied de biche"
+      ],
+      "source": "B2 4150-4170, 5700-5710, 11010-11520"
+    },
+    "native_blitter": {
+      "extra_bytes": 0,
+      "extra_sector": 336,
+      "format": "shared native 7-bit mask/pixel rows; runtime horizontal shift",
+      "row_bytes": 6474,
+      "sprites": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        67,
+        68,
+        69,
+        70,
+        71,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        91,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        110,
+        111,
+        36,
+        37,
+        72,
+        73
+      ],
+      "unique_rows": 758
+    },
+    "rom": {
+      "bytes": 16384,
+      "file": "research/sources/Oric/ROMS/basic10.rom",
+      "identity": "Oric-1 BASIC 1.0, matching MAME's basic10 ROM identity",
+      "mapping": "$C000-$FFFF",
+      "reference": "https://github.com/mamedev/mame/blob/master/src/mame/tangerine/oric.cpp",
+      "sha1": "333116e6884d85aaa4dfc7578a91cceeea66d016",
+      "sha256": "83d341dab126092f7a6d56f6a92bca0643ff3aa6529d896085004f958c9be2ff",
+      "variation": "$D000-$D03F"
+    },
+    "room_bitmaps": 0,
+    "source_atlas_records": [
+      {
+        "cpu_start": "$93B9",
+        "height": 18,
+        "id": 1,
+        "sha256": "42eac0135a468330108c6bf5a1b3559c4124ca6b6c55e25825de3092ad14f0f7",
+        "width_bytes": 4
+      },
+      {
+        "cpu_start": "$9375",
+        "height": 17,
+        "id": 2,
+        "sha256": "f05e38db0f58993b6db5cbf06fa68ee7114edcfb0d1224b96614993ca193580b",
+        "width_bytes": 4
+      },
+      {
+        "cpu_start": "$932D",
+        "height": 24,
+        "id": 3,
+        "sha256": "8b2a53e6d1ab2d1daf93feb75dd44717d739b0a8c8804962f3ec47ea2d8308da",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$92EE",
+        "height": 21,
+        "id": 4,
+        "sha256": "85f5e2f4a86184840cf726b6319755cc5d8af97fe0b801168ba35c6a5c430872",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$90FD",
+        "height": 71,
+        "id": 5,
+        "sha256": "c68c4f0c5e9a773bae9931a49624e46a615cd8902bf667cbb8ecc91c7b0bbcbb",
+        "width_bytes": 7
+      },
+      {
+        "cpu_start": "$8F3B",
+        "height": 90,
+        "id": 6,
+        "sha256": "24d424730e93f64b27ab628d7128fecaaba0c645b91de099f5e4b9692b89e080",
+        "width_bytes": 5
+      },
+      {
+        "cpu_start": "$8D79",
+        "height": 90,
+        "id": 7,
+        "sha256": "2fc0f6e657070d8eef9089dfb8b9dad2d10b24b432ec23b93dcc7c8daca9ffff",
+        "width_bytes": 5
+      },
+      {
+        "cpu_start": "$8C48",
+        "height": 61,
+        "id": 8,
+        "sha256": "76ee022db410b360641f035517fa25c0c3d488027c42bfab617e03f3e17e3f68",
+        "width_bytes": 5
+      },
+      {
+        "cpu_start": "$8B1C",
+        "height": 60,
+        "id": 9,
+        "sha256": "d1b4668d1ef5e213fb1de7d28e7748c497b44c33e4f9246b5e7a7aec5c5d41f1",
+        "width_bytes": 5
+      },
+      {
+        "cpu_start": "$8A3E",
+        "height": 74,
+        "id": 10,
+        "sha256": "ac9f75fd882307434b55762f3839c084202fe15da4119f064c77fcbd20f7be44",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$8984",
+        "height": 62,
+        "id": 11,
+        "sha256": "008cc53b54f481422db4f3dedbf257520247329f5f5fe71c120e953276fab562",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$88A6",
+        "height": 74,
+        "id": 12,
+        "sha256": "2904a33575ff014a4d01b942eb2a9f7ea87eef9685e5006f72f156a24c05a35f",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$87E3",
+        "height": 65,
+        "id": 13,
+        "sha256": "13ac6761b37c8baa0c212932d7b6bc1df4bfab0e9bab598e08cfecd43fa157de",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$87BF",
+        "height": 18,
+        "id": 14,
+        "sha256": "5761baba316a3d7f5477ebf7666db063c2a3afc7106fe9bcf91ee9dfcdca6126",
+        "width_bytes": 2
+      },
+      {
+        "cpu_start": "$879D",
+        "height": 17,
+        "id": 15,
+        "sha256": "9c92df82461dd58a0465e7bfc9f9883630a391a5a6d740bedaa5f8bf70a46213",
+        "width_bytes": 2
+      },
+      {
+        "cpu_start": "$8752",
+        "height": 15,
+        "id": 16,
+        "sha256": "e22a5b18fd411fdb35cbd3965f55a4780fed76e0ce2a1a400d20cce092108114",
+        "width_bytes": 5
+      },
+      {
+        "cpu_start": "$86AD",
+        "height": 55,
+        "id": 17,
+        "sha256": "4426fb67cb2aab6b2dd4bffc3ed05d3adf62d2997631d7232f4618ff8778b59a",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$8608",
+        "height": 55,
+        "id": 18,
+        "sha256": "05f8874e2e4ee7d38746345fc7286451e914bdcb17d5e7f45814158d151fdf83",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$845A",
+        "height": 50,
+        "id": 20,
+        "sha256": "249d5fa1f036485cb25bd0db0335c180dba9672dfc86675f192acd3f9859e865",
+        "width_bytes": 7
+      },
+      {
+        "cpu_start": "$840C",
+        "height": 26,
+        "id": 21,
+        "sha256": "ad0011c69d5b416fc71930532148d55321436e1ad93e2b37310ab43b4305b103",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$83C4",
+        "height": 24,
+        "id": 22,
+        "sha256": "4ba251ce2d91fced846f3d147346430f0f39765243865da2fa04baf928c0e709",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$8349",
+        "height": 41,
+        "id": 23,
+        "sha256": "56f8783453df41a08e025a116fbced88c616c3b367a009819b5ff5e1fc0fa410",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$81CF",
+        "height": 42,
+        "id": 24,
+        "sha256": "5eb042c5bf0bda66389d7e646870818a16f407ae1df646475f60f1804896afbb",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$824D",
+        "height": 36,
+        "id": 25,
+        "sha256": "dbe411c71312f111df852ec1cc8794f1a6bcaf3f21a504bf85bf6cb9d69e6f71",
+        "width_bytes": 7
+      },
+      {
+        "cpu_start": "$8139",
+        "height": 30,
+        "id": 26,
+        "sha256": "8dfad45606e87a0f1518b7983d16cb7b7bf71d3c2040a73a0d06b4d656b1a4bd",
+        "width_bytes": 5
+      },
+      {
+        "cpu_start": "$8049",
+        "height": 40,
+        "id": 27,
+        "sha256": "99ae0760dd5f605085ca601e62f3493cbfa10ab91ec36a2aace0410f043388fd",
+        "width_bytes": 6
+      },
+      {
+        "cpu_start": "$7FB9",
+        "height": 16,
+        "id": 28,
+        "sha256": "b30980775b9feb32c803c061ae96b72d8ac7fab15c8ece9fee452d114b70a909",
+        "width_bytes": 9
+      },
+      {
+        "cpu_start": "$7F23",
+        "height": 15,
+        "id": 29,
+        "sha256": "18426f94aae68f26f2a3d12111f6f7c8b01bf2baba7dd2af4ad6bd06fac34797",
+        "width_bytes": 10
+      },
+      {
+        "cpu_start": "$7EC4",
+        "height": 19,
+        "id": 30,
+        "sha256": "ccf56897375be8a24fbc70e06039b18c72f6fa8a2dcacba90a81945834ed4e07",
+        "width_bytes": 5
+      },
+      {
+        "cpu_start": "$7E56",
+        "height": 22,
+        "id": 31,
+        "sha256": "ac79516216bee6e9d056a6efbad6e8ecab71c2970db18bf140f96c296e1693be",
+        "width_bytes": 5
+      },
+      {
+        "cpu_start": "$7E4F",
+        "height": 7,
+        "id": 32,
+        "sha256": "4bd7aa7cebfcb2d6d6ddcb4c73de98572a1dfef4fb7e5828dd3e77771005581e",
+        "width_bytes": 1
+      },
+      {
+        "cpu_start": "$7E2B",
+        "height": 9,
+        "id": 33,
+        "sha256": "96dc7b85b6b566ff27cab87bf04e66588ae82efb73f0e841e4dc9253cf0f569a",
+        "width_bytes": 4
+      },
+      {
+        "cpu_start": "$7DFE",
+        "height": 15,
+        "id": 34,
+        "sha256": "692f528ba647f0fd33deb7091b5aa6bf8c95008be18d2ef35eaa9c16a97d68e0",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$7DC6",
+        "height": 14,
+        "id": 35,
+        "sha256": "086f59252768b178c412b930e55701711a52964526d8b11e22559e2266defe1c",
+        "width_bytes": 4
+      },
+      {
+        "cpu_start": "$7D90",
+        "height": 18,
+        "id": 36,
+        "sha256": "eb99022821943a8e37f318fb0baf66294ce64d27675b5decefc389cf2bfd3263",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$7D5A",
+        "height": 18,
+        "id": 37,
+        "sha256": "801a7a4f48bb3704319b871e842546f09cb49663d0977e508279a967784d252f",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$7D48",
+        "height": 6,
+        "id": 38,
+        "sha256": "61e065d036a60e9bcf60e7ef62fd3a2e2918e5334f71837ca743cb41f221f181",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$7CAD",
+        "height": 31,
+        "id": 40,
+        "sha256": "fc853c4b73e3869dd43d4a9be749ea45f336938ec6e697f78312e54a646fad11",
+        "width_bytes": 5
+      },
+      {
+        "cpu_start": "$7C31",
+        "height": 31,
+        "id": 41,
+        "sha256": "eda289352670b244290a3debe0dce24c6dc3daf7d3234321a2fd560479d341ca",
+        "width_bytes": 4
+      },
+      {
+        "cpu_start": "$7BB5",
+        "height": 31,
+        "id": 42,
+        "sha256": "3c0d946f6eb97a83c155f10a63e01863133a0d85d3394c63dc33d9fba44a80ef",
+        "width_bytes": 4
+      },
+      {
+        "cpu_start": "$7B1A",
+        "height": 31,
+        "id": 43,
+        "sha256": "034982cd93c46ef9c4f9dfc7aeceebadfe71f47889bd081e34e01f414a2ccd49",
+        "width_bytes": 5
+      },
+      {
+        "cpu_start": "$73BA",
+        "height": 24,
+        "id": 44,
+        "sha256": "7467196c2e1152257a72e3e6b77ba43e1e7d96ef4cc5fddc2eff4fb251762a91",
+        "width_bytes": 7
+      },
+      {
+        "cpu_start": "$732A",
+        "height": 24,
+        "id": 45,
+        "sha256": "445e0a851cabb42b9376f8d804b559e37004da41864233d4ebc1fc79fe39ae35",
+        "width_bytes": 6
+      },
+      {
+        "cpu_start": "$7AB2",
+        "height": 26,
+        "id": 46,
+        "sha256": "585b5829e89d8d6bf21a9137b144f6e073b5f4bc89460aa04eec208a13b21e9c",
+        "width_bytes": 4
+      },
+      {
+        "cpu_start": "$7A4A",
+        "height": 26,
+        "id": 47,
+        "sha256": "2ca1d2774b3ef9d4bfa5a7329be39471e229c6460fe4273a5f461f48432e9b15",
+        "width_bytes": 4
+      },
+      {
+        "cpu_start": "$79E2",
+        "height": 26,
+        "id": 48,
+        "sha256": "979589e10a95b2383cf9b68dcbd0c275a84ec79773c6160f6684a7c19eded3af",
+        "width_bytes": 4
+      },
+      {
+        "cpu_start": "$797A",
+        "height": 26,
+        "id": 49,
+        "sha256": "9ac97188e082c091ddc545e6bebfc8c17969b09fc205155fea96281ef7e25e80",
+        "width_bytes": 4
+      },
+      {
+        "cpu_start": "$7912",
+        "height": 26,
+        "id": 50,
+        "sha256": "0b14eb634e778a823a70b03119e641924e0490eaacfeda3790f79d67b9d351a3",
+        "width_bytes": 4
+      },
+      {
+        "cpu_start": "$7890",
+        "height": 26,
+        "id": 51,
+        "sha256": "b52bc40d9427d2c80b63f7613a26e84e952f14c14677d156f180d571a7575f88",
+        "width_bytes": 5
+      },
+      {
+        "cpu_start": "$780E",
+        "height": 26,
+        "id": 52,
+        "sha256": "6b0910da3c835d7103572570714f8970edd7a1d1a67deae962c7b03b65c1586a",
+        "width_bytes": 5
+      },
+      {
+        "cpu_start": "$77A6",
+        "height": 26,
+        "id": 53,
+        "sha256": "8b69bf5dc79460555d21c45d358570cd34630e6883328c72f1f6f03c69d9e9a7",
+        "width_bytes": 4
+      },
+      {
+        "cpu_start": "$773E",
+        "height": 26,
+        "id": 54,
+        "sha256": "1f2b4a88ba678dea4c088d59d3d7935ce9ee7c558b3b7b696dbb3ce16d51fa66",
+        "width_bytes": 4
+      },
+      {
+        "cpu_start": "$76BC",
+        "height": 26,
+        "id": 55,
+        "sha256": "e57b63addb5faebb5d15349ba09d15f29d8dc5706ab6d5076e5945ee34b63929",
+        "width_bytes": 5
+      },
+      {
+        "cpu_start": "$763A",
+        "height": 26,
+        "id": 56,
+        "sha256": "eaaa2ecf62c8276c2a4543f49c7e8bc06947b3ac2f114db25fbbd878e021b4e7",
+        "width_bytes": 5
+      },
+      {
+        "cpu_start": "$75D2",
+        "height": 26,
+        "id": 57,
+        "sha256": "2c6603b99f464da8e17eecf5f46179aa8e78b67ad19572c7a4e50effd099bd34",
+        "width_bytes": 4
+      },
+      {
+        "cpu_start": "$7572",
+        "height": 16,
+        "id": 58,
+        "sha256": "f6e87a6a5b4107dcc3d7a260d4816e179c9b1878fe0e9f0b5847d7336f073035",
+        "width_bytes": 6
+      },
+      {
+        "cpu_start": "$7512",
+        "height": 16,
+        "id": 59,
+        "sha256": "c5ffb5f518de4d716534e05fb07f1d4d10167fedc3c3d8f153e741e194da1d52",
+        "width_bytes": 6
+      },
+      {
+        "cpu_start": "$74C2",
+        "height": 16,
+        "id": 60,
+        "sha256": "de86ef3d412a600a5013c6062c5ffa1b09517ebb642200c51fef8962ba36b5e5",
+        "width_bytes": 5
+      },
+      {
+        "cpu_start": "$7462",
+        "height": 16,
+        "id": 61,
+        "sha256": "bc1c5147768a12a616bb5b91748c8b7bdc87826f5a76fbe7727c6c06c651a37c",
+        "width_bytes": 6
+      },
+      {
+        "cpu_start": "$728A",
+        "height": 20,
+        "id": 62,
+        "sha256": "1a5c5355618f4ca00da30462978f3a79b75de3f95a18ab056d9e75da9a34b5a5",
+        "width_bytes": 8
+      },
+      {
+        "cpu_start": "$71CD",
+        "height": 21,
+        "id": 63,
+        "sha256": "012e203f99d54eefbd1b80a7d61b809c1c0d972bfd748d8a5bbe18776ee55050",
+        "width_bytes": 9
+      },
+      {
+        "cpu_start": "$71AB",
+        "height": 17,
+        "id": 64,
+        "sha256": "ce1b6b4e669e383da79b87d75657fc901afaab0769359888ed991656fb5e90af",
+        "width_bytes": 2
+      },
+      {
+        "cpu_start": "$718B",
+        "height": 16,
+        "id": 65,
+        "sha256": "ebd8e08f9aa12fbd207d0a87f2eefb6292aa0ce6639de0364376721ed0bacc55",
+        "width_bytes": 2
+      },
+      {
+        "cpu_start": "$7169",
+        "height": 17,
+        "id": 67,
+        "sha256": "0134234dcae3857784201eaa958ab39c4467b172ecdbe1e1c20927c95a6154c2",
+        "width_bytes": 2
+      },
+      {
+        "cpu_start": "$711E",
+        "height": 25,
+        "id": 68,
+        "sha256": "736b359f61ca2a9fea16a0f9c1e41dd45298630c03b0b75be5729bf0d62617eb",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$70D0",
+        "height": 26,
+        "id": 69,
+        "sha256": "d7632c6a87ec46537f90b9fba4789b8d98fba45aed709aee673094dd16d3b318",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$708B",
+        "height": 23,
+        "id": 70,
+        "sha256": "57d5f21efa1d5fdd1e8b4eb1342a8892294b1e5c9ef0847f4a160514b9696d49",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$7061",
+        "height": 21,
+        "id": 71,
+        "sha256": "76b96851ed367830d67f55517904ea07406543ffb7880df135a4414d1de1a094",
+        "width_bytes": 2
+      },
+      {
+        "cpu_start": "$705B",
+        "height": 6,
+        "id": 72,
+        "sha256": "3b76dae794b67693dd191f53b0c8f05394ac437193f37c6344cd1e643b9db394",
+        "width_bytes": 1
+      },
+      {
+        "cpu_start": "$7055",
+        "height": 6,
+        "id": 73,
+        "sha256": "d9b6baecab4de6e35a4121f610487eaf6df6c92671754123e7fd99a5c725c47c",
+        "width_bytes": 1
+      },
+      {
+        "cpu_start": "$7033",
+        "height": 17,
+        "id": 74,
+        "sha256": "022055a9e0b206be8a8940894a9c84f6650bb97f5aa5d3b697bc8d9e858aa0b1",
+        "width_bytes": 2
+      },
+      {
+        "cpu_start": "$7003",
+        "height": 16,
+        "id": 75,
+        "sha256": "18cb7634c9df49b67631fd1194a108699236976acaef2353e236527e9a0a1e27",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$6FF5",
+        "height": 7,
+        "id": 76,
+        "sha256": "53b2e4c1605f82bb89292f0a7f70a249ba9ad552de7ef1b60ffd56bc7df49cb1",
+        "width_bytes": 2
+      },
+      {
+        "cpu_start": "$6FD1",
+        "height": 18,
+        "id": 77,
+        "sha256": "e1528d56d5f15ed99616728e8b38357bef676f8a6c82d832b83d4bf86d4d766c",
+        "width_bytes": 2
+      },
+      {
+        "cpu_start": "$6F98",
+        "height": 19,
+        "id": 78,
+        "sha256": "e0f88b660acc5a031a62c7dbcab2ee532d404dfc8e4631f25204c72f1c9d8cfb",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$6F60",
+        "height": 14,
+        "id": 79,
+        "sha256": "78369864dfd24e7a73469d6816ee16802a7040fdeff48ab049568fd80f0b864e",
+        "width_bytes": 4
+      },
+      {
+        "cpu_start": "$6F3F",
+        "height": 11,
+        "id": 80,
+        "sha256": "ab06dce748e4b115da5bd82bb0d2652fe81342289f656eb460c6c69e54f1674b",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$6F06",
+        "height": 19,
+        "id": 81,
+        "sha256": "e49e394391f3d0d12071810bf6be71b1909cb836dd0779315c7c839e3171fc13",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$6ED0",
+        "height": 18,
+        "id": 82,
+        "sha256": "92916ea0553a5bc49d27aad79dab4dd464363b68ab8432276d125c7b3540f303",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$6EA0",
+        "height": 16,
+        "id": 83,
+        "sha256": "6b15e0741680b4acff18866000d2c867ec3210153a9dc33e67032718eb39e767",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$6E6D",
+        "height": 17,
+        "id": 84,
+        "sha256": "87ef8dfa07d651aa91f790f49f4a1f2b3df9679f80f89d4dad45f29f796ce8fa",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$6E29",
+        "height": 17,
+        "id": 85,
+        "sha256": "fb9e62ff8a9f531a4a710ba660b4136a28673606d0202de5e79e4bb34e0d5a05",
+        "width_bytes": 4
+      },
+      {
+        "cpu_start": "$6E11",
+        "height": 8,
+        "id": 86,
+        "sha256": "3065bfa3103388f3de6abb7abe414cb4fcbd819f28a0167f6a3e5559af91e225",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$6DDB",
+        "height": 18,
+        "id": 87,
+        "sha256": "ad3a1bbef2ce8e34460d990857274bb264e0a59d14d139e68f02e50e164734f3",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$6D8D",
+        "height": 26,
+        "id": 88,
+        "sha256": "8664382255dcf07202975b14ceca6ec5205bb1b7c8ec63aa97ca3bf3019b2ef8",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$6D5A",
+        "height": 17,
+        "id": 89,
+        "sha256": "7c2d440b7f4ef66abb5db7456e1999a41a6b5512f5a2268750a9d25cdad990fb",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$6D27",
+        "height": 17,
+        "id": 90,
+        "sha256": "97167c407a3c9aa1342d0aeb5f2f7e5114d061a3adb9f2f734b988ea7c142239",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$6C6D",
+        "height": 31,
+        "id": 91,
+        "sha256": "0a8f13d779c2cd24b4d60419f084032b1d1d8fc37e46563eb21edcc74e359bf9",
+        "width_bytes": 6
+      },
+      {
+        "cpu_start": "$6B65",
+        "height": 13,
+        "id": 93,
+        "sha256": "6f699c5cee2c6ba06ed50ac658e7f3e78db3f8ec3348919469896caf06d87acb",
+        "width_bytes": 6
+      },
+      {
+        "cpu_start": "$6B3E",
+        "height": 13,
+        "id": 94,
+        "sha256": "edde14f0a033bcca4d1a89ff2dd73fe6dd10733cc0954337d8a94781d22b0932",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$6B17",
+        "height": 13,
+        "id": 95,
+        "sha256": "20b74adaffccde72ee0b91d9c968556cdc1f8705c77e8b20cdb53a1c936ba3fc",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$6AFB",
+        "height": 7,
+        "id": 96,
+        "sha256": "50003bf71a7c9c2c19fcfc142a73a4861a063b074df2911803388b599ad5e3f2",
+        "width_bytes": 4
+      },
+      {
+        "cpu_start": "$6ADF",
+        "height": 7,
+        "id": 97,
+        "sha256": "72abbfb929a1d0c990d87ac0f437711fc61186a4f4348002a154e34510b9f0fe",
+        "width_bytes": 4
+      },
+      {
+        "cpu_start": "$6AB8",
+        "height": 13,
+        "id": 98,
+        "sha256": "0b2c32656f321b693e3b567e47c2eb2bbbcf7fd68af96db45746a5fa37f0a63d",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$6A8B",
+        "height": 15,
+        "id": 99,
+        "sha256": "b8d4c9bcde386b0cf174ab8a7005b7c19a285885270c2ed504aa00be2fb2e5cb",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$6A64",
+        "height": 13,
+        "id": 100,
+        "sha256": "2a3566e784759bd3a304c26df5bf850ae8caa5a3c2902259294877d1c6c716cb",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$6A37",
+        "height": 15,
+        "id": 101,
+        "sha256": "f8b7a4d8da3e6caec21d53398856c1d63a3ba75b40d2c305cbb04c85415d4982",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$6A04",
+        "height": 17,
+        "id": 102,
+        "sha256": "2796f34239059be756283bb8abcc1cd4f153002cfaa379611fe1f33a2ff494f0",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$69D1",
+        "height": 17,
+        "id": 103,
+        "sha256": "5ab6e29fe3b9339f85508a0c6480d5dd3c5987d6997f7e74d7849aed78c29bd9",
+        "width_bytes": 3
+      },
+      {
+        "cpu_start": "$68AB",
+        "height": 20,
+        "id": 110,
+        "sha256": "ff0271ba522a2a4a8c6da8aaf59714ff9896a6d5257d4620eebaf78c97ea0cab",
+        "width_bytes": 7
+      },
+      {
+        "cpu_start": "$682D",
+        "height": 18,
+        "id": 111,
+        "sha256": "c5dd56048e68357cff660abf3d665d11044b80001ce354a626070a06ecb3faec",
+        "width_bytes": 7
+      },
+      {
+        "cpu_start": "$664A",
+        "height": 69,
+        "id": 112,
+        "sha256": "26d94a9519a8885c7886db794de976d3ef7bd83139a281ba485edaea70868944",
+        "width_bytes": 7
+      },
+      {
+        "cpu_start": "$6524",
+        "height": 49,
+        "id": 113,
+        "sha256": "80d073eeeb620211fc89283bd0b95a6c055a18577d9daf4e8a06415c425185f7",
+        "width_bytes": 6
+      }
+    ],
+    "static_atlas_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      72,
+      73,
+      90,
+      93,
+      112,
+      113
+    ],
+    "target_scenery_art": "original Oric dots/masks, grilles and actors; B2 398 single-dot cue",
+    "text_panels": {
+      "adaptations": "source letter case retained, whitespace/reflow, 24 rows; Apple help keys/T command; spaced two-column inventory and hidden development menu are new target text",
+      "aux_start": "$1400",
+      "bytes": 2768,
+      "disk_sector": 224,
+      "offsets": {
+        "code_load": 2187,
+        "code_save": 1941,
+        "dead": 2434,
+        "debug": 1714,
+        "depart": 2661,
+        "exterior": 483,
+        "help": 1129,
+        "intro": 0,
+        "inventory": 858,
+        "merchant": 624,
+        "name": 1560,
+        "win": 2547
+      },
+      "panels": {
+        "code_load": [
+          [
+            2,
+            9,
+            "Reprendre une aventure"
+          ],
+          [
+            5,
+            2,
+            "Saisissez les 18 caracteres du code."
+          ],
+          [
+            9,
+            10,
+            "______-______-______"
+          ],
+          [
+            12,
+            2,
+            "Le nom saisi au debut sera conserve."
+          ],
+          [
+            15,
+            1,
+            "Or, force et salles : nouvelle partie."
+          ],
+          [
+            18,
+            11,
+            "Entree : reprendre"
+          ],
+          [
+            19,
+            8,
+            "Retour arriere : effacer"
+          ],
+          [
+            22,
+            6,
+            "Echap: annuler   H / ?: aide"
+          ]
+        ],
+        "code_save": [
+          [
+            2,
+            12,
+            "Code de reprise"
+          ],
+          [
+            5,
+            5,
+            "Piece et inventaire uniquement"
+          ],
+          [
+            7,
+            2,
+            "Notez les 18 caracteres ci-dessous :"
+          ],
+          [
+            9,
+            10,
+            "______-______-______"
+          ],
+          [
+            12,
+            1,
+            "Le nom sera saisi au prochain depart."
+          ],
+          [
+            15,
+            0,
+            "Or, force et salles ne sont pas sauves."
+          ],
+          [
+            20,
+            4,
+            "Espace / Entree / Echap : retour"
+          ],
+          [
+            23,
+            14,
+            "H / ? : aide"
+          ]
+        ],
+        "dead": [
+          [
+            4,
+            0,
+            "L'Aigle d'Or             Or:00000"
+          ],
+          [
+            8,
+            0,
+            "Vous avez perdu"
+          ],
+          [
+            9,
+            0,
+            "Votre aventure est terminee"
+          ],
+          [
+            10,
+            0,
+            "O ou Entree: nouvel essai"
+          ]
+        ],
+        "debug": [
+          [
+            1,
+            14,
+            "Menu de test"
+          ],
+          [
+            4,
+            3,
+            "1: Tous les objets (9 consommables)"
+          ],
+          [
+            6,
+            3,
+            "2: Teleportation"
+          ],
+          [
+            7,
+            3,
+            "3: Carte du chateau"
+          ],
+          [
+            9,
+            3,
+            "Salle actuelle: 00"
+          ],
+          [
+            12,
+            3,
+            "Destination: __  (0-63)"
+          ],
+          [
+            14,
+            3,
+            "2 puis numero et Entree"
+          ],
+          [
+            15,
+            3,
+            "Retour arriere: corriger"
+          ],
+          [
+            23,
+            5,
+            "Echap / Ctrl+D: retour au jeu"
+          ]
+        ],
+        "depart": [
+          [
+            4,
+            0,
+            "L'Aigle d'Or             Or:00000"
+          ],
+          [
+            8,
+            0,
+            "Fin du voyage"
+          ],
+          [
+            9,
+            0,
+            "Vous quittez le chateau"
+          ],
+          [
+            10,
+            0,
+            "O ou Entree: nouvel essai"
+          ]
+        ],
+        "exterior": [
+          [
+            1,
+            10,
+            "Exterieur du chateau"
+          ],
+          [
+            7,
+            5,
+            "1. Entrer dans le chateau."
+          ],
+          [
+            10,
+            5,
+            "2. Partir."
+          ],
+          [
+            13,
+            5,
+            "3. Aller chez le marchand"
+          ],
+          [
+            16,
+            5,
+            "4. Reprendre avec un code"
+          ],
+          [
+            23,
+            12,
+            "H / ?: commandes"
+          ]
+        ],
+        "help": [
+          [
+            1,
+            15,
+            "Commandes"
+          ],
+          [
+            3,
+            2,
+            "Fleches: Marcher,tourner"
+          ],
+          [
+            4,
+            2,
+            "Espace: Arret, position neutre"
+          ],
+          [
+            5,
+            2,
+            "A: Accroupir"
+          ],
+          [
+            6,
+            2,
+            "B: Boire"
+          ],
+          [
+            7,
+            2,
+            "S: Sauter (longueur)"
+          ],
+          [
+            8,
+            2,
+            "D: Sauter (hauteur)"
+          ],
+          [
+            9,
+            2,
+            "G: Grimper"
+          ],
+          [
+            10,
+            2,
+            "I: Inventaire"
+          ],
+          [
+            11,
+            2,
+            "L: Lire"
+          ],
+          [
+            12,
+            2,
+            "O: Ouvrir"
+          ],
+          [
+            13,
+            2,
+            "P: Prendre"
+          ],
+          [
+            14,
+            2,
+            "Q: Suicide"
+          ],
+          [
+            15,
+            2,
+            "T: Allumer une torche"
+          ],
+          [
+            16,
+            2,
+            "H / ?: Cette aide"
+          ],
+          [
+            17,
+            2,
+            "C: Code de reprise"
+          ],
+          [
+            18,
+            2,
+            "Objet en main:"
+          ],
+          [
+            19,
+            2,
+            "0: Vide             1: Torche"
+          ],
+          [
+            20,
+            2,
+            "2: Clef en fer      3: Clef en or"
+          ],
+          [
+            21,
+            2,
+            "4: Fiole            5: Pied de biche"
+          ],
+          [
+            23,
+            11,
+            "Une touche: retour"
+          ]
+        ],
+        "intro": [
+          [
+            0,
+            14,
+            "L'Aigle d'Or"
+          ],
+          [
+            2,
+            2,
+            "Apres plusieurs jours de cheval,"
+          ],
+          [
+            3,
+            2,
+            "vous arrivez enfin en vue du Chateau"
+          ],
+          [
+            4,
+            2,
+            "de l'Aigle, situe aux confins de la"
+          ],
+          [
+            5,
+            2,
+            "Wesphalie."
+          ],
+          [
+            7,
+            2,
+            "Une vieille legende du pays pretend"
+          ],
+          [
+            8,
+            2,
+            "que le chateau recelle des tresors"
+          ],
+          [
+            9,
+            2,
+            "et richesses inestimables! Vous"
+          ],
+          [
+            10,
+            2,
+            "voulez aussi tenter votre chance,"
+          ],
+          [
+            11,
+            2,
+            "bien que nombreux furent ceux qui"
+          ],
+          [
+            12,
+            2,
+            "perirent..."
+          ],
+          [
+            14,
+            2,
+            "Pour mener a bien votre quete, il"
+          ],
+          [
+            15,
+            2,
+            "vous faudra acquerir les trois"
+          ],
+          [
+            16,
+            2,
+            "valeurs: Fortune, Sagesse et"
+          ],
+          [
+            17,
+            2,
+            "Puissance"
+          ],
+          [
+            23,
+            4,
+            "Une touche: suite    H / ?: aide"
+          ]
+        ],
+        "inventory": [
+          [
+            1,
+            15,
+            "Inventaire"
+          ],
+          [
+            3,
+            2,
+            "En main : Vide"
+          ],
+          [
+            5,
+            2,
+            "Provisions"
+          ],
+          [
+            5,
+            22,
+            "Equipement"
+          ],
+          [
+            7,
+            2,
+            "Fioles"
+          ],
+          [
+            9,
+            2,
+            "Torches"
+          ],
+          [
+            11,
+            2,
+            "Cordes"
+          ],
+          [
+            13,
+            2,
+            "Pieds de biche"
+          ],
+          [
+            7,
+            22,
+            "Clef en fer"
+          ],
+          [
+            9,
+            22,
+            "Clef en or"
+          ],
+          [
+            11,
+            22,
+            "Bague"
+          ],
+          [
+            13,
+            22,
+            "Aigle (plomb)"
+          ],
+          [
+            15,
+            12,
+            "Objets de quete"
+          ],
+          [
+            17,
+            2,
+            "Livre"
+          ],
+          [
+            17,
+            22,
+            "Diamant"
+          ],
+          [
+            19,
+            2,
+            "Aigle d'or"
+          ],
+          [
+            19,
+            22,
+            "Parchemins"
+          ],
+          [
+            19,
+            36,
+            "0/3"
+          ],
+          [
+            22,
+            4,
+            "Espace / Entree / Echap : retour"
+          ],
+          [
+            23,
+            14,
+            "H / ? : aide"
+          ]
+        ],
+        "merchant": [
+          [
+            2,
+            11,
+            "Le marchand vend :"
+          ],
+          [
+            6,
+            4,
+            "1. Fioles         : 360 p.o."
+          ],
+          [
+            7,
+            7,
+            "(Eau de Jouvence)"
+          ],
+          [
+            9,
+            4,
+            "2. Torches        : 190 p.o."
+          ],
+          [
+            11,
+            4,
+            "3. Cordes         : 110 p.o."
+          ],
+          [
+            13,
+            4,
+            "4. Pieds de biche : 230 p.o."
+          ],
+          [
+            16,
+            4,
+            "0. Partir"
+          ],
+          [
+            18,
+            3,
+            "Pieces d'or: 00000"
+          ],
+          [
+            20,
+            3,
+            "Achat ? (0-4)"
+          ],
+          [
+            23,
+            12,
+            "H / ?: commandes"
+          ]
+        ],
+        "name": [
+          [
+            4,
+            14,
+            "L'Aigle d'Or"
+          ],
+          [
+            7,
+            8,
+            "Comment t'appelles-tu ?"
+          ],
+          [
+            10,
+            7,
+            "Nom: ______"
+          ],
+          [
+            13,
+            7,
+            "Six caracteres au maximum"
+          ],
+          [
+            15,
+            9,
+            "Entree pour continuer"
+          ],
+          [
+            16,
+            6,
+            "Retour arriere pour corriger"
+          ],
+          [
+            23,
+            14,
+            "?: Commandes"
+          ]
+        ],
+        "win": [
+          [
+            4,
+            0,
+            "L'Aigle d'Or             Or:00000"
+          ],
+          [
+            8,
+            0,
+            "Vous avez reuni les trois objectifs"
+          ],
+          [
+            9,
+            0,
+            "Victoire"
+          ],
+          [
+            10,
+            0,
+            "O ou Entree: nouvel essai"
+          ]
+        ]
+      },
+      "sha256": "4c9d2d7ad4eab9adb0894fa27aa8751edc1a3cfbbb5f98557aa07ecc29bbb265",
+      "source_b1_lines": [
+        1515,
+        1520,
+        1530,
+        1540,
+        1550,
+        1560,
+        1570,
+        1620,
+        1630,
+        1650,
+        1660,
+        1670,
+        1680,
+        1685,
+        1687
+      ],
+      "source_b2_lines": [
+        3005,
+        3010,
+        3015,
+        13000,
+        13010,
+        13015,
+        13020,
+        13030,
+        13035
+      ]
+    },
+    "title": {
+      "conversion": "Oric foreground dots at x+20; 190->160 title rows; original captured-font credits and native-height keyboard prompt",
+      "cpu_range": "$1801-$3740",
+      "palette": "monochrome; ink/paper cells transparent; equal ink/paper hides lightning",
+      "patch_bytes": 766,
+      "raster_bytes": 8192,
+      "raster_sha256": "70f470f8ab3a3014932e202108ccf9b6d7ab0d665b2ce72514fc3d63f445c711",
+      "source_block": "B1",
+      "source_sha256": "ddecd947a8c037658702d8f17057633dd829781f4d45c9c1cae4fa04df8b1b6c",
+      "timing": "target frame counter; original WAIT/audio timing not reproduced"
+    },
+    "variation_bytes": 64,
+    "world_bytes": 512
+  },
+  "stage": "world-game",
+  "text_bytes": 2768,
+  "text_sector": 224,
+  "text_sha256": "4c9d2d7ad4eab9adb0894fa27aa8751edc1a3cfbbb5f98557aa07ecc29bbb265",
+  "title_bytes": 8192,
+  "title_sector": 192,
+  "title_sha256": "70f470f8ab3a3014932e202108ccf9b6d7ab0d665b2ce72514fc3d63f445c711",
+  "tools": {
+    "ca65": "ca65 V2.18 - V2.19",
+    "ld65": "ld65 V2.18 - V2.19"
+  },
+  "validation": "assembled/packaged; execution evidence recorded separately",
+  "video_profile": "mono"
+}

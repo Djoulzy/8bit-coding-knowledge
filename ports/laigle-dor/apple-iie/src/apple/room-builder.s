@@ -24,6 +24,8 @@ world_load_scene:
     ; Construct the new immutable baseline while the previous frame stays visible.
     lda #$FF
     sta line_pattern
+    lda #15
+    sta scene_ink
     lda in_pit
     beq @room_decode
     lda #0
@@ -60,9 +62,11 @@ world_load_scene:
 @clear:
     lda #0
     sta (dst_ptr),y
+.if !HGR_MONO
     sta $C005
     sta (dst_ptr),y
     sta $C004
+.endif
     iny
     bne @clear
     inc dst_ptr+1
@@ -146,12 +150,14 @@ full_prepare_page:
     sta render_bank
     lda draw_page_hi
     jsr init_page
+.if !HGR_MONO
     lda #1
     sta render_bank
     sta $C005
     lda draw_page_hi
     jsr init_page
     sta $C004
+.endif
     ldx render_page_index
     lda title_page_bits,x
     eor #$FF
@@ -212,8 +218,18 @@ scene_upper:
     lda room_fields+3
     and #1
     beq @done
+.if HGR_MONO
+    ; Original B2 398 point, without the enlarged DHGR marker.
+    lda #107
+    sta line_x
+    lda #108
+    sta line_y
+    jsr scene_point
+.else
     ; B2 398/10907 cue, enlarged on the right pillar for native DHGR.
     stamp 200,126,103,0
+.endif
+    jsr scene_secret_open
 @done:
     rts
 scene_left:
@@ -854,11 +870,13 @@ scene_point:
     lda line_x
     cmp #240
     bcs @done
+.if !HGR_MONO
     lsr a
     clc
     adc #10
+.endif
     sta cell_x
-    lda #15
+    lda scene_ink
     sta cell_color
     jmp draw_cell
 @done:
@@ -866,12 +884,13 @@ scene_point:
 @pattern_skip:
     sta line_pattern
     rts
-.segment "CODE"
+.segment "RODATA"
 floor_dx: .byte 0,0,18,36,18
 floor_y: .byte 0,176,170,176,184
 treasure_ids: .byte 0,35,32,33,33,34,38,30
 treasure_x: .byte 0,36,42,30,30,36,36,42
 treasure_y: .byte 0,153,153,153,153,143,153,140
+.segment "CODE"
 wire_right: .byte 1,164,40,164,110,1,162,80,162,130,0
 wire_left: .byte 1,95,133,88,148,1,88,148,81,163,1,81,163,74,178,1,74,178,67,193,0
 
@@ -904,10 +923,18 @@ scene_pit:
     and #$1F
     ora #$A0
     sta dst_ptr+1
+.if HGR_MONO
+    lda #12
+.else
     lda #16
+.endif
     sta cell_x
     jsr pit_panel_row
+.if HGR_MONO
+    lda #168
+.else
     lda #94
+.endif
     sta cell_x
     jsr pit_panel_row
     inc scene_y
@@ -944,10 +971,21 @@ scene_pit:
 @done:
     rts
 pit_panel_row:
+.if HGR_MONO
+    lda #60
+.else
     lda #30
+.endif
     sta scene_count
 @cell:
+.if HGR_MONO
+    ; Source FILL $2A: alternating foreground dots, not a gray color cell.
+    lda cell_x
+    eor #1
+    and #1
+.else
     lda #5                ; gray DHGR serial pattern, palette $05
+.endif
     sta cell_color
     jsr draw_cell
     inc cell_x

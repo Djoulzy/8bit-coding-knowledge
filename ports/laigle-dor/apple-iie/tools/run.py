@@ -37,7 +37,8 @@ This view does not certify real hardware, video timing or an Oric reference run.
 async function press(code){await fetch('/key',{method:'POST',body:JSON.stringify({code})});}
 document.querySelectorAll('button').forEach(b=>b.onclick=()=>press(+b.dataset.code));
 window.addEventListener('keydown',e=>{const keys={ArrowLeft:8,ArrowRight:21,ArrowDown:10,ArrowUp:11,' ':32};
-const code=({Enter:13,Backspace:8,Escape:27})[e.key]??keys[e.key]??(e.key.length===1?e.key.toUpperCase().charCodeAt(0):null);
+if(e.metaKey||e.altKey)return;
+const code=e.ctrlKey?(e.key.toUpperCase()==='D'?4:null):(({Enter:13,Backspace:8,Escape:27})[e.key]??keys[e.key]??(e.key.length===1?e.key.toUpperCase().charCodeAt(0):null));
 if(code!==null){e.preventDefault();press(code);}});
 let busy=false;
 async function frame(){if(busy)return;busy=true;try{const monitor=document.getElementById('monitor').value;
@@ -71,7 +72,9 @@ def serve(machine, port, monitor='color'):
                     html=html.replace('Apple IIe W06','Apple IIe').replace('Apple IIe · room 12','Apple IIe')
                     html=html.replace(' · provisional room variation','')
                     html=html.replace('Other game actions and room changes are planned for W07. Audio is logged silently.',
-                        'Enter / Space: title. Enter: name. 1: enter the castle, 3: merchant. I: inventory, L: clues, P: take, O: open, G: climb. Audio is logged silently.')
+                        'Enter / Space: leave title. Any key: leave introduction. Type a name, then Enter. 1: enter the castle, 3: merchant, 4: resume a checkpoint code. C: show checkpoint code during play. H / ?: help and pause; any key returns. Use ? during name entry. I: inventory, L: clues, P: take, O: open, G: climb. Audio is logged silently.')
+                    html=html.replace('<button data-code="82">R · Restart</button>',
+                        '<button data-code="72">H · Help</button><button data-code="82">R · Restart</button>')
                 html = html.replace('<option value="' + monitor + '">', '<option selected value="' + monitor + '">')
                 self.reply(html.encode(), 'text/html; charset=utf-8')
             elif request.path == '/frame':
