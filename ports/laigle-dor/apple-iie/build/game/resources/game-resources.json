@@ -2457,16 +2457,17 @@
     ],
     "marker": {
       "height": 9,
+      "kind": "smiley",
       "rows_lsb_first": [
         28,
         62,
-        99,
         107,
+        127,
+        93,
         99,
+        127,
         62,
-        28,
-        8,
-        8
+        28
       ],
       "width": 7,
       "x_offset": 21,
@@ -2475,11 +2476,11 @@
     "page_sha256": [
       "6ca2cd7ff8547b4adb18e0a2b5ac6fca9635367587a9db602a5aa4345a301068",
       "7cbfa5323c22e2c59ade6f5cea640e20235d123e59cf14be0d2a3202f71a579a",
-      "a18449df7a905f3ebb1110f5f8868a410c34581d39ecccabbb76be6c0e6fcae6"
+      "a73f439aa20c30b3dcb06448e9b888d1bda109c94176bd1b09728cd2db68e9f6"
     ],
     "pages": 3,
-    "position": "dynamic 7x9 white map pin beside room number; gameplay paused",
-    "sha256": "86292fdadd4a77d709d6a04e073db056efbed06d9b44c82a4d6ab47aa8961112",
+    "position": "dynamic 7x9 white smiley beside room number; gameplay paused",
+    "sha256": "0b421891d9baf4c902254656e8852cb64e85038277be9bae636a88ebc9cb3f77",
     "source": "Oric B2 $5600-$57FF; Room.decode; transition 4701-4710; door locks 10900-10990",
     "static": true,
     "video": "HGR one-bit MAIN, full-screen 280x192 in both game editions; bit 7 clear"
@@ -2523,10 +2524,10 @@
     "source": "B2 4150-4170, 5700-5710, 11010-11520"
   },
   "native_blitter": {
-    "extra_bytes": 2048,
+    "extra_bytes": 2046,
     "extra_sector": 336,
     "format": "shared native 7-bit mask/pixel rows; runtime horizontal shift",
-    "row_bytes": 4604,
+    "row_bytes": 4512,
     "sprites": [
       40,
       41,
@@ -2555,7 +2556,7 @@
       72,
       73
     ],
-    "unique_rows": 265
+    "unique_rows": 259
   },
   "rom": {
     "bytes": 16384,

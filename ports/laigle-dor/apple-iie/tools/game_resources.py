@@ -114,7 +114,7 @@ def export_game():
     dest = export(Path(__file__).resolve().parents[4] / rom['file'])
     mode=video_mode()
     native, fs, equipment, static_ids = native_artwork(source,mode)
-    if mode=='dhgr':native = override_sprites(native, 'laigle/game/dhgr/atlas/', 'dhgr')
+    native = override_sprites(native, 'laigle/game/'+mode+'/atlas/', mode)
     used = [s["id"] for s in native]
     # Generate the existing actor ABI, then append compact two-bit static tiles.
     actors=[s for s in native if 'tile_rows' not in s]
@@ -157,9 +157,12 @@ def export_game():
         text=(dest/name).read_bytes().rstrip(b'\\').decode('ascii')
         rows=textwrap.wrap(' '.join(text.split()),width=40)
         if len(rows)>3:raise ValueError('Clue exceeds compact reading panel')
-        rows += ['']*(3-len(rows))+['Une touche: indice suivant']
+        rows += ['']*(3-len(rows))
         data=''.join(row.ljust(40) for row in rows).encode('ascii')
         lines += ['full_clue_%d:'%n,'    .byte '+','.join('$%02X'%v for v in data)]
+    # One shared fourth row, rather than four copies in resident memory.
+    lines += ['full_clue_footer:',
+              '    .byte "' + 'Une touche: indice suivant'.ljust(40) + '"']
     # Four shared geometry programs, not 64 per-room operation lists.
     # Bytecode: 1,x0,y0,x1,y1 = vector; 2,id,CURSET-x,y,additive = atlas stamp.
     templates=[]
@@ -225,7 +228,6 @@ def export_game():
             'target_scenery_art':('original Oric dots/masks, grilles and actors; B2 398 single-dot cue' if mode=='mono' else 'resources/world-art.json; white grilles, yellow locks, right-pillar secret cue, yellow/orange source flames'),
             'captured_font':'B2 $9800, provisional until original ROM/font execution is compared'}
     write_json(dest/'game-resources.json',report)
-    if mode=='dhgr':
-        audit(dest, {'laigle/game/dhgr/title', 'laigle/game/dhgr/title-flash'} |
-              {'laigle/game/dhgr/atlas/' + str(s['id']) for s in native})
+    audit(dest, {'laigle/game/'+mode+'/title', 'laigle/game/'+mode+'/title-flash'} |
+          {'laigle/game/'+mode+'/atlas/' + str(s['id']) for s in native})
     return dest,report

@@ -175,68 +175,104 @@ physical-hardware verification.
 
 ## Impossible-action feedback
 
-Both full-game editions display **Impossible in inverse video** at the right
-edge of the first text row when a requested action is refused. The ten letters
-occupy zero-based columns **70–79 in DHGR**, or **30–39 in HGR/full-screen TEXT**.
-Ordinary descriptions keep both lines. In the 40-column layout, special-room
+Both editions show a specific outcome **in inverse video**, right-aligned in
+the first text row. The reserved ten-character field occupies zero-based
+columns **70–79 in DHGR**, or **30–39 in HGR/full-screen TEXT**. Short words are
+right-aligned with normal spaces before them. Native labels use unaccented
+ASCII to match the existing IIe font.
+
+| Display | Meaning | `message_id` |
+|---|---|---|
+| `Impossible` | Invalid position, facing, pose or unavailable action/item | 1 |
+| `Vide` | `P` at a reachable, open chest with no remaining treasure | 7 |
+| `Echec` | A valid crowbar door attempt failed its random test | 8 |
+| `Deja fait` | A reachable chest or correctly approached secret passage is already open | 9 |
+| `Casse` | The selected crowbar broke during the door attempt | 10 |
+| `Verrouille` | A reachable door/chest requires a different tool, or the lock cannot be forced | 11 |
+| `Ferme` | `P` at a reachable chest whose lid is still closed | 12 |
+| `Parchemin`, `Or trouve`, `Clef fer`, `Clef or`, `Fiole`, `Bague`, `Plomb` | Ordinary treasure successfully collected, in source treasure-ID order | 13–19 |
+
+Chest range is checked before closed/empty status. A distant chest therefore
+does not reveal its contents. Reopening an open chest no longer consumes
+crowbar durability or rebuilds terrain. Failed door attempts retain their
+existing wear, lock and PRNG rules; an unforceable class-3 lock still consumes
+wear before refusal. Exhaustion is reported before the lock/random tests.
+A chest opening that succeeds while exhausting a crowbar remains a successful
+opening; the held-item and stock changes still occur.
+
+Pickup stores the treasure-specific message **before** clearing `room_treasure`
+and the persistent world bits. It retains the existing item event (6), scores,
+random gold award and single-award behavior. Initial chests contain either gold,
+a vial, or nothing: rooms 4/13/60 yield `Fiole`, 52/58 yield `Or trouve`, and
+26 yields `Vide`. The other item labels also apply to ordinary floor rewards;
+controlled native test fixtures exercise them without inventing original
+chest placements. `Fiole` does not disclose the separate poison flag, and
+`Or trouve` names the reward while the exact gold total remains in the HUD.
+Quest-object pickups retain their existing separate success marker (5).
+
+Ordinary descriptions keep both lines. In 40-column layouts, special-room
 and oubliette descriptions retain `Vous etes` on row 1 and move the complete
-remaining phrase onto row 2 while feedback is active. This prevents long
-descriptions from overlapping the message; both statistics rows remain visible.
+remaining phrase onto row 2 while feedback is active. Both statistics rows
+remain visible. `full_dispatch` clears the message on the next ordinary
+gameplay key; idle frames (`raw_key=$FF`) preserve it. Successful room
+transitions clear it. Help and the test menu pause the underlying feedback.
+Ordinary wall collisions retain their separate blocked-movement event.
 
-[full-core.s](../src/game/full-core.s), `full_denied`, already records the refusal
-as `message_id=1` and event 7. This covers failed pickup, opening, reading,
-drinking, climbing, invalid jumps and unavailable held-item selections.
-`full_dispatch` now clears the previous message on the next ordinary gameplay
-key, before processing it; idle frames (`raw_key=$FF`) preserve it. A successful
-room transition or castle entry also clears it. Help and the test menu pause
-the underlying feedback along with gameplay. Ordinary wall collisions still use
-their separate blocked-movement event.
+[full-core.s](../src/game/full-core.s), `full_feedback`, records nonsuccess
+outcomes as event 7; `full_denied` selects `Impossible`. The explicit **T**
+request still uses `full_request_light` in [ui.s](../src/game/ui.s) to report
+an invalid lighting request. Automatic lighting probes during vertical jumps
+remain silent. The merchant retains its explicit funds message:
+**Impossible: pas assez d'or !**.
 
-The explicit **T** request now calls `full_request_light` in
-[ui.s](../src/game/ui.s), which converts a failed lighting attempt into a denial.
-The automatic lighting probe during a vertical jump still calls `full_light`
-directly: absence of a reachable fixture during that animation is harmless.
-Successful lighting replaces the denial state. The merchant uses the same
-wording with its reason: **Impossible: pas assez d'or !**; funds stay visible.
+[feedback.s](../src/apple/feedback.s), `full_feedback_index`, maps IDs 1 and
+7–19 to ten-byte display fields while leaving X/Y intact for room-description
+formatting. IDs 0 and 2–6 have no transient word. Uppercase inverse characters
+use ASCII masked with `$3F`; lowercase stays in `$60–$7F` with ALTCHAR enabled
+at `$C00F`, avoiding MouseText and flashing codes. HGR and darkness TEXT use
+`full_compact_feedback`; DHGR appends `full_wide_feedback` after the compact
+HUD's MAIN/AUX interleave. Both hidden pages are rebuilt from current state,
+including normal leading spaces, so replacing `Verrouille` with `Vide` leaves
+no stale letters or inversions.
 
-[full-display.s](../src/apple/full-display.s) writes the 40-column message after
-clearing the hidden page. In DHGR graphics, [feedback.s](../src/apple/feedback.s)
-writes it after the compact HUD's MAIN/AUX interleave, into the last five byte
-columns of each bank. Video initialization now enables ALTCHAR at `$C00F`.
-The message is encoded as `$09` for inverse uppercase I followed by ASCII
-`mpossible` in the inverse-lowercase range `$60–$7F`; it avoids MouseText and
-flashing codes. Both page buffers are rebuilt
-from current state, preventing alternating text, stale inversions or leftover
-letters. The functional preview also decodes these inverse codes using its
-development font. This interface policy does not claim to reproduce the original
-message duration.
+To fit the additional words without changing memory ownership,
+[full-display.s](../src/apple/full-display.s), `full_hud_template`, generates
+the two blank description rows rather than storing 80 spaces and nine
+identical menu pointers. [game_resources.py](../tools/game_resources.py)
+stores the identical fourth clue row once, after the four three-row clue
+bodies. Clue wording and the four-row reading layout are unchanged.
 
-Rebuild both disks and run the focused native CPU regressions:
+Rebuild both disks and execute the focused native CPU regressions:
 
 ```sh
 make games
-python3 tools/check_game.py --video dhgr --suite interactions
-python3 tools/check_game.py --video mono --suite interactions
+python3 tools/check_game.py --video dhgr --suite feedback
+python3 tools/check_game.py --video mono --suite feedback
 ```
 
-Each profile runs fourteen tests: keyboard refusals and persistence across both
-pages, clearing on the next command, inverse character bytes and right-edge
-placement, special-room/pit/darkness display, explicit and automatic lighting,
-all description choices, numeric HUD boundaries, purchases, help pause, hidden
-room transitions, startup code relocation, all 64 scene/grid constructions,
-all stored direction links, and secret-fireplace opening/traversal guards.
-These are py65 execution checks using Disk II BOOT0 in the functional Apple bus;
-they do not establish Virtual II, system-ROM cold-start or physical-hardware
-behavior. `action-impossible.png` in each build directory is a functional preview.
+The feedback selection now contains fourteen tests. In addition to existing
+HUD/UI regressions it covers real chest contents, repeated pickup, closed and
+distant chests, crowbar lock/failure/exhaustion distinctions, all outcome
+words on both pages, special-room/pit/darkness descriptions, and all clue pages.
+[ActionFeedbackTests](../tests/action_feedback_cases.py) documents which cases
+use original room records and which use controlled fixtures.
 
-The [interaction verification record](interaction-verification.json) pins these
-executions and their binaries. `--suite interactions` writes a separate
-`interactions-test-results.json`; the earlier [feedback record](action-feedback-verification.json)
-retains evidence for the previous second-line presentation. `--suite feedback`
-still runs nine HUD/UI-focused tests. Neither focused selection reruns every
-map or quest scenario; earlier full-suite records retain their program hashes.
-`make test-game` and `make test-game-mono` still run the complete suites,
-including these new tests.
+Current execution reports are `build/game/action-feedback-test-results.json`
+and `build/game-mono/action-feedback-test-results.json`; each pins the tested
+program and disk hashes. Functional previews include `action-empty-chest.png`,
+`action-crowbar-failed.png`, `action-found-vial.png` and `action-found-gold.png`.
+These are py65 executions using real Disk II BOOT0 in the functional Apple bus,
+not Virtual II, system-ROM cold-start or physical-hardware verification.
+On 2026-10-19 all fourteen selected tests passed in each edition. Two additional
+mono reruns executed the secret-repeat and compact clue-footer assertions added
+while the first mono suite was running. The
+[outcome execution snapshot](action-outcomes-verification.json) preserves all
+three results, program/disk hashes, memory bounds and preview hashes.
+Neither focused selection reruns every map or quest scenario. The earlier
+[interaction record](interaction-verification.json) and
+[feedback record](action-feedback-verification.json) retain evidence and
+program hashes for the previous revisions. `make test-game` and
+`make test-game-mono` still run the complete suites.
 
 ## Inventory and lowercase text
 

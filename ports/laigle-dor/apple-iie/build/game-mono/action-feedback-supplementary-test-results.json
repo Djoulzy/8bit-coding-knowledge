@@ -1,0 +1,18 @@
+{
+  "disk_sha256": "6bde27b9f84c1ab2587c39d1acc2b71f82759f2a93b95f959a08c2e06c6d8e88",
+  "elapsed_seconds": 39.537,
+  "errors": [],
+  "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+  "failures": [],
+  "program_sha256": "cbfe6e8af8918bdb55a10bfe8fa7b2a1f9f9b6443baef6c832d28e7fc3c5dcdd",
+  "real_hardware": "not tested",
+  "reason": "Execute the additional secret-passage repeat guard and compact clue-footer assertions added after the main mono suite started",
+  "selected_tests": [
+    "test_chest_feedback_distinguishes_range_closed_empty_and_already_open",
+    "test_outcome_words_are_inverse_right_aligned_on_both_pages_and_in_darkness"
+  ],
+  "success": true,
+  "tests_run": 2,
+  "video_profile": "mono",
+  "virtual_ii": "not tested"
+}

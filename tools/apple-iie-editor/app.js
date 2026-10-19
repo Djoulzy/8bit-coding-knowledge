@@ -2,6 +2,7 @@ import * as C from './core.js';
 import * as W from './workspace.js';
 const $=id=>document.getElementById(id), canvas=$('canvas'),ctx=canvas.getContext('2d'),preview=$('preview');
 const state={docs:[],index:0,catalog:[],tool:'pencil',color:15,unit:'cell',monitor:'color',status:15,last:null,stroke:null,dirty:false};
+let localProject=null;
 const current=()=>state.docs[state.index];
 const asset=()=>current().asset;
 const msg=(s,error=false)=>{$('message').textContent=s;$('message').classList.toggle('error',error);};
@@ -52,7 +53,7 @@ $('close-discard').onclick=()=>{closeDocument(closingDocumentId);$('close-docume
 $('close-save').onclick=async()=>{
   const d=state.docs.find(d=>d.id===closingDocumentId);if(!d)return;
   closeSaving=true;for(const id of ['close-save','close-discard','close-cancel'])$(id).disabled=true;
-  try{await saveDocuments([d],filename(d.asset)+'-workspace.json');closeDocument(d.id);$('close-document-dialog').close();}
+  try{await saveDocuments([d],filename(d.asset)+'-workspace.json',!!localProject);closeDocument(d.id);$('close-document-dialog').close();}
   catch(e){if(e.name!=='AbortError')$('close-document-error').textContent='Enregistrement impossible : '+e.message;}
   finally{closeSaving=false;for(const id of ['close-save','close-discard','close-cancel'])$(id).disabled=false;}
 };
@@ -109,33 +110,52 @@ for(let i=0;i<16;i++){const o=document.createElement('option');o.value=i;o.textC
 $('accent').onchange=()=>{checkpoint();asset().accent=Number($('accent').value);changed();render();};$('force-black').onchange=()=>{checkpoint();asset().force_black=$('force-black').checked;changed();};
 function download(data,name,mime){const blob=new Blob([data],{type:mime}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),10000);}
 const filename=(a=asset())=> (a.name||'apple-iie').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9_-]+/gi,'-').slice(0,90);
-async function saveDocuments(docs,name){
+async function saveDocuments(docs,name,local=false,markSaved=true){
   const snapshots=docs.map(d=>JSON.stringify(W.serialize([d]))),data=W.serialize(docs);
   W.load(data);const json=JSON.stringify(data)+'\n';
   if(new Blob([json]).size>64*1024*1024)throw Error('Projet supérieur à 64 Mio. Exportez les documents séparément.');
-  if(window.showSaveFilePicker){
+  let saved;
+  if(local){
+    const response=await fetch('/api/project',{method:'POST',headers:{'Content-Type':'application/json'},body:json});
+    saved=await response.json();if(!response.ok)throw Error(saved.error||'Enregistrement impossible');
+    localProject={...localProject,...saved};$('open-local-project').hidden=false;
+  }else if(window.showSaveFilePicker){
     const handle=await window.showSaveFilePicker({suggestedName:name,types:[{description:'Projet Apple IIe',accept:{'application/json':['.json']}}]});
     const writable=await handle.createWritable();
     try{await writable.write(json);await writable.close();}catch(e){try{await writable.abort();}catch{}throw e;}
   }else download(json,name,'application/json');
-  docs.forEach((d,i)=>{if(JSON.stringify(W.serialize([d]))===snapshots[i])d.edited=false;});
+  if(markSaved)docs.forEach((d,i)=>{if(JSON.stringify(W.serialize([d]))===snapshots[i])d.edited=false;});
   updateSaveState();renderTabs();persistRecovery();
-  msg(window.showSaveFilePicker?'Projet enregistré, sources et variantes conservées.':'Téléchargement du projet lancé. Conservez le fichier JSON pour reprendre vos retouches.');
+  msg(local?saved.message+(saved.mirrored?.length?' Les sprites de prototype mono sont aussi appliqués au jeu monochrome.':''):
+    window.showSaveFilePicker?'Projet enregistré, sources et variantes conservées.':'Téléchargement du projet lancé. Conservez le fichier JSON pour reprendre vos retouches.');
 }
-$('save-project').onclick=guard(async()=>{try{await saveDocuments([...state.docs],'apple-iie-workspace.json');}catch(e){if(e.name!=='AbortError')throw e;}});
-$('save-document').onclick=guard(async()=>{try{await saveDocuments([current()],filename()+'-workspace.json');}catch(e){if(e.name!=='AbortError')throw e;}});
+$('save-project').onclick=guard(async()=>{try{await saveDocuments([...state.docs],'apple-iie-workspace.json',!!localProject);}catch(e){if(e.name!=='AbortError')throw e;}});
+$('save-document').onclick=guard(async()=>{try{await saveDocuments([current()],filename()+'-workspace.json',!!localProject);}catch(e){if(e.name!=='AbortError')throw e;}});
+$('download-project').onclick=guard(async()=>{try{await saveDocuments([...state.docs],'apple-iie-workspace.json',false,false);}catch(e){if(e.name!=='AbortError')throw e;}});
+function openDocuments(docs){
+  if(!docs.length)throw Error('Ce projet ne contient aucun document');
+  for(const d of docs){
+    // Reopening a saved document replaces its clean open copy. Keep unsaved
+    // retouches as separate tabs rather than overwriting them on import.
+    const index=state.docs.findIndex(existing=>existing.asset.key===d.asset.key&&!existing.edited);
+    if(state.docs.some((existing,i)=>existing.id===d.id&&i!==index))d.id=C.blank(d.asset.mode).key;
+    const opened={...d,undo:[],redo:[],edited:false};
+    if(index>=0){state.docs[index]=opened;state.index=index;}
+    else {state.docs.push(opened);state.index=state.docs.length-1;}
+  }
+  state.last=null;refresh();updateSaveState();autosave();
+}
+$('open-local-project').onclick=guard(async()=>{
+  const response=await fetch('/api/project'),data=await response.json();
+  if(!response.ok)throw Error(data.error);openDocuments(W.load(data));
+  msg('Projet local rouvert avec ses retouches, sources et variantes.');
+});
 $('open-project').onclick=()=>$('project-input').click();
 $('project-input').onchange=guard(async e=>{
   const file=e.target.files[0];e.target.value='';if(!file)return;
   if(file.size>64*1024*1024)throw Error('Projet trop volumineux (maximum 64 Mio)');
   const docs=W.load(JSON.parse(await file.text()));
-  if(!docs.length)throw Error('Ce projet ne contient aucun document');
-  for(const d of docs){
-    // Import as additional documents: never silently replace unsaved work.
-    if(state.docs.some(existing=>existing.id===d.id))d.id=C.blank(d.asset.mode).key;
-    state.docs.push({...d,undo:[],redo:[],edited:false});
-  }
-  state.index=state.docs.length-1;state.last=null;refresh();autosave();
+  openDocuments(docs);
   msg(docs.length+' documents ouverts, avec leurs sources et toutes leurs variantes.');
 });
 
@@ -212,6 +232,12 @@ async function start(){
       $('adapter-option').hidden=false;$('adapter-option').textContent=config.library;
       const r=await fetch('/api/catalog'),data=await r.json();if(!r.ok)throw Error(data.error);
       state.catalog=data;
+    }
+    if(config.project){
+      localProject=config.project;
+      $('save-project').textContent='Enregistrer dans '+localProject.name;
+      $('save-project').title='Mettre à jour les ressources utilisées par la recompilation';
+      $('download-project').hidden=false;$('open-local-project').hidden=!localProject.exists;
     }
     catalog();msg('Atelier prêt. Importez une image ou un binaire ; changer de mode conserve le même document et sa source.');
   }catch(e){msg('Bibliothèque optionnelle indisponible. Les documents, imports et conversions restent utilisables. '+e.message,true);}

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read-only localhost asset service for the Apple IIe editor (stdlib only)."""
+"""Local editor service with optional adapter-controlled project saving."""
 import argparse
 import json
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -27,6 +27,10 @@ def load_adapter(name):
 
 
 class Handler(BaseHTTPRequestHandler):
+    def local_host(self):
+        return self.headers.get('Host') in ('127.0.0.1:%d' % self.server.server_port,
+                                            'localhost:%d' % self.server.server_port)
+
     def library(self):
         return self.server.adapter.assets() if self.server.adapter else {}
 
@@ -41,14 +45,22 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(body)
 
     def do_GET(self):
-        # No arbitrary filesystem access, mutations, or cross-origin API access.
-        if self.headers.get('Host') not in ('127.0.0.1:%d' % self.server.server_port, 'localhost:%d' % self.server.server_port):
+        # Paths stay fixed: adapters own any project-file access.
+        if not self.local_host():
             self.respond(403, b'{"error":"Local host required"}')
             return
         path = unquote(urlsplit(self.path).path)
         try:
             if path == '/api/config':
-                self.respond(200, json.dumps({'library': getattr(self.server.adapter, 'TITLE', None)}).encode())
+                info = getattr(self.server.adapter, 'project_info', None)
+                self.respond(200, json.dumps({'library': getattr(self.server.adapter, 'TITLE', None),
+                    'project': info() if callable(info) and callable(getattr(self.server.adapter, 'save_project', None)) else None}).encode())
+            elif path == '/api/project':
+                load = getattr(self.server.adapter, 'load_project', None)
+                if not callable(load):
+                    self.respond(404, b'{"error":"No local project adapter"}')
+                else:
+                    self.respond(200, json.dumps(validate_project(load())).encode())
             elif path == '/api/catalog':
                 items = [{k: a[k] for k in ('key', 'name', 'kind', 'mode')} for a in self.library().values()]
                 self.respond(200, json.dumps(items).encode())
@@ -75,6 +87,36 @@ class Handler(BaseHTTPRequestHandler):
                 self.respond(200, (HERE / filename).read_bytes(), mime)
         except (ValueError, OSError) as exc:
             self.respond(500, json.dumps({'error': str(exc)}).encode())
+
+    def do_POST(self):
+        # Browser writes require a same-origin JSON request; no caller-supplied
+        # filesystem path and no write capability without an explicit adapter.
+        if not self.local_host() or self.headers.get('Origin') != 'http://' + self.headers.get('Host', ''):
+            self.respond(403, b'{"error":"Same-origin local request required"}')
+            return
+        if urlsplit(self.path).path != '/api/project':
+            self.respond(404, b'{"error":"Unknown endpoint"}')
+            return
+        save = getattr(self.server.adapter, 'save_project', None)
+        if not callable(save):
+            self.respond(405, b'{"error":"No writable project adapter"}')
+            return
+        if self.headers.get('Content-Type', '').split(';')[0].strip() != 'application/json':
+            self.respond(415, b'{"error":"JSON required"}')
+            return
+        try:
+            length = int(self.headers.get('Content-Length', '0'))
+            if not 0 < length <= 64 * 1024 * 1024:
+                self.respond(413, b'{"error":"Project must be between 1 byte and 64 MiB"}')
+                return
+            workspace = validate_project(json.loads(self.rfile.read(length)))
+            if workspace['schema'] != 'a2-workspace-v2':
+                raise ValueError('Expected a complete editor workspace')
+            self.respond(200, json.dumps(save(workspace)).encode())
+        except (ValueError, TypeError, KeyError) as exc:
+            self.respond(400, json.dumps({'error': str(exc)}).encode())
+        except OSError as exc:
+            self.respond(500, json.dumps({'error': 'Enregistrement impossible : ' + str(exc)}).encode())
 
 
 def main():

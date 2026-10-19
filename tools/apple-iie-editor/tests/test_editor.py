@@ -30,6 +30,9 @@ class EditorTests(unittest.TestCase):
         self.env = patch.dict(os.environ, {'LAIGLE_ARTWORK': '', 'LAIGLE_VIDEO': 'dhgr'})
         self.env.start()
         self.addCleanup(self.env.stop)
+        local = patch.object(server, 'PROJECT_FILE', self.root / 'saved-artwork.json')
+        local.start()
+        self.addCleanup(local.stop)
 
     def project(self, *assets):
         path = self.root / 'art.json'
@@ -39,7 +42,8 @@ class EditorTests(unittest.TestCase):
 
     def test_catalog_without_build_or_rom(self):
         items = list(server.assets().values())
-        self.assertEqual(len(items), 187)
+        self.assertEqual(len(items), 301)
+        self.assertIn('laigle/game/mono/atlas/48', server.assets())
         artwork.validate_project({'schema': artwork.SCHEMA, 'assets': items})
         self.assertTrue(any(a.get('encoding') == 'tile' for a in items))
         self.assertEqual({a['mode'] for a in items}, {'mono', 'color', 'dhgr'})
@@ -58,9 +62,9 @@ class EditorTests(unittest.TestCase):
         rom.write_bytes(bytes(16384))
         with patch.object(game_resources, 'room_variation', return_value=(bytes(64), {'file': str(rom)})), patch.object(resources, 'build_dir', return_value=self.root):
             dest, _ = game_resources.export_game()
-        # Captured before extracting the shared native-artwork function.
+        # Optimized native-row fixture: zero room variation and no overrides.
         self.assertEqual(hashlib.sha256((dest/'generated.inc').read_bytes()).hexdigest(),
-                         '63ae6b76bf66b92a0decbcff8dc4f0623da76a3292eac5daec4b2750591d4463')
+                         '06687e997443c6fa01fc5ee73242c1cb640a339ff1ab489f6c193cd139a70573')
         self.assertEqual((dest/'title.dhgr').read_bytes(), b''.join(title_resources.title_pages(False)))
 
     def test_sprite_edit_reaches_assembler(self):
@@ -72,9 +76,14 @@ class EditorTests(unittest.TestCase):
         rom.write_bytes(bytes(16384))
         with patch.object(game_resources, 'room_variation', return_value=(bytes(64), {'file': str(rom)})), patch.object(resources, 'build_dir', return_value=self.root):
             dest, _ = game_resources.export_game()
-        lines = (dest/'generated.inc').read_text().split('sprite_40:\n')[1].splitlines()
-        # First line is the 16-byte header, next starts with the row color.
-        self.assertTrue(lines[1].startswith('    .byte $%02X,' % dhgr.pattern(1)))
+        text = (dest/'generated.inc').read_text()
+        lines = text.split('sprite_40:\n')[1].splitlines()
+        # Native format 2 has shared mask/pixel rows, not the old cell decoder.
+        row_name = lines[1].split()[-1]
+        row = text.split(row_name + ':\n')[1].splitlines()[0].split('.byte ')[1]
+        mask, pixels = [int(v.strip()[1:], 16) for v in row.split(',')[:2]]
+        self.assertEqual(mask & 15, 15)
+        self.assertEqual(pixels & 15, dhgr.pattern(1) & 15)
         self.assertEqual(json.loads((dest/'artwork-overrides.json').read_text())['applied'], [a['key']])
 
     def test_sprite_contract_rejects_size_change(self):

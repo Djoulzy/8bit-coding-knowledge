@@ -2,7 +2,7 @@
 ; Retain the source semantic grid, sample proposed feet rather than a broad
 ; 4/5-cell look-ahead. Five-row motion uses nearest 140/160/180 depth bands.
 .segment "LOWCODE"
-.export full_collision_probe, full_pickup_probe, full_fixture_reach
+.export full_collision_probe, full_pickup_probe, full_fixture_reach, full_chest_reach
 .export move_x, move_y
 full_collision_probe:
     lda #0
@@ -71,7 +71,9 @@ full_collision_probe:
     cmp geometry_far,x
     bne @up_step
     lda actor_x
-    cmp #18
+    ; x=17 puts the 12-dot feet at 114..125, inside atlas 5's far arch.
+    ; Retain the existing right-side tolerance and source arrival x=19.
+    cmp #17
     bcc @blocked
     cmp #21
     bcs @blocked
@@ -92,6 +94,8 @@ full_collision_probe:
 @sample:
     jsr full_floor_envelope
     bcc @blocked
+    jsr full_furniture_overlap
+    bcs @blocked
     jsr full_grid_feet
     lda GRID,x
     cmp #1
@@ -103,6 +107,27 @@ full_collision_probe:
     beq @clear
     cpx #37
     beq @clear
+    ; Furnishings with a geometric barrier do not use their coarse depth band.
+    ; Keep the historical grid intact for other semantic consumers.
+    lda GRID,x
+    cmp #151
+    bne @table
+    ldy room_furnishing
+    cpy #4
+    beq @clear
+@table:
+    cmp #153
+    bne @chest
+    ldy room_furnishing
+    cpy #5
+    beq @clear
+@chest:
+    cmp #154
+    bne @obstacle
+    ldy room_furnishing
+    cpy #7
+    beq @clear
+@obstacle:
     lda GRID,x
     bpl @clear
 @blocked:
@@ -205,9 +230,10 @@ full_pickup_probe:
 @done:
     rts
 
-; Table/chest/quest anchor remains source x=27,y=160, with a small approach
+; Quest pedestal anchor remains source x=27,y=160, with a small approach
 ; window so reduced clearance cannot leave the exact source pose behind.
 ; Carry set when within x=27..30,y=155..165; facing/held/pose checked by caller.
+; Chest access uses full_chest_reach instead: its front must stay reachable.
 full_fixture_reach:
     lda actor_x
     cmp #27
@@ -225,3 +251,71 @@ full_fixture_reach:
     clc
     rts
 .segment "CODE"
+
+; Carry set when the proposed 12-dot foot base crosses a furnishing barrier.
+; The barrier reaches the rear floor plane: with scenery baked into the room
+; baseline, passing behind furniture would incorrectly draw the actor over it.
+; Chair 4 / atlas 23: x=[168,186), front=97+41 or 120+41.
+; Table 5 / atlas 25: x=[168,210), front=130+36 in geometry 0;
+;                   x=[162,204), front=107+36 in the other geometries.
+; Chest 7 / atlas 26/27: stable body x=[180,210), front=136+30=126+40=166.
+; Stable feet [(move_x+2)*6,(move_x+4)*6) give the actor-x intervals below.
+; This replaces only matching 151/153/154 marks; the semantic grid is retained.
+full_furniture_overlap:
+    lda in_pit
+    bne @clear
+    ldx room_geometry
+    lda room_furnishing
+    cmp #7
+    beq @chest
+    cmp #5
+    beq @table
+    cmp #4
+    bne @clear
+    beq @check
+@chest:
+    ldx #8                  ; same body/front for all geometries, open or closed
+    bne @check
+@table:
+    txa
+    clc
+    adc #4
+    tax
+@check:
+    lda move_x
+    cmp furniture_min_x,x
+    bcc @clear
+    cmp furniture_limit_x,x
+    bcs @clear
+    lda move_y
+    cmp furniture_front_y,x
+    bcs @clear
+    sec
+    rts
+@clear:
+    clc
+    rts
+; Geometry 0/1/2/3 for chair/table, then one shared chest. Front y exclusive.
+furniture_min_x:   .byte 25,25,25,25, 25,24,24,24, 27
+furniture_limit_x: .byte 29,29,29,29, 33,32,32,32, 33
+furniture_front_y: .byte 161,138,138,161, 166,143,143,143, 166
+
+; Carry set for chest O/P within x=26..32,y=155..175. The left approach x=26
+; and front y=170/175 remain outside its barrier; original x=27,y=160 is kept.
+; The caller checks furnishing 7, open state and held-item rules as needed.
+full_chest_reach:
+    lda actor_x
+    cmp #26
+    bcc @no
+    cmp #33
+    bcs @no
+    lda actor_y
+    cmp #155
+    bcc @no
+    cmp #176
+    bcs @no
+    sec
+    rts
+@no:
+    clc
+    rts

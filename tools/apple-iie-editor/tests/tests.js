@@ -61,8 +61,8 @@ await test('Sprite masks, fine detail fallback, tile accent and JSON losslessnes
   const t={...a,encoding:'tile',statuses:[[0,1,2,3]],accent:13};const p=C.spritePages(t).page;assert(C.readCell(p,3,0)===13,'accent');
   const project={schema:C.SCHEMA,assets:[a,t].map((a,i)=>({...a,key:'test/'+i}))};equal(C.validateProject(JSON.parse(JSON.stringify(project))),project,'project round trip');
 });
-await test('All 187 real game assets validate, render and round-trip',async()=>{
-  const catalog=await (await fetch('/api/catalog')).json();if(!catalog.some(a=>a.key.startsWith('laigle/')))return 'L’Aigle d’Or adapter not enabled';assert(catalog.length===187,'catalog count');
+await test('All 301 real game assets validate, render and round-trip',async()=>{
+  const catalog=await (await fetch('/api/catalog')).json();if(!catalog.some(a=>a.key.startsWith('laigle/')))return 'L’Aigle d’Or adapter not enabled';assert(catalog.length===301,'catalog count');
   for(const item of catalog){const a=await (await fetch('/api/asset/'+item.key)).json();C.validateAsset(a);if(a.kind==='screen'){const copy=C.importBinary(C.binary(a),a.mode);equal(copy.main,a.main,'main bank '+a.key);if(a.mode==='dhgr')equal(copy.aux,a.aux,'aux bank '+a.key);}else {const p=C.spritePages(a);assert(p.alpha.length===a.height,'sprite '+a.key);for(let y=0;y<a.height;y++)assert(C.scanline(p.page,y).length===(a.mode==='dhgr'?560:280),'render '+a.key);}}
 });
 await test('Invalid projects and unsupported masks rejected',()=>{

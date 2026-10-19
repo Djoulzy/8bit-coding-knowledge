@@ -46,8 +46,10 @@ explains the reusable mechanisms, bank/page ownership contracts, trade-offs
 and tests to retain when adapting them.
 
 The [local graphics editor](../../../tools/apple-iie-editor/README.md) opens the
-native screens and sprite atlas, preserves masks and bank packing, and exports
-artwork projects that can be applied with `LAIGLE_ARTWORK=/absolute/project.json`.
+native screens and sprite atlas, preserves masks and bank packing, and saves
+retouches directly into `resources/artwork.json`. Normal `make games` builds
+consume that saved input automatically. `LAIGLE_ARTWORK=/absolute/project.json`
+can select an external override instead; an empty value selects standard artwork.
 Run `python3 tools/apple-iie-editor/server.py --adapter laigle-dor` from the repository root.
 Use the editor’s native-resource JSON export for the compiler; keep the full
 workspace JSON for reversible editing. See [adapter instructions](docs/graphics-editor.md).
@@ -139,11 +141,14 @@ names preserve the typed case, while gameplay commands accept either case.
 See [inventory and text presentation](docs/presentation-and-pits.md#inventory-and-lowercase-text)
 for implementation and reproducible focused checks.
 
-A refused action displays **Impossible in inverse video**, right-aligned on the
-first text row (80 columns in DHGR, 40 in HGR/full-screen TEXT). Descriptions and
-statistics remain visible; long special-room descriptions wrap onto the second
-row in the 40-column layout. The message stays until the next gameplay key;
-help pauses it. See [action feedback and focused checks](docs/presentation-and-pits.md#impossible-action-feedback).
+Action outcomes appear **in inverse video**, right-aligned on the first text
+row: `Impossible` for an invalid action, `Vide`/`Ferme` for empty/closed chests,
+`Echec` for a failed crowbar attempt, `Casse` for an exhausted crowbar,
+`Verrouille` for an unsuitable tool/lock, and `Deja fait` for an already open
+chest or secret passage. Successful pickup names the reward (`Fiole`,
+`Or trouve`, etc.). Descriptions and statistics remain visible. Messages stay
+until the next gameplay key; help pauses them. See
+[action feedback and focused checks](docs/presentation-and-pits.md#impossible-action-feedback).
 
 To use a secret fireplace, select the **gold key (3)**, face the fireplace and
 press **O** nearby. Once the opening is visible, move to its center, crouch with

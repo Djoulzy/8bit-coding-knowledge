@@ -10,8 +10,8 @@ from tools.text_font import glyph
 
 MAP_SECTOR = 240
 # Target monochrome artwork, seven native HGR pixels wide.
-# The pin is byte-aligned at runtime and never covers numbers or contents.
-PIN = [0x1C, 0x3E, 0x63, 0x6B, 0x63, 0x3E, 0x1C, 0x08, 0x08]
+# The smiley is byte-aligned at runtime and never covers numbers or contents.
+SMILEY = [0x1C, 0x3E, 0x6B, 0x7F, 0x5D, 0x63, 0x7F, 0x3E, 0x1C]
 ICONS = {
  'chest': '0011100/0111110/1111111/1001001/1111111/1000001/1111111',
  'fireplace': '1111111/1000001/1011101/1010101/1010101/1010101/1110111',
@@ -145,7 +145,7 @@ def export_maps(world, dest, mode):
     for i,(name,label) in enumerate(labels):
         x=14+133*(i//7);y=17+11*(i%7)
         icon(2,x,y,name);text(2,x+12,y,label)
-    for i,s in enumerate(['Epingle: vous   Noir: hachures',
+    for i,s in enumerate(['Smiley: vous   Noir: hachures',
                           'Porte pleine / grille a barres',
                           'Point: verrou  Vide: arche',
                           'Droite: trappe en haut, grille en bas',
@@ -169,8 +169,8 @@ def export_maps(world, dest, mode):
             'image_reference':'user supplied Amstrad plan: presentation inspiration only; no image pixels or Amstrad room data imported',
             'layout':'ground 9..57 reversed columns; catacomb 1..8 perimeter cycle with isolated room 0 inset; upper 58..63 separate cards',
             'video':'HGR one-bit MAIN, full-screen 280x192 in both game editions; bit 7 clear',
-            'static':True,'position':'dynamic 7x9 white map pin beside room number; gameplay paused',
-            'marker':{'width':7,'height':9,'rows_lsb_first':PIN,'x_offset':21,'y_offset':2},
+            'static':True,'position':'dynamic 7x9 white smiley beside room number; gameplay paused',
+            'marker':{'kind':'smiley','width':7,'height':9,'rows_lsb_first':SMILEY,'x_offset':21,'y_offset':2},
             'footer':{'y':164,'room_byte_columns':[14,15],'pit_byte_column':35,'pit_codes':'X=yes, -=no'},
             'door_policy':'only source links between adjacent cells; a lock dot means at least one side is locked; types/locks can differ by side',
             'limitations':['schematic orientation and distances; not a geographic survey',
@@ -186,7 +186,7 @@ def export_maps(world, dest, mode):
                         ('column',[(c['x']+21)//7 for c in cells])]:
         lines.append('map_room_%s: .byte '%name+','.join(map(str,values)))
     # Small overlays are resident so cached map pages need no AUX or disk reads.
-    lines+=['.segment "CODE"','map_pin: .byte '+','.join('$%02X'%v for v in PIN),
+    lines+=['.segment "CODE"','map_smiley: .byte '+','.join('$%02X'%v for v in SMILEY),
             'map_glyphs:']
     masks=[]
     for ch in '0123456789-X':

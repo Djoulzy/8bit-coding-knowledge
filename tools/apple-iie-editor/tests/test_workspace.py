@@ -47,6 +47,17 @@ class StandaloneTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             validate_workspace(p)
 
+    def test_native_project_retains_and_validates_attached_workspace(self):
+        a = dict(key='custom/test', kind='screen', mode='mono', main=[0]*8192)
+        d = dict(id='doc', name='Saved', asset=a, sources=[dict(type='native', asset=a)],
+                 reference=0, frozen=False, variants={'mono': a}, archives=[])
+        p = dict(schema='a2-artwork-v1', assets=[a],
+                 workspace=dict(schema='a2-workspace-v2', documents=[d]))
+        validate_workspace(p)
+        d['reference'] = 9
+        with self.assertRaises(ValueError):
+            validate_workspace(p)
+
     def test_dhgr_mono_requires_both_banks(self):
         a = dict(key='custom/dhgr-mono', kind='screen', mode='dhgr-mono',
                  main=[0]*8192, aux=[0]*8192)

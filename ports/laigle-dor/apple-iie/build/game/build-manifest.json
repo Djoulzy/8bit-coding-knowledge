@@ -1,19 +1,19 @@
 {
-  "atlas_bytes": 15690,
-  "atlas_sha256": "33f73f756e1c482211c0da5516229021304fcc998d693a1dea2ec55e2e251be5",
+  "atlas_bytes": 15600,
+  "atlas_sha256": "61b312a114360a64230482c4f577f1c301703e0cb4b827dc7847198f2008e5d8",
   "disks": {
-    "laigle-dor.do": "7c383403ee2a2d2ec798fdfa7604eb0b7da5dc454378efc3e209d670a11d31d0"
+    "laigle-dor.do": "49d061452cd2abb67a0b44b5f0138035e830fdcacdb5c5784460a126b06fd9e5"
   },
   "entry": "$6000",
-  "extra_bytes": 2048,
+  "extra_bytes": 2046,
   "extra_sector": 336,
-  "extra_sha256": "715845eb055beb51970c484e7d36ab88ab0e02c2e7c438be6fe0c84f54aef103",
+  "extra_sha256": "234b805f94bb676199ae9b878bb6f703de7263bb78e2746cc9eda12bfb6f0d1c",
   "loaded_end_exclusive": "$AD00",
   "map_bytes": 24576,
   "map_sector": 240,
-  "map_sha256": "86292fdadd4a77d709d6a04e073db056efbed06d9b44c82a4d6ab47aa8961112",
-  "program_bytes": 19644,
-  "program_sha256": "b2bae5b449057c26bf056228935e2df0faf5b11c255ec45f741792065df57304",
+  "map_sha256": "0b421891d9baf4c902254656e8852cb64e85038277be9bae636a88ebc9cb3f77",
+  "program_bytes": 19682,
+  "program_sha256": "602cb61a3d8a8325e72ced6ccac0762f2929248faa42ab31a825323bfa84b7e8",
   "resources": {
     "actor_frames": 28,
     "actor_sprite_ids": [
@@ -2473,16 +2473,17 @@
       ],
       "marker": {
         "height": 9,
+        "kind": "smiley",
         "rows_lsb_first": [
           28,
           62,
-          99,
           107,
+          127,
+          93,
           99,
+          127,
           62,
-          28,
-          8,
-          8
+          28
         ],
         "width": 7,
         "x_offset": 21,
@@ -2491,11 +2492,11 @@
       "page_sha256": [
         "6ca2cd7ff8547b4adb18e0a2b5ac6fca9635367587a9db602a5aa4345a301068",
         "7cbfa5323c22e2c59ade6f5cea640e20235d123e59cf14be0d2a3202f71a579a",
-        "a18449df7a905f3ebb1110f5f8868a410c34581d39ecccabbb76be6c0e6fcae6"
+        "a73f439aa20c30b3dcb06448e9b888d1bda109c94176bd1b09728cd2db68e9f6"
       ],
       "pages": 3,
-      "position": "dynamic 7x9 white map pin beside room number; gameplay paused",
-      "sha256": "86292fdadd4a77d709d6a04e073db056efbed06d9b44c82a4d6ab47aa8961112",
+      "position": "dynamic 7x9 white smiley beside room number; gameplay paused",
+      "sha256": "0b421891d9baf4c902254656e8852cb64e85038277be9bae636a88ebc9cb3f77",
       "source": "Oric B2 $5600-$57FF; Room.decode; transition 4701-4710; door locks 10900-10990",
       "static": true,
       "video": "HGR one-bit MAIN, full-screen 280x192 in both game editions; bit 7 clear"
@@ -2539,10 +2540,10 @@
       "source": "B2 4150-4170, 5700-5710, 11010-11520"
     },
     "native_blitter": {
-      "extra_bytes": 2048,
+      "extra_bytes": 2046,
       "extra_sector": 336,
       "format": "shared native 7-bit mask/pixel rows; runtime horizontal shift",
-      "row_bytes": 4604,
+      "row_bytes": 4512,
       "sprites": [
         40,
         41,
@@ -2571,7 +2572,7 @@
         72,
         73
       ],
-      "unique_rows": 265
+      "unique_rows": 259
     },
     "rom": {
       "bytes": 16384,

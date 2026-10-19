@@ -284,7 +284,6 @@ sprite_43:
     .word native_row_80
     .word native_row_80
     .word native_row_80
-    .word native_row_80
     .word native_row_81
     .word native_row_82
     .word native_row_83
@@ -293,20 +292,20 @@ sprite_43:
     .word native_row_86
     .word native_row_87
     .word native_row_88
-    .word native_row_88
+    .word native_row_89
     .word native_row_89
     .word native_row_90
     .word native_row_91
-    .word native_row_92
     .word native_row_92
     .word native_row_93
     .word native_row_93
     .word native_row_94
     .word native_row_94
     .word native_row_95
+    .word native_row_95
+    .word native_row_96
 sprite_44:
     .byte 42,24,2,6,7,7,7,7,7,7,2,0,0,6,0,0
-    .word native_row_96
     .word native_row_97
     .word native_row_98
     .word native_row_99
@@ -330,9 +329,9 @@ sprite_44:
     .word native_row_117
     .word native_row_118
     .word native_row_119
+    .word native_row_120
 sprite_45:
     .byte 36,24,2,6,6,6,6,6,6,6,2,0,0,6,0,0
-    .word native_row_120
     .word native_row_121
     .word native_row_122
     .word native_row_123
@@ -356,158 +355,152 @@ sprite_45:
     .word native_row_141
     .word native_row_142
     .word native_row_143
+    .word native_row_144
 sprite_46:
     .byte 24,26,2,4,4,4,4,4,5,5,2,0,0,4,0,0
-    .word native_row_144
     .word native_row_145
     .word native_row_146
     .word native_row_147
+    .word native_row_148
     .word native_row_49
-    .word native_row_144
-    .word native_row_148
-    .word native_row_148
-    .word native_row_148
-    .word native_row_148
-    .word native_row_148
-    .word native_row_148
+    .word native_row_145
+    .word native_row_149
+    .word native_row_149
+    .word native_row_149
+    .word native_row_149
+    .word native_row_149
     .word native_row_149
     .word native_row_150
     .word native_row_151
-    .word native_row_151
-    .word native_row_144
-    .word native_row_148
-    .word native_row_148
     .word native_row_152
-    .word native_row_151
-    .word native_row_151
-    .word native_row_151
-    .word native_row_38
+    .word native_row_152
+    .word native_row_145
+    .word native_row_149
+    .word native_row_149
     .word native_row_153
+    .word native_row_152
+    .word native_row_152
+    .word native_row_152
     .word native_row_154
+    .word native_row_155
+    .word native_row_156
 sprite_47:
     .byte 24,26,2,4,4,4,4,4,5,5,2,0,0,4,0,0
     .word native_row_29
-    .word native_row_155
-    .word native_row_155
+    .word native_row_157
+    .word native_row_157
     .word native_row_28
-    .word native_row_156
-    .word native_row_157
-    .word native_row_157
-    .word native_row_157
-    .word native_row_157
-    .word native_row_157
-    .word native_row_157
-    .word native_row_157
-    .word native_row_157
-    .word native_row_157
     .word native_row_158
     .word native_row_159
-    .word native_row_160
-    .word native_row_160
+    .word native_row_159
+    .word native_row_159
+    .word native_row_159
+    .word native_row_159
+    .word native_row_159
+    .word native_row_159
+    .word native_row_159
+    .word native_row_159
     .word native_row_160
     .word native_row_161
     .word native_row_162
     .word native_row_162
     .word native_row_162
-    .word native_row_158
     .word native_row_163
     .word native_row_164
-sprite_48:
-    .byte 24,26,2,4,4,4,4,4,5,5,2,0,0,4,0,0
+    .word native_row_164
+    .word native_row_164
     .word native_row_165
     .word native_row_166
-    .word native_row_166
     .word native_row_167
+sprite_48:
+    .byte 24,26,2,4,4,4,4,4,5,5,2,0,0,4,0,0
     .word native_row_168
     .word native_row_169
     .word native_row_169
-    .word native_row_169
-    .word native_row_169
-    .word native_row_169
     .word native_row_170
-    .word native_row_169
-    .word native_row_169
-    .word native_row_169
     .word native_row_171
     .word native_row_172
+    .word native_row_172
+    .word native_row_172
+    .word native_row_172
+    .word native_row_172
     .word native_row_173
-    .word native_row_173
+    .word native_row_172
+    .word native_row_172
+    .word native_row_172
     .word native_row_173
     .word native_row_174
     .word native_row_175
     .word native_row_175
     .word native_row_175
-    .word native_row_171
     .word native_row_176
     .word native_row_177
+    .word native_row_177
+    .word native_row_177
+    .word native_row_178
+    .word native_row_179
+    .word native_row_180
 sprite_49:
     .byte 24,26,2,4,4,4,4,4,5,5,2,0,0,4,0,0
-    .word native_row_144
-    .word native_row_146
-    .word native_row_146
+    .word native_row_145
     .word native_row_147
-    .word native_row_49
-    .word native_row_178
-    .word native_row_178
-    .word native_row_178
-    .word native_row_178
-    .word native_row_178
-    .word native_row_178
-    .word native_row_178
-    .word native_row_178
-    .word native_row_178
-    .word native_row_179
-    .word native_row_179
-    .word native_row_144
-    .word native_row_178
-    .word native_row_178
-    .word native_row_180
-    .word native_row_179
-    .word native_row_179
-    .word native_row_179
+    .word native_row_147
     .word native_row_181
+    .word native_row_49
+    .word native_row_182
+    .word native_row_182
+    .word native_row_182
+    .word native_row_182
+    .word native_row_182
+    .word native_row_182
+    .word native_row_182
+    .word native_row_182
     .word native_row_182
     .word native_row_183
+    .word native_row_183
+    .word native_row_145
+    .word native_row_182
+    .word native_row_182
+    .word native_row_184
+    .word native_row_183
+    .word native_row_183
+    .word native_row_185
+    .word native_row_186
+    .word native_row_187
+    .word native_row_188
 sprite_50:
     .byte 24,26,2,4,4,4,4,4,5,5,2,0,0,4,0,0
-    .word native_row_144
     .word native_row_145
     .word native_row_146
     .word native_row_147
-    .word native_row_184
-    .word native_row_178
-    .word native_row_178
-    .word native_row_178
-    .word native_row_178
-    .word native_row_178
-    .word native_row_178
-    .word native_row_178
-    .word native_row_179
-    .word native_row_185
-    .word native_row_179
-    .word native_row_186
-    .word native_row_178
-    .word native_row_178
-    .word native_row_187
-    .word native_row_188
-    .word native_row_179
+    .word native_row_181
     .word native_row_189
+    .word native_row_182
+    .word native_row_182
+    .word native_row_182
+    .word native_row_182
+    .word native_row_182
+    .word native_row_182
+    .word native_row_182
+    .word native_row_183
     .word native_row_190
-    .word native_row_178
+    .word native_row_183
     .word native_row_191
+    .word native_row_182
+    .word native_row_182
     .word native_row_192
-sprite_51:
-    .byte 30,26,2,5,5,5,5,5,5,6,2,0,0,5,0,0
     .word native_row_193
+    .word native_row_183
     .word native_row_194
     .word native_row_195
+    .word native_row_182
     .word native_row_196
     .word native_row_197
-    .word native_row_198
+sprite_51:
+    .byte 30,26,2,5,5,5,5,5,5,6,2,0,0,5,0,0
     .word native_row_198
     .word native_row_199
     .word native_row_200
-    .word native_row_201
     .word native_row_201
     .word native_row_202
     .word native_row_203
@@ -515,7 +508,9 @@ sprite_51:
     .word native_row_204
     .word native_row_205
     .word native_row_206
+    .word native_row_206
     .word native_row_207
+    .word native_row_208
     .word native_row_208
     .word native_row_209
     .word native_row_210
@@ -524,26 +519,26 @@ sprite_51:
     .word native_row_213
     .word native_row_214
     .word native_row_215
-sprite_52:
-    .byte 30,26,2,5,5,5,5,5,5,6,2,0,0,5,0,0
     .word native_row_216
     .word native_row_217
     .word native_row_218
     .word native_row_219
     .word native_row_220
-    .word native_row_221
-    .word native_row_221
+sprite_52:
+    .byte 30,26,2,5,5,5,5,5,5,6,2,0,0,5,0,0
     .word native_row_221
     .word native_row_222
-    .word native_row_222
     .word native_row_223
-    .word native_row_223
-    .word native_row_224
     .word native_row_224
     .word native_row_225
     .word native_row_226
+    .word native_row_226
+    .word native_row_226
+    .word native_row_227
     .word native_row_227
     .word native_row_228
+    .word native_row_228
+    .word native_row_229
     .word native_row_229
     .word native_row_230
     .word native_row_231
@@ -552,166 +547,157 @@ sprite_52:
     .word native_row_234
     .word native_row_235
     .word native_row_236
-sprite_53:
-    .byte 24,26,2,4,4,4,4,4,5,5,2,0,0,4,0,0
-    .word native_row_144
-    .word native_row_146
-    .word native_row_146
-    .word native_row_147
-    .word native_row_49
     .word native_row_237
-    .word native_row_237
-    .word native_row_178
-    .word native_row_178
-    .word native_row_178
-    .word native_row_178
     .word native_row_238
     .word native_row_239
     .word native_row_240
     .word native_row_241
-    .word native_row_179
-    .word native_row_144
-    .word native_row_178
-    .word native_row_178
-    .word native_row_180
-    .word native_row_179
-    .word native_row_241
+sprite_53:
+    .byte 24,26,2,4,4,4,4,4,5,5,2,0,0,4,0,0
+    .word native_row_145
+    .word native_row_147
+    .word native_row_147
+    .word native_row_181
+    .word native_row_49
     .word native_row_242
+    .word native_row_242
+    .word native_row_182
+    .word native_row_182
+    .word native_row_182
+    .word native_row_182
     .word native_row_243
     .word native_row_244
     .word native_row_245
+    .word native_row_246
+    .word native_row_183
+    .word native_row_145
+    .word native_row_182
+    .word native_row_182
+    .word native_row_184
+    .word native_row_183
+    .word native_row_246
+    .word native_row_247
+    .word native_row_248
+    .word native_row_249
+    .word native_row_250
 sprite_54:
     .byte 24,26,2,4,4,4,4,4,5,5,2,0,0,4,0,0
-    .word native_row_144
     .word native_row_145
     .word native_row_146
     .word native_row_147
-    .word native_row_49
-    .word native_row_246
-    .word native_row_246
-    .word native_row_246
-    .word native_row_246
-    .word native_row_246
-    .word native_row_246
-    .word native_row_247
-    .word native_row_148
-    .word native_row_248
-    .word native_row_148
-    .word native_row_249
-    .word native_row_250
-    .word native_row_251
+    .word native_row_181
     .word native_row_251
     .word native_row_252
+    .word native_row_252
+    .word native_row_252
+    .word native_row_252
+    .word native_row_252
+    .word native_row_252
     .word native_row_253
-    .word native_row_161
+    .word native_row_149
     .word native_row_254
+    .word native_row_149
     .word native_row_255
     .word native_row_256
     .word native_row_257
-sprite_55:
-    .byte 30,26,2,5,5,5,5,5,5,6,2,0,0,5,0,0
-    .word native_row_193
-    .word native_row_194
-    .word native_row_195
-    .word native_row_196
+    .word native_row_257
     .word native_row_258
     .word native_row_259
     .word native_row_260
     .word native_row_261
     .word native_row_262
     .word native_row_263
-    .word native_row_263
     .word native_row_264
-    .word native_row_264
-    .word native_row_264
+sprite_55:
+    .byte 30,26,2,5,5,5,5,5,5,6,2,0,0,5,0,0
+    .word native_row_198
+    .word native_row_199
+    .word native_row_200
+    .word native_row_201
     .word native_row_265
-    .word native_row_205
-    .word native_row_206
-    .word native_row_207
-    .word native_row_208
-    .word native_row_209
+    .word native_row_266
+    .word native_row_267
+    .word native_row_268
+    .word native_row_269
+    .word native_row_270
+    .word native_row_270
+    .word native_row_271
+    .word native_row_271
+    .word native_row_271
+    .word native_row_272
     .word native_row_210
     .word native_row_211
     .word native_row_212
     .word native_row_213
     .word native_row_214
     .word native_row_215
-sprite_56:
-    .byte 30,26,2,5,5,5,5,5,5,6,2,0,0,5,0,0
     .word native_row_216
     .word native_row_217
     .word native_row_218
     .word native_row_219
-    .word native_row_266
-    .word native_row_267
-    .word native_row_267
-    .word native_row_268
-    .word native_row_269
-    .word native_row_10
+    .word native_row_220
+sprite_56:
+    .byte 30,26,2,5,5,5,5,5,5,6,2,0,0,5,0,0
+    .word native_row_221
+    .word native_row_222
     .word native_row_223
-    .word native_row_270
     .word native_row_224
-    .word native_row_271
-    .word native_row_225
-    .word native_row_226
-    .word native_row_227
+    .word native_row_273
+    .word native_row_274
+    .word native_row_274
+    .word native_row_275
+    .word native_row_276
+    .word native_row_277
     .word native_row_228
+    .word native_row_278
     .word native_row_229
+    .word native_row_279
     .word native_row_230
     .word native_row_231
     .word native_row_232
     .word native_row_233
-    .word native_row_234
+    .word native_row_280
     .word native_row_235
     .word native_row_236
+    .word native_row_281
+    .word native_row_238
+    .word native_row_239
+    .word native_row_240
+    .word native_row_241
 sprite_57:
     .byte 24,26,2,4,4,4,4,4,5,5,2,0,0,4,0,0
-    .word native_row_144
-    .word native_row_146
-    .word native_row_146
+    .word native_row_145
     .word native_row_147
+    .word native_row_147
+    .word native_row_181
     .word native_row_49
-    .word native_row_272
-    .word native_row_272
-    .word native_row_148
-    .word native_row_148
-    .word native_row_148
-    .word native_row_148
-    .word native_row_249
-    .word native_row_273
-    .word native_row_274
-    .word native_row_275
-    .word native_row_151
-    .word native_row_148
-    .word native_row_148
-    .word native_row_148
-    .word native_row_276
-    .word native_row_151
-    .word native_row_249
-    .word native_row_247
-    .word native_row_277
-    .word native_row_278
-    .word native_row_279
-sprite_58:
-    .byte 36,16,2,6,6,6,6,6,6,6,2,0,0,6,0,0
-    .word native_row_280
-    .word native_row_281
     .word native_row_282
-    .word native_row_283
+    .word native_row_282
+    .word native_row_149
+    .word native_row_149
+    .word native_row_149
+    .word native_row_149
+    .word native_row_255
     .word native_row_283
     .word native_row_284
     .word native_row_285
+    .word native_row_152
+    .word native_row_149
+    .word native_row_149
+    .word native_row_149
     .word native_row_286
+    .word native_row_152
+    .word native_row_255
     .word native_row_287
     .word native_row_288
     .word native_row_289
     .word native_row_290
+sprite_58:
+    .byte 36,16,2,6,6,6,6,6,6,6,2,0,0,6,0,0
     .word native_row_291
     .word native_row_292
     .word native_row_293
-    .word native_row_293
-sprite_59:
-    .byte 36,16,2,6,6,6,6,6,6,6,2,0,0,6,0,0
+    .word native_row_294
     .word native_row_294
     .word native_row_295
     .word native_row_296
@@ -723,32 +709,31 @@ sprite_59:
     .word native_row_302
     .word native_row_303
     .word native_row_304
+    .word native_row_304
+sprite_59:
+    .byte 36,16,2,6,6,6,6,6,6,6,2,0,0,6,0,0
     .word native_row_305
     .word native_row_306
     .word native_row_307
     .word native_row_308
     .word native_row_309
-sprite_60:
-    .byte 30,16,2,5,5,5,5,5,5,6,2,0,0,5,0,0
     .word native_row_310
     .word native_row_311
     .word native_row_312
-    .word native_row_82
     .word native_row_313
     .word native_row_314
     .word native_row_315
-    .word native_row_216
     .word native_row_316
     .word native_row_317
     .word native_row_318
     .word native_row_319
     .word native_row_320
+sprite_60:
+    .byte 30,16,2,5,5,5,5,5,5,6,2,0,0,5,0,0
     .word native_row_321
-    .word native_row_80
     .word native_row_322
-sprite_61:
-    .byte 36,16,2,6,6,6,6,6,6,6,2,0,0,6,0,0
     .word native_row_323
+    .word native_row_83
     .word native_row_324
     .word native_row_325
     .word native_row_326
@@ -759,13 +744,14 @@ sprite_61:
     .word native_row_331
     .word native_row_332
     .word native_row_333
+    .word native_row_80
     .word native_row_334
+sprite_61:
+    .byte 36,16,2,6,6,6,6,6,6,6,2,0,0,6,0,0
     .word native_row_335
     .word native_row_336
     .word native_row_337
     .word native_row_338
-sprite_62:
-    .byte 48,20,2,7,7,8,8,8,8,8,2,0,0,7,0,0
     .word native_row_339
     .word native_row_340
     .word native_row_341
@@ -778,6 +764,8 @@ sprite_62:
     .word native_row_348
     .word native_row_349
     .word native_row_350
+sprite_62:
+    .byte 48,20,2,7,7,8,8,8,8,8,2,0,0,7,0,0
     .word native_row_351
     .word native_row_352
     .word native_row_353
@@ -786,8 +774,6 @@ sprite_62:
     .word native_row_356
     .word native_row_357
     .word native_row_358
-sprite_63:
-    .byte 54,21,2,8,8,8,9,9,9,9,2,0,0,8,0,0
     .word native_row_359
     .word native_row_360
     .word native_row_361
@@ -800,6 +786,8 @@ sprite_63:
     .word native_row_368
     .word native_row_369
     .word native_row_370
+sprite_63:
+    .byte 54,21,2,8,8,8,9,9,9,9,2,0,0,8,0,0
     .word native_row_371
     .word native_row_372
     .word native_row_373
@@ -809,106 +797,104 @@ sprite_63:
     .word native_row_377
     .word native_row_378
     .word native_row_379
-sprite_64:
-    .byte 12,17,2,2,2,2,3,3,3,3,2,0,0,2,0,0
     .word native_row_380
     .word native_row_381
     .word native_row_382
     .word native_row_383
-    .word native_row_383
-    .word native_row_383
-    .word native_row_384
-    .word native_row_384
     .word native_row_384
     .word native_row_385
     .word native_row_386
-    .word native_row_383
-    .word native_row_382
-    .word native_row_381
-    .word native_row_382
-    .word native_row_381
-    .word native_row_382
-sprite_65:
-    .byte 12,16,2,2,2,2,3,3,3,3,2,0,0,2,0,0
     .word native_row_387
     .word native_row_388
     .word native_row_389
-    .word native_row_389
     .word native_row_390
     .word native_row_391
+sprite_64:
+    .byte 12,17,2,2,2,2,3,3,3,3,2,0,0,2,0,0
     .word native_row_392
-    .word native_row_390
-    .word native_row_389
     .word native_row_393
     .word native_row_394
     .word native_row_395
-    .word native_row_390
+    .word native_row_395
+    .word native_row_395
+    .word native_row_396
+    .word native_row_396
     .word native_row_396
     .word native_row_397
     .word native_row_398
-sprite_67:
-    .byte 12,17,2,2,2,2,3,3,3,3,2,0,0,2,0,0
+    .word native_row_395
+    .word native_row_394
+    .word native_row_393
+    .word native_row_394
+    .word native_row_393
+    .word native_row_394
+sprite_65:
+    .byte 12,16,2,2,2,2,3,3,3,3,2,0,0,2,0,0
     .word native_row_399
     .word native_row_400
-    .word native_row_400
-    .word native_row_401
-    .word native_row_401
-    .word native_row_401
-    .word native_row_401
-    .word native_row_401
     .word native_row_401
     .word native_row_401
     .word native_row_402
-    .word native_row_400
-    .word native_row_401
-    .word native_row_401
-    .word native_row_400
-    .word native_row_400
-    .word native_row_399
-sprite_68:
-    .byte 18,25,2,3,3,3,3,4,4,4,2,0,0,3,0,0
     .word native_row_403
     .word native_row_404
+    .word native_row_402
+    .word native_row_401
     .word native_row_405
     .word native_row_406
     .word native_row_407
+    .word native_row_402
     .word native_row_408
     .word native_row_409
     .word native_row_410
-    .word native_row_409
-    .word native_row_409
-    .word native_row_409
+sprite_67:
+    .byte 12,17,2,2,2,2,3,3,3,3,2,0,0,2,0,0
     .word native_row_411
     .word native_row_412
+    .word native_row_412
+    .word native_row_413
+    .word native_row_413
+    .word native_row_413
+    .word native_row_413
+    .word native_row_413
+    .word native_row_413
     .word native_row_413
     .word native_row_414
+    .word native_row_412
+    .word native_row_413
+    .word native_row_413
+    .word native_row_412
+    .word native_row_412
+    .word native_row_411
+sprite_68:
+    .byte 18,25,2,3,3,3,3,4,4,4,2,0,0,3,0,0
     .word native_row_415
     .word native_row_416
-    .word native_row_417
     .word native_row_417
     .word native_row_418
     .word native_row_419
     .word native_row_420
     .word native_row_421
     .word native_row_422
+    .word native_row_421
+    .word native_row_421
+    .word native_row_421
     .word native_row_423
-sprite_69:
-    .byte 18,26,2,3,3,3,3,4,4,4,2,0,0,3,0,0
-    .word native_row_403
-    .word native_row_404
     .word native_row_424
     .word native_row_425
     .word native_row_426
     .word native_row_427
     .word native_row_428
     .word native_row_429
+    .word native_row_429
     .word native_row_430
     .word native_row_431
-    .word native_row_428
     .word native_row_432
     .word native_row_433
     .word native_row_434
     .word native_row_435
+sprite_69:
+    .byte 18,26,2,3,3,3,3,4,4,4,2,0,0,3,0,0
+    .word native_row_415
     .word native_row_436
     .word native_row_437
     .word native_row_438
@@ -916,261 +902,231 @@ sprite_69:
     .word native_row_440
     .word native_row_441
     .word native_row_442
-    .word native_row_442
     .word native_row_443
     .word native_row_444
+    .word native_row_441
     .word native_row_445
-sprite_70:
-    .byte 18,23,2,3,3,3,3,4,4,4,2,0,0,3,0,0
-    .word native_row_403
-    .word native_row_404
-    .word native_row_405
     .word native_row_446
-    .word native_row_407
-    .word native_row_408
     .word native_row_447
     .word native_row_448
-    .word native_row_409
     .word native_row_449
-    .word native_row_447
     .word native_row_450
     .word native_row_451
     .word native_row_452
     .word native_row_453
     .word native_row_454
     .word native_row_455
+    .word native_row_455
     .word native_row_456
     .word native_row_457
     .word native_row_458
+sprite_70:
+    .byte 18,23,2,3,3,3,3,4,4,4,2,0,0,3,0,0
+    .word native_row_415
+    .word native_row_416
+    .word native_row_417
     .word native_row_459
+    .word native_row_419
+    .word native_row_420
     .word native_row_460
     .word native_row_461
-sprite_71:
-    .byte 12,21,2,2,2,2,3,3,3,3,2,0,0,2,0,0
+    .word native_row_421
     .word native_row_462
+    .word native_row_460
     .word native_row_463
     .word native_row_464
     .word native_row_465
     .word native_row_466
     .word native_row_467
     .word native_row_468
-    .word native_row_468
-    .word native_row_468
-    .word native_row_469
     .word native_row_469
     .word native_row_470
-    .word native_row_470
-    .word native_row_469
     .word native_row_471
     .word native_row_472
     .word native_row_473
     .word native_row_474
-    .word native_row_474
-    .word native_row_474
-    .word native_row_402
-sprite_74:
-    .byte 12,17,2,2,2,2,3,3,3,3,2,0,0,2,0,0
-    .word native_row_380
-    .word native_row_381
-    .word native_row_382
-    .word native_row_383
-    .word native_row_383
-    .word native_row_383
-    .word native_row_384
-    .word native_row_384
-    .word native_row_384
-    .word native_row_385
-    .word native_row_386
-    .word native_row_383
-    .word native_row_382
-    .word native_row_381
-    .word native_row_382
+sprite_71:
+    .byte 12,21,2,2,2,2,3,3,3,3,2,0,0,2,0,0
     .word native_row_475
     .word native_row_476
-sprite_75:
-    .byte 18,16,2,3,3,3,3,4,4,4,2,0,0,3,0,0
     .word native_row_477
     .word native_row_478
     .word native_row_479
-    .word native_row_479
-    .word native_row_479
-    .word native_row_479
     .word native_row_480
     .word native_row_481
+    .word native_row_481
+    .word native_row_481
     .word native_row_482
+    .word native_row_482
+    .word native_row_483
     .word native_row_483
     .word native_row_484
     .word native_row_485
     .word native_row_486
     .word native_row_487
     .word native_row_488
+    .word native_row_488
+    .word native_row_488
+    .word native_row_414
+sprite_74:
+    .byte 12,17,2,2,2,2,3,3,3,3,2,0,0,2,0,0
+    .word native_row_392
+    .word native_row_393
+    .word native_row_394
+    .word native_row_395
+    .word native_row_395
+    .word native_row_395
+    .word native_row_396
+    .word native_row_396
+    .word native_row_396
+    .word native_row_397
+    .word native_row_398
+    .word native_row_395
+    .word native_row_394
+    .word native_row_393
     .word native_row_489
-sprite_76:
-    .byte 12,7,2,2,2,2,3,3,3,3,2,0,0,2,0,0
     .word native_row_490
     .word native_row_491
+sprite_75:
+    .byte 18,16,2,3,3,3,3,4,4,4,2,0,0,3,0,0
     .word native_row_492
     .word native_row_493
     .word native_row_494
+    .word native_row_494
+    .word native_row_494
+    .word native_row_494
     .word native_row_495
     .word native_row_496
-sprite_77:
-    .byte 12,18,2,2,2,2,3,3,3,3,2,0,0,2,0,0
-    .word native_row_399
-    .word native_row_400
-    .word native_row_400
-    .word native_row_401
-    .word native_row_401
-    .word native_row_401
-    .word native_row_401
-    .word native_row_401
-    .word native_row_401
-    .word native_row_401
-    .word native_row_402
-    .word native_row_400
-    .word native_row_401
-    .word native_row_401
-    .word native_row_400
-    .word native_row_400
-    .word native_row_474
     .word native_row_497
-sprite_78:
-    .byte 18,19,2,3,3,3,3,4,4,4,2,0,0,3,0,0
     .word native_row_498
     .word native_row_499
     .word native_row_500
     .word native_row_501
-    .word native_row_501
     .word native_row_502
     .word native_row_503
     .word native_row_504
+sprite_76:
+    .byte 12,7,2,2,2,2,3,3,3,3,2,0,0,2,0,0
     .word native_row_505
     .word native_row_506
     .word native_row_507
     .word native_row_508
     .word native_row_509
     .word native_row_510
-    .word native_row_510
-    .word native_row_510
     .word native_row_511
-    .word native_row_511
-    .word native_row_510
-sprite_79:
-    .byte 24,14,2,4,4,4,4,4,5,5,2,0,0,4,0,0
+sprite_77:
+    .byte 12,18,2,2,2,2,3,3,3,3,2,0,0,2,0,0
+    .word native_row_411
+    .word native_row_412
+    .word native_row_412
+    .word native_row_413
+    .word native_row_413
+    .word native_row_413
+    .word native_row_413
+    .word native_row_413
+    .word native_row_413
+    .word native_row_413
+    .word native_row_414
+    .word native_row_412
+    .word native_row_413
+    .word native_row_413
+    .word native_row_412
     .word native_row_512
-    .word native_row_512
+    .word native_row_488
     .word native_row_513
+sprite_78:
+    .byte 18,19,2,3,3,3,3,4,4,4,2,0,0,3,0,0
     .word native_row_514
     .word native_row_515
     .word native_row_516
     .word native_row_517
+    .word native_row_517
     .word native_row_518
     .word native_row_519
-    .word native_row_520
     .word native_row_520
     .word native_row_521
     .word native_row_522
     .word native_row_523
-sprite_80:
-    .byte 18,11,2,3,3,3,3,4,4,4,2,0,0,3,0,0
-    .word native_row_501
     .word native_row_524
     .word native_row_525
-    .word native_row_459
+    .word native_row_526
+    .word native_row_526
     .word native_row_526
     .word native_row_527
+    .word native_row_527
+    .word native_row_526
+sprite_79:
+    .byte 24,14,2,4,4,4,4,4,5,5,2,0,0,4,0,0
     .word native_row_528
     .word native_row_528
-    .word native_row_529
     .word native_row_529
     .word native_row_530
-sprite_81:
-    .byte 18,19,2,3,3,3,3,4,4,4,2,0,0,3,0,0
     .word native_row_531
     .word native_row_532
-    .word native_row_532
     .word native_row_533
-    .word native_row_533
-    .word native_row_533
-    .word native_row_444
-    .word native_row_444
     .word native_row_534
     .word native_row_535
     .word native_row_536
     .word native_row_537
     .word native_row_538
-    .word native_row_510
-    .word native_row_510
-    .word native_row_510
-    .word native_row_511
-    .word native_row_511
-    .word native_row_510
-sprite_82:
-    .byte 18,18,2,3,3,3,3,4,4,4,2,0,0,3,0,0
     .word native_row_539
     .word native_row_540
+sprite_80:
+    .byte 18,11,2,3,3,3,3,4,4,4,2,0,0,3,0,0
     .word native_row_541
     .word native_row_542
     .word native_row_543
+    .word native_row_472
     .word native_row_544
     .word native_row_545
     .word native_row_546
+    .word native_row_546
     .word native_row_547
-    .word native_row_538
+    .word native_row_547
     .word native_row_548
-    .word native_row_548
+sprite_81:
+    .byte 18,19,2,3,3,3,3,4,4,4,2,0,0,3,0,0
     .word native_row_549
-    .word native_row_548
+    .word native_row_550
     .word native_row_550
     .word native_row_551
     .word native_row_551
-    .word native_row_441
-sprite_83:
-    .byte 18,16,2,3,3,3,3,4,4,4,2,0,0,3,0,0
-    .word native_row_509
+    .word native_row_551
+    .word native_row_457
+    .word native_row_457
     .word native_row_552
     .word native_row_553
     .word native_row_554
     .word native_row_555
     .word native_row_556
+    .word native_row_526
+    .word native_row_526
+    .word native_row_526
+    .word native_row_527
+    .word native_row_527
+    .word native_row_526
+sprite_82:
+    .byte 18,18,2,3,3,3,3,4,4,4,2,0,0,3,0,0
     .word native_row_557
     .word native_row_558
     .word native_row_559
     .word native_row_560
-    .word native_row_560
     .word native_row_561
     .word native_row_562
-    .word native_row_459
     .word native_row_563
     .word native_row_564
-sprite_84:
-    .byte 18,17,2,3,3,3,3,4,4,4,2,0,0,3,0,0
-    .word native_row_498
-    .word native_row_499
-    .word native_row_500
-    .word native_row_501
-    .word native_row_501
-    .word native_row_502
-    .word native_row_503
     .word native_row_565
     .word native_row_566
     .word native_row_567
+    .word native_row_567
     .word native_row_568
-    .word native_row_508
-    .word native_row_509
     .word native_row_569
     .word native_row_570
     .word native_row_571
+    .word native_row_571
     .word native_row_572
-sprite_85:
-    .byte 24,17,2,4,4,4,4,4,5,5,2,0,0,4,0,0
-    .word native_row_512
-    .word native_row_512
-    .word native_row_512
-    .word native_row_513
-    .word native_row_514
-    .word native_row_515
-    .word native_row_516
+sprite_83:
+    .byte 18,16,2,3,3,3,3,4,4,4,2,0,0,3,0,0
     .word native_row_573
     .word native_row_574
     .word native_row_575
@@ -1181,170 +1137,139 @@ sprite_85:
     .word native_row_580
     .word native_row_581
     .word native_row_582
-sprite_86:
-    .byte 18,8,2,3,3,3,3,4,4,4,2,0,0,3,0,0
-    .word native_row_501
-    .word native_row_524
-    .word native_row_525
-    .word native_row_459
+    .word native_row_582
     .word native_row_583
     .word native_row_584
+    .word native_row_472
     .word native_row_585
     .word native_row_586
-sprite_87:
-    .byte 18,18,2,3,3,3,3,4,4,4,2,0,0,3,0,0
-    .word native_row_531
-    .word native_row_532
-    .word native_row_532
-    .word native_row_533
-    .word native_row_533
-    .word native_row_533
-    .word native_row_444
-    .word native_row_444
+sprite_84:
+    .byte 18,17,2,3,3,3,3,4,4,4,2,0,0,3,0,0
+    .word native_row_514
+    .word native_row_515
+    .word native_row_516
+    .word native_row_517
+    .word native_row_517
+    .word native_row_518
     .word native_row_587
     .word native_row_588
     .word native_row_589
     .word native_row_590
-    .word native_row_509
-    .word native_row_510
-    .word native_row_569
     .word native_row_591
+    .word native_row_524
+    .word native_row_525
     .word native_row_592
-    .word native_row_537
-sprite_88:
-    .byte 18,26,2,3,3,3,3,4,4,4,2,0,0,3,0,0
-    .word native_row_531
-    .word native_row_532
-    .word native_row_532
-    .word native_row_533
-    .word native_row_533
-    .word native_row_533
-    .word native_row_444
-    .word native_row_444
-    .word native_row_534
-    .word native_row_535
-    .word native_row_536
-    .word native_row_537
     .word native_row_593
     .word native_row_594
     .word native_row_595
+sprite_85:
+    .byte 24,17,2,4,4,4,4,4,5,5,2,0,0,4,0,0
+    .word native_row_528
+    .word native_row_528
+    .word native_row_528
+    .word native_row_529
+    .word native_row_530
+    .word native_row_531
     .word native_row_596
     .word native_row_597
-    .word native_row_596
-    .word native_row_539
-    .word native_row_595
-    .word native_row_530
-    .word native_row_403
-    .word native_row_403
-    .word native_row_596
-    .word native_row_596
     .word native_row_598
-sprite_89:
-    .byte 18,17,2,3,3,3,3,4,4,4,2,0,0,3,0,0
     .word native_row_599
-    .word native_row_599
-    .word native_row_599
-    .word native_row_599
-    .word native_row_599
-    .word native_row_510
-    .word native_row_538
-    .word native_row_538
-    .word native_row_547
-    .word native_row_547
-    .word native_row_547
     .word native_row_600
     .word native_row_601
     .word native_row_602
-    .word native_row_442
-    .word native_row_443
-    .word native_row_444
-sprite_91:
-    .byte 36,31,2,6,6,6,6,6,6,6,2,0,0,6,0,0
     .word native_row_603
     .word native_row_604
     .word native_row_605
     .word native_row_606
+sprite_86:
+    .byte 18,8,2,3,3,3,3,4,4,4,2,0,0,3,0,0
+    .word native_row_541
+    .word native_row_542
+    .word native_row_543
     .word native_row_607
-    .word native_row_604
     .word native_row_608
     .word native_row_609
     .word native_row_610
-    .word native_row_610
-    .word native_row_610
-    .word native_row_610
     .word native_row_611
+sprite_87:
+    .byte 18,18,2,3,3,3,3,4,4,4,2,0,0,3,0,0
+    .word native_row_549
+    .word native_row_550
+    .word native_row_550
+    .word native_row_551
+    .word native_row_551
+    .word native_row_551
+    .word native_row_457
     .word native_row_612
     .word native_row_613
     .word native_row_614
     .word native_row_615
     .word native_row_616
-    .word native_row_616
-    .word native_row_327
     .word native_row_617
-    .word native_row_617
+    .word native_row_526
     .word native_row_618
     .word native_row_619
-    .word native_row_611
     .word native_row_620
-    .word native_row_611
-    .word native_row_611
     .word native_row_621
-    .word native_row_621
-    .word native_row_621
-sprite_94:
-    .byte 18,13,2,3,3,3,3,4,4,4,2,0,0,3,0,0
-    .word native_row_569
-    .word native_row_599
-    .word native_row_403
-    .word native_row_510
-    .word native_row_509
+sprite_88:
+    .byte 18,26,2,3,3,3,3,4,4,4,2,0,0,3,0,0
+    .word native_row_549
+    .word native_row_550
+    .word native_row_550
+    .word native_row_551
+    .word native_row_551
+    .word native_row_551
+    .word native_row_457
+    .word native_row_457
+    .word native_row_552
+    .word native_row_553
+    .word native_row_554
     .word native_row_622
     .word native_row_623
     .word native_row_624
     .word native_row_625
     .word native_row_626
     .word native_row_627
+    .word native_row_626
     .word native_row_628
-    .word native_row_623
-sprite_95:
-    .byte 18,13,2,3,3,3,3,4,4,4,2,0,0,3,0,0
-    .word native_row_403
-    .word native_row_530
-    .word native_row_622
-    .word native_row_569
-    .word native_row_509
-    .word native_row_622
-    .word native_row_623
+    .word native_row_625
     .word native_row_629
     .word native_row_630
-    .word native_row_628
-    .word native_row_627
-    .word native_row_594
     .word native_row_631
-sprite_96:
-    .byte 24,7,2,4,4,4,4,4,5,5,2,0,0,4,0,0
+    .word native_row_626
+    .word native_row_626
     .word native_row_632
+sprite_89:
+    .byte 18,17,2,3,3,3,3,4,4,4,2,0,0,3,0,0
     .word native_row_633
+    .word native_row_633
+    .word native_row_633
+    .word native_row_633
+    .word native_row_633
+    .word native_row_526
     .word native_row_634
+    .word native_row_634
+    .word native_row_635
     .word native_row_635
     .word native_row_636
     .word native_row_637
-    .word native_row_632
-sprite_97:
-    .byte 24,7,2,4,4,4,4,4,5,5,2,0,0,4,0,0
     .word native_row_638
     .word native_row_639
+    .word native_row_455
+    .word native_row_456
+    .word native_row_457
+sprite_91:
+    .byte 36,31,2,6,6,6,6,6,6,6,2,0,0,6,0,0
     .word native_row_640
     .word native_row_641
-    .word native_row_42
     .word native_row_642
-    .word native_row_638
-sprite_98:
-    .byte 18,13,2,3,3,3,3,4,4,4,2,0,0,3,0,0
     .word native_row_643
     .word native_row_644
+    .word native_row_641
     .word native_row_645
     .word native_row_646
+    .word native_row_647
+    .word native_row_647
     .word native_row_647
     .word native_row_648
     .word native_row_649
@@ -1353,64 +1278,70 @@ sprite_98:
     .word native_row_652
     .word native_row_653
     .word native_row_654
-    .word native_row_538
-sprite_99:
-    .byte 18,15,2,3,3,3,3,4,4,4,2,0,0,3,0,0
+    .word native_row_654
+    .word native_row_339
+    .word native_row_655
     .word native_row_655
     .word native_row_656
     .word native_row_657
     .word native_row_658
     .word native_row_659
     .word native_row_660
+    .word native_row_660
     .word native_row_661
+    .word native_row_661
+    .word native_row_661
+sprite_94:
+    .byte 18,13,2,3,3,3,3,4,4,4,2,0,0,3,0,0
     .word native_row_662
     .word native_row_663
     .word native_row_664
     .word native_row_665
     .word native_row_666
     .word native_row_667
-    .word native_row_531
-    .word native_row_531
-sprite_100:
-    .byte 18,13,2,3,3,3,3,4,4,4,2,0,0,3,0,0
     .word native_row_668
     .word native_row_669
     .word native_row_670
     .word native_row_671
     .word native_row_672
     .word native_row_673
+    .word native_row_668
+sprite_95:
+    .byte 18,13,2,3,3,3,3,4,4,4,2,0,0,3,0,0
+    .word native_row_664
     .word native_row_674
+    .word native_row_667
+    .word native_row_662
+    .word native_row_666
+    .word native_row_667
+    .word native_row_668
     .word native_row_675
     .word native_row_676
+    .word native_row_673
+    .word native_row_672
     .word native_row_677
     .word native_row_678
+sprite_96:
+    .byte 24,7,2,4,4,4,4,4,5,5,2,0,0,4,0,0
     .word native_row_679
-    .word native_row_559
-sprite_101:
-    .byte 18,15,2,3,3,3,3,4,4,4,2,0,0,3,0,0
-    .word native_row_572
     .word native_row_680
     .word native_row_681
     .word native_row_682
     .word native_row_683
     .word native_row_684
+    .word native_row_679
+sprite_97:
+    .byte 24,7,2,4,4,4,4,4,5,5,2,0,0,4,0,0
     .word native_row_685
     .word native_row_686
     .word native_row_687
     .word native_row_688
     .word native_row_689
     .word native_row_690
+    .word native_row_685
+sprite_98:
+    .byte 18,13,2,3,3,3,3,4,4,4,2,0,0,3,0,0
     .word native_row_691
-    .word native_row_691
-    .word native_row_691
-sprite_102:
-    .byte 18,17,2,3,3,3,3,4,4,4,2,0,0,3,0,0
-    .word native_row_643
-    .word native_row_644
-    .word native_row_645
-    .word native_row_646
-    .word native_row_647
-    .word native_row_648
     .word native_row_692
     .word native_row_693
     .word native_row_694
@@ -1421,38 +1352,27 @@ sprite_102:
     .word native_row_699
     .word native_row_700
     .word native_row_701
-    .word native_row_701
-sprite_103:
-    .byte 18,17,2,3,3,3,3,4,4,4,2,0,0,3,0,0
-    .word native_row_668
-    .word native_row_669
-    .word native_row_670
-    .word native_row_671
-    .word native_row_672
-    .word native_row_673
     .word native_row_702
     .word native_row_703
+sprite_99:
+    .byte 18,15,2,3,3,3,3,4,4,4,2,0,0,3,0,0
     .word native_row_704
     .word native_row_705
     .word native_row_706
-    .word native_row_696
     .word native_row_707
     .word native_row_708
     .word native_row_709
     .word native_row_710
-    .word native_row_710
-sprite_110:
-    .byte 42,20,2,6,7,7,7,7,7,7,2,0,0,6,0,0
     .word native_row_711
-    .word native_row_308
     .word native_row_712
     .word native_row_713
-    .word native_row_280
     .word native_row_714
     .word native_row_715
-    .word native_row_107
     .word native_row_716
     .word native_row_717
+    .word native_row_717
+sprite_100:
+    .byte 18,13,2,3,3,3,3,4,4,4,2,0,0,3,0,0
     .word native_row_718
     .word native_row_719
     .word native_row_720
@@ -1463,11 +1383,11 @@ sprite_110:
     .word native_row_725
     .word native_row_726
     .word native_row_727
-sprite_111:
-    .byte 42,18,2,6,7,7,7,7,7,7,2,0,0,6,0,0
     .word native_row_728
     .word native_row_729
     .word native_row_730
+sprite_101:
+    .byte 18,15,2,3,3,3,3,4,4,4,2,0,0,3,0,0
     .word native_row_731
     .word native_row_732
     .word native_row_733
@@ -1475,2344 +1395,2598 @@ sprite_111:
     .word native_row_735
     .word native_row_736
     .word native_row_737
-    .word native_row_737
     .word native_row_738
     .word native_row_739
     .word native_row_740
     .word native_row_741
     .word native_row_742
     .word native_row_743
-    .word native_row_744
-sprite_36:
-    .byte 18,18,2,3,3,3,3,4,4,4,2,0,0,3,0,0
-    .word native_row_569
-    .word native_row_569
-    .word native_row_403
-    .word native_row_569
-    .word native_row_622
-    .word native_row_510
-    .word native_row_509
-    .word native_row_622
-    .word native_row_569
-    .word native_row_622
-    .word native_row_631
-    .word native_row_508
-    .word native_row_745
-    .word native_row_628
+    .word native_row_743
+    .word native_row_743
+sprite_102:
+    .byte 18,17,2,3,3,3,3,4,4,4,2,0,0,3,0,0
+    .word native_row_691
+    .word native_row_692
+    .word native_row_693
+    .word native_row_694
     .word native_row_695
-    .word native_row_627
-    .word native_row_624
+    .word native_row_696
+    .word native_row_744
     .word native_row_745
-sprite_37:
-    .byte 18,18,2,3,3,3,3,4,4,4,2,0,0,3,0,0
-    .word native_row_569
     .word native_row_746
-    .word native_row_746
-    .word native_row_530
-    .word native_row_530
     .word native_row_747
-    .word native_row_530
     .word native_row_748
-    .word native_row_558
-    .word native_row_539
-    .word native_row_559
     .word native_row_749
-    .word native_row_509
-    .word native_row_594
     .word native_row_750
-    .word native_row_593
-    .word native_row_624
-    .word native_row_745
-sprite_72:
-    .byte 6,6,2,1,1,2,2,2,2,2,2,0,0,1,0,0
     .word native_row_751
     .word native_row_752
     .word native_row_753
+    .word native_row_753
+sprite_103:
+    .byte 18,17,2,3,3,3,3,4,4,4,2,0,0,3,0,0
+    .word native_row_718
+    .word native_row_719
+    .word native_row_720
+    .word native_row_721
+    .word native_row_722
+    .word native_row_723
     .word native_row_754
     .word native_row_755
     .word native_row_756
+    .word native_row_757
+    .word native_row_758
+    .word native_row_748
+    .word native_row_759
+    .word native_row_760
+    .word native_row_761
+    .word native_row_762
+    .word native_row_762
+sprite_110:
+    .byte 42,20,2,6,7,7,7,7,7,7,2,0,0,6,0,0
+    .word native_row_763
+    .word native_row_319
+    .word native_row_764
+    .word native_row_765
+    .word native_row_291
+    .word native_row_766
+    .word native_row_767
+    .word native_row_108
+    .word native_row_768
+    .word native_row_769
+    .word native_row_770
+    .word native_row_771
+    .word native_row_772
+    .word native_row_773
+    .word native_row_774
+    .word native_row_775
+    .word native_row_776
+    .word native_row_777
+    .word native_row_778
+    .word native_row_779
+sprite_111:
+    .byte 42,18,2,6,7,7,7,7,7,7,2,0,0,6,0,0
+    .word native_row_780
+    .word native_row_781
+    .word native_row_782
+    .word native_row_783
+    .word native_row_784
+    .word native_row_785
+    .word native_row_786
+    .word native_row_787
+    .word native_row_788
+    .word native_row_789
+    .word native_row_790
+    .word native_row_791
+    .word native_row_792
+    .word native_row_793
+    .word native_row_794
+    .word native_row_795
+    .word native_row_796
+    .word native_row_797
+sprite_36:
+    .byte 18,18,2,3,3,3,3,4,4,4,2,0,0,3,0,0
+    .word native_row_662
+    .word native_row_662
+    .word native_row_664
+    .word native_row_662
+    .word native_row_667
+    .word native_row_665
+    .word native_row_666
+    .word native_row_667
+    .word native_row_662
+    .word native_row_667
+    .word native_row_678
+    .word native_row_798
+    .word native_row_799
+    .word native_row_673
+    .word native_row_747
+    .word native_row_672
+    .word native_row_669
+    .word native_row_799
+sprite_37:
+    .byte 18,18,2,3,3,3,3,4,4,4,2,0,0,3,0,0
+    .word native_row_662
+    .word native_row_800
+    .word native_row_800
+    .word native_row_674
+    .word native_row_674
+    .word native_row_801
+    .word native_row_674
+    .word native_row_802
+    .word native_row_803
+    .word native_row_804
+    .word native_row_730
+    .word native_row_805
+    .word native_row_666
+    .word native_row_677
+    .word native_row_806
+    .word native_row_807
+    .word native_row_669
+    .word native_row_799
+sprite_72:
+    .byte 6,6,2,1,1,2,2,2,2,2,2,0,0,1,0,0
+    .word native_row_808
+    .word native_row_809
+    .word native_row_810
+    .word native_row_811
+    .word native_row_812
+    .word native_row_813
 sprite_73:
     .byte 6,6,2,1,1,2,2,2,2,2,2,0,0,1,0,0
-    .word native_row_751
-    .word native_row_757
-    .word native_row_754
-    .word native_row_753
-    .word native_row_755
-    .word native_row_756
+    .word native_row_814
+    .word native_row_815
+    .word native_row_811
+    .word native_row_810
+    .word native_row_812
+    .word native_row_813
 .segment "ASSETS"
 native_row_0:
-    .byte $00,$00,$78,$78,$00,$00,$00,$00,$00,$00
+    .byte $00,$00,$7C,$78,$01,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_1:
-    .byte $00,$00,$7C,$2C,$01,$01,$00,$00,$00,$00
+    .byte $00,$00,$7E,$2C,$03,$01,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_2:
-    .byte $00,$00,$7E,$76,$03,$03,$00,$00,$00,$00
+    .byte $00,$00,$7F,$76,$07,$03,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_3:
-    .byte $00,$00,$7E,$2A,$03,$03,$00,$00,$00,$00
+    .byte $00,$00,$7F,$2A,$07,$03,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_4:
-    .byte $00,$00,$7E,$7E,$03,$03,$00,$00,$00,$00
+    .byte $00,$00,$7F,$7E,$07,$03,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_5:
-    .byte $00,$00,$7E,$56,$03,$02,$00,$00,$00,$00
+    .byte $00,$00,$7F,$56,$07,$02,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_6:
-    .byte $00,$00,$7E,$5E,$03,$03,$00,$00,$00,$00
+    .byte $00,$00,$7F,$5E,$07,$03,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_7:
-    .byte $00,$00,$7C,$4C,$01,$01,$00,$00,$00,$00
+    .byte $00,$00,$7E,$4C,$03,$01,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_8:
-    .byte $00,$00,$7C,$7C,$01,$01,$00,$00,$00,$00
+    .byte $00,$00,$7E,$7C,$03,$01,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_9:
-    .byte $00,$00,$7E,$06,$03,$03,$00,$00,$00,$00
+    .byte $40,$00,$7F,$06,$0F,$03,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_10:
-    .byte $40,$40,$7F,$4F,$0F,$0F,$00,$00,$00,$00
+    .byte $40,$40,$7F,$4F,$3F,$0F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_11:
-    .byte $40,$40,$7F,$5F,$3F,$2F,$00,$00,$00,$00
+    .byte $40,$40,$7F,$5F,$7F,$2F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_12:
-    .byte $00,$00,$7F,$5F,$7F,$77,$00,$00,$00,$00
+    .byte $40,$00,$7F,$5F,$7F,$77,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_13:
-    .byte $00,$00,$7F,$7F,$7F,$77,$00,$00,$00,$00
+    .byte $40,$00,$7F,$7F,$7F,$77,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_14:
-    .byte $40,$40,$7F,$5E,$7F,$7B,$01,$01,$00,$00
+    .byte $40,$40,$7F,$5E,$7F,$7B,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_15:
-    .byte $40,$40,$7F,$79,$7F,$7C,$01,$01,$00,$00
+    .byte $40,$40,$7F,$79,$7F,$7C,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_16:
-    .byte $40,$40,$7F,$5F,$7F,$6F,$01,$01,$00,$00
+    .byte $40,$40,$7F,$5F,$7F,$6F,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_17:
-    .byte $40,$40,$7F,$7F,$7F,$6F,$01,$01,$00,$00
+    .byte $40,$40,$7F,$7F,$7F,$6F,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_18:
-    .byte $00,$00,$7F,$5F,$7F,$6F,$01,$01,$00,$00
+    .byte $40,$00,$7F,$5F,$7F,$6F,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_19:
-    .byte $00,$00,$7F,$7F,$7F,$67,$01,$01,$00,$00
+    .byte $40,$00,$7F,$7F,$7F,$67,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_20:
-    .byte $00,$00,$7F,$5F,$7F,$37,$01,$01,$00,$00
+    .byte $40,$00,$7F,$5F,$7F,$37,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_21:
-    .byte $00,$00,$7F,$7F,$3F,$37,$00,$00,$00,$00
+    .byte $40,$00,$7F,$7F,$7F,$37,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_22:
-    .byte $00,$00,$7F,$51,$1F,$1C,$00,$00,$00,$00
+    .byte $40,$00,$7F,$51,$3F,$1C,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_23:
-    .byte $00,$00,$7F,$71,$1F,$18,$00,$00,$00,$00
+    .byte $40,$00,$7F,$71,$3F,$18,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_24:
-    .byte $00,$00,$7F,$51,$0F,$0C,$00,$00,$00,$00
+    .byte $40,$00,$7F,$51,$1F,$0C,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_25:
-    .byte $00,$00,$7C,$7C,$00,$00,$00,$00
+    .byte $00,$00,$7E,$7C,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_26:
-    .byte $00,$00,$7E,$76,$01,$01,$00,$00
+    .byte $00,$00,$7F,$76,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_27:
-    .byte $00,$00,$7F,$2B,$03,$03,$00,$00
+    .byte $40,$00,$7F,$2B,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_28:
-    .byte $00,$00,$7F,$55,$03,$02,$00,$00
+    .byte $40,$00,$7F,$55,$07,$02,$00,$00
 .segment "ASSETS"
 native_row_29:
-    .byte $00,$00,$7F,$7F,$01,$01,$00,$00
+    .byte $40,$00,$7F,$7F,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_30:
-    .byte $00,$00,$7F,$3B,$01,$01,$00,$00
+    .byte $40,$00,$7F,$3B,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_31:
-    .byte $00,$00,$7E,$7A,$03,$03,$00,$00
+    .byte $00,$00,$7F,$7A,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_32:
-    .byte $00,$00,$7E,$76,$03,$02,$00,$00
+    .byte $00,$00,$7F,$76,$07,$02,$00,$00
 .segment "ASSETS"
 native_row_33:
-    .byte $00,$00,$7E,$7E,$01,$01,$00,$00
+    .byte $00,$00,$7F,$7E,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_34:
-    .byte $00,$00,$7E,$3A,$01,$01,$00,$00
+    .byte $00,$00,$7F,$3A,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_35:
-    .byte $00,$00,$3E,$2E,$00,$00,$00,$00
+    .byte $00,$00,$7F,$2E,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_36:
-    .byte $00,$00,$1E,$1E,$00,$00,$00,$00
+    .byte $00,$00,$7F,$1E,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_37:
-    .byte $00,$00,$3E,$3E,$00,$00,$00,$00
+    .byte $00,$00,$7F,$3E,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_38:
-    .byte $00,$00,$7F,$7F,$00,$00,$00,$00
+    .byte $40,$00,$7F,$7F,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_39:
-    .byte $00,$00,$7F,$7D,$00,$00,$00,$00
+    .byte $40,$00,$7F,$7D,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_40:
-    .byte $40,$40,$7F,$73,$01,$01,$00,$00
+    .byte $60,$40,$7F,$73,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_41:
-    .byte $40,$40,$7F,$4F,$01,$01,$00,$00
+    .byte $60,$40,$7F,$4F,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_42:
-    .byte $40,$40,$7F,$3F,$01,$01,$00,$00
+    .byte $60,$40,$7F,$3F,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_43:
-    .byte $40,$40,$7F,$7F,$00,$00,$00,$00
+    .byte $60,$40,$7F,$7F,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_44:
-    .byte $40,$40,$7F,$7F,$01,$01,$00,$00
+    .byte $60,$40,$7F,$7F,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_45:
-    .byte $00,$00,$7F,$41,$01,$01,$00,$00
+    .byte $40,$00,$7F,$41,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_46:
-    .byte $00,$00,$78,$78,$01,$01,$00,$00
+    .byte $00,$00,$7C,$78,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_47:
-    .byte $00,$00,$7C,$3C,$03,$03,$00,$00
+    .byte $00,$00,$7E,$3C,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_48:
-    .byte $00,$00,$7E,$56,$07,$06,$00,$00
+    .byte $00,$00,$7F,$56,$0F,$06,$00,$00
 .segment "ASSETS"
 native_row_49:
-    .byte $00,$00,$7E,$2A,$07,$05,$00,$00
+    .byte $00,$00,$7F,$2A,$0F,$05,$00,$00
 .segment "ASSETS"
 native_row_50:
-    .byte $00,$00,$7C,$7C,$07,$07,$00,$00
+    .byte $00,$00,$7E,$7C,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_51:
-    .byte $00,$00,$7C,$74,$07,$06,$00,$00
+    .byte $00,$00,$7E,$74,$0F,$06,$00,$00
 .segment "ASSETS"
 native_row_52:
-    .byte $00,$00,$7E,$7E,$03,$02,$00,$00
+    .byte $00,$00,$7F,$7E,$07,$02,$00,$00
 .segment "ASSETS"
 native_row_53:
-    .byte $00,$00,$7E,$3A,$03,$03,$00,$00
+    .byte $00,$00,$7F,$3A,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_54:
-    .byte $00,$00,$7C,$7C,$03,$03,$00,$00
+    .byte $00,$00,$7E,$7C,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_55:
-    .byte $00,$00,$7C,$74,$03,$02,$00,$00
+    .byte $00,$00,$7E,$74,$07,$02,$00,$00
 .segment "ASSETS"
 native_row_56:
-    .byte $00,$00,$70,$50,$03,$03,$00,$00
+    .byte $00,$00,$7C,$50,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_57:
-    .byte $00,$00,$60,$60,$03,$03,$00,$00
+    .byte $00,$00,$70,$60,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_58:
-    .byte $00,$00,$70,$70,$03,$03,$00,$00
+    .byte $00,$00,$78,$70,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_59:
-    .byte $00,$00,$7E,$76,$0F,$0C,$00,$00
+    .byte $00,$00,$7F,$76,$1F,$0C,$00,$00
 .segment "ASSETS"
 native_row_60:
-    .byte $00,$00,$7E,$5E,$0F,$0F,$00,$00
+    .byte $00,$00,$7F,$5E,$1F,$0F,$00,$00
 .segment "ASSETS"
 native_row_61:
-    .byte $00,$00,$7E,$7E,$0F,$0B,$00,$00
+    .byte $00,$00,$7F,$7E,$1F,$0B,$00,$00
 .segment "ASSETS"
 native_row_62:
-    .byte $00,$00,$7E,$56,$0F,$0F,$00,$00
+    .byte $00,$00,$7F,$56,$1F,$0F,$00,$00
 .segment "ASSETS"
 native_row_63:
-    .byte $00,$00,$7E,$3A,$07,$07,$00,$00
+    .byte $00,$00,$7F,$3A,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_64:
-    .byte $00,$00,$7E,$7E,$0F,$0E,$00,$00
+    .byte $00,$00,$7F,$7E,$1F,$0E,$00,$00
 .segment "ASSETS"
 native_row_65:
-    .byte $00,$00,$7C,$3C,$0F,$0F,$00,$00
+    .byte $00,$00,$7E,$3C,$1F,$0F,$00,$00
 .segment "ASSETS"
 native_row_66:
-    .byte $00,$00,$7C,$5C,$07,$07,$00,$00
+    .byte $00,$00,$7E,$5C,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_67:
-    .byte $00,$00,$7C,$6C,$03,$03,$00,$00
+    .byte $00,$00,$7E,$6C,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_68:
-    .byte $00,$00,$7C,$74,$07,$05,$00,$00
+    .byte $00,$00,$7E,$74,$0F,$05,$00,$00
 .segment "ASSETS"
 native_row_69:
-    .byte $00,$00,$78,$38,$07,$07,$00,$00
+    .byte $00,$00,$7C,$38,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_70:
-    .byte $00,$00,$7C,$1C,$07,$04,$00,$00
+    .byte $00,$00,$7E,$1C,$0F,$04,$00,$00
 .segment "ASSETS"
 native_row_71:
-    .byte $00,$00,$7E,$1A,$07,$04,$00,$00
+    .byte $00,$00,$7F,$1A,$0F,$04,$00,$00
 .segment "ASSETS"
 native_row_72:
-    .byte $00,$00,$7E,$0E,$07,$04,$00,$00
+    .byte $00,$00,$7F,$0E,$0F,$04,$00,$00
 .segment "ASSETS"
 native_row_73:
-    .byte $00,$00,$00,$00,$3C,$3C,$00,$00,$00,$00
+    .byte $00,$00,$00,$00,$7E,$3C,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_74:
-    .byte $00,$00,$00,$00,$7E,$56,$00,$00,$00,$00
+    .byte $00,$00,$00,$00,$7F,$56,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_75:
-    .byte $00,$00,$00,$00,$7F,$2B,$01,$01,$00,$00
+    .byte $00,$00,$40,$00,$7F,$2B,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_76:
-    .byte $00,$00,$00,$00,$7F,$3D,$01,$01,$00,$00
+    .byte $00,$00,$40,$00,$7F,$3D,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_77:
-    .byte $00,$00,$00,$00,$7F,$6B,$01,$01,$00,$00
+    .byte $00,$00,$40,$00,$7F,$6B,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_78:
-    .byte $00,$00,$00,$00,$7F,$2D,$01,$01,$00,$00
+    .byte $00,$00,$40,$00,$7F,$2D,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_79:
-    .byte $00,$00,$00,$00,$7F,$7F,$01,$01,$00,$00
+    .byte $00,$00,$40,$00,$7F,$7F,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_80:
-    .byte $00,$00,$00,$00,$7E,$7E,$00,$00,$00,$00
+    .byte $00,$00,$00,$00,$7F,$7E,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_81:
-    .byte $00,$00,$40,$40,$7F,$7F,$03,$03,$00,$00
+    .byte $00,$00,$40,$00,$7F,$7E,$03,$00,$00,$00
 .segment "ASSETS"
 native_row_82:
-    .byte $00,$00,$70,$70,$7F,$7F,$07,$07,$00,$00
+    .byte $00,$00,$70,$40,$7F,$7F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_83:
-    .byte $00,$00,$78,$68,$7F,$7F,$03,$03,$00,$00
+    .byte $00,$00,$78,$70,$7F,$7F,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_84:
-    .byte $00,$00,$7C,$1C,$7F,$7F,$07,$04,$00,$00
+    .byte $00,$00,$7C,$68,$7F,$7F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_85:
-    .byte $00,$00,$7C,$7C,$7F,$00,$07,$07,$00,$00
+    .byte $00,$00,$7E,$1C,$7F,$7F,$07,$04,$00,$00
 .segment "ASSETS"
 native_row_86:
-    .byte $00,$00,$7E,$7E,$7F,$7F,$07,$07,$00,$00
+    .byte $00,$00,$7E,$7C,$7F,$00,$07,$07,$00,$00
 .segment "ASSETS"
 native_row_87:
-    .byte $00,$00,$7E,$6E,$7F,$7F,$07,$07,$00,$00
+    .byte $00,$00,$7F,$7E,$7F,$7F,$07,$07,$00,$00
 .segment "ASSETS"
 native_row_88:
-    .byte $00,$00,$7E,$6E,$7F,$7F,$03,$03,$00,$00
+    .byte $00,$00,$7F,$6E,$7F,$7F,$07,$07,$00,$00
 .segment "ASSETS"
 native_row_89:
-    .byte $00,$00,$7E,$4E,$7F,$7F,$03,$03,$00,$00
+    .byte $00,$00,$7F,$6E,$7F,$7F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_90:
-    .byte $00,$00,$7E,$56,$7F,$7F,$03,$03,$00,$00
+    .byte $00,$00,$7F,$4E,$7F,$7F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_91:
-    .byte $00,$00,$7E,$5E,$7F,$7F,$03,$03,$00,$00
+    .byte $00,$00,$7F,$56,$7F,$7F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_92:
-    .byte $00,$00,$7C,$5C,$7F,$7F,$03,$03,$00,$00
+    .byte $00,$00,$7F,$5E,$7F,$7F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_93:
-    .byte $00,$00,$78,$58,$7F,$7F,$03,$03,$00,$00
+    .byte $00,$00,$7E,$5C,$7F,$7F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_94:
-    .byte $00,$00,$70,$50,$7F,$00,$03,$02,$00,$00
+    .byte $00,$00,$7C,$58,$7F,$7F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_95:
-    .byte $00,$00,$60,$60,$7F,$00,$03,$02,$00,$00
+    .byte $00,$00,$78,$50,$7F,$00,$07,$02,$00,$00
 .segment "ASSETS"
 native_row_96:
-    .byte $00,$00,$00,$00,$00,$00,$00,$00,$1F,$1F,$00,$00
+    .byte $00,$00,$70,$60,$7F,$00,$07,$02,$00,$00
 .segment "ASSETS"
 native_row_97:
-    .byte $00,$00,$00,$00,$00,$00,$40,$40,$3F,$2A,$00,$00
+    .byte $00,$00,$00,$00,$00,$00,$40,$00,$3F,$1F,$00,$00
 .segment "ASSETS"
 native_row_98:
-    .byte $00,$00,$00,$00,$00,$00,$60,$60,$7F,$55,$00,$00
+    .byte $00,$00,$00,$00,$00,$00,$60,$40,$7F,$2A,$00,$00
 .segment "ASSETS"
 native_row_99:
-    .byte $00,$00,$00,$00,$00,$00,$60,$60,$7F,$6A,$00,$00
+    .byte $00,$00,$00,$00,$00,$00,$70,$60,$7F,$55,$01,$00
 .segment "ASSETS"
 native_row_100:
-    .byte $00,$00,$00,$00,$00,$00,$60,$60,$3F,$3D,$00,$00
+    .byte $00,$00,$00,$00,$00,$00,$70,$60,$7F,$6A,$01,$00
 .segment "ASSETS"
 native_row_101:
-    .byte $00,$00,$00,$00,$00,$00,$70,$70,$3F,$2E,$00,$00
+    .byte $00,$00,$00,$00,$00,$00,$70,$60,$7F,$3D,$00,$00
 .segment "ASSETS"
 native_row_102:
-    .byte $00,$00,$00,$00,$00,$00,$7C,$7C,$3F,$3D,$00,$00
+    .byte $00,$00,$00,$00,$00,$00,$7C,$70,$7F,$2E,$00,$00
 .segment "ASSETS"
 native_row_103:
-    .byte $00,$00,$00,$00,$00,$00,$7F,$7F,$3F,$3F,$00,$00
+    .byte $00,$00,$00,$00,$00,$00,$7F,$7C,$7F,$3D,$00,$00
 .segment "ASSETS"
 native_row_104:
-    .byte $00,$00,$00,$00,$60,$60,$7F,$7F,$1F,$17,$00,$00
+    .byte $00,$00,$00,$00,$60,$00,$7F,$7F,$7F,$3F,$00,$00
 .segment "ASSETS"
 native_row_105:
-    .byte $00,$00,$00,$00,$0E,$0E,$78,$20,$1F,$1E,$00,$00
+    .byte $00,$00,$00,$00,$7E,$60,$7F,$7F,$3F,$17,$00,$00
 .segment "ASSETS"
 native_row_106:
-    .byte $00,$00,$40,$40,$7F,$7F,$1F,$1F,$00,$00,$00,$00
+    .byte $00,$00,$40,$00,$7F,$0E,$7F,$20,$3F,$1E,$00,$00
 .segment "ASSETS"
 native_row_107:
-    .byte $00,$00,$60,$60,$7F,$7F,$1F,$1F,$00,$00,$00,$00
+    .byte $00,$00,$60,$40,$7F,$7F,$3F,$1F,$1E,$00,$00,$00
 .segment "ASSETS"
 native_row_108:
-    .byte $00,$00,$70,$70,$7F,$67,$1F,$1F,$00,$00,$00,$00
+    .byte $00,$00,$70,$60,$7F,$7F,$3F,$1F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_109:
-    .byte $00,$00,$78,$78,$7F,$79,$0F,$0F,$00,$00,$00,$00
+    .byte $00,$00,$78,$70,$7F,$67,$3F,$1F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_110:
-    .byte $00,$00,$78,$78,$7F,$5E,$07,$07,$00,$00,$00,$00
+    .byte $00,$00,$7C,$78,$7F,$79,$1F,$0F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_111:
-    .byte $00,$00,$7C,$3C,$7F,$3F,$07,$07,$00,$00,$00,$00
+    .byte $00,$00,$7C,$78,$7F,$5E,$0F,$07,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_112:
-    .byte $00,$00,$7C,$5C,$7F,$7F,$03,$03,$00,$00,$00,$00
+    .byte $00,$00,$7E,$3C,$7F,$3F,$0F,$07,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_113:
-    .byte $00,$00,$7C,$5C,$7F,$7F,$01,$01,$00,$00,$00,$00
+    .byte $00,$00,$7E,$5C,$7F,$7F,$07,$03,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_114:
-    .byte $00,$00,$7E,$6E,$7F,$7F,$00,$00,$00,$00,$00,$00
+    .byte $00,$00,$7E,$5C,$7F,$7F,$03,$01,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_115:
-    .byte $00,$00,$7E,$6E,$3F,$3F,$00,$00,$00,$00,$00,$00
+    .byte $00,$00,$7F,$6E,$7F,$7F,$01,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_116:
-    .byte $00,$00,$7E,$6A,$1F,$1F,$00,$00,$00,$00,$00,$00
+    .byte $00,$00,$7F,$6E,$7F,$3F,$00,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_117:
-    .byte $00,$00,$7E,$0E,$0F,$0C,$00,$00,$00,$00,$00,$00
+    .byte $00,$00,$7F,$6A,$3F,$1F,$00,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_118:
-    .byte $00,$00,$7E,$06,$0F,$0C,$00,$00,$00,$00,$00,$00
+    .byte $00,$00,$7F,$0E,$1F,$0C,$00,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_119:
-    .byte $00,$00,$7C,$0C,$0F,$0C,$00,$00,$00,$00,$00,$00
+    .byte $00,$00,$7F,$06,$1F,$0C,$00,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_120:
-    .byte $00,$00,$3E,$3E,$00,$00,$00,$00,$00,$00,$00,$00
+    .byte $00,$00,$7E,$0C,$1F,$0C,$00,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_121:
-    .byte $00,$00,$7F,$7B,$00,$00,$00,$00,$00,$00,$00,$00
+    .byte $00,$00,$7F,$3E,$00,$00,$00,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_122:
-    .byte $40,$40,$7F,$55,$01,$01,$00,$00,$00,$00,$00,$00
+    .byte $40,$00,$7F,$7B,$01,$00,$00,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_123:
-    .byte $40,$40,$7F,$2A,$01,$01,$00,$00,$00,$00,$00,$00
+    .byte $60,$40,$7F,$55,$03,$01,$00,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_124:
-    .byte $00,$00,$7F,$6F,$01,$01,$00,$00,$00,$00,$00,$00
+    .byte $60,$40,$7F,$2A,$03,$01,$00,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_125:
-    .byte $00,$00,$7F,$5D,$03,$03,$00,$00,$00,$00,$00,$00
+    .byte $40,$00,$7F,$6F,$03,$01,$00,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_126:
-    .byte $00,$00,$7F,$6F,$0F,$0F,$00,$00,$00,$00,$00,$00
+    .byte $40,$00,$7F,$5D,$0F,$03,$00,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_127:
-    .byte $00,$00,$7F,$7F,$3F,$3F,$00,$00,$00,$00,$00,$00
+    .byte $40,$00,$7F,$6F,$3F,$0F,$00,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_128:
-    .byte $00,$00,$7E,$7A,$7F,$7F,$07,$07,$00,$00,$00,$00
+    .byte $40,$00,$7F,$7F,$7F,$3F,$07,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_129:
-    .byte $00,$00,$7E,$1E,$0F,$0F,$18,$18,$00,$00,$00,$00
+    .byte $00,$00,$7F,$7A,$7F,$7F,$1F,$07,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_130:
-    .byte $00,$00,$00,$00,$7F,$7F,$3F,$3F,$00,$00,$00,$00
+    .byte $00,$00,$7F,$1E,$7F,$0F,$3F,$18,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_131:
-    .byte $00,$00,$00,$00,$7F,$7F,$7F,$7F,$00,$00,$00,$00
+    .byte $00,$00,$5E,$00,$7F,$7F,$7F,$3F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_132:
-    .byte $00,$00,$00,$00,$7E,$7E,$7F,$7F,$01,$01,$00,$00
+    .byte $00,$00,$40,$00,$7F,$7F,$7F,$7F,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_133:
-    .byte $00,$00,$00,$00,$7E,$7E,$7F,$7D,$01,$01,$00,$00
+    .byte $00,$00,$00,$00,$7F,$7E,$7F,$7F,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_134:
-    .byte $00,$00,$00,$00,$7E,$7E,$7F,$77,$03,$03,$00,$00
+    .byte $00,$00,$00,$00,$7F,$7E,$7F,$7D,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_135:
-    .byte $00,$00,$00,$00,$7C,$74,$7F,$6F,$03,$03,$00,$00
+    .byte $00,$00,$00,$00,$7F,$7E,$7F,$77,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_136:
-    .byte $00,$00,$00,$00,$7C,$7C,$7F,$5F,$03,$03,$00,$00
+    .byte $00,$00,$00,$00,$7E,$74,$7F,$6F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_137:
-    .byte $00,$00,$00,$00,$78,$68,$7F,$5F,$03,$03,$00,$00
+    .byte $00,$00,$00,$00,$7E,$7C,$7F,$5F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_138:
-    .byte $00,$00,$00,$00,$70,$70,$7F,$7F,$03,$03,$00,$00
+    .byte $00,$00,$00,$00,$7C,$68,$7F,$5F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_139:
-    .byte $00,$00,$00,$00,$60,$60,$7F,$5F,$03,$03,$00,$00
+    .byte $00,$00,$00,$00,$78,$70,$7F,$7F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_140:
-    .byte $00,$00,$00,$00,$40,$40,$7F,$5F,$01,$01,$00,$00
+    .byte $00,$00,$00,$00,$70,$60,$7F,$5F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_141:
-    .byte $00,$00,$00,$00,$00,$00,$7F,$63,$03,$03,$00,$00
+    .byte $00,$00,$00,$00,$60,$40,$7F,$5F,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_142:
-    .byte $00,$00,$00,$00,$00,$00,$7F,$23,$03,$03,$00,$00
+    .byte $00,$00,$00,$00,$40,$00,$7F,$63,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_143:
-    .byte $00,$00,$00,$00,$00,$00,$7F,$63,$01,$01,$00,$00
+    .byte $00,$00,$00,$00,$40,$00,$7F,$23,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_144:
-    .byte $00,$00,$7F,$7F,$07,$07,$00,$00
+    .byte $00,$00,$00,$00,$40,$00,$7F,$63,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_145:
-    .byte $40,$40,$7F,$5F,$0F,$0F,$00,$00
+    .byte $40,$00,$7F,$7F,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_146:
-    .byte $40,$40,$7F,$7F,$0F,$0F,$00,$00
+    .byte $60,$40,$7F,$5F,$1F,$0F,$00,$00
 .segment "ASSETS"
 native_row_147:
-    .byte $00,$00,$7F,$55,$0F,$0A,$00,$00
+    .byte $60,$40,$7F,$7F,$1F,$0F,$00,$00
 .segment "ASSETS"
 native_row_148:
-    .byte $00,$00,$7F,$6F,$07,$07,$00,$00
+    .byte $60,$00,$7F,$55,$1F,$0A,$00,$00
 .segment "ASSETS"
 native_row_149:
-    .byte $00,$00,$7F,$2F,$07,$07,$00,$00
+    .byte $40,$00,$7F,$6F,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_150:
-    .byte $00,$00,$7F,$6B,$07,$06,$00,$00
+    .byte $40,$00,$7F,$2F,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_151:
-    .byte $00,$00,$7E,$6E,$03,$03,$00,$00
+    .byte $40,$00,$7F,$6B,$0F,$06,$00,$00
 .segment "ASSETS"
 native_row_152:
-    .byte $00,$00,$7E,$5A,$03,$02,$00,$00
+    .byte $00,$00,$7F,$6E,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_153:
-    .byte $40,$40,$7F,$7F,$07,$07,$00,$00
+    .byte $00,$00,$7F,$5A,$07,$02,$00,$00
 .segment "ASSETS"
 native_row_154:
-    .byte $40,$40,$7F,$2B,$07,$07,$00,$00
+    .byte $40,$00,$7F,$7F,$07,$00,$00,$00
 .segment "ASSETS"
 native_row_155:
-    .byte $40,$40,$7F,$7F,$03,$03,$00,$00
+    .byte $60,$40,$7F,$7F,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_156:
-    .byte $00,$00,$7F,$2B,$01,$01,$00,$00
+    .byte $60,$40,$7F,$2B,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_157:
-    .byte $00,$00,$7F,$3F,$01,$01,$00,$00
+    .byte $60,$40,$7F,$7F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_158:
-    .byte $00,$00,$7F,$5F,$00,$00,$00,$00
+    .byte $40,$00,$7F,$2B,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_159:
-    .byte $00,$00,$1F,$1F,$00,$00,$00,$00
+    .byte $40,$00,$7F,$3F,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_160:
-    .byte $40,$40,$7F,$5F,$00,$00,$00,$00
+    .byte $40,$00,$7F,$5F,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_161:
-    .byte $00,$00,$3F,$29,$00,$00,$00,$00
+    .byte $40,$00,$7F,$1F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_162:
-    .byte $00,$00,$3F,$2F,$00,$00,$00,$00
+    .byte $60,$40,$7F,$5F,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_163:
-    .byte $00,$00,$7F,$7F,$03,$03,$00,$00
+    .byte $40,$00,$7F,$29,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_164:
-    .byte $00,$00,$7F,$7B,$03,$03,$00,$00
+    .byte $40,$00,$7F,$2F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_165:
-    .byte $00,$00,$78,$78,$07,$07,$00,$00
+    .byte $40,$00,$7F,$5F,$03,$00,$00,$00
 .segment "ASSETS"
 native_row_166:
-    .byte $00,$00,$7E,$7E,$0F,$0F,$00,$00
+    .byte $40,$00,$7F,$7F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_167:
-    .byte $00,$00,$7E,$56,$0F,$0A,$00,$00
+    .byte $40,$00,$7F,$7B,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_168:
-    .byte $00,$00,$7C,$2C,$07,$05,$00,$00
+    .byte $00,$00,$7E,$78,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_169:
-    .byte $00,$00,$7C,$74,$07,$07,$00,$00
+    .byte $00,$00,$7F,$7E,$1F,$0F,$00,$00
 .segment "ASSETS"
 native_row_170:
-    .byte $40,$40,$7F,$68,$07,$07,$00,$00
+    .byte $00,$00,$7F,$56,$1F,$0A,$00,$00
 .segment "ASSETS"
 native_row_171:
-    .byte $00,$00,$78,$68,$07,$07,$00,$00
+    .byte $00,$00,$7E,$2C,$0F,$05,$00,$00
 .segment "ASSETS"
 native_row_172:
-    .byte $00,$00,$60,$60,$07,$07,$00,$00
+    .byte $00,$00,$7E,$74,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_173:
-    .byte $00,$00,$78,$68,$0F,$0F,$00,$00
+    .byte $00,$00,$7C,$68,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_174:
-    .byte $00,$00,$70,$50,$07,$04,$00,$00
+    .byte $00,$00,$78,$60,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_175:
-    .byte $00,$00,$70,$50,$07,$07,$00,$00
+    .byte $00,$00,$7C,$68,$1F,$0F,$00,$00
 .segment "ASSETS"
 native_row_176:
-    .byte $00,$00,$7E,$7E,$07,$07,$00,$00
+    .byte $00,$00,$78,$50,$0F,$04,$00,$00
 .segment "ASSETS"
 native_row_177:
-    .byte $00,$00,$7E,$7E,$07,$06,$00,$00
+    .byte $00,$00,$78,$50,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_178:
-    .byte $00,$00,$7F,$5F,$07,$07,$00,$00
+    .byte $00,$00,$7E,$68,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_179:
-    .byte $00,$00,$7E,$5E,$03,$03,$00,$00
+    .byte $00,$00,$7F,$7E,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_180:
-    .byte $00,$00,$7E,$32,$03,$02,$00,$00
+    .byte $00,$00,$7F,$7E,$0F,$06,$00,$00
 .segment "ASSETS"
 native_row_181:
-    .byte $40,$40,$7F,$5F,$07,$07,$00,$00
+    .byte $40,$00,$7F,$55,$1F,$0A,$00,$00
 .segment "ASSETS"
 native_row_182:
-    .byte $40,$40,$7F,$5D,$07,$07,$00,$00
+    .byte $40,$00,$7F,$5F,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_183:
-    .byte $00,$00,$7F,$5D,$03,$03,$00,$00
+    .byte $00,$00,$7F,$5E,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_184:
-    .byte $00,$00,$7E,$0A,$07,$05,$00,$00
+    .byte $00,$00,$7F,$32,$07,$02,$00,$00
 .segment "ASSETS"
 native_row_185:
-    .byte $00,$00,$7F,$4F,$03,$02,$00,$00
+    .byte $40,$00,$7F,$5E,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_186:
-    .byte $00,$00,$7F,$4F,$03,$03,$00,$00
+    .byte $60,$40,$7F,$5F,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_187:
-    .byte $00,$00,$7F,$5F,$07,$06,$00,$00
+    .byte $60,$40,$7F,$5D,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_188:
-    .byte $00,$00,$7E,$4A,$03,$03,$00,$00
+    .byte $40,$00,$7F,$5D,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_189:
-    .byte $00,$00,$78,$18,$03,$02,$00,$00
+    .byte $00,$00,$7F,$0A,$0F,$05,$00,$00
 .segment "ASSETS"
 native_row_190:
-    .byte $00,$00,$7F,$57,$07,$07,$00,$00
+    .byte $40,$00,$7F,$4F,$07,$02,$00,$00
 .segment "ASSETS"
 native_row_191:
-    .byte $00,$00,$1E,$12,$00,$00,$00,$00
+    .byte $40,$00,$7F,$4F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_192:
-    .byte $00,$00,$1C,$1C,$00,$00,$00,$00
+    .byte $40,$00,$7F,$5F,$0F,$06,$00,$00
 .segment "ASSETS"
 native_row_193:
-    .byte $00,$00,$40,$40,$7F,$7F,$01,$01,$00,$00
+    .byte $00,$00,$7F,$4A,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_194:
-    .byte $00,$00,$60,$60,$7F,$7F,$01,$01,$00,$00
+    .byte $00,$00,$7F,$18,$07,$02,$00,$00
 .segment "ASSETS"
 native_row_195:
-    .byte $00,$00,$60,$60,$7F,$7F,$03,$03,$00,$00
+    .byte $40,$00,$7F,$57,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_196:
-    .byte $00,$00,$40,$40,$7F,$2A,$03,$03,$00,$00
+    .byte $00,$00,$7F,$12,$07,$00,$00,$00
 .segment "ASSETS"
 native_row_197:
-    .byte $00,$00,$40,$40,$7F,$0A,$01,$01,$00,$00
+    .byte $00,$00,$3E,$1C,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_198:
-    .byte $00,$00,$40,$40,$7F,$5F,$03,$03,$00,$00
+    .byte $00,$00,$60,$40,$7F,$7F,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_199:
-    .byte $00,$00,$40,$40,$7F,$5F,$07,$07,$00,$00
+    .byte $00,$00,$70,$60,$7F,$7F,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_200:
-    .byte $00,$00,$60,$60,$7F,$5F,$07,$07,$00,$00
+    .byte $00,$00,$70,$60,$7F,$7F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_201:
-    .byte $00,$00,$60,$60,$7F,$4F,$07,$07,$00,$00
+    .byte $00,$00,$60,$40,$7F,$2A,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_202:
-    .byte $00,$00,$60,$60,$7F,$6F,$03,$03,$00,$00
+    .byte $00,$00,$60,$40,$7F,$0A,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_203:
-    .byte $00,$00,$60,$60,$7F,$67,$03,$03,$00,$00
+    .byte $00,$00,$60,$40,$7F,$5F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_204:
-    .byte $00,$00,$70,$10,$7F,$63,$01,$01,$00,$00
+    .byte $00,$00,$60,$40,$7F,$5F,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_205:
-    .byte $00,$00,$78,$78,$7F,$32,$01,$01,$00,$00
+    .byte $00,$00,$70,$60,$7F,$5F,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_206:
-    .byte $00,$00,$78,$78,$7F,$7B,$03,$03,$00,$00
+    .byte $00,$00,$70,$60,$7F,$4F,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_207:
-    .byte $00,$00,$60,$60,$7F,$7B,$03,$03,$00,$00
+    .byte $00,$00,$70,$60,$7F,$6F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_208:
-    .byte $00,$00,$78,$58,$7F,$7B,$03,$03,$00,$00
+    .byte $00,$00,$70,$60,$7F,$67,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_209:
-    .byte $00,$00,$78,$38,$7F,$11,$01,$01,$00,$00
+    .byte $00,$00,$78,$10,$7F,$63,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_210:
-    .byte $00,$00,$7C,$7C,$7F,$78,$00,$00,$00,$00
+    .byte $00,$00,$7C,$78,$7F,$32,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_211:
-    .byte $00,$00,$7E,$1E,$7F,$78,$00,$00,$00,$00
+    .byte $00,$00,$7C,$78,$7F,$7B,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_212:
-    .byte $00,$00,$7E,$3E,$3F,$38,$00,$00,$00,$00
+    .byte $00,$00,$78,$60,$7F,$7B,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_213:
-    .byte $00,$00,$78,$38,$7F,$78,$01,$01,$00,$00
+    .byte $00,$00,$7C,$58,$7F,$7B,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_214:
-    .byte $00,$00,$78,$78,$7F,$79,$07,$07,$00,$00
+    .byte $00,$00,$7C,$38,$7B,$11,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_215:
-    .byte $00,$00,$70,$70,$7F,$59,$07,$07,$00,$00
+    .byte $00,$00,$7E,$7C,$7D,$78,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_216:
-    .byte $00,$00,$78,$78,$07,$07,$00,$00,$00,$00
+    .byte $00,$00,$7F,$1E,$7C,$78,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_217:
-    .byte $00,$00,$7E,$7E,$0F,$0F,$00,$00,$00,$00
+    .byte $00,$00,$7F,$3E,$7C,$38,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_218:
-    .byte $00,$00,$7F,$7F,$0F,$0F,$00,$00,$00,$00
+    .byte $00,$00,$7E,$38,$7D,$78,$07,$01,$00,$00
 .segment "ASSETS"
 native_row_219:
-    .byte $00,$00,$7F,$57,$0F,$0A,$00,$00,$00,$00
+    .byte $00,$00,$7C,$78,$7F,$79,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_220:
-    .byte $00,$00,$7E,$2A,$07,$05,$00,$00,$00,$00
+    .byte $00,$00,$78,$70,$7F,$59,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_221:
-    .byte $00,$00,$7F,$6F,$0F,$0F,$00,$00,$00,$00
+    .byte $00,$00,$7E,$78,$0F,$07,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_222:
-    .byte $40,$40,$7F,$6F,$0F,$0F,$00,$00,$00,$00
+    .byte $00,$00,$7F,$7E,$1F,$0F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_223:
-    .byte $40,$40,$7F,$4F,$1F,$1F,$00,$00,$00,$00
+    .byte $40,$00,$7F,$7F,$1F,$0F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_224:
-    .byte $00,$00,$7F,$5F,$1F,$1F,$00,$00,$00,$00
+    .byte $40,$00,$7F,$57,$1F,$0A,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_225:
-    .byte $00,$00,$7E,$1E,$3F,$27,$00,$00,$00,$00
+    .byte $00,$00,$7F,$2A,$0F,$05,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_226:
-    .byte $00,$00,$7F,$3F,$7F,$7D,$00,$00,$00,$00
+    .byte $40,$00,$7F,$6F,$1F,$0F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_227:
-    .byte $00,$00,$7F,$3F,$7F,$7F,$00,$00,$00,$00
+    .byte $60,$40,$7F,$6F,$1F,$0F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_228:
-    .byte $00,$00,$7F,$3F,$1F,$1E,$00,$00,$00,$00
+    .byte $60,$40,$7F,$4F,$3F,$1F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_229:
-    .byte $00,$00,$7E,$12,$7F,$6E,$00,$00,$00,$00
+    .byte $40,$00,$7F,$5F,$3F,$1F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_230:
-    .byte $00,$00,$7C,$3C,$7F,$74,$01,$01,$00,$00
+    .byte $00,$00,$7F,$1E,$7F,$27,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_231:
-    .byte $00,$00,$7C,$3C,$7F,$70,$01,$01,$00,$00
+    .byte $40,$00,$7F,$3F,$7F,$7D,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_232:
-    .byte $00,$00,$7C,$3C,$7F,$60,$03,$03,$00,$00
+    .byte $40,$00,$7F,$3F,$7F,$7F,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_233:
-    .byte $00,$00,$78,$38,$7F,$70,$03,$03,$00,$00
+    .byte $40,$00,$7F,$3F,$7F,$1E,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_234:
-    .byte $00,$00,$7E,$3E,$7F,$70,$00,$00,$00,$00
+    .byte $00,$00,$3F,$12,$7F,$6E,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_235:
-    .byte $40,$40,$7F,$3F,$7F,$7C,$00,$00,$00,$00
+    .byte $00,$00,$7E,$3C,$7E,$74,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_236:
-    .byte $40,$40,$7F,$37,$3F,$3C,$00,$00,$00,$00
+    .byte $00,$00,$7E,$3C,$7C,$70,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_237:
-    .byte $00,$00,$7F,$3F,$07,$07,$00,$00
+    .byte $00,$00,$7E,$3C,$70,$60,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_238:
-    .byte $00,$00,$7F,$5F,$03,$03,$00,$00
+    .byte $00,$00,$7E,$38,$78,$70,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_239:
-    .byte $00,$00,$7F,$1F,$07,$06,$00,$00
+    .byte $40,$00,$7F,$3E,$7C,$70,$03,$00,$00,$00
 .segment "ASSETS"
 native_row_240:
-    .byte $00,$00,$7F,$5F,$01,$01,$00,$00
+    .byte $60,$40,$7F,$3F,$7E,$7C,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_241:
-    .byte $00,$00,$7E,$5E,$07,$07,$00,$00
+    .byte $60,$40,$7F,$37,$7E,$3C,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_242:
-    .byte $00,$00,$7E,$5E,$07,$05,$00,$00
+    .byte $40,$00,$7F,$3F,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_243:
-    .byte $40,$40,$7F,$5F,$03,$03,$00,$00
+    .byte $40,$00,$7F,$5F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_244:
-    .byte $40,$40,$1F,$1D,$00,$00,$00,$00
+    .byte $40,$00,$7F,$1F,$0F,$06,$00,$00
 .segment "ASSETS"
 native_row_245:
-    .byte $00,$00,$1F,$1D,$00,$00,$00,$00
+    .byte $40,$00,$7F,$5F,$07,$01,$00,$00
 .segment "ASSETS"
 native_row_246:
-    .byte $40,$40,$7F,$6F,$07,$07,$00,$00
+    .byte $00,$00,$7F,$5E,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_247:
-    .byte $00,$00,$7F,$4D,$03,$03,$00,$00
+    .byte $40,$00,$7F,$5E,$0F,$05,$00,$00
 .segment "ASSETS"
 native_row_248:
-    .byte $00,$00,$7F,$6F,$03,$02,$00,$00
+    .byte $60,$40,$7F,$5F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_249:
-    .byte $00,$00,$7F,$6F,$03,$03,$00,$00
+    .byte $60,$40,$7F,$1D,$03,$00,$00,$00
 .segment "ASSETS"
 native_row_250:
-    .byte $40,$40,$7F,$57,$03,$02,$00,$00
+    .byte $40,$00,$3F,$1D,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_251:
-    .byte $40,$40,$7F,$77,$03,$03,$00,$00
+    .byte $40,$00,$7F,$2A,$0F,$05,$00,$00
 .segment "ASSETS"
 native_row_252:
-    .byte $00,$00,$7F,$0D,$01,$01,$00,$00
+    .byte $60,$40,$7F,$6F,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_253:
-    .byte $00,$00,$7F,$6F,$01,$01,$00,$00
+    .byte $40,$00,$7F,$4D,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_254:
-    .byte $40,$40,$7F,$4F,$07,$07,$00,$00
+    .byte $40,$00,$7F,$6F,$07,$02,$00,$00
 .segment "ASSETS"
 native_row_255:
-    .byte $40,$40,$7F,$6B,$07,$07,$00,$00
+    .byte $40,$00,$7F,$6F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_256:
-    .byte $00,$00,$60,$20,$03,$02,$00,$00
+    .byte $60,$40,$7F,$57,$07,$02,$00,$00
 .segment "ASSETS"
 native_row_257:
-    .byte $00,$00,$60,$60,$01,$01,$00,$00
+    .byte $60,$40,$7F,$77,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_258:
-    .byte $00,$00,$40,$40,$7F,$28,$01,$01,$00,$00
+    .byte $40,$00,$7F,$0D,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_259:
-    .byte $00,$00,$40,$40,$7F,$7D,$03,$03,$00,$00
+    .byte $40,$00,$7F,$6F,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_260:
-    .byte $00,$00,$40,$40,$7F,$79,$03,$03,$00,$00
+    .byte $40,$00,$7F,$29,$07,$00,$00,$00
 .segment "ASSETS"
 native_row_261:
-    .byte $00,$00,$40,$40,$7F,$7B,$07,$07,$00,$00
+    .byte $60,$40,$7F,$4F,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_262:
-    .byte $00,$00,$60,$60,$7F,$73,$07,$07,$00,$00
+    .byte $60,$40,$7F,$6B,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_263:
-    .byte $00,$00,$60,$60,$7F,$67,$07,$07,$00,$00
+    .byte $40,$00,$7F,$20,$07,$02,$00,$00
 .segment "ASSETS"
 native_row_264:
-    .byte $00,$00,$60,$60,$7F,$77,$03,$03,$00,$00
+    .byte $00,$00,$70,$60,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_265:
-    .byte $00,$00,$70,$10,$7F,$73,$01,$01,$00,$00
+    .byte $00,$00,$60,$40,$7F,$28,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_266:
-    .byte $00,$00,$7E,$5A,$07,$05,$00,$00,$00,$00
+    .byte $00,$00,$60,$40,$7F,$7D,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_267:
-    .byte $00,$00,$7F,$7F,$0F,$0C,$00,$00,$00,$00
+    .byte $00,$00,$60,$40,$7F,$79,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_268:
-    .byte $00,$00,$7F,$3F,$0F,$0E,$00,$00,$00,$00
+    .byte $00,$00,$60,$40,$7F,$7B,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_269:
-    .byte $40,$40,$7F,$1F,$0F,$0F,$00,$00,$00,$00
+    .byte $00,$00,$70,$60,$7F,$73,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_270:
-    .byte $40,$40,$7F,$5F,$1F,$1F,$00,$00,$00,$00
+    .byte $00,$00,$70,$60,$7F,$67,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_271:
-    .byte $00,$00,$7F,$1F,$1F,$1F,$00,$00,$00,$00
+    .byte $00,$00,$70,$60,$7F,$77,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_272:
-    .byte $00,$00,$7F,$77,$07,$07,$00,$00
+    .byte $00,$00,$78,$10,$7F,$73,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_273:
-    .byte $00,$00,$7F,$65,$07,$07,$00,$00
+    .byte $00,$00,$7F,$5A,$07,$05,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_274:
-    .byte $00,$00,$7E,$6E,$01,$01,$00,$00
+    .byte $40,$00,$7F,$7F,$1F,$0C,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_275:
-    .byte $00,$00,$7E,$6E,$07,$07,$00,$00
+    .byte $40,$00,$7F,$3F,$1F,$0E,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_276:
-    .byte $00,$00,$7E,$22,$03,$02,$00,$00
+    .byte $60,$40,$7F,$1F,$1F,$0F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_277:
-    .byte $00,$00,$7E,$6E,$0F,$0F,$00,$00
+    .byte $60,$40,$7F,$4F,$1F,$0F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_278:
-    .byte $00,$00,$60,$60,$0F,$0D,$00,$00
+    .byte $60,$40,$7F,$5F,$3F,$1F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_279:
-    .byte $00,$00,$60,$60,$07,$05,$00,$00
+    .byte $40,$00,$7F,$1F,$3F,$1F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_280:
-    .byte $00,$00,$40,$40,$7F,$7F,$07,$07,$00,$00,$00,$00
+    .byte $00,$00,$7F,$12,$7F,$6E,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_281:
-    .byte $00,$00,$60,$20,$7F,$55,$0F,$0A,$00,$00,$00,$00
+    .byte $00,$00,$7E,$3C,$78,$60,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_282:
-    .byte $00,$00,$70,$50,$7F,$2A,$1F,$15,$00,$00,$00,$00
+    .byte $40,$00,$7F,$77,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_283:
-    .byte $00,$00,$78,$78,$7F,$7F,$3F,$3F,$00,$00,$00,$00
+    .byte $40,$00,$7F,$65,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_284:
-    .byte $00,$00,$78,$78,$7F,$6E,$3F,$3D,$00,$00,$00,$00
+    .byte $00,$00,$7F,$6E,$07,$01,$00,$00
 .segment "ASSETS"
 native_row_285:
-    .byte $00,$00,$78,$78,$7F,$01,$3F,$3E,$00,$00,$00,$00
+    .byte $00,$00,$7F,$6E,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_286:
-    .byte $00,$00,$70,$70,$7F,$01,$1F,$1A,$00,$00,$00,$00
+    .byte $00,$00,$7F,$22,$07,$02,$00,$00
 .segment "ASSETS"
 native_row_287:
-    .byte $00,$00,$40,$40,$7F,$46,$07,$07,$00,$00,$00,$00
+    .byte $40,$00,$7F,$4D,$0F,$03,$00,$00
 .segment "ASSETS"
 native_row_288:
-    .byte $00,$00,$40,$40,$7F,$6B,$07,$06,$00,$00,$00,$00
+    .byte $00,$00,$7F,$6E,$1F,$0F,$00,$00
 .segment "ASSETS"
 native_row_289:
-    .byte $00,$00,$00,$00,$7E,$6E,$07,$05,$00,$00,$00,$00
+    .byte $00,$00,$7E,$60,$1F,$0D,$00,$00
 .segment "ASSETS"
 native_row_290:
-    .byte $00,$00,$40,$40,$7F,$6F,$07,$07,$00,$00,$00,$00
+    .byte $00,$00,$70,$60,$0F,$05,$00,$00
 .segment "ASSETS"
 native_row_291:
-    .byte $00,$00,$60,$60,$7F,$2B,$0F,$0F,$00,$00,$00,$00
+    .byte $00,$00,$60,$40,$7F,$7F,$0F,$07,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_292:
-    .byte $00,$00,$00,$00,$7F,$03,$03,$03,$00,$00,$00,$00
+    .byte $00,$00,$70,$20,$7F,$55,$1F,$0A,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_293:
-    .byte $00,$00,$70,$70,$7F,$01,$1F,$1E,$00,$00,$00,$00
+    .byte $00,$00,$78,$50,$7F,$2A,$3F,$15,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_294:
-    .byte $00,$00,$40,$40,$7F,$7F,$00,$00,$00,$00,$00,$00
+    .byte $00,$00,$7C,$78,$7F,$7F,$7F,$3F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_295:
-    .byte $00,$00,$60,$60,$7F,$7F,$00,$00,$00,$00,$00,$00
+    .byte $00,$00,$7C,$78,$7F,$6E,$7F,$3D,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_296:
-    .byte $00,$00,$60,$20,$7F,$55,$01,$01,$00,$00,$00,$00
+    .byte $00,$00,$7C,$78,$6F,$01,$7F,$3E,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_297:
-    .byte $00,$00,$60,$60,$7F,$7F,$03,$03,$00,$00,$00,$00
+    .byte $00,$00,$78,$70,$47,$01,$3F,$1A,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_298:
-    .byte $00,$00,$40,$40,$7F,$7F,$0F,$0F,$00,$00,$00,$00
+    .byte $00,$00,$70,$40,$6F,$46,$1F,$07,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_299:
-    .byte $00,$00,$00,$00,$7E,$7E,$1F,$1F,$00,$00,$00,$00
+    .byte $00,$00,$60,$40,$7F,$6B,$0F,$06,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_300:
-    .byte $00,$00,$00,$00,$00,$00,$1F,$1F,$00,$00,$00,$00
+    .byte $00,$00,$40,$00,$7F,$6E,$0F,$05,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_301:
-    .byte $00,$00,$00,$00,$60,$60,$1F,$1F,$00,$00,$00,$00
+    .byte $00,$00,$60,$40,$7F,$6F,$0F,$07,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_302:
-    .byte $00,$00,$00,$00,$78,$28,$1F,$1F,$00,$00,$00,$00
+    .byte $00,$00,$70,$60,$7F,$2B,$1F,$0F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_303:
-    .byte $00,$00,$00,$00,$7E,$7E,$0F,$0C,$00,$00,$00,$00
+    .byte $00,$00,$70,$00,$6F,$03,$1F,$03,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_304:
-    .byte $00,$00,$40,$40,$7F,$7D,$03,$03,$00,$00,$00,$00
+    .byte $00,$00,$78,$70,$03,$01,$3F,$1E,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_305:
-    .byte $00,$00,$60,$60,$1F,$1B,$00,$00,$00,$00,$00,$00
+    .byte $00,$00,$60,$40,$7F,$7F,$01,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_306:
-    .byte $00,$00,$60,$60,$03,$03,$00,$00,$00,$00,$00,$00
+    .byte $00,$00,$70,$60,$7F,$7F,$01,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_307:
-    .byte $00,$00,$00,$00,$07,$07,$00,$00,$00,$00,$00,$00
+    .byte $00,$00,$70,$20,$7F,$55,$03,$01,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_308:
-    .byte $00,$00,$00,$00,$3F,$3F,$00,$00,$00,$00,$00,$00
+    .byte $00,$00,$70,$60,$7F,$7F,$0F,$03,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_309:
-    .byte $00,$00,$00,$00,$3E,$3E,$00,$00,$00,$00,$00,$00
+    .byte $00,$00,$60,$40,$7F,$7F,$1F,$0F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_310:
-    .byte $00,$00,$00,$00,$7E,$7E,$03,$03,$00,$00
+    .byte $00,$00,$40,$00,$7F,$7E,$3F,$1F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_311:
-    .byte $00,$00,$00,$00,$7F,$55,$07,$06,$00,$00
+    .byte $00,$00,$00,$00,$7E,$00,$3F,$1F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_312:
-    .byte $00,$00,$40,$40,$7F,$2A,$07,$05,$00,$00
+    .byte $00,$00,$00,$00,$78,$60,$3F,$1F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_313:
-    .byte $00,$00,$78,$78,$7F,$7F,$03,$03,$00,$00
+    .byte $00,$00,$00,$00,$7E,$28,$3F,$1F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_314:
-    .byte $00,$00,$78,$78,$7F,$7F,$00,$00,$00,$00
+    .byte $00,$00,$40,$00,$7F,$7E,$1F,$0C,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_315:
-    .byte $00,$00,$78,$78,$01,$01,$00,$00,$00,$00
+    .byte $00,$00,$60,$40,$7F,$7D,$0F,$03,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_316:
-    .byte $00,$00,$70,$70,$3F,$2B,$00,$00,$00,$00
+    .byte $00,$00,$70,$60,$7F,$1B,$03,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_317:
-    .byte $00,$00,$40,$40,$7F,$7C,$00,$00,$00,$00
+    .byte $00,$00,$70,$60,$1F,$03,$00,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_318:
-    .byte $00,$00,$40,$40,$7F,$1F,$01,$01,$00,$00
+    .byte $00,$00,$60,$00,$3F,$07,$00,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_319:
-    .byte $00,$00,$00,$00,$78,$68,$03,$03,$00,$00
+    .byte $00,$00,$40,$00,$7F,$3F,$00,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_320:
-    .byte $00,$00,$00,$00,$60,$60,$03,$03,$00,$00
+    .byte $00,$00,$00,$00,$7F,$3E,$00,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_321:
-    .byte $00,$00,$00,$00,$70,$70,$00,$00,$00,$00
+    .byte $00,$00,$00,$00,$7F,$7E,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_322:
-    .byte $00,$00,$00,$00,$3E,$3E,$00,$00,$00,$00
+    .byte $00,$00,$40,$00,$7F,$55,$0F,$06,$00,$00
 .segment "ASSETS"
 native_row_323:
-    .byte $00,$00,$60,$60,$7F,$7F,$07,$07,$00,$00,$00,$00
+    .byte $00,$00,$70,$40,$7F,$2A,$0F,$05,$00,$00
 .segment "ASSETS"
 native_row_324:
-    .byte $00,$00,$70,$30,$7F,$55,$0F,$0A,$00,$00,$00,$00
+    .byte $00,$00,$7C,$78,$7F,$7F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_325:
-    .byte $00,$00,$78,$58,$7F,$52,$1F,$15,$00,$00,$00,$00
+    .byte $00,$00,$7C,$78,$7F,$7F,$03,$00,$00,$00
 .segment "ASSETS"
 native_row_326:
-    .byte $00,$00,$7C,$7C,$7F,$77,$1F,$1F,$00,$00,$00,$00
+    .byte $00,$00,$7C,$78,$7F,$01,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_327:
-    .byte $00,$00,$7C,$7C,$7F,$77,$3F,$3F,$00,$00,$00,$00
+    .byte $00,$00,$7C,$78,$2F,$07,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_328:
-    .byte $00,$00,$78,$78,$7F,$6F,$3F,$3F,$00,$00,$00,$00
+    .byte $00,$00,$78,$70,$7F,$2B,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_329:
-    .byte $00,$00,$7C,$54,$7F,$47,$3F,$23,$00,$00,$00,$00
+    .byte $00,$00,$70,$40,$7F,$7C,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_330:
-    .byte $00,$00,$7C,$54,$7F,$02,$1F,$15,$00,$00,$00,$00
+    .byte $00,$00,$60,$40,$7F,$1F,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_331:
-    .byte $00,$00,$78,$58,$7F,$03,$3F,$3E,$00,$00,$00,$00
+    .byte $00,$00,$40,$00,$7F,$68,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_332:
-    .byte $00,$00,$70,$70,$7F,$03,$1F,$1F,$00,$00,$00,$00
+    .byte $00,$00,$00,$00,$78,$60,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_333:
-    .byte $00,$00,$60,$60,$7F,$44,$0F,$0C,$00,$00,$00,$00
+    .byte $00,$00,$00,$00,$7E,$70,$03,$00,$00,$00
 .segment "ASSETS"
 native_row_334:
-    .byte $00,$00,$60,$20,$7F,$6F,$07,$05,$00,$00,$00,$00
+    .byte $00,$00,$00,$00,$7F,$3E,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_335:
-    .byte $00,$00,$40,$40,$7F,$6F,$03,$03,$00,$00,$00,$00
+    .byte $00,$00,$70,$60,$7F,$7F,$0F,$07,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_336:
-    .byte $00,$00,$70,$10,$7F,$00,$0F,$0C,$00,$00,$00,$00
+    .byte $00,$00,$78,$30,$7F,$55,$1F,$0A,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_337:
-    .byte $00,$00,$78,$58,$7F,$03,$1F,$1B,$00,$00,$00,$00
+    .byte $00,$00,$7C,$58,$7F,$52,$3F,$15,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_338:
-    .byte $00,$00,$78,$68,$7F,$01,$1F,$17,$00,$00,$00,$00
+    .byte $00,$00,$7E,$7C,$7F,$77,$3F,$1F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_339:
-    .byte $00,$00,$00,$00,$60,$60,$7F,$7F,$03,$03,$00,$00,$00,$00
+    .byte $00,$00,$7E,$7C,$7F,$77,$7F,$3F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_340:
-    .byte $00,$00,$00,$00,$60,$20,$7F,$55,$03,$02,$00,$00,$00,$00
+    .byte $00,$00,$7C,$78,$7F,$6F,$7F,$3F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_341:
-    .byte $00,$00,$00,$00,$70,$50,$7F,$2A,$3F,$3D,$00,$00,$00,$00
+    .byte $00,$00,$7E,$54,$6F,$47,$7F,$23,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_342:
-    .byte $00,$00,$00,$00,$78,$78,$7F,$7D,$7F,$7F,$01,$01,$00,$00
+    .byte $00,$00,$7E,$54,$47,$02,$3F,$15,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_343:
-    .byte $00,$00,$00,$00,$7C,$7C,$7F,$7B,$7F,$7F,$07,$07,$00,$00
+    .byte $00,$00,$7C,$58,$47,$03,$7F,$3E,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_344:
-    .byte $00,$00,$00,$00,$7F,$7F,$7F,$77,$7F,$7F,$07,$07,$00,$00
+    .byte $00,$00,$78,$70,$47,$03,$3F,$1F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_345:
-    .byte $00,$00,$40,$40,$7F,$7F,$7F,$07,$7F,$7F,$07,$07,$00,$00
+    .byte $00,$00,$70,$60,$6F,$44,$1F,$0C,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_346:
-    .byte $00,$00,$00,$00,$7F,$7F,$7F,$03,$7F,$7C,$0F,$0F,$00,$00
+    .byte $00,$00,$70,$20,$7F,$6F,$0F,$05,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_347:
-    .byte $00,$00,$70,$70,$7F,$5A,$07,$00,$7C,$70,$0F,$0F,$00,$00
+    .byte $00,$00,$70,$40,$7F,$6F,$0F,$03,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_348:
-    .byte $00,$00,$7E,$7E,$7F,$1F,$07,$00,$7C,$60,$0F,$0F,$00,$00
+    .byte $00,$00,$78,$10,$6F,$00,$1F,$0C,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_349:
-    .byte $00,$00,$7F,$5F,$7F,$01,$07,$00,$7C,$40,$0F,$08,$00,$00
+    .byte $00,$00,$7C,$58,$47,$03,$3F,$1B,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_350:
-    .byte $00,$00,$7F,$3F,$7F,$00,$7F,$00,$7F,$40,$1F,$1F,$00,$00
+    .byte $00,$00,$7C,$68,$43,$01,$3F,$17,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_351:
-    .byte $00,$00,$7E,$0E,$7F,$00,$7F,$00,$7F,$40,$1F,$1F,$00,$00
+    .byte $00,$00,$00,$00,$70,$60,$7F,$7F,$07,$03,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_352:
-    .byte $00,$00,$7F,$07,$7F,$00,$7F,$00,$7F,$40,$1F,$1F,$00,$00
+    .byte $00,$00,$00,$00,$70,$20,$7F,$55,$3F,$02,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_353:
-    .byte $40,$40,$7F,$07,$7F,$00,$7F,$00,$7F,$00,$1F,$19,$00,$00
+    .byte $00,$00,$00,$00,$78,$50,$7F,$2A,$7F,$3D,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_354:
-    .byte $40,$40,$7F,$03,$7F,$00,$7F,$00,$7F,$00,$0F,$0F,$00,$00
+    .byte $00,$00,$00,$00,$7C,$78,$7F,$7D,$7F,$7F,$07,$01,$00,$00
 .segment "ASSETS"
 native_row_355:
-    .byte $40,$40,$7F,$01,$7F,$00,$7F,$00,$7F,$00,$07,$07,$00,$00
+    .byte $00,$00,$00,$00,$7F,$7C,$7F,$7B,$7F,$7F,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_356:
-    .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$1F,$1F,$00,$00
+    .byte $00,$00,$40,$00,$7F,$7F,$7F,$77,$7F,$7F,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_357:
-    .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$7F,$7F,$00,$00
+    .byte $00,$00,$60,$40,$7F,$7F,$7F,$07,$7F,$7F,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_358:
-    .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$7F,$7B,$00,$00
+    .byte $00,$00,$70,$00,$7F,$7F,$07,$03,$7F,$7C,$1F,$0F,$00,$00
 .segment "ASSETS"
 native_row_359:
-    .byte $00,$00,$00,$00,$40,$40,$7F,$7F,$07,$07,$00,$00,$00,$00,$00,$00
+    .byte $00,$00,$7E,$70,$7F,$5A,$03,$00,$7C,$70,$1F,$0F,$00,$00
 .segment "ASSETS"
 native_row_360:
-    .byte $00,$00,$00,$00,$70,$30,$7F,$55,$0F,$0A,$00,$00,$00,$00,$00,$00
+    .byte $00,$00,$7F,$7E,$7F,$1F,$00,$00,$70,$60,$1F,$0F,$00,$00
 .segment "ASSETS"
 native_row_361:
-    .byte $00,$00,$00,$00,$7C,$5C,$7F,$2A,$1F,$15,$00,$00,$00,$00,$00,$00
+    .byte $40,$00,$7F,$5F,$1F,$01,$00,$00,$60,$40,$1F,$08,$00,$00
 .segment "ASSETS"
 native_row_362:
-    .byte $00,$00,$00,$00,$7F,$7F,$7F,$7E,$3F,$3F,$00,$00,$00,$00,$00,$00
+    .byte $40,$00,$7F,$3F,$01,$00,$00,$00,$60,$40,$3F,$1F,$00,$00
 .segment "ASSETS"
 native_row_363:
-    .byte $00,$00,$40,$40,$7F,$7F,$7F,$7D,$3F,$3F,$00,$00,$00,$00,$00,$00
+    .byte $00,$00,$3F,$0E,$00,$00,$00,$00,$60,$40,$3F,$1F,$00,$00
 .segment "ASSETS"
 native_row_364:
-    .byte $00,$00,$40,$40,$7F,$7F,$7F,$7D,$7F,$7F,$00,$00,$00,$00,$00,$00
+    .byte $40,$00,$0F,$07,$00,$00,$00,$00,$60,$40,$3F,$1F,$00,$00
 .segment "ASSETS"
 native_row_365:
-    .byte $00,$00,$60,$60,$7F,$7F,$7F,$73,$7F,$7F,$00,$00,$00,$00,$00,$00
+    .byte $60,$40,$0F,$07,$00,$00,$00,$00,$40,$00,$3F,$19,$00,$00
 .segment "ASSETS"
 native_row_366:
-    .byte $00,$00,$60,$60,$7F,$7F,$7F,$41,$7F,$7F,$01,$01,$00,$00,$00,$00
+    .byte $60,$40,$07,$03,$00,$00,$00,$00,$40,$00,$1F,$0F,$00,$00
 .segment "ASSETS"
 native_row_367:
-    .byte $00,$00,$60,$60,$7F,$1F,$7F,$00,$7F,$7F,$03,$03,$00,$00,$00,$00
+    .byte $60,$40,$03,$01,$00,$00,$00,$00,$40,$00,$1F,$07,$00,$00
 .segment "ASSETS"
 native_row_368:
-    .byte $00,$00,$60,$60,$7F,$0F,$7F,$00,$7F,$7E,$0F,$0A,$00,$00,$00,$00
+    .byte $40,$00,$01,$00,$00,$00,$00,$00,$40,$00,$7F,$1F,$00,$00
 .segment "ASSETS"
 native_row_369:
-    .byte $00,$00,$60,$60,$7F,$07,$07,$00,$7C,$08,$3F,$2F,$00,$00,$00,$00
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$40,$00,$7F,$7F,$01,$00
 .segment "ASSETS"
 native_row_370:
-    .byte $00,$00,$60,$20,$7F,$04,$07,$00,$7C,$70,$7F,$77,$03,$03,$00,$00
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$40,$00,$7F,$7B,$01,$00
 .segment "ASSETS"
 native_row_371:
-    .byte $00,$00,$70,$70,$7F,$07,$07,$00,$7C,$70,$7F,$7B,$03,$03,$00,$00
+    .byte $00,$00,$00,$00,$70,$40,$7F,$7F,$0F,$07,$00,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_372:
-    .byte $00,$00,$70,$70,$7F,$07,$7F,$00,$7F,$60,$7F,$7E,$03,$03,$00,$00
+    .byte $00,$00,$00,$00,$7C,$30,$7F,$55,$1F,$0A,$00,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_373:
-    .byte $00,$00,$70,$70,$7F,$07,$7F,$00,$7F,$00,$7F,$78,$01,$01,$00,$00
+    .byte $00,$00,$00,$00,$7F,$5C,$7F,$2A,$3F,$15,$00,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_374:
-    .byte $00,$00,$60,$20,$7F,$02,$7F,$00,$7F,$00,$7F,$60,$03,$03,$00,$00
+    .byte $00,$00,$40,$00,$7F,$7F,$7F,$7E,$7F,$3F,$00,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_375:
-    .byte $00,$00,$60,$60,$7F,$03,$7F,$00,$7F,$00,$7F,$40,$07,$07,$00,$00
+    .byte $00,$00,$60,$40,$7F,$7F,$7F,$7D,$7F,$3F,$00,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_376:
-    .byte $00,$00,$60,$60,$7F,$03,$7F,$00,$7F,$00,$7F,$00,$07,$07,$00,$00
+    .byte $00,$00,$60,$40,$7F,$7F,$7F,$7D,$7F,$7F,$01,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_377:
-    .byte $00,$00,$78,$78,$7F,$03,$7F,$00,$7F,$00,$7F,$00,$07,$07,$00,$00
+    .byte $00,$00,$70,$60,$7F,$7F,$7F,$73,$7F,$7F,$01,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_378:
-    .byte $00,$00,$7E,$7E,$7F,$03,$7F,$00,$7F,$00,$7F,$00,$07,$06,$00,$00
+    .byte $00,$00,$70,$60,$7F,$7F,$73,$41,$7F,$7F,$03,$01,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_379:
-    .byte $00,$00,$7E,$3E,$03,$03,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+    .byte $00,$00,$70,$60,$7F,$1F,$41,$00,$7F,$7F,$0F,$03,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_380:
-    .byte $00,$00,$08,$08
+    .byte $00,$00,$70,$60,$1F,$0F,$00,$00,$7F,$7E,$3F,$0A,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_381:
-    .byte $00,$00,$0C,$0C
+    .byte $00,$00,$70,$60,$0F,$07,$00,$00,$7C,$08,$7F,$2F,$03,$00,$00,$00
 .segment "ASSETS"
 native_row_382:
-    .byte $00,$00,$1C,$1C
+    .byte $00,$00,$70,$20,$0F,$04,$00,$00,$78,$70,$7F,$77,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_383:
-    .byte $00,$00,$1E,$1E
+    .byte $00,$00,$78,$70,$0F,$07,$00,$00,$78,$70,$7F,$7B,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_384:
-    .byte $00,$00,$0E,$0E
+    .byte $00,$00,$78,$70,$0F,$07,$00,$00,$70,$60,$7F,$7E,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_385:
-    .byte $00,$00,$06,$06
+    .byte $00,$00,$78,$70,$0F,$07,$00,$00,$60,$00,$7F,$78,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_386:
-    .byte $00,$00,$1E,$1A
+    .byte $00,$00,$70,$20,$07,$02,$00,$00,$00,$00,$78,$60,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_387:
-    .byte $7E,$66,$01,$01
+    .byte $00,$00,$70,$60,$07,$03,$00,$00,$00,$00,$60,$40,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_388:
-    .byte $7F,$3F,$03,$03
+    .byte $00,$00,$78,$60,$07,$03,$00,$00,$00,$00,$40,$00,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_389:
-    .byte $7F,$7D,$03,$03
+    .byte $00,$00,$7E,$78,$07,$03,$00,$00,$00,$00,$40,$00,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_390:
-    .byte $7E,$5E,$03,$03
+    .byte $00,$00,$7F,$7E,$07,$03,$00,$00,$00,$00,$00,$00,$0F,$06,$00,$00
 .segment "ASSETS"
 native_row_391:
-    .byte $7E,$7E,$03,$03
+    .byte $00,$00,$7F,$3E,$07,$03,$00,$00,$00,$00,$00,$00,$06,$00,$00,$00
 .segment "ASSETS"
 native_row_392:
-    .byte $7F,$6F,$03,$03
+    .byte $00,$00,$1C,$08
 .segment "ASSETS"
 native_row_393:
-    .byte $7F,$7B,$03,$02
+    .byte $00,$00,$1E,$0C
 .segment "ASSETS"
 native_row_394:
-    .byte $7F,$77,$01,$01
+    .byte $00,$00,$1E,$1C
 .segment "ASSETS"
 native_row_395:
-    .byte $7E,$6E,$01,$01
+    .byte $00,$00,$1F,$1E
 .segment "ASSETS"
 native_row_396:
-    .byte $7E,$02,$03,$03
+    .byte $00,$00,$1F,$0E
 .segment "ASSETS"
 native_row_397:
-    .byte $7E,$42,$03,$02
+    .byte $00,$00,$1F,$06
 .segment "ASSETS"
 native_row_398:
-    .byte $7E,$42,$03,$03
+    .byte $00,$00,$1F,$1A
 .segment "ASSETS"
 native_row_399:
-    .byte $01,$01,$00,$00
+    .byte $7F,$66,$03,$01
 .segment "ASSETS"
 native_row_400:
-    .byte $03,$03,$00,$00
+    .byte $7F,$3F,$07,$03
 .segment "ASSETS"
 native_row_401:
-    .byte $07,$07,$00,$00
+    .byte $7F,$7D,$07,$03
 .segment "ASSETS"
 native_row_402:
-    .byte $06,$06,$00,$00
+    .byte $7F,$5E,$07,$03
 .segment "ASSETS"
 native_row_403:
-    .byte $00,$00,$04,$04,$00,$00
+    .byte $7F,$7E,$07,$03
 .segment "ASSETS"
 native_row_404:
-    .byte $00,$00,$1E,$12,$00,$00
+    .byte $7F,$6F,$07,$03
 .segment "ASSETS"
 native_row_405:
-    .byte $00,$00,$7F,$1D,$0F,$0C
+    .byte $7F,$7B,$07,$02
 .segment "ASSETS"
 native_row_406:
-    .byte $00,$00,$7F,$17,$07,$06
+    .byte $7F,$77,$03,$01
 .segment "ASSETS"
 native_row_407:
-    .byte $00,$00,$7F,$1B,$0F,$0B
+    .byte $7F,$6E,$03,$01
 .segment "ASSETS"
 native_row_408:
-    .byte $00,$00,$7E,$0E,$07,$05
+    .byte $7F,$02,$07,$03
 .segment "ASSETS"
 native_row_409:
-    .byte $00,$00,$7E,$0A,$0F,$0F
+    .byte $7F,$42,$07,$02
 .segment "ASSETS"
 native_row_410:
-    .byte $00,$00,$7E,$0A,$0F,$0B
+    .byte $7F,$42,$07,$03
 .segment "ASSETS"
 native_row_411:
-    .byte $00,$00,$7F,$0F,$07,$06
+    .byte $03,$01,$00,$00
 .segment "ASSETS"
 native_row_412:
-    .byte $00,$00,$7F,$0F,$0F,$0E
+    .byte $07,$03,$00,$00
 .segment "ASSETS"
 native_row_413:
-    .byte $40,$40,$7F,$0F,$0F,$0C
+    .byte $0F,$07,$00,$00
 .segment "ASSETS"
 native_row_414:
-    .byte $40,$40,$7F,$02,$03,$03
+    .byte $0F,$06,$00,$00
 .segment "ASSETS"
 native_row_415:
-    .byte $40,$40,$7F,$62,$07,$07
+    .byte $00,$00,$1E,$04,$00,$00
 .segment "ASSETS"
 native_row_416:
-    .byte $40,$40,$7F,$63,$0F,$0F
+    .byte $00,$00,$3F,$12,$0C,$00
 .segment "ASSETS"
 native_row_417:
-    .byte $40,$40,$7F,$53,$0F,$0F
+    .byte $40,$00,$3F,$1D,$0E,$0C
 .segment "ASSETS"
 native_row_418:
-    .byte $00,$00,$7F,$3B,$0F,$0F
+    .byte $40,$00,$3F,$17,$0F,$06
 .segment "ASSETS"
 native_row_419:
-    .byte $00,$00,$7F,$77,$0F,$0C
+    .byte $40,$00,$7F,$1B,$0F,$0B
 .segment "ASSETS"
 native_row_420:
-    .byte $00,$00,$7F,$7F,$0F,$0F
+    .byte $00,$00,$5F,$0E,$0F,$05
 .segment "ASSETS"
 native_row_421:
-    .byte $00,$00,$7E,$7E,$0F,$0F
+    .byte $00,$00,$5F,$0A,$0F,$0F
 .segment "ASSETS"
 native_row_422:
-    .byte $00,$00,$7E,$5E,$0F,$0F
+    .byte $00,$00,$5F,$0A,$0F,$0B
 .segment "ASSETS"
 native_row_423:
-    .byte $00,$00,$7C,$4C,$0F,$0F
+    .byte $40,$00,$1F,$0F,$0F,$06
 .segment "ASSETS"
 native_row_424:
-    .byte $7F,$03,$1F,$1D,$00,$00
+    .byte $40,$00,$1F,$0F,$0F,$0E
 .segment "ASSETS"
 native_row_425:
-    .byte $7F,$07,$1F,$17,$00,$00
+    .byte $60,$40,$1F,$0F,$0E,$0C
 .segment "ASSETS"
 native_row_426:
-    .byte $7F,$0D,$1F,$1B,$00,$00
+    .byte $60,$40,$6F,$02,$0F,$03
 .segment "ASSETS"
 native_row_427:
-    .byte $7E,$0A,$0F,$0E,$00,$00
+    .byte $60,$40,$77,$62,$0F,$07
 .segment "ASSETS"
 native_row_428:
-    .byte $7F,$07,$0F,$0A,$00,$00
+    .byte $60,$40,$77,$63,$0F,$0F
 .segment "ASSETS"
 native_row_429:
-    .byte $7F,$05,$0F,$0A,$00,$00
+    .byte $60,$40,$7F,$53,$0F,$0F
 .segment "ASSETS"
 native_row_430:
-    .byte $7F,$0F,$0F,$0A,$00,$00
+    .byte $40,$00,$7F,$3B,$0F,$0F
 .segment "ASSETS"
 native_row_431:
-    .byte $7F,$0B,$0F,$0A,$00,$00
+    .byte $40,$00,$7F,$77,$0F,$0C
 .segment "ASSETS"
 native_row_432:
-    .byte $7F,$05,$1F,$1E,$00,$00
+    .byte $40,$00,$7F,$7F,$0F,$0F
 .segment "ASSETS"
 native_row_433:
-    .byte $7F,$07,$1F,$1F,$00,$00
+    .byte $00,$00,$7F,$7E,$0F,$0F
 .segment "ASSETS"
 native_row_434:
-    .byte $7F,$01,$1F,$1F,$00,$00
+    .byte $00,$00,$7F,$5E,$0F,$0F
 .segment "ASSETS"
 native_row_435:
-    .byte $00,$00,$07,$05,$00,$00
+    .byte $00,$00,$7E,$4C,$0F,$0F
 .segment "ASSETS"
 native_row_436:
-    .byte $7F,$01,$07,$05,$00,$00
+    .byte $03,$00,$3F,$12,$00,$00
 .segment "ASSETS"
 native_row_437:
-    .byte $7F,$43,$07,$07,$00,$00
+    .byte $47,$03,$3F,$1D,$00,$00
 .segment "ASSETS"
 native_row_438:
-    .byte $7F,$63,$07,$07,$00,$00
+    .byte $4F,$07,$3F,$17,$00,$00
 .segment "ASSETS"
 native_row_439:
-    .byte $7E,$76,$03,$03,$00,$00
+    .byte $5F,$0D,$3F,$1B,$00,$00
 .segment "ASSETS"
 native_row_440:
-    .byte $7F,$7B,$01,$01,$00,$00
+    .byte $5F,$0A,$1F,$0E,$00,$00
 .segment "ASSETS"
 native_row_441:
-    .byte $7F,$7F,$00,$00,$00,$00
+    .byte $0F,$07,$1F,$0A,$00,$00
 .segment "ASSETS"
 native_row_442:
-    .byte $3F,$3F,$00,$00,$00,$00
+    .byte $0F,$05,$1F,$0A,$00,$00
 .segment "ASSETS"
 native_row_443:
-    .byte $1F,$1F,$00,$00,$00,$00
+    .byte $1F,$0F,$1F,$0A,$00,$00
 .segment "ASSETS"
 native_row_444:
-    .byte $0F,$0F,$00,$00,$00,$00
+    .byte $1F,$0B,$1F,$0A,$00,$00
 .segment "ASSETS"
 native_row_445:
-    .byte $02,$02,$00,$00,$00,$00
+    .byte $4F,$05,$3F,$1E,$00,$00
 .segment "ASSETS"
 native_row_446:
-    .byte $00,$00,$7F,$17,$0F,$0E
+    .byte $4F,$07,$3F,$1F,$00,$00
 .segment "ASSETS"
 native_row_447:
-    .byte $00,$00,$7E,$0A,$0F,$0E
+    .byte $47,$01,$3F,$1F,$00,$00
 .segment "ASSETS"
 native_row_448:
-    .byte $00,$00,$7E,$0A,$0F,$0A
+    .byte $01,$00,$1F,$05,$00,$00
 .segment "ASSETS"
 native_row_449:
-    .byte $00,$00,$7E,$0A,$0F,$0D
+    .byte $43,$01,$0F,$05,$00,$00
 .segment "ASSETS"
 native_row_450:
-    .byte $00,$00,$7F,$0F,$0F,$0A
+    .byte $67,$43,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_451:
-    .byte $40,$40,$7F,$0F,$0F,$0E
+    .byte $77,$63,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_452:
-    .byte $40,$40,$7F,$0F,$0F,$08
+    .byte $7F,$76,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_453:
-    .byte $40,$40,$03,$02,$00,$00
+    .byte $7F,$7B,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_454:
-    .byte $40,$40,$7F,$02,$0F,$08
+    .byte $7F,$7F,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_455:
-    .byte $40,$40,$7F,$03,$0F,$0E
+    .byte $7F,$3F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_456:
-    .byte $40,$40,$7F,$07,$0F,$0E
+    .byte $3F,$1F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_457:
-    .byte $00,$00,$7F,$4F,$0F,$0A
+    .byte $1F,$0F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_458:
-    .byte $00,$00,$7E,$7E,$0F,$0E
+    .byte $0F,$02,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_459:
-    .byte $00,$00,$7C,$7C,$0F,$0E
+    .byte $40,$00,$3F,$17,$0F,$0E
 .segment "ASSETS"
 native_row_460:
-    .byte $00,$00,$78,$78,$0F,$0A
+    .byte $00,$00,$1F,$0A,$0F,$0E
 .segment "ASSETS"
 native_row_461:
-    .byte $00,$00,$60,$20,$0F,$0C
+    .byte $00,$00,$1F,$0A,$0F,$0A
 .segment "ASSETS"
 native_row_462:
-    .byte $08,$08,$00,$00
+    .byte $00,$00,$5F,$0A,$0F,$0D
 .segment "ASSETS"
 native_row_463:
-    .byte $3C,$24,$00,$00
+    .byte $40,$00,$1F,$0F,$0F,$0A
 .segment "ASSETS"
 native_row_464:
-    .byte $3E,$3A,$00,$00
+    .byte $60,$40,$1F,$0F,$0F,$0E
 .segment "ASSETS"
 native_row_465:
-    .byte $3E,$2E,$00,$00
+    .byte $60,$40,$1F,$0F,$0E,$08
 .segment "ASSETS"
 native_row_466:
-    .byte $3E,$36,$00,$00
+    .byte $60,$40,$0F,$02,$08,$00
 .segment "ASSETS"
 native_row_467:
-    .byte $1C,$1C,$00,$00
+    .byte $60,$40,$07,$02,$0E,$08
 .segment "ASSETS"
 native_row_468:
-    .byte $1C,$14,$00,$00
+    .byte $60,$40,$07,$03,$0F,$0E
 .segment "ASSETS"
 native_row_469:
-    .byte $3C,$3C,$00,$00
+    .byte $60,$40,$0F,$07,$0F,$0E
 .segment "ASSETS"
 native_row_470:
-    .byte $38,$28,$00,$00
+    .byte $40,$00,$7F,$4F,$0F,$0A
 .segment "ASSETS"
 native_row_471:
-    .byte $3F,$3D,$00,$00
+    .byte $00,$00,$7F,$7E,$0F,$0E
 .segment "ASSETS"
 native_row_472:
-    .byte $1F,$1B,$00,$00
+    .byte $00,$00,$7E,$7C,$0F,$0E
 .segment "ASSETS"
 native_row_473:
-    .byte $1F,$1F,$00,$00
+    .byte $00,$00,$7C,$78,$0F,$0A
 .segment "ASSETS"
 native_row_474:
-    .byte $0F,$0F,$00,$00
+    .byte $00,$00,$78,$20,$0F,$0C
 .segment "ASSETS"
 native_row_475:
-    .byte $40,$40,$1F,$17
+    .byte $3C,$08,$00,$00
 .segment "ASSETS"
 native_row_476:
-    .byte $40,$40,$1F,$19
+    .byte $7E,$24,$00,$00
 .segment "ASSETS"
 native_row_477:
-    .byte $7E,$66,$01,$01,$00,$00
+    .byte $7F,$3A,$00,$00
 .segment "ASSETS"
 native_row_478:
-    .byte $7F,$7B,$03,$03,$00,$00
+    .byte $7F,$2E,$00,$00
 .segment "ASSETS"
 native_row_479:
-    .byte $7F,$3B,$03,$03,$00,$00
+    .byte $7F,$36,$00,$00
 .segment "ASSETS"
 native_row_480:
-    .byte $7F,$7B,$03,$02,$00,$00
+    .byte $3E,$1C,$00,$00
 .segment "ASSETS"
 native_row_481:
-    .byte $7F,$77,$01,$01,$00,$00
+    .byte $3E,$14,$00,$00
 .segment "ASSETS"
 native_row_482:
-    .byte $7F,$6F,$03,$03,$00,$00
+    .byte $7E,$3C,$00,$00
 .segment "ASSETS"
 native_row_483:
-    .byte $7F,$5F,$03,$03,$00,$00
+    .byte $7C,$28,$00,$00
 .segment "ASSETS"
 native_row_484:
-    .byte $7F,$3F,$07,$07,$00,$00
+    .byte $7F,$3C,$00,$00
 .segment "ASSETS"
 native_row_485:
-    .byte $7E,$7E,$0F,$0E,$00,$00
+    .byte $7F,$3D,$00,$00
 .segment "ASSETS"
 native_row_486:
-    .byte $7E,$7E,$0F,$0F,$00,$00
+    .byte $3F,$1B,$00,$00
 .segment "ASSETS"
 native_row_487:
-    .byte $7E,$02,$1F,$1C,$00,$00
+    .byte $3F,$1F,$00,$00
 .segment "ASSETS"
 native_row_488:
-    .byte $7E,$02,$7F,$6C,$07,$07
+    .byte $1F,$0F,$00,$00
 .segment "ASSETS"
 native_row_489:
-    .byte $7E,$02,$7F,$3A,$07,$06
+    .byte $40,$00,$1F,$1C
 .segment "ASSETS"
 native_row_490:
-    .byte $00,$00,$18,$18
+    .byte $60,$40,$1F,$17
 .segment "ASSETS"
 native_row_491:
-    .byte $00,$00,$0E,$0A
+    .byte $60,$40,$1F,$19
 .segment "ASSETS"
 native_row_492:
-    .byte $00,$00,$1F,$13
+    .byte $7F,$66,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_493:
-    .byte $40,$40,$1F,$1B
+    .byte $7F,$7B,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_494:
-    .byte $00,$00,$1F,$1D
+    .byte $7F,$3B,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_495:
-    .byte $7C,$7C,$1F,$1A
+    .byte $7F,$7B,$07,$02,$00,$00
 .segment "ASSETS"
 native_row_496:
-    .byte $7C,$4C,$0F,$0E
+    .byte $7F,$77,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_497:
-    .byte $0F,$0B,$00,$00
+    .byte $7F,$6F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_498:
-    .byte $00,$00,$00,$00,$04,$04
+    .byte $7F,$5F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_499:
-    .byte $00,$00,$00,$00,$06,$06
+    .byte $7F,$3F,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_500:
-    .byte $00,$00,$00,$00,$0E,$0E
+    .byte $7F,$7E,$1F,$0E,$00,$00
 .segment "ASSETS"
 native_row_501:
-    .byte $00,$00,$00,$00,$0F,$0F
+    .byte $7F,$7E,$1F,$0F,$00,$00
 .segment "ASSETS"
 native_row_502:
-    .byte $00,$00,$00,$00,$07,$07
+    .byte $7F,$02,$7F,$1C,$07,$00
 .segment "ASSETS"
 native_row_503:
-    .byte $00,$00,$40,$40,$07,$07
+    .byte $7F,$02,$7F,$6C,$0F,$07
 .segment "ASSETS"
 native_row_504:
-    .byte $00,$00,$60,$60,$07,$06
+    .byte $7F,$02,$7F,$3A,$0F,$06
 .segment "ASSETS"
 native_row_505:
-    .byte $00,$00,$70,$30,$03,$03
+    .byte $00,$00,$1E,$18
 .segment "ASSETS"
 native_row_506:
-    .byte $00,$00,$78,$78,$01,$01
+    .byte $00,$00,$1F,$0A
 .segment "ASSETS"
 native_row_507:
-    .byte $00,$00,$7C,$7C,$00,$00
+    .byte $40,$00,$1F,$13
 .segment "ASSETS"
 native_row_508:
-    .byte $00,$00,$0F,$0D,$00,$00
+    .byte $60,$40,$1F,$1B
 .segment "ASSETS"
 native_row_509:
-    .byte $00,$00,$07,$07,$00,$00
+    .byte $7C,$00,$1F,$1D
 .segment "ASSETS"
 native_row_510:
-    .byte $00,$00,$03,$03,$00,$00
+    .byte $7E,$7C,$1F,$1A
 .segment "ASSETS"
 native_row_511:
-    .byte $40,$40,$07,$07,$00,$00
+    .byte $7E,$4C,$1F,$0E
 .segment "ASSETS"
 native_row_512:
-    .byte $7E,$7E,$01,$01,$00,$00,$00,$00
+    .byte $0F,$03,$00,$00
 .segment "ASSETS"
 native_row_513:
-    .byte $7F,$3F,$03,$03,$00,$00,$00,$00
+    .byte $1F,$0B,$00,$00
 .segment "ASSETS"
 native_row_514:
-    .byte $7F,$3D,$03,$03,$00,$00,$00,$00
+    .byte $00,$00,$00,$00,$0E,$04
 .segment "ASSETS"
 native_row_515:
-    .byte $7F,$7B,$03,$02,$00,$00,$00,$00
+    .byte $00,$00,$00,$00,$0F,$06
 .segment "ASSETS"
 native_row_516:
-    .byte $7F,$7B,$01,$01,$00,$00,$00,$00
+    .byte $00,$00,$00,$00,$0F,$0E
 .segment "ASSETS"
 native_row_517:
-    .byte $7F,$77,$7F,$7F,$00,$00,$00,$00
+    .byte $00,$00,$40,$00,$0F,$0F
 .segment "ASSETS"
 native_row_518:
-    .byte $7F,$6F,$7F,$7F,$03,$03,$00,$00
+    .byte $00,$00,$40,$00,$0F,$07
 .segment "ASSETS"
 native_row_519:
-    .byte $3F,$1F,$60,$40,$07,$07,$00,$00
+    .byte $00,$00,$60,$40,$0F,$07
 .segment "ASSETS"
 native_row_520:
-    .byte $3F,$3F,$60,$00,$07,$06,$00,$00
+    .byte $00,$00,$70,$60,$0F,$06
 .segment "ASSETS"
 native_row_521:
-    .byte $3F,$3F,$60,$00,$0F,$0F,$00,$00
+    .byte $00,$00,$78,$30,$07,$03
 .segment "ASSETS"
 native_row_522:
-    .byte $3E,$3E,$60,$00,$0F,$0F,$00,$00
+    .byte $00,$00,$7C,$78,$03,$01
 .segment "ASSETS"
 native_row_523:
-    .byte $3E,$3E,$60,$00,$07,$06,$00,$00
+    .byte $00,$00,$7F,$7C,$01,$00
 .segment "ASSETS"
 native_row_524:
-    .byte $00,$00,$70,$30,$0F,$0F
+    .byte $40,$00,$7F,$0D,$00,$00
 .segment "ASSETS"
 native_row_525:
-    .byte $00,$00,$78,$78,$0F,$0E
+    .byte $40,$00,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_526:
-    .byte $00,$00,$7C,$1C,$07,$06
+    .byte $40,$00,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_527:
-    .byte $00,$00,$7C,$0C,$0F,$0A
+    .byte $60,$40,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_528:
-    .byte $00,$00,$7C,$0C,$03,$02
+    .byte $7F,$7E,$03,$01,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_529:
-    .byte $00,$00,$7E,$1E,$03,$02
+    .byte $7F,$3F,$07,$03,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_530:
-    .byte $00,$00,$0C,$0C,$00,$00
+    .byte $7F,$3D,$07,$03,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_531:
-    .byte $01,$01,$00,$00,$00,$00
+    .byte $7F,$7B,$07,$02,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_532:
-    .byte $03,$03,$00,$00,$00,$00
+    .byte $7F,$7B,$7F,$01,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_533:
-    .byte $07,$07,$00,$00,$00,$00
+    .byte $7F,$77,$7F,$7F,$03,$00,$00,$00
 .segment "ASSETS"
 native_row_534:
-    .byte $0E,$0E,$00,$00,$00,$00
+    .byte $7F,$6F,$7F,$7F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_535:
-    .byte $1E,$1E,$00,$00,$00,$00
+    .byte $7F,$1F,$7F,$40,$0F,$07,$00,$00
 .segment "ASSETS"
 native_row_536:
-    .byte $3C,$3C,$00,$00,$00,$00
+    .byte $7F,$3F,$40,$00,$0F,$06,$00,$00
 .segment "ASSETS"
 native_row_537:
-    .byte $30,$30,$00,$00,$00,$00
+    .byte $7F,$3F,$00,$00,$0F,$06,$00,$00
 .segment "ASSETS"
 native_row_538:
-    .byte $40,$40,$03,$03,$00,$00
+    .byte $7F,$3F,$40,$00,$1F,$0F,$00,$00
 .segment "ASSETS"
 native_row_539:
-    .byte $00,$00,$0E,$0E,$00,$00
+    .byte $7F,$3E,$40,$00,$1F,$0F,$00,$00
 .segment "ASSETS"
 native_row_540:
-    .byte $7F,$05,$1F,$11,$00,$00
+    .byte $7F,$3E,$00,$00,$0F,$06,$00,$00
 .segment "ASSETS"
 native_row_541:
-    .byte $7F,$4F,$1F,$10,$00,$00
+    .byte $00,$00,$70,$00,$0F,$0F
 .segment "ASSETS"
 native_row_542:
-    .byte $7F,$6B,$1F,$13,$00,$00
+    .byte $00,$00,$78,$30,$0F,$0F
 .segment "ASSETS"
 native_row_543:
-    .byte $7F,$57,$0F,$0F,$00,$00
+    .byte $00,$00,$7C,$78,$0F,$0E
 .segment "ASSETS"
 native_row_544:
-    .byte $7F,$65,$03,$03,$00,$00
+    .byte $00,$00,$7E,$1C,$0F,$06
 .segment "ASSETS"
 native_row_545:
-    .byte $7F,$47,$03,$03,$00,$00
+    .byte $00,$00,$1E,$0C,$0F,$0A
 .segment "ASSETS"
 native_row_546:
-    .byte $7F,$41,$01,$01,$00,$00
+    .byte $00,$00,$1E,$0C,$0F,$02
 .segment "ASSETS"
 native_row_547:
-    .byte $40,$40,$01,$01,$00,$00
+    .byte $00,$00,$3F,$1E,$0F,$02
 .segment "ASSETS"
 native_row_548:
-    .byte $7F,$43,$03,$03,$00,$00
+    .byte $00,$00,$1E,$0C,$0E,$00
 .segment "ASSETS"
 native_row_549:
-    .byte $7E,$46,$03,$03,$00,$00
+    .byte $03,$01,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_550:
-    .byte $7F,$3F,$03,$03,$00,$00
+    .byte $07,$03,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_551:
-    .byte $7F,$7F,$03,$03,$00,$00
+    .byte $0F,$07,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_552:
-    .byte $40,$40,$7F,$08,$0F,$0F
+    .byte $1F,$0E,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_553:
-    .byte $40,$40,$7F,$10,$0F,$0D
+    .byte $3F,$1E,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_554:
-    .byte $40,$40,$7F,$70,$0F,$0E
+    .byte $7E,$3C,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_555:
-    .byte $00,$00,$7F,$53,$0F,$0A
+    .byte $7C,$30,$03,$00,$00,$00
 .segment "ASSETS"
 native_row_556:
-    .byte $00,$00,$7C,$3C,$0F,$0E
+    .byte $70,$40,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_557:
-    .byte $00,$00,$7C,$1C,$0F,$08
+    .byte $05,$00,$1F,$0E,$00,$00
 .segment "ASSETS"
 native_row_558:
-    .byte $00,$00,$18,$18,$00,$00
+    .byte $4F,$05,$3F,$11,$00,$00
 .segment "ASSETS"
 native_row_559:
-    .byte $00,$00,$1C,$1C,$00,$00
+    .byte $7F,$4F,$3F,$10,$00,$00
 .segment "ASSETS"
 native_row_560:
-    .byte $00,$00,$7C,$1C,$0F,$0E
+    .byte $7F,$6B,$3F,$13,$00,$00
 .segment "ASSETS"
 native_row_561:
-    .byte $00,$00,$7C,$1C,$0F,$0B
+    .byte $7F,$57,$1F,$0F,$00,$00
 .segment "ASSETS"
 native_row_562:
-    .byte $00,$00,$7C,$6C,$0F,$0E
+    .byte $7F,$65,$0F,$03,$00,$00
 .segment "ASSETS"
 native_row_563:
-    .byte $00,$00,$7C,$7C,$0F,$0A
+    .byte $6F,$47,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_564:
-    .byte $00,$00,$70,$70,$0F,$0D
+    .byte $67,$41,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_565:
-    .byte $3C,$0C,$60,$60,$07,$06
+    .byte $61,$40,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_566:
-    .byte $3C,$14,$60,$20,$03,$03
+    .byte $63,$40,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_567:
-    .byte $3C,$24,$60,$60,$01,$01
+    .byte $67,$43,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_568:
-    .byte $40,$40,$7F,$7C,$00,$00
+    .byte $6F,$46,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_569:
-    .byte $00,$00,$02,$02,$00,$00
+    .byte $7F,$43,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_570:
-    .byte $00,$00,$7C,$24,$01,$01
+    .byte $7F,$3F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_571:
-    .byte $00,$00,$78,$48,$00,$00
+    .byte $7F,$7F,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_572:
-    .byte $00,$00,$30,$30,$00,$00
+    .byte $7F,$7F,$03,$00,$00,$00
 .segment "ASSETS"
 native_row_573:
-    .byte $7F,$77,$03,$03,$00,$00,$00,$00
+    .byte $40,$00,$0F,$07,$0F,$00
 .segment "ASSETS"
 native_row_574:
-    .byte $7F,$6F,$07,$07,$00,$00,$00,$00
+    .byte $60,$40,$5F,$08,$0F,$0F
 .segment "ASSETS"
 native_row_575:
-    .byte $7F,$5F,$0F,$0F,$00,$00,$00,$00
+    .byte $60,$40,$7F,$10,$0F,$0D
 .segment "ASSETS"
 native_row_576:
-    .byte $7F,$3F,$1F,$1F,$00,$00,$00,$00
+    .byte $60,$40,$7F,$70,$0F,$0E
 .segment "ASSETS"
 native_row_577:
-    .byte $7F,$7F,$3F,$3C,$00,$00,$00,$00
+    .byte $40,$00,$7F,$53,$0F,$0A
 .segment "ASSETS"
 native_row_578:
-    .byte $7F,$7F,$7F,$73,$01,$01,$00,$00
+    .byte $00,$00,$7F,$3C,$0F,$0E
 .segment "ASSETS"
 native_row_579:
-    .byte $3E,$3E,$60,$00,$7F,$73,$00,$00
+    .byte $00,$00,$3E,$1C,$0E,$08
 .segment "ASSETS"
 native_row_580:
-    .byte $7E,$02,$7F,$03,$7F,$0F,$01,$01
+    .byte $00,$00,$3E,$18,$08,$00
 .segment "ASSETS"
 native_row_581:
-    .byte $7E,$02,$7F,$1B,$7F,$06,$01,$01
+    .byte $00,$00,$3E,$1C,$0E,$00
 .segment "ASSETS"
 native_row_582:
-    .byte $7E,$02,$7F,$63,$7F,$41,$03,$02
+    .byte $00,$00,$3E,$1C,$0F,$0E
 .segment "ASSETS"
 native_row_583:
-    .byte $38,$38,$60,$00,$07,$06
+    .byte $00,$00,$7E,$1C,$0F,$0B
 .segment "ASSETS"
 native_row_584:
-    .byte $7C,$44,$7F,$0D,$0F,$0E
+    .byte $00,$00,$7E,$6C,$0F,$0E
 .segment "ASSETS"
 native_row_585:
-    .byte $7C,$04,$7F,$4E,$0F,$0A
+    .byte $00,$00,$7E,$7C,$0F,$0A
 .segment "ASSETS"
 native_row_586:
-    .byte $7E,$0A,$7F,$3C,$07,$06
+    .byte $00,$00,$7C,$70,$0F,$0D
 .segment "ASSETS"
 native_row_587:
-    .byte $3E,$0E,$60,$00,$03,$03
+    .byte $0C,$00,$60,$40,$0F,$07
 .segment "ASSETS"
 native_row_588:
-    .byte $3E,$1E,$60,$40,$03,$02
+    .byte $3E,$0C,$70,$60,$0F,$06
 .segment "ASSETS"
 native_row_589:
-    .byte $3C,$3C,$60,$20,$03,$02
+    .byte $3E,$14,$70,$20,$07,$03
 .segment "ASSETS"
 native_row_590:
-    .byte $70,$70,$0F,$0C,$00,$00
+    .byte $3E,$24,$7C,$60,$03,$01
 .segment "ASSETS"
 native_row_591:
-    .byte $7C,$14,$01,$01,$00,$00
+    .byte $64,$40,$7F,$7C,$01,$00
 .segment "ASSETS"
 native_row_592:
-    .byte $78,$48,$00,$00,$00,$00
+    .byte $00,$00,$27,$02,$01,$00
 .segment "ASSETS"
 native_row_593:
-    .byte $40,$40,$0F,$0F,$00,$00
+    .byte $00,$00,$7E,$24,$03,$01
 .segment "ASSETS"
 native_row_594:
-    .byte $00,$00,$1F,$17,$00,$00
+    .byte $00,$00,$7C,$48,$01,$00
 .segment "ASSETS"
 native_row_595:
-    .byte $00,$00,$1E,$16,$00,$00
+    .byte $00,$00,$78,$30,$00,$00
 .segment "ASSETS"
 native_row_596:
-    .byte $00,$00,$1F,$15,$00,$00
+    .byte $7F,$7B,$03,$01,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_597:
-    .byte $00,$00,$1C,$14,$00,$00
+    .byte $7F,$77,$07,$03,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_598:
-    .byte $00,$00,$0E,$0A,$00,$00
+    .byte $7F,$6F,$0F,$07,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_599:
-    .byte $00,$00,$01,$01,$00,$00
+    .byte $7F,$5F,$1F,$0F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_600:
-    .byte $7F,$71,$01,$01,$00,$00
+    .byte $7F,$3F,$3F,$1F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_601:
-    .byte $7F,$7B,$00,$00,$00,$00
+    .byte $7F,$7F,$7F,$3C,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_602:
-    .byte $7F,$77,$00,$00,$00,$00
+    .byte $7F,$7F,$7F,$73,$73,$01,$00,$00
 .segment "ASSETS"
 native_row_603:
-    .byte $00,$00,$00,$00,$3C,$3C,$00,$00,$00,$00,$00,$00
+    .byte $7F,$3E,$73,$00,$7F,$73,$01,$00
 .segment "ASSETS"
 native_row_604:
-    .byte $00,$00,$00,$00,$7E,$56,$00,$00,$00,$00,$00,$00
+    .byte $7F,$02,$5F,$03,$7F,$0F,$03,$01
 .segment "ASSETS"
 native_row_605:
-    .byte $00,$00,$00,$00,$7F,$2B,$01,$01,$00,$00,$00,$00
+    .byte $7F,$02,$7F,$1B,$7F,$06,$03,$01
 .segment "ASSETS"
 native_row_606:
-    .byte $00,$00,$00,$00,$7F,$3D,$01,$01,$00,$00,$00,$00
+    .byte $7F,$02,$7F,$63,$7F,$41,$07,$02
 .segment "ASSETS"
 native_row_607:
-    .byte $00,$00,$00,$00,$7F,$6B,$01,$01,$00,$00,$00,$00
+    .byte $38,$00,$7E,$7C,$0F,$0E
 .segment "ASSETS"
 native_row_608:
-    .byte $00,$00,$00,$00,$7F,$2D,$01,$01,$00,$00,$00,$00
+    .byte $7C,$38,$7F,$00,$0F,$06
 .segment "ASSETS"
 native_row_609:
-    .byte $00,$00,$00,$00,$7F,$7F,$01,$01,$00,$00,$00,$00
+    .byte $7E,$44,$7F,$0D,$0F,$0E
 .segment "ASSETS"
 native_row_610:
-    .byte $00,$00,$00,$00,$7E,$7E,$00,$00,$00,$00,$00,$00
+    .byte $4E,$04,$7F,$4E,$0F,$0A
 .segment "ASSETS"
 native_row_611:
-    .byte $00,$00,$40,$40,$7F,$7F,$03,$03,$00,$00,$00,$00
+    .byte $1F,$0A,$7E,$3C,$0F,$06
 .segment "ASSETS"
 native_row_612:
-    .byte $00,$00,$70,$70,$7F,$7F,$0F,$0F,$00,$00,$00,$00
+    .byte $1F,$0F,$00,$00,$03,$00
 .segment "ASSETS"
 native_row_613:
-    .byte $00,$00,$78,$68,$7F,$7F,$0F,$0B,$00,$00,$00,$00
+    .byte $3F,$0E,$60,$00,$07,$03
 .segment "ASSETS"
 native_row_614:
-    .byte $00,$00,$78,$18,$7F,$7F,$1F,$1C,$00,$00,$00,$00
+    .byte $3F,$1E,$60,$40,$07,$02
 .segment "ASSETS"
 native_row_615:
-    .byte $00,$00,$78,$78,$7F,$00,$1F,$1F,$00,$00,$00,$00
+    .byte $3E,$3C,$78,$30,$07,$02
 .segment "ASSETS"
 native_row_616:
-    .byte $00,$00,$7C,$7C,$7F,$7F,$3F,$3F,$00,$00,$00,$00
+    .byte $7C,$70,$3F,$1C,$02,$00
 .segment "ASSETS"
 native_row_617:
-    .byte $00,$00,$7C,$5C,$7F,$7F,$3F,$3B,$00,$00,$00,$00
+    .byte $70,$00,$1F,$07,$00,$00
 .segment "ASSETS"
 native_row_618:
-    .byte $00,$00,$7C,$5C,$7F,$77,$3F,$3B,$00,$00,$00,$00
+    .byte $14,$00,$07,$02,$00,$00
 .segment "ASSETS"
 native_row_619:
-    .byte $00,$00,$78,$78,$7F,$7F,$1F,$1F,$00,$00,$00,$00
+    .byte $7E,$14,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_620:
-    .byte $00,$00,$40,$40,$7F,$77,$03,$03,$00,$00,$00,$00
+    .byte $7C,$48,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_621:
-    .byte $00,$00,$40,$40,$7F,$00,$03,$02,$00,$00,$00,$00
+    .byte $78,$30,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_622:
-    .byte $00,$00,$06,$06,$00,$00
+    .byte $7C,$30,$0F,$00,$00,$00
 .segment "ASSETS"
 native_row_623:
-    .byte $00,$00,$0F,$0F,$00,$00
+    .byte $70,$40,$1F,$0F,$00,$00
 .segment "ASSETS"
 native_row_624:
-    .byte $40,$40,$0F,$0D,$00,$00
+    .byte $40,$00,$3F,$17,$00,$00
 .segment "ASSETS"
 native_row_625:
-    .byte $40,$40,$1F,$16,$00,$00
+    .byte $00,$00,$3F,$16,$00,$00
 .segment "ASSETS"
 native_row_626:
-    .byte $40,$40,$1F,$17,$00,$00
+    .byte $40,$00,$3F,$15,$00,$00
 .segment "ASSETS"
 native_row_627:
-    .byte $40,$40,$1F,$1D,$00,$00
+    .byte $00,$00,$3F,$14,$00,$00
 .segment "ASSETS"
 native_row_628:
-    .byte $00,$00,$1F,$1B,$00,$00
+    .byte $00,$00,$1F,$0E,$00,$00
 .segment "ASSETS"
 native_row_629:
-    .byte $40,$40,$0F,$0E,$00,$00
+    .byte $00,$00,$1E,$0C,$00,$00
 .segment "ASSETS"
 native_row_630:
-    .byte $40,$40,$1F,$15,$00,$00
+    .byte $00,$00,$0E,$04,$00,$00
 .segment "ASSETS"
 native_row_631:
-    .byte $00,$00,$0F,$0B,$00,$00
+    .byte $00,$00,$1F,$04,$00,$00
 .segment "ASSETS"
 native_row_632:
-    .byte $00,$00,$40,$40,$03,$03,$00,$00
+    .byte $00,$00,$1F,$0A,$00,$00
 .segment "ASSETS"
 native_row_633:
-    .byte $00,$00,$7E,$6A,$07,$07,$00,$00
+    .byte $40,$00,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_634:
-    .byte $00,$00,$7C,$7C,$0F,$0F,$00,$00
+    .byte $60,$40,$07,$03,$00,$00
 .segment "ASSETS"
 native_row_635:
-    .byte $40,$40,$7F,$56,$0F,$0F,$00,$00
+    .byte $60,$40,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_636:
-    .byte $00,$00,$7E,$7A,$0F,$0F,$00,$00
+    .byte $71,$40,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_637:
-    .byte $00,$00,$7F,$75,$07,$07,$00,$00
+    .byte $7F,$71,$03,$01,$00,$00
 .segment "ASSETS"
 native_row_638:
-    .byte $00,$00,$07,$07,$00,$00,$00,$00
+    .byte $7F,$7B,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_639:
-    .byte $00,$00,$7F,$1F,$07,$05,$00,$00
+    .byte $7F,$77,$01,$00,$00,$00
 .segment "ASSETS"
 native_row_640:
-    .byte $40,$40,$7F,$7F,$03,$02,$00,$00
+    .byte $00,$00,$00,$00,$7E,$3C,$00,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_641:
-    .byte $40,$40,$7F,$2F,$0F,$0B,$00,$00
+    .byte $00,$00,$00,$00,$7F,$56,$01,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_642:
-    .byte $00,$00,$7F,$5F,$03,$02,$00,$00
+    .byte $00,$00,$40,$00,$7F,$2B,$03,$01,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_643:
-    .byte $78,$78,$00,$00,$00,$00
+    .byte $00,$00,$40,$00,$7F,$3D,$03,$01,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_644:
-    .byte $7C,$04,$01,$01,$00,$00
+    .byte $00,$00,$40,$00,$7F,$6B,$03,$01,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_645:
-    .byte $7E,$02,$03,$02,$00,$00
+    .byte $00,$00,$40,$00,$7F,$2D,$03,$01,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_646:
-    .byte $7F,$01,$07,$04,$00,$00
+    .byte $00,$00,$40,$00,$7F,$7F,$03,$01,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_647:
-    .byte $7F,$0D,$07,$04,$00,$00
+    .byte $00,$00,$00,$00,$7F,$7E,$01,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_648:
-    .byte $7F,$3B,$0F,$08,$00,$00
+    .byte $00,$00,$40,$00,$7F,$7E,$03,$00,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_649:
-    .byte $7F,$49,$3F,$29,$00,$00
+    .byte $00,$00,$70,$40,$7F,$7F,$0F,$03,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_650:
-    .byte $7F,$49,$7F,$4A,$01,$01
+    .byte $00,$00,$78,$70,$7F,$7F,$1F,$0F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_651:
-    .byte $00,$00,$70,$70,$00,$00
+    .byte $00,$00,$7C,$68,$7F,$7F,$1F,$0B,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_652:
-    .byte $00,$00,$7E,$76,$03,$03
+    .byte $00,$00,$7C,$18,$7F,$7F,$3F,$1C,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_653:
-    .byte $40,$40,$7F,$4F,$03,$02
+    .byte $00,$00,$7C,$78,$7F,$00,$3F,$1F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_654:
-    .byte $60,$60,$7F,$07,$01,$01
+    .byte $00,$00,$7E,$7C,$7F,$7F,$7F,$3F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_655:
-    .byte $60,$60,$00,$00,$00,$00
+    .byte $00,$00,$7E,$5C,$7F,$7F,$7F,$3B,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_656:
-    .byte $70,$10,$3F,$21,$00,$00
+    .byte $00,$00,$7E,$5C,$7F,$77,$7F,$3B,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_657:
-    .byte $78,$08,$7F,$42,$01,$01
+    .byte $00,$00,$7C,$78,$7F,$7F,$3F,$1F,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_658:
-    .byte $78,$08,$7F,$74,$00,$00
+    .byte $00,$00,$78,$40,$7F,$7F,$1F,$03,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_659:
-    .byte $7C,$04,$7F,$74,$03,$03
+    .byte $00,$00,$60,$40,$7F,$77,$07,$03,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_660:
-    .byte $7C,$44,$7F,$48,$03,$02
+    .byte $00,$00,$60,$40,$7F,$7F,$07,$03,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_661:
-    .byte $7E,$42,$7F,$07,$01,$01
+    .byte $00,$00,$60,$40,$7F,$00,$07,$02,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_662:
-    .byte $7E,$62,$03,$02,$00,$00
+    .byte $00,$00,$02,$02,$00,$00
 .segment "ASSETS"
 native_row_663:
-    .byte $7F,$59,$00,$00,$00,$00
+    .byte $00,$00,$01,$01,$00,$00
 .segment "ASSETS"
 native_row_664:
-    .byte $7F,$49,$00,$00,$00,$00
+    .byte $00,$00,$04,$04,$00,$00
 .segment "ASSETS"
 native_row_665:
-    .byte $0F,$0D,$00,$00,$00,$00
+    .byte $00,$00,$03,$03,$00,$00
 .segment "ASSETS"
 native_row_666:
-    .byte $0F,$0B,$00,$00,$00,$00
+    .byte $00,$00,$07,$07,$00,$00
 .segment "ASSETS"
 native_row_667:
-    .byte $0F,$09,$00,$00,$00,$00
+    .byte $00,$00,$06,$06,$00,$00
 .segment "ASSETS"
 native_row_668:
-    .byte $00,$00,$70,$70,$01,$01
+    .byte $00,$00,$0F,$0F,$00,$00
 .segment "ASSETS"
 native_row_669:
-    .byte $00,$00,$78,$08,$03,$02
+    .byte $40,$40,$0F,$0D,$00,$00
 .segment "ASSETS"
 native_row_670:
-    .byte $00,$00,$7C,$04,$07,$04
+    .byte $40,$40,$1F,$16,$00,$00
 .segment "ASSETS"
 native_row_671:
-    .byte $00,$00,$7E,$02,$0F,$08
+    .byte $40,$40,$1F,$17,$00,$00
 .segment "ASSETS"
 native_row_672:
-    .byte $00,$00,$7E,$02,$0F,$0B
+    .byte $40,$40,$1F,$1D,$00,$00
 .segment "ASSETS"
 native_row_673:
-    .byte $00,$00,$7F,$61,$0F,$0D
+    .byte $00,$00,$1F,$1B,$00,$00
 .segment "ASSETS"
 native_row_674:
-    .byte $60,$20,$7F,$19,$0F,$09
+    .byte $00,$00,$0C,$0C,$00,$00
 .segment "ASSETS"
 native_row_675:
-    .byte $78,$18,$7F,$15,$0F,$09
+    .byte $40,$40,$0F,$0E,$00,$00
 .segment "ASSETS"
 native_row_676:
-    .byte $70,$70,$00,$00,$00,$00
+    .byte $40,$40,$1F,$15,$00,$00
 .segment "ASSETS"
 native_row_677:
-    .byte $7C,$7C,$07,$06,$00,$00
+    .byte $00,$00,$1F,$17,$00,$00
 .segment "ASSETS"
 native_row_678:
-    .byte $7C,$14,$1F,$1F,$00,$00
+    .byte $00,$00,$0F,$0B,$00,$00
 .segment "ASSETS"
 native_row_679:
-    .byte $78,$08,$3F,$3E,$00,$00
+    .byte $00,$00,$40,$40,$03,$03,$00,$00
 .segment "ASSETS"
 native_row_680:
-    .byte $60,$20,$7F,$48,$00,$00
+    .byte $00,$00,$7E,$6A,$07,$07,$00,$00
 .segment "ASSETS"
 native_row_681:
-    .byte $78,$18,$7F,$04,$01,$01
+    .byte $00,$00,$7C,$7C,$0F,$0F,$00,$00
 .segment "ASSETS"
 native_row_682:
-    .byte $70,$70,$7F,$02,$01,$01
+    .byte $40,$40,$7F,$56,$0F,$0F,$00,$00
 .segment "ASSETS"
 native_row_683:
-    .byte $7C,$7C,$7F,$02,$03,$02
+    .byte $00,$00,$7E,$7A,$0F,$0F,$00,$00
 .segment "ASSETS"
 native_row_684:
-    .byte $7C,$14,$7F,$11,$03,$02
+    .byte $00,$00,$7F,$75,$07,$07,$00,$00
 .segment "ASSETS"
 native_row_685:
-    .byte $78,$08,$7F,$1E,$07,$04
+    .byte $00,$00,$07,$07,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_686:
-    .byte $00,$00,$7C,$34,$07,$04
+    .byte $00,$00,$7F,$1F,$07,$05,$00,$00
 .segment "ASSETS"
 native_row_687:
-    .byte $00,$00,$70,$50,$0F,$09
+    .byte $40,$40,$7F,$7F,$03,$02,$00,$00
 .segment "ASSETS"
 native_row_688:
-    .byte $00,$00,$70,$10,$0F,$09
+    .byte $40,$40,$7F,$2F,$0F,$0B,$00,$00
 .segment "ASSETS"
 native_row_689:
-    .byte $00,$00,$00,$00,$0F,$0B
+    .byte $40,$40,$7F,$3F,$01,$01,$00,$00
 .segment "ASSETS"
 native_row_690:
-    .byte $00,$00,$00,$00,$0F,$0D
+    .byte $00,$00,$7F,$5F,$03,$02,$00,$00
 .segment "ASSETS"
 native_row_691:
-    .byte $00,$00,$00,$00,$08,$08
+    .byte $78,$78,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_692:
-    .byte $7F,$49,$0F,$09,$00,$00
+    .byte $7C,$04,$01,$01,$00,$00
 .segment "ASSETS"
 native_row_693:
-    .byte $7F,$49,$0F,$0A,$00,$00
+    .byte $7E,$02,$03,$02,$00,$00
 .segment "ASSETS"
 native_row_694:
-    .byte $00,$00,$10,$10,$00,$00
+    .byte $7F,$01,$07,$04,$00,$00
 .segment "ASSETS"
 native_row_695:
-    .byte $40,$40,$1F,$13,$00,$00
+    .byte $7F,$0D,$07,$04,$00,$00
 .segment "ASSETS"
 native_row_696:
-    .byte $60,$60,$1F,$1F,$00,$00
+    .byte $7F,$3B,$0F,$08,$00,$00
 .segment "ASSETS"
 native_row_697:
-    .byte $40,$40,$3F,$3F,$00,$00
+    .byte $7F,$49,$3F,$29,$00,$00
 .segment "ASSETS"
 native_row_698:
-    .byte $00,$00,$70,$70,$03,$02
+    .byte $7F,$49,$7F,$4A,$01,$01
 .segment "ASSETS"
 native_row_699:
-    .byte $00,$00,$60,$60,$01,$01
+    .byte $00,$00,$70,$70,$00,$00
 .segment "ASSETS"
 native_row_700:
-    .byte $00,$00,$40,$40,$00,$00
+    .byte $00,$00,$7E,$76,$03,$03
 .segment "ASSETS"
 native_row_701:
-    .byte $00,$00,$60,$20,$01,$01
+    .byte $40,$40,$7F,$4F,$03,$02
 .segment "ASSETS"
 native_row_702:
-    .byte $00,$00,$7F,$19,$0F,$09
+    .byte $60,$60,$7F,$07,$01,$01
 .segment "ASSETS"
 native_row_703:
-    .byte $00,$00,$7F,$15,$0F,$09
+    .byte $40,$40,$03,$03,$00,$00
 .segment "ASSETS"
 native_row_704:
-    .byte $40,$40,$00,$00,$00,$00
+    .byte $60,$60,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_705:
-    .byte $40,$40,$1F,$1E,$00,$00
+    .byte $70,$10,$3F,$21,$00,$00
 .segment "ASSETS"
 native_row_706:
-    .byte $00,$00,$3F,$3F,$00,$00
+    .byte $78,$08,$7F,$42,$01,$01
 .segment "ASSETS"
 native_row_707:
-    .byte $7C,$74,$00,$00,$00,$00
+    .byte $78,$08,$7F,$74,$00,$00
 .segment "ASSETS"
 native_row_708:
-    .byte $38,$38,$00,$00,$00,$00
+    .byte $7C,$04,$7F,$74,$03,$03
 .segment "ASSETS"
 native_row_709:
-    .byte $10,$10,$00,$00,$00,$00
+    .byte $7C,$44,$7F,$48,$03,$02
 .segment "ASSETS"
 native_row_710:
-    .byte $38,$28,$00,$00,$00,$00
+    .byte $7E,$42,$7F,$07,$01,$01
 .segment "ASSETS"
 native_row_711:
-    .byte $00,$00,$00,$00,$1E,$1E,$00,$00,$00,$00,$00,$00
+    .byte $7E,$62,$03,$02,$00,$00
 .segment "ASSETS"
 native_row_712:
-    .byte $00,$00,$00,$00,$7F,$7F,$00,$00,$00,$00,$00,$00
+    .byte $7F,$59,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_713:
-    .byte $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+    .byte $7F,$49,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_714:
-    .byte $00,$00,$60,$60,$7F,$7F,$0F,$0F,$00,$00,$00,$00
+    .byte $0F,$0D,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_715:
-    .byte $00,$00,$60,$60,$7F,$7B,$1F,$1F,$00,$00,$00,$00
+    .byte $0F,$0B,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_716:
-    .byte $00,$00,$60,$60,$7F,$7D,$3F,$3F,$00,$00,$00,$00
+    .byte $0F,$09,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_717:
-    .byte $00,$00,$60,$60,$7F,$7B,$7F,$7F,$00,$00,$00,$00
+    .byte $01,$01,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_718:
-    .byte $00,$00,$40,$40,$7F,$7B,$7F,$7F,$00,$00,$00,$00
+    .byte $00,$00,$70,$70,$01,$01
 .segment "ASSETS"
 native_row_719:
-    .byte $00,$00,$40,$40,$7F,$77,$7F,$7F,$01,$01,$00,$00
+    .byte $00,$00,$78,$08,$03,$02
 .segment "ASSETS"
 native_row_720:
-    .byte $00,$00,$60,$60,$7F,$77,$7F,$7F,$01,$01,$00,$00
+    .byte $00,$00,$7C,$04,$07,$04
 .segment "ASSETS"
 native_row_721:
-    .byte $00,$00,$70,$70,$7F,$7B,$7F,$7F,$03,$03,$00,$00
+    .byte $00,$00,$7E,$02,$0F,$08
 .segment "ASSETS"
 native_row_722:
-    .byte $00,$00,$78,$78,$7F,$78,$7F,$7F,$03,$03,$00,$00
+    .byte $00,$00,$7E,$02,$0F,$0B
 .segment "ASSETS"
 native_row_723:
-    .byte $00,$00,$78,$38,$7F,$70,$7F,$7F,$07,$07,$00,$00
+    .byte $00,$00,$7F,$61,$0F,$0D
 .segment "ASSETS"
 native_row_724:
-    .byte $00,$00,$7C,$1C,$7F,$60,$7F,$7F,$07,$07,$00,$00
+    .byte $60,$20,$7F,$19,$0F,$09
 .segment "ASSETS"
 native_row_725:
-    .byte $00,$00,$7C,$1C,$7F,$40,$7F,$01,$0F,$08,$00,$00
+    .byte $78,$18,$7F,$15,$0F,$09
 .segment "ASSETS"
 native_row_726:
-    .byte $00,$00,$7E,$0E,$7F,$40,$7F,$01,$1F,$10,$00,$00
+    .byte $70,$70,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_727:
-    .byte $00,$00,$7E,$16,$7F,$00,$7F,$03,$1F,$10,$00,$00
+    .byte $7C,$7C,$07,$06,$00,$00
 .segment "ASSETS"
 native_row_728:
-    .byte $00,$00,$7C,$7C,$7F,$77,$01,$01,$00,$00,$00,$00
+    .byte $7C,$14,$1F,$1F,$00,$00
 .segment "ASSETS"
 native_row_729:
-    .byte $00,$00,$7E,$7E,$7F,$7B,$03,$03,$00,$00,$00,$00
+    .byte $78,$08,$3F,$3E,$00,$00
 .segment "ASSETS"
 native_row_730:
-    .byte $00,$00,$7F,$7F,$7F,$7B,$07,$07,$00,$00,$00,$00
+    .byte $00,$00,$1C,$1C,$00,$00
 .segment "ASSETS"
 native_row_731:
-    .byte $40,$40,$7F,$7F,$7F,$7D,$0F,$0F,$00,$00,$00,$00
+    .byte $00,$00,$30,$30,$00,$00
 .segment "ASSETS"
 native_row_732:
-    .byte $40,$40,$7F,$0F,$7F,$78,$0F,$0F,$00,$00,$00,$00
+    .byte $60,$20,$7F,$48,$00,$00
 .segment "ASSETS"
 native_row_733:
-    .byte $00,$00,$7F,$3F,$7F,$70,$1F,$1F,$00,$00,$00,$00
+    .byte $78,$18,$7F,$04,$01,$01
 .segment "ASSETS"
 native_row_734:
-    .byte $00,$00,$7E,$7E,$7F,$41,$3F,$3F,$00,$00,$00,$00
+    .byte $70,$70,$7F,$02,$01,$01
 .segment "ASSETS"
 native_row_735:
-    .byte $00,$00,$78,$78,$7F,$03,$3F,$3E,$00,$00,$00,$00
+    .byte $7C,$7C,$7F,$02,$03,$02
 .segment "ASSETS"
 native_row_736:
-    .byte $00,$00,$60,$60,$7F,$07,$7F,$58,$01,$01,$00,$00
+    .byte $7C,$14,$7F,$11,$03,$02
 .segment "ASSETS"
 native_row_737:
-    .byte $00,$00,$00,$00,$7E,$1E,$7F,$70,$03,$03,$00,$00
+    .byte $78,$08,$7F,$1E,$07,$04
 .segment "ASSETS"
 native_row_738:
-    .byte $00,$00,$00,$00,$7C,$7C,$7F,$70,$03,$02,$00,$00
+    .byte $00,$00,$7C,$34,$07,$04
 .segment "ASSETS"
 native_row_739:
-    .byte $00,$00,$00,$00,$7C,$5C,$7F,$00,$07,$07,$00,$00
+    .byte $00,$00,$70,$50,$0F,$09
 .segment "ASSETS"
 native_row_740:
-    .byte $00,$00,$00,$00,$7E,$4E,$7F,$00,$07,$07,$00,$00
+    .byte $00,$00,$70,$10,$0F,$09
 .segment "ASSETS"
 native_row_741:
-    .byte $00,$00,$00,$00,$7E,$16,$7F,$00,$0F,$0E,$00,$00
+    .byte $00,$00,$00,$00,$0F,$0B
 .segment "ASSETS"
 native_row_742:
-    .byte $00,$00,$00,$00,$7E,$0E,$7F,$00,$1F,$12,$00,$00
+    .byte $00,$00,$00,$00,$0F,$0D
 .segment "ASSETS"
 native_row_743:
-    .byte $00,$00,$00,$00,$00,$00,$00,$00,$3E,$22,$00,$00
+    .byte $00,$00,$00,$00,$08,$08
 .segment "ASSETS"
 native_row_744:
-    .byte $00,$00,$00,$00,$00,$00,$00,$00,$3C,$3C,$00,$00
+    .byte $7F,$49,$0F,$09,$00,$00
 .segment "ASSETS"
 native_row_745:
-    .byte $00,$00,$1F,$1F,$00,$00
+    .byte $7F,$49,$0F,$0A,$00,$00
 .segment "ASSETS"
 native_row_746:
-    .byte $00,$00,$08,$08,$00,$00
+    .byte $00,$00,$10,$10,$00,$00
 .segment "ASSETS"
 native_row_747:
-    .byte $00,$00,$1E,$1A,$00,$00
+    .byte $40,$40,$1F,$13,$00,$00
 .segment "ASSETS"
 native_row_748:
-    .byte $00,$00,$1F,$19,$00,$00
+    .byte $60,$60,$1F,$1F,$00,$00
 .segment "ASSETS"
 native_row_749:
-    .byte $00,$00,$1E,$1E,$00,$00
+    .byte $40,$40,$3F,$3F,$00,$00
 .segment "ASSETS"
 native_row_750:
-    .byte $40,$40,$1F,$11,$00,$00
+    .byte $00,$00,$70,$70,$03,$02
 .segment "ASSETS"
 native_row_751:
-    .byte $08,$08
+    .byte $00,$00,$60,$60,$01,$01
 .segment "ASSETS"
 native_row_752:
-    .byte $1E,$12
+    .byte $00,$00,$40,$40,$00,$00
 .segment "ASSETS"
 native_row_753:
-    .byte $3E,$2E
+    .byte $00,$00,$60,$20,$01,$01
 .segment "ASSETS"
 native_row_754:
-    .byte $3E,$3A
+    .byte $00,$00,$7F,$19,$0F,$09
 .segment "ASSETS"
 native_row_755:
-    .byte $3E,$36
+    .byte $00,$00,$7F,$15,$0F,$09
 .segment "ASSETS"
 native_row_756:
-    .byte $1C,$1C
+    .byte $40,$40,$00,$00,$00,$00
 .segment "ASSETS"
 native_row_757:
-    .byte $3C,$24
+    .byte $40,$40,$1F,$1E,$00,$00
+.segment "ASSETS"
+native_row_758:
+    .byte $00,$00,$3F,$3F,$00,$00
+.segment "ASSETS"
+native_row_759:
+    .byte $7C,$74,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_760:
+    .byte $38,$38,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_761:
+    .byte $10,$10,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_762:
+    .byte $38,$28,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_763:
+    .byte $00,$00,$00,$00,$3F,$1E,$00,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_764:
+    .byte $00,$00,$40,$00,$7F,$7F,$01,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_765:
+    .byte $00,$00,$40,$00,$7F,$00,$07,$00,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_766:
+    .byte $00,$00,$70,$60,$7F,$7F,$1F,$0F,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_767:
+    .byte $00,$00,$70,$60,$7F,$7B,$3F,$1F,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_768:
+    .byte $00,$00,$70,$60,$7F,$7D,$7F,$3F,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_769:
+    .byte $00,$00,$70,$60,$7F,$7B,$7F,$7F,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_770:
+    .byte $00,$00,$60,$40,$7F,$7B,$7F,$7F,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_771:
+    .byte $00,$00,$60,$40,$7F,$77,$7F,$7F,$03,$01,$00,$00
+.segment "ASSETS"
+native_row_772:
+    .byte $00,$00,$70,$60,$7F,$77,$7F,$7F,$03,$01,$00,$00
+.segment "ASSETS"
+native_row_773:
+    .byte $00,$00,$78,$70,$7F,$7B,$7F,$7F,$07,$03,$00,$00
+.segment "ASSETS"
+native_row_774:
+    .byte $00,$00,$7C,$78,$7F,$78,$7F,$7F,$07,$03,$00,$00
+.segment "ASSETS"
+native_row_775:
+    .byte $00,$00,$7C,$38,$78,$70,$7F,$7F,$0F,$07,$00,$00
+.segment "ASSETS"
+native_row_776:
+    .byte $00,$00,$3E,$1C,$70,$60,$7F,$7F,$0F,$07,$00,$00
+.segment "ASSETS"
+native_row_777:
+    .byte $00,$00,$3E,$1C,$60,$40,$7F,$01,$1F,$08,$00,$00
+.segment "ASSETS"
+native_row_778:
+    .byte $00,$00,$1F,$0E,$60,$40,$7F,$01,$3F,$10,$00,$00
+.segment "ASSETS"
+native_row_779:
+    .byte $00,$00,$3F,$16,$40,$00,$7F,$03,$3F,$10,$00,$00
+.segment "ASSETS"
+native_row_780:
+    .byte $00,$00,$7E,$7C,$7F,$77,$03,$01,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_781:
+    .byte $00,$00,$7F,$7E,$7F,$7B,$07,$03,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_782:
+    .byte $40,$00,$7F,$7F,$7F,$7B,$0F,$07,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_783:
+    .byte $60,$40,$7F,$7F,$7F,$7D,$1F,$0F,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_784:
+    .byte $60,$40,$7F,$0F,$7D,$78,$1F,$0F,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_785:
+    .byte $40,$00,$7F,$3F,$79,$70,$3F,$1F,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_786:
+    .byte $00,$00,$7F,$7E,$73,$41,$7F,$3F,$00,$00,$00,$00
+.segment "ASSETS"
+native_row_787:
+    .byte $00,$00,$7E,$78,$47,$03,$7F,$3E,$01,$00,$00,$00
+.segment "ASSETS"
+native_row_788:
+    .byte $00,$00,$78,$60,$1F,$07,$7E,$58,$03,$01,$00,$00
+.segment "ASSETS"
+native_row_789:
+    .byte $00,$00,$60,$00,$3F,$1E,$78,$70,$07,$03,$00,$00
+.segment "ASSETS"
+native_row_790:
+    .byte $00,$00,$00,$00,$7F,$1E,$78,$70,$07,$03,$00,$00
+.segment "ASSETS"
+native_row_791:
+    .byte $00,$00,$00,$00,$7E,$7C,$79,$70,$07,$02,$00,$00
+.segment "ASSETS"
+native_row_792:
+    .byte $00,$00,$00,$00,$7E,$5C,$71,$00,$0F,$07,$00,$00
+.segment "ASSETS"
+native_row_793:
+    .byte $00,$00,$00,$00,$7F,$4E,$41,$00,$0F,$07,$00,$00
+.segment "ASSETS"
+native_row_794:
+    .byte $00,$00,$00,$00,$7F,$16,$00,$00,$1F,$0E,$00,$00
+.segment "ASSETS"
+native_row_795:
+    .byte $00,$00,$00,$00,$1F,$0E,$00,$00,$3F,$12,$00,$00
+.segment "ASSETS"
+native_row_796:
+    .byte $00,$00,$00,$00,$0E,$00,$00,$00,$7F,$22,$00,$00
+.segment "ASSETS"
+native_row_797:
+    .byte $00,$00,$00,$00,$00,$00,$00,$00,$7E,$3C,$00,$00
+.segment "ASSETS"
+native_row_798:
+    .byte $00,$00,$0F,$0D,$00,$00
+.segment "ASSETS"
+native_row_799:
+    .byte $00,$00,$1F,$1F,$00,$00
+.segment "ASSETS"
+native_row_800:
+    .byte $00,$00,$08,$08,$00,$00
+.segment "ASSETS"
+native_row_801:
+    .byte $00,$00,$1E,$1A,$00,$00
+.segment "ASSETS"
+native_row_802:
+    .byte $00,$00,$1F,$19,$00,$00
+.segment "ASSETS"
+native_row_803:
+    .byte $00,$00,$18,$18,$00,$00
+.segment "ASSETS"
+native_row_804:
+    .byte $00,$00,$0E,$0E,$00,$00
+.segment "ASSETS"
+native_row_805:
+    .byte $00,$00,$1E,$1E,$00,$00
+.segment "ASSETS"
+native_row_806:
+    .byte $40,$40,$1F,$11,$00,$00
+.segment "ASSETS"
+native_row_807:
+    .byte $40,$40,$0F,$0F,$00,$00
+.segment "ASSETS"
+native_row_808:
+    .byte $1E,$08
+.segment "ASSETS"
+native_row_809:
+    .byte $3F,$12
+.segment "ASSETS"
+native_row_810:
+    .byte $3F,$2E
+.segment "ASSETS"
+native_row_811:
+    .byte $3F,$3A
+.segment "ASSETS"
+native_row_812:
+    .byte $3F,$36
+.segment "ASSETS"
+native_row_813:
+    .byte $3E,$1C
+.segment "ASSETS"
+native_row_814:
+    .byte $3C,$08
+.segment "ASSETS"
+native_row_815:
+    .byte $3E,$24
 .segment "ASSETS"
 sprite_1:
     .byte $18,$12,$07,$04,$04,$04,$04,$04,$05,$05,$01,$00,$00,$00,$00,$00
@@ -3862,7 +4036,7 @@ sprite_5:
     .byte $25,$00,$00,$00,$0F,$00,$00,$80,$59,$56,$99,$55,$25,$00,$00,$00
     .byte $0F,$00,$00,$68,$55,$65,$55,$95,$95,$02,$00,$00,$0F,$00,$00,$96
     .byte $66,$55,$56,$59,$69,$29,$00,$00,$0F,$00,$80,$55,$56,$55,$55,$55
-    .byte $59,$25,$00,$00,$0F,$00,$00,$58,$99,$96,$65,$65,$96,$95,$00,$00
+    .byte $59,$25,$00,$00,$0F,$00,$80,$59,$99,$96,$65,$65,$96,$95,$00,$00
     .byte $0F,$00,$60,$95,$59,$55,$59,$55,$56,$99,$00,$00,$0F,$00,$6A,$55
     .byte $65,$55,$59,$96,$95,$95,$00,$00,$0F,$80,$95,$59,$A5,$AA,$AA,$AA
     .byte $55,$A5,$02,$00,$0F,$60,$A5,$55,$5A,$55,$55,$55,$5A,$69,$09,$00
@@ -4450,21 +4624,21 @@ sprite_27:
     .byte $A9,$AA,$AA,$00,$00,$00,$0F,$00,$00,$00,$AA,$AA,$AA,$00,$00,$00
 sprite_28:
     .byte $36,$10,$0F,$08,$08,$08,$09,$09,$09,$09,$01,$00,$00,$00,$00,$00
-    .byte $0F,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$0F
-    .byte $00,$00,$00,$00,$80,$95,$65,$55,$A9,$2A,$00,$00,$00,$00,$0F,$00
-    .byte $00,$00,$00,$60,$55,$96,$55,$AA,$AA,$00,$00,$00,$00,$0F,$00,$00
-    .byte $00,$00,$60,$59,$96,$95,$AA,$AA,$00,$00,$00,$00,$0F,$00,$00,$00
-    .byte $00,$58,$65,$59,$A6,$AA,$9A,$00,$00,$00,$00,$0F,$00,$00,$00,$00
-    .byte $58,$65,$59,$A6,$65,$99,$00,$00,$00,$00,$0F,$00,$00,$68,$55,$65
-    .byte $65,$96,$A5,$65,$A9,$00,$00,$00,$00,$0F,$00,$00,$A0,$AA,$66,$99
-    .byte $96,$A5,$AA,$2A,$00,$00,$00,$00,$0F,$00,$00,$6A,$59,$95,$99,$66
-    .byte $95,$9A,$5A,$A5,$02,$00,$00,$0F,$00,$80,$56,$5A,$99,$9A,$AA,$56
-    .byte $9A,$9A,$AA,$00,$00,$00,$0F,$00,$80,$55,$5A,$5A,$55,$69,$56,$AA
-    .byte $56,$A5,$02,$00,$00,$0F,$00,$60,$AA,$95,$56,$55,$95,$56,$66,$02
-    .byte $00,$00,$00,$00,$0F,$00,$A0,$96,$AA,$55,$55,$55,$5A,$55,$A5,$00
-    .byte $00,$00,$00,$0F,$00,$00,$00,$5A,$55,$55,$55,$69,$55,$95,$2A,$00
-    .byte $00,$00,$0F,$00,$00,$00,$00,$00,$00,$00,$A8,$55,$55,$29,$00,$00
-    .byte $00,$0F,$00,$00,$00,$00,$00,$00,$00,$98,$00,$00,$00,$00,$00,$00
+    .byte $0F,$00,$00,$00,$00,$40,$40,$10,$00,$54,$15,$00,$00,$00,$00,$0F
+    .byte $00,$00,$00,$00,$90,$91,$65,$00,$A9,$6A,$00,$00,$00,$00,$0F,$00
+    .byte $00,$00,$00,$64,$44,$96,$41,$AA,$AA,$01,$00,$00,$00,$0F,$00,$00
+    .byte $00,$00,$64,$59,$96,$91,$AA,$AA,$01,$00,$00,$00,$0F,$00,$00,$00
+    .byte $00,$19,$64,$59,$A6,$AA,$9A,$01,$00,$00,$00,$0F,$00,$00,$14,$00
+    .byte $19,$64,$59,$A6,$65,$99,$01,$00,$00,$00,$0F,$00,$00,$69,$55,$65
+    .byte $64,$96,$A5,$65,$A9,$01,$00,$00,$00,$0F,$00,$00,$A5,$AA,$66,$99
+    .byte $96,$A5,$AA,$6A,$50,$01,$00,$00,$0F,$00,$40,$6A,$59,$95,$99,$66
+    .byte $91,$9A,$5A,$A5,$06,$00,$00,$0F,$00,$90,$56,$1A,$99,$9A,$AA,$46
+    .byte $9A,$9A,$AA,$01,$00,$00,$0F,$00,$90,$55,$5A,$5A,$45,$69,$46,$AA
+    .byte $56,$A5,$06,$00,$00,$0F,$00,$64,$AA,$95,$06,$00,$94,$46,$66,$56
+    .byte $50,$01,$00,$00,$0F,$00,$A4,$96,$AA,$01,$00,$40,$5A,$11,$A5,$15
+    .byte $00,$00,$00,$0F,$00,$50,$41,$5A,$00,$00,$00,$69,$00,$90,$6A,$00
+    .byte $00,$00,$0F,$00,$00,$00,$05,$00,$00,$00,$A9,$01,$40,$69,$00,$00
+    .byte $00,$0F,$00,$00,$00,$00,$00,$00,$00,$99,$01,$00,$14,$00,$00,$00
 sprite_29:
     .byte $3C,$0F,$10,$09,$09,$09,$09,$0A,$0A,$0A,$01,$00,$00,$00,$00,$00
     .byte $0F,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
@@ -4544,13 +4718,13 @@ sprite_38:
     .byte $80,$0A,$00,$00
 sprite_90:
     .byte $12,$11,$06,$03,$03,$03,$03,$04,$04,$04,$01,$00,$00,$00,$00,$00
-    .byte $0F,$00,$80,$09,$00,$00,$0F,$00,$60,$26,$00,$00,$0F,$00,$60,$26
-    .byte $00,$00,$0F,$00,$00,$02,$00,$00,$0F,$00,$00,$02,$00,$00,$0F,$00
-    .byte $00,$02,$00,$00,$0F,$00,$00,$02,$00,$00,$0F,$00,$00,$02,$00,$00
-    .byte $0F,$00,$00,$02,$00,$00,$0F,$00,$00,$02,$00,$00,$0F,$00,$00,$02
-    .byte $00,$00,$0F,$00,$00,$02,$00,$00,$0F,$00,$00,$02,$00,$00,$0F,$00
-    .byte $00,$02,$00,$00,$0F,$00,$00,$02,$00,$00,$0F,$00,$00,$02,$00,$00
-    .byte $0F,$00,$00,$02,$00,$00
+    .byte $0F,$00,$90,$19,$00,$00,$0F,$00,$64,$66,$00,$00,$0F,$00,$64,$66
+    .byte $00,$00,$0F,$00,$50,$16,$00,$00,$0F,$00,$40,$06,$00,$00,$0F,$00
+    .byte $40,$06,$00,$00,$0F,$00,$40,$06,$00,$00,$0F,$00,$40,$06,$00,$00
+    .byte $0F,$00,$40,$06,$00,$00,$0F,$00,$40,$06,$00,$00,$0F,$00,$40,$06
+    .byte $00,$00,$0F,$00,$40,$06,$00,$00,$0F,$00,$40,$06,$00,$00,$0F,$00
+    .byte $40,$06,$00,$00,$0F,$00,$40,$06,$00,$00,$0F,$00,$40,$06,$00,$00
+    .byte $0F,$00,$40,$06,$00,$00
 sprite_93:
     .byte $24,$0D,$0A,$06,$06,$06,$06,$06,$06,$06,$01,$00,$00,$00,$00,$00
     .byte $0F,$00,$A0,$AA,$AA,$AA,$00,$00,$00,$00,$0F,$00,$60,$55,$55,$95
@@ -4747,13 +4921,15 @@ enemy_sprite_indices: .byte 48,49,50,51,52,53,54,55,56,57
 full_clue_lo: .byte <full_clue_0,<full_clue_1,<full_clue_2,<full_clue_3
 full_clue_hi: .byte >full_clue_0,>full_clue_1,>full_clue_2,>full_clue_3
 full_clue_0:
-    .byte $4D,$65,$73,$73,$61,$67,$65,$20,$31,$20,$22,$44,$65,$72,$20,$52,$65,$69,$66,$20,$77,$69,$72,$64,$20,$64,$69,$72,$20,$64,$61,$73,$20,$20,$20,$20,$20,$20,$20,$20,$55,$62,$65,$6C,$76,$65,$72,$64,$65,$63,$6B,$65,$6E,$2E,$22,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$55,$6E,$65,$20,$74,$6F,$75,$63,$68,$65,$3A,$20,$69,$6E,$64,$69,$63,$65,$20,$73,$75,$69,$76,$61,$6E,$74,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20
+    .byte $4D,$65,$73,$73,$61,$67,$65,$20,$31,$20,$22,$44,$65,$72,$20,$52,$65,$69,$66,$20,$77,$69,$72,$64,$20,$64,$69,$72,$20,$64,$61,$73,$20,$20,$20,$20,$20,$20,$20,$20,$55,$62,$65,$6C,$76,$65,$72,$64,$65,$63,$6B,$65,$6E,$2E,$22,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20
 full_clue_1:
-    .byte $4D,$65,$73,$73,$61,$67,$65,$20,$32,$20,$22,$44,$65,$72,$20,$67,$6F,$6C,$64,$65,$6E,$65,$20,$77,$69,$72,$64,$20,$64,$69,$72,$20,$64,$65,$6E,$20,$20,$20,$20,$20,$46,$65,$75,$65,$72,$77,$65,$67,$20,$62,$61,$68,$6E,$65,$6E,$2E,$22,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$55,$6E,$65,$20,$74,$6F,$75,$63,$68,$65,$3A,$20,$69,$6E,$64,$69,$63,$65,$20,$73,$75,$69,$76,$61,$6E,$74,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20
+    .byte $4D,$65,$73,$73,$61,$67,$65,$20,$32,$20,$22,$44,$65,$72,$20,$67,$6F,$6C,$64,$65,$6E,$65,$20,$77,$69,$72,$64,$20,$64,$69,$72,$20,$64,$65,$6E,$20,$20,$20,$20,$20,$46,$65,$75,$65,$72,$77,$65,$67,$20,$62,$61,$68,$6E,$65,$6E,$2E,$22,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20
 full_clue_2:
-    .byte $4D,$65,$73,$73,$61,$67,$65,$20,$33,$20,$22,$44,$65,$72,$20,$41,$64,$6C,$65,$72,$20,$61,$75,$73,$20,$67,$65,$6D,$65,$69,$6E,$65,$6D,$20,$4D,$65,$74,$61,$6C,$6C,$77,$69,$72,$64,$20,$65,$64,$65,$6C,$20,$77,$65,$72,$64,$65,$6E,$20,$2E,$22,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$55,$6E,$65,$20,$74,$6F,$75,$63,$68,$65,$3A,$20,$69,$6E,$64,$69,$63,$65,$20,$73,$75,$69,$76,$61,$6E,$74,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20
+    .byte $4D,$65,$73,$73,$61,$67,$65,$20,$33,$20,$22,$44,$65,$72,$20,$41,$64,$6C,$65,$72,$20,$61,$75,$73,$20,$67,$65,$6D,$65,$69,$6E,$65,$6D,$20,$4D,$65,$74,$61,$6C,$6C,$77,$69,$72,$64,$20,$65,$64,$65,$6C,$20,$77,$65,$72,$64,$65,$6E,$20,$2E,$22,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20
 full_clue_3:
-    .byte $4C,$65,$20,$4C,$69,$76,$72,$65,$20,$64,$65,$20,$6C,$61,$20,$53,$61,$67,$65,$73,$73,$65,$20,$22,$4E,$75,$72,$20,$76,$6F,$6E,$20,$64,$65,$6D,$20,$20,$20,$20,$20,$53,$74,$65,$72,$6E,$20,$77,$69,$72,$73,$74,$20,$64,$75,$20,$64,$69,$63,$68,$20,$65,$72,$68,$65,$62,$65,$6E,$2E,$22,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$55,$6E,$65,$20,$74,$6F,$75,$63,$68,$65,$3A,$20,$69,$6E,$64,$69,$63,$65,$20,$73,$75,$69,$76,$61,$6E,$74,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20
+    .byte $4C,$65,$20,$4C,$69,$76,$72,$65,$20,$64,$65,$20,$6C,$61,$20,$53,$61,$67,$65,$73,$73,$65,$20,$22,$4E,$75,$72,$20,$76,$6F,$6E,$20,$64,$65,$6D,$20,$20,$20,$20,$20,$53,$74,$65,$72,$6E,$20,$77,$69,$72,$73,$74,$20,$64,$75,$20,$64,$69,$63,$68,$20,$65,$72,$68,$65,$62,$65,$6E,$2E,$22,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20
+full_clue_footer:
+    .byte "Une touche: indice suivant              "
 geometry_0:
     .byte $01,$0C,$C7,$30,$8B,$01,$30,$8B,$CB,$8B,$01,$CB,$8B,$EF,$C7,$02,$04,$24,$7A,$01,$02,$04,$24,$69,$01,$02,$04,$24,$58,$01,$02,$04,$24,$47,$01,$02,$04,$24,$36,$01,$02,$04,$24,$25,$01,$02,$04,$24,$14,$01,$02,$03,$BF,$79,$01,$02,$03,$BF,$67,$01,$02,$03,$BF,$55,$01,$02,$03,$BF,$43,$01,$02,$03,$BF,$31,$01,$02,$03,$BF,$1F,$01,$02,$03,$BF,$0D,$01,$00
 geometry_1:
@@ -4812,7 +4988,7 @@ text_panel_hi: .byte 0,>(text_assets+483),>(text_assets+624),>(text_assets+858),
 map_room_row: .byte 55,27,27,55,83,83,83,55,27,21,21,21,21,21,21,21,41,41,41,41,41,41,41,61,61,61,61,61,61,61,81,81,81,81,81,81,81,101,101,101,101,101,101,101,121,121,121,121,121,121,121,141,141,141,141,141,141,141,27,27,27,55,55,55
 map_room_column: .byte 10,10,15,15,15,10,5,5,5,35,30,25,20,15,10,5,35,30,25,20,15,10,5,35,30,25,20,15,10,5,35,30,25,20,15,10,5,35,30,25,20,15,10,5,35,30,25,20,15,10,5,35,30,25,20,15,10,5,25,30,35,25,30,35
 .segment "CODE"
-map_pin: .byte $1C,$3E,$63,$6B,$63,$3E,$1C,$08,$08
+map_smiley: .byte $1C,$3E,$6B,$7F,$5D,$63,$7F,$3E,$1C
 map_glyphs:
     .byte $0E,$11,$19,$15,$13,$11,$0E,$04,$06,$04,$04,$04,$04,$0E
     .byte $0E,$11,$10,$08,$04,$02,$1F,$0F,$10,$10,$0E,$10,$10,$0F

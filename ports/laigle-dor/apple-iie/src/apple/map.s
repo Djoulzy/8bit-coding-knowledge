@@ -40,21 +40,21 @@ full_map_mark:
     bne @status
     lda map_room_row,x
     sta map_y
-    lda map_room_column,x   ; pin occupies a reserved byte-aligned 7x9 area
+    lda map_room_column,x   ; smiley occupies a reserved byte-aligned 7x9 area
     sta map_columns
     lda #0
     sta panel_column
-@pin:
+@smiley:
     jsr full_map_address
     ldx panel_column
-    lda map_pin,x
+    lda map_smiley,x
     ora (dst_ptr),y
     sta (dst_ptr),y
     inc map_y
     inc panel_column
     lda panel_column
     cmp #9
-    bne @pin
+    bne @smiley
 @status:
     lda #14
     sta map_columns

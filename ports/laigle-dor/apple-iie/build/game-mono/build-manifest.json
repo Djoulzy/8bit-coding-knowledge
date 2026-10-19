@@ -1,19 +1,19 @@
 {
-  "atlas_bytes": 22828,
-  "atlas_sha256": "0c149d8fdf0212a454d6fbd13858b589bd98a6031f418bb2972f2e995b8891be",
+  "atlas_bytes": 23230,
+  "atlas_sha256": "3bd2326f3c1a3562a430181bdc172922320f2821ccac36f5bbf2fa64ae39e4ce",
   "disks": {
-    "laigle-dor.do": "6561e17b8ccb4fbc4bfe54540cb3dd3b079c889d7d2b27ee2153fc3c2a9e51af"
+    "laigle-dor.do": "6bde27b9f84c1ab2587c39d1acc2b71f82759f2a93b95f959a08c2e06c6d8e88"
   },
   "entry": "$6000",
   "extra_bytes": 0,
   "extra_sector": 336,
   "extra_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-  "loaded_end_exclusive": "$AB00",
+  "loaded_end_exclusive": "$AC00",
   "map_bytes": 24576,
   "map_sector": 240,
-  "map_sha256": "86292fdadd4a77d709d6a04e073db056efbed06d9b44c82a4d6ab47aa8961112",
-  "program_bytes": 19031,
-  "program_sha256": "11c61bd4b48c08d25ed9c5c51776e2ad83a13fb74c7601878b3f547e53e250d6",
+  "map_sha256": "0b421891d9baf4c902254656e8852cb64e85038277be9bae636a88ebc9cb3f77",
+  "program_bytes": 19327,
+  "program_sha256": "cbfe6e8af8918bdb55a10bfe8fa7b2a1f9f9b6443baef6c832d28e7fc3c5dcdd",
   "resources": {
     "actor_frames": 28,
     "actor_sprite_ids": [
@@ -2473,16 +2473,17 @@
       ],
       "marker": {
         "height": 9,
+        "kind": "smiley",
         "rows_lsb_first": [
           28,
           62,
-          99,
           107,
+          127,
+          93,
           99,
+          127,
           62,
-          28,
-          8,
-          8
+          28
         ],
         "width": 7,
         "x_offset": 21,
@@ -2491,11 +2492,11 @@
       "page_sha256": [
         "6ca2cd7ff8547b4adb18e0a2b5ac6fca9635367587a9db602a5aa4345a301068",
         "7cbfa5323c22e2c59ade6f5cea640e20235d123e59cf14be0d2a3202f71a579a",
-        "a18449df7a905f3ebb1110f5f8868a410c34581d39ecccabbb76be6c0e6fcae6"
+        "a73f439aa20c30b3dcb06448e9b888d1bda109c94176bd1b09728cd2db68e9f6"
       ],
       "pages": 3,
-      "position": "dynamic 7x9 white map pin beside room number; gameplay paused",
-      "sha256": "86292fdadd4a77d709d6a04e073db056efbed06d9b44c82a4d6ab47aa8961112",
+      "position": "dynamic 7x9 white smiley beside room number; gameplay paused",
+      "sha256": "0b421891d9baf4c902254656e8852cb64e85038277be9bae636a88ebc9cb3f77",
       "source": "Oric B2 $5600-$57FF; Room.decode; transition 4701-4710; door locks 10900-10990",
       "static": true,
       "video": "HGR one-bit MAIN, full-screen 280x192 in both game editions; bit 7 clear"
@@ -2542,7 +2543,7 @@
       "extra_bytes": 0,
       "extra_sector": 336,
       "format": "shared native 7-bit mask/pixel rows; runtime horizontal shift",
-      "row_bytes": 6474,
+      "row_bytes": 6876,
       "sprites": [
         40,
         41,
@@ -2609,7 +2610,7 @@
         72,
         73
       ],
-      "unique_rows": 758
+      "unique_rows": 816
     },
     "rom": {
       "bytes": 16384,
@@ -4054,10 +4055,10 @@
     "title": {
       "conversion": "Oric foreground dots at x+20; 190->160 title rows; original captured-font credits and native-height keyboard prompt",
       "cpu_range": "$1801-$3740",
-      "palette": "monochrome; ink/paper cells transparent; equal ink/paper hides lightning",
+      "palette": "monochrome; source rows 0..99 inverted: white sky, black castle/hills and dark lightning; equal ink/paper hides lightning",
       "patch_bytes": 766,
       "raster_bytes": 8192,
-      "raster_sha256": "70f470f8ab3a3014932e202108ccf9b6d7ab0d665b2ce72514fc3d63f445c711",
+      "raster_sha256": "e907f1d2869be93eaa994b3f13624233f6cf6816cdf7c231a2f47476a3946d8c",
       "source_block": "B1",
       "source_sha256": "ddecd947a8c037658702d8f17057633dd829781f4d45c9c1cae4fa04df8b1b6c",
       "timing": "target frame counter; original WAIT/audio timing not reproduced"
@@ -4071,7 +4072,7 @@
   "text_sha256": "4c9d2d7ad4eab9adb0894fa27aa8751edc1a3cfbbb5f98557aa07ecc29bbb265",
   "title_bytes": 8192,
   "title_sector": 192,
-  "title_sha256": "70f470f8ab3a3014932e202108ccf9b6d7ab0d665b2ce72514fc3d63f445c711",
+  "title_sha256": "e907f1d2869be93eaa994b3f13624233f6cf6816cdf7c231a2f47476a3946d8c",
   "tools": {
     "ca65": "ca65 V2.18 - V2.19",
     "ld65": "ld65 V2.18 - V2.19"

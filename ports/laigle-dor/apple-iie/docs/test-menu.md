@@ -4,7 +4,7 @@ program: "L'Aigle d'Or"
 cpu: ["6502"]
 machines: ["apple-iie"]
 analysis_status: draft
-analysis_date: "2026-10-18"
+analysis_date: "2026-10-19"
 ---
 
 # Hidden development menu
@@ -70,9 +70,9 @@ inset. Rooms 58–63 are separate upper-floor cards. Floor grouping follows B2
 as room-number pairs. The castle exit is specifically room 12's far opening
 (B2 4701–4710), not the unused destination bits in that record.
 
-A **7×9 white map pin with a dark center** marks the current room beside its
-number. The previous locator was only three rows high. The pin has its own
-reserved area, separate from the number, two content pictograms and fixture
+A **7×9 white smiley with dark eyes and a smile** marks the current room beside
+its number. The smiley has its own reserved area, separate from the number,
+two content pictograms and fixture
 badges. The graphic footer always shows the room number, even when viewing
 another floor or the legend. In a pit, the originating room remains marked;
 `Oubliette: X` replaces the ordinary `Oubliette: -` status.
@@ -114,7 +114,7 @@ The compiler uses native 280×192 coordinates, 5×7 mixed-case letters and
 and badges use individual HGR pixels. Static strings use the port's target
 font; Apple TEXT and the character ROM are not used for the map.
 
-The pin begins at room offset `(21,2)`, aligned to a seven-pixel HGR byte.
+The smiley begins at room offset `(21,2)`, aligned to a seven-pixel HGR byte.
 [map.s](../src/apple/map.s) overlays its nine masks only on the floor containing
 the current room. The two room digits and the pit indicator use resident
 seven-row glyph masks at scanlines 164–170. Both overlays use ordinary MAIN

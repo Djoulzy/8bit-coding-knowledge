@@ -1,0 +1,13 @@
+{
+  "disk_sha256": "65cc5c7fc36818669813af530b465182bf5146791ebf6f88846e05d7809cdd1d",
+  "elapsed_seconds": 12.319,
+  "errors": [],
+  "execution": "assembled NMOS 6502 / py65 functional Apple bus; Disk II BOOT0",
+  "failures": [],
+  "program_sha256": "bc73d9779ed96c32791cbb69206dd89e81d2e6fad1dafbb0507e3ea76e4469e3",
+  "real_hardware": "not tested",
+  "success": true,
+  "tests_run": 1,
+  "title_sha256": "e907f1d2869be93eaa994b3f13624233f6cf6816cdf7c231a2f47476a3946d8c",
+  "virtual_ii": "not tested"
+}

@@ -9,6 +9,10 @@ from tools.common import ROOT,write_json,digest
 
 
 FEEDBACK_TESTS = (
+    'test_chest_feedback_distinguishes_range_closed_empty_and_already_open',
+    'test_crowbar_feedback_distinguishes_lock_random_failure_and_breakage',
+    'test_pickup_names_real_chest_contents_and_retains_single_award',
+    'test_outcome_words_are_inverse_right_aligned_on_both_pages_and_in_darkness',
     'test_impossible_actions_persist_until_next_command',
     'test_impossible_feedback_in_special_rooms_and_darkness',
     'test_light_feedback_distinguishes_request_from_automatic_attempt',
@@ -18,6 +22,7 @@ FEEDBACK_TESTS = (
     'test_help_pauses_walking_and_staged_actions',
     'test_room_change_keeps_graphics_until_hidden_pair_is_complete',
     'test_lighting_does_not_leave_an_unanimated_fixture',
+    'test_clues_display_original_content_and_advance',
 )
 INTERACTION_TESTS = (
     'test_boot_preloads_shared_atlas_and_keeps_program_main',
@@ -59,15 +64,33 @@ CHECKPOINT_TESTS = (
     'test_debug_map_navigation_pauses_and_returns_to_menu_or_game',
     'test_name_exterior_merchant_and_resume',
 )
+GEOMETRY_TESTS = (
+    'test_boot_preloads_shared_atlas_and_keeps_program_main',
+    'test_carried_flame_tracks_torch_head_in_every_direction_and_pose',
+    'test_source_torch_flames_animate_on_both_pages_without_trails',
+    'test_chair_footprint_blocks_surface_but_allows_front_and_sides',
+    'test_tables_block_rear_route_and_keep_front_approach',
+    'test_half_steps_and_continuous_depth_bands',
+    'test_portals_require_approaching_the_visible_door',
+    'test_room18_25_arch_round_trip_at_visible_center',
+    'test_room25_grille_to26_rejects_keys_and_accepts_crowbar',
+    'test_chest_and_quest_remain_reachable_with_reduced_clearance',
+    'test_room26_chest_opens_from_front_with_crowbar',
+    'test_all_chests_block_rear_and_top_and_keep_opening_and_rewards_reachable',
+    'test_debug_map_all_rooms_initial_content_and_live_position',
+    'test_debug_map_navigation_pauses_and_returns_to_menu_or_game',
+)
 
 
 def main(mode='dhgr', selection='full'):
     directory=ROOT/('build/game-mono' if mode=='mono' else 'build/game')
     selected={'feedback':FEEDBACK_TESTS,'interactions':INTERACTION_TESTS,
-              'presentation':PRESENTATION_TESTS,'map':MAP_TESTS,'checkpoint':CHECKPOINT_TESTS}.get(selection)
+              'presentation':PRESENTATION_TESTS,'map':MAP_TESTS,'checkpoint':CHECKPOINT_TESTS,
+              'geometry':GEOMETRY_TESTS}.get(selection)
     report={'feedback':'action-feedback-test-results.json','interactions':'interactions-test-results.json',
             'presentation':'presentation-test-results.json','map':'map-test-results.json',
-            'checkpoint':'checkpoint-test-results.json'}.get(selection,'game-test-results.json')
+            'checkpoint':'checkpoint-test-results.json',
+            'geometry':'geometry-test-results.json'}.get(selection,'game-test-results.json')
     for name in [report] + (['room-verification.json'] if selection=='full' else []):
         (directory/name).unlink(missing_ok=True)
     if selected:
@@ -93,6 +116,6 @@ def main(mode='dhgr', selection='full'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--video',choices=['mono','dhgr'],default='dhgr')
-    parser.add_argument('--suite',choices=['full','feedback','interactions','presentation','map','checkpoint'],default='full')
+    parser.add_argument('--suite',choices=['full','feedback','interactions','presentation','map','checkpoint','geometry'],default='full')
     args=parser.parse_args()
     sys.exit(main(args.video,args.suite))

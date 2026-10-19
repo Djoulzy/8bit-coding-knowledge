@@ -8,6 +8,7 @@ from tools import dhgr
 from tools.artwork import override_screen
 
 ORIC_COLORS=[0,1,12,13,2,3,6,15]
+MONO_SCENERY_SOURCE_ROWS=100  # castle/hills/sky; horses and title lie below
 
 
 def title_image(flash=False, monochrome=False):
@@ -48,6 +49,11 @@ def title_image(flash=False, monochrome=False):
     text('par ROCQUES Louis-Marie',54,190,3)
     text('Copyright LORICIELS 84',54,208,15)
     text('ENTREE OU ESPACE POUR JOUER',42,216,15)
+    if monochrome:
+        # Negative scenery only: white sky, black castle/hills, dark lightning.
+        # Both phases use the same inversion, so the hidden bolt stays hidden.
+        for row in image[:MONO_SCENERY_SOURCE_ROWS]:
+            row[:]=[1-bit for bit in row]
     return image
 
 
@@ -87,6 +93,10 @@ def mono_title_page(flash=False):
 def export_title(dest, mode='dhgr'):
     if mode=='mono':
         off,on=mono_title_page(False),mono_title_page(True)
+        edited=override_screen('laigle/game/mono/title', 'mono', off)[0]
+        on=bytes(b if a != b else e for a,b,e in zip(off,on,edited))
+        off=edited
+        on=override_screen('laigle/game/mono/title-flash', 'mono', on)[0]
         (dest/'title.hgr').write_bytes(off)
         patch=bytearray()
         for offset,(a,b) in enumerate(zip(off,on)):
@@ -96,7 +106,7 @@ def export_title(dest, mode='dhgr'):
                 'source_sha256':digest(Source().read(0x1801,8000,1)),
                 'raster_bytes':len(off),'raster_sha256':digest(off),'patch_bytes':len(patch),
                 'conversion':'Oric foreground dots at x+20; 190->160 title rows; original captured-font credits and native-height keyboard prompt',
-                'palette':'monochrome; ink/paper cells transparent; equal ink/paper hides lightning',
+                'palette':'monochrome; source rows 0..99 inverted: white sky, black castle/hills and dark lightning; equal ink/paper hides lightning',
                 'timing':'target frame counter; original WAIT/audio timing not reproduced'}
         write_json(dest/'title-manifest.json',report)
         return report

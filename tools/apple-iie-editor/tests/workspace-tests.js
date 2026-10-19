@@ -184,6 +184,19 @@ export async function runWorkspaceTests(test, assert, equal) {
     equal(restored.sources[0].file,file,'exact original file');
   });
 
+  await test('Adapter compiler files reopen their complete workspace and edits', () => {
+    const a=C.blank('mono'),d=W.createDocument(a);
+    C.writeDot(d.asset,20,30,1);
+    const workspace=W.serialize([d]);
+    const saved={...W.exportNativeAssets([d]),workspace};
+    const restored=W.load(JSON.parse(JSON.stringify(saved)))[0];
+    equal(W.serialize([restored]),workspace,'sources, variants and history retained');
+    assert(C.readDot(restored.asset,20,30)===1,'latest retouch reopened');
+    let rejected=false;
+    try{W.load({...saved,workspace:{schema:C.SCHEMA,assets:[]}});}catch{rejected=true;}
+    assert(rejected,'nested native wrapper rejected');
+  });
+
   await test('Native sprite masks and ABI survive conversion to another mode', () => {
     const a={key:'adapter/sprite/1',name:'Sprite',kind:'sprite',mode:'dhgr',encoding:'actor',width:3,height:2,
       statuses:[[0,3,12],[15,5,10]],colors:[13,12],accent:0};

@@ -128,6 +128,8 @@ full_draw_hand_flame:
     jmp draw_sprite_pointer
 @done:
     rts
-; B2 $4120-$412F and $3EF8. Signed y offsets retained from source.
-hand_flame_x: .byte $FF,2,$FF,2,$FF,2,$FF,2 ; DEC x at $40B2
+; B2 $4120-$412F: offsets relative to the actor, before the native renderer's
+; shared +1-byte anchor. Applying the Oric pointer DEC here a second time moves
+; the flame six source dots away from the torch head. Crouching only changes y.
+hand_flame_x: .byte 0,3,0,3,0,3,0,3
 hand_flame_y: .byte 197,197,197,199,207,207,207,209

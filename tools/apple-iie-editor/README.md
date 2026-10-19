@@ -2,7 +2,7 @@
 record_type: development-tool
 machines: [apple-iie]
 status: analyzed
-review_date: "2026-10-14"
+review_date: "2026-10-19"
 ---
 
 # Apple IIe graphics atelier
@@ -27,8 +27,9 @@ python3 tools/apple-iie-editor/server.py
 Open **http://127.0.0.1:8770/**. From a standalone copy, run `python3 server.py`.
 `Launch.command` provides a macOS launcher. `--port 8771` selects another port;
 Ctrl-C stops the server. Use HTTP rather than opening `index.html` directly.
-The server binds only to loopback, serves an explicit file list and exposes
-read-only library endpoints. Saving downloads a file through the browser.
+The server binds only to loopback and serves an explicit file list. The default
+standalone editor saves through the browser. An explicitly selected writable
+project adapter can also save to its own fixed project resource file.
 
 ## Change modes without losing information
 
@@ -83,7 +84,7 @@ Generic arbitrary-size sprite formats are not inferred from screen dumps.
 
 ## Save, resume and export
 
-**Enregistrer le projet** downloads `apple-iie-workspace.json`, schema
+In standalone mode, **Enregistrer le projet** downloads `apple-iie-workspace.json`, schema
 `a2-workspace-v2`. It includes all documents, sources, variants, active views and
 archives. **Ouvrir un projet** accepts this format and migrates the earlier
 `a2-artwork-v1` files. Documents are added instead of silently replacing open
@@ -149,7 +150,8 @@ These compact records are an interchange extension, not a universal Apple format
 
 Keyboard: **B** pencil, **E** erase, **F** fill, **L** line, **R** rectangle,
 **I** eyedropper, **Cmd/Ctrl-Z** undo, **Cmd/Ctrl-Shift-Z** redo,
-**Cmd/Ctrl-S** download workspace.
+**Cmd/Ctrl-S** save the project (directly to the local project when its adapter
+supports that, otherwise through the browser).
 
 Binary import uses the selected mode and explicit DHGR bank order. It requires
 headerless files of the exact sizes below. DOS headers, disk images, RLE and
@@ -221,9 +223,30 @@ For the existing L'Aigle d'Or library:
 python3 tools/apple-iie-editor/server.py --adapter laigle-dor
 ```
 
-The left selector then offers its 187 resources. There is no automatic title
+The left selector then offers its 301 resources, including the complete mono
+game's atlas and title. There is no automatic title
 load and no game dependency in the default editor. See the separate
 [adapter/reintegration guide](../../ports/laigle-dor/apple-iie/docs/graphics-editor.md).
+
+With this adapter, the main button becomes **Enregistrer dans L’Aigle d’Or**.
+It replaces `ports/laigle-dor/apple-iie/resources/artwork.json`, which normal
+`make games` builds read automatically. The file contains native compiler assets
+and the complete workspace, including original sources, retouches and archives.
+Saving only the selected document merges it with previously saved resources;
+closed documents' graphics are retained. **Reprendre le projet local** reopens
+the saved workspace. Library resources also load their saved native retouches.
+Reopening a JSON replaces a clean open copy of the same resource; unsaved open
+retouches remain separate tabs. Conflicting native copies must be resolved before
+overwriting compiler resources.
+
+**Exporter une copie JSON** retains the browser download/file-picker workflow.
+Generic documents are retained in the attached workspace but are not inserted
+into game resource slots. The adapter rejects unknown game keys and changed
+dimensions/encodings. Native resource saves are atomic, limited to 32 MiB and
+accepted only as same-origin JSON requests; the browser cannot supply a file path.
+After updating an already running server, restart it and reload the editor to
+activate its new saving controls. Previously downloaded workspaces can be opened
+and saved into the project without repainting them.
 
 A custom trusted Python adapter can be supplied with `--adapter /path/library.py`.
 Its contract is a `TITLE` string and an `assets()` function returning a dictionary
@@ -233,6 +256,13 @@ are executable local code, not untrusted data files. Game-specific extraction
 and compilation hooks belong in the adapter/project, not in the generic editor.
 An optional `KEY_PREFIX` enables unknown-key checks for that adapter's namespace
 when validating native-resource JSON with `--adapter ... --check ...`.
+Writable adapters additionally expose `project_info()`, `load_project()` and
+`save_project(workspace)`. The adapter owns its fixed storage location, validation,
+atomic replacement and any compiler integration. `project_info()` supplies a
+display name, informational file path and existence flag. The save callback
+returns a user-facing `message`. The generic server exposes these callbacks
+through `GET/POST /api/project`; it provides no arbitrary filesystem writer and
+does not execute a build. Adapters without these hooks remain read-only libraries.
 
 ## Validation and organization
 
@@ -273,3 +303,9 @@ Hardware reference: Apple's [Apple IIe Technical Note #3](https://mirrors.apple2
 Preview algorithms retain the existing port converter behavior; the local
 [MIT notice](THIRD-PARTY-NOTICES.txt) credits Apple2js's DHGR classification.
 No historical game artwork or ROM is bundled with this standalone editor.
+
+Direct project saving, 2026-10-19: 21 Python tests and 29 browser JavaScript
+groups passed with the optional adapter enabled. The downloaded mono retouches
+were saved/reopened, both disks rebuilt through automatic project selection,
+and the edited sprite checked against an independent compositor on the executed
+6502. See the [scoped verification record](../../ports/laigle-dor/apple-iie/docs/graphics-editor.md#direct-save-verification-2026-10-19).

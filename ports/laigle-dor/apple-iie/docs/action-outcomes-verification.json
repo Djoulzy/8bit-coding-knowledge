@@ -1,0 +1,134 @@
+{
+  "date": "2026-10-19",
+  "change": "Specific nonsuccess action outcomes and named treasure pickup, in inverse video on the first text row",
+  "executed_profiles": {
+    "dhgr": {
+      "disk_sha256": "49d061452cd2abb67a0b44b5f0138035e830fdcacdb5c5784460a126b06fd9e5",
+      "elapsed_seconds": 205.078,
+      "errors": [],
+      "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+      "failures": [],
+      "original_oric_runtime": "not tested",
+      "program_sha256": "602cb61a3d8a8325e72ced6ccac0762f2929248faa42ab31a825323bfa84b7e8",
+      "real_hardware": "not tested",
+      "selected_tests": [
+        "test_chest_feedback_distinguishes_range_closed_empty_and_already_open",
+        "test_crowbar_feedback_distinguishes_lock_random_failure_and_breakage",
+        "test_pickup_names_real_chest_contents_and_retains_single_award",
+        "test_outcome_words_are_inverse_right_aligned_on_both_pages_and_in_darkness",
+        "test_impossible_actions_persist_until_next_command",
+        "test_impossible_feedback_in_special_rooms_and_darkness",
+        "test_light_feedback_distinguishes_request_from_automatic_attempt",
+        "test_gameplay_hud_original_room_descriptions",
+        "test_gameplay_hud_stats_and_hand_names",
+        "test_name_exterior_merchant_and_resume",
+        "test_help_pauses_walking_and_staged_actions",
+        "test_room_change_keeps_graphics_until_hidden_pair_is_complete",
+        "test_lighting_does_not_leave_an_unanimated_fixture",
+        "test_clues_display_original_content_and_advance"
+      ],
+      "success": true,
+      "suite": "feedback",
+      "tests_run": 14,
+      "video_profile": "dhgr",
+      "virtual_ii": "not tested",
+      "disk": "build/game/laigle-dor-dhgr-color.do",
+      "test_report": "build/game/action-feedback-test-results.json",
+      "program_bytes": 19682,
+      "memory_bounds": {
+        "resident_end_exclusive": "$9F8A",
+        "auxread_load_end_exclusive": "$9FC1",
+        "lowcode_run_end_exclusive": "$1DF1"
+      },
+      "previews": {
+        "action-empty-chest.png": "befaee7e9f1dd45605adf89c9f105529ea9cf292855202639f85260701178f2b",
+        "action-crowbar-failed.png": "be58c6f3e1c37ce6e7ec8f6798bd6e51615942d1e7067ce0379dbf9caeb49335",
+        "action-found-vial.png": "2ed7b5d4ccc5951534e0054e09e3e687aa36f1324c5143b70632d7e270020793",
+        "action-found-gold.png": "8f3e47fae6b48e41f24c30d45111353376bd55164b26bb81d9c8f0f2131302fa"
+      }
+    },
+    "mono": {
+      "disk_sha256": "6bde27b9f84c1ab2587c39d1acc2b71f82759f2a93b95f959a08c2e06c6d8e88",
+      "elapsed_seconds": 164.861,
+      "errors": [],
+      "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+      "failures": [],
+      "original_oric_runtime": "not tested",
+      "program_sha256": "cbfe6e8af8918bdb55a10bfe8fa7b2a1f9f9b6443baef6c832d28e7fc3c5dcdd",
+      "real_hardware": "not tested",
+      "selected_tests": [
+        "test_chest_feedback_distinguishes_range_closed_empty_and_already_open",
+        "test_crowbar_feedback_distinguishes_lock_random_failure_and_breakage",
+        "test_pickup_names_real_chest_contents_and_retains_single_award",
+        "test_outcome_words_are_inverse_right_aligned_on_both_pages_and_in_darkness",
+        "test_impossible_actions_persist_until_next_command",
+        "test_impossible_feedback_in_special_rooms_and_darkness",
+        "test_light_feedback_distinguishes_request_from_automatic_attempt",
+        "test_gameplay_hud_original_room_descriptions",
+        "test_gameplay_hud_stats_and_hand_names",
+        "test_name_exterior_merchant_and_resume",
+        "test_help_pauses_walking_and_staged_actions",
+        "test_room_change_keeps_graphics_until_hidden_pair_is_complete",
+        "test_lighting_does_not_leave_an_unanimated_fixture",
+        "test_clues_display_original_content_and_advance"
+      ],
+      "success": true,
+      "suite": "feedback",
+      "tests_run": 14,
+      "video_profile": "mono",
+      "virtual_ii": "not tested",
+      "disk": "build/game-mono/laigle-dor-hgr-mono.do",
+      "test_report": "build/game-mono/action-feedback-test-results.json",
+      "program_bytes": 19327,
+      "memory_bounds": {
+        "resident_end_exclusive": "$9E80",
+        "auxread_load_end_exclusive": "$9EB7",
+        "lowcode_run_end_exclusive": "$1DCA"
+      },
+      "previews": {
+        "action-empty-chest.png": "166eba8432ba88938bfab7a79d6110dd612ce3b4cec22fa2fd4c9a3e1b32eb3c",
+        "action-crowbar-failed.png": "054d3e41640520fe99d89dd02a114694635d40d1d6d8019475b6a5848808a08a",
+        "action-found-vial.png": "97f2703590b4d4d6a2ba1c0e05d16d0377a7564b519c1da88266a035267cf2c0",
+        "action-found-gold.png": "8f3e47fae6b48e41f24c30d45111353376bd55164b26bb81d9c8f0f2131302fa"
+      }
+    }
+  },
+  "supplementary_mono_execution": {
+    "disk_sha256": "6bde27b9f84c1ab2587c39d1acc2b71f82759f2a93b95f959a08c2e06c6d8e88",
+    "elapsed_seconds": 39.537,
+    "errors": [],
+    "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+    "failures": [],
+    "program_sha256": "cbfe6e8af8918bdb55a10bfe8fa7b2a1f9f9b6443baef6c832d28e7fc3c5dcdd",
+    "real_hardware": "not tested",
+    "reason": "Execute the additional secret-passage repeat guard and compact clue-footer assertions added after the main mono suite started",
+    "selected_tests": [
+      "test_chest_feedback_distinguishes_range_closed_empty_and_already_open",
+      "test_outcome_words_are_inverse_right_aligned_on_both_pages_and_in_darkness"
+    ],
+    "success": true,
+    "tests_run": 2,
+    "video_profile": "mono",
+    "virtual_ii": "not tested"
+  },
+  "commands": [
+    "make games",
+    "python3 tools/check_game.py --video dhgr --suite feedback",
+    "python3 tools/check_game.py --video mono --suite feedback"
+  ],
+  "static_checks": [
+    "Both ca65/ld65 builds and Disk II packaging succeeded",
+    "DO/NIB named editions match their canonical aliases",
+    "Resident resources and bank-worker templates remain below $A000; LOWCODE remains below $1E00",
+    "Changed Python modules compiled; changed source/document whitespace checks passed",
+    "Historical sources have no diff; resources/artwork.json hash is unchanged"
+  ],
+  "artwork_sha256": "60f557d93b59c041490c6dc03f4e3e6e17e17f9e098dd4ef7762d2c9606ba52d",
+  "scope": "Fourteen focused native CPU tests per edition, with two supplementary mono reruns for assertions added during execution; no complete game replay",
+  "limitations": [
+    "Functional py65 Apple bus and real Disk II BOOT0; no Virtual II execution, ROM cold-start or physical-hardware test",
+    "Original Oric runtime not executed",
+    "Host test elapsed seconds are not Apple II performance measurements",
+    "Non-original treasure placements and class-3 lock checks are explicitly controlled fixtures in tests/action_feedback_cases.py"
+  ]
+}

@@ -106,7 +106,13 @@ def validate_source(source, index=0):
 
 def validate_project(project):
     if isinstance(project, dict) and project.get('schema') == SCHEMA:
-        return validate_native_project(project)
+        validate_native_project(project)
+        if 'workspace' in project:
+            workspace = project['workspace']
+            if not isinstance(workspace, dict) or workspace.get('schema') != 'a2-workspace-v2':
+                raise ValueError('Invalid attached workspace')
+            validate_project(workspace)
+        return project
     if not isinstance(project, dict) or project.get('schema') != 'a2-workspace-v2':
         raise ValueError('Expected a2-workspace-v2 or a2-artwork-v1')
     docs = project.get('documents')

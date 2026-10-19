@@ -382,7 +382,8 @@ full_dispatch:
     sec
     rts
 full_denied:
-    lda #1
+    lda #MSG_IMPOSSIBLE
+full_feedback:
     sta message_id
     lda #EVENT_DENIED
     jsr log_event
@@ -750,7 +751,7 @@ full_open:
     jsr full_secret_reach
     bcc @chest
     lda passage
-    jne @deny
+    jne @already
     lda #1
     sta passage
     sta room_dirty
@@ -761,16 +762,18 @@ full_open:
     lda room_furnishing
     cmp #7
     jne @deny
-    jsr full_fixture_reach
+    jsr full_chest_reach
     jcc @deny
+    lda chest_open
+    bne @already
     lda held_item
     cmp #6
     beq @open_chest
     cmp #0
-    bne @deny
+    jne @locked
     lda room_variation
     cmp #101
-    bcs @deny
+    bcs @locked
 @open_chest:
     lda current_room
     asl a
@@ -792,6 +795,9 @@ full_open:
     lda #4
     sta message_id
     rts
+@already:
+    lda #MSG_ALREADY
+    jmp full_feedback
 @door:
     lda #9
     sec
@@ -809,12 +815,12 @@ full_open:
     sta game_tmp
     lda held_item
     cmp #6
-    bne @deny
+    bne @locked
     jsr wear_bar
-    bcs @deny
+    bcs @broken
     lda game_tmp
     cmp #3
-    beq @deny
+    beq @locked
     jsr game_random
     ; RND*ST < .3. ST 1: r<76.8; ST 2: r<38.4, quantized r/256.
     ldx door_status
@@ -822,12 +828,22 @@ full_open:
     beq @reinforced
     cmp #77
     bcc @pass
-    bcs @deny
+    bcs @failed
 @reinforced:
     cmp #39
-    bcs @deny
+    bcs @failed
 @pass:
     jmp full_transition
+@failed:
+    lda #MSG_FAILED
+    bne @feedback
+@broken:
+    lda #MSG_BROKEN
+    bne @feedback
+@locked:
+    lda #MSG_LOCKED
+@feedback:
+    jmp full_feedback
 @deny:
     jmp full_denied
 
@@ -849,6 +865,24 @@ wear_bar:
     rts
 
 full_pickup:
+    ; An opened chest is reachable from its left side or front. The target
+    ; collision barrier forbids standing on it; do not require the old right-
+    ; facing source pose for this shortcut. Ordinary/quest guards remain below.
+    lda room_furnishing
+    cmp #7
+    bne @fixture
+    jsr full_chest_reach
+    jcc full_denied
+    lda #MSG_CLOSED
+    ldx chest_open
+    beq @feedback
+    lda #MSG_EMPTY
+    ldx room_treasure
+    beq @feedback
+    jmp @reward
+@feedback:
+    jmp full_feedback
+@fixture:
     lda facing
     cmp #3
     jeq full_denied
@@ -857,8 +891,6 @@ full_pickup:
     lda facing
     cmp #1
     jne @ordinary
-    lda chest_open
-    bne @chest
     lda pose
     cmp #4
     bcs @ordinary
@@ -906,12 +938,9 @@ full_pickup:
     lda objective_gold_hi,x
     sta word_arg+1
     jsr add_gold
+    lda #5
+    sta message_id         ; quest success retains its separate marker
     jmp @taken
-@chest:
-    lda chest_open
-    beq @ordinary
-    ; B2 10775 skips normal held-item/pose guards, for actual initial TR 0/2/5.
-    jmp @reward
 @ordinary:
     lda held_item
     jne full_denied
@@ -926,6 +955,10 @@ full_pickup:
 @reward:
     ldx room_treasure
     jeq full_denied
+    txa
+    clc
+    adc #MSG_CLOSED
+    sta message_id         ; keep the item name after its world record is cleared
     cpx #1
     bne @bag
     lda current_room
@@ -1030,8 +1063,6 @@ full_pickup:
 @taken:
     lda #1
     sta room_dirty
-    lda #5
-    sta message_id
     lda #EVENT_ITEM
     jmp log_event
 

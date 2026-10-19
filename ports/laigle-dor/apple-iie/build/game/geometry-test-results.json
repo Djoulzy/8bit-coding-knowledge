@@ -1,0 +1,31 @@
+{
+  "disk_sha256": "f6a4d202207de1f552d5065f91e67dc1b4feb274b68bca1ed4942f3f0234e662",
+  "elapsed_seconds": 159.568,
+  "errors": [],
+  "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+  "failures": [],
+  "original_oric_runtime": "not tested",
+  "program_sha256": "37f10a49ae894f3713da495145640851fca7a2d4dc0999ecd36f518b17461fdb",
+  "real_hardware": "not tested",
+  "selected_tests": [
+    "test_boot_preloads_shared_atlas_and_keeps_program_main",
+    "test_carried_flame_tracks_torch_head_in_every_direction_and_pose",
+    "test_source_torch_flames_animate_on_both_pages_without_trails",
+    "test_chair_footprint_blocks_surface_but_allows_front_and_sides",
+    "test_tables_block_rear_route_and_keep_front_approach",
+    "test_half_steps_and_continuous_depth_bands",
+    "test_portals_require_approaching_the_visible_door",
+    "test_room18_25_arch_round_trip_at_visible_center",
+    "test_room25_grille_to26_rejects_keys_and_accepts_crowbar",
+    "test_chest_and_quest_remain_reachable_with_reduced_clearance",
+    "test_room26_chest_opens_from_front_with_crowbar",
+    "test_all_chests_block_rear_and_top_and_keep_opening_and_rewards_reachable",
+    "test_debug_map_all_rooms_initial_content_and_live_position",
+    "test_debug_map_navigation_pauses_and_returns_to_menu_or_game"
+  ],
+  "success": true,
+  "suite": "geometry",
+  "tests_run": 14,
+  "video_profile": "dhgr",
+  "virtual_ii": "not tested"
+}

@@ -306,65 +306,12 @@ full_is_dark:
     rts
 
 full_hud_draw:
-    ldx game_mode
-    lda full_menu_lo,x
-    sta menu_ptr
-    lda full_menu_hi,x
-    sta menu_ptr+1
-    cpx #MODE_READ
-    bne :+
-    ldx reading_page
-    lda full_clue_lo,x
-    sta menu_ptr
-    lda full_clue_hi,x
-    sta menu_ptr+1
-:
-    lda #0
-    sta hud_row
-@row:
-    jsr clock_sample
-    jsr full_hud_address
-    ldy #0
-@char:
-    lda (menu_ptr),y
-    ora #$80
-    sta (dst_ptr),y
-    iny
-    cpy #40
-    bne @char
-    lda menu_ptr
-    clc
-    adc #40
-    sta menu_ptr
-    bcc :+
-    inc menu_ptr+1
-:
-    inc hud_row
-    lda hud_row
-    cmp #4
-    bne @row
+    jsr full_hud_template
     lda game_mode
     beq @play
     jmp @done
 @play:
-    lda message_id
-    cmp #1
-    bne :+
-.if !HGR_MONO
-    jsr full_is_dark
-    bcc :+                  ; graphics uses all 80 columns; append after interleave
-.endif
-    lda #0
-    sta hud_row
-    jsr full_hud_address
-    ldy #39
-@denied:
-    lda hud_impossible-30,y ; pre-encoded inverse with ALTCHAR enabled
-    sta (dst_ptr),y
-    dey
-    cpy #29
-    bne @denied
-:
+    jsr full_compact_feedback
     jsr full_room_description
     jsr clock_sample
     lda #2
@@ -443,6 +390,70 @@ full_hud_address:
     sta dst_ptr+1
     rts
 .segment "CODE"
+; The first two gameplay rows are blank, not stored copies of 80 spaces.
+; Reading copies three clue rows and the shared fourth-row instruction.
+full_hud_template:
+    lda #<full_menu_stats
+    sta menu_ptr
+    lda #>full_menu_stats
+    sta menu_ptr+1
+    ldx game_mode
+    cpx #MODE_READ
+    bne :+
+    ldx reading_page
+    lda full_clue_lo,x
+    sta menu_ptr
+    lda full_clue_hi,x
+    sta menu_ptr+1
+:
+    lda #0
+    sta hud_row
+@row:
+    jsr clock_sample
+    jsr full_hud_address
+    ldy #0
+    lda game_mode
+    cmp #MODE_READ
+    bne @ordinary
+    lda hud_row
+    cmp #3
+    bne @char
+    lda #<full_clue_footer
+    sta menu_ptr
+    lda #>full_clue_footer
+    sta menu_ptr+1
+    bne @char              ; resident RODATA is above zero page
+@ordinary:
+    lda hud_row
+    cmp #2
+    bcs @char
+    lda #$A0
+@blank:
+    sta (dst_ptr),y
+    iny
+    cpy #40
+    bne @blank
+    beq @next
+@char:
+    lda (menu_ptr),y
+    ora #$80
+    sta (dst_ptr),y
+    iny
+    cpy #40
+    bne @char
+    lda menu_ptr
+    clc
+    adc #40
+    sta menu_ptr
+    bcc @next
+    inc menu_ptr+1
+@next:
+    inc hud_row
+    lda hud_row
+    cmp #4
+    bne @row
+    rts
+
 full_decimal5:
     jsr clock_sample
     ldx #0
@@ -477,8 +488,24 @@ full_decimal5:
     bne @digit
     rts
 .segment "RODATA"
-; ALTCHAR: uppercase I uses $09 (avoid MouseText); lowercase uses $60-$7F.
-hud_impossible: .byte $09,"mpossible"
+; Fixed ten-column fields: normal leading spaces, inverse word, ALTCHAR on.
+; Uppercase uses ASCII & $3F; lowercase stays $60-$7F (no MouseText/flash).
+hud_feedback:
+    .byte $09,"mpossible"
+    .byte $A0,$A0,$A0,$A0,$A0,$A0,$16,"ide"
+    .byte $A0,$A0,$A0,$A0,$A0,$05,"chec"
+    .byte $A0,$04,"eja fait"
+    .byte $A0,$A0,$A0,$A0,$A0,$03,"asse"
+    .byte $16,"errouille"
+    .byte $A0,$A0,$A0,$A0,$A0,$06,"erme"
+    .byte $A0,$10,"archemin"
+    .byte $A0,$0F,"r trouve"
+    .byte $A0,$A0,$03,"lef fer"
+    .byte $A0,$A0,$A0,$03,"lef or"
+    .byte $A0,$A0,$A0,$A0,$A0,$06,"iole"
+    .byte $A0,$A0,$A0,$A0,$A0,$02,"ague"
+    .byte $A0,$A0,$A0,$A0,$A0,$10,"lomb"
+.assert *-hud_feedback = (MSG_FOUND_LEAD-MSG_EMPTY+2)*10, error, "Each feedback field must be ten bytes"
 decimal_lo: .byte <10000,<1000,<100,<10,1
 decimal_hi: .byte >10000,>1000,>100,>10,0
 .segment "CODE"

@@ -83,6 +83,11 @@ The title uses B1 `$1801–$3740` foreground dots, a MAIN-only full-height HGR p
 and the existing 190-to-160 title viewport plus captured-font credits. Ink/paper
 equality hides lightning in its off phase. Original castle/title shapes are
 retained as monochrome foreground; the original color relationships are omitted.
+The monochrome title inverts only source rows 0..99 (native rows 0..83,
+x=20..259): a white sky surrounds the black castle and hills, and lightning
+appears dark against the sky. Horses, crest, title lettering and credits keep
+their existing polarity. Both lightning phases and the corresponding saved
+editor documents use this treatment. The DHGR title retains its color palette.
 The title, narrative and name-entry sequence stays common to both editions.
 
 ## Build and launch

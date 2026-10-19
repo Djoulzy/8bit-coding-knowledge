@@ -293,12 +293,12 @@ scene_furnishing:
     rts
 @painting3:
     cmp #3
-    bne @table
+    bne @chair
     stamp 22,80,45,0      ; B2 730 literal V (room number), not ROM variation M
     rts
-@table:
+@chair:
     cmp #4
-    bne @bed
+    bne @table
     lda room_geometry
     beq :+
     cmp #3
@@ -310,9 +310,9 @@ scene_furnishing:
     stamp 23,165,120,0
     grid3 69,151
     rts
-@bed:
+@table:
     cmp #5
-    bne @chair
+    bne @pedestal
     lda room_geometry
     beq :+
     stamp 25,159,107,0
@@ -324,7 +324,7 @@ scene_furnishing:
     grid3 69,153
     grid3 72,153
     rts
-@chair:
+@pedestal:
     cmp #6
     bne @chest
     lda room_geometry

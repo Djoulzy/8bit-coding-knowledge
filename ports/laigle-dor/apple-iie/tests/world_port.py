@@ -12,9 +12,11 @@ from model.world import Room
 from tools.resources import sprite, row_offset
 from tests.checkpoint_cases import CheckpointTests
 from tests.render_optimization_cases import RenderOptimizationTests
+from tests.interaction_geometry_cases import InteractionGeometryTests
+from tests.action_feedback_cases import ActionFeedbackTests, OUTCOME_WORDS
 
 
-class NativeWorldTests(CheckpointTests, RenderOptimizationTests, unittest.TestCase):
+class NativeWorldTests(CheckpointTests, RenderOptimizationTests, InteractionGeometryTests, ActionFeedbackTests, unittest.TestCase):
     video = 'dhgr'
     directory = ROOT/'build/game'
 
@@ -251,8 +253,8 @@ class NativeWorldTests(CheckpointTests, RenderOptimizationTests, unittest.TestCa
         self.call('present_frame')
         rows = [self.decode_text(row) for row in self.m.text_rows()]
         for index,row in enumerate(rows):
-            suffix=(' '*30+'Impossible' if index==0 and self.m.state()['game_mode']==0
-                    and self.m.bus.ram[self.m.symbols['message_id']]==1 else ' '*40)
+            word = OUTCOME_WORDS.get(self.m.bus.ram[self.m.symbols['message_id']], '')
+            suffix=(word.rjust(40) if index==0 and self.m.state()['game_mode']==0 else ' '*40)
             self.assertEqual(row[40:],suffix if self.video=='dhgr' else '')
         self.assertFalse(self.m.bus.visible_text_write_violations)
         return [row[:40] for row in rows]
@@ -492,10 +494,10 @@ class NativeWorldTests(CheckpointTests, RenderOptimizationTests, unittest.TestCa
         else:
             actual_page=1;x=14+35*(4+(number-58)%3);y=25+28*((number-58)//3)
         if page==actual_page:
-            # Independent transcription of the large pin, in display order.
-            pin=['0011100','0111110','1100011','1101011','1100011',
-                 '0111110','0011100','0001000','0001000']
-            for j,row in enumerate(pin):
+            # Independent transcription: filled face, black eyes and smile.
+            smiley=['0011100','0111110','1101011','1111111','1011101',
+                    '1100011','1111111','0111110','0011100']
+            for j,row in enumerate(smiley):
                 for i,value in enumerate(row):
                     if value=='1':
                         xx=x+21+i;main[row_offset(y+2+j)+xx//7]|=1<<(xx%7)
@@ -510,6 +512,7 @@ class NativeWorldTests(CheckpointTests, RenderOptimizationTests, unittest.TestCa
         world=bytes(self.m.bus.ram[0x1000:0x1200])
         report=json.loads((self.directory/'resources/maps.json').read_text())
         cells=report['cells'];self.assertEqual([c['room'] for c in cells],list(range(64)))
+        self.assertEqual(report['marker']['kind'],'smiley')
         for n,item in {1:'book',13:'vial',28:'ring',30:'iron_key',35:'scroll',58:'gold',59:'lead_eagle',61:'gold_key',62:'diamond',63:'golden_eagle'}.items():
             self.assertEqual(cells[n]['item'],item,n)
         self.assertTrue(all(cells[n]['secret'] for n in [0,11,38,49,51,63]))
@@ -542,7 +545,7 @@ class NativeWorldTests(CheckpointTests, RenderOptimizationTests, unittest.TestCa
             raster=(self.directory/('resources/map-%d.bin'%c['page'])).read_bytes()
             for y in range(c['y']+2,c['y']+11):
                 self.assertEqual(raster[row_offset(y)+(c['x']+21)//7],0,
-                                 'pin must not obscure numbers, contents or doorways')
+                                 'smiley must not obscure numbers, contents or doorways')
         aux_frames=bytes(self.m.bus.aux[0x2000:0x6000])
         # All pages use full-screen MAIN HGR, even in the DHGR game edition.
         self.m.frame(ord('3'))
@@ -973,8 +976,8 @@ class NativeWorldTests(CheckpointTests, RenderOptimizationTests, unittest.TestCa
                     self.assertEqual(self.m.state()['possessions'],2) # key is not consumed
                     displayed=self.m.displayed_page()
                     self.assertEqual(margin(displayed if self.video=='dhgr' else [displayed]),margin(expected))
-                self.m.frame(ord('O')) # repeat opening is refused without closing it
-                self.assertIn('Impossible',self.debug_text())
+                self.m.frame(ord('O')) # already open: keep it open without a second attempt
+                self.assertIn('Deja fait',self.debug_text())
                 self.assertEqual(self.m.bus.ram[self.m.symbols['passage']],1)
                 self.m.frame(ord('H'));self.m.frame(32)
                 self.assertEqual(self.m.bus.ram[self.m.symbols['passage']],1)

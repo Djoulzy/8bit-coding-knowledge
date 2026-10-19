@@ -364,7 +364,16 @@ export function serialize(documents) {
 }
 
 export function load(project) {
-  if (project?.schema === C.SCHEMA) return C.validateProject(project).assets.map(a => createDocument(a));
+  if (project?.schema === C.SCHEMA) {
+    C.validateProject(project);
+    // Adapter saves are compiler-native resources with the complete workspace
+    // attached. Reopening that same file must retain sources and edit history.
+    if (project.workspace !== undefined) {
+      if (project.workspace?.schema !== SCHEMA) throw Error('Projet multiformat associé invalide');
+      return load(project.workspace);
+    }
+    return project.assets.map(a => createDocument(a));
+  }
   if (project?.schema !== SCHEMA || !Array.isArray(project.documents) || project.documents.length > 512) {
     throw Error('Projet a2-workspace-v2 ou a2-artwork-v1 attendu');
   }

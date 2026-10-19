@@ -47,9 +47,8 @@ full_room_description:
     ; prefix on row 0 and move their complete phrase to row 1 during feedback.
     lda hud_row
     bne full_hud_description
-    lda message_id
-    cmp #1
-    bne full_hud_description
+    jsr full_feedback_index
+    bcc full_hud_description
 .if !HGR_MONO
     jsr full_is_dark
     bcc full_hud_description ; 80-column HUD has room for the complete phrase
@@ -83,6 +82,7 @@ full_hud_string:
     rts
 
 ; Right-align the gameplay numbers without zero padding; keep a final zero.
+.segment "LOWCODE"
 full_hud_trim:
     dex
     beq @done

@@ -5,6 +5,7 @@ from pathlib import Path
 from tools.common import digest
 
 SCHEMA = 'a2-artwork-v1'
+PROJECT_FILE = Path(__file__).resolve().parents[1] / 'resources/artwork.json'
 
 
 def integer(value, low, high):
@@ -77,7 +78,7 @@ def validate_project(project):
 
 
 def configured():
-    filename = os.environ.get('LAIGLE_ARTWORK')
+    filename = os.environ.get('LAIGLE_ARTWORK', str(PROJECT_FILE) if PROJECT_FILE.exists() else '')
     if not filename:
         return None
     path = Path(filename).expanduser()
@@ -110,7 +111,7 @@ def override_sprites(sprites, prefix, mode):
         if a is None:
             result.append(s)
             continue
-        width = s['cell_width'] if mode == 'dhgr' else s['width_bytes'] * 6
+        width = s['cell_width'] if 'cell_width' in s else s['width_bytes'] * 6
         encoding = 'tile' if 'tile_rows' in s else 'actor'
         if (a['kind'], a['mode'], a['width'], a['height']) != ('sprite', mode, width, s['height']):
             raise ValueError('Sprite override dimensions/format mismatch: ' + a['key'])
@@ -123,6 +124,13 @@ def override_sprites(sprites, prefix, mode):
                 s.update(accent=a.get('accent', 0), force_black=a.get('force_black', False))
         else:
             s = dict(s, pixels=a['pixels'], masks=a['masks'], color_phase=a.get('phase', 0))
+            if mode == 'mono':
+                if 'tile_rows' in s:
+                    s['tile_rows'] = [[2 if p else 1 if m else 0 for p, m in zip(row, mask)]
+                                      for row, mask in zip(a['pixels'], a['masks'])]
+                elif 'statuses' in s:
+                    s['statuses'] = [[10 if p else 5 if m else 0 for p, m in zip(row, mask)]
+                                     for row, mask in zip(a['pixels'], a['masks'])]
         result.append(s)
     return result
 
