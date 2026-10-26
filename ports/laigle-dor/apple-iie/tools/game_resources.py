@@ -4,7 +4,7 @@ import textwrap
 from tools.common import Source, write_json, digest, video_mode
 from tools.resources import export, frames, sprite, motion
 from tools.roms import room_variation
-from tools.world_scene import COLORS, Constructor
+from tools.world_scene import COLORS, Constructor, HIRES_ALTERNATE_FONT
 from tools import dhgr
 from model.world import Room
 from tools.title_resources import export_title
@@ -13,6 +13,7 @@ from tools.artwork import override_sprites, audit
 from tools.text_panels import export_panels
 from tools.debug_map import export_maps
 from tools.native_sprites import compile_sprites, FAST_FLAMES
+from tools.ending_resources import export_endings
 
 ARCHIVE_START = 96  # auxiliary atlas begins at physical track 6 / sector 0
 RASTER_BYTES = 70 * 160 + 120
@@ -98,7 +99,7 @@ def native_artwork(source, mode='dhgr'):
         native.append(marker())
         used.append(SECRET['id'])
     native.sort(key=lambda s:s['id'])
-    font=source.read(0x9800,2048)
+    font=source.read(HIRES_ALTERNATE_FONT,1024)
     for code in range(33,42):
         sid=128+code
         width=6 if mode=='mono' else 3
@@ -158,11 +159,13 @@ def export_game():
         rows=textwrap.wrap(' '.join(text.split()),width=40)
         if len(rows)>3:raise ValueError('Clue exceeds compact reading panel')
         rows += ['']*(3-len(rows))
-        data=''.join(row.ljust(40) for row in rows).encode('ascii')
+        # Compact fallback lines: NUL ends a row; the formatter supplies spaces.
+        # The ordinary modal reading panel still uses the AUX text scripts.
+        data=b''.join(row.encode('ascii')+b'\0' for row in rows)
         lines += ['full_clue_%d:'%n,'    .byte '+','.join('$%02X'%v for v in data)]
     # One shared fourth row, rather than four copies in resident memory.
     lines += ['full_clue_footer:',
-              '    .byte "' + 'Une touche: indice suivant'.ljust(40) + '"']
+              '    .asciiz "Une touche: indice suivant"']
     # Four shared geometry programs, not 64 per-room operation lists.
     # Bytecode: 1,x0,y0,x1,y1 = vector; 2,id,CURSET-x,y,additive = atlas stamp.
     templates=[]
@@ -191,6 +194,7 @@ def export_game():
     map_lines, map_report = export_maps(world, dest, mode)
     lines += map_lines
     title_report=export_title(dest,mode)
+    ending_report=export_endings(dest,mode)
     lines+=['title_flash_data: .incbin "title-flash.bin"']
     (dest/'generated.inc').write_text('\n'.join(lines)+'\n')
     for path in dest.glob('room-*.pal'):path.unlink()
@@ -222,11 +226,17 @@ def export_game():
             'source_atlas_records':[provenance(sid) for sid in sorted(set(static_ids)|{s['id'] for s in actors})],
             'geometry_templates':4,'equipment_streams':len(equipment),
             'title':title_report,
+            'endings':ending_report,
             'hud':hud_report,
             'text_panels':panel_report,
             'graphical_map':map_report,
             'target_scenery_art':('original Oric dots/masks, grilles and actors; B2 398 single-dot cue' if mode=='mono' else 'resources/world-art.json; white grilles, yellow locks, right-pillar secret cue, yellow/orange source flames'),
-            'captured_font':'B2 $9800, provisional until original ROM/font execution is compared'}
+            'floor_hint_placement':'R=1..4: B2 795-798; R=0/5: target floor fallback (N+18,176); ring hides unopened hints',
+            'captured_font':'B2 alternate HIRES $9C00, CHAR code,1,1 (652/660/799/1110); original Oric runtime not compared',
+            'captured_glyphs':[{'code':code, 'atlas_id':128+code,
+                'cpu_start':'$%04X'%(HIRES_ALTERNATE_FONT+8*code),
+                'bytes':source.read(HIRES_ALTERNATE_FONT+8*code,8).hex()}
+                for code in range(33,42)]}
     write_json(dest/'game-resources.json',report)
     audit(dest, {'laigle/game/'+mode+'/title', 'laigle/game/'+mode+'/title-flash'} |
           {'laigle/game/'+mode+'/atlas/' + str(s['id']) for s in native})

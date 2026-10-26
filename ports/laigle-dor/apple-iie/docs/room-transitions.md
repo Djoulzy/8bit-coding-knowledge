@@ -54,8 +54,10 @@ The historical room constructor is B2 100–1110 and the pit constructor is
 A second stale-screen path was the source-inspired darkness branch: it selected
 TEXT without constructing a fresh panel. `full_is_dark` now supplies one common
 predicate to preparation, drawing and mode selection. An unlit room without a
-held torch shows a freshly composed **40-column TEXT page** with current HUD
-values and **IL FAIT NOIR ICI !**. It retains the source's darkness concept
+held torch shows a freshly composed **TEXT page** with the ordinary four bottom
+HUD rows and **Il fait noir ici !** centered above them. It uses 40 columns in
+mono and 80 in DHGR, matching the lit edition. See
+[grille traps and darkness](grille-traps-and-darkness.md). It retains the source's darkness concept
 (B2 6000–6003), with new Apple keyboard help. Exterior and merchant panels keep
 their normal TEXT presentation.
 

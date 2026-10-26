@@ -48,8 +48,7 @@ full_map_mark:
     jsr full_map_address
     ldx panel_column
     lda map_smiley,x
-    ora (dst_ptr),y
-    sta (dst_ptr),y
+    sta (dst_ptr),y         ; replace the badge: dark eyes survive white rooms
     inc map_y
     inc panel_column
     lda panel_column
@@ -73,18 +72,10 @@ full_map_mark:
     jsr full_map_glyph
     inc map_columns
     lda map_rows
-    jsr full_map_glyph
-    lda #35
-    sta map_columns
-    lda #10                 ; '-' normally, 'X' when in an oubliette
-    ldx in_pit
-    beq :+
-    lda #11
-:
     jmp full_map_glyph
 
 ; A = glyph index, map_columns = HGR byte column. Seven rows at y=164.
-; Glyph index * 7 fits a byte for all 12 resident glyphs.
+; Glyph index * 7 fits a byte for all ten resident digits.
 full_map_glyph:
     sta tmp
     asl a

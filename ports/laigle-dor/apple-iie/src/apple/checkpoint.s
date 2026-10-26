@@ -1,11 +1,9 @@
-; Hidden-page Apple TEXT adapter for room/inventory checkpoint entry.
-.segment "PASSUI"
+; Hidden-page Apple TEXT adapter, part of the temporary checkpoint module.
+.segment "CHECKPOINT"
 full_code_edit:
     lda raw_key
     cmp #$FF
     beq @done
-    cmp #27
-    jeq full_code_close
     cmp #13
     beq @enter
     cmp #8
@@ -27,13 +25,14 @@ full_code_edit:
     cpx #3
     bcs @done
     ldx checkpoint_count
-    cpx #18
+    cpx #24
     beq @long
     sta code_ascii,x
     inc checkpoint_count
     lda #0
     sta code_error
 @done:
+    sec                     ; consume the key, including an idle frame
     rts
 @bad:
     lda #3
@@ -52,27 +51,36 @@ full_code_edit:
 @enter:
     lda code_error
     cmp #3
-    bcs @done              ; invalid/overflow input must be edited first
+    bcc :+
+    cmp #5
+    bcc @done              ; invalid/overflow input must be edited first
+:
     lda checkpoint_count
-    cmp #18
+    cmp #24
     bne @short
     jsr full_code_decode
     bcs @invalid
     jmp full_code_apply
 @short:
+    cmp #18
+    bne :+
+    lda #6                  ; distinguish the replaced v1 protocol
+    bne @error
+:
     lda #1
     bne @error
 @invalid:
     lda #2
 @error:
     sta code_error
+    sec
     rts
 
 full_code_draw:
     lda #9
     jsr full_text_address
     ldx #0
-    ldy #10
+    ldy #6
 @char:
     cpx checkpoint_count
     beq @status
@@ -84,6 +92,8 @@ full_code_draw:
     cpx #6
     beq @gap
     cpx #12
+    beq @gap
+    cpx #18
     bne @char
 @gap:
     iny
@@ -93,13 +103,18 @@ full_code_draw:
     beq @done
     lda #13
     jsr full_text_address
-    lda #<code_invalid
+    ldx code_error
+    dex
+    lda code_error_lo,x
     sta menu_ptr
-    lda #>code_invalid
+    lda code_error_hi,x
     sta menu_ptr+1
     ldy #3
     jmp full_hud_string
 @done:
     rts
 code_invalid: .asciiz "Code invalide. Corrigez la saisie."
-.segment "CODE"
+code_range: .asciiz "Stock >7 / score >4095 / force >100."
+code_legacy: .asciiz "Code a 18 caracteres incompatible."
+code_error_lo: .lobytes code_invalid,code_invalid,code_invalid,code_invalid,code_range,code_legacy
+code_error_hi: .hibytes code_invalid,code_invalid,code_invalid,code_invalid,code_range,code_legacy

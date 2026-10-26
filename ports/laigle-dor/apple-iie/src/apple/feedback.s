@@ -29,12 +29,11 @@ full_feedback_index:
     rts
 
 full_compact_feedback:
+.if !HGR_MONO
+    rts                    ; DHGR keeps its 80-column HUD even in darkness TEXT
+.else
     jsr full_feedback_index
     bcc @done
-.if !HGR_MONO
-    jsr full_is_dark
-    bcc @done              ; graphics uses all 80 columns, after interleave
-.endif
     lda #0
     sta hud_row
     jsr full_hud_address
@@ -49,10 +48,11 @@ full_compact_feedback:
     bne @char
 @done:
     rts
+.endif
 
 ; The compact HUD occupies the left 40 columns in DHGR. Put outcome feedback
 ; at the actual right edge (columns 70-79), after the normal bank interleave.
-; Full-screen darkness is 40-column TEXT and uses the compact formatter instead.
+; Full-screen darkness retains these same 80-column positions.
 .if !HGR_MONO
 .segment "EXTRACODE"
 full_wide_feedback:
@@ -60,8 +60,6 @@ full_wide_feedback:
     bne @done
     jsr full_feedback_index
     bcc @done
-    jsr full_is_dark
-    bcs @done
     lda #0
     sta hud_row
     jsr full_hud_address

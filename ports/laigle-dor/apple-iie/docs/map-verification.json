@@ -1,159 +1,314 @@
 {
-  "change": "Native 280x192 one-bit HGR map in both game editions, with a larger map-pin locator",
-  "date": "2026-10-18",
+  "change": "Remove all stair-like floor-obstacle pictograms from rooms 6, 13, 28 and 38, plus the Escalier legend entry; original sprite 28 visually identified as floor bones/skull",
+  "date": "2026-10-20",
+  "editor_artwork": "Preserved as found at task start; included in these builds",
+  "editor_artwork_sha256": "c557bf50ba8335fd9bcdc127806fc5f538665a2b96bff57188d49ccc1af56d0f",
   "executed_profiles": {
     "dhgr": {
       "disk": "build/game/laigle-dor-dhgr-color.do",
-      "disk_sha256": "9a8553d0f52b879b18eefcf3ddd10b27d73e0b28c6619f5be35c386fc3f7ec38",
-      "elapsed_seconds": 53.51,
+      "disk_sha256": "64ac2312e105f19d898224c1422a8205b16feaa4bc04048bc63b0f86bbe29a11",
+      "elapsed_seconds": 55.98,
       "errors": [],
       "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
       "failures": [],
+      "frame_buffers_tested": 2,
+      "map_pages_tested": 3,
       "map_positions_tested": 64,
-      "map_sha256": "86292fdadd4a77d709d6a04e073db056efbed06d9b44c82a4d6ab47aa8961112",
+      "map_sha256": "44adefc8324e23d97a9f77a7d3fac6bf0efa5c3f84dca6eca3b226faf07a860a",
       "memory": {
-        "aux_worker_load_end_exclusive": "$9FEC",
-        "extracode_bytes": 196,
-        "lowcode_bytes": 2615,
-        "resident_end_exclusive": "$9FDA",
-        "text_archive_bytes": 1892
+        "aux_worker_load_end_exclusive": "$9FC0",
+        "extracode_bytes": 189,
+        "lowcode_bytes": 2603,
+        "resident_end_exclusive": "$9F89",
+        "text_archive_bytes": 2768
       },
       "original_oric_runtime": "not tested",
+      "pit_state_variants_tested": [
+        0,
+        1
+      ],
       "previews": {
         "ground": {
-          "kind": "executed py65 full-screen MAIN HGR; functional raster preview",
+          "kind": "executed py65 MAIN HGR; functional raster preview",
           "path": "build/game/debug-map-ground.png",
-          "sha256": "9fb630b50f79bf08f7794f5d3def26f77b0505667b46ba06e17d29b2750b9e21"
+          "sha256": "85d0327d5a3845624fa81978903a9c20cb2a0b624e905f7254c757e3d57d781a"
         },
         "legend": {
-          "kind": "executed py65 full-screen MAIN HGR; functional raster preview",
+          "kind": "executed py65 MAIN HGR; functional raster preview",
           "path": "build/game/debug-map-legend.png",
-          "sha256": "0a8ce66d9c50a22c6a020b04f2009e671c468222ef61af971b930a1882d017cc"
+          "sha256": "7792ef2be7c52e90f1067efb80b4bfc345a6637fa97d38a22cc703caeac98f15"
         },
         "other": {
-          "kind": "executed py65 full-screen MAIN HGR; functional raster preview",
+          "kind": "executed py65 MAIN HGR; functional raster preview",
           "path": "build/game/debug-map-other.png",
-          "sha256": "19f3cd4d5784ec0f72bdd8965d5c819b6b35cc0d3b867f12b3bd308972651505"
+          "sha256": "075cbc08c6495806e3201a2e5f5320e735c93ef3dd451ec94ebfb1043b1bbf77"
         }
       },
-      "program_bytes": 19175,
-      "program_sha256": "1b686e7c22f6fa003bd98d1c5bd13dfd4e45bdf6688e67df4b085cd6399132d5",
+      "program_sha256": "edb21f1521c5e1bb7013e59cf6ca8c8f429bff36cf506662cfaad5adeecde3cb",
       "real_hardware": "not tested",
-      "restored_game_switches": {
-        "80COL": 1,
-        "DHIRES": 1,
-        "MIXED": 1,
-        "TEXT": 0
-      },
       "selected_tests": [
         "test_boot_preloads_shared_atlas_and_keeps_program_main",
+        "test_map_artwork_ignores_locks_and_merges_doors_with_grilles",
+        "test_map_artwork_hides_furniture_and_floor_obstacles_but_keeps_fireplaces",
+        "test_map_artwork_marks_secret_fireplaces_with_a_solid_right_pillar",
         "test_debug_map_all_rooms_initial_content_and_live_position",
+        "test_debug_map_ignores_pit_state_on_all_pages_and_buffers",
         "test_debug_map_navigation_pauses_and_returns_to_menu_or_game",
         "test_inventory_spaced_layout_live_values_and_modal_return",
         "test_help_returns_to_each_modal_page_and_name_input"
       ],
       "success": true,
       "suite": "map",
-      "test_report": "build/game/map-test-results.json",
-      "tests_run": 5,
+      "test_report_sha256": "c94a13c915fea3e211e909ad30611581525aae004b33c86fab2513ce8974ccf6",
+      "tests_run": 9,
       "video_profile": "dhgr",
-      "video_switches_on_map": {
-        "80COL": 0,
-        "DHIRES": 0,
-        "MIXED": 0,
-        "TEXT": 0
-      },
       "virtual_ii": "not tested"
     },
     "mono": {
       "disk": "build/game-mono/laigle-dor-hgr-mono.do",
-      "disk_sha256": "fb078e0060a5a73406ab697c9293c9910f1eb08592b3b7c756c23a2daa246044",
-      "elapsed_seconds": 48.924,
+      "disk_sha256": "67a20cc32f5e924b1eb4915323b14da16fa36bd916a45531a7fe4c3b10888e95",
+      "elapsed_seconds": 47.602,
       "errors": [],
       "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
       "failures": [],
+      "frame_buffers_tested": 2,
+      "map_pages_tested": 3,
       "map_positions_tested": 64,
-      "map_sha256": "86292fdadd4a77d709d6a04e073db056efbed06d9b44c82a4d6ab47aa8961112",
+      "map_sha256": "44adefc8324e23d97a9f77a7d3fac6bf0efa5c3f84dca6eca3b226faf07a860a",
       "memory": {
-        "aux_worker_load_end_exclusive": "$9F20",
+        "aux_worker_load_end_exclusive": "$9DB6",
         "extracode_bytes": 144,
-        "lowcode_bytes": 2576,
-        "resident_end_exclusive": "$9F0E",
-        "text_archive_bytes": 1892
+        "lowcode_bytes": 2580,
+        "resident_end_exclusive": "$9D7F",
+        "text_archive_bytes": 2768
       },
       "original_oric_runtime": "not tested",
+      "pit_state_variants_tested": [
+        0,
+        1
+      ],
       "previews": {
         "ground": {
-          "kind": "executed py65 full-screen MAIN HGR; functional raster preview",
+          "kind": "executed py65 MAIN HGR; functional raster preview",
           "path": "build/game-mono/debug-map-ground.png",
-          "sha256": "9fb630b50f79bf08f7794f5d3def26f77b0505667b46ba06e17d29b2750b9e21"
+          "sha256": "85d0327d5a3845624fa81978903a9c20cb2a0b624e905f7254c757e3d57d781a"
         },
         "legend": {
-          "kind": "executed py65 full-screen MAIN HGR; functional raster preview",
+          "kind": "executed py65 MAIN HGR; functional raster preview",
           "path": "build/game-mono/debug-map-legend.png",
-          "sha256": "0a8ce66d9c50a22c6a020b04f2009e671c468222ef61af971b930a1882d017cc"
+          "sha256": "7792ef2be7c52e90f1067efb80b4bfc345a6637fa97d38a22cc703caeac98f15"
         },
         "other": {
-          "kind": "executed py65 full-screen MAIN HGR; functional raster preview",
+          "kind": "executed py65 MAIN HGR; functional raster preview",
           "path": "build/game-mono/debug-map-other.png",
-          "sha256": "19f3cd4d5784ec0f72bdd8965d5c819b6b35cc0d3b867f12b3bd308972651505"
+          "sha256": "075cbc08c6495806e3201a2e5f5320e735c93ef3dd451ec94ebfb1043b1bbf77"
         }
       },
-      "program_bytes": 18880,
-      "program_sha256": "289ec6db81f11fe4419c6405bd595c06f32ede3835507c5e76c5efe0387f30f5",
+      "program_sha256": "43c8d5b7153e324b9bea5affa5922249fb8e631aa67ec9219f1b7d4ae81eea59",
       "real_hardware": "not tested",
-      "restored_game_switches": {
-        "80COL": 0,
-        "DHIRES": 0,
-        "MIXED": 1,
-        "TEXT": 0
-      },
       "selected_tests": [
         "test_boot_preloads_shared_atlas_and_keeps_program_main",
+        "test_map_artwork_ignores_locks_and_merges_doors_with_grilles",
+        "test_map_artwork_hides_furniture_and_floor_obstacles_but_keeps_fireplaces",
+        "test_map_artwork_marks_secret_fireplaces_with_a_solid_right_pillar",
         "test_debug_map_all_rooms_initial_content_and_live_position",
+        "test_debug_map_ignores_pit_state_on_all_pages_and_buffers",
         "test_debug_map_navigation_pauses_and_returns_to_menu_or_game",
         "test_inventory_spaced_layout_live_values_and_modal_return",
         "test_help_returns_to_each_modal_page_and_name_input"
       ],
       "success": true,
       "suite": "map",
-      "test_report": "build/game-mono/map-test-results.json",
-      "tests_run": 5,
+      "test_report_sha256": "6661b4c29ddf4cc05b8987d07ebdffc3abedaea1eab21ed332e5925cf257eb8f",
+      "tests_run": 9,
       "video_profile": "mono",
-      "video_switches_on_map": {
-        "80COL": 0,
-        "DHIRES": 0,
-        "MIXED": 0,
-        "TEXT": 0
-      },
       "virtual_ii": "not tested"
     }
   },
-  "limitations": [
-    "No Virtual II launch, system-ROM cold-start or physical hardware test in this revision",
-    "A composite color display can interpret fine HGR dots as artifact colors; pure monochrome depends on monitor settings",
-    "Contents remain static initial Oric state; position/status are rendered from current state on map entry",
-    "Earlier full-suite/presentation/interaction evidence retains its own hashes"
-  ],
-  "map_storage": {
-    "bank": "MAIN only",
-    "bytes": 24576,
-    "end_physical_sector_inclusive": 335,
-    "start_physical_sector": 240
+  "hazard_markers": {
+    "gate": {
+      "height": 5,
+      "label": "Herse",
+      "letter": "H",
+      "width": 3,
+      "x_offset": 31,
+      "y_offset": 2
+    },
+    "trap": {
+      "height": 5,
+      "label": "Trappe",
+      "letter": "o",
+      "width": 3,
+      "x_offset": 31,
+      "y_offset": 14
+    }
   },
-  "overlay": {
-    "pin": "7x9 masks with a dark center, at room offset (21,2)",
-    "pin_does_not_overlap": "numbers, objects, doorways or badges",
-    "status": "two room digits and pit X/- at scanlines 164-170"
+  "historical_inputs": {
+    "B1_sha256": "e0c58b933133459eb7d38476cab0fb4f49b5964afd0db8982915b36a42be3340",
+    "B2_sha256": "0753ce4ed6c8904118fbd9e40ef459fa46140a770e00902213794ef2c33c28ac",
+    "integrity": "Source checksum guards passed"
   },
-  "static_checks": [
-    "identical three-page HGR map archive in both editions",
-    "three 8192-byte pages with all phase bits zero",
-    "map graphics use native pixels, not doubled logical dots",
-    "DO and NIB named images equal their canonical copies",
-    "linker MAIN/LOWCODE/EXTRACODE allocations pass",
-    "historical Source() checksums unchanged"
+  "host_policy_tests_per_edition": 3,
+  "legend": {
+    "door_types": [
+      "Porte / grille",
+      "Arche"
+    ],
+    "groups": [
+      {
+        "entries": [
+          "Vous",
+          "Cheminee",
+          "Passage secret",
+          "Porte / grille",
+          "Arche",
+          "Salle sombre",
+          "Salle eclairee",
+          "Trappe",
+          "Herse"
+        ],
+        "title": "Plan"
+      },
+      {
+        "entries": [
+          "Parchemin",
+          "Or",
+          "Clef fer",
+          "Clef or",
+          "Fiole",
+          "Bague",
+          "Plomb",
+          "Livre",
+          "Diamant",
+          "Aigle or"
+        ],
+        "title": "Objets"
+      }
+    ],
+    "hazards": "room thumbnails: H at upper right = falling grille; o at lower right = floor trap",
+    "icons": [
+      "Vous",
+      "Cheminee",
+      "Passage secret",
+      "Porte / grille",
+      "Arche",
+      "Salle sombre",
+      "Salle eclairee",
+      "Trappe",
+      "Herse",
+      "Parchemin",
+      "Or",
+      "Clef fer",
+      "Clef or",
+      "Fiole",
+      "Bague",
+      "Plomb",
+      "Livre",
+      "Diamant",
+      "Aigle or"
+    ],
+    "notes": [
+      "Objets et salles: etat initial"
+    ],
+    "player": {
+      "height": 9,
+      "label": "Vous",
+      "rows_lsb_first": [
+        28,
+        62,
+        107,
+        127,
+        93,
+        99,
+        127,
+        62,
+        28
+      ],
+      "width": 7,
+      "x": 19,
+      "y": 27
+    },
+    "room_types": [
+      "Salle sombre",
+      "Salle eclairee"
+    ]
+  },
+  "native_integration_tests_per_edition": 6,
+  "omitted_floor_obstacles": {
+    "reason": "floor obstacles, not room connections; removed from the map and legend",
+    "rooms": [
+      6,
+      13,
+      28,
+      38
+    ],
+    "rooms_audited": 64,
+    "source": "B2 635 and 880-884: decoded $0485 > 1 draws sprite 28 and semantic value $9C (156)",
+    "source_field_values": {
+      "13": 2,
+      "28": 2,
+      "38": 3,
+      "6": 2
+    }
+  },
+  "original_sprite_28": {
+    "decoder": "tools/resources.py sprite(Source(),28)",
+    "height": 16,
+    "payload_bytes": 144,
+    "payload_end_inclusive": "$8048",
+    "payload_sha256": "b30980775b9feb32c803c061ae96b72d8ac7fab15c8ece9fee452d114b70a909",
+    "payload_start": "$7FB9",
+    "pointer": "$7FB8",
+    "preview": {
+      "kind": "historical payload decoded to monochrome, nearest-neighbor x4; serial color attributes ignored",
+      "path": "build/game/sprite-028-oric-preview.png",
+      "sha256": "4b460fa9a2e2f590755a3b4e98df8720079ba6088e10d5fc17dc7c1162a0fdf2"
+    },
+    "source_call": "B2 884: POKE #68,28; CURSET N,169,3; CALL D",
+    "visual_identification": "bones and a skull; visual inference from decoded historical pixels, not a recovered historical asset name",
+    "width_bytes": 9
+  },
+  "pit_state_ignored_by_map": true,
+  "previous_revision": {
+    "change": "Native 280x192 one-bit HGR map in both game editions, with a larger map-pin locator",
+    "date": "2026-10-18",
+    "program_hashes": {
+      "dhgr": "1b686e7c22f6fa003bd98d1c5bd13dfd4e45bdf6688e67df4b085cd6399132d5",
+      "mono": "289ec6db81f11fe4419c6405bd595c06f32ede3835507c5e76c5efe0387f30f5"
+    }
+  },
+  "scope": "Static map rasters and metadata only; program binaries, game-room scenery, collision rules and historical sources unchanged",
+  "secret_fireplace_symbol": "Solid three-pixel right pillar, black in lit rooms and white in dark rooms; no detached wall badge",
+  "secret_fireplaces": [
+    0,
+    11,
+    38,
+    49,
+    51,
+    63
   ],
-  "timing_scope": "elapsed_seconds measures host test duration, not target performance",
-  "visual_review": "Inspected native ground, catacomb/upper and legend previews and static rasters; native pin visible in room 12"
+  "static_checks": {
+    "artwork_unchanged": true,
+    "floor_map_comparison": "Both floor-map rasters in both editions differ only at the four removed icons; all other bytes, including hazards, doorways and treasures, are identical to the preceding revision",
+    "historical_inputs": "Source checksum guards passed",
+    "legend": "Escalier entry removed; grouped symbols, smiley and H/o hazard examples retained",
+    "program_binaries_unchanged": true,
+    "room_38": "Secret fireplace and vial retained; floor obstacle omitted from map only"
+  },
+  "superseded_presentation_revision": {
+    "change": "Black dark rooms / white lit rooms with inverse contents; common door/grille symbol; no lock or non-fireplace furniture icons; revised legend and replacement smiley badge",
+    "date": "2026-10-20",
+    "program_hashes": {
+      "dhgr": "1d630c5816c5df921760840ce6031717a686fb9fc85e200f4657f4829e0d861f",
+      "mono": "3199381da9fa5d3f7afc104522649002eeaf0298ef06786d9900177d91db2077"
+    }
+  },
+  "verification_sources_sha256": {
+    "src/apple/map.s": "08c77268d58b862b9a64e377799bd39549d2ee4c6a15a1a2a2085e60fbca277b",
+    "tests/map_artwork_cases.py": "4c1c39d9e77ad62a13e52d0f9a0e877bfa6b4de06d31c4e44276341d1037e5fe",
+    "tests/world_port.py": "9270fae8ada8d3aebf177ec91a1fc311359262fb9479846c67194d085c514af7",
+    "tools/debug_map.py": "68e975256d16e9265f50ee707d51d15332823d3a1c151cf2984bfa7259322a37",
+    "tools/resources.py": "cb04511fea156e31e3a463c7f90addd9ce99f6536215d1e80ecf19af2fd2cae7"
+  },
+  "visual_review": "Inspected the historical sprite-28 payload preview and all three executed MAIN HGR map previews; the four false staircase icons and legend entry are removed; all other map features retained"
 }

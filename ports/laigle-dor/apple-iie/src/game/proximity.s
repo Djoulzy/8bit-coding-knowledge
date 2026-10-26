@@ -10,6 +10,10 @@ full_collision_probe:
     sta object_status
     lda #4
     sta door_status
+    lda in_pit
+    beq full_room_collision
+    jmp full_pit_collision
+full_room_collision:
     lda actor_x
     sta move_x
     cmp #2
@@ -136,6 +140,65 @@ full_collision_probe:
 @clear:
     rts
 
+; Dedicated pit floor, B2 7030-7040 outline (target foot-envelope adaptation).
+; Do not use the ordinary room's portals, geometry-3 envelope or coarse GRID.
+; Stable feet span [(x+2)*6,(x+4)*6), not the full animated sprite silhouette.
+full_pit_collision:
+    ldx facing
+    lda actor_x
+    clc
+    adc step_x,x
+    sta move_x
+    lda actor_y
+    clc
+    adc step_y,x
+    sta move_y
+full_pit_envelope:           ; A=move_y; blocked was cleared by the caller
+    sec
+    sbc #160
+    cmp #36                 ; floor y=160..195; unsigned rejects both ends
+    bcs @blocked
+    ldx #0
+@depth:
+    cmp #5
+    bcc @band
+    sbc #5
+    inx
+    bne @depth
+@band:
+    lda move_x
+    cmp pit_min_x,x
+    bcc @blocked
+    cmp pit_limit_x,x
+    bcs @blocked
+    rts                     ; blocked=0 and door_status=4 from the entry point
+@blocked:
+    inc blocked
+    rts
+; Conservative bounds at the back edge of each five-row band, inside the
+; source trapezoid: (104,159)-(134,159)-(157,179)-(166,199)-(72,199)-(81,179).
+.segment "CODE"
+pit_min_x: .byte 16,15,14,13,12,12,11,11
+pit_limit_x: .byte 19,20,21,22,23,23,24,24
+.segment "LOWCODE"
+
+; Check the horizontal jump's landing at the original foot depth. Airborne
+; y is visual height and must not be mistaken for walking into the back wall.
+full_pit_jump_guard:
+    ldy #0
+    sty blocked
+    ldx facing
+    lda step_x,x
+    asl a
+    asl a
+    asl a
+    clc
+    adc actor_x
+    sta move_x
+    lda actor_y
+    sta move_y
+    jmp full_pit_envelope
+
 ; Input move_x/move_y -> X=bounded semantic cell under the center of the feet.
 full_grid_feet:
     lda move_x
@@ -206,10 +269,6 @@ floor_min_x:
 
 ; P picks the adjacent cell in front of the feet; crouch/held guards in rules.
 full_pickup_probe:
-    lda actor_x
-    sta move_x
-    lda actor_y
-    sta move_y
     ldx facing
     lda actor_x
     clc
@@ -234,6 +293,7 @@ full_pickup_probe:
 ; window so reduced clearance cannot leave the exact source pose behind.
 ; Carry set when within x=27..30,y=155..165; facing/held/pose checked by caller.
 ; Chest access uses full_chest_reach instead: its front must stay reachable.
+.segment "CODE"
 full_fixture_reach:
     lda actor_x
     cmp #27
@@ -250,7 +310,6 @@ full_fixture_reach:
 @no:
     clc
     rts
-.segment "CODE"
 
 ; Carry set when the proposed 12-dot foot base crosses a furnishing barrier.
 ; The barrier reaches the rear floor plane: with scenery baked into the room
@@ -262,8 +321,6 @@ full_fixture_reach:
 ; Stable feet [(move_x+2)*6,(move_x+4)*6) give the actor-x intervals below.
 ; This replaces only matching 151/153/154 marks; the semantic grid is retained.
 full_furniture_overlap:
-    lda in_pit
-    bne @clear
     ldx room_geometry
     lda room_furnishing
     cmp #7

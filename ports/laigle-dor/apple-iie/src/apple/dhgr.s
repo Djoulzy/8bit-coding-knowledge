@@ -148,6 +148,12 @@ draw_scene:
     stx render_page_index
 .if FULL_GAME
     lda game_mode
+    cmp #MODE_DEAD
+    bcc :+
+    cmp #(MODE_WIN+1)
+    bcs :+
+    jmp full_end_draw
+:
     cmp #MODE_CODE_SAVE
     jcs full_text_draw
     cmp #MODE_MAP_GROUND
@@ -216,6 +222,7 @@ draw_scene:
 .if FULL_GAME
     jsr full_draw_equipment
     jsr full_draw_entities
+    jsr full_draw_gate
 .endif
     jmp hud_draw
 

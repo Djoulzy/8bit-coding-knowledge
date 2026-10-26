@@ -54,6 +54,21 @@ algorithm were checked against the authors' [apple2js format implementation](htt
 Actual BOOT0 sector decoding is exercised in CPU tests; the tests do not replace
 sector reads with a high-level file-load trap.
 
+The full-game `make games` chain also assembles `src/apple/ending-overlay.s`
+with `src/ending.cfg` after the resident link. It resolves the three renderer
+addresses from `game.lbl` and packages six 8 KiB ending slots at physical
+sectors 352–543. These overlays replace the disposable MAIN room baseline
+only for graphical death/victory. See [graphical-endings.md](graphical-endings.md)
+for the composition, memory contract and execution checks.
+
+The same build links `src/apple/checkpoint-overlay.s` with `src/checkpoint.cfg`
+after resolving resident helpers. Its bounded 4 KiB slot uses physical sectors
+544–559 (track 34), immediately after the endings. C / exterior option 4 loads
+it at MAIN `$A000` for the TEXT code panel. Resident close/apply paths rebuild
+the baseline after the module has returned or tail-jumped out. The code performs
+no disk writes. See [checkpoints.md](checkpoints.md) for the twelve-byte protocol,
+range limits and the overlay stack contract.
+
 ## Loader ABI
 
 This loader requires a Disk II **16-sector** controller in **slot 6**, drive 1,

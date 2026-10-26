@@ -1,0 +1,160 @@
+{
+  "date": "2026-10-19",
+  "change": "Visible staged falling grille, parity-safe jump crossing, and bottom-aligned darkness HUD",
+  "executed_profiles": {
+    "mono": {
+      "disk_sha256": "3051ef230a37a8e1b378e59d451b91787ce82ea21ee53c2008b8ccdd319d3777",
+      "elapsed_seconds": 258.558,
+      "errors": [],
+      "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+      "failures": [],
+      "original_oric_runtime": "not tested",
+      "program_sha256": "fbd763be9ad0b8ff3ffaff4d1dedfd205088fb0ad18ff650b41800ce13de79be",
+      "real_hardware": "not tested",
+      "selected_tests": [
+        "test_compact_clue_rows_blank_fullwidth_and_page_carry",
+        "test_room36_grille_falls_on_both_pages_before_death_and_pauses_with_help",
+        "test_jumps_latch_both_grille_sides_and_parities_until_the_fall_finishes",
+        "test_dark_rooms_keep_lit_hud_rows_and_center_only_the_darkness_message",
+        "test_darkness_panel_replaces_merchant_and_defers_graphics_preparation",
+        "test_help_in_darkness_and_during_oubliette_recovery",
+        "test_chest_feedback_distinguishes_range_closed_empty_and_already_open",
+        "test_crowbar_feedback_distinguishes_lock_random_failure_and_breakage",
+        "test_pickup_names_real_chest_contents_and_retains_single_award",
+        "test_outcome_words_are_inverse_right_aligned_on_both_pages_and_in_darkness",
+        "test_impossible_actions_persist_until_next_command",
+        "test_impossible_feedback_in_special_rooms_and_darkness",
+        "test_light_feedback_distinguishes_request_from_automatic_attempt",
+        "test_gameplay_hud_original_room_descriptions",
+        "test_gameplay_hud_stats_and_hand_names",
+        "test_name_exterior_merchant_and_resume",
+        "test_help_pauses_walking_and_staged_actions",
+        "test_room_change_keeps_graphics_until_hidden_pair_is_complete",
+        "test_lighting_does_not_leave_an_unanimated_fixture",
+        "test_clues_display_original_content_and_advance"
+      ],
+      "success": true,
+      "suite": "hazards",
+      "tests_run": 20,
+      "video_profile": "mono",
+      "virtual_ii": "not tested",
+      "disk": "build/game-mono/laigle-dor-hgr-mono.do",
+      "test_report": "build/game-mono/hazard-test-results.json",
+      "program_bytes": 19038,
+      "previous_program_sha256": "cbfe6e8af8918bdb55a10bfe8fa7b2a1f9f9b6443baef6c832d28e7fc3c5dcdd",
+      "memory_bounds": {
+        "resident_end_exclusive": "$9D7D",
+        "auxread_load_end_exclusive": "$9DB4",
+        "lowcode_run_end_exclusive": "$1DAC"
+      },
+      "preview_hashes": {
+        "room36-dark-hud.png": "cd5a26a1fdc19b9cf160412b9bdaba685d73228164e0bf10faf675d2868467c8",
+        "room36-grille-stage-1.png": "44afc77209bad9a74f03ea420cad4982364e5da993a9a8aa6935c75c13aee907",
+        "room36-grille-stage-4.png": "7be1c5f911dc16b3220546bf60c14828ec67f9be30dd1f3a972cbd02f9d82356",
+        "room36-grille-stage-8.png": "06b3bce54822cc0b0fdeb33113bf79083b97ca58fb9b4bb25d13179cde02c66b"
+      }
+    },
+    "dhgr": {
+      "disk_sha256": "a96738df090559c883b1516e03e312109cd9e7f0750fbbb7848574c16d97f9c8",
+      "elapsed_seconds": 298.341,
+      "errors": [],
+      "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+      "failures": [],
+      "original_oric_runtime": "not tested",
+      "program_sha256": "3b6ade40298c335beed8a18c706eca9c15d77a5e1abc96b21d38d1913d2246ac",
+      "real_hardware": "not tested",
+      "selected_tests": [
+        "test_compact_clue_rows_blank_fullwidth_and_page_carry",
+        "test_room36_grille_falls_on_both_pages_before_death_and_pauses_with_help",
+        "test_jumps_latch_both_grille_sides_and_parities_until_the_fall_finishes",
+        "test_dark_rooms_keep_lit_hud_rows_and_center_only_the_darkness_message",
+        "test_darkness_panel_replaces_merchant_and_defers_graphics_preparation",
+        "test_help_in_darkness_and_during_oubliette_recovery",
+        "test_chest_feedback_distinguishes_range_closed_empty_and_already_open",
+        "test_crowbar_feedback_distinguishes_lock_random_failure_and_breakage",
+        "test_pickup_names_real_chest_contents_and_retains_single_award",
+        "test_outcome_words_are_inverse_right_aligned_on_both_pages_and_in_darkness",
+        "test_impossible_actions_persist_until_next_command",
+        "test_impossible_feedback_in_special_rooms_and_darkness",
+        "test_light_feedback_distinguishes_request_from_automatic_attempt",
+        "test_gameplay_hud_original_room_descriptions",
+        "test_gameplay_hud_stats_and_hand_names",
+        "test_name_exterior_merchant_and_resume",
+        "test_help_pauses_walking_and_staged_actions",
+        "test_room_change_keeps_graphics_until_hidden_pair_is_complete",
+        "test_lighting_does_not_leave_an_unanimated_fixture",
+        "test_clues_display_original_content_and_advance"
+      ],
+      "success": true,
+      "suite": "hazards",
+      "tests_run": 20,
+      "video_profile": "dhgr",
+      "virtual_ii": "not tested",
+      "disk": "build/game/laigle-dor-dhgr-color.do",
+      "test_report": "build/game/hazard-test-results.json",
+      "program_bytes": 19628,
+      "previous_program_sha256": "602cb61a3d8a8325e72ced6ccac0762f2929248faa42ab31a825323bfa84b7e8",
+      "memory_bounds": {
+        "resident_end_exclusive": "$9F87",
+        "auxread_load_end_exclusive": "$9FBE",
+        "lowcode_run_end_exclusive": "$1DC3"
+      },
+      "preview_hashes": {
+        "room36-dark-hud.png": "b114b92d1225b2582e93fc7271c377262eb88baf88dbe1f12293e4671028f0eb",
+        "room36-grille-stage-1.png": "08ffe145a53851b08b4768532d6ee2a82b2f2a9f223e04e502f8db3ff863a71d",
+        "room36-grille-stage-4.png": "b4c169dd8a34fc6af475967f2a8c2fa65c6d6470368e6b2bf3fcc3ce5186fc34",
+        "room36-grille-stage-8.png": "c80e813e066379f15e6fa0241657482fe3099551f5f8474955dd91696d091614"
+      }
+    }
+  },
+  "room36_source_evidence": {
+    "light": 0,
+    "variation": 207,
+    "trigger_x": 27,
+    "basic_lines": [
+      962,
+      990,
+      5015,
+      5016,
+      5018,
+      6300,
+      6310,
+      6320
+    ],
+    "listing": "research/analyses/laigle-dor/extracted/aigledor.2.basic.txt"
+  },
+  "before_reproduction": {
+    "profile": "dhgr",
+    "action": "select torch, face right, walk from x=19 to x=27 at y=145",
+    "observed": {
+      "room": 36,
+      "actor_x": 27,
+      "game_mode": 5,
+      "held_item": 1,
+      "energy": 9993,
+      "persistent_gate_bit": 128
+    },
+    "missing_effect": "ending TEXT page selected without a displayed falling-gate sequence"
+  },
+  "commands": [
+    "make games",
+    "python3 tools/check_game.py --video mono --suite hazards",
+    "python3 tools/check_game.py --video dhgr --suite hazards"
+  ],
+  "static_checks": [
+    "Both NMOS 6502 ca65/ld65 builds and disk packaging passed",
+    "Named DO/NIB disks match canonical aliases",
+    "Linker memory bounds and resident/bank-worker checks passed",
+    "Python syntax and changed source/document whitespace checks passed",
+    "Atlas, title, text and extra asset hashes match the preceding committed build in both profiles",
+    "Historical sources and extracted payloads have no diff; artwork.json unchanged"
+  ],
+  "artwork_sha256": "60f557d93b59c041490c6dc03f4e3e6e17e17f9e098dd4ef7762d2c9606ba52d",
+  "scope": "Twenty focused native tests per edition, including eight jump approach fixtures per profile; no complete game replay",
+  "limitations": [
+    "py65 functional Apple bus with real Disk II BOOT0; no Virtual II, system-ROM cold-start or physical hardware execution",
+    "Original Oric runtime not executed; original behavior inferred from preserved BASIC and packed data",
+    "Nine animation stages are a target controller cadence, not original timing emulation",
+    "Host test elapsed seconds are not an Apple II performance benchmark"
+  ]
+}

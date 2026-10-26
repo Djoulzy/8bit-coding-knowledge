@@ -1,0 +1,99 @@
+{
+  "date": "2026-10-20",
+  "editor_artwork_sha256": "60f557d93b59c041490c6dc03f4e3e6e17e17f9e098dd4ef7762d2c9606ba52d",
+  "execution": "py65 functional NMOS 6502 / Apple bus / real Disk II BOOT0; no ROM cold-start",
+  "floor_hint_fallback": {
+    "classification": "Apple target placement adaptation; original Oric retained cursor not executed",
+    "initial_rooms": [
+      5,
+      53,
+      55,
+      61,
+      62
+    ],
+    "room55": {
+      "glyph": 33,
+      "semantic_cells": [
+        15,
+        16,
+        17
+      ],
+      "source_x": 96,
+      "source_y": 176,
+      "variation": 72
+    },
+    "source_anchor": "(N+18,176)",
+    "variants": [
+      0,
+      5
+    ]
+  },
+  "historical_inputs": {
+    "B1_sha256": "e0c58b933133459eb7d38476cab0fb4f49b5964afd0db8982915b36a42be3340",
+    "B2_sha256": "0753ce4ed6c8904118fbd9e40ef459fa46140a770e00902213794ef2c33c28ac",
+    "TAP_sha256": "7f01e1a3d05825aab887952cd5711bea69d6525730aba5c1e25c814334fe77d7",
+    "integrity": "Source checksum guards passed; inputs unchanged"
+  },
+  "original_oric_runtime": "not tested",
+  "profiles": {
+    "dhgr": {
+      "files": {
+        "build/game/build-manifest.json": "3d430ee01d7e59a04659b6c820486d75c88a817bf75d5ca9194b3e634e53296c",
+        "build/game/game.bin": "3fd63773e590f1a317161828a604d5b6de245e29a2bb7038c3c945e91f10d172",
+        "build/game/game.lbl": "f8f1dd191df93cf80a91b86fe47f63ebe5f9c123056c42f78680dc00ac9de802",
+        "build/game/game.map": "bdee667df7cda3003308a7dd8d16f186d935c23dff7e0d4bd1b3eb8afccbc336",
+        "build/game/laigle-dor-dhgr-color.do": "4aaab7c193e8482a808913e4a04a1d400e62c9e145cd2d426d2f3807ced6c1f9",
+        "build/game/laigle-dor-dhgr-color.nib": "2798d2871d370d4397c3f51f7d97eeb1c7cd5f8436e2e205a00db24e1793bf3b",
+        "build/game/pit-floor-walking.png": "423542250ed661bae87d841c3d1e5907809b773a79cb470ab656a2d9478726a9",
+        "build/game/pit-test-results.json": "83f1f8db6994a4f1da6df1f60879c7b57549fc006c1cebd765888faa234b5a75",
+        "build/game/room23-trap-hint.png": "af86675ecafd466b1b495b05b1a8ddb13b92cdd615f91b6680ff1294e28389b3",
+        "build/game/room36-marker.png": "545507c431017655ea45fd891f46ebeab769fb66f53a248b03614883512f9962",
+        "build/game/room55-trap-hint.png": "fa768d69cf875a6b56ef32d754a096075490fe01fdcdcd2431d25743f9e75a3b",
+        "build/game/room55-trap-ring.png": "fc7e2df3adf1ac08d431effd5d3b93405e88e17155fab545bcd0945b45d67158"
+      },
+      "memory_bounds": {
+        "LOWCODE_end_exclusive": "$1DFE",
+        "resident_end_exclusive": "$9F89",
+        "worker_template_end_exclusive": "$9FC0"
+      },
+      "program_bytes": 19689,
+      "success": true,
+      "test_report": "build/game/pit-test-results.json",
+      "tests_run": 14
+    },
+    "mono": {
+      "files": {
+        "build/game-mono/build-manifest.json": "ebe79bc22f4dc99570ce27cfa60713d6d2d5f18a9fab92e857e322ce36d7ac5e",
+        "build/game-mono/game.bin": "95d78076ac754bdaa4ca33ec5842bf83f61b30a9f1f25ec865c81feb60a24c79",
+        "build/game-mono/game.lbl": "2ded9f3f1e4b46d14e0e2aa84f1183d808299d667ae06a505973e8b373feaf0b",
+        "build/game-mono/game.map": "e9e7817407709363c00a48cfa16fe9eba4d4df1a43db22b6b744f8d0562de562",
+        "build/game-mono/laigle-dor-hgr-mono.do": "f0b8657d9cbe431f5d96c07dc64d7e9cb8a05a5529cfc89c391b72333d251bc3",
+        "build/game-mono/laigle-dor-hgr-mono.nib": "e41cdd65c1cbe9a092bdcbb447af348d07090d9b5f9d5889e6a091a94e0e36c0",
+        "build/game-mono/pit-floor-walking.png": "b8f1806303f87f8632d5ef5d3defc0654746c1499ea06aef57e5553085c48261",
+        "build/game-mono/pit-test-results.json": "63b2d7890ad208eb91cbcc8167caa5c9660cc0048ae98a830c6b5968aae0ae55",
+        "build/game-mono/room23-trap-hint.png": "473a1f34222622daba5832b9009c974d5928fdf87814331c697eb1fdad2ced76",
+        "build/game-mono/room36-marker.png": "0c1af2fa915c63759caa5d2c73635e7429657bc8efd18ce2c64ee4521a6263e5",
+        "build/game-mono/room55-trap-hint.png": "9a602ade730329282cda194db0cbc1749621bd445f4ba499002e5c385d1197b7",
+        "build/game-mono/room55-trap-ring.png": "97b774aee63895a6adc5f19f47fed9e64e75e3eec543b77d857836399a06f6db"
+      },
+      "memory_bounds": {
+        "LOWCODE_end_exclusive": "$1DE7",
+        "resident_end_exclusive": "$9D7F",
+        "worker_template_end_exclusive": "$9DB6"
+      },
+      "program_bytes": 19099,
+      "success": true,
+      "test_report": "build/game-mono/pit-test-results.json",
+      "tests_run": 14
+    }
+  },
+  "real_hardware": "not tested",
+  "regression_before_fix": {
+    "command": "python3 -m unittest tests.mono_world.MonoWorldTests.test_room55_and_implicit_variants_show_floor_hints_on_both_buffers",
+    "program_sha256": "fbff4994efa85a591bbb0dc41b91ccfdb35889aab6cdb52b77439641b5bde620",
+    "result": "failed: 30 floor-pixel assertions across both buffers and five R=0 rooms; no ring owned"
+  },
+  "scope": "alternate CHAR symbols, explicit R=0/5 floor anchors, and dedicated pit foot/jump envelope",
+  "test_source_sha256": "6e8a86d232363436552a741461916f4a471c06c7dcc5c3d14f6c67e5860d5a8a",
+  "virtual_ii": "not tested"
+}

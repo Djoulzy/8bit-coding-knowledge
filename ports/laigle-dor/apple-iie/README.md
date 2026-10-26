@@ -86,7 +86,11 @@ W07/W08 acceptance gates remain pending. Read
 [world-construction.md](docs/world-construction.md) for resource ownership,
 source references, executed checks and known rendering differences.
 
-Exterior and modal panels use full-screen TEXT. The exterior greets the player
+Exterior and modal panels use full-screen TEXT. Death and victory instead use
+the original artwork in full-screen HGR/DHGR graphics, with five-attempt named
+tombs, the three-objective victory composition and O/Return to restart. See
+[graphical endings and verification](docs/graphical-endings.md).
+The exterior greets the player
 by name; the merchant has a spaced price list, live funds and purchase feedback.
 **H** or **?** opens the command/item help page and pauses the game, even during
 an action or inside another menu. Any key returns to the previous screen without
@@ -95,6 +99,10 @@ Gameplay returns to mixed DHGR. In an oubliette,
 press **A**, then **Space** to stand; **G** climbs with a rope and an empty hand.
 The room number remains the originating room, but the dedicated pit scene is
 displayed. See [presentation-and-pits.md](docs/presentation-and-pits.md).
+Pit walking follows its own perspective floor, with jumps rejected when the
+landing would cross a wall. The original alternate-font wall/trap hints are
+restored in both editions; owning the ring still hides unopened-trap hints.
+See [pit markers and collision checks](docs/pit-markers-and-collisions.md).
 `make run-game` starts the full-build functional preview on port 8768.
 
 The native build now walks in half-sized steps, tests obstacles at the proposed
@@ -108,7 +116,14 @@ the collision/interaction contract, original evidence and target artwork.
 Room changes now keep the previous graphics frame visible while preparing the
 next room in the hidden buffer, then flip only after its actor/effects/HUD are
 complete. They no longer expose an old TEXT menu. Actual darkness has a clean
-**Il fait noir ici !** panel. See [room-transitions.md](docs/room-transitions.md).
+**Il fait noir ici !** message centered above the same four bottom HUD rows
+(40 columns in mono, 80 in DHGR). See [room-transitions.md](docs/room-transitions.md).
+
+Falling-grille traps now descend visibly before their outcome. Walking onto
+the trigger is lethal even with a torch; a horizontal jump (**S**) across it
+allows survival. Help pauses the fall. See
+[grille traps and darkness](docs/grille-traps-and-darkness.md) for original
+source references, native sequencing and focused execution checks.
 
 The four gameplay text rows now contain the original room description on rows
 1–2, **Force / Points** on row 3 and **Pieces d'or / Main** on row 4. The hand
@@ -122,18 +137,18 @@ scroll count. The held item appears above the lists. **Space**, **Return** or
 **Escape** closes it; **H / ?** opens help and returns to the inventory.
 Keys **0–5** select the held item during gameplay.
 
-Press **C** during castle gameplay to display a **checkpoint code** such as
-`260000-000000-1CEDA0`. Note its 18 hexadecimal characters. To resume later,
-boot either edition, type your name normally, then choose **4. Reprendre avec
-un code** outside the castle. Enter the code and press **Return**; Backspace
-corrects it and Escape cancels. Codes work between the color and monochrome
-editions. H/? also works while displaying or entering a code.
+Press **C** during castle gameplay to display a **12-byte checkpoint code**
+such as `0000E0-C01F40-00E400-00550B`. Note its 24 hexadecimal characters. To
+resume later, boot either edition, type your name, then choose **4. Reprendre
+avec un code** outside the castle. Enter the code and press **Return**;
+Backspace corrects it and Escape cancels. H/? preserves the code or partial input.
 
-This short code retains the room, inventory and selected hand. The newly typed
-name is retained locally. Resuming starts a fresh room/world state with **500
-gold, zero points and full strength**, placing the actor safely on the room's
-near floor; item wear and transient actions also restart. See the
-[nine-byte format, scope and verification](docs/checkpoints.md).
+The code retains room, inventory, gold, points, integer strength and sixteen
+pickup flags, so collected treasure cannot award its rewards again. Resume
+starts safely on the near floor with empty hands and the newly typed name.
+Wear, doors and traps restart. Each provision stock must fit 0–7; larger stocks
+produce an explicit error without changing the game. Old 18-character codes
+are incompatible. See the [format, limits and verification](docs/checkpoints.md).
 
 Menus, descriptions, clues, HUD labels, feedback and map captions use mixed
 case for readability. Native Apple TEXT uses the IIe's built-in lowercase;
@@ -161,8 +176,14 @@ quest objects, and nine of each consumable. **2**, a decimal room number
 number; **Escape** or **Ctrl+D** resumes play. The menu pauses gameplay and
 shows the current room number. Enter the castle normally before opening it.
 **3** opens a graphical map with numbered rooms, source-backed doorways,
-furniture/treasure pictograms and a large white map pin beside the current room
-number. **Space/Return**
+fireplaces, treasure pictograms and a white smiley beside the current
+room number. Dark rooms are black; lit rooms are white with inverse labels
+and icons. Doors and grilles share one symbol; locks and other furniture
+are omitted, including the floor-bones decoration in rooms 6, 13, 28 and 38
+(previously misidentified as stairs on the map).
+Secret fireplaces have a solid right pillar; the map's legend
+shows this symbol. The footer displays the room number and controls only.
+**Space/Return**
 cycles ground floor, catacombs/upper rooms and legend; **1/2/3** selects a page.
 **Escape** returns to the test menu; **Ctrl+D** resumes gameplay. Contents show
 the initial Oric data; cross-floor and secret links have numeric references.

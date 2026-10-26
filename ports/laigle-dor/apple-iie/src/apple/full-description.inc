@@ -50,9 +50,8 @@ full_room_description:
     jsr full_feedback_index
     bcc full_hud_description
 .if !HGR_MONO
-    jsr full_is_dark
-    bcc full_hud_description ; 80-column HUD has room for the complete phrase
-.endif
+    jmp full_hud_description ; graphics and darkness TEXT both use 80 columns
+.else
     txa
     pha
     inc hud_row
@@ -60,6 +59,7 @@ full_room_description:
     pla
     tax
     ldy #0
+.endif
     ; Y retains the prefix length on row 0; row 1 starts at column zero.
 full_hud_description:
     lda hud_description_lo,x

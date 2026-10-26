@@ -2,24 +2,7 @@
 .segment "LOWCODE"
 .export full_text_draw, full_dark_text_draw
 full_text_draw:
-    lda #0
-    sta dst_ptr
-    lda #4
-    ldx render_page_index
-    beq :+
-    lda #8
-:
-    sta dst_ptr+1
-    ldx #4
-    ldy #0
-    lda #$A0
-@clear:
-    sta (dst_ptr),y
-    iny
-    bne @clear
-    inc dst_ptr+1
-    dex
-    bne @clear
+    jsr full_text_clear
     ldx game_mode
     lda text_panel_hi,x
     beq @compact
@@ -101,29 +84,41 @@ full_text_draw:
     ldy #28
     jmp full_decimal5
 full_dark_text_draw:
-    ; Draw a fresh hidden TEXT page; never expose the previous merchant panel.
-    jsr full_text_draw
-    lda #14
+    ; Full-screen darkness keeps the gameplay HUD at rows 20..23. TEXT column
+    ; count matches the lit edition, including the DHGR right-edge feedback.
+    jsr full_text_clear
+    jsr full_hud_draw
+    lda #11
     jsr full_text_address
-    ldy #0
+    ldx #0
+.if HGR_MONO
+    ldy #11
 @message:
-    lda dark_message,y
-    beq @help
-    ora #$80
-    sta (dst_ptr),y
-    iny
-    bne @message
-@help:
-    lda #15
-    jsr full_text_address
-    ldy #0
-@instruction:
-    lda dark_instruction,y
+    lda dark_message,x
     beq @done
     ora #$80
     sta (dst_ptr),y
+    inx
     iny
-    bne @instruction
+    bne @message
+.else
+    ldy #15                ; logical column 31: MAIN, then AUX at next byte
+@message:
+    lda dark_message,x
+    beq @done
+    ora #$80
+    sta (dst_ptr),y
+    inx
+    lda dark_message,x
+    beq @done
+    ora #$80
+    iny
+    sta $C005
+    sta (dst_ptr),y
+    sta $C004
+    inx
+    bne @message
+.endif
 @done:
     rts
 full_text_address:
@@ -139,10 +134,34 @@ full_text_address:
     sta dst_ptr+1
     rts
 .segment "CODE"
+full_text_clear:
+    lda #0
+    sta dst_ptr
+    lda #4
+    ldx render_page_index
+    beq :+
+    lda #8
+:
+    sta dst_ptr+1
+    ldx #4
+    ldy #0
+    lda #$A0
+@clear:
+    sta (dst_ptr),y
+.if !HGR_MONO
+    sta $C005
+    sta (dst_ptr),y
+    sta $C004
+.endif
+    iny
+    bne @clear
+    inc dst_ptr+1
+    dex
+    bne @clear
+    rts
 .include "full-panels.inc"
 text_heading: .byte "L'Aigle d'Or             Or:00000       "
-dark_message: .asciiz "           Il fait noir ici !"
-dark_instruction: .asciiz "      1:Torche   I:Inventaire"
+dark_message: .asciiz "Il fait noir ici !"
 text_row_lo:
     .byte $00,$80,$00,$80,$00,$80,$00,$80,$28,$A8,$28,$A8
     .byte $28,$A8,$28,$A8,$50,$D0,$50,$D0,$50,$D0,$50,$D0

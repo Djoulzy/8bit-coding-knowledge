@@ -1,0 +1,598 @@
+{
+  "change": "Integrate source-backed full-screen graphical victory and five-attempt named memorials into HGR mono and DHGR color editions",
+  "checkpoint_v2_regression": {
+    "date": "2026-10-20",
+    "profiles": {
+      "dhgr": {
+        "disk_sha256": "9d7d660de1e254ea7d085d4d4b0a2230c8e7466615dc3e3b99eb219ac21e27db",
+        "elapsed_seconds": 157.182,
+        "errors": [],
+        "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+        "failures": [],
+        "original_oric_runtime": "not tested",
+        "program_sha256": "c4c9abffb29ab2c2ea622ca6803dde401face080c1e8b28cdf158943a76fc315",
+        "real_hardware": "not tested",
+        "report": "build/game/ending-test-results.json",
+        "selected_tests": [
+          "test_ending_source_canvas_matches_executed_original_6502_blitter",
+          "test_graphical_victory_requires_all_three_objectives_on_exit_and_caches_both_pages",
+          "test_graphical_death_retains_five_names_then_wraps_and_replays",
+          "test_ending_disk_slots_and_overlay_leave_resident_code_and_aux_assets_intact",
+          "test_partial_departure_keeps_compact_text_layout_and_live_gold",
+          "test_room36_grille_falls_on_both_pages_before_death_and_pauses_with_help",
+          "test_title_lightning_reveal_and_text_transition",
+          "test_debug_map_navigation_pauses_and_returns_to_menu_or_game"
+        ],
+        "success": true,
+        "suite": "endings",
+        "tests_run": 8,
+        "video_profile": "dhgr",
+        "virtual_ii": "not tested"
+      },
+      "mono": {
+        "disk_sha256": "81218cd353c67cbf96ba3506c405aed73eedeed4ebfaf831f848fb9800d95741",
+        "elapsed_seconds": 124.834,
+        "errors": [],
+        "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+        "failures": [],
+        "original_oric_runtime": "not tested",
+        "program_sha256": "27260dce66ac3bdfbf77ccf0f3e7016e7fde21fb4e18ab20b7d671816d9aa708",
+        "real_hardware": "not tested",
+        "report": "build/game-mono/ending-test-results.json",
+        "selected_tests": [
+          "test_ending_source_canvas_matches_executed_original_6502_blitter",
+          "test_graphical_victory_requires_all_three_objectives_on_exit_and_caches_both_pages",
+          "test_graphical_death_retains_five_names_then_wraps_and_replays",
+          "test_ending_disk_slots_and_overlay_leave_resident_code_and_aux_assets_intact",
+          "test_partial_departure_keeps_compact_text_layout_and_live_gold",
+          "test_room36_grille_falls_on_both_pages_before_death_and_pauses_with_help",
+          "test_title_lightning_reveal_and_text_transition",
+          "test_debug_map_navigation_pauses_and_returns_to_menu_or_game"
+        ],
+        "success": true,
+        "suite": "endings",
+        "tests_run": 8,
+        "video_profile": "mono",
+        "virtual_ii": "not tested"
+      }
+    },
+    "scope": "Re-executed the ending suite against the v2 checkpoint builds; original evidence above retains its revision hashes"
+  },
+  "date": "2026-10-20",
+  "editor_artwork": "Preserved as found; source ending art is generated separately",
+  "editor_artwork_sha256": "c557bf50ba8335fd9bcdc127806fc5f538665a2b96bff57188d49ccc1af56d0f",
+  "executed_profiles": {
+    "dhgr": {
+      "archive": {
+        "archive_bytes": 49152,
+        "archive_sha256": "ee123b59aa87b7ebe141056f8cad9328f4489e9cc997c45346e72db9273d3a76",
+        "assets": [
+          {
+            "height": 22,
+            "id": 31,
+            "sha256": "ac79516216bee6e9d056a6efbad6e8ecab71c2970db18bf140f96c296e1693be",
+            "source_start": 32342,
+            "width_bytes": 5
+          },
+          {
+            "height": 15,
+            "id": 29,
+            "sha256": "18426f94aae68f26f2a3d12111f6f7c8b01bf2baba7dd2af4ad6bd06fac34797",
+            "source_start": 32547,
+            "width_bytes": 10
+          },
+          {
+            "height": 19,
+            "id": 30,
+            "sha256": "ccf56897375be8a24fbc70e06039b18c72f6fa8a2dcacba90a81945834ed4e07",
+            "source_start": 32452,
+            "width_bytes": 5
+          },
+          {
+            "height": 31,
+            "id": 40,
+            "sha256": "fc853c4b73e3869dd43d4a9be749ea45f336938ec6e697f78312e54a646fad11",
+            "source_start": 31917,
+            "width_bytes": 5
+          },
+          {
+            "height": 26,
+            "id": 46,
+            "sha256": "585b5829e89d8d6bf21a9137b144f6e073b5f4bc89460aa04eec208a13b21e9c",
+            "source_start": 31410,
+            "width_bytes": 4
+          },
+          {
+            "height": 17,
+            "id": 64,
+            "sha256": "ce1b6b4e669e383da79b87d75657fc901afaab0769359888ed991656fb5e90af",
+            "source_start": 29099,
+            "width_bytes": 2
+          },
+          {
+            "height": 69,
+            "id": 112,
+            "sha256": "26d94a9519a8885c7886db794de976d3ef7bd83139a281ba485edaea70868944",
+            "source_start": 26186,
+            "width_bytes": 7
+          },
+          {
+            "height": 49,
+            "id": 113,
+            "sha256": "80d073eeeb620211fc89283bd0b95a6c055a18577d9daf4e8a06415c425185f7",
+            "source_start": 25892,
+            "width_bytes": 6
+          }
+        ],
+        "conversion": "source rows 0..175 sampled into target 0..159; names/motto at 164, outcome at 176, replay instruction at 184",
+        "death": "9000-9050; sprites 112/113; x positions $5BBE-$5BC2",
+        "disk_sector": 352,
+        "engine_bytes": 1346,
+        "engine_sha256": "8329485b7bd317742b1af0fb7812d16e687eba69f43dad2b7dede4009288ce70",
+        "font": "captured standard HIRES $9800-$9BFF; source CHAR runtime not compared",
+        "overlay_address": "$A000",
+        "palette": "source INK/PAPER mapped to Apple palette; whole color cells",
+        "replay": "O or Return starts a new attempt, retained target convenience; original victory is terminal",
+        "scenes": [
+          {
+            "attempt": null,
+            "kind": "win",
+            "name": "ending-win",
+            "overlay_bytes": 3430,
+            "overlay_sha256": "2d876525c590302b6c031488830f99abe560593f2afe032ca0b193282b13bcf3",
+            "raster_sha256": "9fd88a950066b1d1abe6fe6c9ee719b05555eed731debe288fb95245693312ad",
+            "rle_bytes": 2084,
+            "rle_sha256": "63a7cc23dea73878cd800686bba9b979f80074be2291609369f5e42d446e77d7",
+            "sector": 352
+          },
+          {
+            "attempt": 1,
+            "kind": "dead",
+            "name": "ending-dead-1",
+            "overlay_bytes": 3558,
+            "overlay_sha256": "a06aa9103bba533546dc38eb82c692c18b8c410e40869b9f36f5e6b720902c28",
+            "raster_sha256": "e2098c4a3443eb4a23ad85842bde4d6aa0738881dc4e3d18e8fb5bbb2f7787bf",
+            "rle_bytes": 2212,
+            "rle_sha256": "d1d013720d2c45cdd3e88da08acb63b87867adabed037642cb63aadad21ffa30",
+            "sector": 384
+          },
+          {
+            "attempt": 2,
+            "kind": "dead",
+            "name": "ending-dead-2",
+            "overlay_bytes": 4006,
+            "overlay_sha256": "4f4d9b2e91950e11b2efdff5fe416e026565bddfde11f236142ec3de124e8c3a",
+            "raster_sha256": "5e8f7be5e57a720607795581b8f22f32de2dbc9e2ebc9298006a624a8d7a2c23",
+            "rle_bytes": 2660,
+            "rle_sha256": "3f55c3aeac602a1a09470ba2bef0122c7c0c73169148f1e6b47c493d599cadf8",
+            "sector": 416
+          },
+          {
+            "attempt": 3,
+            "kind": "dead",
+            "name": "ending-dead-3",
+            "overlay_bytes": 4454,
+            "overlay_sha256": "b211bff49a77e0e5ad2b423e46427c52b1ce12e26cc276a6b403fd757603687f",
+            "raster_sha256": "b1290250d7ab59c0e9159e0a45564380b6eabb112853a1060bfe5f88f2ff45e2",
+            "rle_bytes": 3108,
+            "rle_sha256": "8817605116b3020087745897d93f325cce23db020e9320d5e04150e428be9041",
+            "sector": 448
+          },
+          {
+            "attempt": 4,
+            "kind": "dead",
+            "name": "ending-dead-4",
+            "overlay_bytes": 4902,
+            "overlay_sha256": "f3c232185f59b31c9b6ac222c3153d660f5e1a5cf05f9654a5a0d6dc95be246c",
+            "raster_sha256": "02456a1899c4a8004cd0f74fffb580adbb66a44fb4cc3ce9edd31564dbf3b498",
+            "rle_bytes": 3556,
+            "rle_sha256": "12c3f5b7354df2ee7140a3735532dc53921fa725c84ba69bf317ade3838fb4e0",
+            "sector": 480
+          },
+          {
+            "attempt": 5,
+            "kind": "dead",
+            "name": "ending-dead-5",
+            "overlay_bytes": 5350,
+            "overlay_sha256": "f6f6105711eaa73b392d5d0ec6d18c1c49812b8c65790a3ae319f2b050ce2b74",
+            "raster_sha256": "8d8d055bcfe0ffe54a974060141d0d0f3c94b952ad55dc5f3f410bb286fddd4b",
+            "rle_bytes": 4004,
+            "rle_sha256": "70efeaac8ccbc615eb118fe50877d9253f824acdec82b49333f9e48b151c2f85",
+            "sector": 512
+          }
+        ],
+        "slot_sectors": 32,
+        "source_block": "B2",
+        "victory": "3080-3092; $4E2A-$4E90; $5B00-$5B0B",
+        "victory_records": [
+          [
+            31,
+            8,
+            150
+          ],
+          [
+            29,
+            15,
+            157
+          ],
+          [
+            30,
+            27,
+            153
+          ],
+          [
+            40,
+            19,
+            50
+          ],
+          [
+            46,
+            19,
+            81
+          ],
+          [
+            64,
+            18,
+            64
+          ]
+        ]
+      },
+      "death_attempts_tested": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "disk": "build/game/laigle-dor-dhgr-color.do",
+      "disk_sha256": "7c59eb0270349334906ed6a98cbc200b4cd37c6c8f260b011d8c86917586e2cb",
+      "elapsed_seconds": 158.026,
+      "errors": [],
+      "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+      "failures": [],
+      "frame_buffers_tested": 2,
+      "memory": {
+        "aux_worker_template_end_exclusive": "$9FFC",
+        "lowcode_end_exclusive": "$1DF3",
+        "overlay": "MAIN $A000-$BFFF; discarded before room reconstruction",
+        "resident_end_exclusive": "$9FC5",
+        "resident_loader_bytes": 60
+      },
+      "next_attempt_wrap": 1,
+      "nibble_disk": "build/game/laigle-dor-dhgr-color.nib",
+      "nibble_disk_sha256": "1a536f2187ceeec34624e0cc26a65b8a7cff2f0be7b5d41cfa59e46d922f6046",
+      "objective_masks_tested": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "original_oric_runtime": "not tested",
+      "previews": {
+        "ending-death-1.png": {
+          "kind": "executed native 6502 framebuffer; functional raster preview",
+          "path": "build/game/ending-death-1.png",
+          "sha256": "2119286ded345844eede9c88cab112f3f9fcfa4b65b5d19955d9c2d3195def48"
+        },
+        "ending-death-5.png": {
+          "kind": "executed native 6502 framebuffer; functional raster preview",
+          "path": "build/game/ending-death-5.png",
+          "sha256": "9ace4b3fa11545b4e5140930ac00d0806ae60009a7c2df75f642fbfce431851e"
+        },
+        "ending-victory.png": {
+          "kind": "executed native 6502 framebuffer; functional raster preview",
+          "path": "build/game/ending-victory.png",
+          "sha256": "e0a50a5065fa0cd2d18f8382f9c1b21815259701c4b3268bfe3df1732a096abe"
+        }
+      },
+      "program_bytes": 19738,
+      "program_sha256": "78e24ffc62d40a7f19b28547a7de61d1c7f44af86e94e771aa712ae8c9eff65f",
+      "real_hardware": "not tested",
+      "selected_tests": [
+        "test_ending_source_canvas_matches_executed_original_6502_blitter",
+        "test_graphical_victory_requires_all_three_objectives_on_exit_and_caches_both_pages",
+        "test_graphical_death_retains_five_names_then_wraps_and_replays",
+        "test_ending_disk_slots_and_overlay_leave_resident_code_and_aux_assets_intact",
+        "test_partial_departure_keeps_compact_text_layout_and_live_gold",
+        "test_room36_grille_falls_on_both_pages_before_death_and_pauses_with_help",
+        "test_title_lightning_reveal_and_text_transition",
+        "test_debug_map_navigation_pauses_and_returns_to_menu_or_game"
+      ],
+      "success": true,
+      "suite": "endings",
+      "test_report_sha256": "41311186105857b063cf8bde2f68df973b7e38cd0431892a47618d91a51c4059",
+      "tests_run": 8,
+      "video_profile": "dhgr",
+      "virtual_ii": "not tested"
+    },
+    "mono": {
+      "archive": {
+        "archive_bytes": 49152,
+        "archive_sha256": "3e6e8cc9ad0979820cee8d2071ba449d75dc417bc2fabd8e7c8208b036bb3d94",
+        "assets": [
+          {
+            "height": 22,
+            "id": 31,
+            "sha256": "ac79516216bee6e9d056a6efbad6e8ecab71c2970db18bf140f96c296e1693be",
+            "source_start": 32342,
+            "width_bytes": 5
+          },
+          {
+            "height": 15,
+            "id": 29,
+            "sha256": "18426f94aae68f26f2a3d12111f6f7c8b01bf2baba7dd2af4ad6bd06fac34797",
+            "source_start": 32547,
+            "width_bytes": 10
+          },
+          {
+            "height": 19,
+            "id": 30,
+            "sha256": "ccf56897375be8a24fbc70e06039b18c72f6fa8a2dcacba90a81945834ed4e07",
+            "source_start": 32452,
+            "width_bytes": 5
+          },
+          {
+            "height": 31,
+            "id": 40,
+            "sha256": "fc853c4b73e3869dd43d4a9be749ea45f336938ec6e697f78312e54a646fad11",
+            "source_start": 31917,
+            "width_bytes": 5
+          },
+          {
+            "height": 26,
+            "id": 46,
+            "sha256": "585b5829e89d8d6bf21a9137b144f6e073b5f4bc89460aa04eec208a13b21e9c",
+            "source_start": 31410,
+            "width_bytes": 4
+          },
+          {
+            "height": 17,
+            "id": 64,
+            "sha256": "ce1b6b4e669e383da79b87d75657fc901afaab0769359888ed991656fb5e90af",
+            "source_start": 29099,
+            "width_bytes": 2
+          },
+          {
+            "height": 69,
+            "id": 112,
+            "sha256": "26d94a9519a8885c7886db794de976d3ef7bd83139a281ba485edaea70868944",
+            "source_start": 26186,
+            "width_bytes": 7
+          },
+          {
+            "height": 49,
+            "id": 113,
+            "sha256": "80d073eeeb620211fc89283bd0b95a6c055a18577d9daf4e8a06415c425185f7",
+            "source_start": 25892,
+            "width_bytes": 6
+          }
+        ],
+        "conversion": "source rows 0..175 sampled into target 0..159; names/motto at 164, outcome at 176, replay instruction at 184",
+        "death": "9000-9050; sprites 112/113; x positions $5BBE-$5BC2",
+        "disk_sector": 352,
+        "engine_bytes": 1329,
+        "engine_sha256": "3d0b61ab743059b315c9e2cdaa9e1c03d4030bad4dac1aa1b62321b83d924735",
+        "font": "captured standard HIRES $9800-$9BFF; source CHAR runtime not compared",
+        "overlay_address": "$A000",
+        "palette": "monochrome Oric foreground dots",
+        "replay": "O or Return starts a new attempt, retained target convenience; original victory is terminal",
+        "scenes": [
+          {
+            "attempt": null,
+            "kind": "win",
+            "name": "ending-win",
+            "overlay_bytes": 4617,
+            "overlay_sha256": "b4ffcc98dae31baf0a39f49d901c65add0e83eb386da54927ac0b541ec705377",
+            "raster_sha256": "4cd556a18d31faa2093b2c3f29c533dcf5685ffded832a5dc464593004a030bb",
+            "rle_bytes": 3288,
+            "rle_sha256": "9eb0aff35240c80174214c1ba361819fa6f248f7128d92a1051e1abfd539dfb7",
+            "sector": 352
+          },
+          {
+            "attempt": 1,
+            "kind": "dead",
+            "name": "ending-dead-1",
+            "overlay_bytes": 3921,
+            "overlay_sha256": "dd36b89c51dbec14a046384f1c1130655f3b7f1eb98ec6bedc78f8bed89593dc",
+            "raster_sha256": "2a008ab1ad280c6237473ef71c83cc592b2ffb56ee1895d12aa9cceaf8f18595",
+            "rle_bytes": 2592,
+            "rle_sha256": "d022f7e467d6d0eef6d60de782975d4d62c1e47b37d6a5109e2a47906dddfd14",
+            "sector": 384
+          },
+          {
+            "attempt": 2,
+            "kind": "dead",
+            "name": "ending-dead-2",
+            "overlay_bytes": 4541,
+            "overlay_sha256": "9d41d659c917caadee2daf950bdf82bcf60768f5851173e715e9af44c2848ba2",
+            "raster_sha256": "473c3c716d237ccf4371d07252509eec1f0b7c76fe5f499f6831e6b1eada8d9a",
+            "rle_bytes": 3212,
+            "rle_sha256": "e316f2ee0710674399ff5b0f109dfdaf1b30d1e873e5bdd5a8e0fbcb1bede636",
+            "sector": 416
+          },
+          {
+            "attempt": 3,
+            "kind": "dead",
+            "name": "ending-dead-3",
+            "overlay_bytes": 5161,
+            "overlay_sha256": "64635fe1595d60a6dc20f7a672c7d76bbb043723afcfd22d4a40259e34172de1",
+            "raster_sha256": "3ed97b8d9e76c0416ad66c90b39fb35a872820b51a2381a206d85fab72fdda31",
+            "rle_bytes": 3832,
+            "rle_sha256": "847e5fd5fcda609e78561b7b37d8ec9e99224e71b5c2e7485e7326e80d0f5d58",
+            "sector": 448
+          },
+          {
+            "attempt": 4,
+            "kind": "dead",
+            "name": "ending-dead-4",
+            "overlay_bytes": 5781,
+            "overlay_sha256": "414b369e9c7a37c2359d6d7a427862511c14d12146edabbb2f967d2de76f783e",
+            "raster_sha256": "f74c7d8bf351aa1b1871b194cd248693b5681180c2cc025cdb7740966560529f",
+            "rle_bytes": 4452,
+            "rle_sha256": "7f2e63c60046a2a2709b4c04bd40ae2b3a21bd08dcfcdbd48e2d3df00fae698e",
+            "sector": 480
+          },
+          {
+            "attempt": 5,
+            "kind": "dead",
+            "name": "ending-dead-5",
+            "overlay_bytes": 6401,
+            "overlay_sha256": "5738b42813f029324a272cebd20c01a7fb0b6586c2be21de06db5a4218a87210",
+            "raster_sha256": "adc7e9a028cf94292ef16169495d9f8d7de61164e979cf5ac9eba177db89f481",
+            "rle_bytes": 5072,
+            "rle_sha256": "617962bae048e38ef178aa28dd71747749232f5ca4f6a7009aee51cf869031a8",
+            "sector": 512
+          }
+        ],
+        "slot_sectors": 32,
+        "source_block": "B2",
+        "victory": "3080-3092; $4E2A-$4E90; $5B00-$5B0B",
+        "victory_records": [
+          [
+            31,
+            8,
+            150
+          ],
+          [
+            29,
+            15,
+            157
+          ],
+          [
+            30,
+            27,
+            153
+          ],
+          [
+            40,
+            19,
+            50
+          ],
+          [
+            46,
+            19,
+            81
+          ],
+          [
+            64,
+            18,
+            64
+          ]
+        ]
+      },
+      "death_attempts_tested": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "disk": "build/game-mono/laigle-dor-hgr-mono.do",
+      "disk_sha256": "eb4ec402f79f8077e6304a66c93368dd6dc7f38a09695dd1d524dd3baba91546",
+      "elapsed_seconds": 123.927,
+      "errors": [],
+      "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+      "failures": [],
+      "frame_buffers_tested": 2,
+      "memory": {
+        "aux_worker_template_end_exclusive": "$9DF2",
+        "lowcode_end_exclusive": "$1DDC",
+        "overlay": "MAIN $A000-$BFFF; discarded before room reconstruction",
+        "resident_end_exclusive": "$9DBB",
+        "resident_loader_bytes": 60
+      },
+      "next_attempt_wrap": 1,
+      "nibble_disk": "build/game-mono/laigle-dor-hgr-mono.nib",
+      "nibble_disk_sha256": "1b5193fc0abea9780c357cee6fc580d9d4c139b41e4eb810140072ace87a7ecb",
+      "objective_masks_tested": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "original_oric_runtime": "not tested",
+      "previews": {
+        "ending-death-1.png": {
+          "kind": "executed native 6502 framebuffer; functional raster preview",
+          "path": "build/game-mono/ending-death-1.png",
+          "sha256": "cb981013691fedfce25a468fbcdbdb2d99345fe56820999a441f6144e3ed271f"
+        },
+        "ending-death-5.png": {
+          "kind": "executed native 6502 framebuffer; functional raster preview",
+          "path": "build/game-mono/ending-death-5.png",
+          "sha256": "5477e2fc6f3621da06f54bd8f90e28f45ac3639750da2629921821ca99791f25"
+        },
+        "ending-victory.png": {
+          "kind": "executed native 6502 framebuffer; functional raster preview",
+          "path": "build/game-mono/ending-victory.png",
+          "sha256": "f86c3f0b14abe7f0cbdffded628fc04fb5e5d254fe8f88a376a3979bc69ad5dc"
+        }
+      },
+      "program_bytes": 19148,
+      "program_sha256": "42678fba62152ccb42918df65de449ef4b96522c15257b366ebd37e135c2c3fe",
+      "real_hardware": "not tested",
+      "selected_tests": [
+        "test_ending_source_canvas_matches_executed_original_6502_blitter",
+        "test_graphical_victory_requires_all_three_objectives_on_exit_and_caches_both_pages",
+        "test_graphical_death_retains_five_names_then_wraps_and_replays",
+        "test_ending_disk_slots_and_overlay_leave_resident_code_and_aux_assets_intact",
+        "test_partial_departure_keeps_compact_text_layout_and_live_gold",
+        "test_room36_grille_falls_on_both_pages_before_death_and_pauses_with_help",
+        "test_title_lightning_reveal_and_text_transition",
+        "test_debug_map_navigation_pauses_and_returns_to_menu_or_game"
+      ],
+      "success": true,
+      "suite": "endings",
+      "test_report_sha256": "8c03b0e6ee329ccc8866c8a06c1d134f966934ea33babf3e67883158ef08144f",
+      "tests_run": 8,
+      "video_profile": "mono",
+      "virtual_ii": "not tested"
+    }
+  },
+  "execution_scope": "py65 functional NMOS 6502 / real Disk II BOOT0; no system-ROM cold-start; host composition also compared against executed original $4E2A/$3EBD/$3EC6 blitters",
+  "historical_inputs": {
+    "death": "B2 9000-9050; sprites 112/113; name positions $5BBE-$5BC2",
+    "font": "captured standard HIRES $9800-$9BFF",
+    "integrity": "Source TAP and extracted B1/B2 checksum guards passed",
+    "victory": "B2 3000,3080-3092; $4E2A-$4E90; positions $5B00-$5B0B"
+  },
+  "limitations": [
+    "Original Oric HIRES/CHAR/PRINT sequence not executed with its system ROM",
+    "Virtual II and physical Apple hardware not tested for this revision",
+    "Source picture rows 0..175 sampled into 160 target rows; captured names/motto at native height below",
+    "DHGR combines source pixel pairs into whole color cells",
+    "O/Return restart is a retained target convenience; original victory loops forever",
+    "Audio remains event logging"
+  ],
+  "source_oracle_after_attribute_row_correction": "passed separately; raw source white-ink band starts at y=80 per B2 9030; corrected byte location does not change any target raster",
+  "validation_scope": "Source composition analyzed and checked against original blitters; Apple integration tested functionally, without physical/video timing certification",
+  "verification_sources_sha256": {
+    "src/apple/dhgr.s": "b6796e25e9f30650900ace53f75a112dac9b7cd7883e90f4a761d63736011422",
+    "src/apple/ending-overlay.s": "1d8f41ee313e95a1ff5a8aecbb1f790585a1d1204c8733acdb97d0fb3d9a6d87",
+    "src/apple/ending.s": "f64f2cfe04b96bd1860df21e77c9894c64e5b6f79a72b540603902c04aa8acf1",
+    "src/apple/full-display.s": "9e8a4871421be03e2b5d8f82d9419d7de0f80bc186c1a603c1e7b4b721546f97",
+    "src/ending.cfg": "f604c6cc8f00fa1a188d83af64b61268195b0896835e3a37b0e9afd9e3e410b5",
+    "src/full-main.s": "d546ad2c62bd650cbc4831093deb7a2a5f2a8bc1807f337cd5087fc9869e48a4",
+    "src/full-mono.cfg": "3a8c4b9ccdc8ae55662d0203133ab0f2f5eb9aa5581953daf526eb8a2e0704f6",
+    "src/full.cfg": "7ee0e20bbf4f5da6ef1092e48ecde47836332f839e429b7e8fb8709b3fb4619c",
+    "src/game/full-core.s": "1467f770590b17e6b331039c7e720d35d0bf009af194cc771f155a0781b7f6cd",
+    "tests/ending_cases.py": "6a87fe95b9d4fd814bcd940c82c8552e32054881319eeb1c311069e01cddd419",
+    "tests/render_optimization_cases.py": "8b238f9d08cabacfa77cf572b123a136b6cea9c38185d54a638a65120e4a3b60",
+    "tests/room_hazards_cases.py": "7ed0b4d1441f69d8ccd378b97e21966d6f58ba3b44c9e98873695bae80e74d67",
+    "tests/world_port.py": "d1c202badc74523a569804468f8493d490c54bb6112d7e53fc34b381b5257a4c",
+    "tools/build_game.py": "7152b9561790a3a2168c1b4e4ddbacd2f1e73eec1d6369f9ce0d8a83e90261a2",
+    "tools/check_game.py": "f4f646b90bcd2f92cf4e9ed654b38285cb371a095ec145256000420c624aade0",
+    "tools/ending_resources.py": "accda2858b67ad056d28ed4cd7175e861656525408d984bce431158a1b5288ee",
+    "tools/game_resources.py": "5d01d125f052761c4f95863a69134291e023b80dc6d2e7a6e4eea936e087c701",
+    "tools/text_panels.py": "e05483ea7491be3dd60590797c6e2c616d3086386c800dfeb87665e1345f00a5"
+  },
+  "visual_review": "Inspected executed victory and first/fifth memorial previews in both editions, including lowercase name history and full-screen video state"
+}

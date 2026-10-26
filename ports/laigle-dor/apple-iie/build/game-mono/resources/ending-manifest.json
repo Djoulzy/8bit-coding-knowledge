@@ -1,0 +1,174 @@
+{
+  "archive_bytes": 49152,
+  "archive_sha256": "c9946b6508463ae1b7f10653a6558ffb1e9ade3e88333b50e372f5b07be025da",
+  "assets": [
+    {
+      "height": 22,
+      "id": 31,
+      "sha256": "ac79516216bee6e9d056a6efbad6e8ecab71c2970db18bf140f96c296e1693be",
+      "source_start": 32342,
+      "width_bytes": 5
+    },
+    {
+      "height": 15,
+      "id": 29,
+      "sha256": "18426f94aae68f26f2a3d12111f6f7c8b01bf2baba7dd2af4ad6bd06fac34797",
+      "source_start": 32547,
+      "width_bytes": 10
+    },
+    {
+      "height": 19,
+      "id": 30,
+      "sha256": "ccf56897375be8a24fbc70e06039b18c72f6fa8a2dcacba90a81945834ed4e07",
+      "source_start": 32452,
+      "width_bytes": 5
+    },
+    {
+      "height": 31,
+      "id": 40,
+      "sha256": "fc853c4b73e3869dd43d4a9be749ea45f336938ec6e697f78312e54a646fad11",
+      "source_start": 31917,
+      "width_bytes": 5
+    },
+    {
+      "height": 26,
+      "id": 46,
+      "sha256": "585b5829e89d8d6bf21a9137b144f6e073b5f4bc89460aa04eec208a13b21e9c",
+      "source_start": 31410,
+      "width_bytes": 4
+    },
+    {
+      "height": 17,
+      "id": 64,
+      "sha256": "ce1b6b4e669e383da79b87d75657fc901afaab0769359888ed991656fb5e90af",
+      "source_start": 29099,
+      "width_bytes": 2
+    },
+    {
+      "height": 69,
+      "id": 112,
+      "sha256": "26d94a9519a8885c7886db794de976d3ef7bd83139a281ba485edaea70868944",
+      "source_start": 26186,
+      "width_bytes": 7
+    },
+    {
+      "height": 49,
+      "id": 113,
+      "sha256": "80d073eeeb620211fc89283bd0b95a6c055a18577d9daf4e8a06415c425185f7",
+      "source_start": 25892,
+      "width_bytes": 6
+    }
+  ],
+  "conversion": "source rows 0..175 sampled into target 0..159; names/motto at 164, outcome at 176, replay instruction at 184",
+  "death": "9000-9050; sprites 112/113; x positions $5BBE-$5BC2",
+  "disk_sector": 352,
+  "engine_bytes": 1329,
+  "engine_sha256": "b8a813fc4c1dbaad1dc1ef4737baff462a2d982ef2ab9ddb80a11917ab77247b",
+  "font": "captured standard HIRES $9800-$9BFF; source CHAR runtime not compared",
+  "overlay_address": "$A000",
+  "palette": "monochrome Oric foreground dots",
+  "replay": "O or Return starts a new attempt, retained target convenience; original victory is terminal",
+  "scenes": [
+    {
+      "attempt": null,
+      "kind": "win",
+      "name": "ending-win",
+      "overlay_bytes": 4617,
+      "overlay_sha256": "4d4b44aa15b47b2896abab456e61a63b81e70e2751a96404dbc65e8d6f015f8b",
+      "raster_sha256": "4cd556a18d31faa2093b2c3f29c533dcf5685ffded832a5dc464593004a030bb",
+      "rle_bytes": 3288,
+      "rle_sha256": "9eb0aff35240c80174214c1ba361819fa6f248f7128d92a1051e1abfd539dfb7",
+      "sector": 352
+    },
+    {
+      "attempt": 1,
+      "kind": "dead",
+      "name": "ending-dead-1",
+      "overlay_bytes": 3921,
+      "overlay_sha256": "00a9e0abed839ec38ae2c87499e95d1c81e6942982f9f754294046e659de2d92",
+      "raster_sha256": "2a008ab1ad280c6237473ef71c83cc592b2ffb56ee1895d12aa9cceaf8f18595",
+      "rle_bytes": 2592,
+      "rle_sha256": "d022f7e467d6d0eef6d60de782975d4d62c1e47b37d6a5109e2a47906dddfd14",
+      "sector": 384
+    },
+    {
+      "attempt": 2,
+      "kind": "dead",
+      "name": "ending-dead-2",
+      "overlay_bytes": 4541,
+      "overlay_sha256": "2bdb971978b0bcfd9862688eac3b7edf39b4d0aaad6b61e556e3c02981767226",
+      "raster_sha256": "473c3c716d237ccf4371d07252509eec1f0b7c76fe5f499f6831e6b1eada8d9a",
+      "rle_bytes": 3212,
+      "rle_sha256": "e316f2ee0710674399ff5b0f109dfdaf1b30d1e873e5bdd5a8e0fbcb1bede636",
+      "sector": 416
+    },
+    {
+      "attempt": 3,
+      "kind": "dead",
+      "name": "ending-dead-3",
+      "overlay_bytes": 5161,
+      "overlay_sha256": "cee4428bfbd40b45f2e6f7f164fc434adf08d1f9c8f0f1e9974bd95ff1e9e653",
+      "raster_sha256": "3ed97b8d9e76c0416ad66c90b39fb35a872820b51a2381a206d85fab72fdda31",
+      "rle_bytes": 3832,
+      "rle_sha256": "847e5fd5fcda609e78561b7b37d8ec9e99224e71b5c2e7485e7326e80d0f5d58",
+      "sector": 448
+    },
+    {
+      "attempt": 4,
+      "kind": "dead",
+      "name": "ending-dead-4",
+      "overlay_bytes": 5781,
+      "overlay_sha256": "5520512c4df5defa162f69d43059c5212539a8233a7acd5b9ca5dc3f59303094",
+      "raster_sha256": "f74c7d8bf351aa1b1871b194cd248693b5681180c2cc025cdb7740966560529f",
+      "rle_bytes": 4452,
+      "rle_sha256": "7f2e63c60046a2a2709b4c04bd40ae2b3a21bd08dcfcdbd48e2d3df00fae698e",
+      "sector": 480
+    },
+    {
+      "attempt": 5,
+      "kind": "dead",
+      "name": "ending-dead-5",
+      "overlay_bytes": 6401,
+      "overlay_sha256": "4ccbd31769bd2232412360a312fc0cfd8db5835415217c95594937bda0fab87d",
+      "raster_sha256": "adc7e9a028cf94292ef16169495d9f8d7de61164e979cf5ac9eba177db89f481",
+      "rle_bytes": 5072,
+      "rle_sha256": "617962bae048e38ef178aa28dd71747749232f5ca4f6a7009aee51cf869031a8",
+      "sector": 512
+    }
+  ],
+  "slot_sectors": 32,
+  "source_block": "B2",
+  "victory": "3080-3092; $4E2A-$4E90; $5B00-$5B0B",
+  "victory_records": [
+    [
+      31,
+      8,
+      150
+    ],
+    [
+      29,
+      15,
+      157
+    ],
+    [
+      30,
+      27,
+      153
+    ],
+    [
+      40,
+      19,
+      50
+    ],
+    [
+      46,
+      19,
+      81
+    ],
+    [
+      64,
+      18,
+      64
+    ]
+  ]
+}

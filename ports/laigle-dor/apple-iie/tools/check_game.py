@@ -32,6 +32,30 @@ INTERACTION_TESTS = (
     'test_all_64_rooms_use_the_same_constructor_and_grid',
     'test_transition_uses_original_link_and_arrival_bits',
 )
+HAZARD_TESTS = (
+    'test_compact_clue_rows_blank_fullwidth_and_page_carry',
+    'test_room36_grille_falls_on_both_pages_before_death_and_pauses_with_help',
+    'test_jumps_latch_both_grille_sides_and_parities_until_the_fall_finishes',
+    'test_dark_rooms_keep_lit_hud_rows_and_center_only_the_darkness_message',
+    'test_darkness_panel_replaces_merchant_and_defers_graphics_preparation',
+    'test_help_in_darkness_and_during_oubliette_recovery',
+) + FEEDBACK_TESTS
+PIT_TESTS = (
+    'test_boot_preloads_shared_atlas_and_keeps_program_main',
+    'test_alternate_hint_glyphs_render_captured_bytes_on_both_pages',
+    'test_floor_hints_keep_source_anchors_and_ring_hides_only_unopened_hints',
+    'test_room55_and_implicit_variants_show_floor_hints_on_both_buffers',
+    'test_pit_walk_probes_fit_the_drawn_floor_and_never_use_room_portals',
+    'test_pit_horizontal_jumps_require_a_landing_inside_the_floor',
+    'test_room36_marker_and_pit_walk_routes_are_visible_without_wall_escape',
+    'test_room23_trap_recovery_rope_and_return',
+    'test_help_in_darkness_and_during_oubliette_recovery',
+    'test_half_steps_and_continuous_depth_bands',
+    'test_portals_require_approaching_the_visible_door',
+    'test_room36_grille_falls_on_both_pages_before_death_and_pauses_with_help',
+    'test_chest_and_quest_remain_reachable_with_reduced_clearance',
+    'test_pickup_names_real_chest_contents_and_retains_single_award',
+)
 PRESENTATION_TESTS = (
     'test_boot_preloads_shared_atlas_and_keeps_program_main',
     'test_inventory_spaced_layout_live_values_and_modal_return',
@@ -50,10 +74,24 @@ PRESENTATION_TESTS = (
 )
 MAP_TESTS = (
     'test_boot_preloads_shared_atlas_and_keeps_program_main',
+    'test_map_artwork_ignores_locks_and_merges_doors_with_grilles',
+    'test_map_artwork_hides_furniture_and_floor_obstacles_but_keeps_fireplaces',
+    'test_map_artwork_marks_secret_fireplaces_with_a_solid_right_pillar',
     'test_debug_map_all_rooms_initial_content_and_live_position',
+    'test_debug_map_ignores_pit_state_on_all_pages_and_buffers',
     'test_debug_map_navigation_pauses_and_returns_to_menu_or_game',
     'test_inventory_spaced_layout_live_values_and_modal_return',
     'test_help_returns_to_each_modal_page_and_name_input',
+)
+ENDING_TESTS = (
+    'test_ending_source_canvas_matches_executed_original_6502_blitter',
+    'test_graphical_victory_requires_all_three_objectives_on_exit_and_caches_both_pages',
+    'test_graphical_death_retains_five_names_then_wraps_and_replays',
+    'test_ending_disk_slots_and_overlay_leave_resident_code_and_aux_assets_intact',
+    'test_partial_departure_keeps_compact_text_layout_and_live_gold',
+    'test_room36_grille_falls_on_both_pages_before_death_and_pauses_with_help',
+    'test_title_lightning_reveal_and_text_transition',
+    'test_debug_map_navigation_pauses_and_returns_to_menu_or_game',
 )
 CHECKPOINT_TESTS = (
     'test_boot_preloads_shared_atlas_and_keeps_program_main',
@@ -61,6 +99,9 @@ CHECKPOINT_TESTS = (
     'test_checkpoint_save_pauses_help_and_consumes_close_keys',
     'test_checkpoint_entry_errors_editing_cancel_and_help',
     'test_checkpoint_cold_cross_profile_resume_preserves_new_name',
+    'test_checkpoint_rejects_unrepresentable_stocks_without_changing_game_limits',
+    'test_checkpoint_removed_treasures_cannot_award_twice',
+    'test_checkpoint_close_rebuilds_room_and_retains_gate_and_pit_state',
     'test_debug_map_navigation_pauses_and_returns_to_menu_or_game',
     'test_name_exterior_merchant_and_resume',
 )
@@ -86,11 +127,13 @@ def main(mode='dhgr', selection='full'):
     directory=ROOT/('build/game-mono' if mode=='mono' else 'build/game')
     selected={'feedback':FEEDBACK_TESTS,'interactions':INTERACTION_TESTS,
               'presentation':PRESENTATION_TESTS,'map':MAP_TESTS,'checkpoint':CHECKPOINT_TESTS,
-              'geometry':GEOMETRY_TESTS}.get(selection)
+              'geometry':GEOMETRY_TESTS,'hazards':HAZARD_TESTS,'pits':PIT_TESTS,
+              'endings':ENDING_TESTS}.get(selection)
     report={'feedback':'action-feedback-test-results.json','interactions':'interactions-test-results.json',
             'presentation':'presentation-test-results.json','map':'map-test-results.json',
             'checkpoint':'checkpoint-test-results.json',
-            'geometry':'geometry-test-results.json'}.get(selection,'game-test-results.json')
+            'geometry':'geometry-test-results.json','hazards':'hazard-test-results.json',
+            'pits':'pit-test-results.json','endings':'ending-test-results.json'}.get(selection,'game-test-results.json')
     for name in [report] + (['room-verification.json'] if selection=='full' else []):
         (directory/name).unlink(missing_ok=True)
     if selected:
@@ -116,6 +159,6 @@ def main(mode='dhgr', selection='full'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--video',choices=['mono','dhgr'],default='dhgr')
-    parser.add_argument('--suite',choices=['full','feedback','interactions','presentation','map','checkpoint','geometry'],default='full')
+    parser.add_argument('--suite',choices=['full','feedback','interactions','presentation','map','checkpoint','geometry','hazards','pits','endings'],default='full')
     args=parser.parse_args()
     sys.exit(main(args.video,args.suite))

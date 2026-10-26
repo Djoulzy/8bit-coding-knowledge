@@ -16,11 +16,15 @@ COLORS = {1:15, 2:15, 3:15, 4:15, 5:5, 6:5, 7:5, 8:5, 9:15,
           20:5, 21:13, 22:13, 23:8, 24:8, 25:8, 26:8, 27:8, 28:13,
           30:13, 31:6, 32:13, 33:5, 34:11, 35:13, 38:13, 90:8, 93:8}
 
+# B2 652/660/799/1110 use CHAR code,1,1: the alternate HIRES bank.
+# The standard bank at $9800 contains punctuation at these same codes.
+HIRES_ALTERNATE_FONT = 0x9C00
+
 
 class Constructor:
     def __init__(self, source):
         self.source = source
-        self.font = source.read(0x9800, 2048)
+        self.font = source.read(HIRES_ALTERNATE_FONT, 1024)
 
     @lru_cache(None)
     def atlas(self, sid):
@@ -65,7 +69,8 @@ class Constructor:
                             image[y + j][left + k] = color if v else 0
 
         def glyph(code, x, y):
-            operations.append(['captured_glyph', code, x, y, 'B2 CHAR; runtime font unverified'])
+            operations.append(['captured_glyph', code, x, y,
+                               'B2 CHAR code,1,1; alternate HIRES $9C00; captured B2 bytes'])
             for j, bits in enumerate(self.font[code * 8:code * 8 + 8]):
                 for k in range(6):
                     if bits & (32 >> k) and 0 <= x + k < 240 and 0 <= y + j < 200:
@@ -142,7 +147,9 @@ class Constructor:
             elif not ring:
                 r = (m & 63) * 5 // 63
                 positions = {1:(n,176),2:(n+18,170),3:(n+36,176),4:(n+18,184)}
-                if r in positions: cursor[:] = positions[r]
+                # R=0/5 have no explicit CURSET in B2. Target adaptation:
+                # anchor them on the trap floor, not the preceding wall torch.
+                cursor[:] = positions.get(r,(n+18,176))
                 glyph(33+r,*cursor)
         if room.features[1]:
             if room.gate:

@@ -1,0 +1,31 @@
+{
+  "disk_sha256": "4aaab7c193e8482a808913e4a04a1d400e62c9e145cd2d426d2f3807ced6c1f9",
+  "elapsed_seconds": 206.357,
+  "errors": [],
+  "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+  "failures": [],
+  "original_oric_runtime": "not tested",
+  "program_sha256": "3fd63773e590f1a317161828a604d5b6de245e29a2bb7038c3c945e91f10d172",
+  "real_hardware": "not tested",
+  "selected_tests": [
+    "test_boot_preloads_shared_atlas_and_keeps_program_main",
+    "test_alternate_hint_glyphs_render_captured_bytes_on_both_pages",
+    "test_floor_hints_keep_source_anchors_and_ring_hides_only_unopened_hints",
+    "test_room55_and_implicit_variants_show_floor_hints_on_both_buffers",
+    "test_pit_walk_probes_fit_the_drawn_floor_and_never_use_room_portals",
+    "test_pit_horizontal_jumps_require_a_landing_inside_the_floor",
+    "test_room36_marker_and_pit_walk_routes_are_visible_without_wall_escape",
+    "test_room23_trap_recovery_rope_and_return",
+    "test_help_in_darkness_and_during_oubliette_recovery",
+    "test_half_steps_and_continuous_depth_bands",
+    "test_portals_require_approaching_the_visible_door",
+    "test_room36_grille_falls_on_both_pages_before_death_and_pauses_with_help",
+    "test_chest_and_quest_remain_reachable_with_reduced_clearance",
+    "test_pickup_names_real_chest_contents_and_retains_single_award"
+  ],
+  "success": true,
+  "suite": "pits",
+  "tests_run": 14,
+  "video_profile": "dhgr",
+  "virtual_ii": "not tested"
+}

@@ -1,16 +1,14 @@
 Modules list:
 -------------
 game.o:
-    CODE              Offs=000000  Size=002908  Align=00001  Fill=0000
-    RODATA            Offs=000000  Size=001480  Align=00001  Fill=0000
-    LOWCODE           Offs=000000  Size=000A0A  Align=00001  Fill=0000
+    CODE              Offs=000000  Size=002958  Align=00001  Fill=0000
+    RODATA            Offs=000000  Size=00137F  Align=00001  Fill=0000
+    LOWCODE           Offs=000000  Size=000A1C  Align=00001  Fill=0000
     EXTRACODE         Offs=000000  Size=000090  Align=00001  Fill=0000
-    PASSTAIL          Offs=000000  Size=00007C  Align=00001  Fill=0000
-    PASSUI            Offs=000000  Size=0000E9  Align=00001  Fill=0000
-    PASSCODE          Offs=000000  Size=0000C9  Align=00001  Fill=0000
     AUXREAD           Offs=000000  Size=000037  Align=00001  Fill=0000
-    ASSETS            Offs=000000  Size=005ABE  Align=00001  Fill=0000
-    TEXTASSETS        Offs=000000  Size=000AD0  Align=00001  Fill=0000
+    ENDCODE           Offs=000000  Size=00003C  Align=00001  Fill=0000
+    ASSETS            Offs=000000  Size=005AEA  Align=00001  Fill=0000
+    TEXTASSETS        Offs=000000  Size=000A4B  Align=00001  Fill=0000
 
 
 Segment list:
@@ -18,45 +16,33 @@ Segment list:
 Name                   Start     End    Size  Align
 ----------------------------------------------------
 AUXREAD               000040  000076  000037  00001
-PASSCODE              000C30  000CF8  0000C9  00001
 EXTRACODE             000E30  000EBF  000090  00001
-PASSTAIL              000F80  000FFB  00007C  00001
-LOWCODE               0013C0  001DC9  000A0A  00001
-TEXTASSETS            001400  001ECF  000AD0  00001
-PASSUI                001F10  001FF8  0000E9  00001
-ASSETS                006000  00BABD  005ABE  00001
-CODE                  006000  008907  002908  00001
-RODATA                008A00  009E7F  001480  00001
+LOWCODE               0013C0  001DDB  000A1C  00001
+TEXTASSETS            001400  001E4A  000A4B  00001
+ASSETS                006000  00BAE9  005AEA  00001
+CODE                  006000  008957  002958  00001
+RODATA                008A00  009D7E  00137F  00001
+ENDCODE               009D7F  009DBA  00003C  00001
 
 
 Exports list by name:
 ---------------------
-__ASSETS_SIZE__           005ABE REA    __AUXREAD_LOAD__          009E80 RLA    
+__ASSETS_SIZE__           005AEA REA    __AUXREAD_LOAD__          009DBB RLA    
 __AUXREAD_RUN__           000040 RLA    __AUXREAD_SIZE__          000037 REA    
-__EXTRACODE_LOAD__        00A8C1 RLA    __EXTRACODE_RUN__         000E30 RLA    
-__EXTRACODE_SIZE__        000090 REA    __LOWCODE_LOAD__          009EB7 RLA    
-__LOWCODE_RUN__           0013C0 RLA    __LOWCODE_SIZE__          000A0A REA    
-__PASSCODE_LOAD__         00A951 RLA    __PASSCODE_RUN__          000C30 RLA    
-__PASSCODE_SIZE__         0000C9 REA    __PASSTAIL_LOAD__         00AB03 RLA    
-__PASSTAIL_RUN__          000F80 RLA    __PASSTAIL_SIZE__         00007C REA    
-__PASSUI_LOAD__           00AA1A RLA    __PASSUI_RUN__            001F10 RLA    
-__PASSUI_SIZE__           0000E9 REA    __TEXTASSETS_SIZE__       000AD0 REA    
-
+__EXTRACODE_LOAD__        00A80E RLA    __EXTRACODE_RUN__         000E30 RLA    
+__EXTRACODE_SIZE__        000090 REA    __LOWCODE_LOAD__          009DF2 RLA    
+__LOWCODE_RUN__           0013C0 RLA    __LOWCODE_SIZE__          000A1C REA    
+__TEXTASSETS_SIZE__       000A4B REA    
 
 
 Exports list by value:
 ----------------------
 __AUXREAD_SIZE__          000037 REA    __AUXREAD_RUN__           000040 RLA    
-__PASSTAIL_SIZE__         00007C REA    __EXTRACODE_SIZE__        000090 REA    
-__PASSCODE_SIZE__         0000C9 REA    __PASSUI_SIZE__           0000E9 REA    
-__LOWCODE_SIZE__          000A0A REA    __TEXTASSETS_SIZE__       000AD0 REA    
-__PASSCODE_RUN__          000C30 RLA    __EXTRACODE_RUN__         000E30 RLA    
-__PASSTAIL_RUN__          000F80 RLA    __LOWCODE_RUN__           0013C0 RLA    
-__PASSUI_RUN__            001F10 RLA    __ASSETS_SIZE__           005ABE REA    
-__AUXREAD_LOAD__          009E80 RLA    __LOWCODE_LOAD__          009EB7 RLA    
-__EXTRACODE_LOAD__        00A8C1 RLA    __PASSCODE_LOAD__         00A951 RLA    
-__PASSUI_LOAD__           00AA1A RLA    __PASSTAIL_LOAD__         00AB03 RLA    
-
+__EXTRACODE_SIZE__        000090 REA    __LOWCODE_SIZE__          000A1C REA    
+__TEXTASSETS_SIZE__       000A4B REA    __EXTRACODE_RUN__         000E30 RLA    
+__LOWCODE_RUN__           0013C0 RLA    __ASSETS_SIZE__           005AEA REA    
+__AUXREAD_LOAD__          009DBB RLA    __LOWCODE_LOAD__          009DF2 RLA    
+__EXTRACODE_LOAD__        00A80E RLA    
 
 
 Imports list:
@@ -81,24 +67,6 @@ __LOWCODE_RUN__ ([linker generated]):
     game.o                    /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/apple-iie/src/full-main.s(4)
 __LOWCODE_SIZE__ ([linker generated]):
     game.o                    /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/apple-iie/src/full-main.s(4)
-__PASSCODE_LOAD__ ([linker generated]):
-    game.o                    /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/apple-iie/src/full-main.s(6)
-__PASSCODE_RUN__ ([linker generated]):
-    game.o                    /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/apple-iie/src/full-main.s(6)
-__PASSCODE_SIZE__ ([linker generated]):
-    game.o                    /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/apple-iie/src/full-main.s(6)
-__PASSTAIL_LOAD__ ([linker generated]):
-    game.o                    /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/apple-iie/src/full-main.s(8)
-__PASSTAIL_RUN__ ([linker generated]):
-    game.o                    /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/apple-iie/src/full-main.s(8)
-__PASSTAIL_SIZE__ ([linker generated]):
-    game.o                    /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/apple-iie/src/full-main.s(8)
-__PASSUI_LOAD__ ([linker generated]):
-    game.o                    /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/apple-iie/src/full-main.s(7)
-__PASSUI_RUN__ ([linker generated]):
-    game.o                    /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/apple-iie/src/full-main.s(7)
-__PASSUI_SIZE__ ([linker generated]):
-    game.o                    /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/apple-iie/src/full-main.s(7)
 __TEXTASSETS_SIZE__ ([linker generated]):
     game.o                    /Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/apple-iie/src/apple/asset-loader.s(3)
 

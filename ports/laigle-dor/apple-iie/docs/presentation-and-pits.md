@@ -31,6 +31,12 @@ visible without a torch. It uses shared vectors and atlas pieces, with no
 per-pit bitmap. The semantic map blocks 11–13 and 29–31, plus 41–71, following
 line 5's pre-increment and 7046's absolute range.
 
+Walking now uses a separate foot envelope inside the pit's drawn floor;
+ordinary room portals and coarse grid bands do not apply there. Trap and wall
+symbols now use the captured alternate HIRES character bank. See
+[pit markers and collisions](pit-markers-and-collisions.md) for source addresses,
+ring masking, the depth limits, jump guards and focused regression checks.
+
 Source `$2A` patterned side fill becomes a stable Apple gray material. Floor
 lines use a repeating four-on/four-off target pattern; its phase relative to
 Oric ROM DRAW is not runtime verified. Source endpoints are retained.
@@ -46,7 +52,8 @@ now multiplies by five before rounding, fixing an erroneous zero increase.
 ## Full-screen text and live funds
 
 [full-text.s](../src/apple/full-text.s) draws name entry, exterior, merchant,
-inventory, clues and ending panels in **40-column full-screen Apple TEXT**.
+inventory, clues and partial-departure panels in **40-column full-screen Apple TEXT**.
+Death and victory now use the [graphical endings](graphical-endings.md).
 The exterior, merchant, inventory, name entry, introduction and help use positioned text
 scripts rather than four crowded menu rows. Other panels reuse the dynamic HUD
 formatter, deinterleave the four rows into MAIN text, and select the hidden text
@@ -54,6 +61,12 @@ page at the existing fresh vertical blank.
 `full_visibility` restores the selected mixed graphics profile for gameplay:
 160 graphics rows and four bottom text rows, using DHGR/80 columns or
 [HGR monochrome/40 columns](hgr-mono.md), with double buffering in both.
+
+Darkness now uses full-screen TEXT with the **same bottom HUD rows 20–23**
+and the same 40/80-column width as the lit edition. `Il fait noir ici !` is
+centered on row 11; the remaining upper rows are blank. The former centered
+four-row panel and duplicated heading are removed. See
+[darkness layout and falling grilles](grille-traps-and-darkness.md).
 
 The merchant's funds line formats current 16-bit gold every frame. Buying a
 torch changes visible 500 to 310; buying a rope changes it to 200. Prices and
@@ -97,7 +110,7 @@ terrain and frame buffers are retained.
 
 | Allocation | Role |
 | --- | --- |
-| AUX `$1400–$1FFF` | Bounded 3 KiB `TEXTASSETS` allocation; 2,768 used bytes including inventory, checkpoint, end screens and hidden test menus; the map has a graphic footer |
+| AUX `$1400–$1FFF` | Bounded 3 KiB `TEXTASSETS` allocation; 2,635 used bytes including inventory, checkpoint and hidden test menus; the map has a graphic footer |
 | MAIN `$13C0–$1DFF` | LOWCODE including map UI; a physically separate bank |
 | MAIN `$0F2C` | Text-script column scratch |
 | MAIN `$133E/$133F` | Help return mode / closing-tick service suppression |
@@ -229,8 +242,8 @@ remain silent. The merchant retains its explicit funds message:
 7–19 to ten-byte display fields while leaving X/Y intact for room-description
 formatting. IDs 0 and 2–6 have no transient word. Uppercase inverse characters
 use ASCII masked with `$3F`; lowercase stays in `$60–$7F` with ALTCHAR enabled
-at `$C00F`, avoiding MouseText and flashing codes. HGR and darkness TEXT use
-`full_compact_feedback`; DHGR appends `full_wide_feedback` after the compact
+at `$C00F`, avoiding MouseText and flashing codes. HGR uses
+`full_compact_feedback`; DHGR, including darkness TEXT, appends `full_wide_feedback` after the compact
 HUD's MAIN/AUX interleave. Both hidden pages are rebuilt from current state,
 including normal leading spaces, so replacing `Verrouille` with `Vide` leaves
 no stale letters or inversions.
@@ -240,7 +253,9 @@ To fit the additional words without changing memory ownership,
 the two blank description rows rather than storing 80 spaces and nine
 identical menu pointers. [game_resources.py](../tools/game_resources.py)
 stores the identical fourth clue row once, after the four three-row clue
-bodies. Clue wording and the four-row reading layout are unchanged.
+bodies. These fallback rows are now NUL-terminated and padded by the formatter
+to free resident space for the visible grille sequence. Clue wording and the
+four-row reading layout are unchanged.
 
 Rebuild both disks and execute the focused native CPU regressions:
 
@@ -383,5 +398,6 @@ separate VM if the original image is already mounted elsewhere.
 scopes. The 2026-10-18 HUD revision was executed in the functional CPU harness;
 Virtual II observations refer to the earlier program hashes recorded there.
 The pit sequence was tested in the functional CPU harness; no complete
-playthrough to room 23 in Virtual II is claimed. Audio, original ending
-presentation and entire-game replay remain open.
+playthrough to room 23 in Virtual II is claimed. The original death/victory
+artwork is now integrated and checked separately in the functional harness;
+audio, Virtual II ending checks and an entire-game playthrough remain open.

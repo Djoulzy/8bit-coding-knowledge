@@ -1,22 +1,26 @@
 {
-  "disk_sha256": "9a8553d0f52b879b18eefcf3ddd10b27d73e0b28c6619f5be35c386fc3f7ec38",
-  "elapsed_seconds": 53.51,
+  "disk_sha256": "64ac2312e105f19d898224c1422a8205b16feaa4bc04048bc63b0f86bbe29a11",
+  "elapsed_seconds": 55.98,
   "errors": [],
   "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
   "failures": [],
   "original_oric_runtime": "not tested",
-  "program_sha256": "1b686e7c22f6fa003bd98d1c5bd13dfd4e45bdf6688e67df4b085cd6399132d5",
+  "program_sha256": "edb21f1521c5e1bb7013e59cf6ca8c8f429bff36cf506662cfaad5adeecde3cb",
   "real_hardware": "not tested",
   "selected_tests": [
     "test_boot_preloads_shared_atlas_and_keeps_program_main",
+    "test_map_artwork_ignores_locks_and_merges_doors_with_grilles",
+    "test_map_artwork_hides_furniture_and_floor_obstacles_but_keeps_fireplaces",
+    "test_map_artwork_marks_secret_fireplaces_with_a_solid_right_pillar",
     "test_debug_map_all_rooms_initial_content_and_live_position",
+    "test_debug_map_ignores_pit_state_on_all_pages_and_buffers",
     "test_debug_map_navigation_pauses_and_returns_to_menu_or_game",
     "test_inventory_spaced_layout_live_values_and_modal_return",
     "test_help_returns_to_each_modal_page_and_name_input"
   ],
   "success": true,
   "suite": "map",
-  "tests_run": 5,
+  "tests_run": 9,
   "video_profile": "dhgr",
   "virtual_ii": "not tested"
 }

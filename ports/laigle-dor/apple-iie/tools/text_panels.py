@@ -89,24 +89,24 @@ def export_panels(source, dest):
           (15, 3, 'Retour arriere: corriger'),
           center(23, 'Echap / Ctrl+D: retour au jeu')])
     panel('code_save', [center(2,'Code de reprise'),
-          center(5,'Piece et inventaire uniquement'),
-          center(7,'Notez les 18 caracteres ci-dessous :'),
-          (9,10,'______-______-______'),
+          center(5,'Piece, inventaire, or, points, force'),
+          center(7,'Notez les 24 caracteres ci-dessous :'),
+          (9,6,'______-______-______-______'),
           center(12,'Le nom sera saisi au prochain depart.'),
-          center(15,'Or, force et salles ne sont pas sauves.'),
+          center(15,'Usure, portes et pieges reinitialises.'),
+          center(17,'Provisions : 0 a 7 de chaque sorte.'),
           center(20,'Espace / Entree / Echap : retour'), center(23,'H / ? : aide')])
     panel('code_load', [center(2,'Reprendre une aventure'),
-          center(5,'Saisissez les 18 caracteres du code.'),
-          (9,10,'______-______-______'),
+          center(5,'Saisissez les 24 caracteres du code.'),
+          (9,6,'______-______-______-______'),
           center(12,'Le nom saisi au debut sera conserve.'),
-          center(15,'Or, force et salles : nouvelle partie.'),
+          center(15,'Reprise debout et les mains vides.'),
+          center(16,'Usure, portes et pieges reinitialises.'),
           center(18,'Entree : reprendre'), center(19,'Retour arriere : effacer'),
           center(22,'Echap: annuler   H / ?: aide')])
-    # Preserve the existing compact end-screen layout, using the shared AUX
-    # text engine instead of 480 padded MAIN bytes.
+    # Partial departure remains TEXT, as in B2 3030-3070. Death and victory
+    # use the source-backed graphical ending overlays instead of modal text.
     for name, first, second in [
-            ('dead', 'Vous avez perdu', 'Votre aventure est terminee'),
-            ('win', 'Vous avez reuni les trois objectifs', 'Victoire'),
             ('depart', 'Fin du voyage', 'Vous quittez le chateau')]:
         panel(name, [(4,0,"L'Aigle d'Or             Or:00000"), (8,0,first), (9,0,second),
                      (10,0,'O ou Entree: nouvel essai')])
@@ -123,7 +123,7 @@ def export_panels(source, dest):
               'source_b1_lines':sorted(b1), 'source_b2_lines':sorted(b2),
               'adaptations':'source letter case retained, whitespace/reflow, 24 rows; Apple help keys/T command; spaced two-column inventory and hidden development menu are new target text'}
     write_json(dest/'text-panels.json', report)
-    names = [None, 'exterior', 'merchant', 'inventory', None, 'dead', 'win', 'depart', 'name', None, 'help', 'intro', 'debug', None, None, None, 'code_save', 'code_load']
+    names = [None, 'exterior', 'merchant', 'inventory', None, None, None, 'depart', 'name', None, 'help', 'intro', 'debug', None, None, None, 'code_save', 'code_load']
     lines = ['.segment "TEXTASSETS"', 'text_assets: .incbin "text-panels.bin"', '.segment "RODATA"']
     for part in ['lo', 'hi']:
         lines += ['text_panel_%s: .byte ' % part + ','.join(

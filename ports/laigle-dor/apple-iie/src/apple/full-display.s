@@ -266,6 +266,10 @@ full_visibility:
     beq @play
     cmp #MODE_TITLE
     beq @title
+    cmp #MODE_DEAD
+    beq @title
+    cmp #MODE_WIN
+    beq @title
 @text:
     sta $C00C
     bit $C052
@@ -281,7 +285,9 @@ full_visibility:
     rts
 @play:
     jsr full_is_dark
-    bcs @text
+    bcc @done
+    bit $C052
+    bit $C051              ; retain the same 40/80 columns as the mixed HUD
 @done:
     rts
 
@@ -298,6 +304,8 @@ full_is_dark:
     bne @visible
     lda action_kind
     cmp #3
+    beq @visible
+    cmp #ACTION_GATE
     beq @visible
     sec
     rts
@@ -390,6 +398,7 @@ full_hud_address:
     sta dst_ptr+1
     rts
 .segment "CODE"
+.export full_hud_clue_row, menu_ptr
 ; The first two gameplay rows are blank, not stored copies of 80 spaces.
 ; Reading copies three clue rows and the shared fourth-row instruction.
 full_hud_template:
@@ -417,12 +426,14 @@ full_hud_template:
     bne @ordinary
     lda hud_row
     cmp #3
-    bne @char
+    bne @clue
     lda #<full_clue_footer
     sta menu_ptr
     lda #>full_clue_footer
     sta menu_ptr+1
-    bne @char              ; resident RODATA is above zero page
+@clue:
+    jsr full_hud_clue_row
+    jmp @next
 @ordinary:
     lda hud_row
     cmp #2
@@ -452,6 +463,33 @@ full_hud_template:
     lda hud_row
     cmp #4
     bne @row
+    rts
+
+; One NUL-terminated clue row, then blank padding to column 40. Advance by
+; consumed bytes, not the padded display width (including a completely blank row).
+full_hud_clue_row:
+    lda (menu_ptr),y
+    beq @pad
+    ora #$80
+    sta (dst_ptr),y
+    iny
+    bne full_hud_clue_row
+@pad:
+    tya
+    sec
+    adc menu_ptr
+    sta menu_ptr
+    bcc :+
+    inc menu_ptr+1
+:
+    lda #$A0
+@blank:
+    cpy #40
+    beq @done
+    sta (dst_ptr),y
+    iny
+    bne @blank
+@done:
     rts
 
 full_decimal5:

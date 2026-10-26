@@ -12,7 +12,9 @@
 .export pit_wait,pit_room,pit_x,title_tick,title_stage,title_pages_ready
 .export chest_open
 .export terrain_pending
+.export gate_side, gate_jump
 .export enemy_phase, reading_page, player_name, name_count
+.export session_attempt
 
 full_reset:
     jsr clock_reset
@@ -33,6 +35,8 @@ full_reset:
     sta debug_input
     sta debug_count
     sta debug_status
+    sta map_cached
+    sta map_cached+1
     ldx #63
 @lamps:
     sta lamp_history,x
@@ -1081,12 +1085,19 @@ full_start_jump:
     cmp #24
     jcs full_denied
 @ready:
+    lda in_pit
+    beq :+
+    jsr full_pit_jump_guard
+    lda blocked
+    jne full_denied
+:
     lda held_item
     sta saved_item
     lda #0
     sta held_item
     sta walking
     sta action_phase
+    sta gate_jump
     lda #3
     sta action_kind
     rts
@@ -1117,6 +1128,8 @@ full_start_climb:
 
 full_action_tick:
     lda action_kind
+    cmp #ACTION_GATE
+    jeq full_gate_tick
     cmp #1
     beq @drink
     cmp #2
@@ -1212,17 +1225,12 @@ full_action_tick:
     bne @left_jump
     inc actor_x
     inc actor_x
-    jmp :+
+    jmp @crossing
 @left_jump:
     dec actor_x
     dec actor_x
-:
-    lda gate_side
-    beq :+
-    cmp actor_x
-    bne :+
-    lda #1
-    sta gate_jump
+@crossing:
+    jsr full_gate_crossing
 :
     inc action_phase
     lda action_phase
@@ -1387,6 +1395,9 @@ full_clock:
 :
     lda game_mode
     jne @done
+    lda action_kind
+    cmp #ACTION_GATE
+    jeq @done               ; freeze wear, hazards and enemies during the fall
     lda clock_vbls
     cmp #18
     bcc @environment
@@ -1421,24 +1432,16 @@ full_clock:
 @environment:
     lda gate_side
     beq @pit
+    lda gate_jump
+    bne @gate
+    lda gate_side
     cmp actor_x
     bne @pit
+@gate:
     lda action_kind
     cmp #3
     beq @pit
-    lda current_room
-    asl a
-    asl a
-    tax
-    lda WORLD+$100,x
-    ora #$80
-    sta WORLD+$100,x
-    lda #1
-    sta room_dirty
-    lda gate_jump
-    beq @dead
-    lda #0
-    sta gate_side
+    jmp full_gate_start
 @pit:
     lda in_pit
     bne @services
@@ -1456,15 +1459,7 @@ full_clock:
 @done:
     rts
 @dead:
-    lda #MODE_DEAD
-    sta game_mode
-    lda #0
-    sta walking
-    sta enemy_kind
-    sta hazard_active
-    sta action_kind
-    lda #EVENT_END
-    jmp log_event
+    jmp full_death
 
 full_fall:
     lda current_room

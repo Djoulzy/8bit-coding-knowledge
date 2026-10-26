@@ -1,6 +1,6 @@
 {
   "file": "/Users/jules/Projets/8Bits/8bit-coding-knowledge/ports/laigle-dor/apple-iie/resources/artwork.json",
-  "sha256": "60f557d93b59c041490c6dc03f4e3e6e17e17f9e098dd4ef7762d2c9606ba52d",
+  "sha256": "c557bf50ba8335fd9bcdc127806fc5f538665a2b96bff57188d49ccc1af56d0f",
   "applied": [
     "laigle/game/mono/atlas/48",
     "laigle/game/mono/atlas/47",
@@ -82,7 +82,29 @@
     "laigle/game/mono/atlas/62",
     "laigle/game/mono/atlas/63",
     "laigle/game/mono/title",
-    "laigle/game/mono/title-flash"
+    "laigle/game/mono/title-flash",
+    "laigle/game/mono/atlas/17",
+    "laigle/game/mono/atlas/18",
+    "laigle/game/mono/atlas/20",
+    "laigle/game/mono/atlas/21",
+    "laigle/game/mono/atlas/22",
+    "laigle/game/mono/atlas/23",
+    "laigle/game/mono/atlas/24",
+    "laigle/game/mono/atlas/25",
+    "laigle/game/mono/atlas/26",
+    "laigle/game/mono/atlas/27",
+    "laigle/game/mono/atlas/33",
+    "laigle/game/mono/atlas/35",
+    "laigle/game/mono/atlas/36",
+    "laigle/game/mono/atlas/37",
+    "laigle/game/mono/atlas/38",
+    "laigle/game/mono/atlas/100",
+    "laigle/game/mono/atlas/101",
+    "laigle/game/mono/atlas/102",
+    "laigle/game/mono/atlas/103",
+    "laigle/game/mono/atlas/167",
+    "laigle/game/mono/atlas/168",
+    "laigle/game/mono/atlas/169"
   ],
   "unused": [
     "laigle/prototype/mono/sprite/48",
@@ -98,6 +120,7 @@
     "laigle/game/dhgr/atlas/47",
     "laigle/game/dhgr/atlas/48",
     "laigle/game/dhgr/atlas/49",
-    "laigle/game/dhgr/atlas/50"
+    "laigle/game/dhgr/atlas/50",
+    "laigle/prototype/mono/sprite/40"
   ]
 }

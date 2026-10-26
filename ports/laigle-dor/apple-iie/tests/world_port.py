@@ -14,9 +14,13 @@ from tests.checkpoint_cases import CheckpointTests
 from tests.render_optimization_cases import RenderOptimizationTests
 from tests.interaction_geometry_cases import InteractionGeometryTests
 from tests.action_feedback_cases import ActionFeedbackTests, OUTCOME_WORDS
+from tests.room_hazards_cases import RoomHazardTests
+from tests.pit_geometry_cases import PitGeometryTests
+from tests.map_artwork_cases import MapArtworkTests
+from tests.ending_cases import EndingTests
 
 
-class NativeWorldTests(CheckpointTests, RenderOptimizationTests, InteractionGeometryTests, ActionFeedbackTests, unittest.TestCase):
+class NativeWorldTests(CheckpointTests, RenderOptimizationTests, InteractionGeometryTests, ActionFeedbackTests, RoomHazardTests, PitGeometryTests, MapArtworkTests, EndingTests, unittest.TestCase):
     video = 'dhgr'
     directory = ROOT/'build/game'
 
@@ -357,7 +361,7 @@ class NativeWorldTests(CheckpointTests, RenderOptimizationTests, InteractionGeom
                 def rows():
                     text=[self.decode_text(row[:40])
                           for row in self.m.text_rows(all_rows=True)]
-                    return text[8:12] if self.m.bus.switches['TEXT'] else text[20:24]
+                    return text[20:24]
                 description=rows()[:2]
                 self.m.frame(ord('G')) # no rope: also refused inside an oubliette
                 for _ in range(2):
@@ -366,7 +370,7 @@ class NativeWorldTests(CheckpointTests, RenderOptimizationTests, InteractionGeom
                               [description[0][:30]+'Impossible',description[1]])
                     if self.m.bus.switches['80COL']:expected=description
                     self.assertEqual(rows()[:2],expected)
-                    raw=self.m.text_rows(all_rows=True)[8 if self.m.bus.switches['TEXT'] else 20]
+                    raw=self.m.text_rows(all_rows=True)[20]
                     self.assertEqual(raw[-10:],b'\x09mpossible')
                     self.assertIn('Force:',rows()[2]);self.assertIn("Pieces d'or:",rows()[3])
                     self.m.frame()
@@ -499,10 +503,9 @@ class NativeWorldTests(CheckpointTests, RenderOptimizationTests, InteractionGeom
                     '1100011','1111111','0111110','0011100']
             for j,row in enumerate(smiley):
                 for i,value in enumerate(row):
-                    if value=='1':
-                        xx=x+21+i;main[row_offset(y+2+j)+xx//7]|=1<<(xx%7)
-        pit=self.m.bus.ram[self.m.symbols['in_pit']]
-        for col,ch in [(14,str(number//10)),(15,str(number%10)),(35,'X' if pit else '-')]:
+                    xx=x+21+i;offset=row_offset(y+2+j)+xx//7;bit=1<<(xx%7)
+                    main[offset]=(main[offset]|bit) if value=='1' else (main[offset]&~bit)
+        for col,ch in [(14,str(number//10)),(15,str(number%10))]:
             for j,bits in enumerate(glyph(ch)):
                 main[row_offset(164+j)+col]=sum(1<<i for i in range(5) if bits&(16>>i))
         return bytes(main)
@@ -544,8 +547,9 @@ class NativeWorldTests(CheckpointTests, RenderOptimizationTests, InteractionGeom
             self.assertEqual((c['x']+21)%7,0)
             raster=(self.directory/('resources/map-%d.bin'%c['page'])).read_bytes()
             for y in range(c['y']+2,c['y']+11):
-                self.assertEqual(raster[row_offset(y)+(c['x']+21)//7],0,
+                self.assertEqual(raster[row_offset(y)+(c['x']+21)//7],0 if c['dark'] else 127,
                                  'smiley must not obscure numbers, contents or doorways')
+            self.assertIn(c['furnishing'],(None,'fireplace'))
         aux_frames=bytes(self.m.bus.aux[0x2000:0x6000])
         # All pages use full-screen MAIN HGR, even in the DHGR game edition.
         self.m.frame(ord('3'))
@@ -580,6 +584,26 @@ class NativeWorldTests(CheckpointTests, RenderOptimizationTests, InteractionGeom
         self.assertEqual(bytes(self.m.bus.ram[0x1000:0x1200]),world)
         self.assertFalse(self.m.bus.visible_write_violations)
         self.assertFalse(self.m.bus.visible_text_write_violations)
+
+    def test_debug_map_ignores_pit_state_on_all_pages_and_buffers(self):
+        self.set('current_room',23)
+        for page in range(3):
+            self.set('game_mode',13+page)
+            data=(self.directory/('resources/map-%d.bin'%page)).read_bytes()
+            expected=self.map_expected(page,23)
+            for pit in (0,1):
+                self.set('in_pit',pit)
+                for _ in range(2):
+                    hidden=self.m.state()['display_page_hi']^0x60
+                    self.set('draw_page_hi',hidden);self.set('render_page_index',int(hidden==0x40))
+                    self.m.bus.ram[hidden*256:hidden*256+8192]=data
+                    self.call('full_map_mark');self.call('present_frame')
+                    self.assertEqual(self.m.displayed_page(),expected,(page,pit,hidden))
+                    self.assertEqual(self.m.state()['in_pit'],pit,'map preserves game state')
+            # The former pit-label and dynamic-status area is entirely blank.
+            for y in range(164,171):
+                self.assertFalse(any(data[row_offset(y)+26:row_offset(y)+40]))
+        self.assertFalse(self.m.bus.visible_write_violations)
 
     def test_debug_map_navigation_pauses_and_returns_to_menu_or_game(self):
         self.m.frame(13);self.m.frame(ord('1'));self.m.frame()
@@ -1145,7 +1169,7 @@ class NativeWorldTests(CheckpointTests, RenderOptimizationTests, InteractionGeom
         old=self.m.displayed_page()
         self.call('draw_scene');self.assertEqual(self.m.displayed_page(),old)
         self.call('present_frame')
-        self.assertEqual((self.m.bus.switches['TEXT'],self.m.bus.switches['80COL'],self.m.bus.switches['MIXED']),(1,0,0))
+        self.assertEqual((self.m.bus.switches['TEXT'],self.m.bus.switches['80COL'],self.m.bus.switches['MIXED']),(1,int(self.video=='dhgr'),0))
         text=''.join(bytes(v&127 for v in row).decode('ascii') for row in self.m.text_rows(all_rows=True))
         self.assertIn('Il fait noir ici !',text)
         self.assertNotIn('marchand',text)

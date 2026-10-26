@@ -349,10 +349,6 @@ scene_furnishing:
     rts
 
 scene_floor:
-    lda scene_x
-    sta floor_cursor
-    lda scene_y
-    sta floor_cursor+1
     lda room_features
     and #1
     jeq @done
@@ -429,27 +425,14 @@ scene_floor:
     clc
     adc #161
     sta scene_id
-    cpx #1
-    bcc @implicit
-    cpx #5
-    bcs @implicit
+    ; B2 explicitly positions R=1..4 only. Give R=0/5 a floor anchor too:
+    ; retaining the preceding cursor placed room 55's hint in the wall torch.
     lda scene_x
     clc
     adc floor_dx,x
     sta scene_x
     lda floor_y,x
     sta scene_y
-@implicit:
-    cpx #1
-    bcc @restore_cursor
-    cpx #5
-    bcc :+
-@restore_cursor:
-    lda floor_cursor
-    sta scene_x
-    lda floor_cursor+1
-    sta scene_y
-:
     jmp scene_glyph
 @done:
     rts
@@ -457,9 +440,15 @@ scene_floor:
 scene_gate:
     lda room_features
     and #2
-    jeq @other
+    jeq scene_gate_other
     lda room_gate
-    jeq @wire
+    jeq scene_gate_wire
+    lda action_kind
+    cmp #ACTION_GATE
+    jeq scene_gate_wire    ; active fall belongs to the foreground, not baseline
+    jsr scene_gate_bars
+    jmp scene_gate_other
+scene_gate_bars:
     lda #17
     ldx #68
     ldy #10
@@ -473,6 +462,7 @@ scene_gate:
     jsr scene_place
 :
     lda #7
+    jsr scene_gate_rows
     sta scene_count
 @bars:
     lda #1
@@ -485,6 +475,7 @@ scene_gate:
     dec scene_count
     bne @bars
     lda #8
+    jsr scene_gate_rows
     sta scene_count
     lda #0
     sta scene_y
@@ -514,18 +505,18 @@ scene_gate:
     bcc :+
     grid3 28,128
     grid3 68,128
-    jmp @other
+    rts
 :
     grid3 12,128
     grid3 52,128
-    jmp @other
-@wire:
+    rts
+scene_gate_wire:
     lda room_fields+3
     cmp #2
-    bcs @other
+    bcs scene_gate_other
     lda possessions
     and #4
-    bne @other
+    bne scene_gate_other
     lda room_variation
     cmp #201
     bcc @left_wire
@@ -540,7 +531,7 @@ scene_gate:
 @wire_program:
     sta scene_program+1
     jsr scene_program_run
-@other:
+scene_gate_other:
     lda room_features
     and #4
     beq @done
@@ -885,16 +876,15 @@ scene_point:
     sta line_pattern
     rts
 .segment "RODATA"
-floor_dx: .byte 0,0,18,36,18
-floor_y: .byte 0,176,170,176,184
+; R=0/5 are explicit Apple floor-placement adaptations; R=1..4 match B2.
+floor_dx: .byte 18,0,18,36,18,18
+floor_y: .byte 176,176,170,176,184,176
 treasure_ids: .byte 0,35,32,33,33,34,38,30
 treasure_x: .byte 0,36,42,30,30,36,36,42
 treasure_y: .byte 0,153,153,153,153,143,153,140
 .segment "CODE"
 wire_right: .byte 1,164,40,164,110,1,162,80,162,130,0
 wire_left: .byte 1,95,133,88,148,1,88,148,81,163,1,81,163,74,178,1,74,178,67,193,0
-
-floor_cursor = $0F24
 
 ; B2 7030-7048/6910: dedicated oubliette, not a numbered room template.
 scene_pit:

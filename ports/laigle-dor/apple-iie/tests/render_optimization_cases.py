@@ -6,10 +6,8 @@ from tools.resources import sprite
 
 
 class RenderOptimizationTests:
-    def test_end_panels_keep_compact_layout_and_live_gold(self):
+    def test_partial_departure_keeps_compact_text_layout_and_live_gold(self):
         for mode, first, second in [
-                (5,'Vous avez perdu','Votre aventure est terminee'),
-                (6,'Vous avez reuni les trois objectifs','Victoire'),
                 (7,'Fin du voyage','Vous quittez le chateau')]:
             self.set('game_mode',mode);self.word('gold',12345)
             self.m.frame()

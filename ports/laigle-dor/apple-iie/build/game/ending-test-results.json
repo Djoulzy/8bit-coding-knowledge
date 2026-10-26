@@ -1,0 +1,25 @@
+{
+  "disk_sha256": "9d7d660de1e254ea7d085d4d4b0a2230c8e7466615dc3e3b99eb219ac21e27db",
+  "elapsed_seconds": 157.182,
+  "errors": [],
+  "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+  "failures": [],
+  "original_oric_runtime": "not tested",
+  "program_sha256": "c4c9abffb29ab2c2ea622ca6803dde401face080c1e8b28cdf158943a76fc315",
+  "real_hardware": "not tested",
+  "selected_tests": [
+    "test_ending_source_canvas_matches_executed_original_6502_blitter",
+    "test_graphical_victory_requires_all_three_objectives_on_exit_and_caches_both_pages",
+    "test_graphical_death_retains_five_names_then_wraps_and_replays",
+    "test_ending_disk_slots_and_overlay_leave_resident_code_and_aux_assets_intact",
+    "test_partial_departure_keeps_compact_text_layout_and_live_gold",
+    "test_room36_grille_falls_on_both_pages_before_death_and_pauses_with_help",
+    "test_title_lightning_reveal_and_text_transition",
+    "test_debug_map_navigation_pauses_and_returns_to_menu_or_game"
+  ],
+  "success": true,
+  "suite": "endings",
+  "tests_run": 8,
+  "video_profile": "dhgr",
+  "virtual_ii": "not tested"
+}

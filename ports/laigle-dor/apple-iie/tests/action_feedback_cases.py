@@ -22,7 +22,7 @@ class ActionFeedbackTests:
 
     def outcome_rows(self):
         rows = self.m.text_rows(all_rows=True)
-        start = 8 if self.m.bus.switches['TEXT'] else 20
+        start = 20
         return rows[start:start + 4]
 
     def test_chest_feedback_distinguishes_range_closed_empty_and_already_open(self):

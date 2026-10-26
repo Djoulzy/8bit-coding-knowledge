@@ -1,0 +1,13 @@
+{
+  "deterministic_rebuild": true,
+  "outputs": {
+    "build/game/game.bin": "c4c9abffb29ab2c2ea622ca6803dde401face080c1e8b28cdf158943a76fc315",
+    "build/game/checkpoint.bin": "dd9ee6a55d875fab7e215f06df59824d47461c1fc66e853f157ba5effa76b553",
+    "build/game/laigle-dor.do": "9d7d660de1e254ea7d085d4d4b0a2230c8e7466615dc3e3b99eb219ac21e27db",
+    "build/game/laigle-dor.nib": "e3676fde5088b12f2ced3a90cf056ed8b53adc10bc0c118693182cc6d05532b4",
+    "build/game-mono/game.bin": "27260dce66ac3bdfbf77ccf0f3e7016e7fde21fb4e18ab20b7d671816d9aa708",
+    "build/game-mono/checkpoint.bin": "f1ed42f98100eb9283851fc4af9dd3ed15dc91ae2781a9287b8d26ece096c5d0",
+    "build/game-mono/laigle-dor.do": "81218cd353c67cbf96ba3506c405aed73eedeed4ebfaf831f848fb9800d95741",
+    "build/game-mono/laigle-dor.nib": "d9f774486c7dbbbf3edf42c8f3084bb485e02248de8ef1a2c7422d3a65593cae"
+  }
+}
