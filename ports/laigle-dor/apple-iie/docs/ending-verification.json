@@ -572,6 +572,98 @@
     "O/Return restart is a retained target convenience; original victory loops forever",
     "Audio remains event logging"
   ],
+  "monochrome_death_scenery_revision": {
+    "color_build_files_unchanged": true,
+    "date": "2026-10-27",
+    "disk_images": {
+      "laigle-dor-hgr-mono.do": "8f4867f8d41eaadd358b8ca21c15a1788fa9b88f12c584fa57e7b74721c5f3a5",
+      "laigle-dor-hgr-mono.nib": "b816e4d83f71e614a02213d9dfb09a8a0f4f77751f06bb9eef5e479d625bf7ad"
+    },
+    "editor_artwork_sha256": "c557bf50ba8335fd9bcdc127806fc5f538665a2b96bff57188d49ccc1af56d0f",
+    "historical_inputs_preserved": true,
+    "host_asset_comparison": [
+      {
+        "after_sha256": "02932ea88736cd299c627d09d24ff1caff919a36c4133ddc94e7cec1690c165e",
+        "attempt": 1,
+        "before_sha256": "2a008ab1ad280c6237473ef71c83cc592b2ffb56ee1895d12aa9cceaf8f18595",
+        "inverted_pixels": 17280,
+        "lower_rows_72_191_identical": true,
+        "margins_and_address_holes_identical": true
+      },
+      {
+        "after_sha256": "422ecb537246fca7758e493233227fd8cde12d1be93278a3e3305810d5eb0328",
+        "attempt": 2,
+        "before_sha256": "473c3c716d237ccf4371d07252509eec1f0b7c76fe5f499f6831e6b1eada8d9a",
+        "inverted_pixels": 17280,
+        "lower_rows_72_191_identical": true,
+        "margins_and_address_holes_identical": true
+      },
+      {
+        "after_sha256": "fc121613da040b7af55ad444af74a162cca7ec8a3a4f616b810cbf3f55272c75",
+        "attempt": 3,
+        "before_sha256": "3ed97b8d9e76c0416ad66c90b39fb35a872820b51a2381a206d85fab72fdda31",
+        "inverted_pixels": 17280,
+        "lower_rows_72_191_identical": true,
+        "margins_and_address_holes_identical": true
+      },
+      {
+        "after_sha256": "e0b4de58e2e861cedafd94a0105f2eb9a6ec3d15a31c8208afa0fc9045fc237b",
+        "attempt": 4,
+        "before_sha256": "f74c7d8bf351aa1b1871b194cd248693b5681180c2cc025cdb7740966560529f",
+        "inverted_pixels": 17280,
+        "lower_rows_72_191_identical": true,
+        "margins_and_address_holes_identical": true
+      },
+      {
+        "after_sha256": "68403443ced137983a60f61e15758581f2b6b11d00593849a0ab8730981b6bed",
+        "attempt": 5,
+        "before_sha256": "adc7e9a028cf94292ef16169495d9f8d7de61164e979cf5ac9eba177db89f481",
+        "inverted_pixels": 17280,
+        "lower_rows_72_191_identical": true,
+        "margins_and_address_holes_identical": true
+      }
+    ],
+    "intro_identical": true,
+    "native_execution": {
+      "disk_sha256": "8f4867f8d41eaadd358b8ca21c15a1788fa9b88f12c584fa57e7b74721c5f3a5",
+      "elapsed_seconds": 132.752,
+      "errors": [],
+      "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
+      "failures": [],
+      "original_oric_runtime": "not tested",
+      "program_sha256": "27260dce66ac3bdfbf77ccf0f3e7016e7fde21fb4e18ab20b7d671816d9aa708",
+      "real_hardware": "not tested",
+      "report": "build/game-mono/ending-test-results.json",
+      "selected_tests": [
+        "test_ending_source_canvas_matches_executed_original_6502_blitter",
+        "test_graphical_victory_requires_all_three_objectives_on_exit_and_caches_both_pages",
+        "test_graphical_death_retains_five_names_then_wraps_and_replays",
+        "test_ending_disk_slots_and_overlay_leave_resident_code_and_aux_assets_intact",
+        "test_partial_departure_keeps_compact_text_layout_and_live_gold",
+        "test_room36_grille_falls_on_both_pages_before_death_and_pauses_with_help",
+        "test_title_lightning_reveal_and_text_transition",
+        "test_debug_map_navigation_pauses_and_returns_to_menu_or_game"
+      ],
+      "success": true,
+      "suite": "endings",
+      "tests_run": 8,
+      "video_profile": "mono",
+      "virtual_ii": "not tested"
+    },
+    "program_and_overlay_engine_identical": true,
+    "scope": "Monochrome death scenery only; source rows 0..78 map to target rows 0..71 and x=20..259",
+    "screenshots": {
+      "ending-death-1.png": {
+        "path": "build/game-mono/ending-death-1.png",
+        "sha256": "a68c66709e62ac47ac354ec6e51f4fb9f2f104d897bc094f59151ca7bab94b08"
+      },
+      "ending-death-5.png": {
+        "path": "build/game-mono/ending-death-5.png",
+        "sha256": "b0e3901de3686d56d803f8d4dcef154c4a6baab399d722635b053da490bbe4ea"
+      }
+    },
+    "victory_identical": true
+  },
   "source_oracle_after_attribute_row_correction": "passed separately; raw source white-ink band starts at y=80 per B2 9030; corrected byte location does not change any target raster",
   "validation_scope": "Source composition analyzed and checked against original blitters; Apple integration tested functionally, without physical/video timing certification",
   "verification_sources_sha256": {

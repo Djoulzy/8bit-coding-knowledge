@@ -32,16 +32,19 @@ and reads the original motto at `$5B11`: `Richesse  Sagesse  Puissance`.
 The victory sentence comes from B2 **3090**.
 
 Death follows B2 **9000–9050**. Sprite **112** is the tomb, and **113** is the
-figure above it. The original x values at `$5BBE–$5BC2` are **102, 60, 144, 18,
-186**. The memorial adds one tomb per attempt, with the corresponding
+castle silhouette above it. The original x values at `$5BBE–$5BC2` are
+**102, 60, 144, 18, 186**. The memorial adds one tomb per attempt, with the corresponding
 six-character name underneath. Five successive attempts are retained in
 MAIN `$1380–$139D`; the next attempt starts a new visible memorial cycle.
 The existing session-name storage and wrapping rules are reused.
 
 The converter copies the source sprites, including their embedded INK
 attributes. The death scene retains the upper blue paper band and the lower
-white-ink area in the color edition. Source foreground dots are retained in
-monochrome. No replacement ending illustration was drawn.
+white-ink area in the color edition. In monochrome, only the death scene's
+upper paper band (source rows 0–78, target rows 0–71) is inverted, matching
+the title's black castle on white sky. The lower ground, all five tomb variants,
+names and replay text retain their existing dots. Victory is unchanged.
+No replacement ending illustration was drawn.
 
 Display adaptations are explicit:
 
@@ -135,3 +138,12 @@ the real Disk II BOOT0 reader and supplied Apple firmware, without a system-ROM
 cold start. They do not establish Virtual II, real-drive timing or physical
 Apple display behavior. Earlier verification files retain their earlier
 program hashes and are not evidence for these rebuilt disks.
+
+
+The 2026-10-27 monochrome death-scenery revision is recorded separately in that
+verification file. Host comparisons confirm that exactly the upper 240×72 dots
+are inverted in each of the five memorial variants; all lower scanlines and
+side margins match their preceding rasters. Victory, title, resident code,
+renderer and DHGR build files are unchanged. All eight focused ending tests
+passed under py65, including both frame buffers, five names, replay and help.
+No additional Virtual II or physical-hardware execution is claimed.

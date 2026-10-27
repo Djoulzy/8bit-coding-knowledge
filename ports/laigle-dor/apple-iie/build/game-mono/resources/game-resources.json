@@ -150,7 +150,7 @@
   "construction": "native generic geometry, upper/left/right openings, then parameterized atlas decorations",
   "endings": {
     "archive_bytes": 49152,
-    "archive_sha256": "c9946b6508463ae1b7f10653a6558ffb1e9ade3e88333b50e372f5b07be025da",
+    "archive_sha256": "fd83c0d474bbe25338c9ff6457101c84c12fb84d8974310f0a6eba66856300c1",
     "assets": [
       {
         "height": 22,
@@ -216,7 +216,7 @@
     "engine_sha256": "b8a813fc4c1dbaad1dc1ef4737baff462a2d982ef2ab9ddb80a11917ab77247b",
     "font": "captured standard HIRES $9800-$9BFF; source CHAR runtime not compared",
     "overlay_address": "$A000",
-    "palette": "monochrome Oric foreground dots",
+    "palette": "monochrome Oric foreground dots; death source rows 0..78 inverted for black castle/white sky; lower ground and tombs unchanged",
     "replay": "O or Return starts a new attempt, retained target convenience; original victory is terminal",
     "scenes": [
       {
@@ -235,10 +235,10 @@
         "kind": "dead",
         "name": "ending-dead-1",
         "overlay_bytes": 3921,
-        "overlay_sha256": "00a9e0abed839ec38ae2c87499e95d1c81e6942982f9f754294046e659de2d92",
-        "raster_sha256": "2a008ab1ad280c6237473ef71c83cc592b2ffb56ee1895d12aa9cceaf8f18595",
+        "overlay_sha256": "f72cf37507f9d01df429528ae4e596fa9435d3a15b93c55caec1f864c8aa06f9",
+        "raster_sha256": "02932ea88736cd299c627d09d24ff1caff919a36c4133ddc94e7cec1690c165e",
         "rle_bytes": 2592,
-        "rle_sha256": "d022f7e467d6d0eef6d60de782975d4d62c1e47b37d6a5109e2a47906dddfd14",
+        "rle_sha256": "8f56552d2a5d01305c179ed28c65005d1ec5a9f7b5f16bff56e0b730b64c0cda",
         "sector": 384
       },
       {
@@ -246,10 +246,10 @@
         "kind": "dead",
         "name": "ending-dead-2",
         "overlay_bytes": 4541,
-        "overlay_sha256": "2bdb971978b0bcfd9862688eac3b7edf39b4d0aaad6b61e556e3c02981767226",
-        "raster_sha256": "473c3c716d237ccf4371d07252509eec1f0b7c76fe5f499f6831e6b1eada8d9a",
+        "overlay_sha256": "de61cc35e7decb9281e37cb730671a2b446ab76c6543e0ffc8c685d68dd392ae",
+        "raster_sha256": "422ecb537246fca7758e493233227fd8cde12d1be93278a3e3305810d5eb0328",
         "rle_bytes": 3212,
-        "rle_sha256": "e316f2ee0710674399ff5b0f109dfdaf1b30d1e873e5bdd5a8e0fbcb1bede636",
+        "rle_sha256": "26c119229f416a755668205369b42692e30b796688b2564c81983c8c10ba0a60",
         "sector": 416
       },
       {
@@ -257,10 +257,10 @@
         "kind": "dead",
         "name": "ending-dead-3",
         "overlay_bytes": 5161,
-        "overlay_sha256": "cee4428bfbd40b45f2e6f7f164fc434adf08d1f9c8f0f1e9974bd95ff1e9e653",
-        "raster_sha256": "3ed97b8d9e76c0416ad66c90b39fb35a872820b51a2381a206d85fab72fdda31",
+        "overlay_sha256": "13966a190724f51a59aa5d44d38ec53d8102f836aad8673e34a2e6609aba6835",
+        "raster_sha256": "fc121613da040b7af55ad444af74a162cca7ec8a3a4f616b810cbf3f55272c75",
         "rle_bytes": 3832,
-        "rle_sha256": "847e5fd5fcda609e78561b7b37d8ec9e99224e71b5c2e7485e7326e80d0f5d58",
+        "rle_sha256": "5c6bbe66a026aa92b73b4fe8758d1206bda9f9f5e424508e5a4a36c17cf9fe06",
         "sector": 448
       },
       {
@@ -268,10 +268,10 @@
         "kind": "dead",
         "name": "ending-dead-4",
         "overlay_bytes": 5781,
-        "overlay_sha256": "5520512c4df5defa162f69d43059c5212539a8233a7acd5b9ca5dc3f59303094",
-        "raster_sha256": "f74c7d8bf351aa1b1871b194cd248693b5681180c2cc025cdb7740966560529f",
+        "overlay_sha256": "afd92fafdfaca302b055d19b362af4faefb49ab157b69448d9b92be447ed62e6",
+        "raster_sha256": "e0b4de58e2e861cedafd94a0105f2eb9a6ec3d15a31c8208afa0fc9045fc237b",
         "rle_bytes": 4452,
-        "rle_sha256": "7f2e63c60046a2a2709b4c04bd40ae2b3a21bd08dcfcdbd48e2d3df00fae698e",
+        "rle_sha256": "160d3f6a1433a4a98ea7666ac5faaa6a5977b527551aaa39ad953e0d0911182a",
         "sector": 480
       },
       {
@@ -279,10 +279,10 @@
         "kind": "dead",
         "name": "ending-dead-5",
         "overlay_bytes": 6401,
-        "overlay_sha256": "4ccbd31769bd2232412360a312fc0cfd8db5835415217c95594937bda0fab87d",
-        "raster_sha256": "adc7e9a028cf94292ef16169495d9f8d7de61164e979cf5ac9eba177db89f481",
+        "overlay_sha256": "8b0ac6b5b33ba15c7f1164cda6e34410922ef9c663c5d00cc34b1f414a4ae5a5",
+        "raster_sha256": "68403443ced137983a60f61e15758581f2b6b11d00593849a0ab8730981b6bed",
         "rle_bytes": 5072,
-        "rle_sha256": "617962bae048e38ef178aa28dd71747749232f5ca4f6a7009aee51cf869031a8",
+        "rle_sha256": "536ca259e21ba3985fcb98549e4a0b4db2959dc59083d4729d8122e7c6beac1b",
         "sector": 512
       }
     ],

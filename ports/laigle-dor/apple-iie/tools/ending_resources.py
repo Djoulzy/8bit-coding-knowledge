@@ -9,6 +9,7 @@ from tools.title_resources import ORIC_COLORS
 from tools import dhgr
 
 END_SECTOR = 352  # after the AUX scanline archive, which ends before sector 344
+MONO_DEATH_SCENERY_SOURCE_ROWS = 79  # upper paper band; castle ends at source y=78
 
 
 def victory_records(source):
@@ -65,6 +66,10 @@ def ending_image(source, kind, attempt=1, monochrome=False):
                 elif 16 <= value < 24:paper = value-16
                 elif not 8 <= value < 16:raise ValueError('Unexpected ending attribute')
                 image[y][bx*6:bx*6+6] = [0 if monochrome else ORIC_COLORS[paper]]*6
+        if monochrome and kind == 'dead' and sy < MONO_DEATH_SCENERY_SOURCE_ROWS:
+            # Match the mono title: black castle on white sky. The lower ground,
+            # tombs and native-height names/captions retain their original dots.
+            image[y] = [1-bit for bit in image[y]]
     font = source.read(0x9800, 1024)
     def text(message, x, y):
         for i, char in enumerate(message):
@@ -148,7 +153,7 @@ def export_endings(dest, mode):
               'assets':[provenance(sid) for sid in [31,29,30,40,46,64,112,113]],
               'font':'captured standard HIRES $9800-$9BFF; source CHAR runtime not compared',
               'conversion':'source rows 0..175 sampled into target 0..159; names/motto at 164, outcome at 176, replay instruction at 184',
-              'palette':'monochrome Oric foreground dots' if mode=='mono' else 'source INK/PAPER mapped to Apple palette; whole color cells',
+              'palette':'monochrome Oric foreground dots; death source rows 0..78 inverted for black castle/white sky; lower ground and tombs unchanged' if mode=='mono' else 'source INK/PAPER mapped to Apple palette; whole color cells',
               'replay':'O or Return starts a new attempt, retained target convenience; original victory is terminal',
               'disk_sector':END_SECTOR,'slot_sectors':32,'scenes':scenes}
     write_json(dest/'ending-manifest.json',report)

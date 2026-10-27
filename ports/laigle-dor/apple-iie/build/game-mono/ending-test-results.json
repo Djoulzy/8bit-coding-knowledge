@@ -1,6 +1,6 @@
 {
-  "disk_sha256": "81218cd353c67cbf96ba3506c405aed73eedeed4ebfaf831f848fb9800d95741",
-  "elapsed_seconds": 124.834,
+  "disk_sha256": "8f4867f8d41eaadd358b8ca21c15a1788fa9b88f12c584fa57e7b74721c5f3a5",
+  "elapsed_seconds": 132.752,
   "errors": [],
   "execution": "py65 functional 6502 / real Disk II BOOT0; no ROM cold-start",
   "failures": [],
